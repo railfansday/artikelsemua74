@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-146">Opinions expressed by Entrepreneur contributors are their own.</p>
-<p>I’m an AI engineer and I’m right now building ChatMakr, an AI-powered platform that creates multi-agent chatbots in seconds. I also built Rune Score, a sports analytics chatbot, and it cost me $0. <span style="font-size:13px;">(Related: <a href="a-glucose-powered-artificial-neuroimmune-axis-for-metabolic-contr-556.html" style="color:#2563eb; font-weight:600;">A glucose-powered artificial neuroimmune axis for metab...</a>)</span></p>
-<p>From the outside, it looks like a simple chatbot. Under the hood, it’s a distributed system that has to handle the freshness of sports data, user rephrasing, extraction failures, LLM call costs, streaming, memory, fallbacks and security. Here’s the stack I actually used to build it layer by layer, what I did with each tool and what’s free about it.</p>
-<p>Before writing a line of code, a chatbot needs a face. I used Figma to generate the chatbot’s logo straight from a text prompt describing the style and mood I wanted, then iterated on it a few times inside Figma itself rather than handing it to a designer. Figma’s own free blueprint covers individual use with unlimited file storage. <span style="font-size:13px;">(Related: <a href="an-inspiral-of-a-star-inside-a-common-envelope-with-its-giant-com-565.html" style="color:#2563eb; font-weight:600;">An inspiral of a star inside a common envelope with its...</a>)</span></p>
+<p>I’m an AI engineer and I’m right now building ChatMakr, an AI-powered platform that creates multi-agent chatbots in seconds. I also built Rune Score, a sports analytics chatbot, and it cost me $0. <span style="font-size:13px;">(Related: <a href="latest-update-simple-considerations-for-simple-people-building-fa-12640.html" style="color:#2563eb; font-weight:600;">Latest Update: Simple considerations for simple people ...</a>)</span></p>
+<p>From the outside, it looks like a simple chatbot. Under the hood, it’s a distributed system that has to handle the freshness of sports data, user rephrasing, extraction failures, LLM call costs, streaming, memory, fallbacks and security. Here’s the stack I actually used to build it layer by layer, what I did with each tool and what’s free about it. <span style="font-size:13px;">(Related: <a href="breaking-porting-fairseq-wmt19-translation-system-to-transformers-12647.html" style="color:#2563eb; font-weight:600;">Breaking: Porting fairseq wmt19 translation system to t...</a>)</span></p>
+<p>Before writing a line of code, a chatbot needs a face. I used Figma to generate the chatbot’s logo straight from a text prompt describing the style and mood I wanted, then iterated on it a few times inside Figma itself rather than handing it to a designer. Figma’s own free blueprint covers individual use with unlimited file storage.</p>
 <p>According to recent reports, the whole project lives in a GitHub repository, private while the chatbot was still rough, and it’s the same repo both Claude and Codex connect to. GitHub’s free blueprint gives unlimited private repositories with a limited feature set and 2,000 minutes a month of Actions included on GitHub Free for standard runners on private repos, enough to run tests and basic automation without hitting a wall. Standard runners on public repositories stay free no matter how much you use them.</p>
 <p>Claude Code did the actual building, the chatbot’s backend and the AI agents running inside it. I kept it connected directly to the GitHub repository and never let it touch the main branch directly: every task ran on its own branch, and nothing merged until I’d reviewed the diff myself and approved the pull request. The genuine free route in is a Guest Pass: if someone you know already pays for Claude Max, they can send you one, and it unlocks a full week of free Pro-level access.</p>
 <p>According to recent reports, I gave Codex a different job, connected to the same repository but never writing production code itself. It reviewed what Claude had actually shipped, acting as an independent judge on pull requests, and I also used it to draft the next development prompt I’d hand back to Claude, effectively having one model proposal the work and another execute it. Codex has a genuine free plan at $0 a month. Free accounts run on GPT-5.6 Terra, OpenAI’s cost-efficient model for that tier. The free plan is capped at a usage limit rather than a time limit, which is exactly the size of job a reviewer role needs.</p>
@@ -189,141 +189,24 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-how-measuring-the-state-of-nature-can-reverse-biodi-590.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #590. Industry News: How measuring the state of nature can reverse biodiversity loss
+        <a href="industry-news-run-a-chatgpt-like-chatbot-on-a-single-gpu-with-roc-12438.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #12438. Industry News: Run a Chatgpt-like Chatbot on a Single GPU with ROCm
         </a>
         
-        <a href="industry-news-newly-introduced-us-congress-should-reimagine-scien-586.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #586. Industry News: Newly introduced US Congress should ‘reimagine’ science — not just return to the past
+        <a href="industry-news-my-impressions-went-from-1203-to-0-during-a-core-re-11130.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #11130. Industry News: My impressions went from 1,203 to 0 during a core revision. Here is the comparison Google actually recommends
         </a>
         
-        <a href="industry-news-quantum-physics-can-prove-where-you-are-550.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #550. Industry News: Quantum physics can prove where you are
+        <a href="industry-news-grand-theft-auto-6-is-here-goodbye-winter-training--9538.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #9538. Industry News: Grand Theft Auto 6 Is Here. Goodbye, Winter Training Plan.
         </a>
         
-        <a href="industry-news-poxviruses-probably-evolved-in-the-digestive-system-543.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #543. Industry News: Poxviruses probably evolved in the digestive system of animals
+        <a href="industry-news-elle-decoroscope-your-november-design-horoscope-is--8351.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #8351. Industry News: ELLE Decoroscope: Your November Design Horoscope Is Here
         </a>
         
     </div>
     
     </div>
-
-<!-- Banner Otomatis Saat Klik dari Google + Tombol Close -->
-<style>
-  #googleAdsBox {
-    display: none;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    z-index: 99999;
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    padding: 28px 8px 8px 8px;
-    width: 316px;
-    box-sizing: border-box;
-  }
-  #googleAdsBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 26px;
-    background: #0f172a;
-    color: #ffffff;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-    font-size: 11px;
-    font-family: Arial, sans-serif;
-  }
-  #googleAdsClose {
-    background: #ef4444;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    width: 22px;
-    height: 20px;
-    font-size: 15px;
-    line-height: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0;
-  }
-  #googleAdsClose:hover {
-    background: #dc2626;
-  }
-  #googleAdsSlot {
-    width: 300px;
-    height: 250px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  @media (max-width: 480px) {
-    #googleAdsBox {
-      left: 50%;
-      right: auto;
-      transform: translateX(-50%);
-      bottom: 12px;
-    }
-  }
-</style>
-
-<div id="googleAdsBox">
-  <div id="googleAdsBar">
-    <span>Advertisement</span>
-    <button id="googleAdsClose" type="button" title="Close" onclick="tutupGoogleAds()">&times;</button>
-  </div>
-  <div id="googleAdsSlot"></div>
-</div>
-
-<script>
-(function() {
-  function datangDariGoogle() {
-    var ref = (document.referrer || "").toLowerCase();
-    var query = new URLSearchParams(window.location.search);
-    return ref.indexOf("google.") !== -1 || query.get("from_google") === "1";
-  }
-
-  function muatIklan(target) {
-    atOptions = {
-      'key' : '52fc2d82f5b0964edc0ba2f6a4053f9a',
-      'format' : 'iframe',
-      'height' : 250,
-      'width' : 300,
-      'params' : {}
-    };
-    var scriptIklan = document.createElement("script");
-    scriptIklan.type = "text/javascript";
-    scriptIklan.src = "https://bicea.org/22/52fc2d82f5b0964edc0ba2f6a4053f9a";
-    target.innerHTML = "";
-    target.appendChild(scriptIklan);
-  }
-
-  window.tutupGoogleAds = function() {
-    var box = document.getElementById("googleAdsBox");
-    var slot = document.getElementById("googleAdsSlot");
-    if (box) box.style.display = "none";
-    if (slot) slot.innerHTML = "";
-  };
-
-  window.addEventListener("DOMContentLoaded", function() {
-    if (datangDariGoogle()) {
-      var box = document.getElementById("googleAdsBox");
-      var slot = document.getElementById("googleAdsSlot");
-      if (box && slot) {
-        box.style.display = "block";
-        muatIklan(slot);
-      }
-    }
-  });
-})();
-</script>
-
 </body>
 </html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: How to Upgrade to PostgreSQL 19: postgres:latest Won't Start on Your Old Volume</title>
+    <meta name="description" content="If your compose file states image: postgres:latest, then as of November 20 it says PostgreSQL 19. The Docker Hub tag list now has 19.0, 19 and latest on th">
+    <meta name="keywords" content="docker, postgresql, compose, data, upgrade, postgres, image, these">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/breaking-how-to-upgrade-to-postgresql-19-postgreslatest-wont-star-11124.html">
+    
+    <meta property="og:title" content="Breaking: How to Upgrade to PostgreSQL 19: postgres:latest Won't Start on Your Old Volume">
+    <meta property="og:description" content="If your compose file states image: postgres:latest, then as of November 20 it says PostgreSQL 19. The Docker Hub tag list now has 19.0, 19 and latest on th">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F37730211%2Fpexels-photo-37730211.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26fit%3Dcrop%26h%3D627%26w%3D1200">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/breaking-how-to-upgrade-to-postgresql-19-postgreslatest-wont-star-11124.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: How to Upgrade to PostgreSQL 19: postgres:latest Won't Start on Your Old Volume">
+    <meta name="twitter:description" content="If your compose file states image: postgres:latest, then as of November 20 it says PostgreSQL 19. The Docker Hub tag list now has 19.0, 19 and latest on th">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F37730211%2Fpexels-photo-37730211.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26fit%3Dcrop%26h%3D627%26w%3D1200">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: How to Upgrade to PostgreSQL 19: postgres:latest Won't Start on Your Old Volume", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F37730211%2Fpexels-photo-37730211.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26fit%3Dcrop%26h%3D627%26w%3D1200"], "datePublished": "2026-11-20T15:10:01", "dateModified": "2026-11-20T15:24:22.231249", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/breaking-how-to-upgrade-to-postgresql-19-postgreslatest-wont-star-11124.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: How to Upgrade to PostgreSQL 19: postgres:latest Won't Start on Your O?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Breaking: How to Upgrade to PostgreSQL 19: postgres:latest W' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: How to Upgrade to PostgreSQL 19: postgres:latest Won't Start on Your Old Volume</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 20 Nov 2026 &bull; ⏱️ 4 min read (729 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>If your compose file states image: postgres:latest, then as of November 20 it says PostgreSQL 19.</li><li style='margin-bottom:6px;'>In a recent development, that's the small problem, because at least it's loud.</li><li style='margin-bottom:6px;'>Industry observers note that the only performance number the announcement gives: faster foreign key checks "made bulk inserts nearly 2x faster" in testing.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-11124"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-11124"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-11124"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: How to Upgrade to PostgreSQL 19: postgres:latest Won't Start on Your Old Volume" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F37730211%2Fpexels-photo-37730211.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26fit%3Dcrop%26h%3D627%26w%3D1200" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-11124">If your compose file states image: postgres:latest, then as of November 20 it says PostgreSQL 19. The Docker Hub tag list now has 19.0, 19 and latest on the same line. The image keeps its data under a version-numbered path (/var/lib/postgresql/19/docker), so after the next docker compose pull &amp;&amp; docker compose up -d the entrypoint finds your 17 or 18 data somewhere else, prints Error: in 18+, these Docker images are configured to store database data in a format which is compatible with "pg_ctlcluster" and exits. Your data is safe, but your database is down until you upgrade it or pin the old tag.</p>
+<p>In a recent development, that's the small problem, because at least it's loud. The bigger one is that the PostgreSQL 19 release notes list 22 items under "Migration to Version 19", and a few of them change query results without raising a single error. Running pg_upgrade is the easy bit. What follows is the breaking changes sorted by how much they hurt, a pre-upgrade check you can paste, the pg_upgrade and Docker steps, and when RDS and Cloud SQL will actually let you upgrade. <span style="font-size:13px;">(Related: <a href="latest-update-at-least-seven-progressives-voted-against-hakeem-je-12654.html" style="color:#2563eb; font-weight:600;">Latest Update: At least seven progressives voted agains...</a>)</span></p>
+<p>From the official announcement:.</p>
+<p>Industry observers note that the only performance number the announcement gives: faster foreign key checks "made bulk inserts nearly 2x faster" in testing. It doesn't publish the benchmark, so expect your results to differ. <span style="font-size:13px;">(Related: <a href="peltola-win-doesnt-end-doj-scrutiny-of-alaska-senate-race-officia-12656.html" style="color:#2563eb; font-weight:600;">Peltola win doesn’t end DOJ scrutiny of Alaska Senate r...</a>)</span></p>
+<p>According to recent reports, I grouped the 22 items by what happens to you, since the release notes don't order them by impact. A few minor ones (the COPY FROM ... WHERE system-column ban, psql's \crosstabview now honoring \pset null, the new password expiration warning, the MD5 login warning) are left out of the table.</p>
+<p>The ones I'd worry about are json_array() and the FTS/pg_trgm change, plus fuzzystrmatch if you have non-ASCII names. Most of the rest either fails loudly or shows up on a dashboard, while these hand back different data and nothing errors. If you're on an ICU database with LC_CTYPE set to C, which is a pretty common setup, budget time for the reindex.</p>
+<p>Two default changes didn't make it into the Migration section but are worth knowing: log_lock_waits is now on, and default_toast_compression is now lz4 where the build supports it.</p>
+<p>The pg_upgrade docs support sources from 9.2 onward, so 17 and 18 are both fine. Always run --check first. It can run while the old server is still up (use a different port for the upcoming one), and if you pass your transfer mode along with it, you get that mode's checks as well.</p>
+<p id="sec-mid-11124">Most optimizer statistics come across now. The docs still tell you to run these afterwards:.</p>
+<p>Industry observers note that then reindex your FTS, pg_trgm and fuzzystrmatch indexes. On slots: from a 17+ source only logical slots come across, so plan to recreate physical slots by hand (the docs spell this out for standbys).</p>
+<p>Starting with 18, the official image puts PGDATA at /var/lib/postgresql//docker and declares the VOLUME as /var/lib/postgresql (Docker Hub). This was done on purpose, so that a mount of /var/lib/postgresql can hold both versions and pg_upgrade --link works. So:.</p>
+<p>For small databases I'd just dump with the 19 client, which also gets around the standard_conforming_strings dump problem:.</p>
+<p>Whatever you choose, pin postgres:18 (or 17) in compose today, before your next docker compose pull hands you 19.</p>
+<p>Sources indicate that the one real argument in the HN thread was about this. lfittl said that for critical production systems it's still good to wait for .1, and in a follow-up pointed to a crash in EXPLAIN (BUFFERS) without ANALYZE when auto_explain is on. It's an edge case, by lfittl's own description, but the fix "will only be in 19.1 in February 2027". They also noted SQL/PGQ was reverted "pretty late (beta4)". Answering the same question, guenthert said to put it in a test environment: "Waiting won't do you any good, if there are load-specific bugs.".</p>
+<p>Recent findings suggest that I'm with both of them. Put 19 on staging this week, run the grep above, and fix your configs and dashboards now. Production waits for 19.1. If you're on RDS, AWS has effectively made that decision for you.</p>
+<p id="sec-end-11124">Industry observers note that are you upgrading to 19 now or waiting for 19.1? What made you decide? And if you've found a breaking change that isn't in this table, post it below.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/alanwest/how-to-upgrade-to-postgresql-19-postgreslatest-wont-start-on-your-old-volume-36id" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="breaking-gta-6-ultimate-edition-has-a-car-upgrade-you-can-unlock--6756.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #6756. Breaking: GTA 6 Ultimate Edition Has A Car Upgrade You Can Unlock Right From The Start
+        </a>
+        
+        <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-12425.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #12425. Stop treating agents as one-off projects and start running them as a continuous discipline
+        </a>
+        
+        <a href="how-numinamath-won-the-1st-aimo-progress-prize-12207.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #12207. How NuminaMath Won the 1st AIMO Progress Prize
+        </a>
+        
+        <a href="breaking-open-r1-upgrade-3-12064.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #12064. Breaking: Open R1: Upgrade #3
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

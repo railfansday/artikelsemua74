@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># I Spent 6 Months Building an AI Coding Memory Layer to Reduce Token Waste</title>
+    <meta name="description" content="AI coding agents are getting better at writing code, navigating codebases and handling increasingly complex tasks. But as projects grow, another problem be">
+    <meta name="keywords" content="project, openlotus, context, agent, agents, conversation, coding, information">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/i-spent-6-months-building-an-ai-coding-memory-layer-to-reduce-tok-11116.html">
+    
+    <meta property="og:title" content="# I Spent 6 Months Building an AI Coding Memory Layer to Reduce Token Waste">
+    <meta property="og:description" content="AI coding agents are getting better at writing code, navigating codebases and handling increasingly complex tasks. But as projects grow, another problem be">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6gi3lg1vruodes13v0sx.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/i-spent-6-months-building-an-ai-coding-memory-layer-to-reduce-tok-11116.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="# I Spent 6 Months Building an AI Coding Memory Layer to Reduce Token Waste">
+    <meta name="twitter:description" content="AI coding agents are getting better at writing code, navigating codebases and handling increasingly complex tasks. But as projects grow, another problem be">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6gi3lg1vruodes13v0sx.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "# I Spent 6 Months Building an AI Coding Memory Layer to Reduce Token Waste", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6gi3lg1vruodes13v0sx.png"], "datePublished": "2026-11-20T15:10:47", "dateModified": "2026-11-20T15:24:21.758156", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/i-spent-6-months-building-an-ai-coding-memory-layer-to-reduce-tok-11116.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding # I Spent 6 Months Building an AI Coding Memory Layer to Reduce Token Waste?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Dev."}}, {"@type": "Question", "name": "Which category does '# I Spent 6 Months Building an AI Coding Memory Layer to Red' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1># I Spent 6 Months Building an AI Coding Memory Layer to Reduce Token Waste</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 20 Nov 2026 &bull; ⏱️ 6 min read (1174 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>AI coding agents are getting better at writing code, navigating codebases and handling increasingly complex tasks.</li><li style='margin-bottom:6px;'>But as projects grow, another problem becomes harder to ignore: agents repeatedly spend tokens rediscovering information they have already encountered.</li><li style='margin-bottom:6px;'>They explore the same files, reconstruct previous decisions and investigate problems that were already understood in earlier sessions.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-11116"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-11116"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-11116"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="# I Spent 6 Months Building an AI Coding Memory Layer to Reduce Token Waste" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6gi3lg1vruodes13v0sx.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-11116">AI coding agents are getting better at writing code, navigating codebases and handling increasingly complex tasks.</p>
+<p>But as projects grow, another problem becomes harder to ignore: agents repeatedly spend tokens rediscovering information they have already encountered. <span style="font-size:13px;">(Related: <a href="showcase-your-projects-in-spaces-using-gradio-12621.html" style="color:#2563eb; font-weight:600;">Showcase Your Projects in Spaces using Gradio...</a>)</span></p>
+<p>They explore the same files, reconstruct previous decisions and investigate problems that were already understood in earlier sessions.</p>
+<p>I spent the last six months building OpenLotus, an independent memory layer designed to address this problem. <span style="font-size:13px;">(Related: <a href="latest-update-simple-considerations-for-simple-people-building-fa-12640.html" style="color:#2563eb; font-weight:600;">Latest Update: Simple considerations for simple people ...</a>)</span></p>
+<p>While working on a project, an AI coding agent accumulates valuable knowledge.</p>
+<p>It learns the architecture, identifies technical constraints, makes implementation decisions, discovers failed approaches and tracks what still needs to be done.</p>
+<p>The problem is that much of this knowledge exists inside the agent's conversation.</p>
+<p>And conversations are not reliable long term storage.</p>
+<p>Consider what happens in a few common situations:.</p>
+<p>Session resets: A newly introduced session may not have access to the previous conversation or the reasoning accumulated during it.</p>
+<p>Industry observers note that context compaction: When a conversation approaches the context window limit, an agent may compress its history into a shorter summary. This helps it continue working, but notable details can be lost in the process.</p>
+<p>Context window pressure: Repeatedly loading instructions, conversation history and previously explored information consumes tokens that could otherwise be used for implementation.</p>
+<p>Switching agents: Moving from Claude Code to OpenCode or another coding environment does not automatically transfer everything the previous agent learned about the project.</p>
+<p>This creates a familiar experience.</p>
+<p>It has been revealed that you ask an agent to continue working, and it starts investigating something you already investigated. It revisits architectural decisions, reads previously explored files or reconstructs context from scratch.</p>
+<p>The model may be perfectly capable of understanding the project. The problem is that the knowledge it acquired has no reliable, independent place to live.</p>
+<p>Repeated exploration has a cost.</p>
+<p>Every unnecessary file read, reconstructed decision, repeated investigation and replayed conversation consumes additional tokens.</p>
+<p>It also puts pressure on the available context window, leaving less room for the actual task.</p>
+<p>Research into memory and retrieval systems suggests that this problem can be addressed more efficiently than simply providing agents with more conversation history.</p>
+<p>For example, a ContextSniper study referenced in the OpenLotus research collection reports token reductions of 51.5% for OpenClaw and 38.9% for Claude Code under its tested conditions.</p>
+<p>A separate Mem0 comparison reports 166 prompt tokens for retrieval based memory compared with 594 for naive history, at equal answer quality.</p>
+<p>According to recent reports, these are findings from external research, not OpenLotus benchmarks. I have deliberately kept that distinction clear.</p>
+<p>The underlying idea is straightforward: an agent does not always need more context. It needs access to the relevant information without repeatedly reconstructing it.</p>
+<p>Research: https://www.openlotus.io/research.</p>
+<p>Existing approaches provide useful pieces of persistent context.</p>
+<p>Sources indicate that instruction files such as CLAUDE.md and AGENTS.md help establish project rules. Built in memory systems can preserve selected information. Conversation summaries help agents continue previous work.</p>
+<p>But I wanted to address a broader problem.</p>
+<p>What if project knowledge belonged to the project itself, rather than a particular agent, conversation or development environment?</p>
+<p>A shared record that could preserve decisions, constraints, discoveries and implementation progress, and remain accessible regardless of which coding agent was being used.</p>
+<p>OpenLotus is an independent project memory and state layer for AI coding agents.</p>
+<p>It has been revealed that at its centre is a shared data structure called ProgressMap. It provides a persistent representation of a project's evolving state that compatible agents can access and update through the CLI and MCP.</p>
+<p>Instead of storing another copy of the entire conversation, OpenLotus organises project knowledge into structured information:.</p>
+<p>The goal is not to preserve every interaction.</p>
+<p>It is to preserve the information that makes future development more informed and less repetitive.</p>
+<p id="sec-mid-11116">OpenLotus has three main components.</p>
+<p>A local repository can be paired with an OpenLotus project using:.</p>
+<p>The CLI handles project pairing, while MCP gives compatible coding agents access to the shared project state.</p>
+<p>This means project memory is not tied to one coding environment. Different agents can work with the same underlying record rather than maintaining isolated versions of project knowledge.</p>
+<p>ProgressMap is the central representation of project knowledge.</p>
+<p>It brings together plans, decisions, actions, changes, lessons and other information that describes the project's evolving state.</p>
+<p>When a new session begins, an agent can retrieve relevant project information instead of reconstructing everything from previous conversations.</p>
+<p>It also provides a basis for comparing declared project intent with observed repository reality.</p>
+<p>OpenLotus exposes the shared project record through three interfaces:.</p>
+<p>The crucial part is that the human and the agent work from the same underlying project record.</p>
+<p>Sources indicate that context compaction is useful. It allows an agent to continue working when its conversation becomes too large for the available context window.</p>
+<p>However, a compressed conversation is not necessarily a complete record of the project.</p>
+<p>An architectural decision might be reduced to a short statement without its original reasoning. A failed approach might disappear from the summary. An unresolved constraint might lose the detail needed to avoid repeating an earlier mistake.</p>
+<p>OpenLotus addresses a different layer of the problem.</p>
+<p>According to recent reports, important decisions, constraints, lessons and project progress can be maintained independently of the conversation. When another session starts, the agent can retrieve that information again.</p>
+<p>A context window is working space.</p>
+<p>Compaction manages that working space.</p>
+<p>OpenLotus maintains the project record that future working sessions can return to.</p>
+<p>According to recent reports, it does not eliminate context windows or replace compaction. It provides a more durable source of project knowledge alongside them.</p>
+<p>I want to be careful about token savings.</p>
+<p>According to recent reports, external research supports the idea that structured memory and retrieval can reduce unnecessary context consumption. But I have not yet established a reliable percentage of token savings attributable specifically to OpenLotus through controlled benchmarks.</p>
+<p>That requires testing identical repositories and tasks with and without OpenLotus, while measuring token consumption and task success.</p>
+<p>Reducing token usage by making an agent perform worse would defeat the purpose.</p>
+<p>The objective is to reduce unnecessary exploration and context reconstruction without sacrificing implementation quality.</p>
+<p>That is the standard I want OpenLotus to meet.</p>
+<p>I believe AI coding infrastructure needs to evolve beyond individual agent sessions.</p>
+<p>As developers work with multiple agents, longer running projects and increasingly autonomous workflows, the project itself needs a durable source of truth.</p>
+<p>OpenLotus aims to preserve the context behind those changes: why decisions were made, what constraints exist, what has been learned and where implementation stands.</p>
+<p>That is what I have spent the last six months building.</p>
+<p>You can explore OpenLotus at https://www.openlotus.io/.</p>
+<p>It presently supports Claude Code, OpenCode, Codex, Cursor and other MCP compatible clients.</p>
+<p>I would like to hear how other developers approach this problem.</p>
+<p>How do you preserve project knowledge across context compaction and session resets?</p>
+<p>And if you work with multiple coding agents, how do you keep them aligned on the same decisions?</p>
+<p id="sec-end-11116">I am particularly interested in the technical approaches people are using.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/sighlars/-i-spent-6-months-building-an-ai-coding-memory-layer-to-reduce-token-waste-4586" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-give-your-coding-agents-a-memory-you-own-11465.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #11465. Tech Report: Give Your Coding Agents a Memory You Own
+        </a>
+        
+        <a href="latest-update-simple-considerations-for-simple-people-building-fa-12640.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #12640. Latest Update: Simple considerations for simple people building fancy neural networks
+        </a>
+        
+        <a href="building-a-playlist-generator-with-sentence-transformers-12553.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #12553. Building a Playlist Generator with Sentence Transformers
+        </a>
+        
+        <a href="tech-report-nystrmformer-approximating-self-attention-in-linear-t-12545.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #12545. Tech Report: Nyströmformer: Approximating self-attention in linear time and memory via the Nyström method
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

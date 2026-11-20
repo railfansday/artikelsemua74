@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-569">The genus Hordeum comprises cultivated barley and its wild relatives, an evolutionarily, ecologically and agriculturally important group of grasses1,2. Here we generated a chromosome-scale comparative genomic resource comprising all recognized diploid Hordeum species together with representative polyploid lineages. Comparative analyses reveal extensive structural variation, including inversions and chromosomal rearrangements that disrupt proximal collinearity and reflect lineage-specific genome remodelling. Single-copy gene phylogenies identify ancient hybridization, segmental exchange and introgression, revealing pervasive reticulate evolution during Hordeum diversification. We uncover widespread horizontal gene transfer from Panicoideae grasses into Hordeum, with many transferred genes showing evidence of transcription and functional integration. Retrotransposon proliferation explains genome size variation and provides insights into polyploid genome evolution. Whole-genome alignments reveal contrasting evolutionary dynamics: whereas coding sequences remain highly conserved, regulatory elements undergo rapid turnover, providing a rich source of regulatory diversity for phenotypic evolution. Case studies of vernalization and glume development demonstrate how natural variation in regulatory and coding sequences contributes to flowering time and floral morphology. This comprehensive pangenomic framework establishes Hordeum as a model for studying genome evolution, structural variation and the genetic basis of adaptive traits, offering upcoming avenues for barley improvement.</p>
-<p>The genus Hordeum comprises approximately 33 species and is widely distributed across the temperate regions of Eurasia and the Americas1,2,3. Hordeum is classified into two subgenera based on cytogenetic evidence: one containing the H and Xu genomes and the other containing the I and Xa genomes4. The basic chromosome number is seven, and, although most species are diploid, tetraploid and hexaploid taxa have also been described. Cultivated barley (Hordeum vulgare) is the best known and most extensively studied species, as it represents one of the earliest domesticated cereal crops. Today, barley is the world’s fourth most vital grain, valued for its use in food, animal feed and brewing5. Cultivated barley and its wild progenitor (H. vulgare subsp. spontaneum) constitute a single inter-fertile gene pool, allowing for frequent gene flow between wild and cultivated forms6. This primary gene pool has long been exploited by breeders to introduce desirable traits6. Hordeum bulbosum has contributed valuable disease resistance genes through introgression7,8,9,10 due to its ability to hybridize directly with cultivated barley. The other Hordeum species are not domesticated but have important ecological and agricultural roles in ecosystem stability, environmental adaptation and forage use11,12,13,14,15. Together, Hordeum is both an agronomically important genus and a powerful model for studying crop evolution, environmental adaptation and resistance to biotic and abiotic stresses. Factors such as incomplete lineage sorting, recurrent hybridization and gene flow partly obscure species boundaries, leaving major evolutionary questions unresolved1,2,4,16,17. Recent barley pangenomes have substantially advanced our understanding of genomic variation within cultivated barley and its closest relatives10,18,19. However, these studies were largely confined to two species (H. vulgare and H. bulbosum) and therefore could not resolve genome-wide evolutionary processes operating across the genus, including the origin of large-scale structural variation, ancient hybridization, polyploid genome evolution and the diversification of regulatory loci. Extending comparative genomic analyses to encompass the entire genus is therefore essential to capture the full breadth of diversity within the Hordeum gene pool and to facilitate both evolutionary studies and the effective utilization of wild germplasm for barley improvement. Pangenomics now offers comprehensive resources to address such complexity. In crops such as tomato, potato, maize, grapevine, citrus and cotton, genus-level pangenomes have uncovered extensive structural variations, gene presence–absence and evolutionary dynamics20,21,22,23,24. Investigating structural variations helps to explain evolutionary processes and can inform crop breeding strategies25. However, the full extent of structural variation within Hordeum remains largely unexplored. To address this gap, we generated chromosome-scale genome assemblies representing all recognized diploid Hordeum species together with representative polyploid lineages. This comparative genomic framework provides a view of structural and regulatory genome evolution across the genus, yielding latest insights into genome evolution and establishing a foundation for the utilization of wild diversity in barley improvement. <span style="font-size:13px;">(Related: <a href="as-el-nio-builds-studies-of-extreme-marine-heatwaves-must-start-n-594.html" style="color:#2563eb; font-weight:600;">As El Niño builds, studies of extreme marine heatwaves ...</a>)</span></p>
-<p>To maximize phylogenetic representation across the genus, we selected 27 accessions representing 24 Hordeum species, encompassing all recognized diploid genome groups1 together with representative tetraploid and hexaploid lineages (Extended Data Fig. 1a, Supplementary Table 1 and Supplementary Figs. 1–25). The dataset comprises 22 diploid accessions, 4 tetraploid accessions and 1 hexaploid accession. Twenty-four genome sequences were assembled using PacBio HiFi accurate long reads and Hi-C data (Supplementary Tables 2 and 3 and Supplementary Figs. 26–28), using the TRITEX pipeline26,27. The sequence assemblies of H. vulgare and H. bulbosum were sourced from our previous work10,28. The previously published chromosome-level assembly of Hordeum marinum H559 (ref. 29) was updated using the TRITEX pipeline, and previously published transcriptome data, Bionano optical maps and Hi-C data of Hordeum erectifolium NGB6816 were used30. The average contig N50 of the assemblies is 39.24 Mb. Assembly sizes range from 2.90 Gb to 4.48 Gb (mean, 3.92 Gb) in diploid species and from 7.49 Gb to 8.56 Gb (mean, 8.16 Gb) in tetraploid species, whereas the single hexaploid genome has an assembly size of 10.90 Gb. Chloroplast genome assemblies range from 136,335 bp to 137,079 bp (mean, 136,840 bp) (Supplementary Table 1). High assembly quality is supported by an average long terminal repeat (LTR) assembly index (LAI) of 14.79, a consensus quality value (QV) of 67.30 and k-mer completeness of 97.22% (Supplementary Table 4). For the heterozygous diploid species H. bulbosum, the two phased haplotypes were designated as Hap1 and Hap2. For polyploid species, independently assembled chromosome sets derived from different ancestral genomes were defined as subgenomes and denoted as Sub1, Sub2 and Sub3 according to their phylogenetic relationships with diploid progenitor lineages (Fig. 1a). To assess the gene content in the Hordeum pangenome, we annotated all genomes using transcriptome data (Methods and Supplementary Tables 5 and 6). A gene consolidation method was applied to ensure high comparability of gene predictions, including those for  Hordeum parodii (6x) and  Hordeum gussoneanum (4x). The number of high-confidence gene models identified ranges from 35,573 for diploid  Hordeum murinum to 94,943 for hexaploid H. parodii (Supplementary Table 7). We assessed the quality of the Hordeum gene annotations using BUSCO (v5.8.0) with the poales_odb12 dataset, comprising 6,282 near-universal single-copy orthologues from Poales. On average, 97.35% of BUSCO genes were identified as complete, 0.69% as fragmented and 1.84% as missing (Supplementary Table 7). Independent benchmarking with OMArk and PSAURON further confirmed the high completeness and overall quality of the gene annotations (Supplementary Table 7). Transposable element (TE) annotation using the panEDTA pipeline31 revealed that transposons constituted on average 86.12% of the genome, ranging from 83.27% to 90.35% (Supplementary Table 8). <span style="font-size:13px;">(Related: <a href="conservation-of-the-tumour-microenvironment-across-organs-and-spe-557.html" style="color:#2563eb; font-weight:600;">Conservation of the tumour microenvironment across orga...</a>)</span></p>
+<p>The genus Hordeum comprises approximately 33 species and is widely distributed across the temperate regions of Eurasia and the Americas1,2,3. Hordeum is classified into two subgenera based on cytogenetic evidence: one containing the H and Xu genomes and the other containing the I and Xa genomes4. The basic chromosome number is seven, and, although most species are diploid, tetraploid and hexaploid taxa have also been described. Cultivated barley (Hordeum vulgare) is the best known and most extensively studied species, as it represents one of the earliest domesticated cereal crops. Today, barley is the world’s fourth most vital grain, valued for its use in food, animal feed and brewing5. Cultivated barley and its wild progenitor (H. vulgare subsp. spontaneum) constitute a single inter-fertile gene pool, allowing for frequent gene flow between wild and cultivated forms6. This primary gene pool has long been exploited by breeders to introduce desirable traits6. Hordeum bulbosum has contributed valuable disease resistance genes through introgression7,8,9,10 due to its ability to hybridize directly with cultivated barley. The other Hordeum species are not domesticated but have important ecological and agricultural roles in ecosystem stability, environmental adaptation and forage use11,12,13,14,15. Together, Hordeum is both an agronomically important genus and a powerful model for studying crop evolution, environmental adaptation and resistance to biotic and abiotic stresses. Factors such as incomplete lineage sorting, recurrent hybridization and gene flow partly obscure species boundaries, leaving major evolutionary questions unresolved1,2,4,16,17. Recent barley pangenomes have substantially advanced our understanding of genomic variation within cultivated barley and its closest relatives10,18,19. However, these studies were largely confined to two species (H. vulgare and H. bulbosum) and therefore could not resolve genome-wide evolutionary processes operating across the genus, including the origin of large-scale structural variation, ancient hybridization, polyploid genome evolution and the diversification of regulatory loci. Extending comparative genomic analyses to encompass the entire genus is therefore essential to capture the full breadth of diversity within the Hordeum gene pool and to facilitate both evolutionary studies and the effective utilization of wild germplasm for barley improvement. Pangenomics now offers comprehensive resources to address such complexity. In crops such as tomato, potato, maize, grapevine, citrus and cotton, genus-level pangenomes have uncovered extensive structural variations, gene presence–absence and evolutionary dynamics20,21,22,23,24. Investigating structural variations helps to explain evolutionary processes and can inform crop breeding strategies25. However, the full extent of structural variation within Hordeum remains largely unexplored. To address this gap, we generated chromosome-scale genome assemblies representing all recognized diploid Hordeum species together with representative polyploid lineages. This comparative genomic framework provides a view of structural and regulatory genome evolution across the genus, yielding latest insights into genome evolution and establishing a foundation for the utilization of wild diversity in barley improvement. <span style="font-size:13px;">(Related: <a href="senate-panel-vote-on-national-science-foundation-nominee-is-abrup-12655.html" style="color:#2563eb; font-weight:600;">Senate panel vote on National Science Foundation nomine...</a>)</span></p>
+<p>To maximize phylogenetic representation across the genus, we selected 27 accessions representing 24 Hordeum species, encompassing all recognized diploid genome groups1 together with representative tetraploid and hexaploid lineages (Extended Data Fig. 1a, Supplementary Table 1 and Supplementary Figs. 1–25). The dataset comprises 22 diploid accessions, 4 tetraploid accessions and 1 hexaploid accession. Twenty-four genome sequences were assembled using PacBio HiFi accurate long reads and Hi-C data (Supplementary Tables 2 and 3 and Supplementary Figs. 26–28), using the TRITEX pipeline26,27. The sequence assemblies of H. vulgare and H. bulbosum were sourced from our previous work10,28. The previously published chromosome-level assembly of Hordeum marinum H559 (ref. 29) was updated using the TRITEX pipeline, and previously published transcriptome data, Bionano optical maps and Hi-C data of Hordeum erectifolium NGB6816 were used30. The average contig N50 of the assemblies is 39.24 Mb. Assembly sizes range from 2.90 Gb to 4.48 Gb (mean, 3.92 Gb) in diploid species and from 7.49 Gb to 8.56 Gb (mean, 8.16 Gb) in tetraploid species, whereas the single hexaploid genome has an assembly size of 10.90 Gb. Chloroplast genome assemblies range from 136,335 bp to 137,079 bp (mean, 136,840 bp) (Supplementary Table 1). High assembly quality is supported by an average long terminal repeat (LTR) assembly index (LAI) of 14.79, a consensus quality value (QV) of 67.30 and k-mer completeness of 97.22% (Supplementary Table 4). For the heterozygous diploid species H. bulbosum, the two phased haplotypes were designated as Hap1 and Hap2. For polyploid species, independently assembled chromosome sets derived from different ancestral genomes were defined as subgenomes and denoted as Sub1, Sub2 and Sub3 according to their phylogenetic relationships with diploid progenitor lineages (Fig. 1a). To assess the gene content in the Hordeum pangenome, we annotated all genomes using transcriptome data (Methods and Supplementary Tables 5 and 6). A gene consolidation method was applied to ensure high comparability of gene predictions, including those for  Hordeum parodii (6x) and  Hordeum gussoneanum (4x). The number of high-confidence gene models identified ranges from 35,573 for diploid  Hordeum murinum to 94,943 for hexaploid H. parodii (Supplementary Table 7). We assessed the quality of the Hordeum gene annotations using BUSCO (v5.8.0) with the poales_odb12 dataset, comprising 6,282 near-universal single-copy orthologues from Poales. On average, 97.35% of BUSCO genes were identified as complete, 0.69% as fragmented and 1.84% as missing (Supplementary Table 7). Independent benchmarking with OMArk and PSAURON further confirmed the high completeness and overall quality of the gene annotations (Supplementary Table 7). Transposable element (TE) annotation using the panEDTA pipeline31 revealed that transposons constituted on average 86.12% of the genome, ranging from 83.27% to 90.35% (Supplementary Table 8). <span style="font-size:13px;">(Related: <a href="how-to-train-a-upcoming-language-model-from-scratch-using-transfo-12653.html" style="color:#2563eb; font-weight:600;">How to train a upcoming language model from scratch usi...</a>)</span></p>
 <p>Recent findings suggest that a, Phylogenetic tree of Hordeum species. Sorghum bicolor, Oryza sativa, Brachypodium distachyon and Triticum monococcum were used as outgroups. Divergence times were inferred using 4DTV sites from genome-wide single-copy genes after excluding genomic regions with strong phylogenetic discordance (nRF &gt; 0.21) identified in Extended Data Fig. 6c. Coloured rectangles represent different genome groups. Hap1 and Hap2 represent phased haplotypes of heterozygous diploid H. bulbosum, and Sub1, Sub2 and Sub3 indicate distinct ancestral subgenomes in polyploid species. The background colours represent the genome groups of the species in the following order from top to bottom: I, Xa, H, Xu and outgroup species. b, GENESPACE synteny plot among 34 Hordeum haplomes and four outgroup genomes. Grey bars represent chromosomes arranged by genomic position. For visualization purposes, the chromosomes of the smaller outgroup genomes (S. bicolor, O. sativa and B. distachyon) were proportionally enlarged by a factor of five. c, Dot plot comparisons of chromosome 4H across genomes diverged at different times. Two species were randomly selected from each phylogenetic node for sequence alignment (Supplementary Table 11). Six representative comparisons are shown, with the remaining comparisons presented in Extended Data Fig. 3a. The number displayed at the top of each alignment represents the estimated divergence time between the species shown on the x axis and those shown on the y axis.</p>
 <p>Based on the annotated gene sets of all species, we constructed a gene-based Hordeum pangenome. Overall, 42.4% of genes were classified as core genes, 56.5% as shell genes and 1.1% as cloud genes (Extended Data Fig. 1b,c). Gene ontology enrichment analysis highlighted that phosphorylation- and kinase-related functions were enriched among core genes, ATP and RNA binding were enriched among shell genes, and defence response and oxidative stress response were enriched among cloud genes (Supplementary Fig. 29). Nucleotide-binding leucine-rich repeat (NLR) genes are key components of the plant immune system and have essential roles in resistance to fungal and other pathogens32,33. A map of their diversity is critical for advancing our understanding of disease resistance mechanisms in crops. Analysis of NLR genes revealed that I genome species contain significantly more NLR genes than the other Hordeum genome groups (Welch’s t-test, P = 1.8 × 10−6) (Extended Data Fig. 2a,b). To further characterize this diversity, we constructed an NLR pangenome across Hordeum haploid genome equivalents (haplomes), comprising 800 orthogroups, of which 13.75% were classified as core, 27.75% as shell and 58.50% as cloud gene families (Extended Data Fig. 2c). In addition, NLR gene clusters were significantly less abundant on chromosomes 4H and 5H than on the remaining chromosomes (Wilcoxon test, P &lt; 2.2 × 10−16) (Extended Data Fig. 2d). Similarly, genome-wide analyses of pentatricopeptide repeat (PPR) proteins and mitochondrial transcription termination factors (mTERFs) revealed significant expansions of restorer-of-fertility-like (RFL) subgroups in the I and Xa genome groups relative to the H and Xu genome groups. Because RFL proteins are involved in fertility restoration in plants carrying cytoplasmic male sterility (CMS)34, these expansions suggest that the smaller RFL repertoires of the H and Xu genome groups are derived rather than ancestral (Supplementary Fig. 30a–e and Supplementary Table 9). Expansion of RFL-PPRs was most pronounced in the I genome group, whereas RFL-mTERFs were significantly expanded in both the I and Xa genome groups. Notably, RFL-mTERF genes clustered on the short arm of chromosome 6H exhibited extensive copy-number variation between Xa–I and H–Xu genome groups (t-test, P = 5.2 × 10−6) (Supplementary Fig. 30f). This region includes the Rfm3 locus, which partially restores fertility in plants carrying the msm1 cytoplasm used in hybrid barley breeding35 (Supplementary Fig. 30g).</p>
 <p>To assess the feasibility of graph-based pangenome analyses across highly diverged Hordeum genomes, we constructed a pangenome graph using Progressive Cactus and hal2vg, comprising 2.53 billion nodes and 3.46 billion edges (68.7 Gb). Approximately 68% of nodes represented single-base variants, illustrating the extensive sequence divergence captured by the graph. Although computationally intensive tasks such as indexing remained infeasible (Methods), we successfully performed global analyses of core, shell and cloud sequence content, graph saturation, sequence conservation and variant diversity (Supplementary Figs. 31–34). These results demonstrate both the potential of graph-based approaches for genus-wide comparative genomics and the need for more scalable methods for graph exploration and interpretation.</p>
@@ -1231,141 +1231,24 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="conservation-of-the-tumour-microenvironment-across-organs-and-spe-557.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #557. Conservation of the tumour microenvironment across organs and species
+        <a href="latest-update-sair-accelerating-pharma-rd-with-ai-powered-structu-11944.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #11944. Latest Update: SAIR: Accelerating Pharma R&D with AI-Powered Structural Intelligence
         </a>
         
-        <a href="latest-update-ai-uncovers-hidden-ozempic-side-effects-across-4000-305.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #305. Latest Update: AI uncovers hidden Ozempic side effects across 400,000 Reddit posts
+        <a href="training-mrna-language-models-across-25-species-for-165-11775.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #11775. Training mRNA Language Models Across 25 Species for $165
         </a>
         
-        <a href="tech-report-how-long-does-it-take-to-fly-across-the-entire-gta-6--153.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #153. Tech Report: How Long Does It Take To Fly Across The Entire GTA 6 Map?
+        <a href="breaking-discoformer-one-transformer-for-density-and-score-across-11615.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #11615. Breaking: DiScoFormer: One transformer for density and score, across distributions
         </a>
         
-        <a href="an-army-explosion-could-send-toxic-lead-dust-across-multiple-stat-22.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #22. An Army explosion could send toxic lead dust across multiple states. Here’s what residents need to know
+        <a href="cost-per-task-using-cheap-classifiers-to-route-across-gemini-mode-11576.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #11576. Cost per task: Using cheap classifiers to route across Gemini models and thinking levels
         </a>
         
     </div>
     
     </div>
-
-<!-- Banner Otomatis Saat Klik dari Google + Tombol Close -->
-<style>
-  #googleAdsBox {
-    display: none;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    z-index: 99999;
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    padding: 28px 8px 8px 8px;
-    width: 316px;
-    box-sizing: border-box;
-  }
-  #googleAdsBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 26px;
-    background: #0f172a;
-    color: #ffffff;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-    font-size: 11px;
-    font-family: Arial, sans-serif;
-  }
-  #googleAdsClose {
-    background: #ef4444;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    width: 22px;
-    height: 20px;
-    font-size: 15px;
-    line-height: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0;
-  }
-  #googleAdsClose:hover {
-    background: #dc2626;
-  }
-  #googleAdsSlot {
-    width: 300px;
-    height: 250px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  @media (max-width: 480px) {
-    #googleAdsBox {
-      left: 50%;
-      right: auto;
-      transform: translateX(-50%);
-      bottom: 12px;
-    }
-  }
-</style>
-
-<div id="googleAdsBox">
-  <div id="googleAdsBar">
-    <span>Advertisement</span>
-    <button id="googleAdsClose" type="button" title="Close" onclick="tutupGoogleAds()">&times;</button>
-  </div>
-  <div id="googleAdsSlot"></div>
-</div>
-
-<script>
-(function() {
-  function datangDariGoogle() {
-    var ref = (document.referrer || "").toLowerCase();
-    var query = new URLSearchParams(window.location.search);
-    return ref.indexOf("google.") !== -1 || query.get("from_google") === "1";
-  }
-
-  function muatIklan(target) {
-    atOptions = {
-      'key' : '52fc2d82f5b0964edc0ba2f6a4053f9a',
-      'format' : 'iframe',
-      'height' : 250,
-      'width' : 300,
-      'params' : {}
-    };
-    var scriptIklan = document.createElement("script");
-    scriptIklan.type = "text/javascript";
-    scriptIklan.src = "https://bicea.org/22/52fc2d82f5b0964edc0ba2f6a4053f9a";
-    target.innerHTML = "";
-    target.appendChild(scriptIklan);
-  }
-
-  window.tutupGoogleAds = function() {
-    var box = document.getElementById("googleAdsBox");
-    var slot = document.getElementById("googleAdsSlot");
-    if (box) box.style.display = "none";
-    if (slot) slot.innerHTML = "";
-  };
-
-  window.addEventListener("DOMContentLoaded", function() {
-    if (datangDariGoogle()) {
-      var box = document.getElementById("googleAdsBox");
-      var slot = document.getElementById("googleAdsSlot");
-      if (box && slot) {
-        box.style.display = "block";
-        muatIklan(slot);
-      }
-    }
-  });
-})();
-</script>
-
 </body>
 </html>

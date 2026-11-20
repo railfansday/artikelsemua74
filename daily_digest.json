@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-20T01:18:54.171147",
-  "totalArticles": 594,
+  "generatedAt": "2026-11-20T16:06:28.262086",
+  "totalArticles": 12656,
   "categoryBreakdown": {
-    "General": 414,
-    "AI & Tech": 110,
-    "Business & Policy": 18,
-    "Hardware & Chips": 34,
-    "EV & Auto": 5,
-    "Gadgets": 13
+    "Business & Policy": 591,
+    "General": 10239,
+    "AI & Tech": 1106,
+    "Hardware & Chips": 166,
+    "Gadgets": 331,
+    "EV & Auto": 223
   },
   "topSources": {
-    "Eurogamer": 100,
-    "Nature": 75,
-    "Sciencedaily": 60,
-    "Dexerto": 50,
-    "Space": 50,
-    "Tomshardware": 50,
-    "Digitaltrends": 30,
-    "Gamespot": 30,
-    "Zdnet": 25,
-    "Forbes": 25
+    "Co": 903,
+    "Hugging Face": 898,
+    "Sciencedaily": 209,
+    "Eschoolnews": 200,
+    "Cbssports": 171,
+    "Electrek": 149,
+    "Yahoo": 149,
+    "Dw": 136,
+    "Dailymail": 135,
+    "Realworkfromanywhere": 128
   },
   "latestHeadlines": [
     {
-      "id": 594,
-      "title": "As El Niño builds, studies of extreme marine heatwaves must start now",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/as-el-nio-builds-studies-of-extreme-marine-heatwaves-must-start-n-594.html",
+      "id": 12656,
+      "title": "Peltola win doesn’t end DOJ scrutiny of Alaska Senate race, officials say",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/peltola-win-doesnt-end-doj-scrutiny-of-alaska-senate-race-officia-12656.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 12655,
+      "title": "Senate panel vote on National Science Foundation nominee is abruptly pulled",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/senate-panel-vote-on-national-science-foundation-nominee-is-abrup-12655.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 12654,
+      "title": "Latest Update: At least seven progressives voted against Hakeem Jeffries for speaker",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/latest-update-at-least-seven-progressives-voted-against-hakeem-je-12654.html",
       "category": "General"
     },
     {
-      "id": 593,
-      "title": "Tech Report: Architecture of a portal complex embedded in the poxvirus core",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-architecture-of-a-portal-complex-embedded-in-the-poxv-593.html",
+      "id": 12653,
+      "title": "How to train a upcoming language model from scratch using Transformers and Tokenizers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-train-a-upcoming-language-model-from-scratch-using-transfo-12653.html",
       "category": "General"
     },
     {
-      "id": 592,
-      "title": "Voyager 1 achieves a cosmic first: one ‘light day’ from Earth",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/voyager-1-achieves-a-cosmic-first-one-light-day-from-earth-592.html",
+      "id": 12652,
+      "title": "Breaking: How to generate text: using different decoding methods for language generation with Transformers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-how-to-generate-text-using-different-decoding-methods-fo-12652.html",
       "category": "General"
     },
     {
-      "id": 591,
-      "title": "Latest Update: Daily briefing: How vampire bats survive on blood alone",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/latest-update-daily-briefing-how-vampire-bats-survive-on-blood-al-591.html",
+      "id": 12651,
+      "title": "Tech Report: The Reformer - Pushing the limits of language modeling",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-the-reformer-pushing-the-limits-of-language-modeling-12651.html",
       "category": "General"
     },
     {
-      "id": 590,
-      "title": "Industry News: How measuring the state of nature can reverse biodiversity loss",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/industry-news-how-measuring-the-state-of-nature-can-reverse-biodi-590.html",
+      "id": 12650,
+      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-12650.html",
       "category": "General"
     },
     {
-      "id": 589,
-      "title": "Open up peer review to early-career researchers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/open-up-peer-review-to-early-career-researchers-589.html",
+      "id": 12649,
+      "title": "Transformer-based Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/transformer-based-encoder-decoder-models-12649.html",
       "category": "General"
     },
     {
-      "id": 588,
-      "title": "Tech Report: US loses measles elimination status: what it means for the world",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-us-loses-measles-elimination-status-what-it-means-for-588.html",
+      "id": 12648,
+      "title": "Hyperparameter Search with Transformers and Ray Tune",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/hyperparameter-search-with-transformers-and-ray-tune-12648.html",
       "category": "General"
     },
     {
-      "id": 587,
-      "title": "Breaking: The world’s most precious brain samples — and what they teach us about being human",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-the-worlds-most-precious-brain-samples-and-what-they-tea-587.html",
-      "category": "General"
-    },
-    {
-      "id": 586,
-      "title": "Industry News: Newly introduced US Congress should ‘reimagine’ science — not just return to the past",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/industry-news-newly-introduced-us-congress-should-reimagine-scien-586.html",
-      "category": "General"
-    },
-    {
-      "id": 585,
-      "title": "‘Light and sound’ therapy for Alzheimer’s flops in long-anticipated trial",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/light-and-sound-therapy-for-alzheimers-flops-in-long-anticipated--585.html",
+      "id": 12647,
+      "title": "Breaking: Porting fairseq wmt19 translation system to transformers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-porting-fairseq-wmt19-translation-system-to-transformers-12647.html",
       "category": "General"
     }
   ]

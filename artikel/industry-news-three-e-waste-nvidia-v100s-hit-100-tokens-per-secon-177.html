@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-177">A homelab builder benchmarked three used Nvidia V100s on Qwen 3.6 35B, achieving about 100 tokens per second in a custom setup costing $1,042 with just “e-waste” GPUs. The smaller, dense Qwen 3.6 27B manages about 24 tokens per second on the same platform, and the V100s use about half the energy of the same number of P100s for a given job.</p>
-<p>Sources indicate that the blog post, “Scaling ‘E-Waste’: LLMs on Multiple Decommissioned GPUs,” compares nine different builds — one to three K80s, P100s, or V100-16GB cards — on a single Supermicro dual-Xeon board. The test uses llama.cpp and covers more than 130 LLM tests, including Qwen 2.5, Gemma 4, and, of course, Qwen 3.6, at Q4/Q8/F16 precisions and from 4K to 128K context sizes. GPU energy per run is also recorded. The builder is “daily driving Qwen 3.6 35B” on the V100s and notes that scaling decommissioned GPUs will only get you so far. <span style="font-size:13px;">(Related: <a href="as-el-nio-builds-studies-of-extreme-marine-heatwaves-must-start-n-594.html" style="color:#2563eb; font-weight:600;">As El Niño builds, studies of extreme marine heatwaves ...</a>)</span></p>
-<p>“E-waste,” in this case, refers to decommissioned enterprise GPUs, which are a popular but somewhat underpowered option when compared to very expensive modern alternatives. The Nvidia Tesla V100s in question are tested as a follow-up to a July round which tested 15 “e-waste” GPUs, and this time the board and CPUs stay the same for every build — the Supermicro X10DRG-Q with two Intel Xeon E5-2687W 12-core CPUs, powered by the Corsair HX1500i PSU. <span style="font-size:13px;">(Related: <a href="a-glucose-powered-artificial-neuroimmune-axis-for-metabolic-contr-556.html" style="color:#2563eb; font-weight:600;">A glucose-powered artificial neuroimmune axis for metab...</a>)</span></p>
-<p>Sources indicate that performance is judged based on what is considered “realtime interaction” which, here, is 70 tokens per second. As to why the number of GPUs is three: Qwen 3.6 35B, the primary tested model, fails on just one or two at Q8, or 8-bit quantization.</p>
+<p>Sources indicate that the blog post, “Scaling ‘E-Waste’: LLMs on Multiple Decommissioned GPUs,” compares nine different builds — one to three K80s, P100s, or V100-16GB cards — on a single Supermicro dual-Xeon board. The test uses llama.cpp and covers more than 130 LLM tests, including Qwen 2.5, Gemma 4, and, of course, Qwen 3.6, at Q4/Q8/F16 precisions and from 4K to 128K context sizes. GPU energy per run is also recorded. The builder is “daily driving Qwen 3.6 35B” on the V100s and notes that scaling decommissioned GPUs will only get you so far. <span style="font-size:13px;">(Related: <a href="breaking-how-to-generate-text-using-different-decoding-methods-fo-12652.html" style="color:#2563eb; font-weight:600;">Breaking: How to generate text: using different decodin...</a>)</span></p>
+<p>“E-waste,” in this case, refers to decommissioned enterprise GPUs, which are a popular but somewhat underpowered option when compared to very expensive modern alternatives. The Nvidia Tesla V100s in question are tested as a follow-up to a July round which tested 15 “e-waste” GPUs, and this time the board and CPUs stay the same for every build — the Supermicro X10DRG-Q with two Intel Xeon E5-2687W 12-core CPUs, powered by the Corsair HX1500i PSU.</p>
+<p>Sources indicate that performance is judged based on what is considered “realtime interaction” which, here, is 70 tokens per second. As to why the number of GPUs is three: Qwen 3.6 35B, the primary tested model, fails on just one or two at Q8, or 8-bit quantization. <span style="font-size:13px;">(Related: <a href="how-to-train-a-upcoming-language-model-from-scratch-using-transfo-12653.html" style="color:#2563eb; font-weight:600;">How to train a upcoming language model from scratch usi...</a>)</span></p>
 <p>Here are the given prices, with the note that they aren’t “100% reflective of what you could find on eBay today,” although the totals count only one of the two CPUs and omit RAM, storage, the case, and any cooling.</p>
 <p>The older cards are relatively inexpensive because they “run hot and ship without cooling,” which required the builder to 3D print one blower duct per card and has led to the development of a standalone cooler.</p>
 <p>The bench itself involves 10 runs of 512 generated tokens per test with context pre-filled to 4K, 32K, 64K, or 128K. Qwen 3.6 35B is a mixture-of-experts (MoE) model, which only activates about 3 billion out of its 35 billion total parameters per token. The numbers that immediately follow are at Q8.</p>
@@ -190,141 +190,24 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="nvidia-board-considering-ousting-ceo-jensen-huang-report-claims-a-522.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #522. Nvidia board considering ousting CEO Jensen Huang, report claims, as news of a second affair comes to light
+        <a href="industry-news-nvidia-board-reportedly-prepare-to-give-ceo-jensen--5179.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #5179. Industry News: Nvidia board reportedly prepare to give CEO Jensen Huang the boot, as second alleged affair thrusts him closer to seriously lusty Crusader Kings playthrough territory
         </a>
         
-        <a href="nvidia-geforce-driver-bug-reportedly-hammers-ssds-with-up-to-30gb-241.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #241. Nvidia GeForce driver bug reportedly hammers SSDs with up to 30GB of writes per hour
+        <a href="industry-news-serverless-inference-with-hugging-face-and-nvidia-n-12196.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #12196. Industry News: Serverless Inference with Hugging Face and NVIDIA NIM
         </a>
         
-        <a href="beyond-tokens-why-intelligence-per-watt-is-the-metric-that-matter-110.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #110. Beyond Tokens: Why Intelligence Per Watt Is The Metric That Matters
+        <a href="industry-news-white-house-largely-mum-in-aftermath-of-historic-th-9996.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #9996. Industry News: White House largely mum in aftermath of historic three-way summit
         </a>
         
-        <a href="industry-news-nvidias-startup-stakes-ballooned-to-65b-but-huangs--25.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #25. Industry News: Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future  deals in doubt
+        <a href="industry-news-three-years-prison-in-kyrgyzstan-for-alleged-repost-8940.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #8940. Industry News: Three Years’ Prison in Kyrgyzstan for Alleged Repost
         </a>
         
     </div>
     
     </div>
-
-<!-- Banner Otomatis Saat Klik dari Google + Tombol Close -->
-<style>
-  #googleAdsBox {
-    display: none;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    z-index: 99999;
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    padding: 28px 8px 8px 8px;
-    width: 316px;
-    box-sizing: border-box;
-  }
-  #googleAdsBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 26px;
-    background: #0f172a;
-    color: #ffffff;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-    font-size: 11px;
-    font-family: Arial, sans-serif;
-  }
-  #googleAdsClose {
-    background: #ef4444;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    width: 22px;
-    height: 20px;
-    font-size: 15px;
-    line-height: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0;
-  }
-  #googleAdsClose:hover {
-    background: #dc2626;
-  }
-  #googleAdsSlot {
-    width: 300px;
-    height: 250px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  @media (max-width: 480px) {
-    #googleAdsBox {
-      left: 50%;
-      right: auto;
-      transform: translateX(-50%);
-      bottom: 12px;
-    }
-  }
-</style>
-
-<div id="googleAdsBox">
-  <div id="googleAdsBar">
-    <span>Advertisement</span>
-    <button id="googleAdsClose" type="button" title="Close" onclick="tutupGoogleAds()">&times;</button>
-  </div>
-  <div id="googleAdsSlot"></div>
-</div>
-
-<script>
-(function() {
-  function datangDariGoogle() {
-    var ref = (document.referrer || "").toLowerCase();
-    var query = new URLSearchParams(window.location.search);
-    return ref.indexOf("google.") !== -1 || query.get("from_google") === "1";
-  }
-
-  function muatIklan(target) {
-    atOptions = {
-      'key' : '52fc2d82f5b0964edc0ba2f6a4053f9a',
-      'format' : 'iframe',
-      'height' : 250,
-      'width' : 300,
-      'params' : {}
-    };
-    var scriptIklan = document.createElement("script");
-    scriptIklan.type = "text/javascript";
-    scriptIklan.src = "https://bicea.org/22/52fc2d82f5b0964edc0ba2f6a4053f9a";
-    target.innerHTML = "";
-    target.appendChild(scriptIklan);
-  }
-
-  window.tutupGoogleAds = function() {
-    var box = document.getElementById("googleAdsBox");
-    var slot = document.getElementById("googleAdsSlot");
-    if (box) box.style.display = "none";
-    if (slot) slot.innerHTML = "";
-  };
-
-  window.addEventListener("DOMContentLoaded", function() {
-    if (datangDariGoogle()) {
-      var box = document.getElementById("googleAdsBox");
-      var slot = document.getElementById("googleAdsSlot");
-      if (box && slot) {
-        box.style.display = "block";
-        muatIklan(slot);
-      }
-    }
-  });
-})();
-</script>
-
 </body>
 </html>

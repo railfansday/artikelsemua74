@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-35730">Run your raw PyTorch training scripts on any kind of device.</p>
-<p>According to recent reports, most high-level libraries above PyTorch provide support for distributed training and mixed precision, but the abstraction they introduce require a user to learn a latest API if they want to customize the underlying training loop. 🤗 Accelerate was created for PyTorch people who like to have full control over their training loops but are reluctant to write (and maintain) the boilerplate code needed to use distributed training (for multi-GPU on one or several nodes, TPUs, ...) or mixed precision training. Plans forward include support for fairscale, deepseed, AWS SageMaker specific data-parallelism and model parallelism. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
-<p>It provides two things: a simple and consistent API that abstracts that boilerplate code and a launcher command to easily run those scripts on various setups. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-35737.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>According to recent reports, most high-level libraries above PyTorch provide support for distributed training and mixed precision, but the abstraction they introduce require a user to learn a latest API if they want to customize the underlying training loop. 🤗 Accelerate was created for PyTorch people who like to have full control over their training loops but are reluctant to write (and maintain) the boilerplate code needed to use distributed training (for multi-GPU on one or several nodes, TPUs, ...) or mixed precision training. Plans forward include support for fairscale, deepseed, AWS SageMaker specific data-parallelism and model parallelism. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
+<p>It provides two things: a simple and consistent API that abstracts that boilerplate code and a launcher command to easily run those scripts on various setups. <span style="font-size:13px;">(Related: <a href="this-simple-change-stops-robot-swarms-from-getting-stuck-47174.html" style="color:#2563eb; font-weight:600;">This simple change stops robot swarms from getting stuc...</a>)</span></p>
 <p>Let's first have a look at an example:.</p>
 <p>By just adding five lines of code to any standard PyTorch training script, you can now run noted script on any kind of distributed setting, as well as with or without mixed precision. 🤗 Accelerate even handles the device placement for you, so you can simplify the training loop above even further:.</p>
 <p>In contrast, here are the changes needed to have this code run with distributed training are the followings:.</p>
@@ -197,20 +197,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--35722.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35722. Introducing Optimum: The Optimization Toolkit for Transformers at Scale
+        <a href="latest-update-introducing-three-weeks-of-specialist-gta-and-not-g-47084.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47084. Latest Update: Introducing three weeks of specialist GTA - and not-GTA! - programming on Eurogamer
         </a>
         
-        <a href="industry-news-introducing-the-data-measurements-tool-an-interacti-35710.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35710. Industry News: Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        <a href="introducing-the-open-arabic-llm-leaderboard-47044.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47044. Introducing the Open Arabic LLM Leaderboard
         </a>
         
-        <a href="industry-news-introducing-snowball-fight-our-first-ml-agents-envi-35708.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35708. Industry News: Introducing Snowball Fight ☃️, our first ML-Agents environment
+        <a href="industry-news-introducing-the-ffasr-leaderboard-benchmarking-asr--46976.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46976. Industry News: Introducing the FFASR Leaderboard: Benchmarking ASR in the Real World
         </a>
         
-        <a href="accelerate-bert-inference-with-hugging-face-transformers-and-aws--35692.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35692. Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
+        <a href="introducing-real-world-voiceeq-measuring-the-human-quality-of-voi-46911.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46911. Introducing Real World VoiceEQ: Measuring the human quality of voice AI
         </a>
         
     </div>

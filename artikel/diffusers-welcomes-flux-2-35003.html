@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-35003">FLUX.2 is the recent series of image generation models from Black Forest Labs, preceded by the Flux.1 series. It is an entirely latest model with a new architecture and pre-training done from scratch! In this post, we discuss the key changes introduced in FLUX.2, performing inference with it under various setups, and LoRA fine-tuning.</p>
-<p>🚨 FLUX.2 is not meant to be a drop-in replacement of FLUX.1, but a new image generation and editing model. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
-<p>FLUX.2 can be used for both image-guided and text-guided image generation. Furthermore, it can take multiple images as reference inputs, while producing the final output image. Below, we briefly discuss the key changes introduced in FLUX.2. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>First, instead of two text encoders as in Flux.1, it uses a single text encoder — Mistral Small 3.1. Using a single text encoder greatly simplifies the process of computing prompt embeddings. The pipeline allows for a max_sequence_length of 512. Instead of using a single-layer output for the prompt embedding, FLUX.2 stacks outputs from intermediate layers, which have been known to be more beneficial.</p>
+<p>🚨 FLUX.2 is not meant to be a drop-in replacement of FLUX.1, but a new image generation and editing model.</p>
+<p>FLUX.2 can be used for both image-guided and text-guided image generation. Furthermore, it can take multiple images as reference inputs, while producing the final output image. Below, we briefly discuss the key changes introduced in FLUX.2. <span style="font-size:13px;">(Related: <a href="ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-47182.html" style="color:#2563eb; font-weight:600;">AI breakthrough cuts energy use by 100x while boosting ...</a>)</span></p>
+<p>First, instead of two text encoders as in Flux.1, it uses a single text encoder — Mistral Small 3.1. Using a single text encoder greatly simplifies the process of computing prompt embeddings. The pipeline allows for a max_sequence_length of 512. Instead of using a single-layer output for the prompt embedding, FLUX.2 stacks outputs from intermediate layers, which have been known to be more beneficial. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-47177.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>Sources indicate that FLUX.2 follows the same general multimodel diffusion transformer (MM-DiT) + parallel DiT architecture as Flux.1. As a refresher, MM-DiT blocks first process the image latents and conditioning text in separate streams, only joining the two together for the attention operation, and are thus referred to as “double-stream” blocks. The parallel blocks then operate on the concatenated image and text streams and can be regarded as “single-stream” blocks.</p>
 <p>The key DiT changes from Flux.1 to FLUX.2 are as follows:.</p>
 <p>Time and guidance information (in the form of AdaLayerNorm-Zero modulation parameters) is shared across all double-stream and single-stream transformer blocks, respectively, rather than having individual modulation parameters for each block as in Flux.1.</p>
@@ -272,20 +272,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-diffusers-welcomes-stable-diffusion-3-47036.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47036. Latest Update: Diffusers welcomes Stable Diffusion 3
+        </a>
+        
+        <a href="welcome-flux3-image-klein-in-diffusers-46696.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46696. Welcome FLUX.3 Image Klein in Diffusers
+        </a>
+        
         <a href="tech-report-diffusers-welcomes-stable-diffusion-35-large-35286.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35286. Tech Report: Diffusers welcomes Stable Diffusion 3.5 Large
         </a>
         
         <a href="industry-news-fast-lora-inference-for-flux-with-diffusers-and-pef-35092.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35092. Industry News: Fast LoRA inference for Flux with Diffusers and PEFT
-        </a>
-        
-        <a href="diffusers-welcomes-stable-diffusion-3-23876.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23876. Diffusers welcomes Stable Diffusion 3
-        </a>
-        
-        <a href="welcome-flux3-image-klein-in-diffusers-23630.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23630. Welcome FLUX.3 Image Klein in Diffusers
         </a>
         
     </div>

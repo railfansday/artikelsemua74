@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34999">DeepMath is an aligned math reasoning agent built on Qwen3-4B Thinking and fine-tuned with GRPO (Group Relative Policy Optimization). Instead of verbose text, the model emits tiny Python snippets for intermediate steps, runs them in a secure sandbox, and folds the results back into its reasoning, reducing errors and output length. The agent is implemented using the smolagents library.</p>
-<p>We evaluate DeepMath on four math datasets: MATH500, AIME, HMMT, and HLE, and show that:. <span style="font-size:13px;">(Related: <a href="hosting-your-models-and-datasets-on-hugging-face-spaces-using-str-35718.html" style="color:#2563eb; font-weight:600;">Hosting your Models and Datasets on Hugging Face Spaces...</a>)</span></p>
-<p>🤖 The math agent alone reduces output lengths by up to 66%, while often improving accuracy.</p>
-<p>⚡ GRPO training improves the agent performance even further, in almost all benchmarks. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-35731.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
+<p>We evaluate DeepMath on four math datasets: MATH500, AIME, HMMT, and HLE, and show that:.</p>
+<p>🤖 The math agent alone reduces output lengths by up to 66%, while often improving accuracy. <span style="font-size:13px;">(Related: <a href="ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-47182.html" style="color:#2563eb; font-weight:600;">AI breakthrough cuts energy use by 100x while boosting ...</a>)</span></p>
+<p>⚡ GRPO training improves the agent performance even further, in almost all benchmarks.</p>
 <p>👉 Code and evaluation scripts: https://github.com/IntelLabs/DeepMath 👉 Model: https://huggingface.co/Intel/deepmath-v1.</p>
-<p>Large language models (LLMs) have advanced reasoning capabilities, but mathematical problem-solving remains challenging; chain-of-thought traces can be lengthy and prone to arithmetic mistakes. Recent works[^1][^2] demonstrate that small models can reach strong performance, and other studies[^3] investigate tool use to improve reliability. What those papers generally do not emphasize is reducing trace verbosity or explicitly training models to prefer short, computation-oriented traces executed in a constrained, auditable environment.</p>
+<p>Large language models (LLMs) have advanced reasoning capabilities, but mathematical problem-solving remains challenging; chain-of-thought traces can be lengthy and prone to arithmetic mistakes. Recent works[^1][^2] demonstrate that small models can reach strong performance, and other studies[^3] investigate tool use to improve reliability. What those papers generally do not emphasize is reducing trace verbosity or explicitly training models to prefer short, computation-oriented traces executed in a constrained, auditable environment. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-47177.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>Offload deterministic computation to a safe executor.</p>
 <p>Train models to prefer concise, computation-oriented traces over verbose text.</p>
 <p>DeepMath tackles this by combining a small Python executor with a fine-tuned LLM, enabling concise, computation-driven reasoning. The model learns to generate short Python snippets, which are executed in a sandbox and reintegrated into the context. GRPO fine-tuning encourages this behavior by rewarding correctness and encouraging shorter outputs.</p>
@@ -213,20 +213,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-webai-releases-twil-8b-a-5-gib-open-weight-reasonin-41759.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #41759. Industry News: webAI Releases TwIL-8B: A 5 GiB Open-Weight Reasoning Model With a 98.2 MATH-500 Score
+        </a>
+        
         <a href="dabstep-data-agent-benchmark-for-multi-step-reasoning-35216.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35216. DABStep: Data Agent Benchmark for Multi-step Reasoning
         </a>
         
-        <a href="webai-releases-twil-8b-a-5-gib-open-weight-reasoning-model-with-a-30333.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #30333. webAI Releases TwIL-8B: A 5 GiB Open-Weight Reasoning Model With a 98.2 MATH-500 Score
+        <a href="anthropic-mathematician-claims-to-have-solved-167-year-old-math-p-47041.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47041. Anthropic mathematician claims to have solved 167-year-old math problem with Claude
         </a>
         
-        <a href="breaking-what-makes-a-dialog-agent-useful-35584.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35584. Breaking: What Makes a Dialog Agent Useful?
-        </a>
-        
-        <a href="breaking-nphardeval-leaderboard-unveiling-the-reasoning-abilities-35420.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35420. Breaking: NPHardEval Leaderboard: Unveiling the Reasoning Abilities of Large Language Models through Complexity Classes and Dynamic Updates
+        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-47028.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47028. Tiny Agents: an MCP-powered agent in 50 lines of code
         </a>
         
     </div>

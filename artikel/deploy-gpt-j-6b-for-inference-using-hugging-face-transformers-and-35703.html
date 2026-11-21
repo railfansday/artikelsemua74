@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-35703">Almost 6 months ago to the day, EleutherAI released GPT-J 6B, an open-source alternative to OpenAIs GPT-3. GPT-J 6B is the 6 billion parameter successor to EleutherAIs GPT-NEO family, a family of transformer-based language models based on the GPT architecture for text generation.</p>
-<p>EleutherAI's primary goal is to train a model that is equivalent in size to GPT⁠-⁠3 and make it available to the public under an open license. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
-<p>Over the last 6 months, GPT-J gained a lot of interest from Researchers, Data Scientists, and even Software Developers, but it remained very challenging to deploy GPT-J into production for real-world use cases and products. <span style="font-size:13px;">(Related: <a href="tech-report-deploy-hugging-face-models-easily-with-amazon-sagemak-35725.html" style="color:#2563eb; font-weight:600;">Tech Report: Deploy Hugging Face models easily with Ama...</a>)</span></p>
+<p>EleutherAI's primary goal is to train a model that is equivalent in size to GPT⁠-⁠3 and make it available to the public under an open license.</p>
+<p>Over the last 6 months, GPT-J gained a lot of interest from Researchers, Data Scientists, and even Software Developers, but it remained very challenging to deploy GPT-J into production for real-world use cases and products. <span style="font-size:13px;">(Related: <a href="scientists-discover-ai-can-make-humans-more-creative-47185.html" style="color:#2563eb; font-weight:600;">Scientists discover AI can make humans more creative...</a>)</span></p>
 <p>There are some hosted solutions to use GPT-J for production workloads, like the Hugging Face Inference API, or for experimenting using  EleutherAIs 6b playground, but fewer examples on how to easily deploy it into your own environment.</p>
 <p>In this blog post, you will learn how to easily deploy GPT-J using Amazon SageMaker and the Hugging Face Inference Toolkit with a few lines of code for scalable, reliable, and secure real-time inference using a regular size GPU instance with NVIDIA T4 (~500$/m).</p>
-<p>But before we get into it, I want to explain why deploying GPT-J into production is challenging.</p>
+<p>But before we get into it, I want to explain why deploying GPT-J into production is challenging. <span style="font-size:13px;">(Related: <a href="latest-update-clavicular-allegedly-told-17-year-old-to-call-vodka-47157.html" style="color:#2563eb; font-weight:600;">Latest Update: Clavicular allegedly told 17-year-old to...</a>)</span></p>
 <p>The weights of the 6 billion parameter model represent a ~24GB memory footprint. To load it in float32, one would need at least 2x model size CPU RAM: 1x for initial weights and another 1x to load the checkpoint. So for GPT-J it would require at least 48GB of CPU RAM to just load the model.</p>
 <p>Industry observers note that to make the model more accessible, EleutherAI also provides float16 weights, and transformers has new options to reduce the memory footprint when loading large language models. Combining all this it should take roughly 12.1GB of CPU RAM to load the model.</p>
 <p>The caveat of this example is that it takes a very long time until the model is loaded into memory and ready for use. In my experiments, it took 3 minutes and 32 seconds to load the model with the code snippet above on a P3.2xlarge AWS EC2 instance (the model was not stored on disk). This duration can be reduced by storing the model already on disk, which reduces the load time to 1 minute and 23 seconds, which is still very long for production workloads where you need to consider scaling and reliability.</p>
@@ -229,8 +229,8 @@
             📰 #35479. Fetch Cuts ML Processing Latency by 50% Using Amazon SageMaker & Hugging Face
         </a>
         
-        <a href="the-partnership-amazon-sagemaker-and-hugging-face-35733.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35733. The Partnership: Amazon SageMaker and Hugging Face
+        <a href="from-hugging-face-to-amazon-sagemaker-studio-in-one-click-46925.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46925. From Hugging Face to Amazon SageMaker Studio in one click
         </a>
         
     </div>

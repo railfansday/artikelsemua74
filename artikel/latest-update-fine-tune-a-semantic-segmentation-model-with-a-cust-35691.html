@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-35691">Sources indicate that this guide reveals how you can fine-tune Segformer, a state-of-the-art semantic segmentation model. Our goal is to build a model for a pizza delivery robot, so it can see where to drive and recognize obstacles 🍕🤖. We'll first use an available segmentation dataset from the 🤗 hub. Then we'll fine-tune a pre-trained SegFormer model by using 🤗 transformers, an open-source library that offers easy-to-use implementations of state-of-the-art models. Along the way, you'll learn how to work with the Hugging Face Hub, the largest open-source catalog of models and datasets.</p>
-<p>Semantic segmentation is the task of classifying each pixel in an image. You can see it as a more precise way of classifying an image. It has a wide range of use cases in fields such as medical imaging and autonomous driving. For example, for our pizza delivery robot, it is important to know exactly where the sidewalk is in an image, not just whether there is a sidewalk or not. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-35736.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
-<p>Because semantic segmentation is a type of classification, the network architectures used for image classification and semantic segmentation are very similar. In 2014, a seminal paper by Long et al. used convolutional neural networks for semantic segmentation. More recently, Transformers have been used for image classification (e.g. ViT), and now they're also being used for semantic segmentation, pushing the state-of-the-art further. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
-<p>SegFormer is a model for semantic segmentation introduced by Xie et al. in 2021. It has a hierarchical Transformer encoder that doesn't use positional encodings (in contrast to ViT) and a simple multi-layer perceptron decoder. SegFormer achieves state-of-the-art performance on multiple common datasets. Let's see how our pizza delivery robot performs for sidewalk images.</p>
+<p>Semantic segmentation is the task of classifying each pixel in an image. You can see it as a more precise way of classifying an image. It has a wide range of use cases in fields such as medical imaging and autonomous driving. For example, for our pizza delivery robot, it is important to know exactly where the sidewalk is in an image, not just whether there is a sidewalk or not. <span style="font-size:13px;">(Related: <a href="industry-news-ai-powered-robot-learns-how-to-harvest-tomatoes-mor-47184.html" style="color:#2563eb; font-weight:600;">Industry News: AI-powered robot learns how to harvest t...</a>)</span></p>
+<p>Because semantic segmentation is a type of classification, the network architectures used for image classification and semantic segmentation are very similar. In 2014, a seminal paper by Long et al. used convolutional neural networks for semantic segmentation. More recently, Transformers have been used for image classification (e.g. ViT), and now they're also being used for semantic segmentation, pushing the state-of-the-art further.</p>
+<p>SegFormer is a model for semantic segmentation introduced by Xie et al. in 2021. It has a hierarchical Transformer encoder that doesn't use positional encodings (in contrast to ViT) and a simple multi-layer perceptron decoder. SegFormer achieves state-of-the-art performance on multiple common datasets. Let's see how our pizza delivery robot performs for sidewalk images. <span style="font-size:13px;">(Related: <a href="this-simple-change-stops-robot-swarms-from-getting-stuck-47174.html" style="color:#2563eb; font-weight:600;">This simple change stops robot swarms from getting stuc...</a>)</span></p>
 <p>In a recent development, the installation of git-lfs might be different on your system. Note that Google Colab has Git LFS pre-installed.</p>
 <p>The first step in any ML project is assembling a good dataset. In order to train a semantic segmentation model, we need a dataset with semantic segmentation labels. We can either use an existing dataset from the Hugging Face Hub, such as ADE20k, or create our own dataset by annotating images with corresponding segmentation maps.</p>
 <p>In a recent development, for our pizza delivery robot, we could use an existing autonomous driving dataset such as CityScapes or BDD100K. However, these datasets were captured by cars driving on the road. Since our delivery robot will be driving on the sidewalk, there will be a mismatch between the images in these datasets and the data our robot will see in the real world.</p>
@@ -210,20 +210,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-t-47085.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47085. Industry News: Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers
+        </a>
+        
+        <a href="tech-report-fine-tuning-a-350m-model-for-better-structured-output-46777.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46777. Tech Report: Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps
+        </a>
+        
         <a href="fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-35735.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35735. Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
         </a>
         
         <a href="latest-update-fine-tune-vit-for-image-classification-with-transfo-35696.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35696. Latest Update: Fine-Tune ViT for Image Classification with 🤗 Transformers
-        </a>
-        
-        <a href="breaking-train-and-fine-tune-sentence-transformers-models-35641.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35641. Breaking: Train and Fine-Tune Sentence Transformers Models
-        </a>
-        
-        <a href="fine-tune-whisper-for-multilingual-asr-with-transformers-35612.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35612. Fine-Tune Whisper For Multilingual ASR with 🤗 Transformers
         </a>
         
     </div>

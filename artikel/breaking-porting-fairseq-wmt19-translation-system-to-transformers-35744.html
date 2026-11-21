@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-35744">This article is an attempt to document how fairseq wmt19 translation system was ported to transformers.</p>
-<p>I was looking for some interesting project to work on and Sam Shleifer suggested I work on porting a high quality translator. <span style="font-size:13px;">(Related: <a href="industry-news-introducing-the-data-measurements-tool-an-interacti-35710.html" style="color:#2563eb; font-weight:600;">Industry News: Introducing the Data Measurements Tool: ...</a>)</span></p>
+<p>I was looking for some interesting project to work on and Sam Shleifer suggested I work on porting a high quality translator.</p>
 <p>I read the short paper: Facebook FAIR's WMT19 News Translation Task Submission that describes the original system and decided to give it a try.</p>
-<p>Initially, I had no idea how to approach this complex project and Sam helped me to break it down to smaller tasks, which was of a great help. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
-<p>Industry observers note that I chose to work with the pre-trained en-ru/ru-en models during porting as I speak both languages. It'd have been much more difficult to work with de-en/en-de pairs as I don't speak German, and being able to evaluate the translation quality by just reading and making sense of the outputs at the advanced stages of the porting process saved me a lot of time.</p>
-<p>It has been revealed that also, as I did the initial porting with the en-ru/ru-en models, I was totally unaware that the de-en/en-de models used a merged vocabulary, whereas the former used 2 separate vocabularies of different sizes. So once I did the more complicated work of supporting 2 separate vocabularies, it was trivial to get the merged vocabulary to work.</p>
+<p>Initially, I had no idea how to approach this complex project and Sam helped me to break it down to smaller tasks, which was of a great help.</p>
+<p>Industry observers note that I chose to work with the pre-trained en-ru/ru-en models during porting as I speak both languages. It'd have been much more difficult to work with de-en/en-de pairs as I don't speak German, and being able to evaluate the translation quality by just reading and making sense of the outputs at the advanced stages of the porting process saved me a lot of time. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
+<p>It has been revealed that also, as I did the initial porting with the en-ru/ru-en models, I was totally unaware that the de-en/en-de models used a merged vocabulary, whereas the former used 2 separate vocabularies of different sizes. So once I did the more complicated work of supporting 2 separate vocabularies, it was trivial to get the merged vocabulary to work. <span style="font-size:13px;">(Related: <a href="latest-update-kfc-just-released-fried-cheese-with-four-different--47152.html" style="color:#2563eb; font-weight:600;">Latest Update: KFC just released fried cheese with four...</a>)</span></p>
 <p>The first step was to cheat, of course. Why make a substantial effort when one can make a little one. So I wrote a short notebook that in a few lines of code provided a proxy to fairseq and emulated transformers API.</p>
 <p>If no other things, but basic translation, was required, this would have been enough. But, of course, we wanted to have the full porting, so after having this small victory, I moved onto much harder things.</p>
 <p>For the sake of this article let's assume that we work under ~/porting, and therefore let's create this directory:.</p>
@@ -355,20 +355,20 @@ has a script run_eval.py to perform the evaluation.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35750. Breaking: How to train a new language model from scratch using Transformers and Tokenizers
+        <a href="developer-vibe-codes-windows-11-alternative-operating-system-for--47116.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47116. Developer vibe codes Windows 11 alternative operating system for amd64, arm64, and riscv64 hardware
         </a>
         
-        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35749. How to generate text: using different decoding methods for language generation with Transformers
+        <a href="industry-news-fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-t-47085.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47085. Industry News: Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers
         </a>
         
-        <a href="latest-update-hyperparameter-search-with-transformers-and-ray-tun-35745.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35745. Latest Update: Hyperparameter Search with Transformers and Ray Tune
+        <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-47063.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47063. Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1
         </a>
         
-        <a href="faster-tensorflow-models-in-hugging-face-transformers-35740.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35740. Faster TensorFlow models in Hugging Face Transformers
+        <a href="industry-news-vast-claims-petabyte-ssds-will-outgrow-todays-paral-47046.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47046. Industry News: VAST claims petabyte SSDs will outgrow today’s parallel file system RAID
         </a>
         
     </div>

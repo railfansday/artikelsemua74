@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34989">Transformers v5 redesigns how tokenizers work. The substantial tokenizers reformat separates tokenizer design from trained vocabulary (much like how PyTorch separates neural network architecture from learned weights). The result is tokenizers you can inspect, customize, and train from scratch with far less friction.</p>
-<p>TL;DR: This blog explains how tokenization works in Transformers and why v5 is a major redesign, with clearer internals, a clean class hierarchy, and a single fast backend. It’s a practical guide for anyone who wants to understand, customize, or train model-specific tokenizers instead of treating them as black boxes. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
-<p>For experts: If you're already familiar with the concepts and want to understand the changes in v5, go to v5 Separates Tokenizer Architecture from Trained Vocab. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-35743.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>TL;DR: This blog explains how tokenization works in Transformers and why v5 is a major redesign, with clearer internals, a clean class hierarchy, and a single fast backend. It’s a practical guide for anyone who wants to understand, customize, or train model-specific tokenizers instead of treating them as black boxes. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-47168.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
+<p>For experts: If you're already familiar with the concepts and want to understand the changes in v5, go to v5 Separates Tokenizer Architecture from Trained Vocab. <span style="font-size:13px;">(Related: <a href="this-ai-knew-the-answers-but-didnt-understand-the-questions-47165.html" style="color:#2563eb; font-weight:600;">This AI knew the answers but didn’t understand the ques...</a>)</span></p>
 <p>Before diving into the changes, let's rapidly cover what tokenization does and how the pieces fit together.</p>
 <p>It has been revealed that language models don't read raw text. They consume sequences of integers usually called token IDs or input IDs. Tokenization is the process of converting raw text into these token IDs. (Try the tokenization playground here to visualize tokenization.).</p>
 <p>Industry observers note that tokenization is a broad concept used across natural language processing and text processing generally. This post focuses specifically on tokenization for Large Language Models (LLMs) using the transformers and tokenizers libraries.</p>
@@ -239,20 +239,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35750. Breaking: How to train a new language model from scratch using Transformers and Tokenizers
+        <a href="industry-news-fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-t-47085.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47085. Industry News: Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers
         </a>
         
-        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35749. How to generate text: using different decoding methods for language generation with Transformers
+        <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-47063.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47063. Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1
         </a>
         
-        <a href="latest-update-hyperparameter-search-with-transformers-and-ray-tun-35745.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35745. Latest Update: Hyperparameter Search with Transformers and Ray Tune
+        <a href="training-and-finetuning-reranker-models-with-sentence-transformer-47032.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47032. Training and Finetuning Reranker Models with Sentence Transformers
         </a>
         
-        <a href="breaking-porting-fairseq-wmt19-translation-system-to-transformers-35744.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35744. Breaking: Porting fairseq wmt19 translation system to transformers
+        <a href="multimodal-embedding-reranker-models-with-sentence-transformers-47012.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47012. Multimodal Embedding & Reranker Models with Sentence Transformers
         </a>
         
     </div>

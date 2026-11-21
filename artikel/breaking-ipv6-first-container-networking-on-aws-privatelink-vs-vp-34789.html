@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34789">Industry observers note that when you connect containers over IPv6, should you use PrivateLink, VPC Lattice or VPC endpoints? I was not sure either, so I put the same container behind all three paths and measured speed and security under the same conditions. The short answer: choose a path less by speed and more by whether the provider needs to know who is calling.</p>
-<p>Industry observers note that this article is a deeper write-up of my English talk "IPv6-first container network design practices" at JAWS-UG Yamanashi #14 on November 21, 2026. It includes background and lessons that did not fit into the 20-minute slot. All numbers were measured in the Tokyo Region (ap-northeast-1) on November 19, 2026. <span style="font-size:13px;">(Related: <a href="industry-news-hugging-face-on-pytorch-xla-tpus-35739.html" style="color:#2563eb; font-weight:600;">Industry News: Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
-<p>This is for engineers who connect containers on Amazon ECS or similar platforms across several VPCs or accounts. If every team owns its own VPC and you keep asking yourself how services should talk to each other, I hope this gives you something concrete to decide with. <span style="font-size:13px;">(Related: <a href="the-partnership-amazon-sagemaker-and-hugging-face-35733.html" style="color:#2563eb; font-weight:600;">The Partnership: Amazon SageMaker and Hugging Face...</a>)</span></p>
+<p>Industry observers note that this article is a deeper write-up of my English talk "IPv6-first container network design practices" at JAWS-UG Yamanashi #14 on November 21, 2026. It includes background and lessons that did not fit into the 20-minute slot. All numbers were measured in the Tokyo Region (ap-northeast-1) on November 19, 2026. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
+<p>This is for engineers who connect containers on Amazon ECS or similar platforms across several VPCs or accounts. If every team owns its own VPC and you keep asking yourself how services should talk to each other, I hope this gives you something concrete to decide with. <span style="font-size:13px;">(Related: <a href="scientists-are-seriously-asking-if-bees-and-chatgpt-are-conscious-47156.html" style="color:#2563eb; font-weight:600;">Scientists are seriously asking if bees and ChatGPT are...</a>)</span></p>
 <p>According to recent reports, it is also for teams that started thinking about IPv6 because of the public IPv4 charge. You may know the names PrivateLink and VPC Lattice but have never compared their actual speed or how you secure them. That is exactly the gap this article tries to fill.</p>
 <p>By the end, you should be able to explain how to decide IPv6 per subnet tier and apply it to your own setup, without moving everything to IPv6-only at once.</p>
 <p>Recent findings suggest that you will also be able to explain the speed and security differences between the three paths with real numbers and raw logs. The article ends with a top-down checklist for choosing a path, which you can bring straight into a design review.</p>
@@ -228,20 +228,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-introducing-snowball-fight-our-first-ml-agents-envi-35708.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35708. Industry News: Introducing Snowball Fight ☃️, our first ML-Agents environment
+        <a href="setting-up-aws-control-tower-these-scp-and-networking-mistakes-ca-46469.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46469. Setting Up AWS Control Tower? These SCP and Networking Mistakes Can Cost You Hours
         </a>
         
-        <a href="accelerate-bert-inference-with-hugging-face-transformers-and-aws--35692.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35692. Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
+        <a href="gta-6-glitch-lets-players-access-first-person-mode-47142.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47142. GTA 6 glitch lets players access first-person mode
         </a>
         
-        <a href="breaking-liftoff-how-to-get-started-with-your-first-ml-project-35656.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35656. Breaking: Liftoff! How to get started with your first ML project 🚀
+        <a href="industry-news-worlds-first-superconducting-quantum-heat-engine-co-47137.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47137. Industry News: World’s first superconducting quantum heat engine could help unlock massive quantum computers
         </a>
         
-        <a href="train-your-first-decision-transformer-35629.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35629. Train your first Decision Transformer
+        <a href="score-tp-link-archer-with-full-wi-fi-7-support-and-10-gbps-wired--47101.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47101. Score TP-Link Archer with full Wi-Fi 7 support and 10 Gbps wired networking for incredible 55% off its regular price
         </a>
         
     </div>

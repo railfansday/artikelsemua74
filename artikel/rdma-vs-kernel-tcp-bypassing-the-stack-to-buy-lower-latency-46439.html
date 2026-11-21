@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDMA vs Kernel TCP: Bypassing the Stack to Buy Lower Latency</title>
+    <meta name="description" content="Two servers exchanging a small message can do it through the normal TCP stack, where the kernel owns the socket and the data is copied from application mem">
+    <meta name="keywords" content="rdma, kernel, application, memory, message, network, latency, path">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/rdma-vs-kernel-tcp-bypassing-the-stack-to-buy-lower-latency-46439.html">
+    
+    <meta property="og:title" content="RDMA vs Kernel TCP: Bypassing the Stack to Buy Lower Latency">
+    <meta property="og:description" content="Two servers exchanging a small message can do it through the normal TCP stack, where the kernel owns the socket and the data is copied from application mem">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4k5l70b9dsdgaqzrikoq.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/rdma-vs-kernel-tcp-bypassing-the-stack-to-buy-lower-latency-46439.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RDMA vs Kernel TCP: Bypassing the Stack to Buy Lower Latency">
+    <meta name="twitter:description" content="Two servers exchanging a small message can do it through the normal TCP stack, where the kernel owns the socket and the data is copied from application mem">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4k5l70b9dsdgaqzrikoq.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "RDMA vs Kernel TCP: Bypassing the Stack to Buy Lower Latency", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4k5l70b9dsdgaqzrikoq.png"], "datePublished": "2026-11-21T19:09:04", "dateModified": "2026-11-21T19:11:19.351566", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/rdma-vs-kernel-tcp-bypassing-the-stack-to-buy-lower-latency-46439.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding RDMA vs Kernel TCP: Bypassing the Stack to Buy Lower Latency?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'RDMA vs Kernel TCP: Bypassing the Stack to Buy Lower Latency' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>RDMA vs Kernel TCP: Bypassing the Stack to Buy Lower Latency</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 5 min read (902 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Two servers exchanging a small message can do it through the normal TCP stack, where the kernel owns the socket and the data is copied from application memory into kernel buffers and out again, or through RDMA, where the network adapter is given permission to place the bytes directly into the receiving application's memory.</li><li style='margin-bottom:6px;'>Kernel TCP moves each message through the operating system with several data copies and interrupt-handling costs, while RDMA lets a network card write directly into application memory for single-digit microsecond latency — the trade is a dedicated fabric and pinned memory instead of a general-purpose network.</li><li style='margin-bottom:6px;'>The interesting part is not the peak bandwidth, which modern TCP can saturate, but what happens to latency and CPU use when millions of tiny messages fly per second.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-46439"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-46439"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-46439"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="RDMA vs Kernel TCP: Bypassing the Stack to Buy Lower Latency" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4k5l70b9dsdgaqzrikoq.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-46439">Two servers exchanging a small message can do it through the normal TCP stack, where the kernel owns the socket and the data is copied from application memory into kernel buffers and out again, or through RDMA, where the network adapter is given permission to place the bytes directly into the receiving application's memory. Both get the message there intact. One is a general-purpose path that works over almost any network; the other is a specialised path that removes the operating system from the critical section.</p>
+<p>Kernel TCP moves each message through the operating system with several data copies and interrupt-handling costs, while RDMA lets a network card write directly into application memory for single-digit microsecond latency — the trade is a dedicated fabric and pinned memory instead of a general-purpose network. <span style="font-size:13px;">(Related: <a href="ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-47182.html" style="color:#2563eb; font-weight:600;">AI breakthrough cuts energy use by 100x while boosting ...</a>)</span></p>
+<p>The interesting part is not the peak bandwidth, which modern TCP can saturate, but what happens to latency and CPU use when millions of tiny messages fly per second. <span style="font-size:13px;">(Related: <a href="latest-update-millions-of-exploding-stars-could-soon-reveal-dark--47150.html" style="color:#2563eb; font-weight:600;">Latest Update: Millions of exploding stars could soon r...</a>)</span></p>
+<p>The kernel TCP path is built for fairness and generality. An application calls send, the kernel copies the buffer, the protocol stack segments it, the driver hands packets to the NIC, and the receiving end reverses the process with interrupts and context switches. Each step is well understood and robust against misbehaving peers, and the same code works over Ethernet, Wi-Fi or a tunnel. The price is that a short message can spend more time in copies and scheduling than in actual transmission.</p>
+<p>RDMA removes those steps. The application registers a region of memory with the NIC, which pins those pages so they cannot be swapped, and then posts a work request. The adapter reads or writes that memory over the network without the CPU touching the data and without an interrupt on the fast path. The application polls a completion queue instead of waiting to be woken, which eliminates scheduling jitter.</p>
+<p>A kernel TCP round trip on a fast local network typically lands around tens of microseconds with several memory copies, while an RDMA write can complete in under two microseconds with zero copies — but only after memory is pinned and a lossless or carefully tuned fabric is in place.</p>
+<p>It has been revealed that the mechanism is where the CPU is involved. In TCP, the CPU is in the data path for every message, doing copies and protocol work, which is fine up to a point and then becomes a ceiling: at high message rates the cores are busy moving bytes rather than running the application. RDMA moves the data path into hardware, so the CPU only sets up the transfer and checks completion, which leaves cores free and drives latency down to the wire.</p>
+<p>It has been revealed that that shortcut has preconditions. Memory must be pinned, which consumes physical RAM that cannot be reclaimed. The fabric must be lossless or tightly controlled, because RDMA transports historically react badly to packet loss; this is why InfiniBand and lossless Ethernet with flow control are common. And the programming model is different: polling loops burn CPU even when idle, so an application must decide whether to spin for low latency or sleep for efficiency.</p>
+<p id="sec-mid-46439">A daily example is a distributed storage cluster. With TCP, serving a million small reads can keep a significant share of each node's CPU busy with network processing, leaving less for the actual disk work. With RDMA, those same reads bypass the kernel, the CPU cost drops, and the latency a user sees when opening a file becomes more consistent under load.</p>
+<p>But the choice is not free for a small team. RDMA needs NICs that support it, switches configured correctly, and application code written against a different API. A web application running over the public internet cannot use it at all. The benefit appears in a controlled datacentre where you own every hop and the workload consists of many small, frequent transfers.</p>
+<p>Use kernel TCP for general connectivity and workloads where a few extra microseconds are invisible; use RDMA when you own the fabric and the message rate makes CPU-per-message the bottleneck — the win is a hardware path, not a faster library.</p>
+<p>It has been revealed that the useful mental model is that TCP optimises for universality while RDMA optimises for a controlled environment. One works everywhere with no special setup; the other works extremely well only where you can guarantee the conditions it assumes.</p>
+<p>For most systems, the right move is to keep TCP until profiling demonstrates the network stack is actually consuming the CPU budget. When it does, RDMA is less a tweak than a change of architecture, and it should be chosen with that weight.</p>
+<p>Sources indicate that high-performance interconnects are a substantial datacentre market, with InfiniBand and RDMA-capable Ethernet adapters shipping into AI training and distributed storage clusters in the millions of ports per year. As large-model training pushes more nodes together, the share of servers equipped with a high-performance fabric keeps rising, turning what was a niche interconnect into a standard line item.</p>
+<p>These are order-of-magnitude estimates from published shipment ranges and stated assumptions, not a forecast for any vendor.</p>
+<p>Kernel TCP is robust and cheap but copies data and crosses the kernel boundary; RDMA bypasses both for microsecond latency — at the cost of a separate fabric and careful memory registration.</p>
+<p id="sec-end-46439">Creating this takes real effort — thank you for the support. HCqPmPJM3NVtS6YrmVaTZYnuP8XZ2PFgQZKT94VK1LkS.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/gxqwb_ai/rdma-vs-kernel-tcp-bypassing-the-stack-to-buy-lower-latency-28ek" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-how-google-traced-gke-api-timeouts-to-a-linux-kerne-46583.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46583. Industry News: How Google Traced GKE API Timeouts to a Linux Kernel TCP Bug
+        </a>
+        
+        <a href="you-can-now-buy-a-steam-machine-without-getting-on-a-waitlist-46951.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46951. You can now buy a Steam Machine without getting on a waitlist
+        </a>
+        
+        <a href="how-consumer-ai-companions-handle-context-windows-persistent-memo-46904.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46904. How Consumer AI Companions Handle Context Windows, Persistent Memory, and Voice Latency
+        </a>
+        
+        <a href="is-the-galaxy-s26-ultra-still-a-good-buy-at-the-end-of-2026-46891.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46891. Is the Galaxy S26 Ultra still a good buy at the end of 2026?
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

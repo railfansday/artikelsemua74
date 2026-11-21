@@ -152,16 +152,16 @@ Vaswani et al.</li></ul>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-35706">According to recent reports, we've added Perceiver IO to Transformers, the first Transformer-based neural network that works on all kinds of modalities (text, images, audio, video, point clouds,...) and combinations thereof. Take a look at the following Spaces to view some examples:.</p>
 <p>We also provide several notebooks.</p>
-<p>Below, you can find a technical explanation  of the model. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Below, you can find a technical explanation  of the model.</p>
 <p>It has been revealed that the Transformer, originally introduced by 
 Vaswani et al. in 2017, caused a revolution in the AI community, initially improving
 state-of-the-art (SOTA) results in machine translation. In 2018, BERT
 was released, a Transformer encoder-only model that crushed the benchmarks of natural language
-processing (NLP), most famously the GLUE benchmark. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+processing (NLP), most famously the GLUE benchmark. <span style="font-size:13px;">(Related: <a href="newly-introduced-quantum-algorithm-solves-impossible-materials-pr-47161.html" style="color:#2563eb; font-weight:600;">Newly introduced quantum algorithm solves “impossible” ...</a>)</span></p>
 <p>In a recent development, not long after that, AI researchers started to apply the idea of BERT to other domains. To name a few examples:.</p>
 <p>In all of these domains, state-of-the-art results were improved dramatically, thanks to the combination of this powerful architecture with large-scale pre-training.</p>
 <p>However, there's an important limitation to the architecture of the Transformer: due to its self-attention mechanism, it scales very poorly in both compute and memory. In every layer, all inputs are used to produce queries and keys, for which a pairwise dot product is computed. Hence, it is not possible to apply self-attention on high-dimensional data without some form of preprocessing. Wav2Vec2, for example, solves this by employing a feature encoder to turn a raw waveform into a sequence of time-based features. The Vision Transformer (ViT) divides an image into a sequence of non-overlapping patches, which serve as "tokens". The Video Vision Transformer (ViViT) extracts non-overlapping, spatio-temporal
-“tubes” from a video, which serve as "tokens". To make the Transformer work on a particular modality, one typically discretizes it to a sequence of tokens to make it work.</p>
+“tubes” from a video, which serve as "tokens". To make the Transformer work on a particular modality, one typically discretizes it to a sequence of tokens to make it work. <span style="font-size:13px;">(Related: <a href="gta-6s-latest-dangerous-driving-and-doomscrolling-feature-spawns--47172.html" style="color:#2563eb; font-weight:600;">GTA 6’s latest dangerous driving and doomscrolling feat...</a>)</span></p>
 <p>The Perceiver aims to solve this limitation by employing the self-attention mechanism on a set of latent variables, rather than on the inputs. The inputs (which could be text, image, audio, video) are only used for doing cross-attention with the latents. This has the advantage that the bulk of compute happens in a latent space, where compute is cheap (one typically uses 256 or 512 latents). The resulting architecture has no quadratic dependence on the input size: the Transformer encoder only depends linearly on the input size, while latent attention is independent of it. In a follow-up paper, called Perceiver IO, the authors extend this idea to let the Perceiver also handle arbitrary outputs. The idea is similar: one only uses the outputs for doing cross-attention with the latents. Note that I'll use the terms "Perceiver" and "Perceiver IO" interchangeably to refer to the Perceiver IO model throughout this blog post.</p>
 <p>Sources indicate that in the following section, we look in a bit more detail at how Perceiver IO actually works by going over its implementation in HuggingFace Transformers, a popular library that initially implemented Transformer-based models for NLP, but is now starting to implement them for other domains as well. In the sections below, we explain in detail  - in terms of shapes of tensors - how the Perceiver actually pre and post processes modalities of any kind.</p>
 <p>It has been revealed that all Perceiver variants in HuggingFace Transformers are based on the PerceiverModel class. To initialize a PerceiverModel, one can provide 3 additional instances to the model:.</p>
@@ -232,20 +232,20 @@ processing (NLP), most famously the GLUE benchmark. <span style="font-size:13px;
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="accelerate-large-model-training-using-pytorch-fully-sharded-data--35679.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35679. Accelerate Large Model Training using PyTorch Fully Sharded Data Parallel
+        <a href="industry-news-what-to-check-before-adding-a-tripo-model-to-a-webs-46845.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46845. Industry News: What to Check Before Adding a Tripo Model to a Website
         </a>
         
-        <a href="industry-news-model-cards-35592.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35592. Industry News: Model Cards
+        <a href="industry-news-transformers-model-integration-contracts-46600.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46600. Industry News: Transformers Model Integration Contracts
         </a>
         
-        <a href="universal-assisted-generation-faster-decoding-with-any-assistant--35276.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35276. Universal Assisted Generation: Faster Decoding with Any Assistant Model
+        <a href="industry-news-palette-teaching-a-small-model-to-build-decks-in-yo-46590.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46590. Industry News: Palette: teaching a small model to build decks in your design language
         </a>
         
-        <a href="industry-news-benchmarking-language-model-performance-on-5th-gen--35249.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35249. Industry News: Benchmarking Language Model Performance on 5th Gen Xeon at GCP
+        <a href="industry-news-circuit-civic-shuttle-brand-identity-by-the-collect-46087.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46087. Industry News: Circuit: Civic Shuttle Brand Identity by The Collected Works
         </a>
         
     </div>

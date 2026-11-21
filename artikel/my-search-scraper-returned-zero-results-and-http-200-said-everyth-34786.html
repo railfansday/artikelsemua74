@@ -151,9 +151,9 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34786">I built MiniSERP to learn how a search results API works underneath. It's a small Rails 8 API that takes a Google results page and turns it into clean JSON: title, link, snippet, position.</p>
 <p>Sources indicate that the first version worked on the first page I tested. I wrote the specs and they passed, and I thought the parser was done.</p>
-<p>In a recent development, then I saved a second results page with a different query and ran it through the same parser. I got back an empty array with HTTP 200. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>It has been revealed that an empty array with a 200 looks exactly like "Google found nothing for this query." Nothing crashed and nothing demonstrated up in the logs. If I had shipped this, every search would have come back empty, and the API would have reported success every time. <span style="font-size:13px;">(Related: <a href="latest-update-hyperparameter-search-with-transformers-and-ray-tun-35745.html" style="color:#2563eb; font-weight:600;">Latest Update: Hyperparameter Search with Transformers ...</a>)</span></p>
-<p>The cause turned out to be simple. I ran a quick check on the latest page:.</p>
+<p>In a recent development, then I saved a second results page with a different query and ran it through the same parser. I got back an empty array with HTTP 200. <span style="font-size:13px;">(Related: <a href="latest-update-kfc-just-released-fried-cheese-with-four-different--47152.html" style="color:#2563eb; font-weight:600;">Latest Update: KFC just released fried cheese with four...</a>)</span></p>
+<p>It has been revealed that an empty array with a 200 looks exactly like "Google found nothing for this query." Nothing crashed and nothing demonstrated up in the logs. If I had shipped this, every search would have come back empty, and the API would have reported success every time.</p>
+<p>The cause turned out to be simple. I ran a quick check on the latest page:. <span style="font-size:13px;">(Related: <a href="this-simple-change-stops-robot-swarms-from-getting-stuck-47174.html" style="color:#2563eb; font-weight:600;">This simple change stops robot swarms from getting stuc...</a>)</span></p>
 <p>In a recent development, my parser looked for results inside div.g. On this page, Google had moved results into div.MjjYud, rearranged what was inside them and rotated its obfuscated class names. My one selector matched nothing, so the parser happily returned nothing.</p>
 <p>Instead of trusting one selector, the parser now goes through a list of container strategies in order and uses the first one that finds usable results:.</p>
 <p>That covers the layouts I've seen, but Google will change it again, and a list of class names will always fall behind eventually.</p>
@@ -192,16 +192,16 @@
             📰 #35326. Industry News: LAVE: Zero-shot VQA Evaluation on Docmatix with LLMs - Do We Still Need Fine-Tuning?
         </a>
         
-        <a href="latest-update-hyperparameter-search-with-transformers-and-ray-tun-35745.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35745. Latest Update: Hyperparameter Search with Transformers and Ray Tune
+        <a href="brain-inspired-chip-runs-near-absolute-zero-and-could-transform-q-47153.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47153. Brain-inspired chip runs near absolute zero and could transform quantum computing
         </a>
         
-        <a href="breaking-fit-more-and-train-faster-with-zero-via-deepspeed-and-fa-35741.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35741. Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale
+        <a href="upcoming-windows-11-lock-screen-zero-day-unlocks-bitlocker-protec-47103.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47103. Upcoming Windows 11 lock screen zero-day unlocks BitLocker-protected PCs with just a few keystrokes
         </a>
         
-        <a href="fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-35735.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35735. Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        <a href="industry-news-fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-t-47085.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47085. Industry News: Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers
         </a>
         
     </div>

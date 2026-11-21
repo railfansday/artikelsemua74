@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-35688">At Hugging Face, we are contributing to the ecosystem for Deep Reinforcement Learning researchers and enthusiasts. Recently, we have integrated Deep RL frameworks such as Stable-Baselines3.</p>
-<p>And today we are happy to announce that we integrated the Decision Transformer, an Offline Reinforcement Learning method, into the 🤗 transformers library and the Hugging Face Hub. We have some exciting plans for improving accessibility in the field of Deep RL and we are looking forward to sharing them with you over the coming weeks and months. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
-<p>Sources indicate that deep Reinforcement Learning (RL) is a framework to build decision-making agents. These agents aim to learn optimal behavior (policy) by interacting with the environment through trial and error and receiving rewards as unique feedback. <span style="font-size:13px;">(Related: <a href="breaking-few-shot-learning-in-practice-gpt-neo-and-the-accelerate-35727.html" style="color:#2563eb; font-weight:600;">Breaking: Few-shot learning in practice: GPT-Neo and th...</a>)</span></p>
+<p>And today we are happy to announce that we integrated the Decision Transformer, an Offline Reinforcement Learning method, into the 🤗 transformers library and the Hugging Face Hub. We have some exciting plans for improving accessibility in the field of Deep RL and we are looking forward to sharing them with you over the coming weeks and months.</p>
+<p>Sources indicate that deep Reinforcement Learning (RL) is a framework to build decision-making agents. These agents aim to learn optimal behavior (policy) by interacting with the environment through trial and error and receiving rewards as unique feedback. <span style="font-size:13px;">(Related: <a href="industry-news-spacex-wants-to-build-ai-data-centers-in-space-will-47151.html" style="color:#2563eb; font-weight:600;">Industry News: SpaceX wants to build AI data centers in...</a>)</span></p>
 <p>In a recent development, the agent’s goal is to maximize its cumulative reward, called return. Because RL is based on the reward hypothesis: all goals can be described as the maximization of the expected cumulative reward.</p>
 <p>Deep Reinforcement Learning agents learn with batches of experience. The question is, how do they collect it?:.</p>
 <p>A comparison between Reinforcement Learning in an Online and Offline setting, figure taken from this post.</p>
 <p>In online reinforcement learning, the agent gathers data directly: it collects a batch of experience by interacting with the environment. Then, it uses this experience immediately (or via some replay buffer) to learn from it (patch its policy).</p>
-<p>Recent findings suggest that but this implies that either you train your agent directly in the real world or have a simulator. If you don’t have one, you need to build it, which can be very complex (how to reflect the complex reality of the real world in an environment?), expensive, and insecure since if the simulator has flaws, the agent will exploit them if they provide a competitive advantage.</p>
+<p>Recent findings suggest that but this implies that either you train your agent directly in the real world or have a simulator. If you don’t have one, you need to build it, which can be very complex (how to reflect the complex reality of the real world in an environment?), expensive, and insecure since if the simulator has flaws, the agent will exploit them if they provide a competitive advantage. <span style="font-size:13px;">(Related: <a href="breaking-quantum-mechanics-once-baffled-scientists-now-its-changi-47148.html" style="color:#2563eb; font-weight:600;">Breaking: Quantum mechanics once baffled scientists. No...</a>)</span></p>
 <p>On the other hand, in offline reinforcement learning, the agent only uses data collected from other agents or human demonstrations. It does not interact with the environment.</p>
 <p>Industry observers note that this method has one drawback: the counterfactual queries problem. What do we do if our agent decides to do something for which we don’t have the data? For instance, turning right on an intersection but we don’t have this trajectory.</p>
 <p>There’s already exists some solutions on this topic, but if you want to know more about offline reinforcement learning you can watch this video.</p>
@@ -204,6 +204,10 @@ the specified target (desired) returns. Top: Atari. Bottom: D4RL medium-replay d
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="decision-models-in-hugging-face-46558.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46558. Decision Models in Hugging Face
+        </a>
+        
         <a href="faster-tensorflow-models-in-hugging-face-transformers-35740.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35740. Faster TensorFlow models in Hugging Face Transformers
         </a>
@@ -214,10 +218,6 @@ the specified target (desired) returns. Top: Atari. Bottom: D4RL medium-replay d
         
         <a href="fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-35735.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35735. Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
-        </a>
-        
-        <a href="sentence-transformers-in-the-hugging-face-hub-35726.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35726. Sentence Transformers in the Hugging Face Hub
         </a>
         
     </div>

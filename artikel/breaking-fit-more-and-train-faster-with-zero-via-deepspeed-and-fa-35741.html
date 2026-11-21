@@ -151,9 +151,9 @@ ZeRO: Memory Optimizations Toward Training Trillion Parameter Models, which cont
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-35741">A guest blog post by Hugging Face fellow Stas Bekman.</p>
-<p>Industry observers note that as recent Machine Learning models have been growing much faster than the amount of GPU memory added to newly released cards, many customers are unable to train or even just load some of those huge models onto their hardware. While there is an ongoing effort to distill some of those huge models to be of a more manageable size -- that effort isn't producing models small enough soon enough. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Industry observers note that as recent Machine Learning models have been growing much faster than the amount of GPU memory added to newly released cards, many customers are unable to train or even just load some of those huge models onto their hardware. While there is an ongoing effort to distill some of those huge models to be of a more manageable size -- that effort isn't producing models small enough soon enough. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
 <p>According to recent reports, in the fall of 2019 Samyam Rajbhandari, Jeff Rasley, Olatunji Ruwase and Yuxiong He published a paper:
-ZeRO: Memory Optimizations Toward Training Trillion Parameter Models, which contains a plethora of ingenious new ideas on how one could make their hardware do much more than what it was thought possible before. A short time later DeepSpeed has been released and it gave to the world the open source implementation of most of the ideas in that paper (a few ideas are still in works) and in parallel a team from Facebook released FairScale which also implemented some of the core ideas from the ZeRO paper. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+ZeRO: Memory Optimizations Toward Training Trillion Parameter Models, which contains a plethora of ingenious new ideas on how one could make their hardware do much more than what it was thought possible before. A short time later DeepSpeed has been released and it gave to the world the open source implementation of most of the ideas in that paper (a few ideas are still in works) and in parallel a team from Facebook released FairScale which also implemented some of the core ideas from the ZeRO paper. <span style="font-size:13px;">(Related: <a href="dna-robots-could-deliver-drugs-and-hunt-viruses-inside-your-body-47183.html" style="color:#2563eb; font-weight:600;">DNA robots could deliver drugs and hunt viruses inside ...</a>)</span></p>
 <p>Sources indicate that if you use the Hugging Face Trainer, as of transformers v4.2.0 you have the experimental support for DeepSpeed's and FairScale's ZeRO features. The new --sharded_ddp and --deepspeed command line Trainer arguments provide FairScale and DeepSpeed integration respectively. Here is the full documentation.</p>
 <p>This blog post will describe how you can benefit from ZeRO regardless of whether you own just a single GPU or a whole stack of them.</p>
 <p>Let's do a small finetuning with translation task experiment, using a t5-large model and the finetune_trainer.py script which you can find under examples/seq2seq in the transformers GitHub repo.</p>
@@ -236,20 +236,20 @@ here.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="breaking-unlocking-stable-on-policy-rl-on-tpu-with-bitwise-zero-t-46872.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46872. Breaking: Unlocking Stable On-Policy RL on TPU with Bitwise-Zero Train–Inference Mismatch
+        </a>
+        
         <a href="train-400x-faster-static-embedding-models-with-sentence-transform-35235.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35235. Train 400x faster Static Embedding Models with Sentence Transformers
         </a>
         
-        <a href="industry-news-unlocking-stable-on-policy-rl-on-tpu-with-bitwise-z-23962.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23962. Industry News: Unlocking Stable On-Policy RL on TPU with Bitwise-Zero Train–Inference Mismatch
+        <a href="brain-inspired-chip-runs-near-absolute-zero-and-could-transform-q-47153.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47153. Brain-inspired chip runs near absolute zero and could transform quantum computing
         </a>
         
-        <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35750. Breaking: How to train a new language model from scratch using Transformers and Tokenizers
-        </a>
-        
-        <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35747. Block Sparse Matrices for Smaller and Faster Language Models
+        <a href="scientists-just-made-quantum-computer-operations-1000-times-faste-47118.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47118. Scientists just made quantum computer operations 1,000 times faster
         </a>
         
     </div>

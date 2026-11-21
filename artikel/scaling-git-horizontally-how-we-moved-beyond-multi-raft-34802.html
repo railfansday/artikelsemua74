@@ -151,10 +151,10 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34802">Before we dive deeper, let's do a quick recap on Enroute's architecture. Enroute separates compute from storage, like many modern databases. A cluster has three parts:.</p>
 <p>When thinking about how many repositories we can fit on a single Enroute cluster, there are really two numbers to consider:.</p>
-<p>While we had implemented some early optimizations already, two measurements highlighted where we still fell short:.</p>
-<p>Recent findings suggest that every repository's log was its own state machine on a separate Raft log. Raft keeps a leader alive with heartbeats and when it fails, replaces it with an election, so every log had its own timers, votes, pre-votes and leader. With hundreds of thousands of repositories, that machinery became the workload. <span style="font-size:13px;">(Related: <a href="the-age-of-machine-learning-as-code-has-arrived-35716.html" style="color:#2563eb; font-weight:600;">The Age of Machine Learning As Code Has Arrived...</a>)</span></p>
-<p>Sources indicate that it turns out that mature Multi-Raft-based systems have a well-known toolbox for this, which we began to make use of as best as possible. We allowed idle logs to go to sleep, moved liveness from each log to the node, and we woke a failed node's logs only as they were needed, to prevent kicking off thousands of leader elections at the same time when a single node fails. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-35746.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
-<p>Industry observers note that these fixes worked. Together, they took the setup that had previously collapsed at 2,048 writers to about 14,000 pushes per second at 100,000 repositories with no failures.</p>
+<p>While we had implemented some early optimizations already, two measurements highlighted where we still fell short:. <span style="font-size:13px;">(Related: <a href="ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-47182.html" style="color:#2563eb; font-weight:600;">AI breakthrough cuts energy use by 100x while boosting ...</a>)</span></p>
+<p>Recent findings suggest that every repository's log was its own state machine on a separate Raft log. Raft keeps a leader alive with heartbeats and when it fails, replaces it with an election, so every log had its own timers, votes, pre-votes and leader. With hundreds of thousands of repositories, that machinery became the workload.</p>
+<p>Sources indicate that it turns out that mature Multi-Raft-based systems have a well-known toolbox for this, which we began to make use of as best as possible. We allowed idle logs to go to sleep, moved liveness from each log to the node, and we woke a failed node's logs only as they were needed, to prevent kicking off thousands of leader elections at the same time when a single node fails.</p>
+<p>Industry observers note that these fixes worked. Together, they took the setup that had previously collapsed at 2,048 writers to about 14,000 pushes per second at 100,000 repositories with no failures. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
 <p>According to recent reports, however, taking a step back, it felt like we were just piling more complexity on top of the core Multi-Raft setup, which is already quite complex to start with. What's worse, this complexity was not only in code, but also directly translated into failure modes and edge cases.</p>
 <p>In short, it became obvious that continuing on this path would lead to a system that would be much harder to understand and operate, which motivated us to start looking for alternatives.</p>
 <p>Industry observers note that looking at our setup at this point, most of the complexity came from the fact that we ran membership, and by extension leadership elections, on a per-repository basis. So we began looking at ways we could take leader election out of the per-repository log.</p>
@@ -196,20 +196,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-scaling-up-bert-inference-on-cpu-part-1-35729.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35729. Breaking: Scaling-up BERT Inference on CPU (Part 1)
+        <a href="beyond-lora-can-you-beat-the-most-popular-fine-tuning-technique-46997.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46997. Beyond LoRA: Can you beat the most popular fine-tuning technique?
         </a>
         
-        <a href="scaling-up-bert-like-model-inference-on-modern-cpu-part-2-35712.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35712. Scaling up BERT-like model Inference on modern CPU  - Part 2
+        <a href="tech-report-multi-vector-late-interaction-embedding-models-with-s-46827.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46827. Tech Report: Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers
         </a>
         
-        <a href="introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-agents-c-35578.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35578. Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system
+        <a href="latest-update-beyond-12-columns-designing-layouts-with-personalit-46824.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46824. Latest Update: Beyond 12 Columns: Designing Layouts With Personality
         </a>
         
-        <a href="deprecation-of-git-authentication-using-password-35482.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35482. Deprecation of Git Authentication using password
+        <a href="accelerating-development-for-massive-git-repositories-46814.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46814. Accelerating development for massive Git repositories
         </a>
         
     </div>

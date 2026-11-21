@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34776">This is the second post of Profiling in PyTorch, a series where we slowly build the skill of reading profiler traces and use it to drive optimization:.</p>
-<p>According to recent reports, in the first part of this series "Profiling in PyTorch", we used torch.add(torch.matmul(x, w), b) to learn how to read PyTorch profiler traces. We also discussed several other topics that came our way - the CPU dispatch chain, launch overhead, the difference between an overhead-bound and a compute-bound regime, and some internals of torch.compile. <span style="font-size:13px;">(Related: <a href="industry-news-hugging-face-on-pytorch-xla-tpus-35739.html" style="color:#2563eb; font-weight:600;">Industry News: Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
-<p>Sources indicate that in the second iteration (this blog post), we climb one rung up the ladder. We replace the hand-written matmul-add pair with an nn.Linear (with bias=True). This is the building block every deep learning model uses. We then stack three of them (specific to our example), with an activation in between, to form a Multilayer Perceptron (MLP) block. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
-<p>Recent findings suggest that the scripts for this blog post live here: 02_linear.py, 03_simple_mlp.py, and 03_kernels_mlp.py. Like before, it helps to open them in a separate tab and walk through the code as you read. We use an NVIDIA A100-SXM4-80GB GPU to run the scripts. It is really easy to set up a GPU on the Hugging Face infrastructure and experiment with the scripts using Dev Mode with Spaces. One could also run the scripts with the Hugging Face Jobs pipeline.</p>
+<p>According to recent reports, in the first part of this series "Profiling in PyTorch", we used torch.add(torch.matmul(x, w), b) to learn how to read PyTorch profiler traces. We also discussed several other topics that came our way - the CPU dispatch chain, launch overhead, the difference between an overhead-bound and a compute-bound regime, and some internals of torch.compile. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
+<p>Sources indicate that in the second iteration (this blog post), we climb one rung up the ladder. We replace the hand-written matmul-add pair with an nn.Linear (with bias=True). This is the building block every deep learning model uses. We then stack three of them (specific to our example), with an activation in between, to form a Multilayer Perceptron (MLP) block.</p>
+<p>Recent findings suggest that the scripts for this blog post live here: 02_linear.py, 03_simple_mlp.py, and 03_kernels_mlp.py. Like before, it helps to open them in a separate tab and walk through the code as you read. We use an NVIDIA A100-SXM4-80GB GPU to run the scripts. It is really easy to set up a GPU on the Hugging Face infrastructure and experiment with the scripts using Dev Mode with Spaces. One could also run the scripts with the Hugging Face Jobs pipeline. <span style="font-size:13px;">(Related: <a href="dna-robots-could-deliver-drugs-and-hunt-viruses-inside-your-body-47183.html" style="color:#2563eb; font-weight:600;">DNA robots could deliver drugs and hunt viruses inside ...</a>)</span></p>
 <p>Before we begin, a quick recap of two ideas we will lean on repeatedly:.</p>
 <p>Recent findings suggest that nn.Linear is a module wrapper around the same matrix multiplication and addition we already profiled in Part 1. The only difference is that it owns its weight and bias as parameters and exposes a forward method that PyTorch users have grown familiar with.</p>
 <p>The operation at hand can be written as:.</p>
@@ -244,20 +244,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="profiling-in-pytorch-part-3-attention-is-all-you-profile-46916.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46916. Profiling in PyTorch (Part 3): Attention is all you profile
+        </a>
+        
         <a href="latest-update-profiling-in-pytorch-part-1-a-beginners-guide-to-to-34807.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #34807. Latest Update: Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler
         </a>
         
-        <a href="profiling-in-pytorch-part-3-attention-is-all-you-profile-23797.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23797. Profiling in PyTorch (Part 3): Attention is all you profile
+        <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-47063.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47063. Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1
         </a>
         
-        <a href="latest-update-accelerating-pytorch-transformers-with-intel-sapphi-35579.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35579. Latest Update: Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 2
-        </a>
-        
-        <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-23885.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23885. Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1
+        <a href="profiling-torchneuron-part-1-system-level-profiling-on-aws-traini-46656.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46656. Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.
         </a>
         
     </div>

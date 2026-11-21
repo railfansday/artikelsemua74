@@ -150,14 +150,14 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34982">Open Responses is a new and open inference standard. Initiated by OpenAI, built by the open source AI community, and backed by the Hugging Face ecosystem, Open Responses is based on the Responses API and is designed for the future of Agents. In this blog post, we’ll look at how Open Responses works and why the open source community should use Open Responses.</p>
-<p>The era of the chatbot is long gone, and agents dominate inference workloads. Developers are shifting toward autonomous systems that reason, blueprint, and act over long-time horizons. Despite this shift, much of the ecosystem still uses the Chat Completion format, which was designed for turn-based conversations and falls short for agentic use cases. The Responses format was designed to address these limitations, but it is closed and not as widely adopted. The Chat Completion format is still the de facto standard despite the alternatives. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-35746.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
-<p>This mismatch between the agentic workflow requirements and entrenched interfaces motivates the need for an open inference standard. Over the coming months, we will collaborate with the community and inference providers to implement and adapt Open Responses to a shared format, practically capable of replacing chat completions. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-35742.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
+<p>The era of the chatbot is long gone, and agents dominate inference workloads. Developers are shifting toward autonomous systems that reason, blueprint, and act over long-time horizons. Despite this shift, much of the ecosystem still uses the Chat Completion format, which was designed for turn-based conversations and falls short for agentic use cases. The Responses format was designed to address these limitations, but it is closed and not as widely adopted. The Chat Completion format is still the de facto standard despite the alternatives.</p>
+<p>This mismatch between the agentic workflow requirements and entrenched interfaces motivates the need for an open inference standard. Over the coming months, we will collaborate with the community and inference providers to implement and adapt Open Responses to a shared format, practically capable of replacing chat completions. <span style="font-size:13px;">(Related: <a href="tech-report-kfc-is-replacing-gta-6s-missing-physical-disc-with-fr-47149.html" style="color:#2563eb; font-weight:600;">Tech Report: KFC is replacing GTA 6’s missing physical ...</a>)</span></p>
 <p>Open Responses builds on the direction OpenAI has set with their  Responses API  debuted in March 2025, which superseded the existing Completion and Assistants APIs with a consistent way to:.</p>
 <p>Open Responses extends and open-sources the Responses API,  making it more accessible for builders and routing providers to interoperate and collaborate on shared interests.</p>
 <p>We’ll briefly explore the core changes that impact most community members. If you want to deep dive into the specification, check out the Open Responses documentation.</p>
 <p>Sources indicate that client requests to Open Responses are similar to the existing Responses API. Below we demonstrate a request to the Open Responses API using curl. We're calling a proxy endpoint that routes to Inference Providers using the Open Responses API schema.</p>
 <p>Sources indicate that clients that already support the Responses API can migrate to Open Responses with relatively little effort. The main
-changes involve how reasoning content is exposed:.</p>
+changes involve how reasoning content is exposed:. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
 <p>OpenAI models used to only expose summary and encrypted_content. With Open Responses, providers may expose their raw reasoning via the API. Clients migrating from providers that previously returned only summaries and encrypted content will now have the
 opportunity to receive and handle raw reasoning streams when supported by their chosen provider.</p>
 <p>In a recent development, for Model Providers, implementing the changes for Open Responses should be straightforward if they already adhere to the Responses API specification. For Routers, there is now the opportunity to standardize on a consistent endpoint and support configuration options for customization where needed.</p>
@@ -212,20 +212,20 @@ opportunity to receive and handle raw reasoning streams when supported by their 
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-what-is-blockchain-everything-you-need-to-know-2022-23453.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23453. Industry News: What is Blockchain: Everything You Need to Know (2022)
+        <a href="industry-news-does-creatine-increase-dht-what-you-need-to-know-45724.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #45724. Industry News: Does Creatine Increase DHT? What You Need to Know
         </a>
         
-        <a href="industry-news-making-a-web-app-generator-with-open-ml-models-35507.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35507. Industry News: Making a web app generator with open ML models
+        <a href="industry-news-how-much-memory-does-your-agent-actually-need-46823.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46823. Industry News: How Much Memory Does Your Agent Actually Need?
         </a>
         
-        <a href="industry-news-open-source-text-generation-llm-ecosystem-at-huggin-35503.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35503. Industry News: Open-Source Text Generation & LLM Ecosystem at Hugging Face
+        <a href="industry-news-will-ai-fueled-cyberattacks-lead-to-better-funding--46662.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46662. Industry News: Will AI-Fueled Cyberattacks Lead to Better Funding for Critical Open Source Projects?
         </a>
         
-        <a href="industry-news-welcome-llama-3-metas-new-open-llm-35380.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35380. Industry News: Welcome Llama 3 - Meta's new open LLM
+        <a href="what-is-blockchain-everything-you-need-to-know-2022-46458.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46458. What is Blockchain: Everything You Need to Know (2022)
         </a>
         
     </div>

@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-35696">Recent findings suggest that just as transformers-based models have revolutionized NLP, we're now seeing an explosion of papers applying them to all sorts of other domains. One of the most revolutionary of these was the Vision Transformer (ViT), which was introduced in June 2021 by a team of researchers at Google Brain.</p>
-<p>This paper explored how you can tokenize images, just as you would tokenize sentences, so that they can be passed to transformer models for training. It's quite a simple concept, really... <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
-<p>It turns out that once you've done the above, you can pre-train and fine-tune transformers just as you're used to with NLP tasks. Pretty sweet 😎. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>This paper explored how you can tokenize images, just as you would tokenize sentences, so that they can be passed to transformer models for training. It's quite a simple concept, really... <span style="font-size:13px;">(Related: <a href="this-simple-change-stops-robot-swarms-from-getting-stuck-47174.html" style="color:#2563eb; font-weight:600;">This simple change stops robot swarms from getting stuc...</a>)</span></p>
+<p>It turns out that once you've done the above, you can pre-train and fine-tune transformers just as you're used to with NLP tasks. Pretty sweet 😎.</p>
 <p>In this blog post, we'll walk through how to leverage 🤗 datasets to download and process image classification datasets, and then use them to fine-tune a pre-trained ViT with 🤗 transformers.</p>
 <p>To get started, let's first install both those packages.</p>
 <p>Let's start by loading a small image classification dataset and taking a look at its structure.</p>
@@ -159,7 +159,7 @@
 <p>Let's take a look at the 400th example from the 'train' split from the beans dataset. You'll notice each example from the dataset has 3 features:.</p>
 <p>Let's take a look at the image 👀.</p>
 <p>That's definitely a leaf! But what kind? 😅.</p>
-<p>Since the 'labels' feature of this dataset is a datasets.features.ClassLabel, we can use it to look up the corresponding name for this example's label ID.</p>
+<p>Since the 'labels' feature of this dataset is a datasets.features.ClassLabel, we can use it to look up the corresponding name for this example's label ID. <span style="font-size:13px;">(Related: <a href="gta-6s-latest-dangerous-driving-and-doomscrolling-feature-spawns--47172.html" style="color:#2563eb; font-weight:600;">GTA 6’s latest dangerous driving and doomscrolling feat...</a>)</span></p>
 <p>First, let's access the feature definition for the 'labels'.</p>
 <p>According to recent reports, now, let's print out the class label for our example. You can do that by using the int2str function of ClassLabel, which, as the name implies, allows to pass the integer representation of the class to look up the string label.</p>
 <p>Industry observers note that turns out the leaf shown above is infected with Bean Rust, a serious disease in bean plants. 😢.</p>
@@ -218,6 +218,10 @@ applied in real time (on both samples and slices, as shown below).</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-t-47085.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47085. Industry News: Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers
+        </a>
+        
         <a href="fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-35735.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35735. Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
         </a>
@@ -228,10 +232,6 @@ applied in real time (on both samples and slices, as shown below).</p>
         
         <a href="fine-tune-whisper-for-multilingual-asr-with-transformers-35612.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35612. Fine-Tune Whisper For Multilingual ASR with 🤗 Transformers
-        </a>
-        
-        <a href="industry-news-fine-tune-w2v2-bert-for-low-resource-asr-with-trans-35430.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35430. Industry News: Fine-Tune W2V2-Bert for low-resource ASR with 🤗 Transformers
         </a>
         
     </div>

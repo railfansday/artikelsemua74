@@ -150,16 +150,16 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34784">Sources indicate that openEnv is a tool for creating an agentic execution environment like terminals, browsers, or anything an agent can interact with. And today, we’re excited to announce that OpenEnv is becoming even more open, to make the future of training agents open source.</p>
-<p>Starting today, OpenEnv will be coordinated by a committee that so far includes Meta-PyTorch, Reflection, Unsloth, Modal, Prime Intellect, Nvidia, Mercor, Fleet AI, Microsoft, Hugging Face, and RadixArk. OpenEnv now lives at huggingface/OpenEnv. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-35740.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
-<p>OpenEnv project is supported and adopted by some of the leading organizations in the AI ecosystem, including PyTorch Foundation, vLLM, SkyRL (UCB), Lightning AI, Axolotl AI, Stanford Scaling Intelligence Lab, Mithril, OpenMined, Scaler AI Labs, Scale AI, Patronus AI, Surge AI, Halluminate, Turing, Scorecard, Snorkel AI, SGLang, and Miles. <span style="font-size:13px;">(Related: <a href="industry-news-hugging-face-on-pytorch-xla-tpus-35739.html" style="color:#2563eb; font-weight:600;">Industry News: Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
+<p>Starting today, OpenEnv will be coordinated by a committee that so far includes Meta-PyTorch, Reflection, Unsloth, Modal, Prime Intellect, Nvidia, Mercor, Fleet AI, Microsoft, Hugging Face, and RadixArk. OpenEnv now lives at huggingface/OpenEnv.</p>
+<p>OpenEnv project is supported and adopted by some of the leading organizations in the AI ecosystem, including PyTorch Foundation, vLLM, SkyRL (UCB), Lightning AI, Axolotl AI, Stanford Scaling Intelligence Lab, Mithril, OpenMined, Scaler AI Labs, Scale AI, Patronus AI, Surge AI, Halluminate, Turing, Scorecard, Snorkel AI, SGLang, and Miles.</p>
 <p>It has been revealed that agent harnesses like Claude Code, Codex, OpenClaw, and Hermes just keep improving. One reason for their improvement is that models like GPT-5.5 and Opus 4.8 are trained to use their respective harnesses.</p>
 <p>We want those gains with open source models too: training local models that use harnesses effectively, and saving compute by specializing models for specific tasks.</p>
 <p>Frontier labs train models and harnesses that, for the most part, work like hand in glove. The model is trained to use the harness and optimised for its characteristics. Models can generalise beyond these harnesses, to some extent, but nothing beats the efficiency of training.</p>
 <p>It has been revealed that in the open, this isn’t the case. Developers use any harness, any model, any inference engine, on whatever use case they value. This is fundamental to the community, but it’s also a challenge that requires infrastructure and tooling to tackle.</p>
 <p>That’s where OpenEnv comes in. It’s a library to interface between harness, environment, and trainer, which works on any model. For this to stick, it will need to be owned by all the major stakeholders.</p>
-<p id="sec-mid-34784">Alongside the governance change, we're tightening what OpenEnv is.</p>
+<p id="sec-mid-34784">Alongside the governance change, we're tightening what OpenEnv is. <span style="font-size:13px;">(Related: <a href="this-fresh-chip-survives-1300f-700c-and-could-change-ai-forever-47180.html" style="color:#2563eb; font-weight:600;">This fresh chip survives 1300°F (700°C) and could chang...</a>)</span></p>
 <p>In recent releases, OpenEnv has become an interoperability layer for RL environments. Its job is to standardize how environments are published, deployed, and consumed by agents. It will not dictate how rewards are defined or how training loops work. Reward definition, scoring rubrics, and trainer-specific logic belong in the libraries that specialize in them. OpenEnv is the common socket they can all plug into.</p>
-<p>According to recent reports, one interface, many environments which all expose the familiar Gymnasium-style API (reset(), step(), state()) running on a client/server architecture. A trainer that speaks OpenEnv can drive any compliant environment without bespoke code.</p>
+<p>According to recent reports, one interface, many environments which all expose the familiar Gymnasium-style API (reset(), step(), state()) running on a client/server architecture. A trainer that speaks OpenEnv can drive any compliant environment without bespoke code. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-47168.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
 <p>Familiar protocols and canonical packaging. Environments are served over standard protocols like HTTP and WebSocket and packaged with Docker. MCP is a first-class citizen, so OpenEnv environments are instantly compatible with MCP servers and the same environment behaves consistently in both simulation (train/eval) and production modes.</p>
 <p>Sources indicate that interop across env libraries. You can define and consume environments across different ecosystems (verifiers, harbor, and others) and on the infrastructure and hub of your choice. OpenEnv is the deployment and interface layer underneath them, rather than a competitor to them.</p>
 <p>Over the coming months we will focus on the things that turn OpenEnv from a fast-growing project into a dependable standard:.</p>
@@ -189,20 +189,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="meta-is-back-with-muse-glimmer-local-agentic-multimodal-and-open--23758.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23758. Meta is back with Muse Glimmer: local, agentic, multimodal, and open source
+        <a href="meta-is-back-with-muse-glimmer-local-agentic-multimodal-and-open--46862.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46862. Meta is back with Muse Glimmer: local, agentic, multimodal, and open source
         </a>
         
-        <a href="tech-report-announcing-the-open-source-ai-game-jam-35526.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35526. Tech Report: Announcing the Open Source AI Game Jam 🎮
+        <a href="is-it-agentic-enough-benchmarking-open-models-on-your-own-tooling-46999.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46999. Is it agentic enough? Benchmarking open models on your own tooling
         </a>
         
-        <a href="industry-news-open-source-text-generation-llm-ecosystem-at-huggin-35503.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35503. Industry News: Open-Source Text Generation & LLM Ecosystem at Hugging Face
+        <a href="tech-report-hardware-hacker-builds-open-source-portable-35-inch-f-46992.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46992. Tech Report: Hardware hacker builds open-source portable 3.5-inch floppy Wi-Fi NAS
         </a>
         
-        <a href="breaking-results-of-the-open-source-ai-game-jam-35499.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35499. Breaking: Results of the Open Source AI Game Jam
+        <a href="latest-update-cncf-score-project-improved-its-security-posture-by-46778.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46778. Latest Update: CNCF Score project improved its security posture by joining the Docker-Sponsored Open Source Program
         </a>
         
     </div>

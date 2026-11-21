@@ -159,7 +159,7 @@ the vLLM V0 to V1 migration.</p>
 <p>Recent findings suggest that TL;DR. vLLM V1 matched our vLLM V0 reference after we fixed four things:
 processed rollout logprobs, V1-specific runtime defaults, the inflight
 weight-enhancement path, and the fp32 lm_head used for the final projection. We
-fixed the backend behavior before changing the RL objective.</p>
+fixed the backend behavior before changing the RL objective. <span style="font-size:13px;">(Related: <a href="latest-update-clavicular-allegedly-told-17-year-old-to-call-vodka-47157.html" style="color:#2563eb; font-weight:600;">Latest Update: Clavicular allegedly told 17-year-old to...</a>)</span></p>
 <p>The reference run used vLLM 0.8.5; the V1 runs used vLLM 0.18.1. Figure 1
 highlights the final result. The red run is the initial V1 attempt, and the green
 run is the final V1 run after the fixes described below.</p>
@@ -168,9 +168,9 @@ therefore deliberately narrow:.</p>
 <p>The first visible symptoms appeared in:.</p>
 <p>It has been revealed that those metrics came from a GSPO training run, the objective used for this
 experiment. The same class of mismatch can surface in PPO, GRPO, or any online
-RL system that treats rollout-side logprobs as part of the optimization target. <span style="font-size:13px;">(Related: <a href="breaking-porting-fairseq-wmt19-translation-system-to-transformers-35744.html" style="color:#2563eb; font-weight:600;">Breaking: Porting fairseq wmt19 translation system to t...</a>)</span></p>
+RL system that treats rollout-side logprobs as part of the optimization target.</p>
 <p>Industry observers note that the initial V1 run showed the problem clearly. The trainer-side logprobs and
-reward moved away from the V0 reference early in training. <span style="font-size:13px;">(Related: <a href="industry-news-hugging-face-on-pytorch-xla-tpus-35739.html" style="color:#2563eb; font-weight:600;">Industry News: Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
+reward moved away from the V0 reference early in training. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
 <p>Industry observers note that the same pattern appears in the trainer metrics. Clip rate is the easiest signal
 to read in the initial comparison.</p>
 <p>We separated the possible causes into three layers:.</p>
@@ -263,20 +263,20 @@ then add corrections for the mismatch that remains.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-think-your-saddle-is-too-high-the-signs-every-cycli-34016.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #34016. Industry News: Think Your Saddle Is Too High? The Signs Every Cyclist Should Know Before Their Next Ride
+        <a href="industry-news-native-speed-vllm-transformers-modeling-backend-46921.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46921. Industry News: Native-speed vLLM transformers modeling backend
         </a>
         
-        <a href="industry-news-year-end-tax-planning-for-physicians-what-to-do-bef-33848.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #33848. Industry News: Year-End Tax Planning for Physicians. What To Do Before 2026 Is Over
+        <a href="industry-news-what-to-check-before-adding-a-tripo-model-to-a-webs-46845.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46845. Industry News: What to Check Before Adding a Tripo Model to a Website
         </a>
         
-        <a href="industry-news-the-nightmare-before-retirement-a-physicians-cautio-33841.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #33841. Industry News: The Nightmare Before Retirement: A Physician’s Cautionary Tale (2026 Edition)
+        <a href="industry-news-11-foot-great-white-stalks-california-fisherman-bef-44992.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #44992. Industry News: 11-Foot Great White Stalks California Fisherman Before Drone Pilot’s Life-Saving Warning (Video)
         </a>
         
-        <a href="industry-news-ai-citations-what-to-check-before-reacting-to-a-los-32457.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #32457. Industry News: AI Citations: What To Check Before Reacting To A Lost One via @sejournal, @MattGSouthern
+        <a href="industry-news-how-tennessees-ski-season-started-before-montana-id-44989.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #44989. Industry News: How Tennessee's Ski Season Started Before Montana, Idaho, and Wyoming
         </a>
         
     </div>

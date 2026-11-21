@@ -151,10 +151,10 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34771">The bug: owners attach a video or a batch of photos, the progress bar gets most of the way, and then the upload fails and starts again from zero. On office Wi-Fi it never happens. On a phone it happens a lot, because a long upload on a mobile network is very likely to hit at least one of these: a network switch (Wi-Fi to cellular), a dead zone, the user leaving the app, or a timeout somewhere between the phone and your server.</p>
 <p>It has been revealed that A single POST with the whole file in the body has no way to recover from any of them. Here's what does.</p>
-<p>Before changing the client, check the path the upload takes. A few limits are hit only by large or slow uploads, and they look like network failures from the phone:. <span style="font-size:13px;">(Related: <a href="tech-report-the-reformer-pushing-the-limits-of-language-modeling-35748.html" style="color:#2563eb; font-weight:600;">Tech Report: The Reformer - Pushing the limits of langu...</a>)</span></p>
-<p>According to recent reports, test by uploading a file just over each limit from a fast connection. If that fails, the problem isn't the mobile network.</p>
+<p>Before changing the client, check the path the upload takes. A few limits are hit only by large or slow uploads, and they look like network failures from the phone:. <span style="font-size:13px;">(Related: <a href="fresh-app-punishes-you-and-your-friends-for-spending-too-much-tim-47160.html" style="color:#2563eb; font-weight:600;">Fresh app punishes you and your friends for spending to...</a>)</span></p>
+<p>According to recent reports, test by uploading a file just over each limit from a fast connection. If that fails, the problem isn't the mobile network. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-47177.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>According to recent reports, on iOS, URLSessionConfiguration.timeoutIntervalForRequest (default 60 s) is an idle timeout: it fires when no data moves for that long, not when the whole request takes longer than 60 s. timeoutIntervalForResource (default 7 days) is the total limit. Setting the request timeout to a few minutes "because uploads are slow" mostly delays the error. Leave it, and make the upload resumable instead.</p>
-<p>On Android with OkHttp, writeTimeout is also per write, not for the whole body. callTimeout is the total, and it's off by default. If someone set callTimeout to 30 seconds for the whole app, every upload that takes longer than 30 seconds fails, and that only happens on slow networks. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-35737.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>On Android with OkHttp, writeTimeout is also per write, not for the whole body. callTimeout is the total, and it's off by default. If someone set callTimeout to 30 seconds for the whole app, every upload that takes longer than 30 seconds fails, and that only happens on slow networks.</p>
 <p id="sec-mid-34771">The fix that actually solves it: upload in pieces, and let the client ask the server how much it already has.</p>
 <p>Recent findings suggest that you don't need to design this yourself. Common options:.</p>
 <p>Whatever you use, the client has to store the upload ID and the part list on disk, not in memory, so it can continue after the app is killed.</p>
@@ -189,16 +189,16 @@
             📰 #35698. Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers
         </a>
         
-        <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35750. Breaking: How to train a new language model from scratch using Transformers and Tokenizers
+        <a href="latest-update-fiona-the-hippo-dies-after-accidentally-swallowing--47144.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47144. Latest Update: Fiona the hippo dies after accidentally swallowing hat at Cincinnati Zoo
         </a>
         
-        <a href="breaking-fit-more-and-train-faster-with-zero-via-deepspeed-and-fa-35741.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35741. Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale
+        <a href="rto-means-women-risk-doing-the-office-housework-all-over-again-47048.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47048. RTO means women risk doing the office housework all over again
         </a>
         
-        <a href="simple-considerations-for-simple-people-building-fancy-neural-net-35737.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35737. Simple considerations for simple people building fancy neural networks
+        <a href="11-career-decisions-high-performers-regret-making-too-late-47016.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47016. 11 career decisions high performers regret making too late
         </a>
         
     </div>

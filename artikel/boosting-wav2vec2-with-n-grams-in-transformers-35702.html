@@ -166,10 +166,10 @@ downloads.</p>
 <p>Recent findings suggest that using Connectionist Temporal Classification (CTC), pre-trained
 Wav2Vec2-like checkpoints are extremely easy to fine-tune on downstream
 speech recognition tasks. In a nutshell, fine-tuning pre-trained
-Wav2Vec2 checkpoints works as follows:. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+Wav2Vec2 checkpoints works as follows:.</p>
 <p>In a recent development, A single randomly initialized linear layer is stacked on top of the
 pre-trained checkpoint and trained to classify raw audio input to a
-sequence of letters. It does so by:. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-35743.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+sequence of letters. It does so by:.</p>
 <p>Previously audio classification models required an additional language
 model (LM) and a dictionary to transform the sequence of classified audio
 frames to a coherent transcription. Wav2Vec2's architecture is based on
@@ -177,7 +177,7 @@ transformer layers, thus giving each processed audio representation
 context from all other audio representations. In addition, Wav2Vec2
 leverages the CTC algorithm for
 fine-tuning, which solves the problem of alignment between a varying
-"input audio length"-to-"output text length" ratio.</p>
+"input audio length"-to-"output text length" ratio. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-47177.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>Having contextualized audio classifications and no alignment problems,
 Wav2Vec2 does not require an external language model or dictionary to
 yield acceptable audio transcriptions.</p>
@@ -187,7 +187,7 @@ downstream performances on LibriSpeech without using a language model at
 all. However, from the appendix, it also becomes clear that using Wav2Vec2
 in combination with a language model can yield a significant
 improvement, especially when the model was trained on only 10 minutes of
-transcribed audio.</p>
+transcribed audio. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-47168.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
 <p>Industry observers note that until recently, the 🤗 Transformers library did not offer a simple user
 interface to decode audio files with a fine-tuned Wav2Vec2 and a
 language model. This has thankfully changed. 🤗 Transformers now offers
@@ -441,20 +441,20 @@ test set which is a relative performance of ca. 30% 🔥.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35750. Breaking: How to train a new language model from scratch using Transformers and Tokenizers
+        <a href="ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-47182.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47182. AI breakthrough cuts energy use by 100x while boosting accuracy
         </a>
         
-        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35749. How to generate text: using different decoding methods for language generation with Transformers
+        <a href="industry-news-fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-t-47085.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47085. Industry News: Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers
         </a>
         
-        <a href="latest-update-hyperparameter-search-with-transformers-and-ray-tun-35745.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35745. Latest Update: Hyperparameter Search with Transformers and Ray Tune
+        <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-47063.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47063. Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1
         </a>
         
-        <a href="breaking-porting-fairseq-wmt19-translation-system-to-transformers-35744.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35744. Breaking: Porting fairseq wmt19 translation system to transformers
+        <a href="training-and-finetuning-reranker-models-with-sentence-transformer-47032.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47032. Training and Finetuning Reranker Models with Sentence Transformers
         </a>
         
     </div>

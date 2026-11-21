@@ -151,9 +151,9 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34942">TL;DR -- For those of you who don't have time to read 5,000 words about async RL plumbing (we get it, you have models to train):.</p>
 <p>If you'd rather skip straight to the good part, here's the full comparison table (no reading required, we won't judge).</p>
-<p>But seriously, if you stick around, you might learn a thing or two about why your GPUs are idle 60% of the time.</p>
-<p>Async RL training has emerged as the dominant paradigm for post-training at scale. Several trends in modern post-training have made synchronous training loops nearly impossible to scale:. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-35731.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
-<p>The open-source ecosystem has converged on a common architectural response: disaggregate inference from training onto separate GPU pools, connect them with a rollout buffer, and let both sides run concurrently. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-35742.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
+<p>But seriously, if you stick around, you might learn a thing or two about why your GPUs are idle 60% of the time. <span style="font-size:13px;">(Related: <a href="scientists-are-seriously-asking-if-bees-and-chatgpt-are-conscious-47156.html" style="color:#2563eb; font-weight:600;">Scientists are seriously asking if bees and ChatGPT are...</a>)</span></p>
+<p>Async RL training has emerged as the dominant paradigm for post-training at scale. Several trends in modern post-training have made synchronous training loops nearly impossible to scale:. <span style="font-size:13px;">(Related: <a href="newly-introduced-quantum-algorithm-solves-impossible-materials-pr-47161.html" style="color:#2563eb; font-weight:600;">Newly introduced quantum algorithm solves “impossible” ...</a>)</span></p>
+<p>The open-source ecosystem has converged on a common architectural response: disaggregate inference from training onto separate GPU pools, connect them with a rollout buffer, and let both sides run concurrently.</p>
 <p>In a recent development, we are developing a upcoming async trainer for TRL, one of the most widely used libraries for model post-training. To guide our design, we surveyed sixteen open-source libraries that were built from the ground up around asynchronous training and compared them across seven axes: orchestration primitives, buffer design, weight sync protocols, staleness management, partial rollout handling, LoRA support, and distributed training backends. This article distills the design principles we extracted from that survey.</p>
 <p>Beyond RL, the need for async infrastructure is increasingly evident. For example, on-policy distillation, where a student generates sequences and a teacher scores them, mirrors GRPO but swaps the reward function for a teacher forward pass. Recognizing this structural similarity, everything in this survey applies equally to async distillation. We'll return to this broader point in Section 5.</p>
 <p>TRL's current GRPOTrainer implements the full GRPO loop (prompt sampling, generation, reward scoring, advantage computation, gradient upgrade, and weight sync) in a single synchronous training_step() call. This design is simple and correct, but it cannot overlap generation with training, leaving significant GPU utilisation on the table.</p>
@@ -298,20 +298,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-announcing-the-open-source-ai-game-jam-35526.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35526. Tech Report: Announcing the Open Source AI Game Jam 🎮
+        <a href="tech-report-hardware-hacker-builds-open-source-portable-35-inch-f-46992.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46992. Tech Report: Hardware hacker builds open-source portable 3.5-inch floppy Wi-Fi NAS
         </a>
         
-        <a href="industry-news-open-source-text-generation-llm-ecosystem-at-huggin-35503.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35503. Industry News: Open-Source Text Generation & LLM Ecosystem at Hugging Face
+        <a href="meta-is-back-with-muse-glimmer-local-agentic-multimodal-and-open--46862.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46862. Meta is back with Muse Glimmer: local, agentic, multimodal, and open source
         </a>
         
-        <a href="breaking-results-of-the-open-source-ai-game-jam-35499.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35499. Breaking: Results of the Open Source AI Game Jam
+        <a href="latest-update-cncf-score-project-improved-its-security-posture-by-46778.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46778. Latest Update: CNCF Score project improved its security posture by joining the Docker-Sponsored Open Source Program
         </a>
         
-        <a href="open-source-llms-as-langchain-agents-35429.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35429. Open-source LLMs as LangChain Agents
+        <a href="the-best-things-in-open-source-are-built-together-46711.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46711. The best things in open source are built together
         </a>
         
     </div>

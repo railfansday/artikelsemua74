@@ -3,235 +3,217 @@
   <title>Portal Berita Interaktif - Atom Feed</title>
   <link href="https://railfansday.github.io/artikelsemua74/atom.xml" rel="self"/>
   <link href="https://railfansday.github.io/artikelsemua74/"/>
-  <updated>2026-11-21T07:25:47Z</updated>
+  <updated>2026-11-21T19:49:13Z</updated>
   <id>https://railfansday.github.io/artikelsemua74/</id>
   
   <entry>
-    <title>Breaking: How to train a new language model from scratch using Transformers and Tokenizers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html</id>
-    <updated>2020-02-14T00:00:00Z</updated>
-    <summary>Over the past few months, we made several improvements to our transformers and tokenizers libraries, with the goal of making it easier than ever to train a fresh language model from scratch. In this post we’ll demo how to train a “small” model (84 M ...</summary>
+    <title>Breaking: Arts panel asks Trump administration to rethink East Potomac golf course’s scope</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-arts-panel-asks-trump-administration-to-rethink-east-pot-47187.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-arts-panel-asks-trump-administration-to-rethink-east-pot-47187.html</id>
+    <updated>2026-11-19T19:42:25Z</updated>
+    <summary>The panel of Trump appointees appeared skeptical of the administration’s plan to cut off access to East Potomac Park to build a championship course. → Read original article...</summary>
   </entry>
   <entry>
-    <title>How to generate text: using different decoding methods for language generation with Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-35749.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-35749.html</id>
-    <updated>2020-03-01T00:00:00Z</updated>
-    <summary>Note: Edited on July 2023 with up-to-date references and examples. Recent findings suggest that in recent years, there has been an increasing interest in open-ended
-language generation thanks to the rise of large transformer-based
-language models tra...</summary>
+    <title>Industry News: Buttigieg supporters launch group to support a presidential bid</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html</id>
+    <updated>2026-11-19T19:45:00Z</updated>
+    <summary>Ex-aides to the former transportation secretary organized the Team Pete PAC to build a grassroots network and encourage a 2028 campaign. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Tech Report: The Reformer - Pushing the limits of language modeling</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/tech-report-the-reformer-pushing-the-limits-of-language-modeling-35748.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/tech-report-the-reformer-pushing-the-limits-of-language-modeling-35748.html</id>
-    <updated>2020-07-03T00:00:00Z</updated>
-    <summary>The Reformer model as introduced by Kitaev, Kaiser et al. (2020) is one of the most memory-efficient transformer models for long sequence modeling as of today. Recent findings suggest that recently, long sequence modeling has experienced a surge of i...</summary>
+    <title>Scientists discover AI can make humans more creative</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/scientists-discover-ai-can-make-humans-more-creative-47185.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/scientists-discover-ai-can-make-humans-more-creative-47185.html</id>
+    <updated>2026-03-16T00:59:26Z</updated>
+    <summary>Recent findings suggest that artificial intelligence (AI) is commonly viewed as a technology designed to automate work and potentially replace human labor. However, newly introduced research from Swansea University offers a different perspective. The...</summary>
   </entry>
   <entry>
-    <title>Block Sparse Matrices for Smaller and Faster Language Models</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-35747.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-35747.html</id>
-    <updated>2020-09-10T00:00:00Z</updated>
-    <summary>In previous blog
-posts 
-we introduced sparse matrices and what they could do to improve neural networks. In a recent development, the basic assumption is that full dense layers are often overkill and can be pruned without a significant loss in precis...</summary>
+    <title>Industry News: AI-powered robot learns how to harvest tomatoes more efficiently</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/industry-news-ai-powered-robot-learns-how-to-harvest-tomatoes-mor-47184.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/industry-news-ai-powered-robot-learns-how-to-harvest-tomatoes-mor-47184.html</id>
+    <updated>2026-03-18T04:26:44Z</updated>
+    <summary>Sources indicate that farm labor shortages are pushing agriculture toward greater automation, especially when it comes to harvesting. But not all crops are easy for machines to handle. Tomatoes, for example, grow in clusters, which means a robot must...</summary>
   </entry>
   <entry>
-    <title>Transformer-based Encoder-Decoder Models</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/transformer-based-encoder-decoder-models-35746.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/transformer-based-encoder-decoder-models-35746.html</id>
-    <updated>2020-10-10T00:00:00Z</updated>
-    <summary>According to recent reports, the transformer-based encoder-decoder model was introduced by Vaswani
-et al. in the famous Attention is all you need
-paper and is today the de-facto
-standard encoder-decoder architecture in natural language processing
-(NL...</summary>
+    <title>DNA robots could deliver drugs and hunt viruses inside your body</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/dna-robots-could-deliver-drugs-and-hunt-viruses-inside-your-body-47183.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/dna-robots-could-deliver-drugs-and-hunt-viruses-inside-your-body-47183.html</id>
+    <updated>2026-03-31T11:16:58Z</updated>
+    <summary>According to recent reports, imagine tiny robots made from DNA moving through the bloodstream, delivering drugs exactly where they are needed and targeting threats such as cancer cells or viruses. These microscopic machines could also assemble ultra-...</summary>
   </entry>
   <entry>
-    <title>Latest Update: Hyperparameter Search with Transformers and Ray Tune</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/latest-update-hyperparameter-search-with-transformers-and-ray-tun-35745.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/latest-update-hyperparameter-search-with-transformers-and-ray-tun-35745.html</id>
-    <updated>2020-11-02T00:00:00Z</updated>
-    <summary>With cutting edge research implementations, thousands of trained models easily accessible, the Hugging Face transformers library has become critical to the success and growth of natural language processing today. It has been revealed that for any mac...</summary>
+    <title>AI breakthrough cuts energy use by 100x while boosting accuracy</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-47182.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-47182.html</id>
+    <updated>2026-04-06T01:23:54Z</updated>
+    <summary>Recent findings suggest that artificial intelligence is consuming enormous amounts of electricity in the United States. According to the International Energy Agency, AI systems and data centers used about 415 terawatt hours of power in 2024. That acc...</summary>
   </entry>
   <entry>
-    <title>Breaking: Porting fairseq wmt19 translation system to transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-porting-fairseq-wmt19-translation-system-to-transformers-35744.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-porting-fairseq-wmt19-translation-system-to-transformers-35744.html</id>
-    <updated>2020-11-03T00:00:00Z</updated>
-    <summary>This article is an attempt to document how fairseq wmt19 translation system was ported to transformers. I was looking for some interesting project to work on and Sam Shleifer suggested I work on porting a high quality translator. I read the short pap...</summary>
+    <title>Restaurant hits out at “miserable and entitled” diners after viral outrage over tips rule</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/restaurant-hits-out-at-miserable-and-entitled-diners-after-viral--47181.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/restaurant-hits-out-at-miserable-and-entitled-diners-after-viral--47181.html</id>
+    <updated>2026-11-19T13:37:52Z</updated>
+    <summary>A restaurant in North Carolina has hit out at “miserable and entitled” customers after their rules about tipping went viral on social media, and people thought that the answer would be to review bomb them. Tipping in restaurants and bar has long been...</summary>
   </entry>
   <entry>
-    <title>Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-35743.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-35743.html</id>
-    <updated>2020-11-09T00:00:00Z</updated>
-    <summary>Recent findings suggest that transformer-based encoder-decoder models were proposed in Vaswani et
-al. (2017) and have recently
-experienced a surge of interest, e.g. Lewis et al. (2019), Raffel et al. (2019), Zhang et al. (2020), Zaheer et al. (2020),...</summary>
+    <title>This fresh chip survives 1300°F (700°C) and could change AI forever</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/this-fresh-chip-survives-1300f-700c-and-could-change-ai-forever-47180.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/this-fresh-chip-survives-1300f-700c-and-could-change-ai-forever-47180.html</id>
+    <updated>2026-04-07T05:32:38Z</updated>
+    <summary>Modern electronics power everything from smartphones to satellites, but they all share a major limitation. Heat. Once temperatures climb above roughly 200 degrees Celsius, most devices begin to break down. For decades, this thermal barrier has been o...</summary>
   </entry>
   <entry>
-    <title>How we sped up transformer inference 100x for 🤗 API customers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-35742.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-35742.html</id>
-    <updated>2021-01-18T00:00:00Z</updated>
-    <summary>🤗 Transformers has become the default library for data scientists all around the world to explore state of the art NLP models and build newly introduced NLP features. With over 5,000 pre-trained and fine-tuned models available, in over 250 languages,...</summary>
+    <title>This new chip could slash data center energy waste</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/this-new-chip-could-slash-data-center-energy-waste-47179.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/this-new-chip-could-slash-data-center-energy-waste-47179.html</id>
+    <updated>2026-04-10T12:45:22Z</updated>
+    <summary>Industry observers note that as data centers consume more energy to support growing digital demands, engineers at the University of California San Diego have introduced a new chip design that could make powering graphics processing units (GPUs) more ...</summary>
   </entry>
   <entry>
-    <title>Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-fit-more-and-train-faster-with-zero-via-deepspeed-and-fa-35741.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-fit-more-and-train-faster-with-zero-via-deepspeed-and-fa-35741.html</id>
-    <updated>2021-01-19T00:00:00Z</updated>
-    <summary>A guest blog post by Hugging Face fellow Stas Bekman. Industry observers note that as recent Machine Learning models have been growing much faster than the amount of GPU memory added to newly released cards, many customers are unable to train or even...</summary>
+    <title>GTA 6 screenshot hidden in San Andreas back in 2021 was real and the house has a dark secret</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/gta-6-screenshot-hidden-in-san-andreas-back-in-2021-was-real-and--47178.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/gta-6-screenshot-hidden-in-san-andreas-back-in-2021-was-real-and--47178.html</id>
+    <updated>2026-11-19T14:17:14Z</updated>
+    <summary>A mysterious GTA 6 screenshot discovered in San Andreas Definitive Edition back in 2021 has finally been found in Rockstar’s new game, confirming a theory that predates even the infamous 2022 hack. Five years ago, players exploring GTA Trilogy: The D...</summary>
   </entry>
   <entry>
-    <title>Faster TensorFlow models in Hugging Face Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/faster-tensorflow-models-in-hugging-face-transformers-35740.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/faster-tensorflow-models-in-hugging-face-transformers-35740.html</id>
-    <updated>2021-01-26T00:00:00Z</updated>
-    <summary>According to recent reports, in the last few months, the Hugging Face team has been working hard on improving Transformers’ TensorFlow models to make them more robust and faster. The recent improvements are mainly focused on two aspects:. To demonstr...</summary>
+    <title>“Giant superatoms” could finally solve quantum computing’s biggest problem</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/giant-superatoms-could-finally-solve-quantum-computings-biggest-p-47177.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/giant-superatoms-could-finally-solve-quantum-computings-biggest-p-47177.html</id>
+    <updated>2026-04-13T12:38:46Z</updated>
+    <summary>Researchers at Chalmers University of Technology in Sweden have introduced a new theoretical design for quantum systems based on what they call "giant superatoms." This concept offers a fresh way to protect, control, and share quantum information, po...</summary>
   </entry>
   <entry>
-    <title>Industry News: Hugging Face on PyTorch / XLA TPUs</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/industry-news-hugging-face-on-pytorch-xla-tpus-35739.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/industry-news-hugging-face-on-pytorch-xla-tpus-35739.html</id>
-    <updated>2021-02-09T00:00:00Z</updated>
-    <summary>Recent findings suggest that the PyTorch-TPU project originated as a collaborative effort between the Facebook PyTorch and Google TPU teams and officially launched at the 2019 PyTorch Developer Conference 2019. Since then, we’ve worked with the Huggi...</summary>
+    <title>Flat the Mountain codes (November 2026)</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/flat-the-mountain-codes-november-2026-47176.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/flat-the-mountain-codes-november-2026-47176.html</id>
+    <updated>2026-11-19T14:28:40Z</updated>
+    <summary>It has been revealed that A mountain stands between the construction crew and a finished highway in Roblox Flat the Mountain. Codes for the game can give you extra resources, but you’ll still have to do the hard work of breaking down the rock, cleari...</summary>
   </entry>
   <entry>
-    <title>Latest Update: Retrieval Augmented Generation with Huggingface Transformers and Ray</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/latest-update-retrieval-augmented-generation-with-huggingface-tra-35738.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/latest-update-retrieval-augmented-generation-with-huggingface-tra-35738.html</id>
-    <updated>2021-02-10T00:00:00Z</updated>
-    <summary>Sources indicate that huggingface Transformers recently added the Retrieval Augmented Generation (RAG) model, a new NLP architecture that leverages external documents (like Wikipedia) to augment its knowledge and achieve state of the art results on k...</summary>
+    <title>Latest Update: Airline responds after passengers find bags covered in “doo-doo” after two-hour delay</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/latest-update-airline-responds-after-passengers-find-bags-covered-47175.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/latest-update-airline-responds-after-passengers-find-bags-covered-47175.html</id>
+    <updated>2026-11-19T14:35:24Z</updated>
+    <summary>American Airlines has responded after passengers found that their bags had been covered in a brown, liquid-like substance while waiting two hours for them. When you get off a flight, there can be a sense of trepidation about what’s to come next. If y...</summary>
   </entry>
   <entry>
-    <title>Simple considerations for simple people building fancy neural networks</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/simple-considerations-for-simple-people-building-fancy-neural-net-35737.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/simple-considerations-for-simple-people-building-fancy-neural-net-35737.html</id>
-    <updated>2021-02-25T00:00:00Z</updated>
-    <summary>It has been revealed that photo by Henry &amp; Co. on Unsplash. As machine learning continues penetrating all aspects of the industry, neural networks have never been so hyped. For instance, models like GPT-3 have been all over social media in the past f...</summary>
+    <title>This simple change stops robot swarms from getting stuck</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/this-simple-change-stops-robot-swarms-from-getting-stuck-47174.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/this-simple-change-stops-robot-swarms-from-getting-stuck-47174.html</id>
+    <updated>2026-04-15T07:45:51Z</updated>
+    <summary>Industry observers note that imagine a swarm of robots rushing to complete an urgent job, such as cleaning up an oil spill or assembling complex machinery. At first, adding more robots speeds things up. But after a certain point, the space becomes cr...</summary>
   </entry>
   <entry>
-    <title>Hugging Face Reads, Feb. 2021 - Long-range Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/hugging-face-reads-feb-2021-long-range-transformers-35736.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/hugging-face-reads-feb-2021-long-range-transformers-35736.html</id>
-    <updated>2021-03-09T00:00:00Z</updated>
-    <summary>Co-written by Teven Le Scao, Patrick Von Platen, Suraj Patil, Yacine Jernite and Victor Sanh. Recent findings suggest that each month, we will choose a topic to focus on, reading a set of four papers recently published on the subject. We will then wr...</summary>
+    <title>Quantum AI just got shockingly good at predicting chaos</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/quantum-ai-just-got-shockingly-good-at-predicting-chaos-47173.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/quantum-ai-just-got-shockingly-good-at-predicting-chaos-47173.html</id>
+    <updated>2026-04-18T03:51:09Z</updated>
+    <summary>Recent findings suggest that A new study led by researchers at UCL (University College London) indicates that combining quantum computing with artificial intelligence can significantly improve predictions of complex physical systems over long periods...</summary>
   </entry>
   <entry>
-    <title>Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-35735.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-35735.html</id>
-    <updated>2021-03-12T00:00:00Z</updated>
-    <summary>Wav2Vec2 is a pretrained model for Automatic Speech Recognition (ASR)
-and was released in September
-2020
-by Alexei Baevski, Michael Auli, and Alex Conneau. Using a novel contrastive pretraining objective, Wav2Vec2 learns
-powerful speech representatio...</summary>
+    <title>GTA 6’s latest dangerous driving and doomscrolling feature spawns hilarious memes</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/gta-6s-latest-dangerous-driving-and-doomscrolling-feature-spawns--47172.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/gta-6s-latest-dangerous-driving-and-doomscrolling-feature-spawns--47172.html</id>
+    <updated>2026-11-19T14:43:33Z</updated>
+    <summary>GTA 6 fans are discovering that driving while checking their in-game phone drastically changes the way their vehicle handles, spawning a wave of viral memes and videos that highlight how dangerous it is. Driving while looking at your mobile phone is ...</summary>
   </entry>
   <entry>
-    <title>My Journey to a serverless transformers pipeline on Google Cloud</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-35734.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-35734.html</id>
-    <updated>2021-03-18T00:00:00Z</updated>
-    <summary>Recent findings suggest that this article will discuss my journey to deploy the transformers sentiment-analysis pipeline on Google Cloud. We will start with a quick introduction to transformers and then move to the technical part of the implementatio...</summary>
+    <title>Think AI "knows" what it’s doing? Scientists say think again</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/think-ai-knows-what-its-doing-scientists-say-think-again-47171.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/think-ai-knows-what-its-doing-scientists-say-think-again-47171.html</id>
+    <updated>2026-04-19T08:02:23Z</updated>
+    <summary>Think, know, understand, remember. Industry observers note that these are everyday words people use to describe what goes on in the human mind. But when those same terms are applied to artificial intelligence, they can unintentionally make machines s...</summary>
   </entry>
   <entry>
-    <title>The Partnership: Amazon SageMaker and Hugging Face</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/the-partnership-amazon-sagemaker-and-hugging-face-35733.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/the-partnership-amazon-sagemaker-and-hugging-face-35733.html</id>
-    <updated>2021-03-23T00:00:00Z</updated>
-    <summary>Today, we announce a strategic partnership between Hugging Face and Amazon to make it easier for companies to leverage State of the Art Machine Learning models, and ship cutting-edge NLP features faster. Through this partnership, Hugging Face is leve...</summary>
+    <title>Artificial neurons successfully communicate with living brain cells</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/artificial-neurons-successfully-communicate-with-living-brain-cel-47170.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/artificial-neurons-successfully-communicate-with-living-brain-cel-47170.html</id>
+    <updated>2026-04-18T07:32:36Z</updated>
+    <summary>Industry observers note that engineers at Northwestern University have created printed artificial neurons that go beyond imitation and can directly interact with real brain cells. These flexible, low-cost devices produce electrical signals that close...</summary>
   </entry>
   <entry>
-    <title>Understanding BigBird's Block Sparse Attention</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/understanding-bigbirds-block-sparse-attention-35732.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/understanding-bigbirds-block-sparse-attention-35732.html</id>
-    <updated>2021-03-31T00:00:00Z</updated>
-    <summary>Transformer-based models have shown to be very useful for many NLP tasks. However, a major limitation of transformers-based models is its O(n2)O(n^2)O(n2) time &amp; memory complexity (where nnn is sequence length). Hence, it's computationally very expen...</summary>
+    <title>GTA 6 players find Dexter’s apartment, serial killer kit, and can even steal his boat</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/gta-6-players-find-dexters-apartment-serial-killer-kit-and-can-ev-47169.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/gta-6-players-find-dexters-apartment-serial-killer-kit-and-can-ev-47169.html</id>
+    <updated>2026-11-19T15:05:20Z</updated>
+    <summary>GTA 6 players have discovered Dexter Morgan’s apartment in Vice City, complete with a collection of his signature killing tools and even a boat resembling the one used by the TV serial killer. Back in August, fans spotted what appeared to be Dexter’s...</summary>
   </entry>
   <entry>
-    <title>Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/distributed-training-train-bartt5-for-summarization-using-transfo-35731.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/distributed-training-train-bartt5-for-summarization-using-transfo-35731.html</id>
-    <updated>2021-04-08T00:00:00Z</updated>
-    <summary>In case you missed it: on March 25th we announced a collaboration with Amazon SageMaker to make it easier to create State-of-the-Art Machine Learning models, and ship cutting-edge NLP features faster. In a recent development, together with the SageMa...</summary>
+    <title>AI swarms could hijack democracy without anyone noticing</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/ai-swarms-could-hijack-democracy-without-anyone-noticing-47168.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/ai-swarms-could-hijack-democracy-without-anyone-noticing-47168.html</id>
+    <updated>2026-04-20T09:47:25Z</updated>
+    <summary>Sources indicate that A latest kind of political threat may be emerging, and it is far less visible than protests or traditional voter manipulation. Researchers warn that highly realistic AI-controlled personas could soon play a major role in shaping...</summary>
   </entry>
   <entry>
-    <title>Introducing 🤗 Accelerate</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/introducing-accelerate-35730.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/introducing-accelerate-35730.html</id>
-    <updated>2021-04-16T00:00:00Z</updated>
-    <summary>Run your raw PyTorch training scripts on any kind of device. According to recent reports, most high-level libraries above PyTorch provide support for distributed training and mixed precision, but the abstraction they introduce require a user to learn...</summary>
+    <title>Industry News: Illegal Soccer codes (November 2026)</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/industry-news-illegal-soccer-codes-november-2026-47167.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/industry-news-illegal-soccer-codes-november-2026-47167.html</id>
+    <updated>2026-11-19T15:32:27Z</updated>
+    <summary>According to recent reports, A football match normally isn’t about dodging bullets or being pulled across the pitch with a grappling hook. In Roblox Illegal Soccer, that’s what you get when you play. The codes give you another kind of reward: player ...</summary>
   </entry>
   <entry>
-    <title>Breaking: Scaling-up BERT Inference on CPU (Part 1)</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-scaling-up-bert-inference-on-cpu-part-1-35729.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-scaling-up-bert-inference-on-cpu-part-1-35729.html</id>
-    <updated>2021-04-20T00:00:00Z</updated>
-    <summary>Back in October 2019, my colleague Lysandre Debut published a comprehensive (at the time) inference performance 
-benchmarking blog (1). Since then, 🤗 transformers (2) welcomed a tremendous number
-of latest architectures and thousands of new models we...</summary>
+    <title>Breaking: Just Eat reveals limited-edition controller with order food button for instant deliveries</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-just-eat-reveals-limited-edition-controller-with-order-f-47166.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-just-eat-reveals-limited-edition-controller-with-order-f-47166.html</id>
+    <updated>2026-11-19T15:42:16Z</updated>
+    <summary>Just Eat has unveiled a limited-edition gaming controller featuring a dedicated button that allows players to order food without putting down their controller. The custom-built device, called the Stay In The Game controller, has been designed to keep...</summary>
   </entry>
   <entry>
-    <title>Tech Report: Using &amp; Mixing Hugging Face Models with Gradio 2.0</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/tech-report-using-mixing-hugging-face-models-with-gradio-20-35728.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/tech-report-using-mixing-hugging-face-models-with-gradio-20-35728.html</id>
-    <updated>2021-05-25T00:00:00Z</updated>
-    <summary>The Hugging Face Model Hub has more than 10,000 machine learning models submitted by owners. You’ll find all kinds of natural language processing models that, for example, translate between Finnish and English or recognize Chinese speech. More recent...</summary>
+    <title>This AI knew the answers but didn’t understand the questions</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/this-ai-knew-the-answers-but-didnt-understand-the-questions-47165.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/this-ai-knew-the-answers-but-didnt-understand-the-questions-47165.html</id>
+    <updated>2026-04-30T06:44:03Z</updated>
+    <summary>Psychologists have long debated whether the human mind can be explained by a single, unified theory or if different functions such as attention and memory must be studied separately. Now, artificial intelligence (AI) is entering that debate, offering...</summary>
   </entry>
   <entry>
-    <title>Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-few-shot-learning-in-practice-gpt-neo-and-the-accelerate-35727.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-few-shot-learning-in-practice-gpt-neo-and-the-accelerate-35727.html</id>
-    <updated>2021-06-03T00:00:00Z</updated>
-    <summary>In a recent development, in many Machine Learning applications, the amount of available labeled data is a barrier to producing a high-performing model. The latest developments in NLP show that you can overcome this limitation by providing a few examp...</summary>
+    <title>AI lets chemists design molecules by simply describing them</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/ai-lets-chemists-design-molecules-by-simply-describing-them-47164.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/ai-lets-chemists-design-molecules-by-simply-describing-them-47164.html</id>
+    <updated>2026-05-06T00:20:57Z</updated>
+    <summary>Sources indicate that creating new molecules is one of the toughest tasks in chemistry. Whether the goal is a life-saving drug or a cutting-edge material, each compound must be built through a carefully planned series of reactions. Mapping out these ...</summary>
   </entry>
   <entry>
-    <title>Sentence Transformers in the Hugging Face Hub</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/sentence-transformers-in-the-hugging-face-hub-35726.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/sentence-transformers-in-the-hugging-face-hub-35726.html</id>
-    <updated>2021-06-28T00:00:00Z</updated>
-    <summary>Over the past few weeks, we've built collaborations with many Open Source frameworks in the machine learning ecosystem. One that gets us particularly excited is Sentence Transformers. Sentence Transformers is a framework for sentence, paragraph and i...</summary>
+    <title>Man sees his cat on people’s faces everywhere after brain surgery</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/man-sees-his-cat-on-peoples-faces-everywhere-after-brain-surgery-47163.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/man-sees-his-cat-on-peoples-faces-everywhere-after-brain-surgery-47163.html</id>
+    <updated>2026-11-19T15:58:41Z</updated>
+    <summary>A man has developed a condition that makes him see the face of his cat on humans and vice versa after having surgery. Seriously. According to MedicalXpress, a 28-year-old man by the name of Karl from the northeastern United States developed a form of...</summary>
   </entry>
   <entry>
-    <title>Tech Report: Deploy Hugging Face models easily with Amazon SageMaker</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/tech-report-deploy-hugging-face-models-easily-with-amazon-sagemak-35725.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/tech-report-deploy-hugging-face-models-easily-with-amazon-sagemak-35725.html</id>
-    <updated>2021-07-08T00:00:00Z</updated>
-    <summary>Earlier this year we announced a strategic collaboration with Amazon to make it easier for companies to use Hugging Face in Amazon SageMaker, and ship cutting-edge Machine Learning features faster. We introduced new Hugging Face Deep Learning Contain...</summary>
+    <title>Your “um” and pauses could reveal early dementia risk</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/your-um-and-pauses-could-reveal-early-dementia-risk-47162.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/your-um-and-pauses-could-reveal-early-dementia-risk-47162.html</id>
+    <updated>2026-05-13T04:18:33Z</updated>
+    <summary>The way people speak during ordinary conversations could offer valuable insight into brain health, according to new research from Baycrest, the University of Toronto, and York University. Scientists found that subtle speech characteristics, including...</summary>
   </entry>
   <entry>
-    <title>Tech Report: Welcome spaCy to the Hugging Face Hub</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/tech-report-welcome-spacy-to-the-hugging-face-hub-35724.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/tech-report-welcome-spacy-to-the-hugging-face-hub-35724.html</id>
-    <updated>2021-07-13T00:00:00Z</updated>
-    <summary>spaCy is a popular library for advanced Natural Language Processing used widely across industry. spaCy makes it easy to use and train pipelines for tasks like named entity recognition, text classification, part of speech tagging and more, and lets yo...</summary>
+    <title>Newly introduced quantum algorithm solves “impossible” materials problem in seconds</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/newly-introduced-quantum-algorithm-solves-impossible-materials-pr-47161.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/newly-introduced-quantum-algorithm-solves-impossible-materials-pr-47161.html</id>
+    <updated>2026-05-13T07:33:27Z</updated>
+    <summary>Industry observers note that quantum computers and other advanced quantum technologies rely on specialized quantum materials that behave in unusual ways under the right conditions. In some cases, scientists can even create entirely new quantum proper...</summary>
   </entry>
   <entry>
-    <title>Tech Report: Deep Learning over the Internet: Training Language Models Collaboratively</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/tech-report-deep-learning-over-the-internet-training-language-mod-35723.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/tech-report-deep-learning-over-the-internet-training-language-mod-35723.html</id>
-    <updated>2021-07-15T00:00:00Z</updated>
-    <summary>Sources indicate that modern language models often require a significant amount of compute for pretraining, making it impossible to obtain them without access to tens and hundreds of GPUs or TPUs. Though in theory it might be possible to combine the ...</summary>
+    <title>Fresh app punishes you and your friends for spending too much time on your phone</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/fresh-app-punishes-you-and-your-friends-for-spending-too-much-tim-47160.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/fresh-app-punishes-you-and-your-friends-for-spending-too-much-tim-47160.html</id>
+    <updated>2026-11-19T16:23:51Z</updated>
+    <summary>A fresh app called Island is taking a different approach to reducing screen time, turning your phone usage into a farming simulator where spending too much time on your device can have consequences for you and your friends. Unlike traditional screen ...</summary>
   </entry>
   <entry>
-    <title>Introducing Optimum: The Optimization Toolkit for Transformers at Scale</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/introducing-optimum-the-optimization-toolkit-for-transformers-at--35722.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/introducing-optimum-the-optimization-toolkit-for-transformers-at--35722.html</id>
-    <updated>2021-09-14T00:00:00Z</updated>
-    <summary>It has been revealed that this post is the first step of a journey for Hugging Face to democratize
-state-of-the-art Machine Learning production performance. To get there, we will work hand in hand with our
-Hardware Partners, as we have with Intel bel...</summary>
+    <title>NASA’s fresh AI space chip could let spacecraft think for themselves</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/nasas-fresh-ai-space-chip-could-let-spacecraft-think-for-themselv-47159.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/nasas-fresh-ai-space-chip-could-let-spacecraft-think-for-themselv-47159.html</id>
+    <updated>2026-05-15T08:13:15Z</updated>
+    <summary>Recent findings suggest that NASA is developing a powerful newly introduced computer chip designed to dramatically increase the intelligence and performance of future spacecraft. Through a commercial partnership, the project is creating advanced proc...</summary>
   </entry>
   <entry>
-    <title>Hugging Face and Graphcore partner for IPU-optimized Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/hugging-face-and-graphcore-partner-for-ipu-optimized-transformers-35721.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/hugging-face-and-graphcore-partner-for-ipu-optimized-transformers-35721.html</id>
-    <updated>2021-09-14T00:00:00Z</updated>
-    <summary>Graphcore and Hugging Face are two companies with a common goal – to make it easier for innovators to harness the power of machine intelligence. Hugging Face’s Hardware Partner Program will allow developers using Graphcore systems to deploy state-of-...</summary>
+    <title>Forget electrons, this breakthrough uses light-matter particles to power AI</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/forget-electrons-this-breakthrough-uses-light-matter-particles-to-47158.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/forget-electrons-this-breakthrough-uses-light-matter-particles-to-47158.html</id>
+    <updated>2026-05-19T00:23:26Z</updated>
+    <summary>According to recent reports, eighty years after the creation of ENIAC, the world's first general-purpose electronic computer, researchers at the University of Pennsylvania are exploring a newly introduced way to power the future of computing. Instead...</summary>
   </entry>
 </feed>

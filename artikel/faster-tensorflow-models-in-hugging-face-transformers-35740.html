@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faster TensorFlow models in Hugging Face Transformers</title>
+    <meta name="description" content="According to recent reports, in the last few months, the Hugging Face team has been working hard on improving Transformers’ TensorFlow models to make them ">
+    <meta name="keywords" content="tensorflow, serving, savedmodel, model, bert, transformers, models, recent">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/faster-tensorflow-models-in-hugging-face-transformers-35740.html">
+    
+    <meta property="og:title" content="Faster TensorFlow models in Hugging Face Transformers">
+    <meta property="og:description" content="According to recent reports, in the last few months, the Hugging Face team has been working hard on improving Transformers’ TensorFlow models to make them ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/10_tf-serving/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/faster-tensorflow-models-in-hugging-face-transformers-35740.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Faster TensorFlow models in Hugging Face Transformers">
+    <meta name="twitter:description" content="According to recent reports, in the last few months, the Hugging Face team has been working hard on improving Transformers’ TensorFlow models to make them ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/10_tf-serving/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Faster TensorFlow models in Hugging Face Transformers", "image": ["https://huggingface.co/blog/assets/10_tf-serving/thumbnail.png"], "datePublished": "2021-01-26T00:00:00", "dateModified": "2026-11-21T06:52:55.060015", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/faster-tensorflow-models-in-hugging-face-transformers-35740.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Faster TensorFlow models in Hugging Face Transformers?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Faster TensorFlow models in Hugging Face Transformers' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Faster TensorFlow models in Hugging Face Transformers</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 26 Jan 2021 &bull; ⏱️ 4 min read (722 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, in the last few months, the Hugging Face team has been working hard on improving Transformers’ TensorFlow models to make them more robust and faster.</li><li style='margin-bottom:6px;'>To demonstrate the computational performance improvements, we have done a thorough benchmark where we compare BERT's performance with TensorFlow Serving of v4.2.0 to the official implementation from Google.</li><li style='margin-bottom:6px;'>Industry observers note that the current implementation of Bert in v4.2.0 is faster than the Google implementation by up to ~10%.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35740"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35740"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35740"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Faster TensorFlow models in Hugging Face Transformers" loading="lazy" src="https://huggingface.co/blog/assets/10_tf-serving/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35740">According to recent reports, in the last few months, the Hugging Face team has been working hard on improving Transformers’ TensorFlow models to make them more robust and faster. The recent improvements are mainly focused on two aspects:.</p>
+<p>To demonstrate the computational performance improvements, we have done a thorough benchmark where we compare BERT's performance with TensorFlow Serving of v4.2.0 to the official implementation from Google. The benchmark has been run on a GPU V100 using a sequence length of 128 (times are in millisecond):. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Industry observers note that the current implementation of Bert in v4.2.0 is faster than the Google implementation by up to ~10%. Apart from that it is also twice as fast as the implementations in the 4.1.1 release. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Industry observers note that the previous section demonstrates that the brand new Bert model got a dramatic increase in computational performance in the last version of Transformers. In this section, we will show you step-by-step how to deploy a Bert model with TensorFlow Serving to benefit from the increase in computational performance in a production environment.</p>
+<p>TensorFlow Serving belongs to the set of tools provided by TensorFlow Extended (TFX) that makes the task of deploying a model to a server easier than ever. TensorFlow Serving provides two APIs, one that can be called upon using HTTP requests and another one using gRPC to run inference on the server.</p>
+<p>In a recent development, A SavedModel contains a standalone TensorFlow model, including its weights and its architecture. It does not require the original source of the model to be run, which makes it useful for sharing or deploying with any backend that supports reading a SavedModel such as Java, Go, C++ or JavaScript among others. The internal structure of a SavedModel is represented as such:.</p>
+<p>There are three ways to install and use TensorFlow Serving:.</p>
+<p>To make things easier and compliant with all the existing OS, we will use Docker in this tutorial.</p>
+<p>SavedModel is the format expected by TensorFlow Serving. Since Transformers v4.2.0, creating a SavedModel has three additional features:.</p>
+<p>Below, you can find the inputs and outputs representations of a TFBertForSequenceClassification saved as a TensorFlow SavedModel:.</p>
+<p>In a recent development, to directly pass inputs_embeds (the token embeddings) instead of input_ids (the token IDs) as input, we need to subclass the model to have a new serving signature. The following snippet of code shows how to do so:.</p>
+<p id="sec-mid-35740">The serving method has to be overridden by the new input_signature argument of the tf.function decorator. See the official documentation to know more about the input_signature argument. The serving method is used to define how will behave a SavedModel when deployed with TensorFlow Serving. Now the SavedModel looks like as expected, see the new inputs_embeds input:.</p>
+<p>Let’s see step by step how to deploy and use a BERT model for sentiment classification.</p>
+<p>Create a SavedModel. To create a SavedModel, the Transformers library lets you load a PyTorch model called nateraw/bert-base-uncased-imdb trained on the IMDB dataset and convert it to a TensorFlow Keras model for you:.</p>
+<p>It has been revealed that create a Docker container with the SavedModel and run it. First, pull the TensorFlow Serving Docker image for CPU (for GPU replace serving by serving:latest-gpu):.</p>
+<p>Next, run a serving image as a daemon named serving_base:.</p>
+<p>copy the newly created SavedModel into the serving_base container's models folder:.</p>
+<p>commit the container that serves the model by changing MODEL_NAME to match the model's name (here bert), the name (bert) corresponds to the name we want to give to our SavedModel:.</p>
+<p>and kill the serving_base image ran as a daemon because we don't need it anymore:.</p>
+<p>Finally, Run the image to serve our SavedModel as a daemon and we map the ports 8501 (REST API), and 8500 (gRPC API) in the container to the host and we name the container bert.</p>
+<p>Query the model through the REST API:.</p>
+<p>This should return POSITIVE. It is also possible to pass by the gRPC (google Remote Procedure Call) API to get the same result:.</p>
+<p id="sec-end-35740">Recent findings suggest that thanks to the last updates applied on the TensorFlow models in transformers, one can now easily deploy its models in production using TensorFlow Serving. One of the next steps we are thinking about is to directly integrate the preprocessing part inside the SavedModel to make things even easier.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/tf-serving" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="deploying-tensorflow-vision-models-in-hugging-face-with-tf-servin-35648.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35648. Deploying TensorFlow Vision Models in Hugging Face with TF Serving
+        </a>
+        
+        <a href="breaking-optimumonnx-runtime-easier-faster-training-for-your-hugg-35585.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35585. Breaking: Optimum+ONNX Runtime - Easier, Faster training for your Hugging Face models
+        </a>
+        
+        <a href="databricks-hugging-face-up-to-40-faster-training-and-tuning-of-la-35548.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35548. Databricks ❤️ Hugging Face: up to 40% faster training and tuning of Large Language Models
+        </a>
+        
+        <a href="hugging-face-reads-feb-2021-long-range-transformers-35736.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35736. Hugging Face Reads, Feb. 2021 - Long-range Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face Reads, Feb. 2021 - Long-range Transformers</title>
+    <meta name="description" content="Co-written by Teven Le Scao, Patrick Von Platen, Suraj Patil, Yacine Jernite and Victor Sanh. Recent findings suggest that each month, we will choose a top">
+    <meta name="keywords" content="attention, long, self, softmax, memory, range, sequence, transformer">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/hugging-face-reads-feb-2021-long-range-transformers-35736.html">
+    
+    <meta property="og:title" content="Hugging Face Reads, Feb. 2021 - Long-range Transformers">
+    <meta property="og:description" content="Co-written by Teven Le Scao, Patrick Von Platen, Suraj Patil, Yacine Jernite and Victor Sanh. Recent findings suggest that each month, we will choose a top">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/14_long_range_transformers/EfficientTransformerTaxonomy.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/hugging-face-reads-feb-2021-long-range-transformers-35736.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hugging Face Reads, Feb. 2021 - Long-range Transformers">
+    <meta name="twitter:description" content="Co-written by Teven Le Scao, Patrick Von Platen, Suraj Patil, Yacine Jernite and Victor Sanh. Recent findings suggest that each month, we will choose a top">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/14_long_range_transformers/EfficientTransformerTaxonomy.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Hugging Face Reads, Feb. 2021 - Long-range Transformers", "image": ["https://huggingface.co/blog/assets/14_long_range_transformers/EfficientTransformerTaxonomy.png"], "datePublished": "2021-03-09T00:00:00", "dateModified": "2026-11-21T06:52:54.176014", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/hugging-face-reads-feb-2021-long-range-transformers-35736.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Hugging Face Reads, Feb. 2021 - Long-range Transformers?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Hugging Face Reads, Feb. 2021 - Long-range Transformers' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Hugging Face Reads, Feb. 2021 - Long-range Transformers</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 09 Mar 2021 &bull; ⏱️ 10 min read (1939 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Co-written by Teven Le Scao, Patrick Von Platen, Suraj Patil, Yacine Jernite and Victor Sanh.</li><li style='margin-bottom:6px;'>Recent findings suggest that each month, we will choose a topic to focus on, reading a set of four papers recently published on the subject.</li><li style='margin-bottom:6px;'>In a recent development, after the rise of large transformer models in 2018 and 2019, two trends have rapidly emerged to bring their compute requirements down.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35736"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35736"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35736"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Hugging Face Reads, Feb. 2021 - Long-range Transformers" loading="lazy" src="https://huggingface.co/blog/assets/14_long_range_transformers/EfficientTransformerTaxonomy.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35736">Co-written by Teven Le Scao, Patrick Von Platen, Suraj Patil, Yacine Jernite and Victor Sanh.</p>
+<p>Recent findings suggest that each month, we will choose a topic to focus on, reading a set of four papers recently published on the subject. We will then write a short blog post summarizing their findings and the common trends between them, and questions we had for follow-up work after reading them. The first topic for January 2021 was Sparsity and Pruning, in February 2021 we addressed Long-Range Attention in Transformers. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>In a recent development, after the rise of large transformer models in 2018 and 2019, two trends have rapidly emerged to bring their compute requirements down. First, conditional computation, quantization, distillation, and pruning have unlocked inference of large models in compute-constrained environments; we’ve already touched upon this in part in our last reading group post. The research community then moved to reduce the cost of pre-training. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>In a recent development, in particular, one issue has been at the center of the efforts: the quadratic cost in memory and time of transformer models with regard to the sequence length. In order to allow efficient training of very large models, 2020 saw an onslaught of papers to address that bottleneck and scale transformers beyond the usual 512- or 1024- sequence lengths that were the default in NLP at the start of the year.</p>
+<p>According to recent reports, this topic has been a key part of our research discussions from the start, and our own Patrick Von Platen has already dedicated a 4-part series to Reformer. In this reading group, rather than trying to cover every approach (there are so many!), we’ll focus on four main ideas:.</p>
+<p>For exhaustive views of the subject, check out Efficient Transfomers: A Survey and Long Range Arena.</p>
+<p>Recent findings suggest that iz Beltagy, Matthew E. Peters, Arman Cohan.</p>
+<p>Longformer addresses the memory bottleneck of transformers by replacing conventional self-attention with a combination of windowed/local/sparse (cf. Sparse Transformers (2019)) attention and global attention that scales linearly with the sequence length. As opposed to previous long-range transformer models (e.g. Transformer-XL (2019), Reformer (2020), Adaptive Attention Span (2019)), Longformer’s self-attention layer is designed as a drop-in replacement for the standard self-attention, thus making it possible to leverage pre-trained checkpoints for further pre-training and/or fine-tuning on long sequence tasks.</p>
+<p>The standard self-attention matrix (Figure a) scales quadratically with the input length:.</p>
+<p>Longformer uses different attention patterns for autoregressive language modeling, encoder pre-training &amp; fine-tuning, and sequence-to-sequence tasks.</p>
+<p>It has been revealed that jack W. Rae, Anna Potapenko, Siddhant M. Jayakumar, Timothy P. Lillicrap.</p>
+<p>Transformer-XL (2019) demonstrated that caching previously computed layer activations in a memory can boost performance on language modeling tasks (such as enwik8). Instead of just attending the current nnn input tokens, the model can also attend to the past nmn_mnm​ tokens, with nmn_mnm​ being the memory size of the model. Transformer-XL has a memory complexity of O(n2+nnm)O(n^2+ n n_m)O(n2+nnm​), which reveals that memory cost can increase significantly for very large nmn_mnm​. Hence, Transformer-XL has to eventually discard past activations from the memory when the number of cached activations gets larger than nmn_mnm​. Compressive Transformer addresses this problem by adding an additional compressed memory to efficiently cache past activations that would have otherwise eventually been discarded. This way the model can learn better long-range sequence dependencies having access to significantly more past activations.</p>
+<p>A compression factor ccc (equal to 3 in the illustration) is chosen to decide the rate at which past activations are compressed. The authors experiment with different compression functions fcf_cfc​ such as max/mean pooling (parameter-free) and 1D convolution (trainable layer). The compression function is trained with backpropagation through time or local auxiliary compression losses. In addition to the current input of length nnn, the model attends to nmn_mnm​ cached activations in the regular memory and ncmn_{cm}ncm​ compressed memory activations allowing a long temporal dependency of  l×(nm+cncm)l × (n_m + c n_{cm})l×(nm​+cncm​), with lll being the number of attention layers. This increases Transformer-XL’s range by additional l×c×ncml × c × n_{cm}l×c×ncm​ tokens and the memory cost amounts to O(n2+nnm+nncm)O(n^2+ n n_m+ n n_{cm})O(n2+nnm​+nncm​). Experiments are conducted on Reinforcement learning, audio generation, and natural language processing. The authors also introduce a new long-range language modeling benchmark called PG19.</p>
+<p>It has been revealed that sinong Wang, Belinda Z. Li, Madian Khabsa, Han Fang, Hao Ma.</p>
+<p>The goal is to reduce the complexity of the self-attention with respect to the sequence length nnn) from quadratic to linear. This paper makes the observation that the attention matrices are low rank (i.e. they don’t contain n×nn × nn×n worth of information) and explores the possibility of using high-dimensional data compression techniques to build more memory efficient transformers.</p>
+<p>Industry observers note that the theoretical foundations of the proposed approach are based on the Johnson-Lindenstrauss lemma. Let’s consider mmm) points in a high-dimensional space. We want to project them to a low-dimensional space while preserving the structure of the dataset (i.e. the mutual distances between points) with a margin of error ε\varepsilonε. The Johnson-Lindenstrauss lemma states we can choose a small dimension k∼8log⁡(m)/ε2k \sim 8 \log(m) / \varepsilon^2k∼8log(m)/ε2 and find a suitable projection into Rk in polynomial time by simply trying random orthogonal projections.</p>
+<p>Linformer projects the sequence length into a smaller dimension by learning a low-rank decomposition of the attention context matrix. The matrix multiplication of the self-attention can be then cleverly re-written such that no matrix of size n×nn × nn×n needs to be ever computed and stored.</p>
+<p id="sec-mid-35736">Attention(Q,K,V)=softmax(Q∗K)∗V\text{Attention}(Q, K, V) = \text{softmax}(Q * K) * VAttention(Q,K,V)=softmax(Q∗K)∗V.</p>
+<p>LinAttention(Q,K,V)=softmax(Q∗K∗WK)∗WV∗V\text{LinAttention}(Q, K, V) = \text{softmax}(Q * K * W^K) * W^V * VLinAttention(Q,K,V)=softmax(Q∗K∗WK)∗WV∗V.</p>
+<p>Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song, Andreea Gane, Tamas Sarlos, Peter Hawkins, Jared Davis, Afroz Mohiuddin, Lukasz Kaiser, David Belanger, Lucy Colwell, Adrian Weller.</p>
+<p>The goal is (again!) to reduce the complexity of the self-attention with respect to the sequence length nnn) from quadratic to linear. In contrast to other papers, the authors note that the sparsity and low-rankness priors of the self-attention may not hold in other modalities (speech, protein sequence modeling). Thus the paper explores methods to reduce the memory burden of the self-attention without any priors on the attention matrix.</p>
+<p>In a recent development, the authors observe that if we could perform the matrix multiplication K×VK × VK×V through the softmax ( softmax(Q×K)×V\text{softmax}(Q × K) × Vsoftmax(Q×K)×V ), we wouldn’t have to compute the QxKQ x KQxK matrix of size nxnn x nnxn which is the memory bottleneck. They use random feature maps (aka random projections) to approximate the softmax by:.</p>
+<p>softmax(Q∗K)∼Q’∗K’=ϕ(Q)∗ϕ(K)\text{softmax}(Q * K) \sim Q’ * K’ = \phi(Q) * \phi(K)softmax(Q∗K)∼Q’∗K’=ϕ(Q)∗ϕ(K).</p>
+<p>In a recent development, , where phiphiphi is a non-linear suitable function. And then:.</p>
+<p>Attention(Q,K,V)∼ϕ(Q)∗(ϕ(K)∗V)\text{Attention}(Q, K, V) \sim \phi(Q) * (\phi(K) * V)Attention(Q,K,V)∼ϕ(Q)∗(ϕ(K)∗V).</p>
+<p>Taking inspiration from machine learning papers from the early 2000s, the authors introduce FAVOR+ (Fast Attention Via Orthogonal Random positive (+) Features) a procedure to find unbiased or nearly-unbiased estimations of the self-attention matrix, with uniform convergence and low estimation variance.</p>
+<p>The developments in pre-trained transformer-based language models for natural language understanding and generation are impressive. Making these systems efficient for production purposes has become a very active research area. This emphasizes that we still have much to learn and build both on the methodological and practical sides to enable efficient and general deep learning based systems, in particular for applications that require modeling long-range inputs.</p>
+<p>The four papers above offer different ways to deal with the quadratic memory complexity of the self-attention mechanism, usually by reducing it to linear complexity. Linformer and Longformer both rely on the observation that the self-attention matrix does not contain n×nn × nn×n worth of information (the attention matrix is low-rank and sparse). Performer gives a principled method to approximate the softmax-attention kernel (and any kernelizable attention mechanisms beyond softmax). Compressive Transformer offers an orthogonal approach to model long range dependencies based on recurrence.</p>
+<p>These different inductive biases have implications in terms of computational speed and generalization beyond the training setup. In particular, Linformer and Longformer lead to different trade-offs: Longformer explicitly designs the sparse attention patterns of the self-attention (fixed patterns) while Linformer learns the low-rank matrix factorization of the self-attention matrix. In our experiments, Longformer is less efficient than Linformer, and is currently highly dependent on implementation details. On the other hand, Linformer’s decomposition only works for fixed context length (fixed at training) and cannot generalize to longer sequences without specific adaptation. Moreover, it cannot cache previous activations which can be extremely useful in the generative setup. Interestingly, Performer is conceptually different: it learns to approximate the softmax attention kernel without relying on any sparsity or low-rank assumption. The question of how these inductive biases compare to each other for varying quantities of training data remains.</p>
+<p>All these works highlight the importance of long-range inputs modeling in natural language. In the industry, it is common to encounter use-cases such as document translation, document classification or document summarization which require modeling very long sequences in an efficient and robust way. Recently, zero-shot examples priming (a la GPT3) has also emerged as a promising alternative to standard fine-tuning, and increasing the number of priming examples (and thus the context size) steadily increases the performance and robustness. Finally, it is common in other modalities such as speech or protein modeling to encounter long sequences beyond the standard 512 time steps.</p>
+<p>Modeling long inputs is not antithetical to modeling short inputs but instead should be thought from the perspective of a continuum from shorter to longer sequences. Shortformer, Longformer and BERT provide evidence that training the model on short sequences and gradually increasing sequence lengths lead to an accelerated training and stronger downstream performance. This observation is coherent with the intuition that the long-range dependencies acquired when little data is available can rely on spurious correlations instead of robust language understanding. This echoes some experiments Teven Le Scao has run on language modeling: LSTMs are stronger learners in the low data regime compared to transformers and give better perplexities on small-scale language modeling benchmarks such as Penn Treebank.</p>
+<p>Recent findings suggest that from a practical point of view, the question of positional embeddings is also a crucial methodological aspect with computational efficiency trade-offs. Relative positional embeddings (introduced in Transformer-XL and used in Compressive Transformers) are appealing because they can easily be extended to yet-unseen sequence lengths, but at the same time, relative positional embeddings are computationally expensive. On the other side, absolute positional embeddings (used in Longformer and Linformer) are less flexible for sequences longer than the ones seen during training, but are computationally more efficient. Interestingly, Shortformer introduces a simple alternative by adding the positional information to the queries and keys of the self-attention mechanism instead of adding it to the token embeddings. The method is called position-infused attention and is shown to be very efficient while producing strong results.</p>
+<p>The Longformer implementation and the associated open-source checkpoints are available through the Transformers library and the model hub. Performer and Substantial Bird, which is a long-range model based on sparse attention, are at the moment in the works as part of our call for models, an effort involving the community in order to promote open-source contributions. We would be pumped to hear from you if you’ve wondered how to contribute to transformers but did not know where to start!</p>
+<p>For further reading, we recommend checking Patrick Platen’s blog on Reformer, Teven Le Scao’s post on Johnson-Lindenstrauss approximation, Efficient Transfomers: A Survey, and Long Range Arena: A Benchmark for Efficient Transformers.</p>
+<p id="sec-end-35736">In a recent development, next month, we'll cover self-training methods and applications. See you in March!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/long-range-transformers" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="faster-tensorflow-models-in-hugging-face-transformers-35740.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35740. Faster TensorFlow models in Hugging Face Transformers
+        </a>
+        
+        <a href="fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-35735.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35735. Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        </a>
+        
+        <a href="sentence-transformers-in-the-hugging-face-hub-35726.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35726. Sentence Transformers in the Hugging Face Hub
+        </a>
+        
+        <a href="hugging-face-and-graphcore-partner-for-ipu-optimized-transformers-35721.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35721. Hugging Face and Graphcore partner for IPU-optimized Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

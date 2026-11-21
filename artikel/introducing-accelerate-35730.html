@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing 🤗 Accelerate</title>
+    <meta name="description" content="Run your raw PyTorch training scripts on any kind of device. According to recent reports, most high-level libraries above PyTorch provide support for distr">
+    <meta name="keywords" content="training, accelerate, distributed, script, mixed, precision, need, code">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/introducing-accelerate-35730.html">
+    
+    <meta property="og:title" content="Introducing 🤗 Accelerate">
+    <meta property="og:description" content="Run your raw PyTorch training scripts on any kind of device. According to recent reports, most high-level libraries above PyTorch provide support for distr">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/20_accelerate_library/accelerate_diff.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/introducing-accelerate-35730.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Introducing 🤗 Accelerate">
+    <meta name="twitter:description" content="Run your raw PyTorch training scripts on any kind of device. According to recent reports, most high-level libraries above PyTorch provide support for distr">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/20_accelerate_library/accelerate_diff.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Introducing 🤗 Accelerate", "image": ["https://huggingface.co/blog/assets/20_accelerate_library/accelerate_diff.png"], "datePublished": "2021-04-16T00:00:00", "dateModified": "2026-11-21T06:52:52.967481", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/introducing-accelerate-35730.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Introducing 🤗 Accelerate?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Introducing 🤗 Accelerate' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Introducing 🤗 Accelerate</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 16 Apr 2021 &bull; ⏱️ 5 min read (1048 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Run your raw PyTorch training scripts on any kind of device.</li><li style='margin-bottom:6px;'>According to recent reports, most high-level libraries above PyTorch provide support for distributed training and mixed precision, but the abstraction they introduce require a user to learn a latest API if they want to customize the underlying training loop.</li><li style='margin-bottom:6px;'>It provides two things: a simple and consistent API that abstracts that boilerplate code and a launcher command to easily run those scripts on various setups.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35730"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35730"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35730"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Introducing 🤗 Accelerate" loading="lazy" src="https://huggingface.co/blog/assets/20_accelerate_library/accelerate_diff.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35730">Run your raw PyTorch training scripts on any kind of device.</p>
+<p>According to recent reports, most high-level libraries above PyTorch provide support for distributed training and mixed precision, but the abstraction they introduce require a user to learn a latest API if they want to customize the underlying training loop. 🤗 Accelerate was created for PyTorch people who like to have full control over their training loops but are reluctant to write (and maintain) the boilerplate code needed to use distributed training (for multi-GPU on one or several nodes, TPUs, ...) or mixed precision training. Plans forward include support for fairscale, deepseed, AWS SageMaker specific data-parallelism and model parallelism. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>It provides two things: a simple and consistent API that abstracts that boilerplate code and a launcher command to easily run those scripts on various setups. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-35737.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>Let's first have a look at an example:.</p>
+<p>By just adding five lines of code to any standard PyTorch training script, you can now run noted script on any kind of distributed setting, as well as with or without mixed precision. 🤗 Accelerate even handles the device placement for you, so you can simplify the training loop above even further:.</p>
+<p>In contrast, here are the changes needed to have this code run with distributed training are the followings:.</p>
+<p>In a recent development, these changes will make your training script work for multiple GPUs, but your script will then stop working on CPU or one GPU (unless you start adding if statements everywhere). Even more annoying, if you wanted to test your script on TPUs you would need to change different lines of codes. Same for mixed precision training. The promise of 🤗 Accelerate is:.</p>
+<p>To see how the library works in practice, let's have a look at each line of code we need to add to a training loop.</p>
+<p>Industry observers note that on top of giving the main object that you will use, this line will analyze from the environment the type of distributed training run and perform the necessary initialization. You can force a training on CPU or a mixed precision training by passing cpu=True or fp16=True to this init. Both of those options can also be set using the launcher for your script.</p>
+<p>This is the main bulk of the API and will prepare the three main type of objects: models (torch.nn.Module), optimizers (torch.optim.Optimizer) and dataloaders (torch.data.dataloader.DataLoader).</p>
+<p>Model preparation include wrapping it in the proper container (for instance DistributedDataParallel) and putting it on the proper device. Like with a regular distributed training, you will need to unwrap your model for saving, or to access its specific methods, which can be done with accelerator.unwrap_model(model).</p>
+<p>According to recent reports, the optimizer is also wrapped in a special container that will perform the necessary operations in the step to make mixed precision work. It will also properly handle device placement of the state dict if its non-empty or loaded from a checkpoint.</p>
+<p id="sec-mid-35730">It has been revealed that this is where most of the magic is hidden. As you have seen in the code example, the library does not rely on a DistributedSampler, it will actually work with any sampler you might pass to your dataloader (if you ever had to write a distributed version of your custom sampler, there is no more need for that!). The dataloader is wrapped in a container that will only grab the indices relevant to the current process in the sampler (or skip the batches for the other processes if you use an IterableDataset) and put the batches on the proper device.</p>
+<p>For this to work, Accelerate provides a utility function that will synchronize the random number generators on each of the processes run during distributed training. By default, it only synchronizes the generator of your sampler, so your data augmentation will be different on each process, but the random shuffling will be the same. You can of course use this utility to synchronize more RNGs if you need it.</p>
+<p>This last line adds the necessary steps for the backward pass (mostly for mixed precision but other integrations will require some custom behavior here).</p>
+<p>Evaluation can either be run normally on all processes, or if you just want it to run on the main process, you can use the handy test:.</p>
+<p>But you can also very easily run a distributed evaluation using Accelerate, here is what you would need to add to your evaluation loop:.</p>
+<p>It has been revealed that like for the training, you need to add one line to prepare your evaluation dataloader. Then you can just use accelerator.gather to gather across processes the tensors of predictions and labels. The last line to add truncates the predictions and labels to the number of examples in your dataset because the prepared evaluation dataloader will return a few more elements to make sure batches all have the same size on each process.</p>
+<p>The scripts using Accelerate will be completely compatible with your traditional launchers, such as torch.distributed.launch. But remembering all the arguments to them is a bit annoying and when you've setup your instance with 4 GPUs, you'll run most of your trainings using them all. Accelerate comes with a handy CLI that works in two steps:.</p>
+<p>This will trigger a little questionnaire about your setup, which will create a config file you can edit with all the defaults for your training commands. Then.</p>
+<p>Recent findings suggest that will launch your training script using those default. The only thing you have to do is provide all the arguments needed by your training script.</p>
+<p>To make this launcher even more awesome, you can use it to spawn an AWS instance using SageMaker. Look at this guide to discover how!</p>
+<p>To get started, just pip install accelerate or see the documentation for more install options.</p>
+<p>Accelerate is a fully open-sourced project, you can find it on GitHub, have a look at its documentation or skim through our basic examples. Please let us know if you have any matter or feature you would like the library to support. For all questions, the forums is the place to check!</p>
+<p id="sec-end-35730">It has been revealed that for more complex examples in situation, you can look at the official Transformers examples. Each folder contains a run_task_no_trainer.py that leverages the Accelerate library!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/accelerate-library" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--35722.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35722. Introducing Optimum: The Optimization Toolkit for Transformers at Scale
+        </a>
+        
+        <a href="industry-news-introducing-the-data-measurements-tool-an-interacti-35710.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35710. Industry News: Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        </a>
+        
+        <a href="industry-news-introducing-snowball-fight-our-first-ml-agents-envi-35708.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35708. Industry News: Introducing Snowball Fight ☃️, our first ML-Agents environment
+        </a>
+        
+        <a href="accelerate-bert-inference-with-hugging-face-transformers-and-aws--35692.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35692. Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

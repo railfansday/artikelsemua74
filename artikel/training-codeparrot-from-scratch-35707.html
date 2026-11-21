@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training CodeParrot 🦜 from Scratch</title>
+    <meta name="description" content="In this blog post we'll take a look at what it takes to build the technology behind GitHub CoPilot, an application that provides suggestions to programmers">
+    <meta name="keywords" content="model, code, training, dataset, train, models, codeparrot, recent">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/training-codeparrot-from-scratch-35707.html">
+    
+    <meta property="og:title" content="Training CodeParrot 🦜 from Scratch">
+    <meta property="og:description" content="In this blog post we'll take a look at what it takes to build the technology behind GitHub CoPilot, an application that provides suggestions to programmers">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/40_codeparrot/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/training-codeparrot-from-scratch-35707.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Training CodeParrot 🦜 from Scratch">
+    <meta name="twitter:description" content="In this blog post we'll take a look at what it takes to build the technology behind GitHub CoPilot, an application that provides suggestions to programmers">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/40_codeparrot/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Training CodeParrot 🦜 from Scratch", "image": ["https://huggingface.co/blog/assets/40_codeparrot/thumbnail.png"], "datePublished": "2021-12-08T00:00:00", "dateModified": "2026-11-21T06:52:48.746740", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/training-codeparrot-from-scratch-35707.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Training CodeParrot 🦜 from Scratch?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Training CodeParrot 🦜 from Scratch' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Training CodeParrot 🦜 from Scratch</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 08 Dec 2021 &bull; ⏱️ 8 min read (1616 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In this blog post we'll take a look at what it takes to build the technology behind GitHub CoPilot, an application that provides suggestions to programmers as they code.</li><li style='margin-bottom:6px;'>The first thing we need is a large training dataset.</li><li style='margin-bottom:6px;'>You can learn more about our findings in this Twitter thread.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35707"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35707"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35707"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Training CodeParrot 🦜 from Scratch" loading="lazy" src="https://huggingface.co/blog/assets/40_codeparrot/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35707">In this blog post we'll take a look at what it takes to build the technology behind GitHub CoPilot, an application that provides suggestions to programmers as they code. In this step by step guide, we'll learn how to train a large GPT-2 model called CodeParrot 🦜, entirely from scratch. CodeParrot can auto-complete your Python code - give it a spin here. Let's get to building it from scratch!</p>
+<p>The first thing we need is a large training dataset. With the goal to train a Python code generation model, we accessed the GitHub dump available on Google's BigQuery and filtered for all Python files. The result is a 180 GB dataset with 20 million files (available here). After initial training experiments, we found that the duplicates in the dataset severely impacted the model performance. Further investigating the dataset we found that:. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>You can learn more about our findings in this Twitter thread. We removed the duplicates and applied the same cleaning heuristics found in the Codex paper. Codex is the model behind CoPilot and is a GPT-3 model fine-tuned on GitHub code. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-35743.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>Recent findings suggest that the cleaned dataset is still 50GB substantial and available on the Hugging Face Hub: codeparrot-clean. With that we can setup a new tokenizer and train a model.</p>
+<p>First we need a tokenizer. Let's train one specifically on code so it splits code tokens well. We can take an existing tokenizer (e.g. GPT-2) and directly train it on our own dataset with the train_new_from_iterator() method. We then push it to the Hub. Note that we omit imports, arguments parsing and logging from the code examples to keep the code blocks compact. But you'll find the full code including preprocessing and downstream task evaluation here.</p>
+<p>Learn more about tokenizers and how to build them in the Hugging Face course.</p>
+<p>Sources indicate that see that inconspicuous streaming=True argument? This small change has a massive impact: instead of downloading the full (50GB) dataset this will stream individual samples as needed saving a lot of disk space! Checkout the Hugging Face course for more information on streaming.</p>
+<p>Now, we initialize a new model. We’ll use the same hyperparameters as GPT-2 large (1.5B parameters) and adjust the embedding layer to fit our new tokenizer also adding some stability tweaks. The scale_attn_by_layer_idx flag makes sure we scale the attention by the layer id and reorder_and_upcast_attn mainly makes sure that we compute the attention in full precision to avoid numerical issues. We push the freshly initialized model to the same repo as the tokenizer.</p>
+<p>Now that we have an efficient tokenizer and a freshly initialized model we can start with the actual training loop.</p>
+<p>Industry observers note that we train with the 🤗 Accelerate library which allows us to scale the training from our laptop to a multi-GPU machine without changing a single line of code. We just create an accelerator and do some argument housekeeping:.</p>
+<p>Sources indicate that we are now ready to train! Let's use the huggingface_hub client library to clone the repository with the fresh tokenizer and model. We will checkout to a new branch for this experiment. With that setup, we can run many experiments in parallel and in the end we just merge the best one into the main branch.</p>
+<p>We can directly load the tokenizer and model from the local repository. Since we are dealing with substantial models we might want to turn on gradient checkpointing to decrease the GPU memory footprint during training.</p>
+<p>It has been revealed that next up is the dataset. We make training simpler with a dataset that yields examples with a fixed context size. To not waste too much data (some samples are too short or too long) we can concatenate many examples with an EOS token and then chunk them.</p>
+<p>Sources indicate that the more sequences we prepare together, the smaller the fraction of tokens we discard (the grey ones in the previous figure). Since we want to stream the dataset instead of preparing everything in advance we use an IterableDataset. The full dataset class looks as follows:.</p>
+<p>Texts in the buffer are tokenized in parallel and then concatenated. Chunked samples are then yielded until the buffer is empty and the process starts again. If we set infinite=True the dataset iterator restarts at its end.</p>
+<p>It has been revealed that before we start training we need to set up the optimizer and learning rate schedule. We don’t want to apply weight decay to biases and LayerNorm weights so we use a helper function to exclude those.</p>
+<p>A big question that remains is how all the data and models will be distributed across several GPUs. This sounds like a complex task but actually only requires a single line of code with 🤗 Accelerate.</p>
+<p>Recent findings suggest that under the hood it'll use DistributedDataParallel, which means a batch is sent to each GPU worker which has its own copy of the model. There the gradients are computed and then aggregated to update the model on each worker.</p>
+<p id="sec-mid-35707">According to recent reports, we also want to evaluate the model from time to time on the validation set so let’s write a function to do just that. This is done automatically in a distributed fashion and we just need to gather all the losses from the workers. We also want to report the perplexity.</p>
+<p>In a recent development, we are now ready to write the main training loop. It will look pretty much like a normal PyTorch training loop. Here and there you can see that we use the accelerator functions rather than native PyTorch. Also, we push the model to the branch after each evaluation.</p>
+<p>In a recent development, when we call wait_for_everyone() and unwrap_model() we make sure that all workers are ready and any model layers that have been added by prepare() earlier are removed. We also use gradient accumulation and gradient clipping that are easily implemented. Lastly, after training is complete we run a last evaluation and save the final model and push it to the hub.</p>
+<p>In a recent development, done! That's all the code to train a full GPT-2 model from scratch with as little as 150 lines. We did not show the imports and logs of the scripts to make the code a little bit more compact. Now let's actually train it!</p>
+<p>Industry observers note that with this code we trained models for our upcoming book on Transformers and NLP: a 110M and 1.5B parameter GPT-2 model. We used a 16 x A100 GPU machine to train these models for 1 day and 1 week, respectively. Enough time to get a coffee and read a book or two!</p>
+<p>This is still relatively short training time for pretraining but we can already observe good downstream performance as compared to similar models. We evaluated the models on OpenAI's HumanEval benchmark that was introduced in the Codex paper. It measures the performance of code generation models on almost 200 coding challenges.</p>
+<p>Industry observers note that note that we trained CodeParrot on roughly 25-30B tokens whereas GPT-neo was trained on 300B tokens and Codex on 300B (GPT-3 checkpoint) + 100B (code) tokens. So you definitely get a good bang for your buck here.</p>
+<p>It has been revealed that but what is this pass@k metric exactly? Simply put it measures the probability of at least one program passing the unittest of a programming problem given k candidate generations from the model. Naturally, the metric increases with k as more candidates can potentially solve the coding challenge. You can use the metric with datasets:.</p>
+<p>You can also load OpenAI's HumanEval dataset with datasets:.</p>
+<p>Now let's have a look at what we get after anxiously waiting for so long!</p>
+<p>Let's start slow and check if we can prompt the model to write a function to return the size of a file given its path:.</p>
+<p>Recent findings suggest that so far so good, but let's take this a step further and try something a bit more interesting. One of the less exciting aspects of building production ready code is writing unittest. Let's see if we can use CodeParrot to do this for us!</p>
+<p>Although the test condition itself does not look quite right the model has built all the boilerplate code for us. This alone could already be quite useful and save us a couple of minutes time!</p>
+<p>But what we really want to do is build better transformer models. Let's use CodeParrot to help us do that:.</p>
+<p>Looking at a few examples is nice but by now you probably want to try it yourself. We prepared a few online demos just for that!</p>
+<p>You can play with the models in two demos we added to Hugging Face Spaces. With the first you can promptly generate code with the model and with the second you can highlight your code with the model to spot bugs!</p>
+<p>You can also directly use the models from the transformers library:.</p>
+<p>Recent findings suggest that in this short blog post we walked through all the steps involved for training a large GPT-2 model called CodeParrot 🦜 for code generation. Using 🤗 Accelerate we built a training script with less than 200 lines of code that we can effortlessly scale across many GPUs. With that you can now train your own GPT-2 model!</p>
+<p id="sec-end-35707">According to recent reports, this post gives a brief overview of CodeParrot 🦜, but if you are interested in diving deeper into how to pretrain this models, we recommend reading its dedicated chapter in the upcoming book on Transformers and NLP. This chapter provides many more details around building custom datasets, design considerations when training a fresh tokenizer, and architecture choice.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/codeparrot" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35750. Breaking: How to train a new language model from scratch using Transformers and Tokenizers
+        </a>
+        
+        <a href="distributed-training-train-bartt5-for-summarization-using-transfo-35731.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35731. Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker
+        </a>
+        
+        <a href="tech-report-deep-learning-over-the-internet-training-language-mod-35723.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35723. Tech Report: Deep Learning over the Internet: Training Language Models Collaboratively
+        </a>
+        
+        <a href="latest-update-train-a-sentence-embedding-model-with-1b-training-p-35715.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35715. Latest Update: Train a Sentence Embedding Model with 1B Training Pairs
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

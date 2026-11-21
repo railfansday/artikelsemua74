@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accelerating PyTorch distributed fine-tuning with Intel technologies</title>
+    <meta name="description" content="According to recent reports, for all their amazing performance, state of the art deep learning models often take a long time to train. In order to speed up">
+    <meta name="keywords" content="training, intel, pytorch, cluster, learning, distributed, recent, install">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-35711.html">
+    
+    <meta property="og:title" content="Accelerating PyTorch distributed fine-tuning with Intel technologies">
+    <meta property="og:description" content="According to recent reports, for all their amazing performance, state of the art deep learning models often take a long time to train. In order to speed up">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/36_accelerating_pytorch/04_four_nodes.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-35711.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Accelerating PyTorch distributed fine-tuning with Intel technologies">
+    <meta name="twitter:description" content="According to recent reports, for all their amazing performance, state of the art deep learning models often take a long time to train. In order to speed up">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/36_accelerating_pytorch/04_four_nodes.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Accelerating PyTorch distributed fine-tuning with Intel technologies", "image": ["https://huggingface.co/blog/assets/36_accelerating_pytorch/04_four_nodes.png"], "datePublished": "2021-11-19T00:00:00", "dateModified": "2026-11-21T06:52:49.446697", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-35711.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Accelerating PyTorch distributed fine-tuning with Intel technologies?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Hardware & Chips originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Accelerating PyTorch distributed fine-tuning with Intel tech' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Hardware & Chips section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Hardware & Chips</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Accelerating PyTorch distributed fine-tuning with Intel technologies</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 19 Nov 2021 &bull; ⏱️ 7 min read (1378 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, for all their amazing performance, state of the art deep learning models often take a long time to train.</li><li style='margin-bottom:6px;'>Graphical Processing Units (GPUs) have long been the de facto choice to train deep learning models.</li><li style='margin-bottom:6px;'>Industry observers note that in this post, you will learn how to accelerate PyTorch training jobs by distributing them on a cluster of Intel Xeon Scalable CPU servers, powered by the Ice Lake architecture and running performance-optimized software libraries.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35711"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35711"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35711"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Accelerating PyTorch distributed fine-tuning with Intel technologies" loading="lazy" src="https://huggingface.co/blog/assets/36_accelerating_pytorch/04_four_nodes.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35711">According to recent reports, for all their amazing performance, state of the art deep learning models often take a long time to train. In order to speed up training jobs, engineering teams rely on distributed training, a divide-and-conquer technique where clustered servers each keep a copy of the model, train it on a subset of the training set, and exchange results to converge to a final model.</p>
+<p>Graphical Processing Units (GPUs) have long been the de facto choice to train deep learning models. However, the rise of transfer learning is changing the game. Models are now rarely trained from scratch on humungous datasets. Instead, they are frequently fine-tuned on specific (and smaller) datasets, in order to build specialized models that are more accurate than the base model for particular tasks. As these training jobs are much shorter, using a CPU-based cluster can prove to be an interesting option that keeps both training time and cost under control. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Industry observers note that in this post, you will learn how to accelerate PyTorch training jobs by distributing them on a cluster of Intel Xeon Scalable CPU servers, powered by the Ice Lake architecture and running performance-optimized software libraries. We will build the cluster from scratch using virtual machines, and you should be able to easily replicate the demo on your own infrastructure, either in the cloud or on premise. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Recent findings suggest that running a text classification job, we will fine-tune a BERT model on the MRPC dataset (one of the tasks included in the GLUE benchmark). The MRPC dataset contains 5,800 sentence pairs extracted from news sources, with a label telling us whether the two sentences in each pair are semantically equivalent. We picked this dataset for its reasonable training time, and trying other GLUE tasks is just a parameter away.</p>
+<p>In a recent development, once the cluster is up and running, we will run a baseline job on a single server. Then, we will scale it to 2 servers and 4 servers and measure the speed-up.</p>
+<p>Along the way, we will cover the following topics:.</p>
+<p>It has been revealed that for best performance, we will use Intel servers based on the Ice Lake architecture, which supports hardware features such as Intel AVX-512 and Intel Vector Neural Network Instructions (VNNI). These features accelerate operations typically found in deep learning training and inference. You can learn more about them in this presentation (PDF).</p>
+<p>All three major cloud providers offer virtual machines powered by Intel Ice Lake CPUs:.</p>
+<p>Of course, you can also use your own servers. If they are based on the Cascade Lake architecture (Ice Lake's predecessor), they're good to go as Cascade Lake also includes AVX-512 and VNNI.</p>
+<p>To leverage AVX-512 and VNNI in PyTorch, Intel has designed the Intel extension for PyTorch. This software library provides out of the box speedup for training and inference, so we should definitely install it.</p>
+<p>When it comes to distributed training, the main performance bottleneck is often networking. Indeed, the different nodes in the cluster need to periodically exchange model state information to stay in sync. As transformers are large models with billions of parameters (sometimes much more), the volume of information is significant, and things only get worse as the number of nodes increase. Thus, it's notable to use a communication library optimized for deep learning.</p>
+<p>It has been revealed that in fact, PyTorch includes the torch.distributed package, which supports different communication backends. Here, we'll use the Intel oneAPI Collective Communications Library (oneCCL), an efficient implementation of communication patterns used in deep learning (all-reduce, etc.). You can learn about the performance of oneCCL versus other backends in this PyTorch blog post.</p>
+<p>Now that we're clear on building blocks, let's talk about the overall setup of our training cluster.</p>
+<p>Recent findings suggest that in this demo, I'm using Amazon EC2 instances running Amazon Linux 2 (c6i.16xlarge, 64 vCPUs, 128GB RAM, 25Gbit/s networking). Setup will be different in other environments, but steps should be very similar.</p>
+<p>According to recent reports, please keep in mind that you will need 4 identical instances, so you may want to blueprint for some sort of automation to avoid running the same setup 4 times. Here, I will set up one instance manually, create a new Amazon Machine Image (AMI) from this instance, and use this AMI to launch three identical instances.</p>
+<p>From a networking perspective, we will need the following setup:.</p>
+<p>Now, let's provision the first instance manually. I first create the instance itself, attach the security group above, and add 128GB of storage. To optimize costs, I have debuted it as a spot instance.</p>
+<p>Once the instance is up, I connect to it with ssh in order to install dependencies.</p>
+<p>Here are the steps we will follow:.</p>
+<p>It looks like a lot, but there's nothing complicated. Here we go!</p>
+<p>First, we download and install the Intel OneAPI base toolkit as well as the AI toolkit. You can learn about them on the Intel website.</p>
+<p>Then, we download and install the Anaconda distribution.</p>
+<p>Creating a fresh conda environment.</p>
+<p>Installing PyTorch and the Intel extension for PyTorch.</p>
+<p id="sec-mid-35711">In a recent development, next, we install PyTorch 1.9 and the Intel extension toolkit. Versions must match.</p>
+<p>Compiling and installing oneCCL.</p>
+<p>Then, we install some native dependencies required to compile oneCCL.</p>
+<p>Next, we clone the oneCCL repository, build the library and install it. Again, versions must match.</p>
+<p>Installing the transformers library.</p>
+<p>Next, we install the transformers library and dependencies required to run GLUE tasks.</p>
+<p>Finally, we clone a fork of the transformersrepository containing the example we're going to run.</p>
+<p>According to recent reports, we're done! Let's run a single-node job.</p>
+<p>To get a baseline, let's launch a single-node job running the run_glue.py script in transformers/examples/pytorch/text-classification. This should work on any of the instances, and it's a good sanity check before proceeding to distributed training.</p>
+<p>This job takes 7 minutes and 46 seconds. Now, let's set up distributed jobs with oneCCL and speed things up!</p>
+<p>Three steps are required to run a distributed training job:.</p>
+<p>Listing the nodes of the training cluster.</p>
+<p>Recent findings suggest that on the master instance, in transformers/examples/pytorch/text-classification, we create a text file named hostfile. This file stores the names of the nodes in the cluster (IP addresses would work too). The first line should point to the master instance.</p>
+<p>Next, we need to set some environment variables on the master node, most notably its IP address. You can find more information on oneCCL variables in the documentation.</p>
+<p>Sources indicate that the following changes have already been applied to our training script (run_glue.py) in order to enable distributed training. You would need to apply similar changes when using your own training code.</p>
+<p>Sources indicate that setup is now complete. Let's scale our training job to 2 nodes and 4 nodes.</p>
+<p>On the master node, I use mpirunto launch a 2-node job: -np (number of processes) is set to 2 and -ppn (process per node) is set to 1. Hence, the first two nodes in hostfile will be selected.</p>
+<p>Within seconds, a job starts on the first two nodes. The job completes in 4 minutes and 39 seconds, a 1.7x speedup.</p>
+<p>Setting -np to 4 and launching a fresh job, I now see one process running on each node of the cluster.</p>
+<p>Training completes in 2 minutes and 36 seconds, a 3x speedup.</p>
+<p>One last thing. Changing --task_name to qqp, I also ran the Quora Question Pairs GLUE task, which is based on a much larger dataset (over 400,000 training samples). The fine-tuning times were:.</p>
+<p>According to recent reports, it looks like the speedup is pretty consistent. Feel free to keep experimenting with different learning rates, batch sizes and oneCCL settings. I'm sure you can go even faster!</p>
+<p>Sources indicate that in this post, you've learned how to build a distributed training cluster based on Intel CPUs and performance libraries, and how to use this cluster to speed up fine-tuning jobs. Indeed, transfer learning is putting CPU training back into the game, and you should definitely consider it when designing and building your next deep learning workflows.</p>
+<p id="sec-end-35711">Sources indicate that thanks for reading this long post. I hope you found it informative. Feedback and questions are welcome at julsimon@huggingface.co. Until next time, keep learning!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/accelerating-pytorch" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-accelerating-pytorch-transformers-with-intel-sapphi-35579.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35579. Latest Update: Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 2
+        </a>
+        
+        <a href="fine-tuning-stable-diffusion-models-on-intel-cpus-35504.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35504. Fine-tuning Stable Diffusion models on Intel CPUs
+        </a>
+        
+        <a href="fine-tuning-llama-2-70b-using-pytorch-fsdp-35474.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35474. Fine-tuning Llama 2 70B using PyTorch FSDP
+        </a>
+        
+        <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-23885.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23885. Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry News: Hugging Face on PyTorch / XLA TPUs</title>
+    <meta name="description" content="Recent findings suggest that the PyTorch-TPU project originated as a collaborative effort between the Facebook PyTorch and Google TPU teams and officially ">
+    <meta name="keywords" content="pytorch, step, device, cloud, graph, training, devices, tpus">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/industry-news-hugging-face-on-pytorch-xla-tpus-35739.html">
+    
+    <meta property="og:title" content="Industry News: Hugging Face on PyTorch / XLA TPUs">
+    <meta property="og:description" content="Recent findings suggest that the PyTorch-TPU project originated as a collaborative effort between the Facebook PyTorch and Google TPU teams and officially ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/13_pytorch_xla/pytorch_xla_thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/industry-news-hugging-face-on-pytorch-xla-tpus-35739.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Industry News: Hugging Face on PyTorch / XLA TPUs">
+    <meta name="twitter:description" content="Recent findings suggest that the PyTorch-TPU project originated as a collaborative effort between the Facebook PyTorch and Google TPU teams and officially ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/13_pytorch_xla/pytorch_xla_thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Industry News: Hugging Face on PyTorch / XLA TPUs", "image": ["https://huggingface.co/blog/assets/13_pytorch_xla/pytorch_xla_thumbnail.png"], "datePublished": "2021-02-09T00:00:00", "dateModified": "2026-11-21T06:52:54.802859", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/industry-news-hugging-face-on-pytorch-xla-tpus-35739.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Industry News: Hugging Face on PyTorch / XLA TPUs?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Industry News: Hugging Face on PyTorch / XLA TPUs' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Industry News: Hugging Face on PyTorch / XLA TPUs</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 09 Feb 2021 &bull; ⏱️ 7 min read (1458 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that the PyTorch-TPU project originated as a collaborative effort between the Facebook PyTorch and Google TPU teams and officially launched at the 2019 PyTorch Developer Conference 2019.</li><li style='margin-bottom:6px;'>According to recent reports, this blog post provides an overview of changes made in the Hugging Face library, what the PyTorch / XLA library does, an example to get you started training your favorite transformers on Cloud TPUs, and some performance benchmarks.</li><li style='margin-bottom:6px;'>PyTorch / XLA adds a latest xla device type to PyTorch.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35739"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35739"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35739"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Industry News: Hugging Face on PyTorch / XLA TPUs" loading="lazy" src="https://huggingface.co/blog/assets/13_pytorch_xla/pytorch_xla_thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35739">Recent findings suggest that the PyTorch-TPU project originated as a collaborative effort between the Facebook PyTorch and Google TPU teams and officially launched at the 2019 PyTorch Developer Conference 2019. Since then, we’ve worked with the Hugging Face team to bring first-class support to training on Cloud TPUs using PyTorch / XLA. This newly introduced integration enables PyTorch consumers to run and scale up their models on Cloud TPUs while maintaining the exact same Hugging Face trainers interface.</p>
+<p>According to recent reports, this blog post provides an overview of changes made in the Hugging Face library, what the PyTorch / XLA library does, an example to get you started training your favorite transformers on Cloud TPUs, and some performance benchmarks. If you can’t wait to get started with TPUs, please skip ahead to the “Train Your Transformer on Cloud TPUs” section - we handle all the PyTorch / XLA mechanics for you within the Trainer module! <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>PyTorch / XLA adds a latest xla device type to PyTorch. This device type works just like other PyTorch device types. For example, here's how to create and print an XLA tensor:. <span style="font-size:13px;">(Related: <a href="accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-35711.html" style="color:#2563eb; font-weight:600;">Accelerating PyTorch distributed fine-tuning with Intel...</a>)</span></p>
+<p>It has been revealed that this code should look familiar. PyTorch / XLA uses the same interface as regular PyTorch with a few additions. Importing torch_xla initializes PyTorch / XLA, and xm.xla_device() returns the current XLA device. This may be a CPU, GPU, or TPU depending on your environment, but for this blog post we’ll focus primarily on TPU.</p>
+<p>The Trainer module leverages a TrainingArguments dataclass in order to define the training specifics. It handles multiple arguments, from batch sizes, learning rate, gradient accumulation and others, to the devices used. Based on the above, in TrainingArguments._setup_devices() when using XLA:TPU devices, we simply return the TPU device to be used by the Trainer:.</p>
+<p>Industry observers note that in a typical XLA:TPU training scenario we’re training on multiple TPU cores in parallel (a single Cloud TPU device includes 8 TPU cores). So we need to ensure that all the gradients are exchanged between the data parallel replicas by consolidating the gradients and taking an optimizer step. For this we provide the xm.optimizer_step(optimizer) which does the gradient consolidation and step-taking. In the Hugging Face trainer, we correspondingly update the train step to use the PyTorch / XLA APIs:.</p>
+<p>According to recent reports, there are two main parts to running a PyTorch / XLA model: (1) tracing and executing your model’s graph lazily (refer to below “PyTorch / XLA Library” section for a more in-depth explanation) and (2) feeding your model. Without any optimization, the tracing/execution of your model and input feeding would be executed serially, leaving chunks of time during which your host CPU and your TPU accelerators would be idle, respectively. To avoid this, we provide an API, which pipelines the two and thus is able to overlap the tracing of step n+1 while step n is still executing.</p>
+<p>According to recent reports, when a tensor is checkpointed from a XLA device and then loaded back from the checkpoint, it will be loaded back to the original device. Before checkpointing tensors in your model, you want to ensure that all of your tensors are on CPU devices instead of XLA devices. This way, when you load back the tensors, you’ll load them through CPU devices and then have the opportunity to place them on whatever XLA devices you desire. We provide the xm.save() API for this, which already takes care of only writing to storage location from only one process on each host (or one globally if using a shared file system across hosts).</p>
+<p>According to recent reports, pyTorch / XLA is a Python package that uses the XLA linear algebra compiler to connect the PyTorch deep learning framework with XLA devices, which includes CPU, GPU, and Cloud TPUs. Part of the following content is also available in our API_GUIDE.md.</p>
+<p>Using XLA tensors and devices requires changing only a few lines of code. However, even though XLA tensors act a lot like CPU and CUDA tensors, their internals are different. CPU and CUDA tensors launch operations immediately or eagerly. XLA tensors, on the other hand, are lazy. They record operations in a graph until the results are needed. Deferring execution like this lets XLA optimize it. A graph of multiple separate operations might be fused into a single optimized operation.</p>
+<p>Lazy execution is generally invisible to the caller. PyTorch / XLA automatically constructs the graphs, sends them to XLA devices, and synchronizes when copying data between an XLA device and the CPU. Inserting a barrier when taking an optimizer step explicitly synchronizes the CPU and the XLA device.</p>
+<p id="sec-mid-35739">This means that when you call model(input) forward pass, calculate your loss loss.backward(), and take an optimization step xm.optimizer_step(optimizer), the graph of all operations is being built in the background. Only when you either explicitly evaluate the tensor (ex. Printing the tensor or moving it to a CPU device) or mark a step (this will be done by the MpDeviceLoader everytime you iterate through it), does the full step get executed.</p>
+<p>From a user’s point of view, a typical training regimen for a model running on PyTorch / XLA involves running a forward pass, backward pass, and optimizer step. From the PyTorch / XLA library point of view, things look a little different.</p>
+<p>While a user runs their forward and backward passes, an intermediate representation (IR) graph is traced on the fly. The IR graph leading to each root/output tensor can be inspected as following:.</p>
+<p>It has been revealed that this live graph is accumulated while the forward and backward passes are run on the user's program, and once xm.mark_step() is called (indirectly by pl.MpDeviceLoader), the graph of live tensors is cut. This truncation marks the completion of one step and subsequently we lower the IR graph into XLA Higher Level Operations (HLO), which is the IR language for XLA.</p>
+<p>This HLO graph then gets compiled into a TPU binary and subsequently executed on the TPU devices. However, this compilation step can be costly, typically taking longer than a single step, so if we were to compile the user’s program every single step, overhead would be high. To avoid this, we have caches that store compiled TPU binaries keyed by their HLO graphs’ unique hash identifiers. So once this TPU binary cache has been populated on the first step, subsequent steps will typically not have to re-compile latest TPU binaries; instead, they can simply look up the necessary binaries from the cache.</p>
+<p>Since TPU compilations are typically much slower than the step execution time, this means that if the graph keeps changing in shape, we’ll have cache misses and compile too frequently. To minimize compilation costs, we recommend keeping tensor shapes static whenever possible. Hugging Face library’s shapes are already static for the most part with input tokens being padded appropriately, so throughout training the cache should be consistently hit. This can be checked using the debugging tools that PyTorch / XLA provides. In the example below, you can see that compilation only happened 5 times (CompileTime) whereas execution happened during each of 1220 steps (ExecuteTime):.</p>
+<p>According to recent reports, to configure your VM and Cloud TPUs, please follow “Set up a Compute Engine instance” and “Launch a Cloud TPU resource” (pytorch-1.7 version as of writing) sections. Once you have your VM and Cloud TPU created, using them is as simple as SSHing to your GCE VM and running the following commands to get bert-large-uncased training kicked off (batch size is for v3-8 device, may OOM on v2-8):.</p>
+<p>The above should complete training in roughly less than 200 minutes with an eval perplexity of ~3.25.</p>
+<p>In a recent development, the following table highlights the performance of training bert-large-uncased on a v3-8 Cloud TPU system (containing 4 TPU v3 chips) running PyTorch / XLA. The dataset used for all benchmarking measurements is the WikiText103 dataset, and we use the run_mlm.py script provided in Hugging Face examples. To ensure that the workloads are not host-CPU-bound, we use the n1-standard-96 CPU configuration for these tests, but you may be able to use smaller configurations as well without impacting performance.</p>
+<p>It has been revealed that see the “Running on TPUs” section under the Hugging Face examples to get started. For a more detailed description of our APIs, check out our API_GUIDE, and for performance best practices, take a look at our TROUBLESHOOTING guide. For generic PyTorch / XLA examples, run the following Colab Notebooks we offer with free Cloud TPU access. To run directly on GCP, please see our tutorials labeled “PyTorch” on our documentation site.</p>
+<p id="sec-end-35739">Have any other questions or concerns? Please open an matter or question at https://github.com/huggingface/transformers/issues or directly at https://github.com/pytorch/xla/issues.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/pytorch-xla" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-open-source-text-generation-llm-ecosystem-at-huggin-35503.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35503. Industry News: Open-Source Text Generation & LLM Ecosystem at Hugging Face
+        </a>
+        
+        <a href="industry-news-deploy-embedding-models-with-hugging-face-inference-35456.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35456. Industry News: Deploy Embedding Models with Hugging Face Inference Endpoints
+        </a>
+        
+        <a href="google-cloud-tpus-made-available-to-hugging-face-users-35337.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35337. Google Cloud TPUs made available to Hugging Face users
+        </a>
+        
+        <a href="industry-news-scaling-ai-based-data-processing-with-hugging-face--35296.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35296. Industry News: Scaling AI-based Data Processing with Hugging Face + Dask
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: How to train a new language model from scratch using Transformers and Tokenizers</title>
+    <meta name="description" content="Over the past few months, we made several improvements to our transformers and tokenizers libraries, with the goal of making it easier than ever to train a">
+    <meta name="keywords" content="model, esperanto, train, language, here, dataset, using, corpus">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html">
+    
+    <meta property="og:title" content="Breaking: How to train a new language model from scratch using Transformers and Tokenizers">
+    <meta property="og:description" content="Over the past few months, we made several improvements to our transformers and tokenizers libraries, with the goal of making it easier than ever to train a">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/01_how-to-train/how-to-train_blogpost.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: How to train a new language model from scratch using Transformers and Tokenizers">
+    <meta name="twitter:description" content="Over the past few months, we made several improvements to our transformers and tokenizers libraries, with the goal of making it easier than ever to train a">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/01_how-to-train/how-to-train_blogpost.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: How to train a new language model from scratch using Transformers and Tokenizers", "image": ["https://huggingface.co/blog/assets/01_how-to-train/how-to-train_blogpost.png"], "datePublished": "2020-02-14T00:00:00", "dateModified": "2026-11-21T06:53:00.370002", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: How to train a new language model from scratch using Transformers and ?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Breaking: How to train a new language model from scratch usi' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: How to train a new language model from scratch using Transformers and Tokenizers</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 14 Feb 2020 &bull; ⏱️ 5 min read (989 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Over the past few months, we made several improvements to our transformers and tokenizers libraries, with the goal of making it easier than ever to train a fresh language model from scratch.</li><li style='margin-bottom:6px;'>In this post we’ll demo how to train a “small” model (84 M parameters = 6 layers, 768 hidden size, 12 attention heads) – that’s the same number of layers & heads as DistilBERT – on Esperanto.</li><li style='margin-bottom:6px;'>Esperanto is a constructed language with a goal of being easy to learn.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35750"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35750"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35750"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: How to train a new language model from scratch using Transformers and Tokenizers" loading="lazy" src="https://huggingface.co/blog/assets/01_how-to-train/how-to-train_blogpost.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35750">Over the past few months, we made several improvements to our transformers and tokenizers libraries, with the goal of making it easier than ever to train a fresh language model from scratch.</p>
+<p>In this post we’ll demo how to train a “small” model (84 M parameters = 6 layers, 768 hidden size, 12 attention heads) – that’s the same number of layers &amp; heads as DistilBERT – on Esperanto. We’ll then fine-tune the model on a downstream task of part-of-speech tagging. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-35743.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>Esperanto is a constructed language with a goal of being easy to learn. We pick it for this demo for several reasons:. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Industry observers note that N.B. You won’t need to understand Esperanto to understand this post, but if you do want to learn it, Duolingo has a nice course with 280k active learners.</p>
+<p>Our model is going to be called… wait for it… EsperBERTo 😂.</p>
+<p>First, let us find a corpus of text in Esperanto. Here we’ll use the Esperanto portion of the OSCAR corpus from INRIA. OSCAR is a huge multilingual corpus obtained by language classification and filtering of Common Crawl dumps of the Web.</p>
+<p>The Esperanto portion of the dataset is only 299M, so we’ll concatenate with the Esperanto sub-corpus of the Leipzig Corpora Collection, which is comprised of text from diverse sources like news, literature, and wikipedia.</p>
+<p>The final training corpus has a size of 3 GB, which is still small – for your model, you will get better results the more data you can get to pretrain on.</p>
+<p>Industry observers note that we choose to train a byte-level Byte-pair encoding tokenizer (the same as GPT-2), with the same special tokens as RoBERTa. Let’s arbitrarily pick its size to be 52,000.</p>
+<p>We recommend training a byte-level BPE (rather than let’s say, a WordPiece tokenizer like BERT) because it will start building its vocabulary from an alphabet of single bytes, so all words will be decomposable into tokens (no more  tokens!).</p>
+<p>And here’s a slightly accelerated capture of the output:.</p>
+<p>On our dataset, training took about ~5 minutes.</p>
+<p>We now have both a vocab.json, which is a list of the most frequent tokens ranked by frequency, and a merges.txt list of merges.</p>
+<p>What is great is that our tokenizer is optimized for Esperanto. Compared to a generic tokenizer trained for English, more native words are represented by a single, unsplit token. Diacritics, i.e. accented characters used in Esperanto – ĉ, ĝ, ĥ, ĵ, ŝ, and ŭ – are encoded natively. We also represent sequences in a more efficient manner. Here on this corpus, the average length of encoded sequences is ~30% smaller as when using the pretrained GPT-2 tokenizer.</p>
+<p>Here’s how you can use it in tokenizers, including handling the RoBERTa special tokens – of course, you’ll also be able to use it directly from transformers.</p>
+<p>Enhancement: The associated Colab notebook uses our fresh Trainer directly, instead of through a script. Feel free to pick the approach you like best.</p>
+<p>Industry observers note that we will now train our language model using the run_language_modeling.py script from transformers (newly renamed from run_lm_finetuning.py as it now supports training from scratch more seamlessly). Just remember to leave --model_name_or_path to None to train from scratch vs. from an existing model or checkpoint.</p>
+<p>We’ll train a RoBERTa-like model, which is a BERT-like with a couple of changes (check the documentation for more details).</p>
+<p>As the model is BERT-like, we’ll train it on a task of Masked language modeling, i.e. the predict how to fill arbitrary tokens that we randomly mask in the dataset. This is taken care of by the example script.</p>
+<p id="sec-mid-35750">Here’s a simple version of our EsperantoDataset.</p>
+<p>If your dataset is very large, you can opt to load and tokenize examples on the fly, rather than as a preprocessing step.</p>
+<p>Here is one specific set of hyper-parameters and arguments we pass to the script:.</p>
+<p>As usual, pick the largest batch size you can fit on your GPU(s).</p>
+<p>Here you can check our Tensorboard for one particular set of hyper-parameters:.</p>
+<p>Aside from looking at the training and eval losses going down, the easiest way to check whether our language model is learning anything interesting is via the FillMaskPipeline.</p>
+<p>Pipelines are simple wrappers around tokenizers and models, and the 'fill-mask' one will let you input a sequence containing a masked token (here, ) and return a list of the most probable filled sequences, with their probabilities.</p>
+<p>Ok, simple syntax/grammar works. Let’s try a slightly more interesting prompt:.</p>
+<p>“Jen la komenco de bela tago”, indeed!</p>
+<p>With more complex prompts, you can probe whether your language model captured more semantic knowledge or even some sort of (statistical) common sense reasoning.</p>
+<p>We now can fine-tune our upcoming Esperanto language model on a downstream task of Part-of-speech tagging.</p>
+<p>Recent findings suggest that as mentioned before, Esperanto is a highly regular language where word endings typically condition the grammatical part of speech. Using a dataset of annotated  Esperanto POS tags formatted in the CoNLL-2003 format (see example below), we can use the run_ner.py script from transformers.</p>
+<p>POS tagging is a token classification task just as NER so we can just use the exact same script.</p>
+<p>According to recent reports, again, here’s the hosted Tensorboard for this fine-tuning. We train for 3 epochs using a batch size of 64 per GPU.</p>
+<p>Training and eval losses converge to small residual values as the task is rather easy (the language is regular) – it’s still fun to be able to train it end-to-end 😃.</p>
+<p>This time, let’s use a TokenClassificationPipeline:.</p>
+<p>For a more challenging dataset for NER, @stefan-it recommended that we could train on the silver standard dataset from WikiANN.</p>
+<p>Finally, when you have a nice model, please think about sharing it with the community:.</p>
+<p>➡️ Your model has a page on https://huggingface.co/models and everyone can load it using AutoModel.from_pretrained("username/model_name").</p>
+<p id="sec-end-35750">If you want to take a look at models in different languages, check https://huggingface.co/models.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/how-to-train" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="training-a-language-model-with-transformers-using-tensorflow-and--35546.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35546. Training a language model with 🤗 Transformers using TensorFlow and TPUs
+        </a>
+        
+        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35749. How to generate text: using different decoding methods for language generation with Transformers
+        </a>
+        
+        <a href="distributed-training-train-bartt5-for-summarization-using-transfo-35731.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35731. Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker
+        </a>
+        
+        <a href="how-to-train-your-model-dynamically-using-adversarial-data-35650.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35650. How to train your model dynamically using adversarial data
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

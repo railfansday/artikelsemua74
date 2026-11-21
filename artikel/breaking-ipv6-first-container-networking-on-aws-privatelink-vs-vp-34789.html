@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: IPv6-First Container Networking on AWS: PrivateLink vs VPC Lattice vs VPC Endpoints, Measured</title>
+    <meta name="description" content="Industry observers note that when you connect containers over IPv6, should you use PrivateLink, VPC Lattice or VPC endpoints? I was not sure either, so I p">
+    <meta name="keywords" content="lattice, only, endpoint, privatelink, same, gateway, security, recent">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/breaking-ipv6-first-container-networking-on-aws-privatelink-vs-vp-34789.html">
+    
+    <meta property="og:title" content="Breaking: IPv6-First Container Networking on AWS: PrivateLink vs VPC Lattice vs VPC Endpoints, Measured">
+    <meta property="og:description" content="Industry observers note that when you connect containers over IPv6, should you use PrivateLink, VPC Lattice or VPC endpoints? I was not sure either, so I p">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjixjsl335wrttf0oyh13.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/breaking-ipv6-first-container-networking-on-aws-privatelink-vs-vp-34789.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: IPv6-First Container Networking on AWS: PrivateLink vs VPC Lattice vs VPC Endpoints, Measured">
+    <meta name="twitter:description" content="Industry observers note that when you connect containers over IPv6, should you use PrivateLink, VPC Lattice or VPC endpoints? I was not sure either, so I p">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjixjsl335wrttf0oyh13.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: IPv6-First Container Networking on AWS: PrivateLink vs VPC Lattice vs VPC Endpoints, Measured", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjixjsl335wrttf0oyh13.png"], "datePublished": "2026-11-21T06:36:53", "dateModified": "2026-11-21T06:51:02.602155", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/breaking-ipv6-first-container-networking-on-aws-privatelink-vs-vp-34789.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: IPv6-First Container Networking on AWS: PrivateLink vs VPC Lattice vs ?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Breaking: IPv6-First Container Networking on AWS: PrivateLin' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: IPv6-First Container Networking on AWS: PrivateLink vs VPC Lattice vs VPC Endpoints, Measured</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 14 min read (2815 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that when you connect containers over IPv6, should you use PrivateLink, VPC Lattice or VPC endpoints?</li><li style='margin-bottom:6px;'>Industry observers note that this article is a deeper write-up of my English talk "IPv6-first container network design practices" at JAWS-UG Yamanashi #14 on November 21, 2026.</li><li style='margin-bottom:6px;'>This is for engineers who connect containers on Amazon ECS or similar platforms across several VPCs or accounts.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-34789"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-34789"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-34789"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: IPv6-First Container Networking on AWS: PrivateLink vs VPC Lattice vs VPC Endpoints, Measured" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjixjsl335wrttf0oyh13.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-34789">Industry observers note that when you connect containers over IPv6, should you use PrivateLink, VPC Lattice or VPC endpoints? I was not sure either, so I put the same container behind all three paths and measured speed and security under the same conditions. The short answer: choose a path less by speed and more by whether the provider needs to know who is calling.</p>
+<p>Industry observers note that this article is a deeper write-up of my English talk "IPv6-first container network design practices" at JAWS-UG Yamanashi #14 on November 21, 2026. It includes background and lessons that did not fit into the 20-minute slot. All numbers were measured in the Tokyo Region (ap-northeast-1) on November 19, 2026. <span style="font-size:13px;">(Related: <a href="industry-news-hugging-face-on-pytorch-xla-tpus-35739.html" style="color:#2563eb; font-weight:600;">Industry News: Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
+<p>This is for engineers who connect containers on Amazon ECS or similar platforms across several VPCs or accounts. If every team owns its own VPC and you keep asking yourself how services should talk to each other, I hope this gives you something concrete to decide with. <span style="font-size:13px;">(Related: <a href="the-partnership-amazon-sagemaker-and-hugging-face-35733.html" style="color:#2563eb; font-weight:600;">The Partnership: Amazon SageMaker and Hugging Face...</a>)</span></p>
+<p>According to recent reports, it is also for teams that started thinking about IPv6 because of the public IPv4 charge. You may know the names PrivateLink and VPC Lattice but have never compared their actual speed or how you secure them. That is exactly the gap this article tries to fill.</p>
+<p>By the end, you should be able to explain how to decide IPv6 per subnet tier and apply it to your own setup, without moving everything to IPv6-only at once.</p>
+<p>Recent findings suggest that you will also be able to explain the speed and security differences between the three paths with real numbers and raw logs. The article ends with a top-down checklist for choosing a path, which you can bring straight into a design review.</p>
+<p>Internet egress and Transit Gateway matter a lot for IPv6 too, but each could fill an article of its own. Here I focus on private traffic between services.</p>
+<p>I assume you know VPC subnets, route tables and security groups, and Amazon ECS tasks. You will see the term "dual stack" (having both IPv4 and IPv6) many times.</p>
+<p>According to recent reports, three changes made IPv6-first design realistic. In February 2024, public IPv4 addresses started to cost $0.005 per IP per hour. In September 2025, Amazon ECS added support for IPv6-only tasks and services. In November 2025, Amazon S3 gateway and interface VPC endpoints added IPv6 support. With all three in place, the question is no longer "can we use IPv6?" but "how do we design for it?".</p>
+<p>Sources indicate that adding an IPv6 range to a VPC takes a few clicks. The hard part comes next: connecting services. When every team or account creates its own VPC, many of them end up with 10.0.0.0/16, and overlapping IPv4 ranges cannot simply be routed. AWS gives us three building blocks that work even when ranges overlap: PrivateLink, VPC endpoints for AWS services, and VPC Lattice. The documentation alone did not tell me which to pick, so I built a lab and measured.</p>
+<p>I deliberately gave both the consumer VPC and the provider VPC the same range, 10.0.0.0/16. There is no internet gateway and no NAT gateway, so the only way out is the path being measured. That way, nothing can quietly take another route.</p>
+<p>It has been revealed that on the provider side, the same container runs twice: one copy behind PrivateLink and an internal Network Load Balancer, the other behind VPC Lattice. On the consumer side, k6 runs on an EC2 instance and calls each path over IPv6. S3 is read through both a gateway endpoint and an interface endpoint.</p>
+<p>The baseline is a direct call to the NLB from inside the provider VPC. Subtracting it demonstrates only what each path adds. The lab is an AWS CDK app; I deployed the four stacks with cdkd in about 14 minutes (852 seconds) and deleted everything the same day.</p>
+<p>According to recent reports, IPv6-first does not mean IPv6-only everywhere. My recommendation is to decide IPv6 per subnet tier rather than per VPC, because each tier has a different role and can move at its own pace.</p>
+<p>Industry observers note that the edge tier, with load balancers and endpoints, is called over both IPv4 and IPv6, so it stays dual stack. The workload tier starts dual stack too, and moves to IPv6-only once every dependency is reachable over IPv6. For that, I created dual-stack endpoints for ECR, CloudWatch Logs, Systems Manager and S3.</p>
+<p>One real pitfall was the ec2messages endpoint. In the Tokyo Region it supports IPv4 only, and my deploy failed when I tried to create it as dual stack. Supported IP types differ by service and Region, so check before you create. I created only that endpoint as IPv4. SSM Agent 3.3.40 or later works with ssm and ssmmessages alone, so Session Manager still works on IPv6-only workloads.</p>
+<p>In a recent development, before the numbers, here is the mental model in one picture. All three let you call something outside your VPC from inside it, but they work at different layers and expose different things.</p>
+<p>PrivateLink works at layer 4 and exposes one NLB port; the provider accepts each consumer. VPC endpoints use the same technology to reach AWS services, and the endpoint policy is the main control. VPC Lattice is a layer 7 application network with IAM authentication. Please keep the last row in mind: does the provider know who is calling? It drives both the security results and the final recommendation.</p>
+<p>Recent findings suggest that first, latency with connection reuse at 500 requests per second over IPv6. The baseline median (p50) was 1.84 ms.</p>
+<p>According to recent reports, privateLink added only 0.13 to 0.30 ms. VPC Lattice added about 2.3 to 2.9 ms as an L7 proxy. Up to 1,000 requests per second, p99 did not get worse on any path. Across three runs the spread was small (PrivateLink 1.93 to 1.99 ms, Lattice HTTP 4.24 to 4.32 ms), so the roughly 2.3 ms gap comes from the path itself, not from noise.</p>
+<p>Another finding from the report: with connection reuse, Lattice HTTPS was only 0.04 to 0.19 ms slower than HTTP. There is no reason to avoid TLS for performance, so I recommend HTTPS with Lattice too. A few milliseconds matter for chatty, latency-critical calls, where PrivateLink is a good fit. For most API calls, how you handle connections matters more, as the next result reveals.</p>
+<p>Next, the same test with a newly introduced connection for every request, which is what happens when an app does not reuse connections or runs as a short-lived process.</p>
+<p>Sources indicate that on PrivateLink, the TCP connect alone took 2.5 to 2.8 ms, because the handshake travels through the NLB to the task and back. VPC Lattice terminates TCP close to the client, so the connect took about 0.5 ms, but TLS added about 1.8 ms for HTTPS. In total, a latest connection costs about 2.3 to 2.6 ms per request, as much as the gap between paths. Before debating paths, check that your app reuses connections.</p>
+<p>One caveat when reading k6 results: http_req_duration does not include connect and TLS time, so it hides this cost. The report adds connect, TLS and request time together; at 300 requests per second the totals were 4.59 ms for PrivateLink and 6.63 ms for Lattice HTTPS, the same trend.</p>
+<p>Is IPv6 slower? I measured the same paths over both protocols with the same load.</p>
+<p>The p50 values were 2.01 vs 2.04 ms for PrivateLink, 4.24 vs 4.34 ms for Lattice, and 24.96 vs 24.75 ms for the S3 gateway endpoint. The differences of 0.03 to 0.21 ms were within run-to-run variation. VPC Flow Logs confirmed that the test traffic really used IPv6: about 3.16 GB over IPv6 versus about 36 MB over IPv4.</p>
+<p>I also checked throughput by fetching 1 MiB objects with 64 virtual people.</p>
+<p>According to recent reports, privateLink reached about 1,475 MiB/s, the network limit of the c7i.xlarge client (12.5 Gbps), even with two small 0.5 vCPU tasks. VPC Lattice leveled off around 1.1 GiB/s, and doubling the load only doubled latency. One run cannot tell whether that is a Lattice limit or a target-side limit, so I will retest with more and larger tasks. Also note that one-minute tests may use the instance's burst bandwidth, which is higher than its sustained baseline.</p>
+<p id="sec-mid-34789">For S3, the gateway and interface endpoints had nearly the same p50, but p99 was 41 ms versus 57 ms in favor of the gateway endpoint. It has no extra charge and now supports IPv6, so I recommend it as the default for S3.</p>
+<p>Sources indicate that speed is not only milliseconds. How long does a fresh team wait before its first successful call?</p>
+<p>The S3 gateway endpoint was ready in 4 seconds and the interface endpoint in 247 seconds. The PrivateLink endpoint was created in 6 seconds and became available 38 seconds after the provider accepted it. The VPC Lattice VPC association took 74 seconds and needed no approval. On the provider side, the NLB took 127 seconds, the endpoint service 2 seconds, and the Lattice service and its association 10 seconds each.</p>
+<p>On machine time alone PrivateLink wins, but a human approval is added in practice. And there is a trap that makes the wait much longer. If you resolve the PrivateLink DNS name before acceptance, the VPC resolver caches the negative answer. In my lab I accepted at 11:09:32 and the name resolved only at 11:19:16, about 584 seconds later. If a name resolves from outside but not from inside the VPC, suspect this, and check DNS only after the endpoint is available.</p>
+<p>I tested security as three layers, so that one mistake does not open everything.</p>
+<p>The network layer is the security group on the endpoint or the Lattice association. The connectivity layer is PrivateLink acceptance, the Lattice auth policy and endpoint policies for AWS services. The resource layer is, for example, an S3 bucket policy. I changed one condition at a time to see whether each layer really works.</p>
+<p>Same instance, same DNS name, one change per column: trusted, untrusted security group, PrivateLink not yet accepted, and Lattice with IAM required.</p>
+<p>Sources indicate that with an untrusted security group, PrivateLink, Lattice and the S3 interface endpoint all timed out. Before acceptance, the PrivateLink name did not even resolve. With IAM required on Lattice, unsigned calls got 403 and SigV4-signed calls got 200. In every case both VPCs kept the same 10.0.0.0/16 and all three paths worked. The PrivateLink endpoint service only allows my own account and requires acceptance.</p>
+<p>The surprise was the S3 gateway endpoint: it still returned 200 with the untrusted security group, over both IPv6 and IPv4. The raw data explains why.</p>
+<p>According to recent reports, through the gateway endpoint, the client connected to public S3 addresses over both IPv6 and IPv4. Through the interface endpoint, it connected to the address of a network interface in my VPC. VPC Flow Logs marked the gateway traffic as traffic path 7. A gateway endpoint is a route in the route table, not a network interface. Security groups attach to network interfaces, so they cannot protect it. Use the endpoint policy and the bucket policy instead.</p>
+<p>With IAM required, unsigned calls were logged as 403 with authDeniedReason Service, so you can see why they were denied. Signed calls were logged as 200 together with the caller's IAM role. Before IAM was required, about 1.34 million anonymous calls were all logged with their source VPC. Getting this audit trail without touching your application is a real advantage; just remember to configure a log destination on the service network or service.</p>
+<p>According to recent reports, this was my favorite slide in the talk. What does the provider's container actually see about the caller?</p>
+<p>Sources indicate that behind PrivateLink, the task sees only the NLB's IPv4 addresses (one per AZ) and cannot tell who called. Behind VPC Lattice, the x-amzn-source-vpc header shows the source VPC, and with SigV4 you also get the caller's IAM principal. If your provider must decide per caller, PrivateLink pushes that logic into your application, while Lattice hands it to you from the network. This is why I recommend choosing by caller identity rather than by speed alone.</p>
+<p>Industry observers note that the client connected over IPv6, but the task received IPv4: the NLB's IPv4 address with PrivateLink, and a link-local IPv4 address with Lattice. With dual-stack workloads, IPv6 stops at the edge. A fun detail: the last 32 bits of the Lattice IPv6 address, a9fe:ab61, are 169.254.171.97 in decimal, exactly what the IPv4 lookup returned. For IPv6 end to end, the workload itself has to be IPv6-only.</p>
+<p>Sources indicate that even though an outside bucket allowed my endpoint, my endpoint policy did not list that bucket, so the request got 403. From the internet, the data bucket returned 403 because its policy only accepts requests through my endpoints. The endpoint policy controls where data can go; the bucket policy controls where requests can come from. Two policies facing opposite directions catch each other's mistakes, which matters most for the gateway endpoint.</p>
+<p>Industry observers note that every path has strengths and weaknesses. VPC Lattice tells you the caller but adds a few milliseconds and leveled off around 1.1 GiB/s for large objects. PrivateLink is fast, but you build caller identity yourself and wait for approval and DNS. The S3 gateway endpoint is free and stable but cannot use security groups. Rather than one path for everything, I recommend choosing per type of traffic.</p>
+<p>I measured with k6 on a c7i.xlarge instance: 1 KiB responses, a 20-second warm-up, then one minute per load level. PrivateLink and Lattice ran three times in rotating order; the others ran once. All 59 runs had zero errors and zero dropped requests.</p>
+<p>Industry observers note that I wrote down my expectations before measuring. Most held, and some held only with conditions. In particular, the cost of latest HTTPS connections turned out to be about the same as the gap between paths, not larger.</p>
+<p>According to recent reports, building the lab took four deploy attempts, and I fixed four challenges along the way, adding tests to prevent regressions (from 30 to 32). The first deploy failed because a security group's IPv6 rule read the VPC's IPv6 range without waiting for it to be associated. Then came the ec2messages endpoint. A non-root k6 container could not write to a Fargate bind volume; I fixed it with a locked-down init container that keeps only the CHOWN capability and uses a read-only root file system. The last glitch was the DNS negative cache described above.</p>
+<p>Deploying took 852 seconds, switching the Lattice auth mode took about 27 seconds, and deleting took about 990 seconds with no leftover resources. These numbers come from short runs; please measure with your own workload before deciding. The code and the full report are in ContainerNetwork-Research-handson.</p>
+<p>Here are the key parts of the AWS CDK app used in the lab, written with aws-cdk-lib L1 constructs as of November 2026. L1 lets you set newer options such as ipAddressType and dnsOptions exactly as in CloudFormation.</p>
+<p>First, dual-stack interface endpoints for dependencies, with ec2messages as the IPv4-only exception in the Tokyo Region.</p>
+<p>Next, an S3 gateway endpoint whose policy allows reading only the buckets you need. In a real environment, remember to also allow the buckets that hold ECR image layers and OS packages.</p>
+<p>The data bucket only accepts reads through the two endpoints. A policy restricted with aws:SourceVpce is not treated as public by S3, so Block Public Access can stay on.</p>
+<p>Industry observers note that finally, a VPC Lattice auth policy that allows only signed callers from this account coming from the consumer VPC. A coarser policy on the service network adds a second layer.</p>
+<p>Recent findings suggest that in operations, write security group rules for both IPv4 and IPv6; writing only one can block or allow traffic unexpectedly. Include pkt-srcaddr and traffic-path in VPC Flow Logs so you can later confirm which path and which IP version traffic actually used.</p>
+<p>Sources indicate that with IPv6-only ECS tasks and IPv6 for S3 VPC endpoints, AWS now has the pieces for IPv6-only workloads. As long as workloads stay dual stack, though, IPv6 stops at the edge. Next, I want to run the same tests with IPv6-only workloads, find out what limits Lattice throughput, and remeasure with five two-minute runs. I will write it up when it is done.</p>
+<p id="sec-end-34789">According to recent reports, ensemble Engineer (@mob_engineer) is the pen name of an SRE and project lead at a systems integration company. He works across AWS, Azure and OCI, with a particular interest in containers, virtual networking, and running observability with Dynatrace. Outside of work, he helps organize tech communities and conferences, and shares what he learns through talks and blog posts.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/masakiokuda/ipv6-first-container-networking-on-aws-privatelink-vs-vpc-lattice-vs-vpc-endpoints-measured-559k" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-introducing-snowball-fight-our-first-ml-agents-envi-35708.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35708. Industry News: Introducing Snowball Fight ☃️, our first ML-Agents environment
+        </a>
+        
+        <a href="accelerate-bert-inference-with-hugging-face-transformers-and-aws--35692.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35692. Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
+        </a>
+        
+        <a href="breaking-liftoff-how-to-get-started-with-your-first-ml-project-35656.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35656. Breaking: Liftoff! How to get started with your first ML project 🚀
+        </a>
+        
+        <a href="train-your-first-decision-transformer-35629.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35629. Train your first Decision Transformer
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

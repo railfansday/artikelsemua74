@@ -152,15 +152,15 @@
 <p id="sec-start-23950">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
 <p>Weekly. Free. One click to leave.</p>
 <p>In a recent development, 7 Day Free Trial. Cancel Anytime.</p>
-<p>In a recent development, A retrieval-augmented generation (RAG) app is usually drawn as a language model plus a vector database. When it goes live, the part that fails first is rarely the retrieval. It is GPU memory on the generation model, because a model that loads fine for one request can run out of memory when several consumers send long questions at once.</p>
-<p>This article highlights how to estimate that limit before you deploy, with a short script you can run, and then covers what else in the pipeline can slow responses down.</p>
+<p>In a recent development, A retrieval-augmented generation (RAG) app is usually drawn as a language model plus a vector database. When it goes live, the part that fails first is rarely the retrieval. It is GPU memory on the generation model, because a model that loads fine for one request can run out of memory when several consumers send long questions at once. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>This article highlights how to estimate that limit before you deploy, with a short script you can run, and then covers what else in the pipeline can slow responses down. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-35734.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
 <p>Serving a model takes more than its weights. The GPU also holds:.</p>
 <p>the key-value (KV) cache, which grows with the length of every active request.</p>
 <p>activations and batching overhead.</p>
 <p>memory used by the inference runtime itself.</p>
 <p>SitePoint's guide to running a local LLM on 10GB of VRAM makes the same point for a single desktop GPU: the usable budget is the total VRAM minus overhead, and the KV cache grows with the context window, so the real model budget is smaller than the number on the box.</p>
 <p>For a RAG service, the KV cache matters even more. Retrieved passages are pasted into the prompt, so every request carries a long context, and every concurrent request holds its own cache.</p>
-<p>The cache size per token depends on the model's architecture: two tensors (keys and values) for every layer, for every KV head. This script turns those numbers into a rough limit on concurrent requests:. <span style="font-size:13px;">(Related: <a href="tech-report-hobbled-at-home-trump-turns-abroad-24207.html" style="color:#2563eb; font-weight:600;">Tech Report: Hobbled at home, Trump turns abroad...</a>)</span></p>
+<p>The cache size per token depends on the model's architecture: two tensors (keys and values) for every layer, for every KV head. This script turns those numbers into a rough limit on concurrent requests:.</p>
 <p>def kv_bytes_per_token(layers, kv_heads, head_dim, dtype_bytes=2):.</p>
 <p># Keys and values, for every layer, for one token.</p>
 <p>return 2 *layers *kv_heads *head_dim *dtype_bytes.</p>
@@ -176,7 +176,7 @@
 <p>4096 tokens -&gt; 12 concurrent requests.</p>
 <p id="sec-mid-23950">8192 tokens -&gt; 6 concurrent requests.</p>
 <p>16384 tokens -&gt; 3 concurrent requests.</p>
-<p>Recent findings suggest that the numbers are estimates. Real runtimes add their own overhead, and the architecture values come from the model's configuration file, so read them from the model you actually use. The pattern is what matters: doubling the context length halves the number of requests that fit. A RAG prompt that stuffs in ten retrieved chunks costs real capacity. <span style="font-size:13px;">(Related: <a href="gta-6-players-are-thirsting-over-character-who-might-actually-be--24191.html" style="color:#2563eb; font-weight:600;">GTA 6 players are thirsting over character who might ac...</a>)</span></p>
+<p>Recent findings suggest that the numbers are estimates. Real runtimes add their own overhead, and the architecture values come from the model's configuration file, so read them from the model you actually use. The pattern is what matters: doubling the context length halves the number of requests that fit. A RAG prompt that stuffs in ten retrieved chunks costs real capacity.</p>
 <p>Recent findings suggest that serving runtimes do not simply crash when the cache is full. The vLLM documentation on optimization and tuning explains that when KV cache space is insufficient for all batched requests, the engine preempts some of them and recomputes them later, which can hurt end-to-end latency. Its suggested remedies include giving the cache more memory, reducing the number of concurrent sequences or batched tokens, or sharding the model across GPUs.</p>
 <p>So the symptom of undersizing is often not an error. It is slow, uneven responses under load. Test with realistic prompt lengths and several simultaneous users, not a single request.</p>
 <p>Embedding and ingestion have a different profile from generation. Embedding is often lighter than serving a large language model, and some teams run it on CPU. Document parsing, chunking and tokenization also run on CPU, so a fast GPU cannot make up for a slow CPU upstream. SitePoint's tutorial on a local RAG system for private documents walks through chunking, embeddings, vector storage and reranking, and is a good map of which stages run where.</p>
@@ -222,6 +222,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-visualize-and-understand-gpu-memory-in-pytorch-35241.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35241. Industry News: Visualize and understand GPU memory in PyTorch
+        </a>
+        
         <a href="tech-report-how-consumer-ai-companions-handle-context-windows-per-23977.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #23977. Tech Report: How Consumer AI Companions Handle Context Windows, Persistent Memory, and Voice Latency
         </a>
@@ -230,12 +234,8 @@
             📰 #23581. Uber Cuts Translation Cache Memory by up to 90% While Keeping P99 Latency Below 1 MS
         </a>
         
-        <a href="latest-update-visualize-and-understand-gpu-memory-in-pytorch-12113.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #12113. Latest Update: Visualize and understand GPU memory in PyTorch
-        </a>
-        
-        <a href="china-threatens-countermeasures-in-the-face-of-upcoming-ai-gpu-re-24152.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24152. China threatens 'countermeasures' in the face of upcoming AI GPU rental and export restrictions
+        <a href="supercharged-customer-service-with-machine-learning-35683.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35683. Supercharged Customer Service with Machine Learning
         </a>
         
     </div>

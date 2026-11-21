@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My search scraper returned zero results, and HTTP 200 said everything was fine</title>
+    <meta name="description" content="I built MiniSERP to learn how a search results API works underneath. It's a small Rails 8 API that takes a Google results page and turns it into clean JSON">
+    <meta name="keywords" content="results, parser, page, search, nothing, every, class, google">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/my-search-scraper-returned-zero-results-and-http-200-said-everyth-34786.html">
+    
+    <meta property="og:title" content="My search scraper returned zero results, and HTTP 200 said everything was fine">
+    <meta property="og:description" content="I built MiniSERP to learn how a search results API works underneath. It's a small Rails 8 API that takes a Google results page and turns it into clean JSON">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5y3gtfysn2gxc0zcstm4.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/my-search-scraper-returned-zero-results-and-http-200-said-everyth-34786.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My search scraper returned zero results, and HTTP 200 said everything was fine">
+    <meta name="twitter:description" content="I built MiniSERP to learn how a search results API works underneath. It's a small Rails 8 API that takes a Google results page and turns it into clean JSON">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5y3gtfysn2gxc0zcstm4.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "My search scraper returned zero results, and HTTP 200 said everything was fine", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5y3gtfysn2gxc0zcstm4.png"], "datePublished": "2026-11-21T06:36:58", "dateModified": "2026-11-21T06:51:02.308765", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/my-search-scraper-returned-zero-results-and-http-200-said-everyth-34786.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding My search scraper returned zero results, and HTTP 200 said everything was fine?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'My search scraper returned zero results, and HTTP 200 said e' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>My search scraper returned zero results, and HTTP 200 said everything was fine</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 2 min read (467 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>I built MiniSERP to learn how a search results API works underneath.</li><li style='margin-bottom:6px;'>Sources indicate that the first version worked on the first page I tested.</li><li style='margin-bottom:6px;'>In a recent development, then I saved a second results page with a different query and ran it through the same parser.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-34786"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-34786"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-34786"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="My search scraper returned zero results, and HTTP 200 said everything was fine" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5y3gtfysn2gxc0zcstm4.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-34786">I built MiniSERP to learn how a search results API works underneath. It's a small Rails 8 API that takes a Google results page and turns it into clean JSON: title, link, snippet, position.</p>
+<p>Sources indicate that the first version worked on the first page I tested. I wrote the specs and they passed, and I thought the parser was done.</p>
+<p>In a recent development, then I saved a second results page with a different query and ran it through the same parser. I got back an empty array with HTTP 200. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>It has been revealed that an empty array with a 200 looks exactly like "Google found nothing for this query." Nothing crashed and nothing demonstrated up in the logs. If I had shipped this, every search would have come back empty, and the API would have reported success every time. <span style="font-size:13px;">(Related: <a href="latest-update-hyperparameter-search-with-transformers-and-ray-tun-35745.html" style="color:#2563eb; font-weight:600;">Latest Update: Hyperparameter Search with Transformers ...</a>)</span></p>
+<p>The cause turned out to be simple. I ran a quick check on the latest page:.</p>
+<p>In a recent development, my parser looked for results inside div.g. On this page, Google had moved results into div.MjjYud, rearranged what was inside them and rotated its obfuscated class names. My one selector matched nothing, so the parser happily returned nothing.</p>
+<p>Instead of trusting one selector, the parser now goes through a list of container strategies in order and uses the first one that finds usable results:.</p>
+<p>That covers the layouts I've seen, but Google will change it again, and a list of class names will always fall behind eventually.</p>
+<p id="sec-mid-34786">If every selector misses, the parser stops looking at class names completely and uses the page structure instead. It finds every , then walks up to the nearest  that also contains a link, and treats that as one result.</p>
+<p>To make sure this really doesn't depend on class names, one spec wraps the results in a made-up container called div.totally-upcoming-class. The parser still pulls the results out.</p>
+<p>Two smaller filters keep the output clean:.</p>
+<p>This was the most notable change, and it's the rule I'd keep even if I deleted everything else.</p>
+<p>There are two very different situations that used to produce the same response:.</p>
+<p>The second case is my bug, not the user's empty search, and it should look like one. A 502 indicates up in monitoring and someone can go fix the parser. A silent 200 just hides the problem until a customer notices their data is missing.</p>
+<p>Industry observers note that that last point is why I have so much respect for search APIs that do this at scale. I hit one markup change on one engine in a side project. They deal with this across many engines, every day, behind a single API call.</p>
+<p id="sec-end-34786">MiniSERP is open source if you want to look at the parser and the specs: https://github.com/Divyanshu-2907/MiniSERP.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/divyanshu_kumar_0704/my-search-scraper-returned-zero-results-and-http-200-said-everything-was-fine-5a0c" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-lave-zero-shot-vqa-evaluation-on-docmatix-with-llms-35326.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35326. Industry News: LAVE: Zero-shot VQA Evaluation on Docmatix with LLMs - Do We Still Need Fine-Tuning?
+        </a>
+        
+        <a href="latest-update-hyperparameter-search-with-transformers-and-ray-tun-35745.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35745. Latest Update: Hyperparameter Search with Transformers and Ray Tune
+        </a>
+        
+        <a href="breaking-fit-more-and-train-faster-with-zero-via-deepspeed-and-fa-35741.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35741. Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale
+        </a>
+        
+        <a href="fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-35735.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35735. Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

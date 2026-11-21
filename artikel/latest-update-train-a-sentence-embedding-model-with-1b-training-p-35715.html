@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: Train a Sentence Embedding Model with 1B Training Pairs</title>
+    <meta name="description" content="Sentence embedding is a method that maps sentences to vectors of real numbers. Ideally, these vectors would capture the semantic of a sentence and be highl">
+    <meta name="keywords" content="sentence, batch, pairs, model, similarity, training, such, models">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/latest-update-train-a-sentence-embedding-model-with-1b-training-p-35715.html">
+    
+    <meta property="og:title" content="Latest Update: Train a Sentence Embedding Model with 1B Training Pairs">
+    <meta property="og:description" content="Sentence embedding is a method that maps sentences to vectors of real numbers. Ideally, these vectors would capture the semantic of a sentence and be highl">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/32_1b_sentence_embeddings/model.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/latest-update-train-a-sentence-embedding-model-with-1b-training-p-35715.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: Train a Sentence Embedding Model with 1B Training Pairs">
+    <meta name="twitter:description" content="Sentence embedding is a method that maps sentences to vectors of real numbers. Ideally, these vectors would capture the semantic of a sentence and be highl">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/32_1b_sentence_embeddings/model.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: Train a Sentence Embedding Model with 1B Training Pairs", "image": ["https://huggingface.co/blog/assets/32_1b_sentence_embeddings/model.png"], "datePublished": "2021-10-25T00:00:00", "dateModified": "2026-11-21T06:52:50.189933", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/latest-update-train-a-sentence-embedding-model-with-1b-training-p-35715.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: Train a Sentence Embedding Model with 1B Training Pairs?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: Train a Sentence Embedding Model with 1B Trai' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: Train a Sentence Embedding Model with 1B Training Pairs</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 25 Oct 2021 &bull; ⏱️ 5 min read (1020 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Sentence embedding is a method that maps sentences to vectors of real numbers.</li><li style='margin-bottom:6px;'>It has been revealed that we developed state-of-the-art sentence embedding models as part of the project "Train the Best Sentence Embedding Model Ever with 1B Training Pairs".</li><li style='margin-bottom:6px;'>Unlike words, we can not define a finite set of sentences.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35715"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35715"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35715"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: Train a Sentence Embedding Model with 1B Training Pairs" loading="lazy" src="https://huggingface.co/blog/assets/32_1b_sentence_embeddings/model.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35715">Sentence embedding is a method that maps sentences to vectors of real numbers. Ideally, these vectors would capture the semantic of a sentence and be highly generic. Such representations could then be used for many downstream applications such as clustering, text mining, or question answering.</p>
+<p>It has been revealed that we developed state-of-the-art sentence embedding models as part of the project "Train the Best Sentence Embedding Model Ever with 1B Training Pairs". This project took place during the Community week using JAX/Flax for NLP &amp; CV, organized by Hugging Face. We benefited from efficient hardware infrastructure to run the project: 7 TPUs v3-8, as well as guidance from Google’s Flax, JAX, and Cloud team members about efficient deep learning frameworks! <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Unlike words, we can not define a finite set of sentences. Sentence embedding methods, therefore, compose inner words to compute the final representation. For example, SentenceBert model (Reimers and Gurevych, 2019) uses Transformer, the cornerstone of many NLP applications, followed by a pooling operation over the contextualized word vectors. (c.f. Figure below.). <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Industry observers note that the parameters from the composition module are usually learned using a self-supervised objective. For the project, we used a contrastive training method illustrated in the figure below. We constitute a dataset with sentence pairs (ai,pi) (a_i, p_i) (ai​,pi​) such that sentences from the pair have a close meaning. For example, we consider pairs such as (query, answer-passage), (question, duplicate_question),(paper title, cited paper title). Our model is then trained to map pairs (ai,pi) (a_i , p_i) (ai​,pi​) to close vectors while assigning unmatched pairs (ai,pj),i≠j (a_i , p_j), i \neq j (ai​,pj​),i=j to distant vectors in the embedding space. This training method is also called training with in-batch negatives, InfoNCE or NTXentLoss.</p>
+<p>Formally, given a batch of training samples, the model optimises the following loss function:.</p>
+<p>−1n∑i=1nexp(sim(ai,pi))∑jexp(sim(ai,pj))-\frac{1}{n}\sum_{i=1}^n\frac{exp(sim(a_i, p_i))}{\sum_j exp(sim(a_i, p_j))}−n1​i=1∑n​∑j​exp(sim(ai​,pj​))exp(sim(ai​,pi​))​.</p>
+<p>Industry observers note that an illustrative example can be seen below. The model first embeds each sentence from every pair in the batch. Then, we compute a similarity matrix between every possible pair (ai,pj) (a_i, p_j) (ai​,pj​). We then compare the similarity matrix with the ground truth, which indicates the original pairs. Finally, we perform the comparison using the cross entropy loss.</p>
+<p>Intuitively, the model should assign high similarity to the sentences « How many people live in Berlin? » and « Around 3.5 million people live in Berlin » and low similarity to other negative answers such as « The capital of France is Paris » as detailed in the Figure below.</p>
+<p>In the loss equation, sim indicates a similarity function between (a,p) (a, p) (a,p). The similarity function could be either the Cosine-Similarity or the Dot-Product operator. Both methods have their pros and cons summarized below (Thakur et al., 2021, Bachrach et al., 2014):.</p>
+<p id="sec-mid-35715">In practice, we used a scaled similarity because score differences tends to be too small and apply a scaling factor C C C such that simscaled(a,b)=C∗sim(a,b) sim_{scaled}(a, b) = C * sim(a, b) simscaled​(a,b)=C∗sim(a,b) with typically C=20 C = 20 C=20 (Henderson and al., 2020, Radford and al., 2021).</p>
+<p>In our method, we build batches of sample pairs (ai,pi) (a_i , p_i) (ai​,pi​). We consider all other samples from the batch, (ai,pj),i≠j (a_i , p_j), i \neq j (ai​,pj​),i=j, as negatives sample pairs. The batch composition is therefore a key training aspect. Given the literature in the domain, we mainly focused on three main aspects of the batch.</p>
+<p>Recent findings suggest that in contrastive learning, a larger batch size is synonymous with better performance. As shown in the Figure extracted from Qu and al., (2021), a larger batch size increases the results.</p>
+<p>In a recent development, in the same figure, we observe that including hard negatives also improves performance. Hard negatives are sample pj p_j pj​ which are hard to distinguish from pi p_i pi​. In our example, it could be the pairs « What is the capital of France? » and « What is the capital of the US? » which have a close semantic content and requires precisely understanding the full sentence to be answered correctly. On the contrary, the samples  « What is the capital of France? » and «How many Star Wars movies is there?» are less difficult to distinguish since they do not refer to the same topic.</p>
+<p>Industry observers note that we concatenated multiple datasets to train our models. We built a large batch and gathered samples from the same batch dataset to limit the topic distribution and favor hard negatives. However, we also mix at least two datasets in the batch to learn a global structure between topics and not only a local structure within a topic.</p>
+<p>As mentioned earlier, the quantity of data and the batch size directly impact the model performances. As part of the project, we benefited from efficient hardware infrastructure. We trained our models on TPUs which are compute units developed by Google and super efficient for matrix multiplications. TPUs have some hardware specificities which might require some specific code implementation.</p>
+<p>Additionally, we trained models on a large corpus as we concatenated multiple datasets up to 1 billion sentence pairs! All datasets used are detailed for each model in the model card.</p>
+<p>You can find all models and datasets we created during the challenge in our HuggingFace repository. We trained 20 general-purpose Sentence Transformers models such as Mini-LM (Wang and al., 2020), RoBERTa (liu and al., 2019), DistilBERT (Sanh and al., 2020) and MPNet (Song and al., 2020). Our models achieve SOTA on multiple general-purpose Sentence Similarity evaluation tasks. We also shared 8 datasets specialized for Question Answering, Sentence-Similarity, and Gender Evaluation.</p>
+<p>General sentence embeddings might be used for many applications. We built a Spaces demo to showcase several applications:.</p>
+<p id="sec-end-35715">The Community week using JAX/Flax for NLP &amp; CV has been an intense and highly rewarding experience! The quality of Google’s Flax, JAX, and Cloud and Hugging Face team members' guidance and their presence helped us all learn a lot. We hope all projects had as much fun as we did in ours. Whenever you have questions or suggestions, don’t hesitate to contact us!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/1b-sentence-embeddings" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="train-400x-faster-static-embedding-models-with-sentence-transform-35235.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35235. Train 400x faster Static Embedding Models with Sentence Transformers
+        </a>
+        
+        <a href="training-and-finetuning-sparse-embedding-models-with-sentence-tra-35115.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35115. Training and Finetuning Sparse Embedding Models with Sentence Transformers
+        </a>
+        
+        <a href="training-and-finetuning-multimodal-embedding-reranker-models-with-34876.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34876. Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
+        </a>
+        
+        <a href="training-and-finetuning-multi-vector-embedding-models-with-senten-23705.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23705. Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

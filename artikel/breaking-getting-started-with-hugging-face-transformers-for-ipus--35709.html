@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: Getting Started with Hugging Face Transformers for IPUs with Optimum</title>
+    <meta name="description" content="Transformer models have proven to be extremely efficient on a wide range of machine learning tasks, such as natural language processing, audio processing, ">
+    <meta name="keywords" content="graphcore, models, bert, optimum, hugging, face, model, poplar">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/breaking-getting-started-with-hugging-face-transformers-for-ipus--35709.html">
+    
+    <meta property="og:title" content="Breaking: Getting Started with Hugging Face Transformers for IPUs with Optimum">
+    <meta property="og:description" content="Transformer models have proven to be extremely efficient on a wide range of machine learning tasks, such as natural language processing, audio processing, ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/38_getting_started_graphcore/graphcore_1.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/breaking-getting-started-with-hugging-face-transformers-for-ipus--35709.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: Getting Started with Hugging Face Transformers for IPUs with Optimum">
+    <meta name="twitter:description" content="Transformer models have proven to be extremely efficient on a wide range of machine learning tasks, such as natural language processing, audio processing, ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/38_getting_started_graphcore/graphcore_1.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: Getting Started with Hugging Face Transformers for IPUs with Optimum", "image": ["https://huggingface.co/blog/assets/38_getting_started_graphcore/graphcore_1.png"], "datePublished": "2021-11-30T00:00:00", "dateModified": "2026-11-21T06:52:49.082742", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/breaking-getting-started-with-hugging-face-transformers-for-ipus--35709.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: Getting Started with Hugging Face Transformers for IPUs with Optimum?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Breaking: Getting Started with Hugging Face Transformers for' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: Getting Started with Hugging Face Transformers for IPUs with Optimum</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 30 Nov 2021 &bull; ⏱️ 5 min read (918 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Transformer models have proven to be extremely efficient on a wide range of machine learning tasks, such as natural language processing, audio processing, and computer vision.</li><li style='margin-bottom:6px;'>In a recent development, luckily, Hugging Face has introduced Optimum, an open source library which makes it much easier to reduce the prediction latency of Transformer models on a variety of hardware platforms.</li><li style='margin-bottom:6px;'>Through this partnership between Graphcore and Hugging Face, we are now introducing BERT as the first IPU-optimized model.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35709"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35709"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35709"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: Getting Started with Hugging Face Transformers for IPUs with Optimum" loading="lazy" src="https://huggingface.co/blog/assets/38_getting_started_graphcore/graphcore_1.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35709">Transformer models have proven to be extremely efficient on a wide range of machine learning tasks, such as natural language processing, audio processing, and computer vision. However, the prediction speed of these large models can make them impractical for latency-sensitive use cases like conversational applications or search. Furthermore, optimizing their performance in the real world requires considerable time, effort and skills that are beyond the reach of many companies and organizations.</p>
+<p>In a recent development, luckily, Hugging Face has introduced Optimum, an open source library which makes it much easier to reduce the prediction latency of Transformer models on a variety of hardware platforms. In this blog post, you will learn how to accelerate Transformer models for the Graphcore Intelligence Processing Unit (IPU), a highly flexible, easy-to-use parallel processor designed from the ground up for AI workloads. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Through this partnership between Graphcore and Hugging Face, we are now introducing BERT as the first IPU-optimized model. We will be introducing many more of these IPU-optimized models in the coming months, spanning applications such as vision, speech, translation and text generation. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Graphcore engineers have implemented and optimized BERT for our IPU systems using Hugging Face transformers to help developers easily train, fine-tune and accelerate their state-of-the-art models.</p>
+<p>Let’s use BERT as an example to help you get started with using Optimum and IPUs.</p>
+<p>In this guide, we will use an IPU-POD16 system in Graphcloud, Graphcore’s cloud-based machine learning platform and follow PyTorch setup instructions found in Getting Started with Graphcloud.</p>
+<p>Graphcore’s Poplar SDK is already installed on the Graphcloud server. If you have a different setup, you can find the instructions that apply to your system in the PyTorch for the IPU: User Guide.</p>
+<p>Recent findings suggest that you will need to run the following commands to set several environment variables that enable Graphcore tools and Poplar libraries. On the latest system running Poplar SDK version 2.3 on Ubuntu 18.04, you can find  in the folder /opt/gc/poplar_sdk-ubuntu_18_04-2.3.0+774-b47c577c2a/.</p>
+<p>You would need to run both enable scripts for Poplar and PopART (Poplar Advanced Runtime) to use PyTorch:.</p>
+<p>PopTorch is part of the Poplar SDK. It provides functions that allow PyTorch models to run on the IPU with minimal code changes. You can create and activate a PopTorch environment following the guide Setting up PyTorch for the IPU:.</p>
+<p>Now that your environment has all the Graphcore Poplar and PopTorch libraries available, you need to install the latest 🤗 Optimum Graphcore package in this environment. This will be the interface between the 🤗 Transformers library and Graphcore IPUs.</p>
+<p>It has been revealed that please make sure that the PopTorch virtual environment you created in the previous step is activated. Your terminal should have a prefix showing the name of the poptorch environment like below:.</p>
+<p id="sec-mid-35709">According to recent reports, the Optimum Graphcore repository contains the sample code for using Optimum models in IPU. You should clone the repository and change the directory to the example/question-answering folder which contains the IPU implementation of BERT.</p>
+<p>Now, we will use run_qa.py to fine-tune the IPU implementation of BERT on the SQUAD1.1 dataset.</p>
+<p>Industry observers note that the run_qa.py script only works with models that have a fast tokenizer (backed by the 🤗 Tokenizers library), as it uses special features of those tokenizers. This is the case for our BERT model, and you should pass its name as the input argument to --model_name_or_path. In order to use the IPU, Optimum will look for the ipu_config.json file from the path passed to the argument --ipu_config_name.</p>
+<p>Recent findings suggest that A very simple way to get datasets is to use the Hugging Face Datasets library, which makes it easy for developers to download and share datasets on the Hugging Face hub. It also has pre-built data versioning based on git and git-lfs, so you can iterate on updated versions of the data by just pointing to the same repo.</p>
+<p>Recent findings suggest that here, the dataset comes with the training and validation files, and dataset configs to help facilitate which inputs to use in each model execution phase. The argument --dataset_name==squad points to SQuAD v1.1 on the Hugging Face Hub. You could also provide your own CSV/JSON/TXT training and evaluation files as long as they follow the same format as the SQuAD dataset or another question-answering dataset in Datasets library.</p>
+<p>To turn words into tokens, this script will require a fast tokenizer. It will show an error if you didn't pass one. For reference, here's the list of supported tokenizers.</p>
+<p>The argument ```--model_name_or_path==bert-base-uncased`` loads the bert-base-uncased model implementation available in the Hugging Face Hub.</p>
+<p>From the Hugging Face Hub description:.</p>
+<p>"BERT base model (uncased): Pretrained model on English language using a masked language modeling (MLM) objective. It was introduced in this paper and first released in this repository. This model is uncased: it does not make a difference between english and English.".</p>
+<p>Recent findings suggest that you can now use the IPUTrainer class available in Optimum to leverage the entire Graphcore software and hardware stack, and train your models in IPUs with minimal code changes. Thanks to Optimum, you can plug-and-play state of the art hardware to train your state of the art models.</p>
+<p>In order to train and validate the BERT model, you can pass the arguments --do_train and --do_eval to the run_qa.py script. After executing the script with the hyper-parameters above, you should see the following training and validation results:.</p>
+<p id="sec-end-35709">You can see the rest of the IPU BERT implementation in the Optimum-Graphcore: SQuAD Examples.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/graphcore-getting-started" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="convert-transformers-to-onnx-with-hugging-face-optimum-35660.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35660. Convert Transformers to ONNX with Hugging Face Optimum
+        </a>
+        
+        <a href="deep-dive-vision-transformers-on-hugging-face-optimum-graphcore-35636.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35636. Deep Dive: Vision Transformers On Hugging Face Optimum Graphcore
+        </a>
+        
+        <a href="getting-started-with-hugging-face-inference-endpoints-35617.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35617. Getting Started with Hugging Face Inference Endpoints
+        </a>
+        
+        <a href="faster-tensorflow-models-in-hugging-face-transformers-35740.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35740. Faster TensorFlow models in Hugging Face Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API</title>
+    <meta name="description" content="In a recent development, in many Machine Learning applications, the amount of available labeled data is a barrier to producing a high-performing model. The">
+    <meta name="keywords" content="shot, model, learning, inference, examples, models, language, accelerated">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/breaking-few-shot-learning-in-practice-gpt-neo-and-the-accelerate-35727.html">
+    
+    <meta property="og:title" content="Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API">
+    <meta property="og:description" content="In a recent development, in many Machine Learning applications, the amount of available labeled data is a barrier to producing a high-performing model. The">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/22_few_shot_learning_gpt_neo_and_inference_api/few-shot-prompt.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/breaking-few-shot-learning-in-practice-gpt-neo-and-the-accelerate-35727.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API">
+    <meta name="twitter:description" content="In a recent development, in many Machine Learning applications, the amount of available labeled data is a barrier to producing a high-performing model. The">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/22_few_shot_learning_gpt_neo_and_inference_api/few-shot-prompt.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API", "image": ["https://huggingface.co/blog/assets/22_few_shot_learning_gpt_neo_and_inference_api/few-shot-prompt.png"], "datePublished": "2021-06-03T00:00:00", "dateModified": "2026-11-21T06:52:52.416907", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/breaking-few-shot-learning-in-practice-gpt-neo-and-the-accelerate-35727.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 A' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 03 Jun 2021 &bull; ⏱️ 5 min read (1022 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In a recent development, in many Machine Learning applications, the amount of available labeled data is a barrier to producing a high-performing model.</li><li style='margin-bottom:6px;'>Few-Shot Learning refers to the practice of feeding a machine learning model with a very small amount of training data to guide its predictions, like a few examples at inference time, as opposed to standard fine-tuning techniques which require a relatively large amount of training data for the pre-trained model to adapt to the desired task with accuracy.</li><li style='margin-bottom:6px;'>This technique has been mostly used in computer vision, but with some of the latest Language Models, like EleutherAI GPT-Neo and OpenAI GPT-3, we can now use it in Natural Language Processing (NLP).</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35727"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35727"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35727"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API" loading="lazy" src="https://huggingface.co/blog/assets/22_few_shot_learning_gpt_neo_and_inference_api/few-shot-prompt.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35727">In a recent development, in many Machine Learning applications, the amount of available labeled data is a barrier to producing a high-performing model. The latest developments in NLP show that you can overcome this limitation by providing a few examples at inference time with a large language model - a technique known as Few-Shot Learning. In this blog post, we'll explain what Few-Shot Learning is, and explore how a large language model called GPT-Neo, and the 🤗 Accelerated Inference API, can be used to generate your own predictions.</p>
+<p>Few-Shot Learning refers to the practice of feeding a machine learning model with a very small amount of training data to guide its predictions, like a few examples at inference time, as opposed to standard fine-tuning techniques which require a relatively large amount of training data for the pre-trained model to adapt to the desired task with accuracy. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>This technique has been mostly used in computer vision, but with some of the latest Language Models, like EleutherAI GPT-Neo and OpenAI GPT-3, we can now use it in Natural Language Processing (NLP). <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Industry observers note that in NLP, Few-Shot Learning can be used with Large Language Models, which have learned to perform a wide number of tasks implicitly during their pre-training on large text datasets. This enables the model to generalize, that is to understand related but previously unseen tasks, with just a few examples.</p>
+<p>Few-Shot NLP examples consist of three main components:.</p>
+<p>Image from Language Models are Few-Shot Learners.</p>
+<p>Sources indicate that creating these few-shot examples can be tricky, since you need to articulate the “task” you want the model to perform through them. A common issue is that models, especially smaller ones, are very sensitive to the way the examples are written.</p>
+<p>An approach to optimize Few-Shot Learning in production is to learn a common representation for a task and then train task-specific classifiers on top of this representation.</p>
+<p>OpenAI indicated in the GPT-3 Paper that the few-shot prompting ability improves with the number of language model parameters.</p>
+<p>Image from Language Models are Few-Shot Learners.</p>
+<p>Let's now take a look at how at how GPT-Neo and the 🤗 Accelerated Inference API can be used to generate your own Few-Shot Learning predictions!</p>
+<p>According to recent reports, GPT⁠-⁠Neo is a family of transformer-based language models from EleutherAI based on the GPT architecture. EleutherAI's primary goal is to train a model that is equivalent in size to GPT⁠-⁠3 and make it available to the public under an open license.</p>
+<p id="sec-mid-35727">All of the presently available GPT-Neo checkpoints are trained with the Pile dataset, a large text corpus that is extensively documented in (Gao et al., 2021). As such, it is expected to function better on the text that matches the distribution of its training text; we recommend keeping this in mind when designing your examples.</p>
+<p>The Accelerated Inference API is our hosted service to run inference on any of the 10,000+ models publicly available on the 🤗 Model Hub, or your own private models, via simple API calls. The API includes acceleration on CPU and GPU with up to 100x speedup compared to out of the box deployment of Transformers.</p>
+<p>To integrate Few-Shot Learning predictions with GPT-Neo in your own apps, you can use the 🤗 Accelerated Inference API with the code snippet below. You can find your API Token here, if you don't have an account you can get started here.</p>
+<p>Here are some practical insights, which help you get started using GPT-Neo and the 🤗 Accelerated Inference API.</p>
+<p>Since GPT-Neo (2.7B) is about 60x smaller than GPT-3 (175B), it does not generalize as well to zero-shot problems and needs 3-4 examples to achieve good results. When you provide more examples GPT-Neo understands the task and takes the end_sequence into account, which allows us to control the generated text pretty well.</p>
+<p>It has been revealed that the hyperparameter End Sequence, Token Length &amp; Temperature can be used to control the text-generation of the model and you can use this to your advantage to solve the task you need. The Temperature controlls the randomness of your generations, lower temperature results in less random generations and higher temperature results in more random generations.</p>
+<p>In the example, you can see how key it is to define your hyperparameter. These can make the difference between solving your task or failing miserably.</p>
+<p>Recent findings suggest that few-Shot Learning is a powerful technique but also presents unique pitfalls that need to be taken into account when designing uses cases. To illustrate this, let's consider the default Sentiment Analysis setting provided in the widget. After seeing three examples of sentiment classification, the model makes the following predictions 4 times out of 5, with temperature set to 0.1:.</p>
+<p>Tweet: "I'm a disabled happy person"Sentiment: Negative.</p>
+<p>According to recent reports, what could go wrong? Imagine that you are using sentiment analysis to aggregate reviews of products on an online shopping website: a possible outcome could be that items useful to people with disabilities would be automatically down-ranked - a form of automated discrimination. For more on this specific issue, we recommend the ACL 2020 paper Social Biases in NLP Models as Barriers for Persons with Disabilities. Because Few-Shot Learning relies more directly on information and associations picked up from pre-training, it makes it more sensitive to this type of failures.</p>
+<p>Recent findings suggest that how to minimize the risk of harm? Here are some practical recommendations.</p>
+<p>Sources indicate that what needs most to be avoided is to use the model to automatically make decisions for, or about, a user, without opportunity for a human to provide input or correct the output. Several regulations, such as GDPR in Europe, require that users be provided an explanation for automatic decisions made about them.</p>
+<p id="sec-end-35727">According to recent reports, to use GPT-Neo or any Hugging Face model in your own application, you can start a free trial of the 🤗 Accelerated Inference API. If you need help mitigating bias in models and AI systems, or leveraging Few-Shot Learning, the 🤗 Expert Acceleration Program can offer your team direct premium support from the Hugging Face team.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/few-shot-learning-gpt-neo-and-inference-api" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="setfit-efficient-few-shot-learning-without-prompts-35625.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35625. SetFit: Efficient Few-Shot Learning Without Prompts
+        </a>
+        
+        <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-35742.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35742. How we sped up transformer inference 100x for 🤗 API customers
+        </a>
+        
+        <a href="deploy-gpt-j-6b-for-inference-using-hugging-face-transformers-and-35703.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35703. Deploy GPT-J 6B for inference using  Hugging Face Transformers and Amazon SageMaker
+        </a>
+        
+        <a href="latest-update-accelerated-inference-with-optimum-and-transformers-35675.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35675. Latest Update: Accelerated Inference with Optimum and Transformers Pipelines
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

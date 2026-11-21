@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23910">I wrote an article a couple of months ago describing how I rebuilt my old voice assistant pipeline in Platypush.</p>
-<p>And I wrote earlier articles describing my journey through self-hosted voice assistants - in 2024 (with Picovoice), in 2020 (diving into the legacy assistant.google integration, the now defunct assistant.alexa integration, the now defunct Snowboy integration, the now defunct DeepSpeech integration and Picovoice) and the original article in 2019 describing the Google Assistant integration. <span style="font-size:13px;">(Related: <a href="pokemon-gen-10-leaker-admits-faking-rumors-reviving-hopes-for-a-n-24198.html" style="color:#2563eb; font-weight:600;">Pokemon Gen 10 leaker admits faking rumors, reviving ho...</a>)</span></p>
-<p>For a couple of months I used the voice pipeline described in my latest article as my main driver, but after getting used to the robustness of commercial voice assistants I was unhappy with the high rates of false positives/negatives of my self-hosted pipeline, as well as its lack of robustness in detecting start/end of speech, especially in noisy environments and using cheap microphones. <span style="font-size:13px;">(Related: <a href="latest-update-this-simple-change-stops-robot-swarms-from-getting--24173.html" style="color:#2563eb; font-weight:600;">Latest Update: This simple change stops robot swarms fr...</a>)</span></p>
+<p>And I wrote earlier articles describing my journey through self-hosted voice assistants - in 2024 (with Picovoice), in 2020 (diving into the legacy assistant.google integration, the now defunct assistant.alexa integration, the now defunct Snowboy integration, the now defunct DeepSpeech integration and Picovoice) and the original article in 2019 describing the Google Assistant integration. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-35734.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>For a couple of months I used the voice pipeline described in my latest article as my main driver, but after getting used to the robustness of commercial voice assistants I was unhappy with the high rates of false positives/negatives of my self-hosted pipeline, as well as its lack of robustness in detecting start/end of speech, especially in noisy environments and using cheap microphones. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
 <p>After a bit of experimentation, I decided to swap and fine tune a few parts, and after a couple of days of trying the results are satisfying enough for me to write a short article about it.</p>
 <p>Hotword detection- assistant.microwakeword (local).</p>
 <p>Speech-to-text- assistant.openai (cloud)- assistant.vosk (local).</p>
@@ -215,20 +215,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="pokemon-gen-10-leaker-admits-faking-rumors-reviving-hopes-for-a-n-24198.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24198. Pokemon Gen 10 leaker admits faking rumors, reviving hopes for a newly introduced Eeveelution and voice acting
+        <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-35734.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35734. My Journey to a serverless transformers pipeline on Google Cloud
         </a>
         
-        <a href="tech-report-how-consumer-ai-companions-handle-context-windows-per-23977.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23977. Tech Report: How Consumer AI Companions Handle Context Windows, Persistent Memory, and Voice Latency
+        <a href="how-hugging-face-accelerated-development-of-witty-works-writing-a-35568.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35568. How Hugging Face Accelerated Development of Witty Works Writing Assistant
         </a>
         
-        <a href="google-retiring-nest-app-and-google-assistant-on-speakers-display-23951.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23951. Google retiring Nest app and Google Assistant on speakers, displays in 2027
+        <a href="creating-a-coding-assistant-with-starcoder-35542.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35542. Creating a Coding Assistant with StarCoder
         </a>
         
-        <a href="your-ai-pipeline-works-but-can-you-trust-it-23939.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23939. Your AI Pipeline Works. But Can You Trust It?
+        <a href="personal-copilot-train-your-own-coding-assistant-35454.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35454. Personal Copilot: Train Your Own Coding Assistant
         </a>
         
     </div>

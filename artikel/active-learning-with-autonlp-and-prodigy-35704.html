@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Learning with AutoNLP and Prodigy</title>
+    <meta name="description" content="It has been revealed that active learning in the context of Machine Learning is a process in which you iteratively add labeled data, retrain a model and se">
+    <meta name="keywords" content="autonlp, dataset, prodigy, model, models, data, classification, which">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/active-learning-with-autonlp-and-prodigy-35704.html">
+    
+    <meta property="og:title" content="Active Learning with AutoNLP and Prodigy">
+    <meta property="og:description" content="It has been revealed that active learning in the context of Machine Learning is a process in which you iteratively add labeled data, retrain a model and se">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/43_autonlp_prodigy/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/active-learning-with-autonlp-and-prodigy-35704.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Active Learning with AutoNLP and Prodigy">
+    <meta name="twitter:description" content="It has been revealed that active learning in the context of Machine Learning is a process in which you iteratively add labeled data, retrain a model and se">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/43_autonlp_prodigy/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Active Learning with AutoNLP and Prodigy", "image": ["https://huggingface.co/blog/assets/43_autonlp_prodigy/thumbnail.png"], "datePublished": "2021-12-23T00:00:00", "dateModified": "2026-11-21T06:52:48.211883", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/active-learning-with-autonlp-and-prodigy-35704.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Active Learning with AutoNLP and Prodigy?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Active Learning with AutoNLP and Prodigy' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Active Learning with AutoNLP and Prodigy</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 23 Dec 2021 &bull; ⏱️ 7 min read (1455 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>It has been revealed that active learning in the context of Machine Learning is a process in which you iteratively add labeled data, retrain a model and serve it to the end user.</li><li style='margin-bottom:6px;'>AutoNLP is a framework created by Hugging Face that helps you to build your own state-of-the-art deep learning models on your own dataset with almost no coding at all.</li><li style='margin-bottom:6px;'>Industry observers note that with AutoNLP, you can train SOTA transformer models on your own custom dataset, fine-tune them (automatically) and serve them to the end-user.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35704"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35704"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35704"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Active Learning with AutoNLP and Prodigy" loading="lazy" src="https://huggingface.co/blog/assets/43_autonlp_prodigy/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35704">It has been revealed that active learning in the context of Machine Learning is a process in which you iteratively add labeled data, retrain a model and serve it to the end user. It is an endless process and requires human interaction for labeling/creating the data. In this article, we will discuss how to use AutoNLP and Prodigy to build an active learning pipeline.</p>
+<p>AutoNLP is a framework created by Hugging Face that helps you to build your own state-of-the-art deep learning models on your own dataset with almost no coding at all. AutoNLP is built on the giant shoulders of Hugging Face's transformers, datasets, inference-api and many other tools. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Industry observers note that with AutoNLP, you can train SOTA transformer models on your own custom dataset, fine-tune them (automatically) and serve them to the end-user. All models trained with AutoNLP are state-of-the-art and production-ready. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Recent findings suggest that at the time of writing this article, AutoNLP supports tasks like binary classification, regression, multi class classification, token classification (such as named entity recognition or part of speech), question answering, summarization and more. You can find a list of all the supported tasks here. AutoNLP supports languages like English, French, German, Spanish, Hindi, Dutch, Swedish and many more. There is also support for custom models with custom tokenizers (in case your language is not supported by AutoNLP).</p>
+<p>Recent findings suggest that prodigy is an annotation tool developed by Explosion (the makers of spaCy). It is a web-based tool that allows you to annotate your data in real time. Prodigy supports NLP tasks such as named entity recognition (NER) and text classification, but it's not limited to NLP! It supports Computer Vision tasks and even creating your own tasks! You can try the Prodigy demo: here.</p>
+<p>Note that Prodigy is a commercial tool. You can find out more about it here.</p>
+<p>We chose Prodigy as it is one of the most popular tools for labeling data and is infinitely customizable. It is also very easy to setup and use.</p>
+<p>Sources indicate that now begins the most interesting part of this article. After looking at a lot of datasets and different types of problems, we stumbled upon BBC News Classification dataset on Kaggle. This dataset was used in an inclass competition and can be accessed here.</p>
+<p>Let's take a look at this dataset:.</p>
+<p>Recent findings suggest that as we can see this is a classification dataset. There is a Text column which is the text of the news article and a Category column which is the class of the article. Overall, there are 5 different classes: business, entertainment, politics, sport &amp; tech.</p>
+<p>Training a multi-class classification model on this dataset using AutoNLP is a piece of cake.</p>
+<p>Step 2: Open AutoNLP and create a new project.</p>
+<p>Step 3: Upload the training dataset and choose auto-splitting.</p>
+<p>Step 4: Accept the pricing and train your models.</p>
+<p>It has been revealed that please note that in the above example, we are training 15 different multi-class classification models. AutoNLP pricing can be as low as $10 per model. AutoNLP will select the best models and do hyperparameter tuning for you on its own. So, now, all we need to do is sit back, relax and wait for the results.</p>
+<p>Sources indicate that after around 15 minutes, all models finished training and the results are ready. It seems like the best model scored 98.67% accuracy!</p>
+<p>According to recent reports, so, we are now able to classify the articles in the dataset with an accuracy of 98.67%! But wait, we were talking about active learning and Prodigy. What happened to those? 🤔 We did use Prodigy as we will see soon. We used it to label this dataset for the named entity recognition task. Before starting the labeling part, we thought it would be cool to have a project in which we are not only able to detect the entities in news articles but also categorize them. That's why we built this classification model on existing labels.</p>
+<p id="sec-mid-35704">The dataset we used did have categories but it didn't have labels for entity recognition. So, we decided to use Prodigy to label the dataset for another task: named entity recognition.</p>
+<p>Once you have Prodigy installed, you can simply run:.</p>
+<p>Let's look at the different values:.</p>
+<p>Once you run the above command, you can go to the prodigy web interface (usually at localhost:8080) and start labelling the dataset. Prodigy interface is very simple, intuitive and easy to use. The interface looks like the following:.</p>
+<p>All you have to do is select which entity you want to label (PERSON, ORG, PRODUCT, LOCATION) and then select the text that belongs to the entity. Once you are done with one document, you can click on the green button and Prodigy will automatically provide you with next unlabelled document.</p>
+<p>It has been revealed that using Prodigy, we started labelling the dataset. When we had around 20 samples, we trained a model using AutoNLP. Prodigy doesn't export the data in AutoNLP format, so we wrote a quick and dirty script to convert the data into AutoNLP format:.</p>
+<p>This will provide us with a JSONL file which can be used for training a model using AutoNLP. The steps will be same as before except we will select Token Classification task when creating the AutoNLP project. Using the initial data we had, we trained a model using AutoNLP. The best model had an accuracy of around 86% with 0 precision and recall. We knew the model didn't learn anything. It's pretty obvious, we had only around 20 samples.</p>
+<p>Industry observers note that after labelling around 70 samples, we started getting some results. The accuracy went up to 92%, precision was 0.52 and recall around 0.42. We were getting some results, but still not satisfactory. In the following image, we can see how this model performs on an unseen sample.</p>
+<p>As you can see, the model is struggling. But it's much better than before! Previously, the model was not even able to predict anything in the same text. At least now, it's able to figure out that Bruce and David are names.</p>
+<p>It has been revealed that thus, we continued. We labelled a few more samples.</p>
+<p>Industry observers note that please note that, in each iteration, our dataset is getting bigger. All we are doing is uploading the fresh dataset to AutoNLP and let it do the rest.</p>
+<p>Sources indicate that after labelling around ~150 samples, we started getting some good results. The accuracy went up to 95.7%, precision was 0.64 and recall around 0.76.</p>
+<p>Let's take a look at how this model performs on the same unseen sample.</p>
+<p>WOW! This is amazing! As you can see, the model is now performing extremely well! Its able to detect many entities in the same text. The precision and recall were still a bit low and thus we continued labeling even more data. After labeling around ~250 samples, we had the best results in terms of precision and recall. The accuracy went up to ~95.9% and precision and recall were 0.73 and 0.79 respectively. At this point, we decided to stop labelling and end the experimentation process. The following graph shows how the accuracy of best model improved as we added more samples to the dataset:.</p>
+<p>According to recent reports, well, it's a well known fact that more relevant data will lead to better models and thus better results. With this experimentation, we successfully created a model that can not only classify the entities in the news articles but also categorize them. Using tools like Prodigy and AutoNLP, we invested our time and effort only to label the dataset (even that was made simpler by the interface prodigy offers). AutoNLP saved us a lot of time and effort: we didn't have to figure out which models to use, how to train them, how to evaluate them, how to tune the parameters, which optimizer and scheduler to use, pre-processing, post-processing etc. We just needed to label the dataset and let AutoNLP do everything else.</p>
+<p>We believe with tools like AutoNLP and Prodigy it's very easy to create data and state-of-the-art models. And since the whole process requires almost no coding at all, even someone without a coding background can create datasets which are generally not available to the public, train their own models using AutoNLP and share the model with everyone else in the community (or just use them for their own research / business).</p>
+<p>In a recent development, we have open-sourced the best model created using this process. You can try it here. The labelled dataset can also be downloaded here.</p>
+<p id="sec-end-35704">Models are only state-of-the-art because of the data they are trained on.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/autonlp-prodigy" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="breaking-few-shot-learning-in-practice-gpt-neo-and-the-accelerate-35727.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35727. Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
+        </a>
+        
+        <a href="tech-report-deep-learning-over-the-internet-training-language-mod-35723.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35723. Tech Report: Deep Learning over the Internet: Training Language Models Collaboratively
+        </a>
+        
+        <a href="the-age-of-machine-learning-as-code-has-arrived-35716.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35716. The Age of Machine Learning As Code Has Arrived
+        </a>
+        
+        <a href="machine-learning-experts-margaret-mitchell-35689.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35689. Machine Learning Experts - Margaret Mitchell
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

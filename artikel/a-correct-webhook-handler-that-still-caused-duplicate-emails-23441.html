@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23441">Our webhook handler did everything inline: verify the signature, enhancement the order, send the receipt email, push to the ERP, then return 200. On a normal day that took 300 ms. During an ERP slowdown it took 9 seconds.</p>
-<p>Recent findings suggest that the gateway's delivery timeout was 5 seconds. So every event during the slowdown was marked failed on their side, even though we had processed it. They retried on their schedule, we processed it again, and the receipt email went out twice for about 1,200 orders. The retries added load to an already slow ERP, which made the next handler slower. A small feedback loop. <span style="font-size:13px;">(Related: <a href="think-ai-knows-what-its-doing-scientists-say-think-again-24170.html" style="color:#2563eb; font-weight:600;">Think AI "knows" what it’s doing? Scientists say think ...</a>)</span></p>
-<p>Industry observers note that the fix was boring. The handler now verifies the signature, writes the raw event to a table with a unique constraint on event_id, and returns 200. A separate worker reads the table and does the side effects. Ack time dropped to about 15 ms and stayed flat while the ERP was slow. <span style="font-size:13px;">(Related: <a href="industry-news-high-school-forced-to-scrap-ai-security-as-it-flags-24189.html" style="color:#2563eb; font-weight:600;">Industry News: High school forced to scrap AI security ...</a>)</span></p>
+<p>Recent findings suggest that the gateway's delivery timeout was 5 seconds. So every event during the slowdown was marked failed on their side, even though we had processed it. They retried on their schedule, we processed it again, and the receipt email went out twice for about 1,200 orders. The retries added load to an already slow ERP, which made the next handler slower. A small feedback loop. <span style="font-size:13px;">(Related: <a href="course-launch-community-event-35713.html" style="color:#2563eb; font-weight:600;">Course Launch Community Event...</a>)</span></p>
+<p>Industry observers note that the fix was boring. The handler now verifies the signature, writes the raw event to a table with a unique constraint on event_id, and returns 200. A separate worker reads the table and does the side effects. Ack time dropped to about 15 ms and stayed flat while the ERP was slow. <span style="font-size:13px;">(Related: <a href="industry-news-hugging-face-on-pytorch-xla-tpus-35739.html" style="color:#2563eb; font-weight:600;">Industry News: Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
 <p id="sec-mid-23441">According to recent reports, two things we only noticed afterwards. The gateway docs listed the timeout in a different section from the retry schedule. And our dashboards tracked handler errors but not handler latency, so nothing looked broken while it was happening.</p>
 <p>It has been revealed that how do you monitor webhook ack latency? Do you alert on p99 against the sender's timeout, or only on error rate?</p>
 <p id="sec-end-23441">Payneteasy handles this kind of payment flow for merchants and PSPs — see how it works.</p>
@@ -178,20 +178,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-are-republican-voters-still-loyal-to-trump-what-new-poll-24202.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24202. Breaking: Are Republican voters still loyal to Trump? What new polls say.
+        <a href="industry-news-lave-zero-shot-vqa-evaluation-on-docmatix-with-llms-35326.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35326. Industry News: LAVE: Zero-shot VQA Evaluation on Docmatix with LLMs - Do We Still Need Fine-Tuning?
         </a>
         
-        <a href="vice-city-was-the-gta-that-established-rockstars-killer-formula-a-24104.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24104. Vice City was the GTA that established Rockstar's killer formula - and 24 years on, it's still one of the best games ever made
+        <a href="what-ai-gets-wrong-about-the-front-end-and-why-you-still-need-to--35022.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35022. What AI Gets Wrong About the Front End, and Why You Still Need to Know
         </a>
         
-        <a href="industry-news-ai-can-act-exactly-like-a-human-but-we-still-dont-t-24085.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24085. Industry News: AI can act exactly like a human, but we still don't think it's conscious
+        <a href="building-reliable-product-emails-into-your-application-35007.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35007. Building Reliable Product Emails Into Your Application
         </a>
         
-        <a href="when-the-client-is-a-good-fit-on-paper-but-still-not-a-good-fit-24063.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24063. When the client is a good fit on paper, but still not a good fit
+        <a href="why-transactional-emails-fail-after-deployment-a-practical-debugg-35004.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35004. Why Transactional Emails Fail After Deployment: A Practical Debugging Guide for Developers
         </a>
         
     </div>

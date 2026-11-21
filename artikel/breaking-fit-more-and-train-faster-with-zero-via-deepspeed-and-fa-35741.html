@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale</title>
+    <meta name="description" content="A guest blog post by Hugging Face fellow Stas Bekman. Industry observers note that as recent Machine Learning models have been growing much faster than the">
+    <meta name="keywords" content="deepspeed, zero, fairscale, memory, training, these, only, paper">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/breaking-fit-more-and-train-faster-with-zero-via-deepspeed-and-fa-35741.html">
+    
+    <meta property="og:title" content="Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale">
+    <meta property="og:description" content="A guest blog post by Hugging Face fellow Stas Bekman. Industry observers note that as recent Machine Learning models have been growing much faster than the">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/11_zero_deepspeed_fairscale/zero-partitioning.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/breaking-fit-more-and-train-faster-with-zero-via-deepspeed-and-fa-35741.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale">
+    <meta name="twitter:description" content="A guest blog post by Hugging Face fellow Stas Bekman. Industry observers note that as recent Machine Learning models have been growing much faster than the">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/11_zero_deepspeed_fairscale/zero-partitioning.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale", "image": ["https://huggingface.co/blog/assets/11_zero_deepspeed_fairscale/zero-partitioning.png"], "datePublished": "2021-01-19T00:00:00", "dateModified": "2026-11-21T06:52:55.226319", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/breaking-fit-more-and-train-faster-with-zero-via-deepspeed-and-fa-35741.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Breaking: Fit More and Train Faster With ZeRO via DeepSpeed ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 19 Jan 2021 &bull; ⏱️ 10 min read (1925 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>A guest blog post by Hugging Face fellow Stas Bekman.</li><li style='margin-bottom:6px;'>Industry observers note that as recent Machine Learning models have been growing much faster than the amount of GPU memory added to newly released cards, many customers are unable to train or even just load some of those huge models onto their hardware.</li><li style='margin-bottom:6px;'>According to recent reports, in the fall of 2019 Samyam Rajbhandari, Jeff Rasley, Olatunji Ruwase and Yuxiong He published a paper:
+ZeRO: Memory Optimizations Toward Training Trillion Parameter Models, which contains a plethora of ingenious new ideas on how one could make their hardware do much more than what it was thought possible before.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35741"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35741"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35741"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale" loading="lazy" src="https://huggingface.co/blog/assets/11_zero_deepspeed_fairscale/zero-partitioning.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35741">A guest blog post by Hugging Face fellow Stas Bekman.</p>
+<p>Industry observers note that as recent Machine Learning models have been growing much faster than the amount of GPU memory added to newly released cards, many customers are unable to train or even just load some of those huge models onto their hardware. While there is an ongoing effort to distill some of those huge models to be of a more manageable size -- that effort isn't producing models small enough soon enough. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>According to recent reports, in the fall of 2019 Samyam Rajbhandari, Jeff Rasley, Olatunji Ruwase and Yuxiong He published a paper:
+ZeRO: Memory Optimizations Toward Training Trillion Parameter Models, which contains a plethora of ingenious new ideas on how one could make their hardware do much more than what it was thought possible before. A short time later DeepSpeed has been released and it gave to the world the open source implementation of most of the ideas in that paper (a few ideas are still in works) and in parallel a team from Facebook released FairScale which also implemented some of the core ideas from the ZeRO paper. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Sources indicate that if you use the Hugging Face Trainer, as of transformers v4.2.0 you have the experimental support for DeepSpeed's and FairScale's ZeRO features. The new --sharded_ddp and --deepspeed command line Trainer arguments provide FairScale and DeepSpeed integration respectively. Here is the full documentation.</p>
+<p>This blog post will describe how you can benefit from ZeRO regardless of whether you own just a single GPU or a whole stack of them.</p>
+<p>Let's do a small finetuning with translation task experiment, using a t5-large model and the finetune_trainer.py script which you can find under examples/seq2seq in the transformers GitHub repo.</p>
+<p>We have 2x 24GB (Titan RTX) GPUs to test with.</p>
+<p>This is just a proof of concept benchmarks so surely things can be improved further, so we will benchmark on a small sample of 2000 items for training and 500 items for evalulation to perform the comparisons. Evaluation does by default a beam search of size 4, so it's slower than training with the same number of samples, that's why 4x less eval items were used in these tests.</p>
+<p>Here are the key command line arguments of our baseline:.</p>
+<p>Sources indicate that we are just using the DistributedDataParallel (DDP) and nothing else to boost the performance for the baseline. I was able to fit a batch size (BS) of 16 before hitting Out of Memory (OOM) error.</p>
+<p>Recent findings suggest that note, that for simplicity and to make it easier to understand, I have only shown
+the command line arguments important for this demonstration. You will find the complete command line at
+this post.</p>
+<p>Next, we are going to re-run the benchmark every time adding one of the following:.</p>
+<p>Since the key optimization here is that each technique deploys GPU RAM more efficiently, we will try to continually increase the batch size and expect the training and evaluation to complete faster (while keeping the metrics steady or even improving some, but we won't focus on these here).</p>
+<p>Sources indicate that remember that training and evaluation stages are very different from each other, because during training model weights are being modified, gradients are being calculated, and optimizer states are stored. During evaluation, none of these happen, but in this particular task of translation the model will try to search for the best hypothesis, so it actually has to do multiple runs before it's satisfied. That's why it's not fast, especially when a model is large.</p>
+<p>Let's look at the results of these six test runs:.</p>
+<p>According to recent reports, it's easy to see that both FairScale and DeepSpeed provide great improvements over the baseline, in the total train and evaluation time, but also in the batch size. DeepSpeed implements more magic as of this writing and seems to be the short term winner, but Fairscale is easier to deploy. For DeepSpeed you need to write a simple configuration file and change your command line's launcher, with Fairscale you only need to add the --sharded_ddp command line argument, so you may want to try it first as it's the most low-hanging fruit.</p>
+<p>According to recent reports, following the 80:20 rule, I have only spent a few hours on these benchmarks and I haven't tried to squeeze every MB and second by refining the command line arguments and configuration, since it's pretty obvious from the simple table what you'd want to try next. When you will face a real project that will be running for hours and perhaps days, definitely spend more time to make sure you use the most optimal hyper-parameters to get your job done faster and at a minimal cost.</p>
+<p>If you would like to experiment with this benchmark yourself or want to know more details about the hardware and software used to run it, please, refer to this post.</p>
+<p>While Fairscale gives us a boost only with multiple GPUs, DeepSpeed has a gift even for those of us with a single GPU.</p>
+<p>Let's try the impossible - let's train t5-3b on a 24GB RTX-3090 card.</p>
+<p>First let's try to finetune the huge t5-3b using the normal single GPU setup:.</p>
+<p>Note, as earlier I'm showing only the notable parts and the full command line arguments can be found
+here.</p>
+<p>Now update your transformers to v4.2.0 or higher, then install DeepSpeed:.</p>
+<p>and let's try again, this time adding DeepSpeed to the command line:.</p>
+<p>Industry observers note that et voila! We get a batch size of 20 trained just fine. I could probably push it even further. The program failed with OOM at BS=30.</p>
+<p>We can't compare these to the baseline, since the baseline won't even start and immediately failed with OOM.</p>
+<p>I used only a tiny sample since I was primarily interested in being able to train and evaluate with this huge model that normally won't fit onto a 24GB GPU.</p>
+<p>If you would like to experiment with this benchmark yourself or want to know more details about the hardware and software used to run it, please, refer to this post.</p>
+<p>Since transformers only integrated these fabulous solutions and wasn't part of their invention I will share the resources where you can discover all the details for yourself. But here are a few quick insights that may help understand how ZeRO manages these amazing feats.</p>
+<p id="sec-mid-35741">The key feature of ZeRO is adding distributed data storage to the quite familiar concept of data parallel training.</p>
+<p>The computation on each GPU is exactly the same as data parallel training, but the parameter, gradients and optimizer states are stored in a distributed/partitioned fashion across all the GPUs and fetched only when needed.</p>
+<p>The following diagram, coming from this blog post illustrates how this works:.</p>
+<p>ZeRO's ingenious approach is to partition the params, gradients and optimizer states equally across all GPUs and give each GPU just a single partition (also referred to as a shard). This leads to zero overlap in data storage between GPUs. At runtime each GPU builds up each layer's data on the fly by asking participating GPUs to send the information it's lacking.</p>
+<p>This idea could be difficult to grasp, and you will find my attempt at an explanation here.</p>
+<p>In a recent development, as of this writing FairScale and DeepSpeed only perform Partitioning (Sharding) for the optimizer states and gradients. Model parameters sharding is supposedly coming soon in DeepSpeed and FairScale.</p>
+<p>The other powerful feature is ZeRO-Offload (paper). This feature offloads some of the processing and memory needs to the host's CPU, thus allowing more to be fit onto the GPU. You saw its dramatic impact in the success at running t5-3b on a 24GB GPU.</p>
+<p>One other problem that a lot of people complain about on pytorch forums is GPU memory fragmentation. One often gets an OOM error that may look like this:.</p>
+<p>It has been revealed that the program wants to allocate ~1.5GB and the GPU still has some 6-7GBs of unused memory, but it reports to have only ~100MB of contiguous free memory and it fails with the OOM error. This happens as chunks of different size get allocated and de-allocated again and again, and over time holes get created leading to memory fragmentation, where there is a lot of unused memory but no contiguous chunks of the desired size. In the example above the program could probably allocate 100MB of contiguous memory, but clearly it can't get 1.5GB in a single chunk.</p>
+<p>In a recent development, deepSpeed attacks this problem by managing GPU memory by itself and ensuring that long term memory allocations don't mix with short-term ones and thus there is much less fragmentation. While the paper doesn't go into details, the source code is available, so it's possible to see how DeepSpeed accomplishes that.</p>
+<p>As ZeRO stands for Zero Redundancy Optimizer, it's easy to see that it lives up to its name.</p>
+<p>In a recent development, besides the anticipated upcoming support for model params sharding in DeepSpeed, it already released upcoming features that we haven't explored yet. These include DeepSpeed Sparse Attention and 1-bit Adam, which are supposed to decrease memory usage and dramatically reduce inter-GPU communication overhead, which should lead to an even faster training and support even bigger models.</p>
+<p>I trust we are going to see fresh gifts from the FairScale team as well. I think they are working on ZeRO stage 3 as well.</p>
+<p>Even more exciting, ZeRO is being integrated into pytorch.</p>
+<p>If you found the results shared in this blog post enticing, please proceed here for details on how to use DeepSpeed and FairScale with the transformers Trainer.</p>
+<p>You can, of course, modify your own trainer to integrate DeepSpeed and FairScale, based on each project's instructions or you can "cheat" and see how we did it in the transformers Trainer. If you go for the latter, to find your way around grep the source code for deepspeed and/or sharded_ddp.</p>
+<p>The good news is that ZeRO requires no model modification. The only required modifications are in the training code.</p>
+<p>If you encounter any issues with the integration part of either of these projects please open an Concern in transformers.</p>
+<p>But if you have problems with DeepSpeed and FairScale installation, configuration and deployment - you need to ask the experts in their domains, therefore, please, use DeepSpeed Glitch or FairScale Issue instead.</p>
+<p>While you don't really need to understand how any of these projects work and you can just deploy them via the transformers Trainer, should you want to figure out the whys and hows please refer to the following resources.</p>
+<p>Industry observers note that paper: ZeRO: Memory Optimizations Toward Training Trillion Parameter Models. The paper is very interesting, but it's very terse.</p>
+<p>Here is a good video discussion of the paper with visuals.</p>
+<p>Paper: ZeRO-Offload: Democratizing Billion-Scale Model Training. Just published - this one goes into the details of ZeRO Offload feature.</p>
+<p>DeepSpeed configuration and tutorials.</p>
+<p>In addition to the paper, I highly recommend to read the following detailed blog posts with diagrams:.</p>
+<p>We were quite astonished at the amazing level of support we received from the FairScale and DeepSpeed developer teams while working on integrating those projects into transformers.</p>
+<p>In particular I'd like to thank:.</p>
+<p>from the DeepSpeed team for your generous and caring support and prompt resolution of the challenges we have encountered.</p>
+<p>And HuggingFace for providing access to hardware the benchmarks were run on.</p>
+<p id="sec-end-35741">Sylvain Gugger @sgugger and Stas Bekman @stas00 worked on the integration of these projects.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/zero-deepspeed-fairscale" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="train-400x-faster-static-embedding-models-with-sentence-transform-35235.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35235. Train 400x faster Static Embedding Models with Sentence Transformers
+        </a>
+        
+        <a href="industry-news-unlocking-stable-on-policy-rl-on-tpu-with-bitwise-z-23962.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23962. Industry News: Unlocking Stable On-Policy RL on TPU with Bitwise-Zero Train–Inference Mismatch
+        </a>
+        
+        <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35750. Breaking: How to train a new language model from scratch using Transformers and Tokenizers
+        </a>
+        
+        <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35747. Block Sparse Matrices for Smaller and Faster Language Models
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

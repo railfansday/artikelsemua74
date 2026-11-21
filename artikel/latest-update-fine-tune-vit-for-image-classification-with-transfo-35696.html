@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: Fine-Tune ViT for Image Classification with 🤗 Transformers</title>
+    <meta name="description" content="Recent findings suggest that just as transformers-based models have revolutionized NLP, we're now seeing an explosion of papers applying them to all sorts ">
+    <meta name="keywords" content="model, image, dataset, function, training, example, images, look">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/latest-update-fine-tune-vit-for-image-classification-with-transfo-35696.html">
+    
+    <meta property="og:title" content="Latest Update: Fine-Tune ViT for Image Classification with 🤗 Transformers">
+    <meta property="og:description" content="Recent findings suggest that just as transformers-based models have revolutionized NLP, we're now seeing an explosion of papers applying them to all sorts ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/51_fine_tune_vit/vit-thumbnail.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/latest-update-fine-tune-vit-for-image-classification-with-transfo-35696.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: Fine-Tune ViT for Image Classification with 🤗 Transformers">
+    <meta name="twitter:description" content="Recent findings suggest that just as transformers-based models have revolutionized NLP, we're now seeing an explosion of papers applying them to all sorts ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/51_fine_tune_vit/vit-thumbnail.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: Fine-Tune ViT for Image Classification with 🤗 Transformers", "image": ["https://huggingface.co/blog/assets/51_fine_tune_vit/vit-thumbnail.jpg"], "datePublished": "2022-02-11T00:00:00", "dateModified": "2026-11-21T06:52:46.694679", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/latest-update-fine-tune-vit-for-image-classification-with-transfo-35696.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: Fine-Tune ViT for Image Classification with 🤗 Transformers?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: Fine-Tune ViT for Image Classification with 🤗' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: Fine-Tune ViT for Image Classification with 🤗 Transformers</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 11 Feb 2022 &bull; ⏱️ 6 min read (1151 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that just as transformers-based models have revolutionized NLP, we're now seeing an explosion of papers applying them to all sorts of other domains.</li><li style='margin-bottom:6px;'>This paper explored how you can tokenize images, just as you would tokenize sentences, so that they can be passed to transformer models for training.</li><li style='margin-bottom:6px;'>It turns out that once you've done the above, you can pre-train and fine-tune transformers just as you're used to with NLP tasks.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35696"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35696"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35696"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: Fine-Tune ViT for Image Classification with 🤗 Transformers" loading="lazy" src="https://huggingface.co/blog/assets/51_fine_tune_vit/vit-thumbnail.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35696">Recent findings suggest that just as transformers-based models have revolutionized NLP, we're now seeing an explosion of papers applying them to all sorts of other domains. One of the most revolutionary of these was the Vision Transformer (ViT), which was introduced in June 2021 by a team of researchers at Google Brain.</p>
+<p>This paper explored how you can tokenize images, just as you would tokenize sentences, so that they can be passed to transformer models for training. It's quite a simple concept, really... <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>It turns out that once you've done the above, you can pre-train and fine-tune transformers just as you're used to with NLP tasks. Pretty sweet 😎. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>In this blog post, we'll walk through how to leverage 🤗 datasets to download and process image classification datasets, and then use them to fine-tune a pre-trained ViT with 🤗 transformers.</p>
+<p>To get started, let's first install both those packages.</p>
+<p>Let's start by loading a small image classification dataset and taking a look at its structure.</p>
+<p>We'll use the beans dataset, which is a collection of pictures of healthy and unhealthy bean leaves. 🍃.</p>
+<p>Let's take a look at the 400th example from the 'train' split from the beans dataset. You'll notice each example from the dataset has 3 features:.</p>
+<p>Let's take a look at the image 👀.</p>
+<p>That's definitely a leaf! But what kind? 😅.</p>
+<p>Since the 'labels' feature of this dataset is a datasets.features.ClassLabel, we can use it to look up the corresponding name for this example's label ID.</p>
+<p>First, let's access the feature definition for the 'labels'.</p>
+<p>According to recent reports, now, let's print out the class label for our example. You can do that by using the int2str function of ClassLabel, which, as the name implies, allows to pass the integer representation of the class to look up the string label.</p>
+<p>Industry observers note that turns out the leaf shown above is infected with Bean Rust, a serious disease in bean plants. 😢.</p>
+<p>Let's write a function that'll display a grid of examples from each class to get a better idea of what you're working with.</p>
+<p>Now we know what our images look like and better understand the problem we're trying to solve. Let's see how we can prepare these images for our model!</p>
+<p>Industry observers note that when ViT models are trained, specific transformations are applied to images fed into them. Use the wrong transformations on your image, and the model won't understand what it's seeing! 🖼 ➡️ 🔢.</p>
+<p>Recent findings suggest that to make sure we apply the correct transformations, we will use a ViTImageProcessor initialized with a configuration that was saved along with the pretrained model we initiative to use. In our case, we'll be using the google/vit-base-patch16-224-in21k model, so let's load its image processor from the Hugging Face Hub.</p>
+<p>You can see the image processor configuration by printing it.</p>
+<p>To process an image, simply pass it to the image processor's call function. This will return a dict containing pixel values, which is the numeric representation to be passed to the model.</p>
+<p>You get a NumPy array by default, but if you add the return_tensors='pt' argument, you'll get back torch tensors instead.</p>
+<p>Should give you something like...</p>
+<p id="sec-mid-35696">...where the shape of the tensor is (1, 3, 224, 224).</p>
+<p>Now that you know how to read images and transform them into inputs, let's write a function that will put those two things together to process a single example from the dataset.</p>
+<p>While you could call ds.map and apply this to every example at once, this can be very slow, especially if you use a larger dataset. Instead, you can apply a transform to the dataset. Transforms are only applied to examples as you index them.</p>
+<p>First, though, you'll need to patch the last function to accept a batch of data, as that's what ds.with_transform expects.</p>
+<p>You can directly apply this to the dataset using ds.with_transform(transform).</p>
+<p>Now, whenever you get an example from the dataset, the transform will be 
+applied in real time (on both samples and slices, as shown below).</p>
+<p>This time, the resulting pixel_values tensor will have shape (2, 3, 224, 224).</p>
+<p>The data is processed and you are ready to start setting up the training pipeline. This blog post uses 🤗's Trainer, but that'll require us to do a few things first:.</p>
+<p>Industry observers note that define an evaluation metric. During training, the model should be evaluated on its prediction accuracy. You should define a compute_metrics function accordingly.</p>
+<p>Load a pretrained checkpoint. You need to load a pretrained checkpoint and configure it correctly for training.</p>
+<p>Define the training configuration.</p>
+<p>After fine-tuning the model, you will correctly evaluate it on the evaluation data and verify that it has indeed learned to correctly classify the images.</p>
+<p>Batches are coming in as lists of dicts, so you can just unpack + stack those into batch tensors.</p>
+<p>It has been revealed that since the collate_fn will return a batch dict, you can **unpack the inputs to the model later. ✨.</p>
+<p>The accuracy metric from evaluate can easily be used to compare the predictions with the labels. Below, you can see how to use it within a compute_metrics function that will be used by the Trainer.</p>
+<p>In a recent development, let's load the pretrained model. We'll add num_labels on init so the model creates a classification head with the right number of units. We'll also include the id2label and label2id mappings to have human-readable labels in the Hub widget (if you choose to push_to_hub).</p>
+<p>Almost ready to train! The last thing needed before that is to set up the training configuration by defining TrainingArguments.</p>
+<p>Industry observers note that most of these are pretty self-explanatory, but one that is quite notable here is remove_unused_columns=False. This one will drop any features not used by the model's call function. By default it's True because usually it's ideal to drop unused feature columns, making it easier to unpack inputs into the model's call function. But, in our case, we need the unused features ('image' in particular) in order to create 'pixel_values'.</p>
+<p>What I'm trying to say is that you'll have a bad time if you forget to set remove_unused_columns=False.</p>
+<p>Now, all instances can be passed to Trainer and we are ready to start training!</p>
+<p>It has been revealed that here were my evaluation results - Cool beans! Sorry, had to say it.</p>
+<p>Finally, if you want, you can push your model up to the hub. Here, we'll push it up if you specified push_to_hub=True in the training configuration. Note that in order to push to hub, you'll have to have git-lfs installed and be logged into your Hugging Face account (which can be done via huggingface-cli login).</p>
+<p id="sec-end-35696">The resulting model has been shared to nateraw/vit-base-beans. I'm assuming you don't have pictures of bean leaves laying around, so I added some examples for you to give it a try! 🚀.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/fine-tune-vit" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-35735.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35735. Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        </a>
+        
+        <a href="breaking-train-and-fine-tune-sentence-transformers-models-35641.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35641. Breaking: Train and Fine-Tune Sentence Transformers Models
+        </a>
+        
+        <a href="fine-tune-whisper-for-multilingual-asr-with-transformers-35612.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35612. Fine-Tune Whisper For Multilingual ASR with 🤗 Transformers
+        </a>
+        
+        <a href="industry-news-fine-tune-w2v2-bert-for-low-resource-asr-with-trans-35430.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35430. Industry News: Fine-Tune W2V2-Bert for low-resource ASR with 🤗 Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

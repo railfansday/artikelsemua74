@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia</title>
+    <meta name="description" content="notebook: sagemaker/18_inferentia_inference. The adoption of BERT and Transformers continues to grow. Transformer-based models are now not only achieving s">
+    <meta name="keywords" content="model, inference, neuron, inferentia, sagemaker, models, bert, transformers">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/accelerate-bert-inference-with-hugging-face-transformers-and-aws--35692.html">
+    
+    <meta property="og:title" content="Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia">
+    <meta property="og:description" content="notebook: sagemaker/18_inferentia_inference. The adoption of BERT and Transformers continues to grow. Transformer-based models are now not only achieving s">
+    <meta property="og:image" content="https://huggingface.co/blog//assets/55_bert_inferentia_sagemaker/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/accelerate-bert-inference-with-hugging-face-transformers-and-aws--35692.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia">
+    <meta name="twitter:description" content="notebook: sagemaker/18_inferentia_inference. The adoption of BERT and Transformers continues to grow. Transformer-based models are now not only achieving s">
+    <meta name="twitter:image" content="https://huggingface.co/blog//assets/55_bert_inferentia_sagemaker/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia", "image": ["https://huggingface.co/blog//assets/55_bert_inferentia_sagemaker/thumbnail.png"], "datePublished": "2022-03-16T00:00:00", "dateModified": "2026-11-21T06:52:45.888185", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/accelerate-bert-inference-with-hugging-face-transformers-and-aws--35692.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Accelerate BERT inference with Hugging Face Transformers and' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 16 Mar 2022 &bull; ⏱️ 5 min read (1053 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>The adoption of BERT and Transformers continues to grow.</li><li style='margin-bottom:6px;'>Companies are now slowly moving from the experimentation and research phase to the production phase in order to use transformer models for large-scale workloads.</li><li style='margin-bottom:6px;'>AWS's take to solve this challenge was to design a custom machine learning chip designed for optimized inference workload called AWS Inferentia.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35692"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35692"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35692"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia" loading="lazy" src="https://huggingface.co/blog//assets/55_bert_inferentia_sagemaker/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35692">notebook: sagemaker/18_inferentia_inference.</p>
+<p>The adoption of BERT and Transformers continues to grow. Transformer-based models are now not only achieving state-of-the-art performance in Natural Language Processing but also for Computer Vision, Speech, and Time-Series. 💬 🖼 🎤 ⏳. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Companies are now slowly moving from the experimentation and research phase to the production phase in order to use transformer models for large-scale workloads. But by default BERT and its friends are relatively slow, significant, and complex models compared to the traditional Machine Learning algorithms. Accelerating Transformers and BERT is and will become an interesting challenge to solve in the future. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>AWS's take to solve this challenge was to design a custom machine learning chip designed for optimized inference workload called AWS Inferentia. AWS indicates that AWS Inferentia “delivers up to 80% lower cost per inference and up to 2.3X higher throughput than comparable current generation GPU-based Amazon EC2 instances.”.</p>
+<p>Sources indicate that the real value of AWS Inferentia instances compared to GPU comes through the multiple Neuron Cores available on each device. A Neuron Core is the custom accelerator inside AWS Inferentia. Each Inferentia chip comes with 4x Neuron Cores. This enables you to either load 1 model on each core (for high throughput) or 1 model across all cores (for lower latency).</p>
+<p>In this end-to-end tutorial, you will learn how to speed up BERT inference for text classification with Hugging Face Transformers, Amazon SageMaker, and AWS Inferentia.</p>
+<p>You can find the notebook here: sagemaker/18_inferentia_inference.</p>
+<p>If you are going to use Sagemaker in a local environment (not SageMaker Studio or Notebook Instances), you need access to an IAM Role with the required permissions for Sagemaker. You can find here more about it.</p>
+<p>It has been revealed that we are going to use the AWS Neuron SDK for AWS Inferentia. The Neuron SDK includes a deep learning compiler, runtime, and tools for converting and compiling PyTorch and TensorFlow models to neuron compatible models, which can be run on EC2 Inf1 instances.</p>
+<p>As a first step, we need to install the Neuron SDK and the required packages.</p>
+<p>Tip: If you are using Amazon SageMaker Notebook Instances or Studio you can go with the conda_python3 conda kernel.</p>
+<p>Recent findings suggest that after we have installed the Neuron SDK we can load and convert our model. Neuron models are converted using torch_neuron with its trace method similar to torchscript. You can find more information in our documentation.</p>
+<p>Sources indicate that to be able to convert our model we first need to select the model we want to use for our text classification pipeline from hf.co/models. For this example, let's go with distilbert-base-uncased-finetuned-sst-2-english but this can be easily adjusted with other BERT-like models.</p>
+<p>At the time of writing, the AWS Neuron SDK does not support dynamic shapes, which means that the input size needs to be static for compiling and inference.</p>
+<p>In simpler terms, this means that when the model is compiled with e.g. an input of batch size 1 and sequence length of 16, the model can only run inference on inputs with that same shape.</p>
+<p>When using a t2.medium instance the compilation takes around 3 minutes.</p>
+<p>It has been revealed that the Hugging Face Inference Toolkit supports zero-code deployments on top of the pipeline feature from 🤗 Transformers. This allows consumers to deploy Hugging Face transformers without an inference script [Example].</p>
+<p>Currently, this feature is not supported with AWS Inferentia, which means we need to provide an inference.py script for running inference.</p>
+<p id="sec-mid-35692">If you would be interested in support for zero-code deployments for Inferentia let us know on the forum.</p>
+<p>According to recent reports, to use the inference script, we need to create an inference.py script. In our example, we are going to overwrite the model_fn to load our neuron model and the predict_fn to create a text-classification pipeline.</p>
+<p>If you want to know more about the inference.py script check out this example. It explains amongst other things what  model_fn and predict_fn are.</p>
+<p>We are using the NEURON_RT_NUM_CORES=1 to make sure that each HTTP worker uses 1 Neuron core to maximize throughput.</p>
+<p>Before we can deploy our neuron model to Amazon SageMaker we need to create a model.tar.gz archive with all our model artifacts saved into tmp/, e.g. neuron_model.pt and upload this to Amazon S3.</p>
+<p>To do this we need to set up our permissions.</p>
+<p>It has been revealed that next, we create our model.tar.gz. The inference.py script will be placed into a code/ folder.</p>
+<p>Now we can upload our model.tar.gz to our session S3 bucket with sagemaker.</p>
+<p>After we have uploaded our model.tar.gz to Amazon S3 can we create a custom HuggingfaceModel. This class will be used to create and deploy our real-time inference endpoint on Amazon SageMaker.</p>
+<p>The .deploy() returns an HuggingFacePredictor object which can be used to request inference.</p>
+<p>We managed to deploy our neuron compiled BERT to AWS Inferentia on Amazon SageMaker. Now, let's test its performance. As a dummy load test, we will loop and send 10,000 synchronous requests to our endpoint.</p>
+<p>Let's inspect the performance in cloudwatch.</p>
+<p>The average latency for our BERT model is 5-6ms for a sequence length of 128.</p>
+<p>To clean up, we can delete the model and endpoint.</p>
+<p>In a recent development, we successfully managed to compile a vanilla Hugging Face Transformers model to an AWS Inferentia compatible Neuron Model. After that we deployed our Neuron model to Amazon SageMaker using the fresh Hugging Face Inference DLC. We managed to achieve 5-6ms latency per neuron core, which is faster than CPU in terms of latency, and achieves a higher throughput than GPUs since we ran 4 models in parallel.</p>
+<p>If you or you firm are currently using a BERT-like Transformer for encoder tasks (text-classification, token-classification, question-answering etc.), and the latency meets your requirements you should switch to AWS Inferentia. This will not only save costs, but can also increase efficiency and performance for your models.</p>
+<p>We are planning to do a more detailed case study on cost-performance of transformers in the future, so stay tuned!</p>
+<p>Also if you want to learn more about accelerating transformers you should also check out Hugging Face optimum.</p>
+<p id="sec-end-35692">Sources indicate that thanks for reading! If you have any questions, feel free to contact me, through Github, or on the forum. You can also connect with me on Twitter or LinkedIn.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/bert-inferentia-sagemaker" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="deploy-gpt-j-6b-for-inference-using-hugging-face-transformers-and-35703.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35703. Deploy GPT-J 6B for inference using  Hugging Face Transformers and Amazon SageMaker
+        </a>
+        
+        <a href="pre-train-bert-with-hugging-face-transformers-and-habana-gaudi-35634.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35634. Pre-Train BERT with Hugging Face Transformers and Habana Gaudi
+        </a>
+        
+        <a href="tech-report-accelerating-hugging-face-transformers-with-aws-infer-35551.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35551. Tech Report: Accelerating Hugging Face Transformers with AWS Inferentia2
+        </a>
+        
+        <a href="latest-update-hugging-face-text-generation-inference-available-fo-35422.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35422. Latest Update: Hugging Face Text Generation Inference available for AWS Inferentia2
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

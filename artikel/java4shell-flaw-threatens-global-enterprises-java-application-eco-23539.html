@@ -150,14 +150,14 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23539">Discovered using AI, the memory corruption vulnerability affects the OpenJDK runtime and could allow unauthenticated attackers to take over systems.</p>
-<p>A critical flaw in an open source runtime at the heart of the Java programming language allows unauthenticated attackers to perform remote code execution (RCE) on myriad Java applications used globally across enterprise organizations.</p>
-<p>It has been revealed that the memory corruption vulnerability exists in versions of OpenJDK, a popular open source runtime. Researchers at security startup Calif demonstrated a general proof-of-concept (PoC) exploit for the flaw, dubbed "Java4Shell" and discovered with the help of artificial intelligence (AI), according to a report published Tuesday. <span style="font-size:13px;">(Related: <a href="industry-news-high-school-forced-to-scrap-ai-security-as-it-flags-24189.html" style="color:#2563eb; font-weight:600;">Industry News: High school forced to scrap AI security ...</a>)</span></p>
+<p>A critical flaw in an open source runtime at the heart of the Java programming language allows unauthenticated attackers to perform remote code execution (RCE) on myriad Java applications used globally across enterprise organizations. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>It has been revealed that the memory corruption vulnerability exists in versions of OpenJDK, a popular open source runtime. Researchers at security startup Calif demonstrated a general proof-of-concept (PoC) exploit for the flaw, dubbed "Java4Shell" and discovered with the help of artificial intelligence (AI), according to a report published Tuesday.</p>
 <p>However, they are holding back the release of "weaponized chains for individual products" to give organizations time to upgrade to patch the vulnerability, officially tracked as CVE-2026-114938 and rated as 9.2 under CVSS 4.0, in affected applications, Calif security engineer Quang Luong wrote in the post.</p>
 <p>Sources indicate that java4Shell affects the following releases: Java 17: 17.0.6 to 17.0.21; Java 21: up to 21.0.13 affected; Java 25: up to 25.0.5; Java 27: up to 27.0.1; Java 8, 8u511b33-perf, its Performance Pack build. Java 11 and Java 17.0.0 to 17.0.5 remain unaffected.</p>
 <p>Related:Navigating Vulnerability Hysteria in the AI Era.</p>
-<p>In a recent development, openJDK published a security advisory on the flaw, and Oracle released a patch yesterday to fix the matter in the affected versions of Java. "All Java users should update immediately," Luong recommended. <span style="font-size:13px;">(Related: <a href="free-christian-gta-6-parody-game-released-where-the-devil-hunts-y-24197.html" style="color:#2563eb; font-weight:600;">Free Christian GTA 6 parody game released where the dev...</a>)</span></p>
+<p>In a recent development, openJDK published a security advisory on the flaw, and Oracle released a patch yesterday to fix the matter in the affected versions of Java. "All Java users should update immediately," Luong recommended.</p>
 <p>The flaw exists because of how OpenJDK decodes Base64, a common way of representing binary data as text in authentication protocols, in file uploads, and to deliver network messages.</p>
-<p>In a recent development, "To decode Base64 faster, OpenJDK uses specialized x86-64 CPU instructions to process many bytes at once," Luong explained. "We discovered a bug in that optimized machine-level code that lets malformed input overwrite neighboring memory.".</p>
+<p>In a recent development, "To decode Base64 faster, OpenJDK uses specialized x86-64 CPU instructions to process many bytes at once," Luong explained. "We discovered a bug in that optimized machine-level code that lets malformed input overwrite neighboring memory.". <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>Recent findings suggest that specifically, OpenJDK uses specialized AVX-512 VBMI instructions on supported x86-64 processors, he explained. The bug is present in the hand-rolled assembly code that handles the final few characters.</p>
 <p>Recent findings suggest that "For the 65-character input above, OpenJDK allocates a 50-byte result array," Luong wrote. "After decoding the first 64 characters, the routine mishandles the stray = and calculates a negative output length. That invalid length becomes a full 64-byte write, sending 62 bytes past the end of the array.".</p>
 <p>It has been revealed that java eventually rejects the input, but by then neighboring objects may already be corrupted, he added. Thus, attackers can exploit the bug to reveal sensitive memory, as the highly critical OpenSSL flaw Heartbleed did in 2014, or to perform RCE. "The corruption itself can be triggered by just 64 A characters followed by a single =:," Luong wrote.</p>
@@ -213,20 +213,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-eight-years-from-a-crypto-exchange-to-a-global-ecosys-18578.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #18578. Tech Report: Eight Years: From a Crypto Exchange to a Global Ecosystem Serving 40 Million Customers
+        <a href="the-future-of-the-global-open-source-ai-ecosystem-from-deepseek-t-34966.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34966. The Future of the Global Open-Source AI Ecosystem: From DeepSeek to AI+
         </a>
         
-        <a href="industry-news-the-future-of-the-global-open-source-ai-ecosystem-f-11834.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #11834. Industry News: The Future of the Global Open-Source AI Ecosystem: From DeepSeek to AI+
+        <a href="eight-years-from-a-crypto-exchange-to-a-global-ecosystem-serving--30175.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #30175. Eight Years: From a Crypto Exchange to a Global Ecosystem Serving 40 Million Consumers
         </a>
         
-        <a href="at-historic-summit-xi-and-putin-share-global-stage-with-weakened--24204.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24204. At historic summit, Xi and Putin share global stage with weakened Trump
+        <a href="snorkel-ai-x-hugging-face-unlock-foundation-models-for-enterprise-35554.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35554. Snorkel AI x Hugging Face: unlock foundation models for enterprises
         </a>
         
-        <a href="proposed-change-to-snap-threatens-free-school-meals-for-17-millio-24200.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24200. Proposed change to SNAP threatens free school meals for 1.7 million children
+        <a href="the-falcon-has-landed-in-the-hugging-face-ecosystem-35524.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35524. The Falcon has landed in the Hugging Face ecosystem
         </a>
         
     </div>

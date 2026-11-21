@@ -151,17 +151,17 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23479">Streaming MoE experts directly from SSD gets within 6% of Strata on token generation.</p>
 <p>I've been trying to rely less on online models and run bigger ones locally. At home I have a PC with two RTX 4090s (let's call it Orthrus - the two-headed hound
-of Greek mythology), and for work I have a MacBook M5 with 32G of unified memory.</p>
+of Greek mythology), and for work I have a MacBook M5 with 32G of unified memory. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>Orthrus runs on Windows 11, because my kids play games all the time. I had a
 dual boot with Ubuntu, but their games ended up taking most of the two
-terabytes of disk. <span style="font-size:13px;">(Related: <a href="eu-targets-pay-to-win-games-and-influencer-ads-in-newly-introduce-24187.html" style="color:#2563eb; font-weight:600;">EU targets pay-to-win games and influencer ads in newly...</a>)</span></p>
+terabytes of disk.</p>
 <p>I am also a huge fan of RMD (rooms moving development): one hour in the kitchen
 sipping my coffee, two hours at my office desk, then the sofa. A fixed desktop
 tower is not for me.</p>
 <p>In a recent development, my first experiment was to run Qwen 3.8 27B with llama.app on Orthrus and use
 it from my laptop through pi. That model does the coding tasks, an online
 model like Opus does the orchestration, and the second RTX runs a FIM model for
-auto-completion in Neovim.</p>
+auto-completion in Neovim. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
 <p>When I talked about this on social networks, I got very strong feedback: use
 Strata with Qwen3.8-Flash-Next.</p>
 <p>Sources indicate that strata is an inference engine for MoE models like Qwen. Only the hot experts
@@ -171,7 +171,7 @@ memory. Like my RTX 4090!</p>
 <p>It works on a laptop too, and I stumbled on
 this blog post doing
 exactly that: Qwen3.8-Flash-Next on a 32 GB Mac M4, faster than llama.cpp, at
-13.5 tok/s. <span style="font-size:13px;">(Related: <a href="think-ai-knows-what-its-doing-scientists-say-think-again-24170.html" style="color:#2563eb; font-weight:600;">Think AI "knows" what it’s doing? Scientists say think ...</a>)</span></p>
+13.5 tok/s.</p>
 <p>That's too slow for how I use coding agents, but it's an interesting itch to
 scratch. A whole range of MoE models don't fit in a MacBook's unified memory and
 could run at a decent speed.</p>
@@ -322,20 +322,20 @@ it went.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="deploy-gpt-j-6b-for-inference-using-hugging-face-transformers-and-12604.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #12604. Deploy GPT-J 6B for inference using  Hugging Face Transformers and Amazon SageMaker
+        <a href="deploy-gpt-j-6b-for-inference-using-hugging-face-transformers-and-35703.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35703. Deploy GPT-J 6B for inference using  Hugging Face Transformers and Amazon SageMaker
         </a>
         
-        <a href="accelerate-bert-inference-with-hugging-face-transformers-and-aws--12593.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #12593. Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
+        <a href="accelerate-bert-inference-with-hugging-face-transformers-and-aws--35692.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35692. Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
         </a>
         
-        <a href="latest-update-accelerated-inference-with-optimum-and-transformers-12576.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #12576. Latest Update: Accelerated Inference with Optimum and Transformers Pipelines
+        <a href="latest-update-accelerated-inference-with-optimum-and-transformers-35675.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35675. Latest Update: Accelerated Inference with Optimum and Transformers Pipelines
         </a>
         
-        <a href="ddr6-ram-shrinks-by-44-while-delivering-4-times-more-bandwidth-th-24075.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24075. DDR6 RAM shrinks by 44% while delivering 4 times more bandwidth than DDR5 — JEDEC previews 12.8 GT/s modules with up to 1 terabyte of capacity per slot
+        <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35750. Breaking: How to train a new language model from scratch using Transformers and Tokenizers
         </a>
         
     </div>

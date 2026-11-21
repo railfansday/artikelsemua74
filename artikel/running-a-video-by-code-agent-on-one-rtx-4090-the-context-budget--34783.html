@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running a video-by-code agent on one RTX 4090: the context budget is the real limit</title>
+    <meta name="description" content="Industry observers note that run an open model as a long agent (a model that calls tools in a loop on its own) on one card and the weights are rarely what ">
+    <meta name="keywords" content="model, code, claude, full, agent, minutes, each, video">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/running-a-video-by-code-agent-on-one-rtx-4090-the-context-budget--34783.html">
+    
+    <meta property="og:title" content="Running a video-by-code agent on one RTX 4090: the context budget is the real limit">
+    <meta property="og:description" content="Industry observers note that run an open model as a long agent (a model that calls tools in a loop on its own) on one card and the weights are rarely what ">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Finferencekey.com%2Fassets%2Fresearch%2Fsensenova-code2video-clip-one-gpu%2Fkey-comparison.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/running-a-video-by-code-agent-on-one-rtx-4090-the-context-budget--34783.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Running a video-by-code agent on one RTX 4090: the context budget is the real limit">
+    <meta name="twitter:description" content="Industry observers note that run an open model as a long agent (a model that calls tools in a loop on its own) on one card and the weights are rarely what ">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Finferencekey.com%2Fassets%2Fresearch%2Fsensenova-code2video-clip-one-gpu%2Fkey-comparison.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Running a video-by-code agent on one RTX 4090: the context budget is the real limit", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Finferencekey.com%2Fassets%2Fresearch%2Fsensenova-code2video-clip-one-gpu%2Fkey-comparison.jpg"], "datePublished": "2026-11-21T06:37:16", "dateModified": "2026-11-21T06:51:01.990832", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/running-a-video-by-code-agent-on-one-rtx-4090-the-context-budget--34783.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Running a video-by-code agent on one RTX 4090: the context budget is the real li?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Running a video-by-code agent on one RTX 4090: the context b' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Running a video-by-code agent on one RTX 4090: the context budget is the real limit</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 4 min read (880 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that run an open model as a long agent (a model that calls tools in a loop on its own) on one card and the weights are rarely what stops you.</li><li style='margin-bottom:6px;'>In a recent development, we learned that with SenseNova 6.8 Code2Video, SenseTime's open 27B model that makes video by writing code.</li><li style='margin-bottom:6px;'>In a recent development, the SenseNova team publishes a Claude Code skill called code-video and six complete production runs.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-34783"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-34783"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-34783"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Running a video-by-code agent on one RTX 4090: the context budget is the real limit" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Finferencekey.com%2Fassets%2Fresearch%2Fsensenova-code2video-clip-one-gpu%2Fkey-comparison.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-34783">Industry observers note that run an open model as a long agent (a model that calls tools in a loop on its own) on one card and the weights are rarely what stops you. The budget around them is: how much the agent can keep in view, and how long one answer may be.</p>
+<p>In a recent development, we learned that with SenseNova 6.8 Code2Video, SenseTime's open 27B model that makes video by writing code. We drove it with Claude Code on one 24 GB RTX 4090 on our cloud. Ten minutes in, it had a full 12-second clip. Forty minutes in, it had no finished film. The logs and frames are in the full research write-up on running Code2Video on one RTX 4090. Here I focus on the settings. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>In a recent development, the SenseNova team publishes a Claude Code skill called code-video and six complete production runs. They serve the full-size model across four GPUs. Their context window (the text the model can see at once, counted in tokens, which are word pieces) is 512K tokens, and one answer may run to 64K. Their films needed between 261 and 876 turns each. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-35743.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>We used bartowski's 4-bit GGUF, a compressed copy of the weights (17.2 GB) for the llama.cpp server, plus a 0.93 GB vision part so the model can see images. Three Claude Code variables encode the gap:.</p>
+<p>Without the first one, Claude Code assumes 200K for a model it does not recognize.</p>
+<p>Recent findings suggest that compaction is how Claude Code survives a full context. Once the window passes 80%, it has the model write a recap, throws the old history away and continues from the recap alone. The recap is a normal reply, so the output cap applies to it too.</p>
+<p>Our 98,304-token window was full after about 19 minutes. Three recap requests followed. All three ran into the 16,384-token ceiling, none produced a usable summary, and together they ate 21 minutes until our 40-minute limit killed the run with no final film.</p>
+<p>According to recent reports, compaction can work: four of the authors' six runs cleared contexts of 167K to 492K tokens, under a 64K cap. On our side two settings are under suspicion. One is the 16,384-token cap. The other is hidden reasoning, the thinking the model writes before its visible answer, which we left on and which draws from the same cap. The logs cannot tell them apart, though in a separate single request the same 4-bit file burned all 8,192 output tokens thinking and wrote no page. A bigger window, a bigger cap or reasoning off might fix it; we tried none of them.</p>
+<p>So when you size a single-card agent, measure two things before you trust it: when the context will hit the compaction threshold, and whether one summary fits under your output cap with reasoning on.</p>
+<p id="sec-mid-34783">Self-review did its job. The model opened 21 of its own stills as images, spotted two bugs and fixed both. All on-screen text matched the brief word for word.</p>
+<p>The one fact that mattered was still wrong. The brief asked for 30 dots in a 5 by 6 rectangle. We located each dot centre in the 7.2-second frame with numpy and scipy and got 5 rows of 7 columns, one cell empty per row. The skill's file check still said yes. It only looks at resolution, frame rate and duration, never at what is drawn.</p>
+<p>Add a check that knows what the clip should show.</p>
+<p>Industry observers note that claude Code speaks Anthropic's Messages API format, so whatever sits in front of the model has to translate it. Ours lost the frames: each image either vanished or arrived as a block of text, and the model reviewed its work blind. Fixed in our test build, not yet on the hosted service. With any gateway, send one PNG first and check the model describes it.</p>
+<p>Second, time. Our first call waited for the full answer instead of streaming it piece by piece. The worker, the process on the GPU machine that forwards requests to the server, gives up after 120 seconds, and the model was still thinking. Raising that to 30 minutes fixed the run, and the example now streams.</p>
+<p>The 4-bit run peaked at 20.9 GiB. Smaller copies, one short request each:.</p>
+<p>These ran on the 4090, not real 16 or 12 GB cards, with one sample each. The memory ladder, launch command and step-by-step setup for the Code2Video test have the rest. See also our earlier test of another SenseTime model, SenseNova-Loop-9B.</p>
+<p>The SenseNova team at SenseTime built the model, the skill, the prompt template and the production runs, starting from the Qwen team's base model (model card, skill repository). bartowski made the GGUF quants and the llama.cpp maintainers made the server. Anthropic made Claude Code and Claude Opus 5.5, which drafted the brief from the authors' template. We first saw the model in an AI Search news video. We handled the deployment, fixed the image path, ran the sandboxed agent and counted the pixels.</p>
+<p id="sec-end-34783">Sources indicate that this was one attempt at one brief under tight limits we chose. Logs, timings, the full VRAM table and the SDK example are in the complete Code2Video research post on inferencekey.com.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/inferencekey/running-a-video-by-code-agent-on-one-rtx-4090-the-context-budget-is-the-real-limit-3m4i" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-34897.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34897. Running an AI Agent on a Local LLM: What I Measured on One GPU
+        </a>
+        
+        <a href="interactively-explore-your-huggingface-dataset-with-one-line-of-c-35455.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35455. Interactively explore your Huggingface dataset with one line of code
+        </a>
+        
+        <a href="industry-news-stop-treating-agents-as-one-off-projects-and-start--35363.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35363. Industry News: Stop treating agents as one-off projects and start running them as a continuous discipline
+        </a>
+        
+        <a href="industry-news-our-transformers-code-agent-beats-the-gaia-benchmar-35341.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35341. Industry News: Our Transformers Code Agent beats the GAIA benchmark 🏅
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

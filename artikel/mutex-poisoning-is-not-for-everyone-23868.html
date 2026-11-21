@@ -158,12 +158,12 @@ language, next to some others that are a story for a different time.</p>
 <p>In short, I believe that Mutex poisoning is the wrong choice for most applications, as.</p>
 <p>Sources indicate that in theory, a mutex guards a critical section of the code. That code changes the state of a piece of
 data free from interference of concurrent threads, then releases the lock. That code might then
-encounter an error, and release the lock in the middle of doing its notable work. For example:. <span style="font-size:13px;">(Related: <a href="gta-6-players-are-thirsting-over-character-who-might-actually-be--24191.html" style="color:#2563eb; font-weight:600;">GTA 6 players are thirsting over character who might ac...</a>)</span></p>
+encounter an error, and release the lock in the middle of doing its notable work. For example:.</p>
 <p>The following code will work fine most of the time, but if the dice roll doesn’t go our way, the
 always_even mutex gets unlocked in an invalid state. In Rust, today, poisoning exists to handle
 this. If a guard is released abnormally (while panicking), it records that this happened in a
 boolean. Any future calls to lock() will return Err(PoisonError), which will trigger a panic
-when we unwrap it. The bad state is never observed and all is well. <span style="font-size:13px;">(Related: <a href="trump-calls-putin-and-xi-friends-they-have-other-prepares-24206.html" style="color:#2563eb; font-weight:600;">Trump calls Putin and Xi friends. They have other prepa...</a>)</span></p>
+when we unwrap it. The bad state is never observed and all is well.</p>
 <p>You might have felt that the example I made up was somewhat contrived. That’s because it is. Real
 cases of this pattern can and do happen, but most of the use cases that involve mutexes are much
 simpler. Many critical sections are no longer than a variable assignment, or doesn’t have an invalid
@@ -181,9 +181,9 @@ ready to kill my darlings.1 Skip to the next
 section to continue the discussion on poisoning.</p>
 <p>In Rust, for most platforms, mutexes are implemented using the futex2 system call. It
 allows for operations to remain purely in user-space as long as the mutex in question isn’t
-contended, which is nice for performance reasons.</p>
+contended, which is nice for performance reasons. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
 <p>Under the hood, a mutex is a simple 32-bit integer on most platforms even though it only holds three
-unique values:.</p>
+unique values:. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-35737.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
 <p>It has been revealed that flow chart showing how a mutex acquisition is implemented in Rust, using atomic operations and
 futex primitives. Note how the uncontended case remains entirely in user-space and does not sleep
 the thread.</p>
@@ -319,20 +319,20 @@ and that prevents more efficient implementations. ↩︎.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="chinese-web-giant-tencent-says-new-us-gpu-ban-sets-everyone-back--23865.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23865. Chinese web giant Tencent says new US GPU ban ‘sets everyone back in China’
+        <a href="galaxy-z-fold-8-is-1499-for-black-friday-its-latest-lowest-price--34831.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34831. Galaxy Z Fold 8 is $1,499 for Black Friday; its latest lowest price ever, just not for everyone
         </a>
         
-        <a href="10-best-chrome-extensions-that-are-perfect-for-everyone-23492.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23492. 10 Best Chrome Extensions That Are Perfect for Everyone
+        <a href="everyone-wants-this-unapproved-weight-loss-drugand-some-have-foun-34271.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34271. Everyone Wants This Unapproved Weight Loss Drug—And Some Have Found a Way to Get It
         </a>
         
-        <a href="latest-update-13-gluten-free-dessert-recipes-theres-something-for-23455.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23455. Latest Update: 13 gluten-free dessert recipes : There's something for everyone.
+        <a href="trim-the-wedding-guest-list-first-and-hold-everyone-to-the-same-r-33836.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #33836. Trim the Wedding Guest List First – and Hold Everyone to the Same Rules
         </a>
         
-        <a href="everyone-wants-this-unapproved-weight-loss-drugand-some-have-foun-22684.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #22684. Everyone Wants This Unapproved Weight Loss Drug—And Some Have Found a Way to Get It
+        <a href="sleep-unders-are-honestly-a-win-for-everyone-33413.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #33413. Sleep-Unders Are Honestly a Win for Everyone
         </a>
         
     </div>

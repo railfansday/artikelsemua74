@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23694">This guide is a fully public, inexpensive recipe for making a small model substantially better at structured-output compliance. We fine-tune LFM2.5-350M with Group Relative Policy Optimization (GRPO) using the TRL library and evaluate it on the IFStruct benchmark. The full run takes around 500 samples and 100 training steps, small enough for a free-tier Colab or Kaggle GPU, and is available on GitHub. The results show that even a light fine-tuning procedure improves performance from 22.6% to 29.7% on the IFStruct benchmark.</p>
-<p>Structured output is one of the most common real-world tasks for LLMs, yet most benchmarks fold it into broader reasoning or extraction scores rather than measuring it on its own. Whether a model reliably returns valid, parseable output in the requested format and shape — schema compliance — is often what decides whether it can be wired into a downstream system at all.</p>
-<p>Sources indicate that note that the training pipeline described here is not the one used to train the RL model described in the IFStruct blog. This notebook doesn't aim to recreate the IFStruct benchmark score, but to show how task-specific fine-tuning of smaller models can improve performance and match that of far larger models.</p>
+<p>Structured output is one of the most common real-world tasks for LLMs, yet most benchmarks fold it into broader reasoning or extraction scores rather than measuring it on its own. Whether a model reliably returns valid, parseable output in the requested format and shape — schema compliance — is often what decides whether it can be wired into a downstream system at all. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Sources indicate that note that the training pipeline described here is not the one used to train the RL model described in the IFStruct blog. This notebook doesn't aim to recreate the IFStruct benchmark score, but to show how task-specific fine-tuning of smaller models can improve performance and match that of far larger models. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>This guide has two halves that run in different places:.</p>
 <p>According to recent reports, we will need uv for the Python tooling and llama.cpp for serving. Following the Liquid AI llama.cpp deployment docs, install llama.cpp with Homebrew and verify that llama-server is available:.</p>
 <p>Before we begin, let's evaluate LFM2.5-350M on the IFStruct benchmark and see whether we can reproduce the reported score of 21.1%.</p>
@@ -163,11 +163,11 @@
 <p>Recent findings suggest that the full, runnable pipeline lives in the accompanying notebook. We will cover only the relevant pieces in this section.</p>
 <p>In a recent development, we use nvidia/Nemotron-RL-instruction_following-structured_outputs, which pairs each prompt with a target JSON Schema and an expected field count. We use about 500 samples for training.</p>
 <p>Because the Nemotron data distribution differs from the IFStruct evaluation, we augment the prompts to close two gaps between them:.</p>
-<p id="sec-mid-23694">Industry observers note that we load LiquidAI/LFM2.5-350M and attach a LoRA adapter. Because LFM2.5 uses a hybrid attention/convolution architecture, we target the LFM-specific module names:. <span style="font-size:13px;">(Related: <a href="industry-news-high-school-forced-to-scrap-ai-security-as-it-flags-24189.html" style="color:#2563eb; font-weight:600;">Industry News: High school forced to scrap AI security ...</a>)</span></p>
+<p id="sec-mid-23694">Industry observers note that we load LiquidAI/LFM2.5-350M and attach a LoRA adapter. Because LFM2.5 uses a hybrid attention/convolution architecture, we target the LFM-specific module names:.</p>
 <p>This trains ~6M parameters, about 1.66% of the model.</p>
 <p>Then we define three reward functions, each on a [0, 1] scale, which score every completion on whether the extracted structure is correct:.</p>
 <p>We combine the three as a weighted sum with reward_weights=[1.0, 0.5, 2.0].</p>
-<p>We train for 100 steps with 8 generations per prompt group, sized for a free-tier 16 GB GPU:. <span style="font-size:13px;">(Related: <a href="tech-report-anthropic-gave-40m-to-an-ai-safety-group-most-of-the--24205.html" style="color:#2563eb; font-weight:600;">Tech Report: Anthropic gave $40M to an AI safety group....</a>)</span></p>
+<p>We train for 100 steps with 8 generations per prompt group, sized for a free-tier 16 GB GPU:.</p>
 <p>As you can see in the notebook, over the run, all three reward components climb, the KL from the reference model lifts off zero after warmup, and the truncated-completion fraction stays near zero.</p>
 <p>Finally, we merge the LoRA adapter back into the base weights and save it as a single self-contained checkpoint, ready to convert to GGUF for serving:.</p>
 <p>In a recent development, after GRPO fine-tuning, we rerun the IFStruct evaluation. For this, we need to convert the merged model checkpoint into a BF16 GGUF. The converter script ships with the llama.cpp source, so we clone the repo once and install the converter's gguf package.</p>
@@ -200,20 +200,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-beyond-lora-can-you-beat-the-most-popular-fine-tuning-23853.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23853. Tech Report: Beyond LoRA: Can you beat the most popular fine-tuning technique?
+        <a href="latest-update-fine-tuning-clip-with-remote-sensing-satellite-imag-35717.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35717. Latest Update: Fine tuning CLIP with Remote Sensing (Satellite) images and captions
         </a>
         
-        <a href="accelerating-transformers-fine-tuning-with-nvidia-nemo-automodel-23833.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23833. Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel
+        <a href="accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-35711.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35711. Accelerating PyTorch distributed fine-tuning with Intel technologies
         </a>
         
-        <a href="breaking-the-definitive-fine-tuning-guide-for-3d-generation-model-23510.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23510. Breaking: The Definitive Fine-Tuning Guide for 3D Generation Models
+        <a href="latest-update-fine-tune-a-semantic-segmentation-model-with-a-cust-35691.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35691. Latest Update: Fine-Tune a Semantic Segmentation Model with a Custom Dataset
         </a>
         
-        <a href="why-your-fine-tuning-job-takes-longer-than-the-flops-say-23471.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23471. Why your fine-tuning job takes longer than the FLOPs say
+        <a href="using-lora-for-efficient-stable-diffusion-fine-tuning-35583.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35583. Using LoRA for Efficient Stable Diffusion Fine-Tuning
         </a>
         
     </div>

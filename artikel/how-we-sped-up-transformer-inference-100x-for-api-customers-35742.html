@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How we sped up transformer inference 100x for 🤗 API customers</title>
+    <meta name="description" content="🤗 Transformers has become the default library for data scientists all around the world to explore state of the art NLP models and build newly introduced NL">
+    <meta name="keywords" content="models, model, inference, transformers, hardware, architecture, customers, machine">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-35742.html">
+    
+    <meta property="og:title" content="How we sped up transformer inference 100x for 🤗 API customers">
+    <meta property="og:description" content="🤗 Transformers has become the default library for data scientists all around the world to explore state of the art NLP models and build newly introduced NL">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/09_accelerated_inference/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-35742.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How we sped up transformer inference 100x for 🤗 API customers">
+    <meta name="twitter:description" content="🤗 Transformers has become the default library for data scientists all around the world to explore state of the art NLP models and build newly introduced NL">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/09_accelerated_inference/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "How we sped up transformer inference 100x for 🤗 API customers", "image": ["https://huggingface.co/blog/assets/09_accelerated_inference/thumbnail.png"], "datePublished": "2021-01-18T00:00:00", "dateModified": "2026-11-21T06:52:55.389375", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-35742.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding How we sped up transformer inference 100x for 🤗 API customers?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'How we sped up transformer inference 100x for 🤗 API customer' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>How we sped up transformer inference 100x for 🤗 API customers</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 18 Jan 2021 &bull; ⏱️ 4 min read (716 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>🤗 Transformers has become the default library for data scientists all around the world to explore state of the art NLP models and build newly introduced NLP features.</li><li style='margin-bottom:6px;'>While experimenting with models in 🤗 Transformers is easy, deploying these large models into production with maximum performance, and managing them into an architecture that scales with usage is a hard engineering challenge for any Machine Learning Engineer.</li><li style='margin-bottom:6px;'>In a recent development, this post shares some of our approaches squeezing every drop of compute juice for our customers.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35742"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35742"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35742"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="How we sped up transformer inference 100x for 🤗 API customers" loading="lazy" src="https://huggingface.co/blog/assets/09_accelerated_inference/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35742">🤗 Transformers has become the default library for data scientists all around the world to explore state of the art NLP models and build newly introduced NLP features. With over 5,000 pre-trained and fine-tuned models available, in over 250 languages, it is a rich playground, easily accessible whichever framework you are working in.</p>
+<p>While experimenting with models in 🤗 Transformers is easy, deploying these large models into production with maximum performance, and managing them into an architecture that scales with usage is a hard engineering challenge for any Machine Learning Engineer. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>In a recent development, this post shares some of our approaches squeezing every drop of compute juice for our customers. 🍋.</p>
+<p>The first leg of the optimization journey is the most accessible, all about using the best combination of techniques offered by the Hugging Face libraries, independent of the target hardware. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Industry observers note that we use the most efficient methods built into Hugging Face model pipelines to reduce the amount of computation during each forward pass. These methods are specific to the architecture of the model and the target task, for instance for a text-generation task on a GPT architecture, we reduce the dimensionality of the attention matrices computation by focusing on the fresh attention of the last token in each pass:.</p>
+<p>Tokenization is often a bottleneck for efficiency during inference. We use the most efficient methods from the 🤗 Tokenizers library, leveraging the Rust implementation of the model tokenizer in combination with smart caching to get up to 10x speedup for the overall latency.</p>
+<p>Leveraging the latest features of the Hugging Face libraries, we achieve a reliable 10x speed up compared to an out-of-box deployment for a given model/hardware pair. As newly introduced releases of Transformers and Tokenizers typically ship every month, our API customers do not need to constantly adapt to new optimization opportunities, their models just keep running faster.</p>
+<p id="sec-mid-35742">Now this is where it gets really tricky. In order to get the best possible performance we will need to modify the model and compile it targeting the specific hardware for inference. The choice of hardware itself will depend on both the model (size in memory) and the demand profile (request batching). Even when serving predictions from the same model, some API customers may benefit more from Accelerated CPU inference, and others from Accelerated GPU inference, each with different optimization techniques and libraries applied.</p>
+<p>Once the compute platform has been selected for the use case, we can go to work. Here are some CPU-specific techniques that can be applied with a static graph:.</p>
+<p>In a recent development, using out-of-box functions from open source libraries (e.g. 🤗 Transformers with ONNX Runtime) won’t produce the best results, or could result in a significant loss of accuracy, particularly during quantization. There is no silver bullet, and the best path is different for each model architecture. But diving deep into the Transformers code and ONNX Runtime documentation, the stars can be aligned to achieve another 10x speedup.</p>
+<p>The Transformer architecture was a decisive inflection point for Machine Learning performance, starting with NLP, and over the last 3 years the rate of improvement in Natural Language Understanding and Generation has been steep and accelerating. Another metric which accelerated accordingly, is the average size of the models, from the 110M parameters of BERT to the now 175Bn of GPT-3.</p>
+<p>This trend has introduced daunting challenges for Machine Learning Engineers when deploying the latest models into production. While 100x speedup is a high bar to reach, that’s what it takes to serve predictions with acceptable latency in real-time consumer applications.</p>
+<p>To reach that bar, as Machine Learning Engineers at Hugging Face we certainly have an unfair advantage sitting in the same (virtual) offices as the 🤗 Transformers and 🤗 Tokenizers maintainers 😬. We are also extremely lucky for the rich partnerships we have developed through open source collaborations with hardware and cloud vendors like Intel, NVIDIA, Qualcomm, Amazon and Microsoft that enable us to tune our models x infrastructure with the latest hardware optimizations techniques.</p>
+<p id="sec-end-35742">If you want to feel the speed on our infrastructure, start a free trial and we’ll get in touch. If you want to benefit from our experience optimizing inference on your own infrastructure participate in our 🤗 Expert Acceleration Program.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/accelerated-inference" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="breaking-few-shot-learning-in-practice-gpt-neo-and-the-accelerate-35727.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35727. Breaking: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
+        </a>
+        
+        <a href="deploying-the-ai-comic-factory-using-the-inference-api-35463.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35463. Deploying the AI Comic Factory using the Inference API
+        </a>
+        
+        <a href="transformer-based-encoder-decoder-models-35746.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35746. Transformer-based Encoder-Decoder Models
+        </a>
+        
+        <a href="breaking-scaling-up-bert-inference-on-cpu-part-1-35729.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35729. Breaking: Scaling-up BERT Inference on CPU (Part 1)
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

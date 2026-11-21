@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23591">In a recent development, in a previous post, we introduced TorchNeuron, the native PyTorch backend for AWS Trainium (the torch-neuronx package). With it, Transformers runs its own modeling code on Trainium, as it does on any other device, so any Transformers model on the Hub may run. Which ones actually do?</p>
-<p>The torch-neuronx model support Space answers that question for the most popular models on the Hub. It tells you whether a model runs unmodified on Trainium, and gives you the script to run it yourself.</p>
-<p>Industry observers note that the Space opens on the Selected view: our own selection of models picked among the top models on the Hub by downloads and by trending score. Each row gives the result, the number of Trainium cores the model is sharded over, the wall time of the run (compilation included) and the peak device memory. <span style="font-size:13px;">(Related: <a href="industry-news-high-school-forced-to-scrap-ai-security-as-it-flags-24189.html" style="color:#2563eb; font-weight:600;">Industry News: High school forced to scrap AI security ...</a>)</span></p>
+<p>The torch-neuronx model support Space answers that question for the most popular models on the Hub. It tells you whether a model runs unmodified on Trainium, and gives you the script to run it yourself. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Industry observers note that the Space opens on the Selected view: our own selection of models picked among the top models on the Hub by downloads and by trending score. Each row gives the result, the number of Trainium cores the model is sharded over, the wall time of the run (compilation included) and the peak device memory. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>To look up a given model, switch to the Trending or Downloads view and type part of its name. These views follow the Hub's own rankings, one task at a time, whether a model was tested or not. When a model was left out on purpose, the Space tells you why (most of the time it was not prioritized, sometimes it is truly incompatible). You can also pick the versions of the Neuron compiler (neuronx-cc) and of Transformers to look at.</p>
-<p>According to recent reports, at the time of writing, only Transformers models are tested, and our selection is limited to text-generation and image-text-to-text models. We plan to expand to diffusers, sentence transformers, and other transformers tasks. <span style="font-size:13px;">(Related: <a href="trump-calls-putin-and-xi-friends-they-have-other-prepares-24206.html" style="color:#2563eb; font-weight:600;">Trump calls Putin and Xi friends. They have other prepa...</a>)</span></p>
+<p>According to recent reports, at the time of writing, only Transformers models are tested, and our selection is limited to text-generation and image-text-to-text models. We plan to expand to diffusers, sentence transformers, and other transformers tasks.</p>
 <p>Recent findings suggest that select a model to see how to run it. The Space lists the Neuron stack the model was tested on, the packages to install on top of it, and the run.py script that ran. The script follows the recipe of the TorchNeuron announcement: it loads the model with from_pretrained, sharded when it needs to be, then generates with a static cache and torch.compile(backend="neuron").</p>
 <p>On a Trainium2 (trn2) instance with that stack, for example in the AWS Neuron Deep Learning Container, install the packages, then run:.</p>
 <p id="sec-mid-23591">No need for torchrun: the script introduces its own torch.distributed ranks when the model is sharded.</p>
@@ -187,20 +187,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="aws-weekly-roundup-amazon-polly-generative-engine-torchneuron-for-23810.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23810. AWS Weekly Roundup: Amazon Polly Generative engine, TorchNeuron for Trainium, and more (October 26, 2026)
+        <a href="tech-report-building-blocks-for-foundation-model-training-and-inf-34823.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34823. Tech Report: Building Blocks for Foundation Model Training and Inference on AWS
         </a>
         
-        <a href="torchneuron-running-hf-models-on-aws-trainium-is-easier-than-ever-23618.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23618. TorchNeuron: running HF models on AWS Trainium is easier than ever
+        <a href="why-does-my-side-hurt-when-i-run-causes-and-prevention-tips-34187.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34187. Why Does My Side Hurt When I Run? Causes and Prevention Tips
         </a>
         
-        <a href="breaking-profiling-torchneuron-part-1-system-level-profiling-on-a-23605.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23605. Breaking: Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.
+        <a href="what-does-trail-magic-look-like-around-the-world-these-5-stories--33446.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #33446. What Does Trail Magic Look Like Around the World? These 5 Stories Show Us
         </a>
         
-        <a href="why-does-my-side-hurt-when-i-run-causes-and-prevention-tips-22663.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #22663. Why Does My Side Hurt When I Run? Causes and Prevention Tips
+        <a href="someone-made-obsession-look-like-a-disney-channel-movie-and-why-d-28481.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #28481. Someone Made Obsession Look Like A Disney Channel Movie, And Why Does This Fit SO Well?
         </a>
         
     </div>

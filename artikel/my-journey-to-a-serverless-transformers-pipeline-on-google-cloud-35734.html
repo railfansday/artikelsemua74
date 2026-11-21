@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journey to a serverless transformers pipeline on Google Cloud</title>
+    <meta name="description" content="Recent findings suggest that this article will discuss my journey to deploy the transformers sentiment-analysis pipeline on Google Cloud. We will start wit">
+    <meta name="keywords" content="model, cloud, service, pipeline, which, google, could, tensorflow">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-35734.html">
+    
+    <meta property="og:title" content="My Journey to a serverless transformers pipeline on Google Cloud">
+    <meta property="og:description" content="Recent findings suggest that this article will discuss my journey to deploy the transformers sentiment-analysis pipeline on Google Cloud. We will start wit">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/14_how_to_deploy_a_pipeline_to_google_clouds/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-35734.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Journey to a serverless transformers pipeline on Google Cloud">
+    <meta name="twitter:description" content="Recent findings suggest that this article will discuss my journey to deploy the transformers sentiment-analysis pipeline on Google Cloud. We will start wit">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/14_how_to_deploy_a_pipeline_to_google_clouds/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "My Journey to a serverless transformers pipeline on Google Cloud", "image": ["https://huggingface.co/blog/assets/14_how_to_deploy_a_pipeline_to_google_clouds/thumbnail.png"], "datePublished": "2021-03-18T00:00:00", "dateModified": "2026-11-21T06:52:53.726211", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-35734.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding My Journey to a serverless transformers pipeline on Google Cloud?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'My Journey to a serverless transformers pipeline on Google C' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>My Journey to a serverless transformers pipeline on Google Cloud</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 18 Mar 2021 &bull; ⏱️ 7 min read (1334 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that this article will discuss my journey to deploy the transformers sentiment-analysis pipeline on Google Cloud.</li><li style='margin-bottom:6px;'>I wanted to create a micro-service that automatically detects whether a customer review left in Discord is positive or negative.</li><li style='margin-bottom:6px;'>It has been revealed that I was a bit confused at the beginning when I downloaded the .h5 file.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35734"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35734"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35734"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="My Journey to a serverless transformers pipeline on Google Cloud" loading="lazy" src="https://huggingface.co/blog/assets/14_how_to_deploy_a_pipeline_to_google_clouds/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35734">Recent findings suggest that this article will discuss my journey to deploy the transformers sentiment-analysis pipeline on Google Cloud. We will start with a quick introduction to transformers and then move to the technical part of the implementation. Finally, we'll summarize this implementation and review what we have achieved.</p>
+<p>I wanted to create a micro-service that automatically detects whether a customer review left in Discord is positive or negative. This would allow me to treat the comment accordingly and improve the customer experience. For instance, if the review was negative, I could create a feature which would contact the customer, apologize for the poor quality of service, and inform him/her that our support team will contact him/her as soon as possible to assist him and hopefully fix the problem. Since I don't plan to get more than 2,000 requests per month, I didn't impose any performance constraints regarding the time and the scalability.</p>
+<p>It has been revealed that I was a bit confused at the beginning when I downloaded the .h5 file. I thought it would be compatible with tensorflow.keras.models.load_model, but this wasn't the case. After a few minutes of research I was able to figure out that the file was a weights checkpoint rather than a Keras model. After that, I tried out the API that Hugging Face offers and read a bit more about the pipeline feature they offer. Since the results of the API &amp; the pipeline were great, I decided that I could serve the model through the pipeline on my own server. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>Below is the official example from the Transformers GitHub page. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>GCP is chosen as it is the cloud environment I am using in my personal organization.</p>
+<p>Sources indicate that I already knew that I could use an API-Service like flask to serve a transformers model. I searched in the Google Cloud AI documentation and found a service to host Tensorflow models named AI-Platform Prediction. I also found App Engine and Cloud Run there, but I was concerned about the memory usage for App Engine and was not very familiar with Docker.</p>
+<p>It has been revealed that as the model is not a "pure TensorFlow" saved model but a checkpoint, and I couldn't turn it into a "pure TensorFlow model", I figured out that the example on this page wouldn't work. From there I saw that I could write some custom code, allowing me to load the pipeline instead of having to handle the model, which seemed is easier. I also learned that I could define a pre-prediction &amp; post-prediction action, which could be useful in the future for pre- or post-processing the data for customers' needs. I followed Google's guide but encountered an issue as the service is still in beta and everything is not stable. This issue is detailed here.</p>
+<p>I moved to Google's App Engine as it's a service that I am familiar with, but encountered an installation glitch with TensorFlow due to a missing system dependency file. I then tried with PyTorch which worked with an F4_1G instance, but it couldn't handle more than 2 requests on the same instance, which isn't really great performance-wise.</p>
+<p>Lastly, I moved to Cloud Run with a docker image. I followed this guide to get an idea of how it works. In Cloud Run, I could configure a higher memory and more vCPUs to perform the prediction with PyTorch. I ditched Tensorflow as PyTorch seems to load the model faster.</p>
+<p>The final solution consists of four different components:.</p>
+<p>Recent findings suggest that the content on the main.py is really simple. The idea is to receive a GET request containing two fields. First the review that needs to be analysed, second the API key to "protect" the service. The second parameter is optional, I used it to avoid setting up the oAuth2 of Cloud Run. After these arguments are provided, we load the pipeline which is built based on the model distilbert-base-uncased-finetuned-sst-2-english (provided above). In the end, the best match is returned to the client.</p>
+<p>Sources indicate that then the DockerFile which will be used to create a docker image of the service. We specify that our service runs with python:3.7, plus that we need to install our requirements. Then we use gunicorn to handle our process on the port 5000.</p>
+<p id="sec-mid-35734">Industry observers note that it is crucial to note the arguments --workers 1 --threads 1 which means that I want to execute my app on only one worker (= 1 process) with a single thread. This is because I don't want to have 2 instances up at once because it might increase the billing. One of the downsides is that it will take more time to process if the service receives two requests at once. After that, I put the limit to one thread due to the memory usage needed for loading the model into the pipeline. If I were using 4 threads, I might have 4 Gb / 4 = 1 Gb only to perform the full process, which is not enough and would lead to a memory error.</p>
+<p>Finally, the requirement.txt file.</p>
+<p>First, you will need to meet some requirements such as having a project on Google Cloud, enabling the billing and installing the gcloud cli. You can find more details about it in the Google's guide - Before you begin,.</p>
+<p>According to recent reports, second, we need to build the docker image and deploy it to cloud run by selecting the correct project (replace PROJECT-ID) and set the name of the instance such as ai-customer-review. You can find more information about the deployment on Google's guide - Deploying to.</p>
+<p>Industry observers note that after a few minutes, you will also need to upgrade the memory allocated to your Cloud Run instance from 256 MB to 4 Gb. To do so, head over to the Cloud Run Console of your project.</p>
+<p>There you should find your instance, click on it.</p>
+<p>After that you will have a blue button labelled "edit and deploy newly introduced revision" on top of the screen, click on it and you'll be prompt many configuration fields. At the bottom you should find a "Capacity" section where you can specify the memory.</p>
+<p>Sources indicate that handling a request takes less than five seconds from the moment you send the request including loading the model into the pipeline, and prediction. The cold start might take up an additional 10 seconds more or less.</p>
+<p>We can improve the request handling performance by warming the model, it means loading it on start-up instead on each request (global variable for example), by doing so, we win time and memory usage.</p>
+<p>I simulated the cost based on the Cloud Run instance configuration with Google pricing simulator.</p>
+<p>For my micro-service, I am planning to near 1,000 requests per month, optimistically. 500 may more likely for my usage. That's why I considered 2,000 requests as an upper bound when designing my microservice. Due to that low number of requests, I didn't bother so much regarding the scalability but might come back into it if my billing increases.</p>
+<p>Nevertheless, it's important to stress that you will pay the storage for each Gigabyte of your build image. It's roughly €0.10 per Gb per month, which is fine if you don't keep all your versions on the cloud since my version is slightly above 1 Gb (Pytorch for 700 Mb &amp; the model for 250 Mb).</p>
+<p id="sec-end-35734">According to recent reports, by using Transformers' sentiment analysis pipeline, I saved a non-negligible amount of time. Instead of training/fine-tuning a model, I could find one ready to be used in production and start the deployment in my system. I might fine-tune it in the future, but as shown on my test, the accuracy is already amazing! I would have liked a "pure TensorFlow" model, or at least a way to load it in TensorFlow without Transformers dependencies to use the AI platform. It would also be great to have a lite version.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/how-to-deploy-a-pipeline-to-google-clouds" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="google-cloud-tpus-made-available-to-hugging-face-users-35337.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35337. Google Cloud TPUs made available to Hugging Face users
+        </a>
+        
+        <a href="deploy-meta-llama-31-405b-on-google-cloud-vertex-ai-35315.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35315. Deploy Meta Llama 3.1 405B on Google Cloud Vertex AI
+        </a>
+        
+        <a href="google-cloud-c4-brings-a-70-tco-improvement-on-gpt-oss-with-intel-35034.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35034. Google Cloud C4 Brings a 70% TCO improvement on GPT OSS with Intel and Hugging Face
+        </a>
+        
+        <a href="latest-update-building-for-an-open-future-our-upcoming-partnershi-35017.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35017. Latest Update: Building for an Open Future - our upcoming partnership with Google Cloud
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23458">To get an accessible palette out of a single color, what worked for me was deciding first how much contrast each step of the scale has to have against the background, and only then computing the color that meets it. My first attempt went the other way, spacing out lightness values, and it failed. I'll get to that below.</p>
-<p>That's how color works in TaishoDS Core, a design system in HTML, CSS and JavaScript, no framework, which I've just released under the MIT license: the package is @taishods/core on npm and the source is on GitHub. I tested it with 4,096 starting colors, in light and dark mode. Across the 81,920 steps that came out, the text on each step never dropped below a contrast ratio of 4.63. WCAG's AA level asks for 4.5. <span style="font-size:13px;">(Related: <a href="free-christian-gta-6-parody-game-released-where-the-devil-hunts-y-24197.html" style="color:#2563eb; font-weight:600;">Free Christian GTA 6 parody game released where the dev...</a>)</span></p>
+<p>That's how color works in TaishoDS Core, a design system in HTML, CSS and JavaScript, no framework, which I've just released under the MIT license: the package is @taishods/core on npm and the source is on GitHub. I tested it with 4,096 starting colors, in light and dark mode. Across the 81,920 steps that came out, the text on each step never dropped below a contrast ratio of 4.63. WCAG's AA level asks for 4.5. <span style="font-size:13px;">(Related: <a href="breaking-porting-fairseq-wmt19-translation-system-to-transformers-35744.html" style="color:#2563eb; font-weight:600;">Breaking: Porting fairseq wmt19 translation system to t...</a>)</span></p>
 <p>It has been revealed that I started TaishoDS because I needed one system for my own products and for client work. Premium systems were out of my budget, and in the free ones I couldn't find the accessibility and the performance I was after in the same place. So I set one rule: quality has to be enforced by the system, not by discipline. For color, that rule means the contrast gets computed.</p>
-<p>The scale has ten steps, 100 to 1000. It's built like this, in this order:. <span style="font-size:13px;">(Related: <a href="tech-report-scientists-built-the-hardest-ai-test-ever-and-the-res-24185.html" style="color:#2563eb; font-weight:600;">Tech Report: Scientists built the hardest AI test ever ...</a>)</span></p>
+<p>The scale has ten steps, 100 to 1000. It's built like this, in this order:. <span style="font-size:13px;">(Related: <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--35722.html" style="color:#2563eb; font-weight:600;">Introducing Optimum: The Optimization Toolkit for Trans...</a>)</span></p>
 <p>After that, the step number means the same thing in any hue. A 500 stands about as far from the background whether it's blue or yellow, and a 600 holds light text on top in both.</p>
 <p>According to recent reports, the first engine did the obvious thing. It kept the hue and chroma of the brand color, threw away its lightness, and laid out ten fixed OKLCH lightness values, from 0.97 at step 100 down to 0.12 at step 1000. It looked even, and I took it for granted that contrast came out right on its own. That was only an assumption, picked up from what I'd been seeing in the tools around me.</p>
 <p>In a recent development, in late October I measured it with 648 colors spread around the hue wheel. For 45 of them, about 1 in 14, at least one step had text on it that fell below AA, and the worst pair, as computed, came in at 4.10. The brand color also never revealed up in its own scale: pass in #3b82f6 and you got ten blues, none of them #3b82f6.</p>
@@ -201,20 +201,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-what-is-pathways-single-controller-training-for-lar-24102.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24102. Industry News: What is Pathways? Single-controller training for large models
+        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35749. How to generate text: using different decoding methods for language generation with Transformers
         </a>
         
-        <a href="palette-teaching-a-small-model-to-build-decks-in-your-design-lang-23549.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23549. Palette: teaching a small model to build decks in your design language
+        <a href="hugging-face-and-aws-partner-to-make-ai-more-accessible-35572.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35572. Hugging Face and AWS partner to make AI more accessible
         </a>
         
-        <a href="losing-a-single-molecular-brake-gene-triggers-brain-overgrowth-23170.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23170. Losing a Single “Molecular Brake” Gene Triggers Brain Overgrowth
+        <a href="run-a-chatgpt-like-chatbot-on-a-single-gpu-with-rocm-35539.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35539. Run a Chatgpt-like Chatbot on a Single GPU with ROCm
         </a>
         
-        <a href="fresh-york-auction-houses-hope-single-owner-collections-will-fuel-23054.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23054. Fresh York auction houses hope single-owner collections will fuel $2.4bn week of sales
+        <a href="making-llms-even-more-accessible-with-bitsandbytes-4-bit-quantiza-35530.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35530. Making LLMs even more accessible with bitsandbytes, 4-bit quantization and QLoRA
         </a>
         
     </div>

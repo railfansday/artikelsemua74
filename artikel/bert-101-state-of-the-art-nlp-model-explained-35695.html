@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BERT 101 - State Of The Art NLP Model Explained</title>
+    <meta name="description" content="BERT, short for Bidirectional Encoder Representations from Transformers, is a Machine Learning (ML) model for natural language processing. It was developed">
+    <meta name="keywords" content="bert, models, language, transformers, google, tasks, model, learning">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/bert-101-state-of-the-art-nlp-model-explained-35695.html">
+    
+    <meta property="og:title" content="BERT 101 - State Of The Art NLP Model Explained">
+    <meta property="og:description" content="BERT, short for Bidirectional Encoder Representations from Transformers, is a Machine Learning (ML) model for natural language processing. It was developed">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/52_bert_101/thumbnail.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/bert-101-state-of-the-art-nlp-model-explained-35695.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BERT 101 - State Of The Art NLP Model Explained">
+    <meta name="twitter:description" content="BERT, short for Bidirectional Encoder Representations from Transformers, is a Machine Learning (ML) model for natural language processing. It was developed">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/52_bert_101/thumbnail.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "BERT 101 - State Of The Art NLP Model Explained", "image": ["https://huggingface.co/blog/assets/52_bert_101/thumbnail.jpg"], "datePublished": "2022-03-02T00:00:00", "dateModified": "2026-11-21T06:52:46.486277", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/bert-101-state-of-the-art-nlp-model-explained-35695.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding BERT 101 - State Of The Art NLP Model Explained?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'BERT 101 - State Of The Art NLP Model Explained' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>BERT 101 - State Of The Art NLP Model Explained</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 02 Mar 2022 &bull; ⏱️ 10 min read (2067 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>BERT, short for Bidirectional Encoder Representations from Transformers, is a Machine Learning (ML) model for natural language processing.</li><li style='margin-bottom:6px;'>Sources indicate that language has historically been difficult for computers to ‘understand’.</li><li style='margin-bottom:6px;'>So, along came Natural Language Processing (NLP): the field of artificial intelligence aiming for computers to read, analyze, interpret and derive meaning from text and spoken words.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35695"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35695"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35695"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="BERT 101 - State Of The Art NLP Model Explained" loading="lazy" src="https://huggingface.co/blog/assets/52_bert_101/thumbnail.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35695">BERT, short for Bidirectional Encoder Representations from Transformers, is a Machine Learning (ML) model for natural language processing. It was developed in 2018 by researchers at Google AI Language and serves as a swiss army knife solution to 11+ of the most common language tasks, such as sentiment analysis and named entity recognition.</p>
+<p>Sources indicate that language has historically been difficult for computers to ‘understand’. Sure, computers can collect, store, and read text inputs but they lack basic language context. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>So, along came Natural Language Processing (NLP): the field of artificial intelligence aiming for computers to read, analyze, interpret and derive meaning from text and spoken words. This practice combines linguistics, statistics, and Machine Learning to assist computers in ‘understanding’ human language. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Sources indicate that individual NLP tasks have traditionally been solved by individual models created for each specific task. That is, until— BERT!</p>
+<p>BERT revolutionized the NLP space by solving for 11+ of the most common NLP tasks (and better than previous models) making it the jack of all NLP trades.</p>
+<p>In this guide, you'll learn what BERT is, why it’s different, and how to get started using BERT:.</p>
+<p>BERT can be used on a wide variety of language tasks:.</p>
+<p>There are many more language/NLP tasks + more detail behind each of these.</p>
+<p>Fun Fact: You interact with NLP (and likely BERT) almost every single day!</p>
+<p>NLP is behind Google Translate, voice assistants (Alexa, Siri, etc.), chatbots, Google searches, voice-operated GPS, and more.</p>
+<p>BERT helps Google better surface (English) results for nearly all searches since November of 2020.</p>
+<p>Here’s an example of how BERT helps Google better understand specific searches like:.</p>
+<p>Pre-BERT Google surfaced information about getting a prescription filled.</p>
+<p>Post-BERT Google understands that “for someone” relates to picking up a prescription for someone else and the search results now help to answer that.</p>
+<p>BERT works by leveraging the following:.</p>
+<p>A massive dataset of 3.3 Billion words has contributed to BERT’s continued success.</p>
+<p>BERT was specifically trained on Wikipedia (~2.5B words) and Google’s BooksCorpus (~800M words). These large informational datasets contributed to BERT’s deep knowledge not only of the English language but also of our world! 🚀.</p>
+<p>Sources indicate that training on a dataset this large takes a long time. BERT’s training was made possible thanks to the novel Transformer architecture and sped up by using TPUs (Tensor Processing Units - Google’s custom circuit built specifically for large ML models). —64 TPUs trained BERT over the course of 4 days.</p>
+<p>In a recent development, note: Demand for smaller BERT models is increasing in order to use BERT within smaller computational environments (like cell phones and personal computers). 23 smaller BERT models were released in March 2020. DistilBERT offers a lighter version of BERT; runs 60% faster while maintaining over 95% of BERT’s performance.</p>
+<p>MLM enables/enforces bidirectional learning from text by masking (hiding) a word in a sentence and forcing BERT to bidirectionally use the words on either side of the covered word to predict the masked word. This had never been done before!</p>
+<p>Fun Fact: We naturally do this as humans!</p>
+<p>Industry observers note that imagine your friend calls you while camping in Glacier National Park and their service begins to cut out. The last thing you hear before the call drops is:.</p>
+<p>Friend: “Dang! I’m out fishing and a huge trout just [blank] my line!”.</p>
+<p>Can you guess what your friend said??</p>
+<p>Recent findings suggest that you’re naturally able to predict the missing word by considering the words bidirectionally before and after the missing word as context clues (in addition to your historical knowledge of how fishing works). Did you guess that your friend stated, ‘broke’? That’s what we predicted as well but even we humans are error-prone to some of these methods.</p>
+<p>Note: This is why you’ll often see a “Human Performance” comparison to a language model’s performance scores. And yes, newer models like BERT can be more accurate than humans! 🤯.</p>
+<p>Recent findings suggest that the bidirectional methodology you did to fill in the [blank] word above is similar to how BERT attains state-of-the-art accuracy. A random 15% of tokenized words are hidden during training and BERT’s job is to correctly predict the hidden words. Thus, directly teaching the model about the English language (and the words we use). Isn’t that neat?</p>
+<p>Play around with BERT’s masking predictions:.</p>
+<p>Fun Fact: Masking has been around a long time - 1953 Paper on Cloze procedure (or ‘Masking’).</p>
+<p>NSP (Next Sentence Prediction) is used to help BERT learn about relationships between sentences by predicting if a given sentence follows the previous sentence or not.</p>
+<p>Next Sentence Prediction Example:.</p>
+<p>In training, 50% correct sentence pairs are mixed in with 50% random sentence pairs to help BERT increase next sentence prediction accuracy.</p>
+<p>Fun Fact: BERT is trained on both MLM (50%) and NSP (50%) at the same time.</p>
+<p>The Transformer architecture makes it possible to parallelize ML training extremely efficiently. Massive parallelization thus makes it feasible to train BERT on large amounts of data in a relatively short period of time.</p>
+<p>Recent findings suggest that transformers use an attention mechanism to observe relationships between words. A concept originally proposed in the popular 2017 Attention Is All You Need paper sparked the use of Transformers in NLP models all around the world.</p>
+<p>In a recent development, since their introduction in 2017, Transformers have rapidly become the state-of-the-art approach to tackle tasks in many domains such as natural language processing, speech recognition, and computer vision. In short, if you’re doing deep learning, then you need Transformers!</p>
+<p>Lewis Tunstall, Hugging Face ML Engineer &amp; Author of Natural Language Processing with Transformers.</p>
+<p>Timeline of popular Transformer model releases:.</p>
+<p>Transformers work by leveraging attention, a powerful deep-learning algorithm, first seen in computer vision models.</p>
+<p>Recent findings suggest that —Not all that different from how we humans process information through attention. We are incredibly good at forgetting/ignoring mundane daily inputs that don’t pose a threat or require a response from us. For example, can you remember everything you saw and heard coming home last Tuesday? Of course not! Our brain’s memory is limited and valuable. Our recall is aided by our ability to forget trivial inputs.</p>
+<p id="sec-mid-35695">Similarly, Machine Learning models need to learn how to pay attention only to the things that matter and not waste computational resources processing irrelevant information. Transformers create differential weights signaling which words in a sentence are the most critical to further process.</p>
+<p>According to recent reports, A transformer does this by successively processing an input through a stack of transformer layers, usually called the encoder. If necessary, another stack of transformer layers - the decoder - can be used to predict a target output. —BERT however, doesn’t use a decoder. Transformers are uniquely suited for unsupervised learning because they can efficiently process millions of data points.</p>
+<p>Fun Fact: Google has been using your reCAPTCHA selections to label training data since 2011. The entire Google Books archive and 13 million articles from the Upcoming York Times catalog have been transcribed/digitized via people entering reCAPTCHA text. Now, reCAPTCHA is asking us to label Google Street View images, vehicles, stoplights, airplanes, etc. Would be neat if Google made us aware of our participation in this effort (as the training data likely has future commercial intent) but I digress..</p>
+<p>To learn more about Transformers check out our Hugging Face Transformers Course.</p>
+<p>Let’s break down the architecture for the two original BERT models:.</p>
+<p>Here’s how many of the above ML architecture parts BERTbase and BERTlarge has:.</p>
+<p>Let’s take a look at how BERTlarge’s  additional layers, attention heads, and parameters have increased its performance across NLP tasks.</p>
+<p>Industry observers note that BERT has successfully achieved state-of-the-art accuracy on 11 common NLP tasks, outperforming previous top NLP models, and is the first to outperform humans! But, how are these achievements measured?</p>
+<p>SQuAD (Stanford Question Answering Dataset) is a reading comprehension dataset of around 108k questions that can be answered via a corresponding paragraph of Wikipedia text. BERT’s performance on this evaluation method was a big achievement beating previous state-of-the-art models and human-level performance:.</p>
+<p>SWAG (Situations With Adversarial Generations) is an interesting evaluation in that it detects a model’s ability to infer commonsense! It does this through a large-scale dataset of 113k multiple choice questions about common sense situations. These questions are transcribed from a video scene/situation and SWAG provides the model with four possible outcomes in the next scene. The model then does its’ best at predicting the correct answer.</p>
+<p>BERT out outperformed top previous top models including human-level performance:.</p>
+<p>Recent findings suggest that GLUE (General Language Understanding Evaluation) benchmark is a group of resources for training, measuring, and analyzing language models comparatively to one another. These resources consist of nine “difficult” tasks designed to test an NLP model’s understanding. Here’s a summary of each of those tasks:.</p>
+<p>While some of these tasks may seem irrelevant and banal, it’s important to note that these evaluation methods are incredibly powerful in indicating which models are best suited for your next NLP application.</p>
+<p>Industry observers note that attaining performance of this caliber isn’t without consequences. Next up, let’s learn about Machine Learning's impact on the environment.</p>
+<p>Large Machine Learning models require massive amounts of data which is expensive in both time and compute resources.</p>
+<p>These models also have an environmental impact:.</p>
+<p>In a recent development, machine Learning’s environmental impact is one of the many reasons we believe in democratizing the world of Machine Learning through open source! Sharing large pre-trained language models is essential in reducing the overall compute cost and carbon footprint of our community-driven efforts.</p>
+<p>Recent findings suggest that unlike other large learning models like GPT-3, BERT’s source code is publicly accessible (view BERT’s code on Github) allowing BERT to be more widely used all around the world. This is a game-changer!</p>
+<p>Developers are now able to get a state-of-the-art model like BERT up and running rapidly without spending large amounts of time and money. 🤯.</p>
+<p>Developers can instead focus their efforts on fine-tuning BERT to customize the model’s performance to their unique tasks.</p>
+<p>It’s notable to note that thousands of open-source and free, pre-trained BERT models are right now available for specific use cases if you don’t want to fine-tune BERT.</p>
+<p>BERT models pre-trained for specific tasks:.</p>
+<p>You can also find hundreds of pre-trained, open-source Transformer models available on the Hugging Face Hub.</p>
+<p>It has been revealed that we've created this notebook so you can try BERT through this easy tutorial in Google Colab. Open the notebook or add the following code to your own. Pro Tip: Use (Shift + Click) to run a code cell.</p>
+<p>Note: Hugging Face's pipeline class makes it incredibly easy to pull in open source ML models like transformers with just a single line of code.</p>
+<p>First, let's install Transformers via the following code:.</p>
+<p>In a recent development, feel free to swap out the sentence below for one of your own. However, leave [MASK] in somewhere to allow BERT to predict the missing word.</p>
+<p>When you run the above code you should see an output like this:.</p>
+<p>Let's see what jobs BERT suggests for a "man":.</p>
+<p>When you run the above code you should see an output that looks something like:.</p>
+<p>BERT predicted the man's job to be a Carpenter, Waiter, Barber, Mechanic, or Salesman.</p>
+<p>Now let's see what jobs BERT suggesst for "woman".</p>
+<p>You should see an output that looks something like:.</p>
+<p>BERT predicted the woman's job to be a Nurse, Waitress, Maid, Prostitute, or Cook displaying a clear gender bias in professional roles.</p>
+<p>A Visual Notebook to BERT for the First Time.</p>
+<p>+Don't forget to checkout the Hugging Face Transformers Course to learn more 🎉.</p>
+<p>Pro Tip: Lewis Tunstall, Leandro von Werra, and Thomas Wolf also wrote a book to help people build language applications with Hugging Face called, ‘Natural Language Processing with Transformers’.</p>
+<p>Recent findings suggest that BERT is a highly complex and advanced language model that helps people automate language understanding. Its ability to accomplish state-of-the-art performance is supported by training on massive amounts of data and leveraging Transformers architecture to revolutionize the field of NLP.</p>
+<p>Thanks to BERT’s open-source library, and the incredible AI community’s efforts to continue to improve and share upcoming BERT models, the future of untouched NLP milestones looks bright.</p>
+<p>What will you create with BERT?</p>
+<p id="sec-end-35695">Learn how to fine-tune BERT for your particular use case 🤗.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/bert-101" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="introducing-idefics-an-open-reproduction-of-state-of-the-art-visu-35485.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35485. Introducing IDEFICS: An Open Reproduction of State-of-the-art Visual Langage Model
+        </a>
+        
+        <a href="scaling-up-bert-like-model-inference-on-modern-cpu-part-2-35712.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35712. Scaling up BERT-like model Inference on modern CPU  - Part 2
+        </a>
+        
+        <a href="industry-news-starcoder-a-state-of-the-art-llm-for-code-35544.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35544. Industry News: StarCoder: A State-of-the-Art LLM for Code
+        </a>
+        
+        <a href="hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-35519.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35519. Hugging Face and AMD partner on accelerating state-of-the-art models for CPU and GPU platforms
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

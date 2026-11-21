@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Deploy Hugging Face models easily with Amazon SageMaker</title>
+    <meta name="description" content="Earlier this year we announced a strategic collaboration with Amazon to make it easier for companies to use Hugging Face in Amazon SageMaker, and ship cutt">
+    <meta name="keywords" content="sagemaker, amazon, hugging, face, deploy, inference, model, models">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/tech-report-deploy-hugging-face-models-easily-with-amazon-sagemak-35725.html">
+    
+    <meta property="og:title" content="Tech Report: Deploy Hugging Face models easily with Amazon SageMaker">
+    <meta property="og:description" content="Earlier this year we announced a strategic collaboration with Amazon to make it easier for companies to use Hugging Face in Amazon SageMaker, and ship cutt">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/17_the_partnership_amazon_sagemaker_and_hugging_face/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/tech-report-deploy-hugging-face-models-easily-with-amazon-sagemak-35725.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Deploy Hugging Face models easily with Amazon SageMaker">
+    <meta name="twitter:description" content="Earlier this year we announced a strategic collaboration with Amazon to make it easier for companies to use Hugging Face in Amazon SageMaker, and ship cutt">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/17_the_partnership_amazon_sagemaker_and_hugging_face/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Deploy Hugging Face models easily with Amazon SageMaker", "image": ["https://huggingface.co/blog/assets/17_the_partnership_amazon_sagemaker_and_hugging_face/thumbnail.png"], "datePublished": "2021-07-08T00:00:00", "dateModified": "2026-11-21T06:52:52.109141", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-deploy-hugging-face-models-easily-with-amazon-sagemak-35725.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Deploy Hugging Face models easily with Amazon SageMaker?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Deploy Hugging Face models easily with Amazon S' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Deploy Hugging Face models easily with Amazon SageMaker</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 08 Jul 2021 &bull; ⏱️ 6 min read (1259 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Earlier this year we announced a strategic collaboration with Amazon to make it easier for companies to use Hugging Face in Amazon SageMaker, and ship cutting-edge Machine Learning features faster.</li><li style='margin-bottom:6px;'>Today, we are excited to share a new inference solution with you that makes it easier than ever to deploy Hugging Face Transformers with Amazon SageMaker!</li><li style='margin-bottom:6px;'>It has been revealed that deploying models in SageMaker provides you with production-ready endpoints that scale easily within your AWS environment, with built-in monitoring and a ton of enterprise features.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35725"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35725"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35725"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Deploy Hugging Face models easily with Amazon SageMaker" loading="lazy" src="https://huggingface.co/blog/assets/17_the_partnership_amazon_sagemaker_and_hugging_face/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35725">Earlier this year we announced a strategic collaboration with Amazon to make it easier for companies to use Hugging Face in Amazon SageMaker, and ship cutting-edge Machine Learning features faster. We introduced new Hugging Face Deep Learning Containers (DLCs) to train Hugging Face Transformer models in Amazon SageMaker.</p>
+<p>Today, we are excited to share a new inference solution with you that makes it easier than ever to deploy Hugging Face Transformers with Amazon SageMaker! With the new Hugging Face Inference DLCs, you can deploy your trained models for inference with just one more line of code, or select any of the 10,000+ publicly available models from the Model Hub, and deploy them with Amazon SageMaker. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>It has been revealed that deploying models in SageMaker provides you with production-ready endpoints that scale easily within your AWS environment, with built-in monitoring and a ton of enterprise features. It's been an amazing collaboration and we hope you will take advantage of it! <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-35747.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Here's how to use the new SageMaker Hugging Face Inference Toolkit to deploy Transformers-based models:.</p>
+<p>To learn more about accessing and using the new Hugging Face DLCs with the Amazon SageMaker Python SDK, check out the guides and resources below.</p>
+<p>Below you can find all the vital resources for deploying your models to Amazon SageMaker.</p>
+<p>Industry observers note that in addition to the Hugging Face Transformers-optimized Deep Learning Containers for inference, we have created a upcoming Inference Toolkit for Amazon SageMaker. This new Inference Toolkit leverages the pipelines from the transformers library to allow zero-code deployments of models without writing any code for pre- or post-processing. In the "Getting Started" section below you find two examples of how to deploy your models to Amazon SageMaker.</p>
+<p>Industry observers note that in addition to the zero-code deployment, the Inference Toolkit supports "bring your own code" methods, where you can override the default methods. You can learn more about "bring your own code" in the documentation here or you can check out the sample notebook "deploy custom inference code to Amazon SageMaker".</p>
+<p>Recent findings suggest that using the transformers pipelines, we designed an API, which makes it easy for you to benefit from all pipelines features. The API has a similar interface than the 🤗 Accelerated Inference API, meaning your inputs need to be defined in the inputs key and if you want additional supported pipelines parameters you can add them in the parameters key. Below you can find examples for requests.</p>
+<p>In this guide we will use the new Hugging Face Inference DLCs and Amazon SageMaker Python SDK to deploy two transformer models for inference.</p>
+<p>In the first example, we deploy for inference a Hugging Face Transformer model trained in Amazon SageMaker.</p>
+<p>In the second example, we directly deploy one of the 10,000+ publicly available Hugging Face Transformers models from the Model Hub to Amazon SageMaker for Inference.</p>
+<p>We will use an Amazon SageMaker Notebook Instance for the example. You can learn here how to set up a Notebook Instance. To get started, jump into your Jupyter Notebook or JupyterLab and create a new Notebook with the conda_pytorch_p36 kernel.</p>
+<p>Note: The use of Jupyter is optional: We could also launch SageMaker API calls from anywhere we have an SDK installed, connectivity to the cloud, and appropriate permissions, such as a Laptop, another IDE, or a task scheduler like Airflow or AWS Step Functions.</p>
+<p>After that we can install the required dependencies.</p>
+<p>Recent findings suggest that to deploy a model on SageMaker, we need to create a sagemaker Session and provide an IAM role with the right permission. The get_execution_role method is provided by the SageMaker SDK as an optional convenience. You can also specify the role by writing the specific role ARN you want your endpoint to use. This IAM role will be later attached to the Endpoint, e.g. download the model from Amazon S3.</p>
+<p>It has been revealed that there are two ways to deploy your SageMaker trained Hugging Face model. You can either deploy it after your training is finished, or you can deploy it later, using the model_data pointing to your saved model on Amazon S3. In addition to the two below-mentioned options, you can also instantiate Hugging Face endpoints with lower-level SDK such as boto3 and AWS CLI, Terraform and with CloudFormation templates.</p>
+<p>If you deploy your model directly after training, you need to ensure that all required model artifacts are saved in your training script, including the tokenizer and the model. A benefit of deploying directly after training is that SageMaker model container metadata will contain the source training job, providing lineage from training job to deployed model.</p>
+<p>After we run our request we can delete the endpoint again with.</p>
+<p>If you've already trained your model and want to deploy it at some later time, you can use the model_data argument to specify the location of your tokenizer and model weights.</p>
+<p id="sec-mid-35725">After we run our request, we can delete the endpoint again with:.</p>
+<p>To deploy a model directly from the Hugging Face Model Hub to Amazon SageMaker, we need to define two environment variables when creating the HuggingFaceModel. We need to define:.</p>
+<p>After we run our request we can delete the endpoint again with.</p>
+<p>You can find the complete Frequently Asked Questions in the documentation.</p>
+<p>Q: Which models can I deploy for Inference?</p>
+<p>Q: Which pipelines, tasks are supported by the Inference Toolkit?</p>
+<p>A: The Inference Toolkit and DLC support any of the transformers pipelines. You can find the full list here.</p>
+<p>Q: Do I have to use the transformers pipelines when hosting SageMaker endpoints?</p>
+<p>A: No, you can also write your custom inference code to serve your own models and logic, documented here.</p>
+<p>Q: Do I have to use the SageMaker Python SDK to use the Hugging Face Deep Learning Containers (DLCs)?</p>
+<p>Sources indicate that A: You can use the Hugging Face DLC without the SageMaker Python SDK and deploy your models to SageMaker with other SDKs, such as the AWS CLI, boto3 or Cloudformation. The DLCs are also available through Amazon ECR and can be pulled and used in any environment of choice.</p>
+<p>Q: Why should I use the Hugging Face Deep Learning Containers?</p>
+<p>Sources indicate that A: The DLCs are fully tested, maintained, optimized deep learning environments that require no installation, configuration, or maintenance. In particular, our inference DLC comes with a pre-written serving stack, which drastically lowers the technical bar of DL serving.</p>
+<p>Q: How is my data and code secured by Amazon SageMaker?</p>
+<p>It has been revealed that A: Amazon SageMaker provides numerous security mechanisms including encryption at rest and in transit, Virtual Private Cloud (VPC) connectivity, and Identity and Access Management (IAM). To learn more about security in the AWS cloud and with Amazon SageMaker, you can visit Security in Amazon SageMaker and AWS Cloud Security.</p>
+<p>Q: Is this available in my region?</p>
+<p>A: For a list of the supported regions, please visit the AWS region table for all AWS global infrastructure.</p>
+<p>Q: Do you offer premium support or support SLAs for this solution?</p>
+<p>A: AWS Technical Support tiers are available from AWS and cover development and production complications for AWS products and services - please refer to AWS Support for specifics and scope.</p>
+<p>If you have questions which the Hugging Face community can help answer and/or benefit from, please post them in the Hugging Face forum.</p>
+<p id="sec-end-35725">If you need premium support from the Hugging Face team to accelerate your NLP roadmap, our Expert Acceleration Program offers direct guidance from our open-source, science, and ML Engineering teams.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/deploy-hugging-face-models-easily-with-amazon-sagemaker" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="deploy-gpt-j-6b-for-inference-using-hugging-face-transformers-and-35703.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35703. Deploy GPT-J 6B for inference using  Hugging Face Transformers and Amazon SageMaker
+        </a>
+        
+        <a href="tech-report-hugging-face-models-in-amazon-bedrock-35253.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35253. Tech Report: Hugging Face models in Amazon Bedrock
+        </a>
+        
+        <a href="the-partnership-amazon-sagemaker-and-hugging-face-35733.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35733. The Partnership: Amazon SageMaker and Hugging Face
+        </a>
+        
+        <a href="tech-report-using-mixing-hugging-face-models-with-gradio-20-35728.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35728. Tech Report: Using & Mixing Hugging Face Models with Gradio 2.0
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Large Language Models: A New Moore's Law?</title>
+    <meta name="description" content="A few days ago, Microsoft and NVIDIA introduced Megatron-Turing NLG 530B, a Transformer-based model hailed as &quot;the world’s largest and most powerful genera">
+    <meta name="keywords" content="models, model, recent, learning, need, should, language, machine">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/large-language-models-a-new-moores-law-35714.html">
+    
+    <meta property="og:title" content="Large Language Models: A New Moore's Law?">
+    <meta property="og:description" content="A few days ago, Microsoft and NVIDIA introduced Megatron-Turing NLG 530B, a Transformer-based model hailed as &quot;the world’s largest and most powerful genera">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/33_large_language_models/01_model_size.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/large-language-models-a-new-moores-law-35714.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Large Language Models: A New Moore's Law?">
+    <meta name="twitter:description" content="A few days ago, Microsoft and NVIDIA introduced Megatron-Turing NLG 530B, a Transformer-based model hailed as &quot;the world’s largest and most powerful genera">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/33_large_language_models/01_model_size.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Large Language Models: A New Moore's Law?", "image": ["https://huggingface.co/blog/assets/33_large_language_models/01_model_size.jpg"], "datePublished": "2021-10-26T00:00:00", "dateModified": "2026-11-21T06:52:49.971574", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/large-language-models-a-new-moores-law-35714.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Large Language Models: A New Moore's Law??", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Business & Policy originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Large Language Models: A New Moore's Law?' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Business & Policy section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Business & Policy</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Large Language Models: A New Moore's Law?</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 26 Oct 2021 &bull; ⏱️ 6 min read (1263 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>A few days ago, Microsoft and NVIDIA introduced Megatron-Turing NLG 530B, a Transformer-based model hailed as "the world’s largest and most powerful generative language model.".</li><li style='margin-bottom:6px;'>According to recent reports, this is an impressive show of Machine Learning engineering, no doubt about it.</li><li style='margin-bottom:6px;'>In a recent development, researchers estimate that the human brain contains an average of 86 billion neurons and 100 trillion synapses.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35714"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35714"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35714"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Large Language Models: A New Moore's Law?" loading="lazy" src="https://huggingface.co/blog/assets/33_large_language_models/01_model_size.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35714">A few days ago, Microsoft and NVIDIA introduced Megatron-Turing NLG 530B, a Transformer-based model hailed as "the world’s largest and most powerful generative language model.".</p>
+<p>According to recent reports, this is an impressive show of Machine Learning engineering, no doubt about it. Yet, should we be excited about this mega-model trend? I, for one, am not. Here's why. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>In a recent development, researchers estimate that the human brain contains an average of 86 billion neurons and 100 trillion synapses. It's safe to assume that not all of them are dedicated to language either. Interestingly, GPT-4 is expected to have about 100 trillion parameters... As crude as this analogy is, shouldn't we wonder whether building language models that are about the size of the human brain is the best long-term approach? <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-35749.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Of course, our brain is a marvelous device, produced by millions of years of evolution, while Deep Learning models are only a few decades old. Still, our intuition should tell us that something doesn't compute (pun intended).</p>
+<p>In a recent development, as you would expect, training a 530-billion parameter model on humongous text datasets requires a fair bit of infrastructure. In fact, Microsoft and NVIDIA used hundreds of DGX A100 multi-GPU servers. At $199,000 a piece, and factoring in networking equipment, hosting costs, etc., anyone looking to replicate this experiment would have to spend close to $100 million dollars. Want fries with that?</p>
+<p>In a recent development, seriously, which organizations have business use cases that would justify spending $100 million on Deep Learning infrastructure? Or even $10 million? Very few. So who are these models for, really?</p>
+<p>For all its engineering brilliance, training Deep Learning models on GPUs is a brute force technique. According to the spec sheet, each DGX server can consume up to 6.5 kilowatts. Of course, you'll need at least as much cooling power in your datacenter (or your server closet). Unless you're the Starks and need to keep Winterfell warm in winter, that's another problem you'll have to deal with.</p>
+<p>In addition, as public awareness grows on climate and social responsibility problems, organizations need to account for their carbon footprint. According to this 2019 study from the University of Massachusetts, "training BERT on GPU is roughly equivalent to a trans-American flight".</p>
+<p>BERT-Large has 340 million parameters. One can only extrapolate what the footprint of Megatron-Turing could be... People who know me wouldn't call me a bleeding-heart environmentalist. Still, some numbers are hard to ignore.</p>
+<p>Am I excited by Megatron-Turing NLG 530B and whatever beast is coming next? No. Do I think that the (relatively small) benchmark improvement is worth the added cost, complexity and carbon footprint? No. Do I think that building and promoting these huge models is helping organizations understand and adopt Machine Learning ? No.</p>
+<p>In a recent development, I'm left wondering what's the point of it all. Science for the sake of science? Good old marketing? Technological supremacy? Probably a bit of each. I'll leave them to it, then.</p>
+<p>Instead, let me focus on pragmatic and actionable techniques that you can all use to build high quality Machine Learning solutions.</p>
+<p>In the vast majority of cases, you won't need a custom model architecture. Maybe you'll want a custom one (which is a different thing), but there be dragons. Experts only!</p>
+<p>A good starting point is to look for models that have been pretrained for the task you're trying to solve (say, summarizing English text).</p>
+<p>Industry observers note that then, you should promptly try out a few models to predict your own data. If metrics tell you that one works well enough, you're done! If you need a little more accuracy, you should consider fine-tuning the model (more on this in a minute).</p>
+<p>Industry observers note that when evaluating models, you should pick the smallest one that can deliver the accuracy you need. It will predict faster and require fewer hardware resources for training and inference. Frugality goes a long way.</p>
+<p id="sec-mid-35714">It's nothing new either. Computer Vision practitioners will remember when SqueezeNet came out in 2017, achieving a 50x reduction in model size compared to AlexNet, while meeting or exceeding its accuracy. How clever that was!</p>
+<p>Industry observers note that downsizing efforts are also under way in the Natural Language Processing community, using transfer learning techniques such as knowledge distillation. DistilBERT is perhaps its most widely known achievement. Compared to the original BERT model, it retains 97% of language understanding while being 40% smaller and 60% faster. You can try it here. The same approach has been applied to other models, such as Facebook's BART, and you can try DistilBART here.</p>
+<p>In a recent development, recent models from the Major Science project are also very impressive. As visible in this graph included in the research paper, their T0 model outperforms GPT-3 on many tasks while being 16x smaller.</p>
+<p>Recent findings suggest that you can try T0 here. This is the kind of research we need more of!</p>
+<p>It has been revealed that if you need to specialize a model, there should be very few reasons to train it from scratch. Instead, you should fine-tune it, that is to say train it only for a few epochs on your own data. If you're short on data, maybe of one these datasets can get you started.</p>
+<p>You guessed it, that's another way to do transfer learning, and it'll help you save on everything!</p>
+<p>In other words: save time, save money, save hardware resources, save the world!</p>
+<p>If you need a tutorial, the Hugging Face course will get you started in no time.</p>
+<p>According to recent reports, like them or not, cloud companies know how to build efficient infrastructure. Sustainability studies show that cloud-based infrastructure is more energy and carbon efficient than the alternative: see AWS, Azure, and Google. Earth.org says that while cloud infrastructure is not perfect, "[it's] more energy efficient than the alternative and facilitates environmentally beneficial services and economic growth.".</p>
+<p>Cloud certainly has a lot going for it when it comes to ease of use, flexibility and pay as you go. It's also a little greener than you probably thought. If you're short on GPUs, why not try fine-tune your Hugging Face models on Amazon SageMaker, AWS' managed service for Machine Learning? We've got plenty of examples for you.</p>
+<p>From compilers to virtual machines, software engineers have long used tools that automatically optimize their code for whatever hardware they're running on.</p>
+<p>Sources indicate that however, the Machine Learning community is still struggling with this topic, and for good reason. Optimizing models for size and speed is a devilishly complex task, which involves techniques such as:.</p>
+<p>Fortunately, automated tools are starting to appear, such as the Optimum open source library, and Infinity, a containerized solution that delivers Transformers accuracy at 1-millisecond latency.</p>
+<p>Recent findings suggest that large language model size has been increasing 10x every year for the last few years. This is starting to look like another Moore's Law.</p>
+<p>In a recent development, we've been there before, and we should know that this road leads to diminishing returns, higher cost, more complexity, and new risks. Exponentials tend not to end well. Remember Meltdown and Spectre? Do we want to find out what that looks like for AI?</p>
+<p>Instead of chasing trillion-parameter models (place your bets), wouldn't all be better off if we built practical and efficient solutions that all developers can use to solve real-world problems?</p>
+<p id="sec-end-35714">Interested in how Hugging Face can help your organization build and deploy production-grade Machine Learning solutions? Get in touch at julsimon@huggingface.co (no recruiters, no sales pitches, please).</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/large-language-models" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="very-large-language-models-and-how-to-evaluate-them-35622.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35622. Very Large Language Models and How to Evaluate Them
+        </a>
+        
+        <a href="red-teaming-large-language-models-35569.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35569. Red-Teaming Large Language Models
+        </a>
+        
+        <a href="tech-report-fast-inference-on-large-language-models-bloomz-on-hab-35557.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35557. Tech Report: Fast Inference on Large Language Models: BLOOMZ on Habana Gaudi2 Accelerator
+        </a>
+        
+        <a href="databricks-hugging-face-up-to-40-faster-training-and-tuning-of-la-35548.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35548. Databricks ❤️ Hugging Face: up to 40% faster training and tuning of Large Language Models
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

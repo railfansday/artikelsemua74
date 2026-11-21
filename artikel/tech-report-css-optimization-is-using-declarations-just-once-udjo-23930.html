@@ -150,15 +150,15 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23930">It has been revealed that CSS optimization is a deceptive topic. On the one hand, it feels like something simple that we should already have all the tooling for — especially when it comes to minification. On the other hand, the idea that we already exploited “everything” there is around CSS optimization may be considered naive. Such a claim looks hard to defend for a language that evolves almost daily.</p>
-<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”.</p>
+<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
 <p>Sources indicate that aware of an older source? Please comment!</p>
-<p>The technique is inspired by the principle of DRY, “don’t repeat yourself”, in that it works by identifying and reducing (if not eliminating) declaration repetition. <span style="font-size:13px;">(Related: <a href="burger-king-brings-gta-inspired-burger-to-life-with-massive-7-pat-24192.html" style="color:#2563eb; font-weight:600;">Burger King brings GTA-inspired burger to life with mas...</a>)</span></p>
+<p>The technique is inspired by the principle of DRY, “don’t repeat yourself”, in that it works by identifying and reducing (if not eliminating) declaration repetition.</p>
 <p>So, if there’s something like display: flex and it appears two or more times, it gets reconciled in one rule:.</p>
-<p>The outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how big file size savings are. <span style="font-size:13px;">(Related: <a href="proposed-change-to-snap-threatens-free-school-meals-for-17-millio-24200.html" style="color:#2563eb; font-weight:600;">Proposed change to SNAP threatens free school meals for...</a>)</span></p>
+<p>The outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how big file size savings are.</p>
 <p>If you’re interested, my article on “DRY CSS” describes the mechanics in more detail. The question here is: Is UDJO still effective and still relevant today?</p>
 <p>When we try to answer this question, however, we end up with a problem: When sites are complex and their style sheet declarations have not been de-duplicated before, UDJO can require a lot of work.</p>
 <p>To save some time, I built tooling for this work. While it didn’t seem like it would immediately be as comprehensive as manually going through and testing style sheets, it seemed realistic enough that a tool could catch some repetition.</p>
-<p>It has been revealed that skipping ahead, I created CSS Dedup not only to identify repetition, but also to deduplicate what could safely be optimized (CSS Dedup has some documentation on this but in essence, deduplication affects selector locations, which is part of how the cascade works). This, then, gives us some data:.</p>
+<p>It has been revealed that skipping ahead, I created CSS Dedup not only to identify repetition, but also to deduplicate what could safely be optimized (CSS Dedup has some documentation on this but in essence, deduplication affects selector locations, which is part of how the cascade works). This, then, gives us some data:. <span style="font-size:13px;">(Related: <a href="hugging-face-and-graphcore-partner-for-ipu-optimized-transformers-35721.html" style="color:#2563eb; font-weight:600;">Hugging Face and Graphcore partner for IPU-optimized Tr...</a>)</span></p>
 <p id="sec-mid-23930">For the first batch, I arbitrarily picked 20 websites to analyze. I then used CSS Dedup to check what the file size changes would be if we deduplicated what seemed provably safe, and also what seemed probably safe, but only if it led to file size savings.</p>
 <p>According to recent reports, I picked those two options to provide the “natural” result of deduplication, but also the one site owners may be most interested in to reduce repetition but also decrease transfer size. After all, UDJO as a CSS optimization technique can improve both maintainability and performance.</p>
 <p>Important note: These values cannot be used to tell CSS quality—they depend on selector length and also on verifying if deduplication, in the respective case, actually leads to better maintainability. Also note that this leaves out changes after compression—this was not part of the experiment but would be fair to test, too.</p>
@@ -192,20 +192,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-former-rangers-striker-peter-van-vossen-on-that-old-f-15818.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #15818. Tech Report: Former Rangers striker Peter van Vossen on THAT Old Firm miss 30 years ago today... 'I wasn't paying attention and the ball hit my shin, but I still blame Jorg Albertz!'
+        <a href="tech-report-using-mixing-hugging-face-models-with-gradio-20-35728.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35728. Tech Report: Using & Mixing Hugging Face Models with Gradio 2.0
         </a>
         
-        <a href="tech-report-scientists-just-made-quantum-computer-operations-1000-24119.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24119. Tech Report: Scientists just made quantum computer operations 1,000 times faster
+        <a href="tech-report-a-gentle-introduction-to-8-bit-matrix-multiplication--35637.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35637. Tech Report: A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using transformers, accelerate and bitsandbytes
         </a>
         
-        <a href="tech-report-is-the-galaxy-s26-ultra-still-a-good-buy-at-the-end-o-23943.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23943. Tech Report: Is the Galaxy S26 Ultra still a good buy at the end of 2026?
+        <a href="tech-report-parameter-efficient-fine-tuning-using-peft-35575.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35575. Tech Report: Parameter-Efficient Fine-Tuning using 🤗 PEFT
         </a>
         
-        <a href="scott-eastwood-is-still-seeking-a-rush-just-at-a-slower-pace-22372.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #22372. Scott Eastwood Is Still Seeking a Rush, Just at a Slower Pace
+        <a href="tech-report-text2sql-using-hugging-face-dataset-viewer-api-and-mo-35391.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35391. Tech Report: Text2SQL using Hugging Face Dataset Viewer API and Motherduck DuckDB-NSQL-7B
         </a>
         
     </div>

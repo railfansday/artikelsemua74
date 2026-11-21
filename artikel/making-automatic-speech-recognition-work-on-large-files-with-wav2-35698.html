@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers</title>
+    <meta name="description" content="According to recent reports, wav2Vec2 is a popular pre-trained model for speech recognition. Released in September 2020 by Meta AI Research, the novel arch">
+    <meta name="keywords" content="inference, very, model, transformers, long, audio, order, speech">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/making-automatic-speech-recognition-work-on-large-files-with-wav2-35698.html">
+    
+    <meta property="og:title" content="Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers">
+    <meta property="og:description" content="According to recent reports, wav2Vec2 is a popular pre-trained model for speech recognition. Released in September 2020 by Meta AI Research, the novel arch">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/49_asr_chunking/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/making-automatic-speech-recognition-work-on-large-files-with-wav2-35698.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers">
+    <meta name="twitter:description" content="According to recent reports, wav2Vec2 is a popular pre-trained model for speech recognition. Released in September 2020 by Meta AI Research, the novel arch">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/49_asr_chunking/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers", "image": ["https://huggingface.co/blog/assets/49_asr_chunking/thumbnail.png"], "datePublished": "2022-02-01T00:00:00", "dateModified": "2026-11-21T06:52:47.070637", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/making-automatic-speech-recognition-work-on-large-files-with-wav2-35698.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Trans?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Making automatic speech recognition work on large files with' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 01 Feb 2022 &bull; ⏱️ 3 min read (693 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, wav2Vec2 is a popular pre-trained model for speech recognition.</li><li style='margin-bottom:6px;'>Wav2Vec2 is at its core a transformers models and one caveat
+of transformers is that it usually has a finite amount of sequence
+length it can handle.</li><li style='margin-bottom:6px;'>The simplest way to achieve inference on very long files would be to simply chunk
+the initial audio into shorter samples, let's say 10 seconds each, run inference on those, and end up
+with a final reconstruction.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35698"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35698"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35698"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers" loading="lazy" src="https://huggingface.co/blog/assets/49_asr_chunking/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35698">According to recent reports, wav2Vec2 is a popular pre-trained model for speech recognition. Released in September 2020
+by Meta AI Research, the novel architecture catalyzed progress in
+self-supervised pretraining for speech recognition, e.g. G. Ng et
+al., 2021, Chen et al,
+2021, Hsu et al.,
+2021 and Babu et al.,
+2021. On the Hugging Face Hub,
+Wav2Vec2's most popular pre-trained checkpoint presently amounts to
+over 250,000 monthly
+downloads.</p>
+<p>Wav2Vec2 is at its core a transformers models and one caveat
+of transformers is that it usually has a finite amount of sequence
+length it can handle. Either because it uses position encodings (not
+the case here) or simply because the cost of attention in transformers
+is actually O(n²) in sequence_length, meaning that using very large
+sequence_length explodes in complexity/memory. So you cannot run with finite hardware
+(even a very large GPU like A100), simply run Wav2Vec2 on an hour long
+file. Your program will crash. Let's try it ! <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>The simplest way to achieve inference on very long files would be to simply chunk
+the initial audio into shorter samples, let's say 10 seconds each, run inference on those, and end up
+with a final reconstruction. This is efficient computationally but usually leads
+to subpar results, the reason being that in order to do good inference, the model
+needs some context, so around the chunking border, inference tends to be of poor
+quality. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-35743.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>There are ways to try and work around the problem in a general fashion, but
+they are never entirely robust. You can try to chunk only when you encounter
+silence but you may have a non silent audio for a long time (a song, or noisy
+café audio). You can also try to cut only when there's no voice but it requires
+another model and this is not an entirely solved problem. You could also have
+a continous voice for a very long time.</p>
+<p>As it turns out, CTC structure, which is used by Wav2Vec2, can be exploited
+in order to achieve very robust speech recognition even on very long files
+without falling into those pitfalls.</p>
+<p>Wav2Vec2 uses the CTC algorithm, which means that every frame of audio is mapped
+to a single letter prediction (logit).</p>
+<p>In a recent development, that's the main feature we're going to use in order to add a stride. This link explains it 
+in the image context, but it's the same concept for audio. Because of this property, we can:.</p>
+<p id="sec-mid-35698">This is not technically 100% the same thing as running the model on the whole
+file so it is not enabled by default, but as you saw in the earlier example you
+need only to add chunk_length_s to your pipeline for it to work.</p>
+<p>In practice, we observed that most of the bad inference is kept within
+the strides, which get dropped before inference, leading to a proper
+inference of the full text.</p>
+<p>Let's note that you can choose every argument of this technique:.</p>
+<p>In a recent development, in transformers, we also
+added support for adding LM to Wav2Vec2 in order to boost the WER performance
+of the models without even finetuning. See this excellent blogpost explaining
+how it works.</p>
+<p>It turns out, that the LM works directly on the logits themselves, so we
+can actually apply the exact same technique as before without any modification ! So chunking large files on these LM boosted models still works out of the box.</p>
+<p>A very nice perk of using a CTC model like Wav2vec2, is that it is a single
+pass model, so it is very fast. Especially on GPU. We can exploit that in order
+to do live inference.</p>
+<p>The principle is exactly the same as regular striding, but this time we can
+feed the pipeline data as it is coming in and simply use striding on
+full chunks of length 10s for instance with 1s striding to get proper context.</p>
+<p id="sec-end-35698">That requires running much more inference steps than simple file chunking, but it can make the 
+live experience much better because the model can print things as you are 
+speaking, without having to wait for X seconds before seeing something displayed.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/asr-chunking" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="speech-synthesis-recognition-and-more-with-speecht5-35576.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35576. Speech Synthesis, Recognition, and More With SpeechT5
+        </a>
+        
+        <a href="ai-speech-recognition-in-unity-35525.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35525. AI Speech Recognition in Unity
+        </a>
+        
+        <a href="making-ml-powered-web-games-with-transformersjs-35505.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35505. Making ML-powered web games with Transformers.js
+        </a>
+        
+        <a href="making-llms-lighter-with-autogptq-and-transformers-35483.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35483. Making LLMs lighter with AutoGPTQ and transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

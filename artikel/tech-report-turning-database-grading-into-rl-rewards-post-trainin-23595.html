@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23595">This is the follow up to our first blog post, The Agent Said It Was Done. The Database Disagreed. ThinkingBox-Training is now available on GitHub.</p>
-<p>Sources indicate that we built ThinkingBox to evaluate an agent's work by comparing the final database state with the expected outcome. We then used the same kind of executable signal as a reward on training tasks outside ThinkingBox-Bench. For Qwen3.8-27B, average success rose from 51.70% to 60.78%, while tasks completed correctly on all twenty attempts rose from 38 to 107 with 50 GRPO steps. <span style="font-size:13px;">(Related: <a href="tech-report-scientists-built-the-hardest-ai-test-ever-and-the-res-24185.html" style="color:#2563eb; font-weight:600;">Tech Report: Scientists built the hardest AI test ever ...</a>)</span></p>
-<p>In a recent development, figure 1. ThinkingBox turns executable checks of terminal database state into rewards for post-training agents on tasks outside ThinkingBox-Bench. <span style="font-size:13px;">(Related: <a href="tech-report-hobbled-at-home-trump-turns-abroad-24207.html" style="color:#2563eb; font-weight:600;">Tech Report: Hobbled at home, Trump turns abroad...</a>)</span></p>
+<p>Sources indicate that we built ThinkingBox to evaluate an agent's work by comparing the final database state with the expected outcome. We then used the same kind of executable signal as a reward on training tasks outside ThinkingBox-Bench. For Qwen3.8-27B, average success rose from 51.70% to 60.78%, while tasks completed correctly on all twenty attempts rose from 38 to 107 with 50 GRPO steps. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-35731.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
+<p>In a recent development, figure 1. ThinkingBox turns executable checks of terminal database state into rewards for post-training agents on tasks outside ThinkingBox-Bench. <span style="font-size:13px;">(Related: <a href="tech-report-deep-learning-over-the-internet-training-language-mod-35723.html" style="color:#2563eb; font-weight:600;">Tech Report: Deep Learning over the Internet: Training ...</a>)</span></p>
 <p>We built ThinkingBox to catch agents that say they are done when they are not.</p>
 <p>Each of its 507 tasks in ThinkingBox-Bench (our benchmark dataset) hands an agent a real backend and a set of tools, lets it work, then checks what really changed in the database. In the first post, we caught a model closing a customer's ticket as resolved while the carrier exception behind it was still open. Nine competent-looking tool calls, one wrong database row.</p>
 <p>In a recent development, then we noticed what we had built. For most tasks, an executable check can return 1 or 0 directly from the final database state. That is not just a grader. This can be a reward function.+.</p>
@@ -276,20 +276,20 @@ aggregation.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="smol2operator-post-training-gui-agents-for-computer-use-11923.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #11923. Smol2Operator: Post-Training GUI Agents for Computer Use
+        <a href="smol2operator-post-training-gui-agents-for-computer-use-35048.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35048. Smol2Operator: Post-Training GUI Agents for Computer Use
         </a>
         
-        <a href="tech-report-what-is-bio-tagging-and-how-to-use-it-for-document-ai-23925.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23925. Tech Report: What Is BIO Tagging and How to Use It for Document AI Training Data
+        <a href="tech-report-deep-learning-over-the-internet-training-language-mod-35723.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35723. Tech Report: Deep Learning over the Internet: Training Language Models Collaboratively
         </a>
         
-        <a href="tech-report-from-the-hugging-face-hub-to-robot-hardware-with-stra-23858.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23858. Tech Report: From the Hugging Face Hub to robot hardware with Strands Agents and LeRobot
+        <a href="post-training-isaac-gr00t-n15-for-lerobot-so-101-arm-35126.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35126. Post-Training Isaac GR00T N1.5 for LeRobot SO-101 Arm
         </a>
         
-        <a href="tech-report-scarfbench-benchmarking-ai-agents-for-enterprise-java-23824.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23824. Tech Report: ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration
+        <a href="tech-report-accelerate-nd-parallel-a-guide-to-efficient-multi-gpu-35079.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35079. Tech Report: Accelerate ND-Parallel: A guide to Efficient Multi-GPU Training
         </a>
         
     </div>

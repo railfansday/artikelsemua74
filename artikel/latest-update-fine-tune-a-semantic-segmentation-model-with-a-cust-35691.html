@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: Fine-Tune a Semantic Segmentation Model with a Custom Dataset</title>
+    <meta name="description" content="Sources indicate that this guide reveals how you can fine-tune Segformer, a state-of-the-art semantic segmentation model. Our goal is to build a model for ">
+    <meta name="keywords" content="model, segmentation, dataset, semantic, image, robot, segformer, delivery">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/latest-update-fine-tune-a-semantic-segmentation-model-with-a-cust-35691.html">
+    
+    <meta property="og:title" content="Latest Update: Fine-Tune a Semantic Segmentation Model with a Custom Dataset">
+    <meta property="og:description" content="Sources indicate that this guide reveals how you can fine-tune Segformer, a state-of-the-art semantic segmentation model. Our goal is to build a model for ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/56_fine_tune_segformer/thumb.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/latest-update-fine-tune-a-semantic-segmentation-model-with-a-cust-35691.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: Fine-Tune a Semantic Segmentation Model with a Custom Dataset">
+    <meta name="twitter:description" content="Sources indicate that this guide reveals how you can fine-tune Segformer, a state-of-the-art semantic segmentation model. Our goal is to build a model for ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/56_fine_tune_segformer/thumb.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: Fine-Tune a Semantic Segmentation Model with a Custom Dataset", "image": ["https://huggingface.co/blog/assets/56_fine_tune_segformer/thumb.png"], "datePublished": "2022-03-17T00:00:00", "dateModified": "2026-11-21T06:52:45.715381", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/latest-update-fine-tune-a-semantic-segmentation-model-with-a-cust-35691.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: Fine-Tune a Semantic Segmentation Model with a Custom Dataset?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: Fine-Tune a Semantic Segmentation Model with ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: Fine-Tune a Semantic Segmentation Model with a Custom Dataset</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 17 Mar 2022 &bull; ⏱️ 7 min read (1345 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Sources indicate that this guide reveals how you can fine-tune Segformer, a state-of-the-art semantic segmentation model.</li><li style='margin-bottom:6px;'>Semantic segmentation is the task of classifying each pixel in an image.</li><li style='margin-bottom:6px;'>Because semantic segmentation is a type of classification, the network architectures used for image classification and semantic segmentation are very similar.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-35691"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-35691"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-35691"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: Fine-Tune a Semantic Segmentation Model with a Custom Dataset" loading="lazy" src="https://huggingface.co/blog/assets/56_fine_tune_segformer/thumb.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-35691">Sources indicate that this guide reveals how you can fine-tune Segformer, a state-of-the-art semantic segmentation model. Our goal is to build a model for a pizza delivery robot, so it can see where to drive and recognize obstacles 🍕🤖. We'll first use an available segmentation dataset from the 🤗 hub. Then we'll fine-tune a pre-trained SegFormer model by using 🤗 transformers, an open-source library that offers easy-to-use implementations of state-of-the-art models. Along the way, you'll learn how to work with the Hugging Face Hub, the largest open-source catalog of models and datasets.</p>
+<p>Semantic segmentation is the task of classifying each pixel in an image. You can see it as a more precise way of classifying an image. It has a wide range of use cases in fields such as medical imaging and autonomous driving. For example, for our pizza delivery robot, it is important to know exactly where the sidewalk is in an image, not just whether there is a sidewalk or not. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-35736.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
+<p>Because semantic segmentation is a type of classification, the network architectures used for image classification and semantic segmentation are very similar. In 2014, a seminal paper by Long et al. used convolutional neural networks for semantic segmentation. More recently, Transformers have been used for image classification (e.g. ViT), and now they're also being used for semantic segmentation, pushing the state-of-the-art further. <span style="font-size:13px;">(Related: <a href="breaking-how-to-train-a-new-language-model-from-scratch-using-tra-35750.html" style="color:#2563eb; font-weight:600;">Breaking: How to train a new language model from scratc...</a>)</span></p>
+<p>SegFormer is a model for semantic segmentation introduced by Xie et al. in 2021. It has a hierarchical Transformer encoder that doesn't use positional encodings (in contrast to ViT) and a simple multi-layer perceptron decoder. SegFormer achieves state-of-the-art performance on multiple common datasets. Let's see how our pizza delivery robot performs for sidewalk images.</p>
+<p>In a recent development, the installation of git-lfs might be different on your system. Note that Google Colab has Git LFS pre-installed.</p>
+<p>The first step in any ML project is assembling a good dataset. In order to train a semantic segmentation model, we need a dataset with semantic segmentation labels. We can either use an existing dataset from the Hugging Face Hub, such as ADE20k, or create our own dataset by annotating images with corresponding segmentation maps.</p>
+<p>In a recent development, for our pizza delivery robot, we could use an existing autonomous driving dataset such as CityScapes or BDD100K. However, these datasets were captured by cars driving on the road. Since our delivery robot will be driving on the sidewalk, there will be a mismatch between the images in these datasets and the data our robot will see in the real world.</p>
+<p>Sources indicate that we don't want our delivery robot to get confused, so we have created our own semantic segmentation dataset using images captured on sidewalks. It's available at segments/sidewalk-semantic. This can be done using annotation platforms like CVAT orSegments.ai.</p>
+<p>It has been revealed that we'll load the full labeled sidewalk dataset here. Note that you can check out the examples directly in your browser.</p>
+<p>Now that we've created a upcoming dataset and pushed it to the Hugging Face Hub, we can load the dataset in a single line.</p>
+<p>Let's shuffle the dataset and split the dataset in a train and test set.</p>
+<p>We'll extract the number of labels and the human-readable ids, so we can configure the segmentation model correctly later on.</p>
+<p>A SegFormer model expects the input to be of a certain shape. To transform our training data to match the expected shape, we can use SegFormerImageProcessor. We could use the ds.map function to apply the image processor to the whole training dataset in advance, but this can take up a lot of disk space. Instead, we'll use a transform, which will only prepare a batch of data when that data is actually used (on-the-fly). This way, we can start training without waiting for further data preprocessing.</p>
+<p>In a recent development, in our transform, we'll also define some data augmentations to make our model more resilient to different lighting conditions. We'll use the ColorJitter function from torchvision to randomly change the brightness, contrast, saturation, and hue of the images in the batch.</p>
+<p>The SegFormer authors define 5 models with increasing sizes: B0 to B5. The following chart (taken from the original paper) highlights the performance of these different models on the ADE20K dataset, compared to other models.</p>
+<p>Sources indicate that here, we'll load the smallest SegFormer model (B0), pre-trained on ImageNet-1k. It's only about 14MB in size! Using a small model will make sure that our model can run smoothly on our pizza delivery robot.</p>
+<p>To fine-tune the model on our data, we'll use Hugging Face's Trainer API. We need to set up the training configuration and an evalutation metric to use a Trainer.</p>
+<p>First, we'll set up the TrainingArguments. This defines all training hyperparameters, such as learning rate and the number of epochs, frequency to save the model and so on. We also specify to push the model to the hub after training (push_to_hub=True) and specify a model name (hub_model_id).</p>
+<p>Recent findings suggest that next, we'll define a function that computes the evaluation metric we want to work with. Because we're doing semantic segmentation, we'll use the mean Intersection over Union (mIoU), directly accessible in the evaluate library. IoU represents the overlap of segmentation masks. Mean IoU is the average of the IoU of all semantic classes. Take a look at this blogpost for an overview of evaluation metrics for image segmentation.</p>
+<p id="sec-mid-35691">Because our model outputs logits with dimensions height/4 and width/4, we have to upscale them before we can compute the mIoU.</p>
+<p>Finally, we can instantiate a Trainer object.</p>
+<p>Now that our trainer is set up, training is as simple as calling the train function. We don't need to worry about managing our GPU(s), the trainer will take care of that.</p>
+<p>When we're done with training, we can push our fine-tuned model and the image processor to the Hub.</p>
+<p>This will also automatically create a model card with our results. We'll supply some extra information in kwargs to make the model card more complete.</p>
+<p>Now comes the exciting part, using our fine-tuned model! In this section, we'll show how you can load your model from the hub and use it for inference.</p>
+<p>However, you can also try out your model directly on the Hugging Face Hub, thanks to the cool widgets powered by the hosted inference API. If you pushed your model to the Hub in the previous step, you should see an inference widget on your model page. You can add default examples to the widget by defining example image URLs in your model card. See this model card as an example.</p>
+<p>We'll first load the model from the Hub using SegformerForSemanticSegmentation.from_pretrained().</p>
+<p>Next, we'll load an image from our test dataset.</p>
+<p>To segment this test image, we first need to prepare the image using the image processor. Then we forward it through the model.</p>
+<p>Sources indicate that we also need to remember to upscale the output logits to the original image size. In order to get the actual category predictions, we just have to apply an argmax on the logits.</p>
+<p>Sources indicate that now it's time to display the result. We'll display the result next to the ground-truth mask.</p>
+<p>What do you think? Would you send our pizza delivery robot on the road with this segmentation information?</p>
+<p>The result might not be perfect yet, but we can always expand our dataset to make the model more robust. We can now also go train a larger SegFormer model, and see how it stacks up.</p>
+<p>In a recent development, that's it! You now know how to create your own image segmentation dataset and how to use it to fine-tune a semantic segmentation model.</p>
+<p>We introduced you to some useful tools along the way, such as:.</p>
+<p>Recent findings suggest that we hope you enjoyed this post and learned something. Feel free to share your own model with us on Twitter (@TobiasCornille, @NielsRogge, and @huggingface).</p>
+<p>torch cannot be imported in this example colab script.</p>
+<p id="sec-end-35691">I think Google Colab comes pre-installed with PyTorch, otherwise I recommend the installation guide here: https://pytorch.org/get-started/locally/.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/fine-tune-segformer" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-35735.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35735. Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        </a>
+        
+        <a href="latest-update-fine-tune-vit-for-image-classification-with-transfo-35696.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35696. Latest Update: Fine-Tune ViT for Image Classification with 🤗 Transformers
+        </a>
+        
+        <a href="breaking-train-and-fine-tune-sentence-transformers-models-35641.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35641. Breaking: Train and Fine-Tune Sentence Transformers Models
+        </a>
+        
+        <a href="fine-tune-whisper-for-multilingual-asr-with-transformers-35612.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35612. Fine-Tune Whisper For Multilingual ASR with 🤗 Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Candidate Search Retrieval Pipeline with 3 Grounded Fallbacks</title>
+    <meta name="description" content="For recruiting candidate search, use staged retrieval with explicit collections, bounded queries, and source context that survives every fallback. Start wi">
+    <meta name="keywords" content="candidate, source, stage, evidence, tenant, recent, search, fallback">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/nodejs-candidate-search-retrieval-pipeline-with-3-grounded-fallba-23452.html">
+    
+    <meta property="og:title" content="Node.js Candidate Search Retrieval Pipeline with 3 Grounded Fallbacks">
+    <meta property="og:description" content="For recruiting candidate search, use staged retrieval with explicit collections, bounded queries, and source context that survives every fallback. Start wi">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F79mz82bit2tcn0uk2tdd.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/nodejs-candidate-search-retrieval-pipeline-with-3-grounded-fallba-23452.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Node.js Candidate Search Retrieval Pipeline with 3 Grounded Fallbacks">
+    <meta name="twitter:description" content="For recruiting candidate search, use staged retrieval with explicit collections, bounded queries, and source context that survives every fallback. Start wi">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F79mz82bit2tcn0uk2tdd.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Node.js Candidate Search Retrieval Pipeline with 3 Grounded Fallbacks", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F79mz82bit2tcn0uk2tdd.png"], "datePublished": "2026-11-20T23:57:21", "dateModified": "2026-11-21T00:03:27.450893", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/nodejs-candidate-search-retrieval-pipeline-with-3-grounded-fallba-23452.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Node.js Candidate Search Retrieval Pipeline with 3 Grounded Fallbacks?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Node.js Candidate Search Retrieval Pipeline with 3 Grounded ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Node.js Candidate Search Retrieval Pipeline with 3 Grounded Fallbacks</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 20 Nov 2026 &bull; ⏱️ 5 min read (953 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>For recruiting candidate search, use staged retrieval with explicit collections, bounded queries, and source context that survives every fallback.</li><li style='margin-bottom:6px;'>This is a retrieval problem before it is a generation problem.</li><li style='margin-bottom:6px;'>According to recent reports, I use three stages.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-23452"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-23452"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-23452"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Node.js Candidate Search Retrieval Pipeline with 3 Grounded Fallbacks" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F79mz82bit2tcn0uk2tdd.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-23452">For recruiting candidate search, use staged retrieval with explicit collections, bounded queries, and source context that survives every fallback. Start with the tenant's private index, broaden only when its evidence is thin, and return document identifiers or URLs beside each claim. A slower, less complete answer is preferable to a fast match that a recruiter cannot audit.</p>
+<p>This is a retrieval problem before it is a generation problem. The flow below keeps candidate records, access-control metadata, and citation fields together; it also gives a web-backed lookup a fixed budget so an unavailable source cannot hold the search screen hostage. <span style="font-size:13px;">(Related: <a href="tech-report-anthropic-gave-40m-to-an-ai-safety-group-most-of-the--24205.html" style="color:#2563eb; font-weight:600;">Tech Report: Anthropic gave $40M to an AI safety group....</a>)</span></p>
+<p>According to recent reports, I use three stages. Stage one searches the tenant's curated candidate collection with hard filters. Stage two searches a shared, policy-approved talent pool only when the first stage returns too few eligible hits. Stage three performs a web lookup for public portfolio evidence, then marks those results as external and lower-trust. Every stage emits the same result contract, so the caller does not need to know which path answered. <span style="font-size:13px;">(Related: <a href="at-historic-summit-xi-and-putin-share-global-stage-with-weakened--24204.html" style="color:#2563eb; font-weight:600;">At historic summit, Xi and Putin share global stage wit...</a>)</span></p>
+<p>Sources indicate that the fallback condition is evidence-based, not an exception catch. A result set can be non-empty and still fail a minimum score, freshness, or citation threshold. Conversely, a transient 429 from a web source should consume one retry and then end the stage; it should not silently turn a private search into an unbounded scrape.</p>
+<p>Recent findings suggest that here is a compact TypeScript skeleton. The adapters are deliberately boring: a vector store, a keyword store, and a web search service can be swapped independently. tenantId, ACL labels, and source locators remain mandatory at the boundary.</p>
+<p>In a recent development, the sample uses an intentionally small limit and timeout. Tune them with an evaluation set, not intuition. The vital invariant is that webIndex cannot remove the tenant filter from earlier hits, and an empty external response is still an honest result rather than a fabricated candidate.</p>
+<p>Recent findings suggest that index one candidate profile as several traceable items: employment history, skills, certifications, and portfolio links. Each item keeps a stable evidence.id, its original URL or document key, an patch timestamp, and the access labels needed by the viewer. Store the source text or excerpt alongside the embedding. Rewriting a profile into a summary before indexing makes later review harder because the summary no longer proves what the source mentioned. I also keep the source system's content version and deletion marker, because a recruiter should be able to tell whether a result was current when the query ran. When a candidate changes employers, the old item is not silently overwritten: the newly introduced item receives a new version, the old one is excluded from normal retrieval, and an audit record points to the replacement. That extra bookkeeping feels slow during ingestion, but it prevents a familiar support question: “Why did this answer cite a role the candidate left last year?”.</p>
+<p id="sec-mid-23452">Apply authorization twice. Filter at query time, then filter again after merging stages. The second check protects against adapter mistakes and stale ACL metadata. A shared record that lacks a tenant mapping is not a public record; quarantine it from the result set and log the missing field.</p>
+<p>It has been revealed that for generation, pass evidence as numbered passages and require citations in the output schema. The UI should link [3] to the stored locator, not to a URL invented by the model. If no passage supports a claim, return “insufficient evidence” and let the recruiter refine the query.</p>
+<p>Industry observers note that set a deadline per stage and a total deadline for the request. In the example, the total can reach roughly 2.6 seconds before serialization, so production code should reserve headroom for reranking and rendering. Record stage latency, hit count, minimum score, citation count, timeout, and retry status as structured fields. A single aggregate latency metric will hide a web fallback that is quietly consuming the budget.</p>
+<p>Retry only conditions that are plausibly temporary. HTTP 429 deserves a bounded retry and respect for the source's Retry-After guidance when available. A malformed query, a denied tenant, or a 4xx policy response should not be retried. When a stage times out, return the evidence already collected and mark the response as partial so users understand why public results are absent.</p>
+<p>Recent findings suggest that make ingestion idempotent. Derive an item key from tenant, candidate, source locator, and content version; upsert that key and explicitly delete records removed from the source. Otherwise a profile update can leave two stale embeddings, and a fallback may cite the older one. This is an ordinary data-lifecycle issue, but it directly changes ranking quality.</p>
+<p>In a recent development, the catch is that broadening search can change the meaning of “best candidate.” If a job requires verified work authorization or an internal referral, a web fallback is not suitable even when it improves recall. Stick with the private index and return fewer results. If regional residency rules prohibit a shared pool, remove that stage rather than hiding it behind a flag.</p>
+<p>In a recent development, I am not sure one score threshold will transfer across job families: a data-engineering query and a design query have different vocabulary and profile density. Resolve that uncertainty with a labeled set of recruiter queries, measuring recall at a fixed citation requirement and checking false-positive rates by tenant. Keep threshold changes versioned so an evaluation can explain why a candidate moved.</p>
+<p id="sec-end-23452">The right architecture is therefore a policy pipeline, not a list of providers. Keep the internal interface stable, make each fallback observable, and let evidence quality decide when to broaden. Generation can summarize the returned passages later; retrieval must first prove where they came from.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/chrysostomhayes8537/nodejs-candidate-search-retrieval-pipeline-with-3-grounded-fallbacks-581m" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="building-a-human-review-pipeline-for-ai-search-a-practical-develo-12308.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #12308. Building a Human Review Pipeline for AI Search: A Practical Developer’s Guide
+        </a>
+        
+        <a href="latest-update-google-search-adds-a-clever-easter-egg-for-robert-p-23991.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23991. Latest Update: Google Search adds a clever Easter egg for Robert Pattinson’s James Bond casting [Video]
+        </a>
+        
+        <a href="google-health-513-rolling-out-improved-food-search-more-swimming--23945.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23945. Google Health 5.13 rolling out: Improved food search, more swimming controls
+        </a>
+        
+        <a href="your-ai-pipeline-works-but-can-you-trust-it-23939.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23939. Your AI Pipeline Works. But Can You Trust It?
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

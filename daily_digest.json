@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-20T16:06:28.262086",
-  "totalArticles": 12656,
+  "generatedAt": "2026-11-21T00:50:52.382570",
+  "totalArticles": 12552,
   "categoryBreakdown": {
-    "Business & Policy": 591,
-    "General": 10239,
-    "AI & Tech": 1106,
-    "Hardware & Chips": 166,
-    "Gadgets": 331,
-    "EV & Auto": 223
+    "General": 10159,
+    "Business & Policy": 614,
+    "AI & Tech": 1055,
+    "Hardware & Chips": 164,
+    "Gadgets": 335,
+    "EV & Auto": 225
   },
   "topSources": {
-    "Co": 903,
-    "Hugging Face": 898,
+    "Co": 927,
+    "Hugging Face": 913,
     "Sciencedaily": 209,
     "Eschoolnews": 200,
     "Cbssports": 171,
     "Electrek": 149,
-    "Yahoo": 149,
-    "Dw": 136,
+    "Yahoo": 145,
     "Dailymail": 135,
-    "Realworkfromanywhere": 128
+    "Dw": 135,
+    "Realworkfromanywhere": 125
   },
   "latestHeadlines": [
     {
-      "id": 12656,
-      "title": "Peltola win doesn’t end DOJ scrutiny of Alaska Senate race, officials say",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/peltola-win-doesnt-end-doj-scrutiny-of-alaska-senate-race-officia-12656.html",
+      "id": 24208,
+      "title": "Hakeem Jeffries and his team will seek to deliver a newly introduced era for House Democrats",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/hakeem-jeffries-and-his-team-will-seek-to-deliver-a-newly-introdu-24208.html",
+      "category": "General"
+    },
+    {
+      "id": 24207,
+      "title": "Tech Report: Hobbled at home, Trump turns abroad",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-hobbled-at-home-trump-turns-abroad-24207.html",
       "category": "Business & Policy"
     },
     {
-      "id": 12655,
-      "title": "Senate panel vote on National Science Foundation nominee is abruptly pulled",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/senate-panel-vote-on-national-science-foundation-nominee-is-abrup-12655.html",
+      "id": 24206,
+      "title": "Trump calls Putin and Xi friends. They have other prepares.",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/trump-calls-putin-and-xi-friends-they-have-other-prepares-24206.html",
       "category": "Business & Policy"
     },
     {
-      "id": 12654,
-      "title": "Latest Update: At least seven progressives voted against Hakeem Jeffries for speaker",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/latest-update-at-least-seven-progressives-voted-against-hakeem-je-12654.html",
-      "category": "General"
+      "id": 24205,
+      "title": "Tech Report: Anthropic gave $40M to an AI safety group. Most of the candidates it backed won.",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-anthropic-gave-40m-to-an-ai-safety-group-most-of-the--24205.html",
+      "category": "AI & Tech"
     },
     {
-      "id": 12653,
-      "title": "How to train a upcoming language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-train-a-upcoming-language-model-from-scratch-using-transfo-12653.html",
-      "category": "General"
+      "id": 24204,
+      "title": "At historic summit, Xi and Putin share global stage with weakened Trump",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/at-historic-summit-xi-and-putin-share-global-stage-with-weakened--24204.html",
+      "category": "Business & Policy"
     },
     {
-      "id": 12652,
-      "title": "Breaking: How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-how-to-generate-text-using-different-decoding-methods-fo-12652.html",
-      "category": "General"
+      "id": 24203,
+      "title": "Trump displays an all-male lineup of top aides on Asia trip",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/trump-displays-an-all-male-lineup-of-top-aides-on-asia-trip-24203.html",
+      "category": "Business & Policy"
     },
     {
-      "id": 12651,
-      "title": "Tech Report: The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-the-reformer-pushing-the-limits-of-language-modeling-12651.html",
-      "category": "General"
+      "id": 24202,
+      "title": "Breaking: Are Republican voters still loyal to Trump? What new polls say.",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-are-republican-voters-still-loyal-to-trump-what-new-poll-24202.html",
+      "category": "Business & Policy"
     },
     {
-      "id": 12650,
-      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-12650.html",
-      "category": "General"
+      "id": 24201,
+      "title": "Tracking who Trump is appointing to fill key administration roles",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/tracking-who-trump-is-appointing-to-fill-key-administration-roles-24201.html",
+      "category": "Business & Policy"
     },
     {
-      "id": 12649,
-      "title": "Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/transformer-based-encoder-decoder-models-12649.html",
-      "category": "General"
+      "id": 24200,
+      "title": "Proposed change to SNAP threatens free school meals for 1.7 million children",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/proposed-change-to-snap-threatens-free-school-meals-for-17-millio-24200.html",
+      "category": "Business & Policy"
     },
     {
-      "id": 12648,
-      "title": "Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/hyperparameter-search-with-transformers-and-ray-tune-12648.html",
-      "category": "General"
-    },
-    {
-      "id": 12647,
-      "title": "Breaking: Porting fairseq wmt19 translation system to transformers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-porting-fairseq-wmt19-translation-system-to-transformers-12647.html",
+      "id": 24199,
+      "title": "Breaking: Absent Republicans are a problem for House leaders in the lame-duck session",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-absent-republicans-are-a-problem-for-house-leaders-in-th-24199.html",
       "category": "General"
     }
   ]

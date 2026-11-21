@@ -4,97 +4,97 @@
     <title>Portal Berita - Hardware & Chips</title>
     <link>https://railfansday.github.io/artikelsemua74/</link>
     <description>Curated news feed for Hardware & Chips.</description>
-    <lastBuildDate>Fri, 20 Nov 2026 16:06:11 -0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 00:50:42 -0000</lastBuildDate>
     
             <item>
-                <title>Scaling-up BERT Inference on CPU (Part 1)</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/scaling-up-bert-inference-on-cpu-part-1-12632.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/scaling-up-bert-inference-on-cpu-part-1-12632.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>This newly introduced chip could slash data center energy waste</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/this-newly-introduced-chip-could-slash-data-center-energy-waste-24176.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/this-newly-introduced-chip-could-slash-data-center-energy-waste-24176.html</guid>
+                <description>As data centers consume more energy to support growing digital demands, engineers at the University of California San Diego have introduced a new chip design that could make powering graphics processing units (GPUs) more efficient. The innovation focuses on a key function in elec...</description>
             </item>
             <item>
-                <title>Scaling up BERT-like model Inference on modern CPU  - Part 2</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/scaling-up-bert-like-model-inference-on-modern-cpu-part-2-12614.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/scaling-up-bert-like-model-inference-on-modern-cpu-part-2-12614.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Brain-inspired chip runs near absolute zero and could transform quantum computing</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/brain-inspired-chip-runs-near-absolute-zero-and-could-transform-q-24151.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/brain-inspired-chip-runs-near-absolute-zero-and-could-transform-q-24151.html</guid>
+                <description>In a recent development, researchers at the University of Hong Kong (HKU) have unveiled a significant advance in cryogenic electronics that could help overcome key challenges in quantum computing and support future deep space missions. The team, from HKU's Department of Electrica...</description>
             </item>
             <item>
-                <title>Accelerating PyTorch distributed fine-tuning with Intel technologies</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-12613.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-12613.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Industry News: Walmart has slashed $700 off this MSI gaming laptop</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/industry-news-walmart-has-slashed-700-off-this-msi-gaming-laptop-24148.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/industry-news-walmart-has-slashed-700-off-this-msi-gaming-laptop-24148.html</guid>
+                <description>In a recent development, walmart is listing an RTX 5060-powered gaming laptop at a very affordable price in today's deal. You can pick up the MSI Crosshair 16 gaming laptop for just $1,399 right now and start playing the latest games using Nvidia's current-generation graphics pro...</description>
             </item>
             <item>
-                <title>Intel and Hugging Face Partner to Democratize Machine Learning Hardware Acceleration</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/intel-and-hugging-face-partner-to-democratize-machine-learning-ha-12562.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/intel-and-hugging-face-partner-to-democratize-machine-learning-ha-12562.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Breaking: New programmable photonic chip can control how fast light moves</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/breaking-new-programmable-photonic-chip-can-control-how-fast-ligh-24139.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/breaking-new-programmable-photonic-chip-can-control-how-fast-ligh-24139.html</guid>
+                <description>Researchers at Seoul National University and the University of Seoul have developed a programmable photonic integrated circuit that can slow light whenever needed. The team was led by Professors Namkyoo Park and Sunkyu Yu of the Department of Electrical and Computer Engineering a...</description>
             </item>
             <item>
-                <title>Latest Update: Accelerate your models with 🤗 Optimum Intel and OpenVINO</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/latest-update-accelerate-your-models-with-optimum-intel-and-openv-12513.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/latest-update-accelerate-your-models-with-optimum-intel-and-openv-12513.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>MIT’s fresh lidar chip could give self-driving cars a wider view</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/mits-fresh-lidar-chip-could-give-self-driving-cars-a-wider-view-24137.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/mits-fresh-lidar-chip-could-give-self-driving-cars-a-wider-view-24137.html</guid>
+                <description>Recent findings suggest that lidar technology uses pulses of infrared light to calculate distances and create detailed 3D maps of the surrounding environment. This allows autonomous vehicles to detect objects in their path and respond quickly. However, conventional lidar sensors ...</description>
             </item>
             <item>
-                <title>Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-12494.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-12494.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Nvidia's revenue hits $115.8 billion as Vera Rubin generates $20 billion in another record-setting quarter</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/nvidias-revenue-hits-1158-billion-as-vera-rubin-generates-20-bill-24131.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/nvidias-revenue-hits-1158-billion-as-vera-rubin-generates-20-bill-24131.html</guid>
+                <description>For the first time in its 33-year history, Nvidia on Tuesday reported quarterly financial results without Jensen Huang at its helm or on the call, after its cofounder and longtime chief executive departed five days ago. To no one's surprise, Nvidia continues to set fresh financia...</description>
             </item>
             <item>
-                <title>Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 2</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-12478.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-12478.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Nvidia board faction angling for Jensen Huang return as CEO, report claims</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/nvidia-board-faction-angling-for-jensen-huang-return-as-ceo-repor-24127.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/nvidia-board-faction-angling-for-jensen-huang-return-as-ceo-repor-24127.html</guid>
+                <description>It has been revealed that even though Nvidia claims that it does not plan to bring its former CEO Jensen Huang back to the organization, that hasn't stopped some of its board members from continuing to lobby for his return. Following the news that some of Huang's allies have form...</description>
             </item>
             <item>
-                <title>Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-12462.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-12462.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Tell us your favourite Grand Theft Auto gaming memory and win a copy of GTA 6</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/tell-us-your-favourite-grand-theft-auto-gaming-memory-and-win-a-c-24111.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/tell-us-your-favourite-grand-theft-auto-gaming-memory-and-win-a-c-24111.html</guid>
+                <description>Hello! This piece is part of our GTA Week coverage here on Eurogamer, as we explore all things Grand Theft Auto across the launch period of the wildly anticipated Grand Theft Auto 6. For more like this, see our GTA Week hub - or for the exact opposite, look out for our Not-GTA we...</description>
             </item>
             <item>
-                <title>Accelerating Stable Diffusion Inference on Intel CPUs</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/accelerating-stable-diffusion-inference-on-intel-cpus-12457.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/accelerating-stable-diffusion-inference-on-intel-cpus-12457.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Nvidia notes it’s ‘absurd’ to assume it predicted the agentic moment during Vera’s development</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/nvidia-notes-its-absurd-to-assume-it-predicted-the-agentic-moment-24109.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/nvidia-notes-its-absurd-to-assume-it-predicted-the-agentic-moment-24109.html</guid>
+                <description>One criticism that has emerged of Nvidia’s Vera CPU, driven by AMD, is that Nvidia – and, to a lesser degree, Arm with its AGI CPU – couldn’t have developed an “agentic CPU,” as the chip is often characterized in Nvidia’s marketing materials. Ian Finder, the head of Nvidia’s data...</description>
             </item>
             <item>
-                <title>Industry News: Optimizing Stable Diffusion for Intel CPUs with NNCF and 🤗 Optimum</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/industry-news-optimizing-stable-diffusion-for-intel-cpus-with-nnc-12429.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/industry-news-optimizing-stable-diffusion-for-intel-cpus-with-nnc-12429.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Industry News: ‘Minecraft Mommy’ goes viral on TikTok for giving good boys gaming tips</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/industry-news-minecraft-mommy-goes-viral-on-tiktok-for-giving-goo-24106.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/industry-news-minecraft-mommy-goes-viral-on-tiktok-for-giving-goo-24106.html</guid>
+                <description>A TikTok creator dubbed “Minecraft Mommy” is going viral for teaching her “good boys” how to find diamonds and kill zombies in one hit. In a recent development, the diamond-hunting clip appeared on footyfanatics5 under the title “Minecraft Diamond Hunting: Find Diamonds Like a Go...</description>
             </item>
             <item>
-                <title>Hugging Face and AMD partner on accelerating state-of-the-art models for CPU and GPU platforms</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-12418.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-12418.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Nvidia promises employee pay raises, equity before December to quell unrest in wake of Jensen Huang scandal</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/nvidia-promises-employee-pay-raises-equity-before-december-to-que-24091.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/nvidia-promises-employee-pay-raises-equity-before-december-to-que-24091.html</guid>
+                <description>It has been revealed that nvidia today held its first all-hands meeting since the resignation of co-founder and former CEO Jensen Huang. According to Wired, interim CEO Colette Kress offered more money and equity on a faster-than-expected schedule to calm staffers' nerves."So I’m...</description>
             </item>
             <item>
-                <title>Fine-tuning Stable Diffusion models on Intel CPUs</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/fine-tuning-stable-diffusion-models-on-intel-cpus-12403.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/fine-tuning-stable-diffusion-models-on-intel-cpus-12403.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Nvidia GeForce driver bug reportedly hammers SSDs with up to 30GB of writes per hour</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/nvidia-geforce-driver-bug-reportedly-hammers-ssds-with-up-to-30gb-24083.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/nvidia-geforce-driver-bug-reportedly-hammers-ssds-with-up-to-30gb-24083.html</guid>
+                <description>Nvidia’s GeForce driver 621.14 is reportedly causing excessive background writes on idle PCs, inducing extra wear on SSDs. One user measured about 3GB an hour on the susceptible driver, and another mentioned estimated up to 30GB/hour on the newer 621.24. This follows a similar-lo...</description>
             </item>
             <item>
-                <title>Latest Update: AMD + 🤗: Large Language Models Out-of-the-Box Acceleration with AMD GPU</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/latest-update-amd-large-language-models-out-of-the-box-accelerati-12336.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/latest-update-amd-large-language-models-out-of-the-box-accelerati-12336.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>AMD’s Twitter brag that it ‘loves gamers’ met with savage Community Note</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/amds-twitter-brag-that-it-loves-gamers-met-with-savage-community--24080.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/amds-twitter-brag-that-it-loves-gamers-met-with-savage-community--24080.html</guid>
+                <description>AMD Japan's X account has been met with sharp reproach after claiming the tech giant loves gamers and values its interactions with gamers above all else, with commenters and even a community note expressing dissent at the sentiment, owing to AMD's comments on its "data center-fir...</description>
             </item>
             <item>
-                <title>Accelerate StarCoder with 🤗 Optimum Intel on Xeon: Q8/Q4 and Speculative Decoding</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-12314.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-12314.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Cambridge scientists create a $10 chip that could put a medical lab on your wrist</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/cambridge-scientists-create-a-10-chip-that-could-put-a-medical-la-24079.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/cambridge-scientists-create-a-10-chip-that-could-put-a-medical-la-24079.html</guid>
+                <description>According to recent reports, A new optical sensor costing just $10 could bring laboratory-level precision to wearable health monitors, potentially allowing people to track blood glucose without needles. The technology could also transform food testing, industrial quality control,...</description>
             </item>
             <item>
-                <title>Latest Update: CPU Optimized Embeddings with 🤗 Optimum Intel and fastRAG</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/latest-update-cpu-optimized-embeddings-with-optimum-intel-and-fas-12288.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/latest-update-cpu-optimized-embeddings-with-optimum-intel-and-fas-12288.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Breaking: The Nvidia CEO scandal is impacting Asian American women in tech and academia. Here’s how</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/breaking-the-nvidia-ceo-scandal-is-impacting-asian-american-women-24070.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/breaking-the-nvidia-ceo-scandal-is-impacting-asian-american-women-24070.html</guid>
+                <description>The reveal earlier this month that billionaire Nvidia CEO Jensen Huang had extramarital affairs sent shock waves through the tech world, particularly with Asian Americans who revered him as a once-in-a-generation talent. But what has hit hard for Asian American women is the disco...</description>
             </item>
 </channel>
 </rss>

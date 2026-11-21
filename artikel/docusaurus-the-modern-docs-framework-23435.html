@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docusaurus – The Modern Docs Framework</title>
+    <meta name="description" content="Recent findings suggest that docusaurus is an open‑source static‑site generator focused on documentation. Built and maintained by Meta (formerly Facebook),">
+    <meta name="keywords" content="docusaurus, docs, recent, version, plugin, site, build, theme">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/docusaurus-the-modern-docs-framework-23435.html">
+    
+    <meta property="og:title" content="Docusaurus – The Modern Docs Framework">
+    <meta property="og:description" content="Recent findings suggest that docusaurus is an open‑source static‑site generator focused on documentation. Built and maintained by Meta (formerly Facebook),">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9ranfrg8ppwy5d5qkmwf.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/docusaurus-the-modern-docs-framework-23435.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Docusaurus – The Modern Docs Framework">
+    <meta name="twitter:description" content="Recent findings suggest that docusaurus is an open‑source static‑site generator focused on documentation. Built and maintained by Meta (formerly Facebook),">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9ranfrg8ppwy5d5qkmwf.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Docusaurus – The Modern Docs Framework", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9ranfrg8ppwy5d5qkmwf.png"], "datePublished": "2026-11-21T00:00:26", "dateModified": "2026-11-21T00:03:26.363258", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/docusaurus-the-modern-docs-framework-23435.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Docusaurus – The Modern Docs Framework?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Docusaurus – The Modern Docs Framework' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Docusaurus – The Modern Docs Framework</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 3 min read (519 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that docusaurus is an open‑source static‑site generator focused on documentation.</li><li style='margin-bottom:6px;'>According to recent reports, speed to ship – A working docs site is ready after npm start.</li><li style='margin-bottom:6px;'>TL;DR: If you already use React or a Node‑based build system, Docusaurus fits naturally and reduces the overhead of maintaining separate documentation tooling.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-23435"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-23435"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-23435"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Docusaurus – The Modern Docs Framework" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9ranfrg8ppwy5d5qkmwf.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-23435">Recent findings suggest that docusaurus is an open‑source static‑site generator focused on documentation. Built and maintained by Meta (formerly Facebook), it lets you create, version, and deploy documentation sites with zero configuration or full customisation using React, Markdown, and MDX.</p>
+<p>According to recent reports, speed to ship – A working docs site is ready after npm start. Maintainable codebase – Docs live alongside source code, enabling PR‑driven updates. Scalable – Handles single‑page docs to multi‑version portals with the same build pipeline. Community &amp; Vendor backing – Backed by Meta, with an active ecosystem of plugins and themes. <span style="font-size:13px;">(Related: <a href="tech-report-anthropic-gave-40m-to-an-ai-safety-group-most-of-the--24205.html" style="color:#2563eb; font-weight:600;">Tech Report: Anthropic gave $40M to an AI safety group....</a>)</span></p>
+<p>TL;DR: If you already use React or a Node‑based build system, Docusaurus fits naturally and reduces the overhead of maintaining separate documentation tooling.</p>
+<p>According to recent reports, docs live in the repo – No separate repository or wiki. PR‑driven updates – Docs are changed through normal code review flow. Automatic linking – [@site] URLs resolve to the site’s base URL, avoiding hard‑coded links. Consistent styling – A single theme ensures all pages look identical, reducing UI drift.</p>
+<p>Because Docusaurus outputs static HTML, any CI system can treat it like a normal build artifact.</p>
+<p>Replace the cloudflare/pages-action step with gh-pages, Azure/static-web-apps-deploy, or Netlify steps as needed.</p>
+<p>Sources indicate that docusaurus copies the current docs/ folder into versioned_docs/version‑2.0/. A selector component appears automatically, letting visitors pick the version they need.</p>
+<p>Version only on major releases – Keeps the version list short. Maintain a changelog – Use the built‑in blog or a dedicated CHANGELOG.md. <span style="font-size:13px;">(Related: <a href="tech-report-scientists-built-the-hardest-ai-test-ever-and-the-res-24185.html" style="color:#2563eb; font-weight:600;">Tech Report: Scientists built the hardest AI test ever ...</a>)</span></p>
+<p id="sec-mid-23435">Markdown – Perfect for plain text, tables, code fences. MDX – Allows JSX inside docs, letting you embed live components, charts, or interactive demos.</p>
+<p>In a recent development, when to use MDX? When you need dynamic UI (e.g., visualising API responses) or want to reuse existing React components.</p>
+<p>According to recent reports, algolia DocSearch (recommended for large sites) – Free tier for open‑source projects. Lunr.js – Zero‑config, client‑side index for smaller docs.</p>
+<p>Theme Swizzling – Override any component by copying it into src/theme. Official Plugins – @docusaurus/plugin-content-docs, @docusaurus/plugin-content-blog, @docusaurus/plugin-google-analytics, etc. Community Plugins – docusaurus-plugin-sitemap, docusaurus-plugin-pwa, docusaurus-plugin-openapi.</p>
+<p>Edit src/theme/Navbar/index.js to add a custom logo or extra navigation items.</p>
+<p>All integrations rely on the same static artifact (/build).</p>
+<p>In a recent development, keep docs in the same repo as the code they describe. Use versioning for every public release. Leverage MDX for component demos; avoid over‑using React in simple prose. Enable Algolia DocSearch for larger sites (free for OSS). Add a “Edit this page” link – editUrl in docusaurus.config.js encourages community contributions. Automate deployment in your CI pipeline – a single npm run build &amp;&amp; deploy-step is enough. Monitor bundle size – Docusaurus ships a default theme (~200 KB gzipped); prune unused plugins for faster builds.</p>
+<p>Official site &amp; docs – https://docusaurus.io
+GitHub repo – https://github.com/facebook/docusaurus
+Algolia DocSearch – https://docsearch.algolia.com/
+“Getting Started” tutorial – https://docusaurus.io/docs/next/installation
+Blog post on versioning – https://docusaurus.io/docs/next/versioning.</p>
+<p id="sec-end-23435">Industry observers note that ready to publish? Save this file as docusaurus-overview.md (or any slug you prefer) and run the CLI if you want to regenerate, or edit directly. Let me know if you need any further tweaks.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/harshgupta71/docusaurus-the-modern-docs-framework-1m0c" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="re-implementing-nth-child-with-modern-css-23944.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23944. Re-Implementing :nth-child() With Modern CSS
+        </a>
+        
+        <a href="taming-typography-building-a-modern-css-reset-23938.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23938. Taming Typography: Building a Modern CSS Reset
+        </a>
+        
+        <a href="microsofts-official-python-agent-framework-hijacked-to-distribute-23886.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23886. Microsoft's official Python agent framework hijacked to distribute malware
+        </a>
+        
+        <a href="tech-report-scarfbench-benchmarking-ai-agents-for-enterprise-java-23824.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23824. Tech Report: ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

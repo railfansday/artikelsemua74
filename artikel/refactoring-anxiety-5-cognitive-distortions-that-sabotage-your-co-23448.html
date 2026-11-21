@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refactoring Anxiety: 5 Cognitive Distortions That Sabotage Your Code Cleanup</title>
+    <meta name="description" content="According to recent reports, you stare at the legacy module. You know it needs refactoring. The tech debt is piling up, the bug reports are mounting, and e">
+    <meta name="keywords" content="code, refactoring, recent, distortion, anxiety, cognitive, reframe, reports">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/refactoring-anxiety-5-cognitive-distortions-that-sabotage-your-co-23448.html">
+    
+    <meta property="og:title" content="Refactoring Anxiety: 5 Cognitive Distortions That Sabotage Your Code Cleanup">
+    <meta property="og:description" content="According to recent reports, you stare at the legacy module. You know it needs refactoring. The tech debt is piling up, the bug reports are mounting, and e">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn4dll3bjbzhex4jb5n4m.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/refactoring-anxiety-5-cognitive-distortions-that-sabotage-your-co-23448.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Refactoring Anxiety: 5 Cognitive Distortions That Sabotage Your Code Cleanup">
+    <meta name="twitter:description" content="According to recent reports, you stare at the legacy module. You know it needs refactoring. The tech debt is piling up, the bug reports are mounting, and e">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn4dll3bjbzhex4jb5n4m.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Refactoring Anxiety: 5 Cognitive Distortions That Sabotage Your Code Cleanup", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn4dll3bjbzhex4jb5n4m.png"], "datePublished": "2026-11-20T23:59:57", "dateModified": "2026-11-21T00:03:27.147065", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/refactoring-anxiety-5-cognitive-distortions-that-sabotage-your-co-23448.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Refactoring Anxiety: 5 Cognitive Distortions That Sabotage Your Code Cleanup?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Refactoring Anxiety: 5 Cognitive Distortions That Sabotage Y' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Refactoring Anxiety: 5 Cognitive Distortions That Sabotage Your Code Cleanup</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 20 Nov 2026 &bull; ⏱️ 4 min read (810 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, you stare at the legacy module.</li><li style='margin-bottom:6px;'>"What if I break something?" you think.</li><li style='margin-bottom:6px;'>If this sounds familiar, you're not dealing with a technical problem — you're dealing with refactoring anxiety, a specific form of cognitive distortion that hits developers when facing legacy code.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-23448"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-23448"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-23448"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Refactoring Anxiety: 5 Cognitive Distortions That Sabotage Your Code Cleanup" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn4dll3bjbzhex4jb5n4m.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-23448">According to recent reports, you stare at the legacy module. You know it needs refactoring. The tech debt is piling up, the bug reports are mounting, and every fresh feature takes twice as long as it should.</p>
+<p>But you can't bring yourself to touch it.</p>
+<p>"What if I break something?" you think. "What if I make it worse? Maybe I'm not smart enough to understand this code. Maybe I should just rewrite it from scratch.". <span style="font-size:13px;">(Related: <a href="think-ai-knows-what-its-doing-scientists-say-think-again-24170.html" style="color:#2563eb; font-weight:600;">Think AI "knows" what it’s doing? Scientists say think ...</a>)</span></p>
+<p>If this sounds familiar, you're not dealing with a technical problem — you're dealing with refactoring anxiety, a specific form of cognitive distortion that hits developers when facing legacy code. <span style="font-size:13px;">(Related: <a href="breaking-absent-republicans-are-a-problem-for-house-leaders-in-th-24199.html" style="color:#2563eb; font-weight:600;">Breaking: Absent Republicans are a problem for House le...</a>)</span></p>
+<p>Refactoring anxiety is the irrational fear that arises when a developer considers modifying existing code that "works but is a mess." It's not about the code itself — it's about the thoughts and beliefs you attach to the code.</p>
+<p>In Cognitive Behavioral Therapy (CBT), we learn that thoughts create feelings, not situations. The same legacy module that terrifies one developer is just "code to clean up" to another. The difference? The cognitive distortions running in the background.</p>
+<p>It has been revealed that the distortion: "This is fine for now. We'll refactor it in the next sprint.".</p>
+<p>According to recent reports, the reality: Tech debt compounds like financial debt. Every sprint you delay, the interest grows. The "next sprint" never comes because there's always something more urgent.</p>
+<p>Sources indicate that the CBT reframe: This is fortune telling + avoidance. You're predicting a future where you have time, which has never happened. Instead, ask: "What's the actual cost of not refactoring now?" Calculate the time spent on bugs + workarounds per week. Usually, the 2-hour refactor pays for itself in 2 weeks.</p>
+<p>The distortion: "The tests pass. It's working. Don't touch it.".</p>
+<p>Sources indicate that the reality: "Working" is a low bar. Code that "works" but is unreadable, untestable, or unmaintainable is a ticking time bomb. When it breaks (and it will), nobody will understand it.</p>
+<p>Recent findings suggest that the CBT reframe: This is mental filtering — you're focusing on "tests pass" while filtering out "nobody can maintain this." Ask: "What would a newly introduced dev need to change this code? If they can't, is it really working?".</p>
+<p>According to recent reports, the distortion: "I don't understand this code well enough. If I touch it, I'll introduce bugs.".</p>
+<p>In a recent development, the reality: This is imposter syndrome meeting catastrophizing. You're assuming you're not competent enough, and that any mistake will be catastrophic.</p>
+<p id="sec-mid-23448">Sources indicate that the CBT reframe: Ask: "What's the actual risk?" You have tests. You have version control. You have code review. The worst case is you revert a commit. That's not catastrophic — it's a Tuesday.</p>
+<p>Tool: Write a pre-refactoring thought record. List:.</p>
+<p>Recent findings suggest that the distortion: "This code is a mess. We should just rewrite it.".</p>
+<p>The reality: Rewrites are seductive but rarely the right choice. Joel Spolsky called it the single worst strategic mistake a software company can make. You're throwing away years of bug fixes, edge case handling, and institutional knowledge.</p>
+<p>The CBT reframe: This is all-or-nothing thinking — the code is either "perfect" or "garbage," with no middle ground. Ask: "Can I refactor one function? one module?" Incremental refactoring is boring, but it works. The "big rewrite" is emotional reasoning, not engineering.</p>
+<p>Sources indicate that the distortion: "I didn't write this. It's not my responsibility to fix it.".</p>
+<p>The reality: This is personalization gone in reverse. You're taking no responsibility, when in fact, any code you touch is now your responsibility. Leaving it broken is more irresponsible than fixing it.</p>
+<p>According to recent reports, the CBT reframe: Ask: "If I leave this, who will fix it? The next dev? Me in 6 months?" The answer is always "someone who has even less context than I do." That's not fair — to them, or to the codebase.</p>
+<p>Before you touch legacy code, take 5 minutes to write a pre-refactoring thought record:.</p>
+<p>This protocol takes 5 minutes and saves 5 hours of procrastination.</p>
+<p>Refactoring anxiety isn't about code — it's about cognitive distortions that make the task feel bigger than it is. The "We'll Fix It Later" Fallacy, the "I'll Make It Worse" Fear, the "Rewrite From Scratch" Urge — these are mental traps, not technical barriers.</p>
+<p>It has been revealed that the fix is a pre-refactoring thought record: identify the distortion, gather evidence, reframe, and proceed. Your code will thank you. Your anxiety will drop.</p>
+<p>It has been revealed that and that legacy module? It's not a monster. It's just code.</p>
+<p>Want to try the pre-refactoring thought record tool? The CBT Thought Record is free, works in your browser, and doesn't store your data.</p>
+<p id="sec-end-23448">Part of the CBT for Developers series — practical cognitive behavioral therapy for developer anxiety, burnout, and imposter syndrome.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/473185670/refactoring-anxiety-5-cognitive-distortions-that-sabotage-your-code-cleanup-2dmc" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-critical-java-vulnerability-puts-millions-of-sites-se-24067.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #24067. Tech Report: Critical Java vulnerability puts millions of sites, services, and devices at risk of remote code execution
+        </a>
+        
+        <a href="where-should-your-code-live-in-a-docker-sandbox-23913.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23913. Where should your code live in a Docker Sandbox?
+        </a>
+        
+        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-23871.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23871. Tiny Agents: an MCP-powered agent in 50 lines of code
+        </a>
+        
+        <a href="uncensored-ai-models-are-thriving-on-code-hosting-platforms-23846.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23846. Uncensored AI models are thriving on code hosting platforms
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

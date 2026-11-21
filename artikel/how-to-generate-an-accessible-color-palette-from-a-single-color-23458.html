@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to generate an accessible color palette from a single color</title>
+    <meta name="description" content="To get an accessible palette out of a single color, what worked for me was deciding first how much contrast each step of the scale has to have against the ">
+    <meta name="keywords" content="color, step, text, contrast, colors, mode, scale, light">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-an-accessible-color-palette-from-a-single-color-23458.html">
+    
+    <meta property="og:title" content="How to generate an accessible color palette from a single color">
+    <meta property="og:description" content="To get an accessible palette out of a single color, what worked for me was deciding first how much contrast each step of the scale has to have against the ">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fiz5e9i51p4bjqrm5rbc0.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-an-accessible-color-palette-from-a-single-color-23458.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to generate an accessible color palette from a single color">
+    <meta name="twitter:description" content="To get an accessible palette out of a single color, what worked for me was deciding first how much contrast each step of the scale has to have against the ">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fiz5e9i51p4bjqrm5rbc0.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "How to generate an accessible color palette from a single color", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fiz5e9i51p4bjqrm5rbc0.png"], "datePublished": "2026-11-20T23:56:43", "dateModified": "2026-11-21T00:03:27.754510", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-an-accessible-color-palette-from-a-single-color-23458.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding How to generate an accessible color palette from a single color?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'How to generate an accessible color palette from a single co' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>How to generate an accessible color palette from a single color</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 20 Nov 2026 &bull; ⏱️ 10 min read (1997 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>To get an accessible palette out of a single color, what worked for me was deciding first how much contrast each step of the scale has to have against the background, and only then computing the color that meets it.</li><li style='margin-bottom:6px;'>That's how color works in TaishoDS Core, a design system in HTML, CSS and JavaScript, no framework, which I've just released under the MIT license: the package is @taishods/core on npm and the source is on GitHub.</li><li style='margin-bottom:6px;'>It has been revealed that I started TaishoDS because I needed one system for my own products and for client work.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-23458"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-23458"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-23458"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="How to generate an accessible color palette from a single color" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fiz5e9i51p4bjqrm5rbc0.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-23458">To get an accessible palette out of a single color, what worked for me was deciding first how much contrast each step of the scale has to have against the background, and only then computing the color that meets it. My first attempt went the other way, spacing out lightness values, and it failed. I'll get to that below.</p>
+<p>That's how color works in TaishoDS Core, a design system in HTML, CSS and JavaScript, no framework, which I've just released under the MIT license: the package is @taishods/core on npm and the source is on GitHub. I tested it with 4,096 starting colors, in light and dark mode. Across the 81,920 steps that came out, the text on each step never dropped below a contrast ratio of 4.63. WCAG's AA level asks for 4.5. <span style="font-size:13px;">(Related: <a href="free-christian-gta-6-parody-game-released-where-the-devil-hunts-y-24197.html" style="color:#2563eb; font-weight:600;">Free Christian GTA 6 parody game released where the dev...</a>)</span></p>
+<p>It has been revealed that I started TaishoDS because I needed one system for my own products and for client work. Premium systems were out of my budget, and in the free ones I couldn't find the accessibility and the performance I was after in the same place. So I set one rule: quality has to be enforced by the system, not by discipline. For color, that rule means the contrast gets computed.</p>
+<p>The scale has ten steps, 100 to 1000. It's built like this, in this order:. <span style="font-size:13px;">(Related: <a href="tech-report-scientists-built-the-hardest-ai-test-ever-and-the-res-24185.html" style="color:#2563eb; font-weight:600;">Tech Report: Scientists built the hardest AI test ever ...</a>)</span></p>
+<p>After that, the step number means the same thing in any hue. A 500 stands about as far from the background whether it's blue or yellow, and a 600 holds light text on top in both.</p>
+<p>According to recent reports, the first engine did the obvious thing. It kept the hue and chroma of the brand color, threw away its lightness, and laid out ten fixed OKLCH lightness values, from 0.97 at step 100 down to 0.12 at step 1000. It looked even, and I took it for granted that contrast came out right on its own. That was only an assumption, picked up from what I'd been seeing in the tools around me.</p>
+<p>In a recent development, in late October I measured it with 648 colors spread around the hue wheel. For 45 of them, about 1 in 14, at least one step had text on it that fell below AA, and the worst pair, as computed, came in at 4.10. The brand color also never revealed up in its own scale: pass in #3b82f6 and you got ten blues, none of them #3b82f6.</p>
+<p>It has been revealed that I'm sharing this because mistakes don't embarrass me; they teach me. This one has a simple cause: WCAG contrast is computed from luminance, and two colors with the same OKLCH lightness don't have the same luminance. Evenly spaced lightness gives you a scale that looks orderly and tells you nothing about whether text will be readable.</p>
+<p>According to recent reports, A palette most of us know by heart makes the difference easy to see: Tailwind's. I measured the contrast on white of four of its 500 steps in version 4 (tailwindcss 4.3.5), computed from their OKLCH values. Next to them is the 500 that TaishoDS computes when you start from that same color:.</p>
+<p>Three of those four colors fall outside sRGB, so their number depends on the screen: on an sRGB screen, the four come out at 3.76, 3.81, 2.22 and 1.91. Tailwind is a fixed palette, which its documentation describes as carefully crafted by expert designers. Going by the numbers, my reading is that each color is tuned to look right and that the step number sorts shades from light to dark without aiming for a fixed ratio. For a palette that ships ready-made, that's a valid choice. I needed a different one because in TaishoDS the color comes from whoever uses the system, and nobody is going to hand-tune an arbitrary hex.</p>
+<p>It has been revealed that blue and red already had a step-500 contrast, so they stay there. Green and yellow are lighter: they sit on 400, and their 500 is a computed, darker color. When step 500 holds the starting color it keeps that color's contrast, which can run from 3.0 to 4.2; when it's a computed color, it gives 3.6. Red stays exact. Blue, green and yellow are outside sRGB: TaishoDS keeps them exact in the scale for wide-gamut screens and, in the sRGB scale, lowers their chroma to what that screen can show. That's why blue gets 3.70 and not 3.71.</p>
+<p>Starting from contrast isn't my idea. Adobe Leonardo generates scales from target ratios, and Material has it built into its tone scale: according to the code of its color library, a tone difference of 50 guarantees a contrast ratio of 4.5:1 or more. From Tailwind and Radix I took something else: both rotate the hue of their yellows as they get darker (Tailwind from about 102° to 54°; Radix, less). My reading is that they do it because a yellow darkened at a fixed hue ends up olive. In TaishoDS, the scale for #eab308 in light mode starts at a hue of 97° on step 100 and reaches 51° on step 1000, close to orange.</p>
+<p>Because dark mode is computed separately, the same color can land on different steps: #3b82f6 is 500 in light mode and 600 in dark. In both it appears exactly as you wrote it, and what changes is the scale around it.</p>
+<p>According to recent reports, the 4.63 from the top is the worst case in the whole sweep, and it isn't a one-off: nearly 200 scales across different hues give it, all on step 600 in dark mode. One of them is a magenta. That number is the computed one; measured on the colors once they're rounded to the 8 bits per channel a screen paints, the minimum is 4.59.</p>
+<p id="sec-mid-23458">Sources indicate that sometimes the engine moves the starting color. Between steps 500 and 600 there's a band of lightness where neither light nor dark text reaches AA on top, and no step aims there. The engine shifts with a margin: in light mode it moves any color that gives between 4.2 and 5.3 against the background, and in dark mode between 4.1 and 5.0, a zone wider than the band. If the brand color falls there, it gets shifted to the nearest edge. In the sweep that happened in 803 of the 8,192 scales, close to 1 in 10. In 521, no text reached AA. In 276, one already did and the color moved anyway, because of that margin. The remaining 6 are white and three near-white yellows, which fall outside the range of the lightest step (100 in light mode, 1000 in dark), and the largest shift was 0.029 in OKLCH lightness, under 3 points out of 100; the editor tells you when it happens and by how much. I decided it that way for two reasons, and both come from the rule at the top. One is that accessibility is a principle in Taisho. The other is how much more that principle is worth when it's computed and adjusted for you.</p>
+<p>In a recent development, what I measured is each step's text on that same step. Any two colors from the scale, paired with each other, are outside it.</p>
+<p>The sweep is also a grid of 16 values per channel, not all 16.7 million colors, and I ran it with the default grays: a theme can tint its grays, and that case isn't in these numbers.</p>
+<p>Industry observers note that the rest of this article, before and after this section, describes what the engine does today, with its numbers. This section covers what I found when I rechecked it and what it will do in version 0.17, which I'm already working on. The latest numbers are in the table at the end, next to today's.</p>
+<p>I went back over the warning the generator prints when it shifts a color, and found two things in the engine, plus a third in my own fix.</p>
+<p>According to recent reports, A correction can make things worse. The nearest edge can be step 500's, which sits at 4.2 against the background. Of the 797 scales that get shifted for falling in that zone, 401 go to that edge and end up, once shifted, below 4.5 against the background. In 97 of those 401, measured in 8 bits, the color used to reach it. #767676 in light mode is one of them: measured in 8 bits, it has 4.33:1 with text on it and 4.54:1 against the background, and after the shift it has 4.72 and 4.17. Unshifted, that gray reaches 4.5 against the background and can be used as text on the page. Shifted, it can't: the engine takes away something it had. It repairs one measurement and breaks another I wasn't looking at.</p>
+<p>In a recent development, it also moves colors that don't need it, because of the margin from the previous section. #2563EB in light mode gets 4.62:1 with text on it and 5.17:1 against the background, and it gets shifted anyway.</p>
+<p>It has been revealed that the third isn't in the published engine: it showed up in my fix, while I was working on the other two. The first version compared against the unrounded text gray. For #e22a99 in dark mode it got 4.5000, and what I was calling a pass is 4.48 on the 8 bits per channel the browser paints.</p>
+<p>Sources indicate that in 0.17 the engine measures both ratios, text on the color and the color against the background, and asks 4.5:1 of each. For a starting color that falls between two steps, and for the edge it would move to, it also measures them in 8 bits; the other steps of the scale stay on the computed value. A color between two steps that meets both stays exact. One that fails either gets shifted to the nearest edge that meets both, in whichever direction that is. If you'd rather keep your exact color even when it falls short, say so in the theme with seedFit: { brand: 'keep' }; 'shift' accepts the move. The warning prints both ratios, before and after, and the line to write.</p>
+<p>Industry observers note that the cost is that this edge is usually farther away: fewer colors get shifted, but the ones that do move farther. Among the shifted colors in that zone, the average shift goes from 0.013 to 0.030 in lightness, and the largest from 0.029 to 0.059. #767676 gets 0.019 lighter in OKLCH lightness today and will get 0.037 darker in 0.17. The lowest text contrast drops too, from 4.63 to 4.50, because colors that only just pass are no longer moved. Here's the same sweep, 4,096 colors and 8,192 scales, on today's engine and on 0.17's:.</p>
+<p>The quickest way is the homepage. It has a theme editor with a field where you can type a hex, and the whole page repaints with that color, with each step's text contrast shown. The editor calls the same function the package ships, which applies the theme in the browser without compiling CSS, in a project that already bundles its modules:.</p>
+<p>To use the whole system there are two routes. From a CDN it's three lines of HTML, listed in the installation guide, and nothing to install. With the package, the CSS is compiled with your own colors and fonts:.</p>
+<p>I started this because I didn't want contrast to depend on me remembering to check it on every project. For color, it no longer does: I pick one and the system works out the rest. It's only one part of a design system, but it's the part that convinced me the rule could actually be kept.</p>
+<p>The engine lives in src/lib/theme/palette.ts in the repository, about 350 lines. If a color breaks it, I'd like to see it: open an issue on the repository with the hex and the mode where it fails.</p>
+<p id="sec-end-23458">Originally published on the TaishoDS blog.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/pablo_difilippo/how-to-generate-an-accessible-color-palette-from-a-single-color-171m" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-what-is-pathways-single-controller-training-for-lar-24102.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #24102. Industry News: What is Pathways? Single-controller training for large models
+        </a>
+        
+        <a href="palette-teaching-a-small-model-to-build-decks-in-your-design-lang-23549.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23549. Palette: teaching a small model to build decks in your design language
+        </a>
+        
+        <a href="losing-a-single-molecular-brake-gene-triggers-brain-overgrowth-23170.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23170. Losing a Single “Molecular Brake” Gene Triggers Brain Overgrowth
+        </a>
+        
+        <a href="fresh-york-auction-houses-hope-single-owner-collections-will-fuel-23054.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23054. Fresh York auction houses hope single-owner collections will fuel $2.4bn week of sales
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

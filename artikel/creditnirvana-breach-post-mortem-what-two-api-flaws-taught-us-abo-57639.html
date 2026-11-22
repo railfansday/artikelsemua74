@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditNirvana Breach Post-Mortem: What Two API Flaws Taught Us About DPDP-Compliant AI Deployment</title>
+    <meta name="description" content="In 2026 an independent security researcher found two flaws in CreditNirvana, an India-based agentic debt-collection platform owned by the fintech manufactu">
+    <meta name="keywords" content="data, vendor, disclosure, obligations, flaws, collection, same, because">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/creditnirvana-breach-post-mortem-what-two-api-flaws-taught-us-abo-57639.html">
+    
+    <meta property="og:title" content="CreditNirvana Breach Post-Mortem: What Two API Flaws Taught Us About DPDP-Compliant AI Deployment">
+    <meta property="og:description" content="In 2026 an independent security researcher found two flaws in CreditNirvana, an India-based agentic debt-collection platform owned by the fintech manufactu">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo1iquk3kj92eyxzhthz4.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/creditnirvana-breach-post-mortem-what-two-api-flaws-taught-us-abo-57639.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CreditNirvana Breach Post-Mortem: What Two API Flaws Taught Us About DPDP-Compliant AI Deployment">
+    <meta name="twitter:description" content="In 2026 an independent security researcher found two flaws in CreditNirvana, an India-based agentic debt-collection platform owned by the fintech manufactu">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo1iquk3kj92eyxzhthz4.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "CreditNirvana Breach Post-Mortem: What Two API Flaws Taught Us About DPDP-Compliant AI Deployment", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo1iquk3kj92eyxzhthz4.png"], "datePublished": "2026-11-22T06:07:33", "dateModified": "2026-11-22T06:20:14.281023", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/creditnirvana-breach-post-mortem-what-two-api-flaws-taught-us-abo-57639.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding CreditNirvana Breach Post-Mortem: What Two API Flaws Taught Us About DPDP-Compli?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'CreditNirvana Breach Post-Mortem: What Two API Flaws Taught ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>CreditNirvana Breach Post-Mortem: What Two API Flaws Taught Us About DPDP-Compliant AI Deployment</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 3 min read (667 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In 2026 an independent security researcher found two flaws in CreditNirvana, an India-based agentic debt-collection platform owned by the fintech manufacturer Perfios.</li><li style='margin-bottom:6px;'>In a recent development, the vendor fixed both flaws on 2 June 2026, the same day CERT-In confirmed it would act.</li><li style='margin-bottom:6px;'>It has been revealed that the disclosure describes two separate systems inside the same vendor, each defeated a different way.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-57639"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-57639"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-57639"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="CreditNirvana Breach Post-Mortem: What Two API Flaws Taught Us About DPDP-Compliant AI Deployment" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo1iquk3kj92eyxzhthz4.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-57639">In 2026 an independent security researcher found two flaws in CreditNirvana, an India-based agentic debt-collection platform owned by the fintech manufacturer Perfios. Together they made roughly 6.6 million borrower accounts and about 315,000 recorded collection calls reachable without valid credentials.</p>
+<p>In a recent development, the vendor fixed both flaws on 2 June 2026, the same day CERT-In confirmed it would act. That response is worth stating plainly, because it is not the usual outcome. What follows is an attempt to separate what the research established from what it did not, and to draw out what it means for Indian firms now running AI agents over personal data.</p>
+<p>It has been revealed that the disclosure describes two separate systems inside the same vendor, each defeated a different way. That distinction matters for assurance work, because the two failures are detectable by entirely different procedures. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-58636.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>The Agentic AI Call Center authenticated users through Amazon Cognito. Two problems sat stacked on top of each other. An API key was hardcoded into client-side JavaScript, so it was delivered to every browser that opened the page. Separately, the Cognito token returned by the login flow was never used in subsequent requests — so the login step could be skipped by editing client code to supply plausible administrative values. <span style="font-size:13px;">(Related: <a href="the-partnership-amazon-sagemaker-and-hugging-face-58620.html" style="color:#2563eb; font-weight:600;">The Partnership: Amazon SageMaker and Hugging Face...</a>)</span></p>
+<p>Per the disclosure, that access allowed a visitor to:.</p>
+<p>It has been revealed that the primary collections platform used Keycloak for identity management. This route is the more instructive of the two, because no secret leaked at all: the credential was present and simply not validated. It carried the higher CVSS score of the pair.</p>
+<p>From the Aditya Birla Capital Finance instance alone, the researcher reported an inventory that makes the compliance analysis concrete:.</p>
+<p id="sec-mid-57639">Two rows go beyond data protection. Settlement files containing identity documents and credit histories are the raw material of identity fraud. Visit tracking for field collection agents is employee-surveillance data. Both belong in a different risk register from a marketing database.</p>
+<p>Sources indicate that A conventional database leak is a read failure: the attacker obtains records. Here the accessible surface included instruments of action — campaign execution, agent management and legal escalation sat behind the same broken check as the data. When the system's selling point is that it decides "the next best action" and executes it autonomously, an authentication bypass is not only a disclosure risk. It is a control risk over the actions the agent can take on a borrower's account.</p>
+<p>It has been revealed that under India's Digital Personal Data Protection Act, obligations attach to the Data Fiduciary — the entity that determines why and how personal data is processed. In a collections scenario that is normally the lender, not the software vendor. The vendor's remediation speed does not discharge the lender's notification duty.</p>
+<p>The DPDP Rules were notified on 13 November 2026, with obligations phased in through to 13 May 2027. The operational figure most analyses converge on is 72 hours from detection for notifying the Data Protection Board and affected Data Principals. For the affected lenders, the fix arriving quickly is good news about the vulnerability — it says nothing about whether their own filing obligations were met.</p>
+<p>In a recent development, CERT-In's Directions from 2022 remain the tighter constraint: report specified cyber incidents within six hours of noticing them, and retain logs for 180 days. A firm that discovers exposure like this and cannot produce 180 days of relevant logs has a second problem on top of the first.</p>
+<p>One timing detail a CA reviewing vendor contracts will recognise: five months passed between the fix (2 June) and the CVE note (26 October). Remediation speed and disclosure speed are separate measurements.</p>
+<p>What this article is not: it is not legal advice, and it does not assert that any party acted unlawfully, that data was exfiltrated, or that any affected institution failed its obligations. Where sources conflict or are silent, that is stated as such.</p>
+<p id="sec-end-57639">Read the full article on PyBankers:.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/pybankers/creditnirvana-breach-post-mortem-what-two-api-flaws-taught-us-about-dpdp-compliant-ai-deployment-3e45" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="two-major-xrp-funds-post-massive-withdrawals-despite-1-price-retr-53257.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #53257. Two Major XRP Funds Post Massive Withdrawals Despite $1 Price Retrieval
+        </a>
+        
+        <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-58629.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58629. How we sped up transformer inference 100x for 🤗 API customers
+        </a>
+        
+        <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-58614.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58614. Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
+        </a>
+        
+        <a href="how-to-install-and-use-the-hugging-face-unity-api-58431.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58431. How to Install and Use the Hugging Face Unity API
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

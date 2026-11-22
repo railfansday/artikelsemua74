@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46887">At least one dangerous RCE bug got a fix on Thursday.</p>
-<p>Apologies in advance to all patch managers and security teams that thought they might get a break this week. The PHP Foundation has released several more patches, covering all supported versions, and including at least one rated “critical.”. <span style="font-size:13px;">(Related: <a href="latest-update-kfc-just-released-fried-cheese-with-four-different--47152.html" style="color:#2563eb; font-weight:600;">Latest Update: KFC just released fried cheese with four...</a>)</span></p>
-<p>These fortunately were not leaked leaked like last month’s critical PHP2Shell flaws – but a Wednesday advisory warned, “The complications rated critical require either non-default configuration or uncommon setups,” urging PHP customers to “prepare to upgrade promptly once the releases become available.”.</p>
-<p>One of the vulnerabilities is another remote code execution (RCE) flaw, tracked as CVE-2026-115560.</p>
+<p>Apologies in advance to all patch managers and security teams that thought they might get a break this week. The PHP Foundation has released several more patches, covering all supported versions, and including at least one rated “critical.”.</p>
+<p>These fortunately were not leaked leaked like last month’s critical PHP2Shell flaws – but a Wednesday advisory warned, “The complications rated critical require either non-default configuration or uncommon setups,” urging PHP customers to “prepare to upgrade promptly once the releases become available.”. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-58629.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
+<p>One of the vulnerabilities is another remote code execution (RCE) flaw, tracked as CVE-2026-115560. <span style="font-size:13px;">(Related: <a href="fine-tuning-clip-with-remote-sensing-satellite-images-and-caption-58604.html" style="color:#2563eb; font-weight:600;">Fine tuning CLIP with Remote Sensing (Satellite) images...</a>)</span></p>
 <p>In October, the PHP Foundation told The Register that it had reserved this CVE identifier for another RCE bug, but added it would not get an emergency fix like the earlier two PHP2Shell vulnerabilities because the third one doesn't pose the same risk.</p>
 <p>CVE-2026-115560 “requires a very unlikely combination of configuration and specific PHP application code, which we do not expect to occur in practical use of PHP,” Elizabeth Barron, executive director of the PHP Foundation, told The Register at the time. “The glitch can be mitigated with a configuration setting. So for the moment the PHP Security Team has only published an informational advisory on the PHP website, explaining exactly this situation.”.</p>
 <p>The earlier informational advisory urged consumers to “set session.upload_progress.enabled=0 until the next regular bugfix release, to fully protect from an unlikely RCE vector.”.</p>
-<p id="sec-mid-46887">These unlikely RCE attacks require an application to set “session.serialize_handler to php_binary or php_serialize in its configuration and then switch it to php at runtime with ini_set() before calling session_start().”. <span style="font-size:13px;">(Related: <a href="latest-update-clavicular-allegedly-told-17-year-old-to-call-vodka-47157.html" style="color:#2563eb; font-weight:600;">Latest Update: Clavicular allegedly told 17-year-old to...</a>)</span></p>
+<p id="sec-mid-46887">These unlikely RCE attacks require an application to set “session.serialize_handler to php_binary or php_serialize in its configuration and then switch it to php at runtime with ini_set() before calling session_start().”.</p>
 <p>Additionally, the session upload progress feature must be enabled, which the PHP Foundation noted is very unlikely in real-world applications.</p>
 <p>Industry observers note that overall, a large number of bugs were fixed and CVEs patched across five releases. Get more info on the PHP news page here.</p>
 <p>The November security releases follow a hectic October emergency PHP patch-a-thon, with security teams racing to apply fixes for CVE-2026-109618 and CVE-2026-109619, collectively called PHP2Shell, before attackers could abuse the memory-safety flaws in the open source programming language running on about 70 percent of websites.</p>
@@ -190,16 +190,16 @@
             📰 #46663. Four PHP security releases including fixes for critical vulnerabilities
         </a>
         
-        <a href="tech-report-ai-found-more-critical-bugs-in-another-widely-used-te-46897.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46897. Tech Report: AI found more critical bugs in another widely used technology running 225M websites
+        <a href="wordpress-715-security-release-fixes-18-vulnerabilities-via-sejou-55306.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #55306. WordPress 7.1.5 Security Release Fixes 18 Vulnerabilities via @sejournal, @martinibuster
         </a>
         
-        <a href="industry-news-will-ai-fueled-cyberattacks-lead-to-better-funding--46662.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46662. Industry News: Will AI-Fueled Cyberattacks Lead to Better Funding for Critical Open Source Projects?
+        <a href="another-bill-to-release-epstein-files-headed-to-house-floor-54446.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #54446. Another bill to release Epstein files headed to House floor
         </a>
         
-        <a href="industry-news-asus-warns-of-critical-hard-coded-key-flaw-in-contr-46525.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46525. Industry News: ASUS warns of critical hard-coded key flaw in Control Center Express
+        <a href="industry-news-democrats-better-hope-they-dont-have-another-manchi-53922.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #53922. Industry News: Democrats better hope they don’t have another Manchin in their midst
         </a>
         
     </div>

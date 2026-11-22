@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I got tired of babysitting five coding agents, so I built a supervisor for them</title>
+    <meta name="description" content="I don't use one coding agent anymore. Depending on the task, I switch between Claude Code, Codex, Gemini CLI, OpenCode and a few others. The tools themselv">
+    <meta name="keywords" content="kooyu, task, coding, them, code, engine, between, problem">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/i-got-tired-of-babysitting-five-coding-agents-so-i-built-a-superv-57632.html">
+    
+    <meta property="og:title" content="I got tired of babysitting five coding agents, so I built a supervisor for them">
+    <meta property="og:description" content="I don't use one coding agent anymore. Depending on the task, I switch between Claude Code, Codex, Gemini CLI, OpenCode and a few others. The tools themselv">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy84uuxncckmp7y4st0u1.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/i-got-tired-of-babysitting-five-coding-agents-so-i-built-a-superv-57632.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="I got tired of babysitting five coding agents, so I built a supervisor for them">
+    <meta name="twitter:description" content="I don't use one coding agent anymore. Depending on the task, I switch between Claude Code, Codex, Gemini CLI, OpenCode and a few others. The tools themselv">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy84uuxncckmp7y4st0u1.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "I got tired of babysitting five coding agents, so I built a supervisor for them", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy84uuxncckmp7y4st0u1.png"], "datePublished": "2026-11-22T06:12:14", "dateModified": "2026-11-22T06:20:13.651978", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/i-got-tired-of-babysitting-five-coding-agents-so-i-built-a-superv-57632.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding I got tired of babysitting five coding agents, so I built a supervisor for them?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'I got tired of babysitting five coding agents, so I built a ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>I got tired of babysitting five coding agents, so I built a supervisor for them</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 2 min read (364 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>I don't use one coding agent anymore.</li><li style='margin-bottom:6px;'>The problem is everything around them: separate sessions, separate quotas, zero shared context.</li><li style='margin-bottom:6px;'>So I built Kooyu: a local-first personal assistant that sits on top of 10+ coding harnesses — Claude Code, Codex, DeepSeek, Gemini CLI, OpenCode, Cursor, ZCode, Kimi Code, Grok Build, pi — and supervises them.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-57632"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-57632"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-57632"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="I got tired of babysitting five coding agents, so I built a supervisor for them" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy84uuxncckmp7y4st0u1.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-57632">I don't use one coding agent anymore. Depending on the task, I switch between Claude Code, Codex, Gemini CLI, OpenCode and a few others.</p>
+<p>The tools themselves are great. The problem is everything around them: separate sessions, separate quotas, zero shared context. And the moment one of them hits a 429 mid-task, I'm the one copy-pasting context into another tool and re-explaining the problem from scratch. I was spending real time being a human message bus between my own tools. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>So I built Kooyu: a local-first personal assistant that sits on top of 10+ coding harnesses — Claude Code, Codex, DeepSeek, Gemini CLI, OpenCode, Cursor, ZCode, Kimi Code, Grok Build, pi — and supervises them.</p>
+<p>Routing. Each task goes to the engine that fits it best, instead of whichever tab happens to be open.</p>
+<p>Rate-limit handoff. When an engine hits a 429, Kooyu packages the live context — what was tried, what changed, what's left — and hands the task to another engine. The work continues instead of dying.</p>
+<p id="sec-mid-57632">It has been revealed that arena mode. This is the feature I use most. Give Kooyu a problem and it races 2–3 engines on it in parallel, each in its own isolated Git worktree. You get a scorecard — diff plus test results — and merge the winner. It's a surprisingly good way to learn which engine is actually better at which kind of task, with evidence instead of vibes.</p>
+<p>The boring-but-notable parts. Persistent local memory across sessions, background watches that cost zero tokens, and decision cards you can approve from your phone or IM when an agent needs a yes/no.</p>
+<p>Everything runs on your machine. Code, memory and API keys never leave it. Sync between desktop, web, iOS, Android and IM is end-to-end encrypted (zero-knowledge), which is what makes "approve from your phone" safe to offer at all. <span style="font-size:13px;">(Related: <a href="the-age-of-machine-learning-as-code-has-arrived-58603.html" style="color:#2563eb; font-weight:600;">The Age of Machine Learning As Code Has Arrived...</a>)</span></p>
+<p>Kooyu is MIT-licensed and open source. v1.0.0 just shipped.</p>
+<p>Site: https://kooyu.app
+GitHub: https://github.com/sh2001sh/Kooyu.</p>
+<p id="sec-end-57632">If you also juggle multiple coding agents, I'd love to hear it: what would you want a supervisor to take off your plate — and what would it have to prove before you'd trust it with a real repo?</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/codego-ai/i-got-tired-of-babysitting-five-coding-agents-so-i-built-a-supervisor-for-them-ko4" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-58292.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58292. Stop treating agents as one-off projects and start running them as a continuous discipline
+        </a>
+        
+        <a href="exclusive-i-got-to-eavesdrop-on-ai-agents-doing-science-it-was-ey-54298.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #54298. Exclusive: I got to eavesdrop on AI agents doing science. It was eye opening
+        </a>
+        
+        <a href="skyrim-lead-chats-about-the-fallout-diehards-who-hated-that-bethe-51492.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #51492. Skyrim lead chats about the Fallout diehards who hated that Bethesda got the series: 'We had to prove them wrong, and fortunately we did'
+        </a>
+        
+        <a href="give-your-coding-agents-a-memory-you-own-46781.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46781. Give Your Coding Agents a Memory You Own
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46828">CSS optimization is a deceptive topic. On the one hand, it feels like something simple that we should already have all the tooling for — especially when it comes to minification. On the other hand, the idea that we already exploited “everything” there is around CSS optimization may be considered naive. Such a claim looks hard to defend for a language that evolves almost daily.</p>
-<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”.</p>
+<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>According to recent reports, aware of an older source? Please comment!</p>
-<p>The technique is inspired by the principle of DRY, “don’t repeat yourself”, in that it works by identifying and reducing (if not eliminating) declaration repetition. <span style="font-size:13px;">(Related: <a href="brain-inspired-chip-runs-near-absolute-zero-and-could-transform-q-47153.html" style="color:#2563eb; font-weight:600;">Brain-inspired chip runs near absolute zero and could t...</a>)</span></p>
+<p>The technique is inspired by the principle of DRY, “don’t repeat yourself”, in that it works by identifying and reducing (if not eliminating) declaration repetition.</p>
 <p>So, if there’s something like display: flex and it appears two or more times, it gets reconciled in one rule:.</p>
-<p>Industry observers note that the outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how massive file size savings are. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
+<p>Industry observers note that the outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how massive file size savings are. <span style="font-size:13px;">(Related: <a href="industry-news-fine-tune-wav2vec2-for-english-asr-in-hugging-face--58622.html" style="color:#2563eb; font-weight:600;">Industry News: Fine-Tune Wav2Vec2 for English ASR in Hu...</a>)</span></p>
 <p>In a recent development, if you’re interested, my article on “DRY CSS” describes the mechanics in more detail. The question here is: Is UDJO still effective and still relevant today?</p>
 <p>When we try to answer this question, however, we end up with a problem: When sites are complex and their style sheet declarations have not been de-duplicated before, UDJO can require a lot of work.</p>
 <p>In a recent development, to save some time, I built tooling for this work. While it didn’t seem like it would immediately be as comprehensive as manually going through and testing style sheets, it seemed realistic enough that a tool could catch some repetition.</p>
@@ -192,20 +192,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="scott-eastwood-is-still-seeking-a-rush-just-at-a-slower-pace-45438.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #45438. Scott Eastwood Is Still Seeking a Rush, Just at a Slower Pace
+        <a href="scott-eastwood-is-still-seeking-a-rush-just-at-a-slower-pace-56866.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #56866. Scott Eastwood Is Still Seeking a Rush, Just at a Slower Pace
         </a>
         
-        <a href="microsofts-sidewinder-strategic-commander-was-a-failed-attempt-to-40340.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #40340. Microsoft's SideWinder Strategic Commander was a failed attempt to reimagine RTS controls. 23 years later, why are some players still using it?
+        <a href="researchers-found-that-doing-this-is-just-as-effective-as-the-gym-56795.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #56795. Researchers Found That Doing This Is Just as Effective as the Gym for Older Adults
         </a>
         
-        <a href="gta-6-players-hate-using-atms-just-let-me-type-in-a-number-40004.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #40004. GTA 6 Players Hate Using ATMs: ‘Just Let Me Type In A Number!”
+        <a href="10-best-n64-racing-games-that-still-hold-up-today-52053.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #52053. 10 Best N64 Racing Games That Still Hold Up Today
         </a>
         
-        <a href="match-day-morning-heres-what-west-ham-fans-need-today-and-it-is-m-38138.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #38138. Match day morning : Here’s what West Ham fans need today – and it is more than just ‘hope’
+        <a href="breaking-microsofts-sidewinder-strategic-commander-was-a-failed-a-51863.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #51863. Breaking: Microsoft's SideWinder Strategic Commander was a failed attempt to reimagine RTS controls. 23 years later, why are some players still using it?
         </a>
         
     </div>

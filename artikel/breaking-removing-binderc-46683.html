@@ -173,7 +173,7 @@ therefore, presents a large attack surface for Android. Many complicated chained
 attacks against Android have involved Binder at one step or another, Llamas
 explained. Google's internal "red team" (the team dedicated to proactive
 security research) deemed Binder to be the most vulnerability-dense component in
-the entire operating system, with more CVEs per line than anywhere else. <span style="font-size:13px;">(Related: <a href="artificial-neurons-successfully-communicate-with-living-brain-cel-47170.html" style="color:#2563eb; font-weight:600;">Artificial neurons successfully communicate with living...</a>)</span></p>
+the entire operating system, with more CVEs per line than anywhere else. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-58631.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>That made it an obvious candidate for porting to Rust, Llamas said. Binder was the first user
 of Rust in the kernel, he added, although Ryhl did not
 
@@ -185,13 +185,13 @@ and cross-application message on Android, which runs on more than three billion
 devices. In total, it works out to hundreds of billions of Binder transactions
 per second, globally, he added. That scale meant that even the smallest discrepancy between the
 interface provided by the C version and the one provided by the Rust version
-would cause problems and regressions for some use case.</p>
+would cause problems and regressions for some use case. <span style="font-size:13px;">(Related: <a href="industry-news-introducing-optimum-the-optimization-toolkit-for-tr-58609.html" style="color:#2563eb; font-weight:600;">Industry News: Introducing Optimum: The Optimization To...</a>)</span></p>
 <p>Recent findings suggest that one particularly tricky aspect has been performance, Ryhl said. Throughput
 doesn't matter that much; what matters is the tail latencies. Most
 screen frames on Android have a Binder transaction in the critical path of the
 frame, she explained. So, a difference of two microseconds on average is not a
 real problem, but if Binder is ever twenty milliseconds slower, even once
-in a while, people will notice and care. <span style="font-size:13px;">(Related: <a href="ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-47182.html" style="color:#2563eb; font-weight:600;">AI breakthrough cuts energy use by 100x while boosting ...</a>)</span></p>
+in a while, people will notice and care.</p>
 <p>Sources indicate that the actual algorithms that the C and Rust implementations use are identical, she
 continued, so there are no large differences in throughput. But, because Rust
 handles locking differently, there were problems with the tail latency
@@ -304,20 +304,20 @@ to Kangrejos. ].</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="apples-support-community-shuts-down-on-friday-removing-user-discu-39540.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #39540. Apple’s Support Community Shuts Down on Friday, Removing User Discussions
+        <a href="youtube-music-removing-samples-tab-on-android-ios-57778.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57778. YouTube Music removing Samples tab on Android & iOS
         </a>
         
-        <a href="breaking-golloria-responds-to-huda-beautys-apology-for-removing-d-36711.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #36711. Breaking: Golloria Responds to Huda Beauty’s Apology for Removing Darkest Powder
+        <a href="breaking-apples-support-community-shuts-down-on-friday-removing-u-50940.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #50940. Breaking: Apple’s Support Community Shuts Down on Friday, Removing User Discussions
         </a>
         
-        <a href="youtube-music-removing-samples-tab-on-android-ios-34885.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #34885. YouTube Music removing Samples tab on Android & iOS
+        <a href="golloria-responds-to-huda-beautys-apology-for-removing-darkest-po-47905.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47905. Golloria Responds to Huda Beauty’s Apology for Removing Darkest Powder
         </a>
         
-        <a href="breaking-arts-panel-asks-trump-administration-to-rethink-east-pot-47187.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47187. Breaking: Arts panel asks Trump administration to rethink East Potomac golf course’s scope
+        <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58637. How to train a new language model from scratch using Transformers and Tokenizers
         </a>
         
     </div>

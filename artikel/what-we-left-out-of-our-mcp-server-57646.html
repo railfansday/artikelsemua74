@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What we left out of our MCP server</title>
+    <meta name="description" content="According to recent reports, an MCP server for a database is easy to start and hard to finish. The first version wraps a search endpoint and a SQL endpoint">
+    <meta name="keywords" content="server, agent, infino, rows, tool, search, tools, table">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/what-we-left-out-of-our-mcp-server-57646.html">
+    
+    <meta property="og:title" content="What we left out of our MCP server">
+    <meta property="og:description" content="According to recent reports, an MCP server for a database is easy to start and hard to finish. The first version wraps a search endpoint and a SQL endpoint">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhkafhvbdy00xyhsnthef.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/what-we-left-out-of-our-mcp-server-57646.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What we left out of our MCP server">
+    <meta name="twitter:description" content="According to recent reports, an MCP server for a database is easy to start and hard to finish. The first version wraps a search endpoint and a SQL endpoint">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhkafhvbdy00xyhsnthef.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "What we left out of our MCP server", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhkafhvbdy00xyhsnthef.png"], "datePublished": "2026-11-22T06:06:05", "dateModified": "2026-11-22T06:20:14.690441", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/what-we-left-out-of-our-mcp-server-57646.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding What we left out of our MCP server?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'What we left out of our MCP server' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>What we left out of our MCP server</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 6 min read (1295 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, an MCP server for a database is easy to start and hard to finish.</li><li style='margin-bottom:6px;'>Infino’s MCP server, @infino-ai/mcp-server, gives an agent 15 tools: keyword, semantic, hybrid and SQL retrieval, plus the writes it needs to build and change its own tables.</li><li style='margin-bottom:6px;'>Industry observers note that an agent asks three kinds of questions of the same data.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-57646"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-57646"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-57646"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="What we left out of our MCP server" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhkafhvbdy00xyhsnthef.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-57646">According to recent reports, an MCP server for a database is easy to start and hard to finish. The first version wraps a search endpoint and a SQL endpoint. Then the ideas arrive: infer the schema from the first batch, add an upsert, chunk files on the way in, split large uploads and resume them, add a dry run. Each one sounds reasonable, and each one turns the server into a second product with its own bugs.</p>
+<p>Infino’s MCP server, @infino-ai/mcp-server, gives an agent 15 tools: keyword, semantic, hybrid and SQL retrieval, plus the writes it needs to build and change its own tables. This post is about the decisions behind that list, most of which were about what not to build, and about what we learned when we handed the server to an agent and watched. <span style="font-size:13px;">(Related: <a href="breaking-retrieval-augmented-generation-with-huggingface-transfor-58625.html" style="color:#2563eb; font-weight:600;">Breaking: Retrieval Augmented Generation with Huggingfa...</a>)</span></p>
+<p>Industry observers note that an agent asks three kinds of questions of the same data. Some need the exact term: an error code, a function name, an order id. Some need the meaning: a question worded differently from the document that answers it. Some need a count, a filter or a join. The usual answer is three systems, a full-text index, a vector store and a SQL database, with a sync job between them. <span style="font-size:13px;">(Related: <a href="industry-news-fine-tune-wav2vec2-for-english-asr-in-hugging-face--58622.html" style="color:#2563eb; font-weight:600;">Industry News: Fine-Tune Wav2Vec2 for English ASR in Hu...</a>)</span></p>
+<p>In Infino all three run on one table, and that table is a Parquet file with its search indexes inside. So the MCP server never routes between backends. infino_keyword_search, infino_semantic_search and infino_hybrid_search rank rows. infino_token_match, infino_exact_match and infino_count filter and tally them. infino_sql reads the same rows with SQL, and the engine’s search functions are callable inside it, so one statement can rank by relevance and then group or join the results. When an agent finds a passage by meaning and then asks how many rows mention the same product, it is reading the same copy of the data both times. We wrote about why that matters in You don’t need two databases for hybrid search.</p>
+<p>We set ourselves a rule for the server: expose what the Infino binding does natively, one tool per method, and add nothing of our own. We broke it once.</p>
+<p>The engine is bring-your-own-vectors. It stores and searches vectors but does not make them, and an agent cannot produce an embedding by itself. So the server embeds both the documents it writes and the queries it searches, with the same local model (all-MiniLM-L6-v2, run through transformers.js). There is no embedding API key to manage, and the text never leaves the machine to be embedded. On Infino Cloud, only the resulting vector reaches the endpoint.</p>
+<p>The same reasoning decided who picks the vector dimension. When an agent creates a table with vector: true, the server adds an embedding column sized to its own embedder, with a cosine index. The agent never types a dimension. That number belongs to whoever runs the server, and a wrong guess produces a table whose searches fail later, far from the mistake.</p>
+<p>Early versions had a flag, INFINO_MCP_ENABLE_WRITES, and writes were off unless you set it. We removed it in September and did not add a read-only flag in its place. The teams using the server wanted their agents to build and maintain their own tables, and a switch inside the server was the wrong place to say no.</p>
+<p>According to recent reports, limits still exist. They live where they belong. On Infino Cloud the API key’s capabilities decide what a connection may do: a read-scoped key is refused every write, and the tool result tells the agent it needs a key with write capability. Every tool also carries MCP annotations, readOnlyHint and destructiveHint, so the client decides when to stop and ask the person at the keyboard. Locally, point the server only at data the agent may change.</p>
+<p>The write path is short. Create the table, then append tens of rows per call with infino_add_documents. Each call is one commit, and rows without a vector are embedded together in one batch. To replace rows, delete by key and add them again, and count the matches before any delete.</p>
+<p>The list of things we left out is longer than the list of tools.</p>
+<p id="sec-mid-57646">No schema inference. An agent creates a table from an explicit column descriptor, and a document field that isn’t a column is an error, not a new column. Guessing types from the first batch works until the second batch disagrees.</p>
+<p>No upsert emulation. Replacing a row is a delete by key, then an add. Emulating upsert in the server would have meant a read, a diff and two writes that are not atomic together, hidden behind one tool name that suggests they are.</p>
+<p>Industry observers note that no splitting, resuming or progress reporting for large uploads. A tool call carries tens of documents, nowhere near the size where a hosted append needs splitting, so that machinery would solve a problem the server cannot have. Loading a whole corpus is a different job, and it already has tools: infino ingest in the Infino CLI, or an SDK.</p>
+<p>No file chunking and no dry-run mode. Both are useful. Both belong in the agent or in an ingestion pipeline, not in a thin layer over a database.</p>
+<p>Industry observers note that each of these would have been behavior that exists only inside the MCP server, documented nowhere else and tested against nothing else. Keeping the server to the binding’s own surface means there is one implementation of each behavior, in the engine, and the server’s job stays small: describe the tools well, embed text, and pass everything else through.</p>
+<p>According to recent reports, some of the most useful changes were small. Semantic search returns a distance, where lower is closer, while keyword and hybrid search return a relevance, where higher is better. An agent comparing scores across tools has no way to know that unless it is told, so every search response says which kind of score it carries, in a score_kind field.</p>
+<p>It has been revealed that we also stopped truncating. Earlier versions returned text snippets, which saved tokens but could cut off the part of a passage the agent needed. Hits now return full column values, and the columns argument chooses which fields come back: an id and a line range to cite, the full text, or metadata to filter on. To keep a response small, the agent asks for fewer columns or a smaller k.</p>
+<p>Before shipping the write tools, we ran a coding agent headless against the server, allowed to use only the Infino tools, starting cold against a fresh database on Infino Cloud. It worked through four scenarios: ingest a small corpus from nothing, modify and delete rows, answer retrieval questions, and reset the data.</p>
+<p>According to recent reports, all four came out correct, in six to ten tool calls each, with no wasted calls. The useful part was where the agent didn’t do what we expected. Asked to find rows containing a literal word, it reached for SQL LIKE and infino_token_match rather than infino_keyword_search. Asked to reset, it deleted every row instead of dropping the table. Neither choice was wrong. Both showed us which tool descriptions weren’t steering it the way we assumed, and for an agent, the tool description is the only documentation it reads.</p>
+<p>The server is on npm as @infino-ai/mcp-server and on the official MCP Registry. Setup for Claude Code, Claude Desktop, Cursor and VS Code is in the MCP docs, and the source is on GitHub. To load a whole corpus rather than a few rows, start with the CLI.</p>
+<p>It has been revealed that the Infino engine is open source under Apache-2.0. If this post was useful, a star on GitHub helps other engineers find it.</p>
+<p id="sec-end-57646">Originally published at infino.ai.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/ashishmishra26/what-we-left-out-of-our-mcp-server-16j6" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-how-to-build-an-mcp-server-with-gradio-58040.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58040. Latest Update: How to Build an MCP Server with Gradio
+        </a>
+        
+        <a href="building-the-hugging-face-mcp-server-57991.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57991. Building the Hugging Face MCP Server
+        </a>
+        
+        <a href="power-bi-mcp-server-how-to-brief-an-ai-agent-to-build-accurate-me-57845.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57845. Power BI MCP server: how to brief an AI agent to build accurate measures
+        </a>
+        
+        <a href="introducing-snowball-fight-our-first-ml-agents-environment-58595.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58595. Introducing Snowball Fight ☃️, our first ML-Agents environment
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

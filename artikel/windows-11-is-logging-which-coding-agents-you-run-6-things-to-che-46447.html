@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46447">On November 16, 2026, researcher Xusheng Li published a reverse-engineering write-up of a Windows 11 component that can record which coding agents and developer tools ran on a PC.</p>
-<p>It has been revealed that the report he captured is a daily seen bitmap of matching executable names, not a log of prompts or source code. The work is one researcher's reverse engineering, and the feature has not been shown to be active on every Windows 11 install. <span style="font-size:13px;">(Related: <a href="gta-6s-latest-dangerous-driving-and-doomscrolling-feature-spawns--47172.html" style="color:#2563eb; font-weight:600;">GTA 6’s latest dangerous driving and doomscrolling feat...</a>)</span></p>
-<p>In a recent development, optional diagnostic data was already on in the US Windows 11 Home test he ran. Microsoft's diagnostics page claims you choose that setting when you set up the device. I could not find a public Microsoft response as of November 17, 2026. <span style="font-size:13px;">(Related: <a href="dna-robots-could-deliver-drugs-and-hunt-viruses-inside-your-body-47183.html" style="color:#2563eb; font-weight:600;">DNA robots could deliver drugs and hunt viruses inside ...</a>)</span></p>
-<p>The Hacker News thread had 661 points and 519 comments as of 1:46 PM Europe/London on November 17, 2026. I am going by Li's post, not a test I ran on my own machine.</p>
+<p>It has been revealed that the report he captured is a daily seen bitmap of matching executable names, not a log of prompts or source code. The work is one researcher's reverse engineering, and the feature has not been shown to be active on every Windows 11 install.</p>
+<p>In a recent development, optional diagnostic data was already on in the US Windows 11 Home test he ran. Microsoft's diagnostics page claims you choose that setting when you set up the device. I could not find a public Microsoft response as of November 17, 2026.</p>
+<p>The Hacker News thread had 661 points and 519 comments as of 1:46 PM Europe/London on November 17, 2026. I am going by Li's post, not a test I ran on my own machine. <span style="font-size:13px;">(Related: <a href="the-age-of-machine-learning-as-code-has-arrived-58603.html" style="color:#2563eb; font-weight:600;">The Age of Machine Learning As Code Has Arrived...</a>)</span></p>
 <p>Recent findings suggest that li started from executable names embedded in MissionControlAggregator.dll, including claude.exe, codex.exe, cursor.exe, and copilot.exe. The feature that gates the new agent checks is named CLICodingAgentUsage.</p>
 <p>In a recent development, the match list is longer than those four names. Four CLI-agent slots check copilot.exe, claude.exe, codex.exe, and agy.exe, plus extensionless equivalents on the WSL path. Five desktop-agent slots check github.exe, claude.exe, codex.exe, cursor.exe, and antigravity.exe.</p>
 <p>The same component also groups ordinary developer tools, such as python.exe, node.exe, dotnet.exe, gcc.exe, clang.exe, gdb.exe, javac.exe, devenv.exe, and code.exe, into twelve broader categories.</p>
-<p>Industry observers note that li tested a Parallels Windows 11 ARM64 VM, build 26200.9974, where the feature was already enabled as a service experiment, and a clean US Windows 11 Home ARM64 install for the diagnostic-data default. A service experiment is not the same thing as a setting that is on for every install.</p>
+<p>Industry observers note that li tested a Parallels Windows 11 ARM64 VM, build 26200.9974, where the feature was already enabled as a service experiment, and a clean US Windows 11 Home ARM64 install for the diagnostic-data default. A service experiment is not the same thing as a setting that is on for every install. <span style="font-size:13px;">(Related: <a href="industry-news-fine-tune-wav2vec2-for-english-asr-in-hugging-face--58622.html" style="color:#2563eb; font-weight:600;">Industry News: Fine-Tune Wav2Vec2 for English ASR in Hu...</a>)</span></p>
 <p>Industry observers note that secondary recaps followed on November 17. They restate Li's findings, and none of the ones I found reports an independent reproduction.</p>
 <p>The six checks below are my structure, drawn from Li's write-up and Microsoft's diagnostics page, not a list Microsoft published.</p>
 <p>The agent-usage report Li captured was marked optional, not required ("isRequired": false). On a clean install of Windows 11 Home ARM64 with the region set to the United States, he found the Diagnostic data toggle already enabled and labeled Include Optional, and AllowTelemetry set to 3.</p>
@@ -224,16 +224,16 @@
             📰 #46617. How to Run Claude Code and Other Coding Agents in the Cloud 24/7
         </a>
         
-        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-47028.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47028. Tiny Agents: an MCP-powered agent in 50 lines of code
+        <a href="open-r1-how-to-use-olympiccoder-locally-for-coding-58069.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58069. Open R1: How to use OlympicCoder locally for coding
         </a>
         
-        <a href="agents-are-sessions-not-requests-size-gke-node-pools-for-ai-agent-46855.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46855. Agents are sessions, not requests: size GKE node pools for AI agent sessions
+        <a href="tiny-agents-in-python-a-mcp-powered-agent-in-70-lines-of-code-58025.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58025. Tiny Agents in Python: a MCP-powered agent in ~70 lines of code
         </a>
         
-        <a href="tech-report-securing-your-agents-a-hands-on-guide-to-agent-anomal-46844.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46844. Tech Report: Securing Your Agents: A Hands-On Guide to Agent Anomaly Detection
+        <a href="industry-news-smol2operator-post-training-gui-agents-for-computer-57934.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57934. Industry News: Smol2Operator: Post-Training GUI Agents for Computer Use
         </a>
         
     </div>

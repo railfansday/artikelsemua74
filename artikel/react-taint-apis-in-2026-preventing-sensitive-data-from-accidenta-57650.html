@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React `taint` APIs in 2026: Preventing Sensitive Data From Accidentally Reaching Client Components</title>
+    <meta name="description" content="This article was written with the assistance of AI, under human supervision and review. React Server Components introduced a split between server and clien">
+    <meta name="keywords" content="taint, client, server, react, apis, data, value, values">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/react-taint-apis-in-2026-preventing-sensitive-data-from-accidenta-57650.html">
+    
+    <meta property="og:title" content="React `taint` APIs in 2026: Preventing Sensitive Data From Accidentally Reaching Client Components">
+    <meta property="og:description" content="This article was written with the assistance of AI, under human supervision and review. React Server Components introduced a split between server and clien">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Femzvxuokuqzdkmyrzfut.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fblog%2Fposts%2Freact-taint-apis-prevent-data-leaks%2Fthumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/react-taint-apis-in-2026-preventing-sensitive-data-from-accidenta-57650.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="React `taint` APIs in 2026: Preventing Sensitive Data From Accidentally Reaching Client Components">
+    <meta name="twitter:description" content="This article was written with the assistance of AI, under human supervision and review. React Server Components introduced a split between server and clien">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Femzvxuokuqzdkmyrzfut.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fblog%2Fposts%2Freact-taint-apis-prevent-data-leaks%2Fthumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "React `taint` APIs in 2026: Preventing Sensitive Data From Accidentally Reaching Client Components", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Femzvxuokuqzdkmyrzfut.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fblog%2Fposts%2Freact-taint-apis-prevent-data-leaks%2Fthumbnail.png"], "datePublished": "2026-11-22T06:05:44", "dateModified": "2026-11-22T06:20:15.066555", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/react-taint-apis-in-2026-preventing-sensitive-data-from-accidenta-57650.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding React `taint` APIs in 2026: Preventing Sensitive Data From Accidentally Reaching?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'React `taint` APIs in 2026: Preventing Sensitive Data From A' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>React `taint` APIs in 2026: Preventing Sensitive Data From Accidentally Reaching Client Components</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 12 min read (2316 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>This article was written with the assistance of AI, under human supervision and review.</li><li style='margin-bottom:6px;'>React Server Components introduced a split between server and client code that eliminated entire classes of security vulnerabilities.</li><li style='margin-bottom:6px;'>Problem diagram showing tainted API key passed to client component causing silent data exposure.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-57650"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-57650"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-57650"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="React `taint` APIs in 2026: Preventing Sensitive Data From Accidentally Reaching Client Components" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Femzvxuokuqzdkmyrzfut.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fblog%2Fposts%2Freact-taint-apis-prevent-data-leaks%2Fthumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-57650">This article was written with the assistance of AI, under human supervision and review.</p>
+<p>React Server Components introduced a split between server and client code that eliminated entire classes of security vulnerabilities. Developers no longer ship database credentials or API keys to browsers because server-side logic stays on the server. The architecture itself prevents the mistake. But React 19.3 added two experimental APIs that solve a different problem: when server-side values accidentally cross into client components through serialization. The experimental_taintUniqueValue and experimental_taintObjectReference functions mark values as unsafe for client use, and React throws an error at build time or runtime if those values reach a component boundary. This prevents an entire category of data exposure that authentication checks and input validation cannot catch. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-58636.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>Problem diagram showing tainted API key passed to client component causing silent data exposure.</p>
+<p>Taint APIs address the gap between server logic and client rendering. A Server Action might authenticate consumers correctly and validate every input, but if it returns an object containing internal fields or configuration values, those fields serialize and reach the browser. The taint APIs mark specific values as forbidden, and React enforces that boundary automatically.</p>
+<p>Solution diagram showing tainted API key blocked by React before reaching client.</p>
+<p>Sources indicate that react provides two taint functions that mark values as unsafe for client use. Both functions throw an error when React attempts to serialize the marked value and send it to a client component. The experimental_taintUniqueValue function blocks primitive values like strings and numbers, while experimental_taintObjectReference blocks entire objects from crossing the server-client boundary.</p>
+<p>Sources indicate that the runtime behavior differs between development and production. In development mode, React throws an error immediately when a tainted value reaches a client component boundary. In production builds with Server Components enabled, React logs the error and prevents serialization but does not crash the application. This matches the progressive enhancement philosophy where server-side failures degrade gracefully.</p>
+<p>Taint API hierarchy showing how unique values and object references block different data types. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58634.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Industry observers note that the taint functions accept a message parameter that React displays when the error occurs. This message should identify what failed and where the developer should look. Generic messages like "sensitive data" provide no actionable information during debugging. Specific messages like "SERVICE_API_KEY from systemConfig leaked to client component" point directly to the source.</p>
+<p>Tainting happens at the value level, not the variable level. Reassigning a tainted value to a new variable does not remove the taint. React tracks the actual data, so passing const newKey = apiKey and then passing newKey to a client component still triggers the error. The taint follows the value through any number of assignments.</p>
+<p>Derived values remain untainted by default unless they contain the original tainted data. If code hashes a tainted API key, the hash is a new value and React allows it to serialize. If code creates a substring of a tainted value, that substring inherits the taint. The distinction matters for logging, analytics, and masked display values that derive from sensitive sources.</p>
+<p>The taint APIs integrate with Server Actions and Server Functions automatically. Any value returned from a Server Action that gets marked with a taint function will block serialization before React sends the response to the client. This prevents an entire class of mistakes where developers return raw database rows or configuration objects that contain sensitive fields mixed with safe fields.</p>
+<p>Sources indicate that the most common use case for taint APIs involves blocking credentials and secrets from accidentally serializing to client components. Configuration objects often mix safe values (feature flags, public endpoints) with sensitive values (API keys, database URLs). Returning the entire object from a Server Component creates a serialization hazard.</p>
+<p>According to recent reports, the standard pattern wraps credential loading with experimental_taintUniqueValue immediately after reading from environment variables or a secrets manager. This marks the value as unsafe before any other code runs. The taint persists for the lifetime of the value, so subsequent function calls and component renders all enforce the restriction.</p>
+<p>Attempting to pass the returned object to a client component produces an error at the boundary. React intercepts the serialization and throws before the value reaches the network layer. The error message includes the custom string provided to experimental_taintUniqueValue, making it straightforward to identify which credential leaked and where.</p>
+<p>According to recent reports, the pattern extends to authentication tokens and session identifiers. After validating a session and retrieving user data, taint the session token before returning the user object. This prevents accidentally including the token in the serialized response while still allowing safe fields like username and display name to reach the client.</p>
+<p>Diagram showing data flow through taint API validation layer.</p>
+<p>It has been revealed that the runtime cost of tainting values is negligible. React maintains an internal registry of tainted values using a WeakMap, which does not prevent garbage collection and adds minimal memory overhead. The serialization check happens once per render, not on every access to the value. For applications processing thousands of requests per second, the performance impact remains unmeasurable.</p>
+<p>It has been revealed that teams migrating to Server Components often discover existing data exposure issues when they add taint APIs to configuration loading. Code that worked for years suddenly throws errors because it passed internal fields to client components. These errors represent real security holes that authentication and validation layers did not catch. The taint APIs surface the problem before it reaches production.</p>
+<p>It has been revealed that authentication and authorization protect resources from unauthorized access. Taint APIs protect values from unauthorized serialization. These concerns overlap but address different failure modes. A Server Action might correctly authenticate a user, verify permissions, and retrieve data: but if the retrieved object contains fields the client should never see, those fields still serialize and reach the browser.</p>
+<p>The comparison table highlights where each security layer operates:.</p>
+<p>Comparison diagram showing auth checks pass but taint API blocks serialization.</p>
+<p>In a recent development, consider a Server Action that loads user preferences. The action authenticates the user, verifies they can access the preferences, and returns the full database row. That row includes safe fields like theme and language, but it also includes internal fields like hashed recovery codes and admin flags. Without taint APIs, all fields serialize to the client because the authorization check passed.</p>
+<p>It has been revealed that adding experimental_taintObjectReference to the database row blocks the entire object from serializing. The developer must then explicitly construct a client-safe object containing only the allowed fields. This forces a conscious decision about what crosses the boundary rather than relying on the client to ignore extra fields.</p>
+<p id="sec-mid-57650">Traditional security patterns operate on request boundaries. Taint APIs operate on serialization boundaries. A single request might cross multiple serialization boundaries as Server Components render, Server Actions execute, and nested client components receive props. Each boundary becomes an opportunity for data leakage if the response includes unintended fields.</p>
+<p>According to recent reports, the taint APIs integrate with React's concurrent rendering and streaming architecture. When React suspends a component tree and resumes rendering later, the taint checks remain active. Values marked during the initial render stay tainted when the suspended work completes. This consistency prevents race conditions where a value becomes untainted during suspension.</p>
+<p>Recent findings suggest that production implementations typically taint values in two locations: configuration initialization and data access layers. Configuration initialization happens once at application startup, making it the ideal place to taint environment variables and secrets. Data access layers taint database results and API responses before returning them to business logic.</p>
+<p>Recent findings suggest that the configuration pattern wraps environment variable access in a typed configuration object that taints sensitive fields during construction. This centralizes the taint logic and ensures every access to the configuration object enforces the restrictions.</p>
+<p>Flow diagram showing configuration loading with taint APIs protecting sensitive values.</p>
+<p>According to recent reports, the data access pattern taints database rows immediately after retrieval and before passing them to business logic. This prevents any code path from accidentally returning the raw row to a client component. Business logic must explicitly construct response objects containing only allowed fields.</p>
+<p>Screenshot showing taint API error message in development tools.</p>
+<p>Large codebases benefit from a wrapper module that provides typed configuration access with automatic tainting. The wrapper exports functions that return client-safe subsets of the configuration rather than exposing the raw configuration object. This creates a clear API boundary between server and client code.</p>
+<p>Sources indicate that typeScript integration improves the developer experience. Define separate types for server-side configuration (including sensitive fields) and client-side configuration (excluding sensitive fields). The taint APIs enforce this separation at runtime, while TypeScript enforces it at compile time.</p>
+<p>In a recent development, the separation between server and client configuration becomes explicit in the codebase. Server Components and Server Actions import getServerConfig, while client components import getClientConfig. The taint APIs enforce this boundary at runtime if any code attempts to pass the wrong configuration type across a component boundary.</p>
+<p>It has been revealed that teams adopting taint APIs typically start with high-value targets like authentication tokens and API keys, then expand to configuration objects and database models. The incremental approach allows time to refactor data access patterns and update client components to handle the latest response shapes. For more context on integrating server-side patterns, see extending Electron desktop apps with TypeScript.</p>
+<p>Taint APIs prevent values from crossing the server-client serialization boundary managed by React. They do not prevent other forms of data exposure. If server-side code logs a tainted value, that log entry contains the sensitive data. If server-side code sends a tainted value to an external API, that request contains the sensitive data. The taint only blocks React's serialization to client components.</p>
+<p>Flow diagram showing taint APIs block client serialization but not logging or external APIs.</p>
+<p>The experimental status means breaking changes could occur in future React releases. The API surface and behavior might change before stabilization. Production applications using these APIs should pin React versions and test upgrades carefully. The React team has not committed to a stabilization timeline as of React 19.3.</p>
+<p>Recent findings suggest that taint APIs do not protect against client-side vulnerabilities. If client code receives non-tainted data and then exposes it through an XSS vulnerability, the taint APIs provide no protection. If client code stores data in localStorage without encryption, the taint APIs do not prevent that. Client-side security remains a separate concern requiring input sanitization, output encoding, and proper storage handling.</p>
+<p>Derived values require careful handling. Hashing a tainted value produces a non-tainted hash, but substring operations on a tainted string produce tainted substrings. The distinction matters for masking operations. To create a masked version of an API key for display (showing only the last four characters), the code must construct a new string rather than slicing the original.</p>
+<p>The taint check happens during serialization, not during value creation or assignment. Code can freely manipulate tainted values server-side. The restriction only applies when React attempts to serialize the value and send it to a client component. This means tainted values can safely pass through Server Action boundaries as long as they do not appear in the returned data.</p>
+<p>It has been revealed that performance monitoring and error tracking require special consideration. If a tainted value appears in an error stack trace or performance profile, logging that data creates a security risk. Error boundaries and monitoring integrations must sanitize or redact sensitive fields before sending telemetry to external services.</p>
+<p>The APIs do not currently support programmatic checks for whether a value is tainted. Code cannot ask React "is this value tainted?" before attempting to use it. The only way to discover a taint violation is to trigger the serialization error. This makes defensive programming difficult, code cannot branch based on taint status.</p>
+<p>Sources indicate that react logs an error to the console and prevents the value from serializing, but does not crash the application. The client component receives undefined for that field. In development mode, React throws an error immediately to help identify the issue during testing.</p>
+<p>Industry observers note that no, each value can have only one taint message. Calling experimental_taintUniqueValue or experimental_taintObjectReference multiple times on the same value replaces the previous message. The last taint call wins.</p>
+<p>Recent findings suggest that yes, as long as the library returns values that React serializes when passing to client components. The taint APIs intercept React's serialization layer, not the data fetching itself. Libraries like tRPC, react-query, or custom fetch wrappers all work with taint APIs when their results pass through Server Component boundaries.</p>
+<p>Sources indicate that tainting prevents serialization across React component boundaries at runtime. Encryption protects data during storage and transmission but does not prevent code from passing values to unauthorized locations. Encryption complements taint APIs but serves a different purpose, encrypted data can still leak if passed to client components.</p>
+<p>It has been revealed that taint APIs provide runtime enforcement for a boundary that authentication and authorization cannot guard. The boundary between server and client exists at every Server Component render and every Server Action return value. Traditional security patterns check requests and validate inputs, but they do not prevent server-side values from accidentally serializing to client components. The taint APIs close that gap by marking specific values and objects as forbidden, letting React throw an error when serialization would expose them.</p>
+<p id="sec-end-57650">Industry observers note that production integration starts with high-value credentials, API keys, database URLs, authentication tokens: and expands to configuration objects and raw database models. The pattern remains consistent: taint the value immediately after loading it, force explicit construction of client-safe responses, and let TypeScript enforce the separation at compile time while React enforces it at runtime. The experimental status requires version pinning and careful upgrade testing, but the protection against accidental data exposure justifies the integration cost for applications handling sensitive data at scale.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/jsmanifest/react-taint-apis-in-2026-preventing-sensitive-data-from-accidentally-reaching-client-components-1co7" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="logging-ai-prompts-and-responses-in-java-without-leaking-sensitiv-57751.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57751. Logging AI Prompts and Responses in Java Without Leaking Sensitive Data
+        </a>
+        
+        <a href="introducing-the-data-measurements-tool-an-interactive-tool-for-lo-58597.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58597. Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        </a>
+        
+        <a href="accelerate-large-model-training-using-pytorch-fully-sharded-data--58566.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58566. Accelerate Large Model Training using PyTorch Fully Sharded Data Parallel
+        </a>
+        
+        <a href="efficient-table-pre-training-without-real-data-an-introduction-to-58554.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58554. Efficient Table Pre-training without Real Data: An Introduction to TAPEX
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

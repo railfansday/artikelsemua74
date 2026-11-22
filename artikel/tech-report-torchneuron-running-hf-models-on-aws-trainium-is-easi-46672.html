@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46672">Recent findings suggest that torchNeuron provides a new native backend for PyTorch on AWS Trainium. Transformers, Diffusers and Kernels natively support it, making it easier than ever to run models on Trainium and to share them on the HF hub.</p>
-<p>In a recent development, torchNeuron is a PyTorch plugin that brings a newly introduced backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP. Read the Pytorch blog to learn more about TorchNeuron. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
+<p>In a recent development, torchNeuron is a PyTorch plugin that brings a newly introduced backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP. Read the Pytorch blog to learn more about TorchNeuron. <span style="font-size:13px;">(Related: <a href="hugging-face-on-pytorch-xla-tpus-58626.html" style="color:#2563eb; font-weight:600;">Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
 <p>Starting Oct. 20, 2026, TorchNeuron will be available as a public beta. Researchers and developers will be able to install it with pip install torch-neuronx.</p>
-<p>Sources indicate that to date, the Hugging Face experience on AWS Trainium and Inferentia — AI chips designed respectively for cost-effective training and inference at scale — has been delivered through optimum-neuron. This library relies on the torch-neuronx package, which is based on PyTorch XLA. It was the natural choice at the time, but it meant thinking like a compiler: lazy tensors instead of eager execution, static shapes only, a recompilation for every graph break. Optimum Neuron existed to hide that complexity, and maintained custom code (modeling classes, trainers, etc) to do so.</p>
+<p>Sources indicate that to date, the Hugging Face experience on AWS Trainium and Inferentia — AI chips designed respectively for cost-effective training and inference at scale — has been delivered through optimum-neuron. This library relies on the torch-neuronx package, which is based on PyTorch XLA. It was the natural choice at the time, but it meant thinking like a compiler: lazy tensors instead of eager execution, static shapes only, a recompilation for every graph break. Optimum Neuron existed to hide that complexity, and maintained custom code (modeling classes, trainers, etc) to do so. <span style="font-size:13px;">(Related: <a href="the-reformer-pushing-the-limits-of-language-modeling-58635.html" style="color:#2563eb; font-weight:600;">The Reformer - Pushing the limits of language modeling...</a>)</span></p>
 <p>Recent findings suggest that torchNeuron changes this. It integrates directly into PyTorch and exposes neuron as a native device, with eager execution, PyTorch's own distributed primitives (DTensor, FSDP2) and torch.compile.</p>
 <p>It has been revealed that for the Hugging Face libraries, Trainium becomes a device like any other: Transformers, Diffusers, Accelerate, PEFT and TRL run on it directly, with the same classes and scripts you would use on any other accelerator. From now on, we recommend that Neuron customers use these libraries directly instead of going through Optimum Neuron.</p>
 <p>Text generation is now natively supported in Transformers for a wide range of models. With TorchNeuron, 89% of the top 100 most-used text-generation model architectures are supported out of the box, compared to 46% with Optimum Neuron v0.4.5. You just need to pass the device_map=neuron argument in your code and your model will be moved to the Neuron devices.</p>
-<p>Industry observers note that the following is an example of text-generation with tensor parallelism, which will enable to fully benefit from your Neuron instance. Note that it uses a static cache for generation as this is strongly recommended with Neuron to prevent frequent recompilations. <span style="font-size:13px;">(Related: <a href="industry-news-ai-powered-robot-learns-how-to-harvest-tomatoes-mor-47184.html" style="color:#2563eb; font-weight:600;">Industry News: AI-powered robot learns how to harvest t...</a>)</span></p>
+<p>Industry observers note that the following is an example of text-generation with tensor parallelism, which will enable to fully benefit from your Neuron instance. Note that it uses a static cache for generation as this is strongly recommended with Neuron to prevent frequent recompilations.</p>
 <p>Now that Neuron is a native PyTorch device, training on Trainium uses the same Hugging Face libraries as any other accelerator: Transformers, Accelerate, PEFT and TRL. You no longer need a dedicated trainer or a Neuron-specific fork of the model code. A standard TRL fine-tuning script runs on a Trainium instance with only a few Neuron-specific settings.</p>
 <p>Here is a supervised fine-tuning script built on TRL's SFTTrainer. If you have fine-tuned a model with TRL on GPUs before, it should look familiar.</p>
 <p>Industry observers note that parallelism is handled natively by Transformers. You put a DistributedConfig with the tensor-parallel (TP) and FSDP sizes in model_init_kwargs, SFTTrainer passes it to from_pretrained, and the model is sharded as its weights are loaded. The Trainer sees that the model is already distributed and does not wrap it again. You don't need an --fsdp flag or an Accelerate FSDP config.</p>
@@ -195,20 +195,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-deer-hunting-has-never-been-easier-than-right-now-56378.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #56378. Tech Report: Deer Hunting Has Never Been Easier Than Right Now
+        </a>
+        
+        <a href="tech-report-lions-jahmyr-gibbs-laying-early-foundation-for-one-of-50364.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #50364. Tech Report: Lions' Jahmyr Gibbs laying early foundation for one of the best running back careers ever
+        </a>
+        
         <a href="aws-weekly-roundup-amazon-polly-generative-engine-torchneuron-for-46765.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #46765. AWS Weekly Roundup: Amazon Polly Generative engine, TorchNeuron for Trainium, and more (October 26, 2026)
         </a>
         
         <a href="profiling-torchneuron-part-1-system-level-profiling-on-aws-traini-46656.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #46656. Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.
-        </a>
-        
-        <a href="tech-report-ai-found-more-critical-bugs-in-another-widely-used-te-46897.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46897. Tech Report: AI found more critical bugs in another widely used technology running 225M websites
-        </a>
-        
-        <a href="tech-report-multi-vector-late-interaction-embedding-models-with-s-46827.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46827. Tech Report: Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers
         </a>
         
     </div>

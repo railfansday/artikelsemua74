@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46814">In a recent development, android’s source code is big – the Android 17 open source release has 1,084 Git repositories, 1.62 million files, and takes 300 GB for a built workspace. Additionally, in a typical Android source tree with hardware vendor code and first-party applications, the size increases by 2-3x. Traditionally, it took over 30 minutes to fetch Android Open Source Project (AOSP) source code and well over an hour to build on even highly capable developer workstations. As software development evolved over the last 2 years, modern coding harnesses and LLMs have accelerated the development of many projects. These tools are used today for Android operating system development, but the long sync and build times make them less efficient. Both human developers and agents need quick setup, parallel workspaces, and fast build-and-test iteration times.</p>
-<p>We built Another Build File Service (ABFS) to address these bottlenecks. ABFS is a full suite of software across a Linux kernel filesystem module, user-space daemons, and server-side infrastructure. ABFS uses content-addressability across the entire stack to lazy-load and cache source code, developer workspaces, intermediate build files, and build results. <span style="font-size:13px;">(Related: <a href="nasas-fresh-ai-space-chip-could-let-spacecraft-think-for-themselv-47159.html" style="color:#2563eb; font-weight:600;">NASA’s fresh AI space chip could let spacecraft think f...</a>)</span></p>
+<p>We built Another Build File Service (ABFS) to address these bottlenecks. ABFS is a full suite of software across a Linux kernel filesystem module, user-space daemons, and server-side infrastructure. ABFS uses content-addressability across the entire stack to lazy-load and cache source code, developer workspaces, intermediate build files, and build results.</p>
 <p>Today, we are excited to announce that ABFS is open source on GitHub.The impact of ABFS to Android is:.</p>
-<p id="sec-mid-46814">ABFS already powers parallel workflows for developers and agents in Android, but it is designed to scale to other massive Git-based projects.</p>
-<p>Industry observers note that in the Android build system, developers define build rules in Blueprint files (Android.bp), Soong compiles them into Ninja files, and Ninja executes the final build graph (see the Android build overview). Similar to the Make build tool, Ninja is timestamp-based. If a build step’s input file is newer than the existing output file, Ninja rebuilds the output file. <span style="font-size:13px;">(Related: <a href="industry-news-buttigieg-supporters-launch-group-to-support-a-pres-47186.html" style="color:#2563eb; font-weight:600;">Industry News: Buttigieg supporters launch group to sup...</a>)</span></p>
+<p id="sec-mid-46814">ABFS already powers parallel workflows for developers and agents in Android, but it is designed to scale to other massive Git-based projects. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58633.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>Industry observers note that in the Android build system, developers define build rules in Blueprint files (Android.bp), Soong compiles them into Ninja files, and Ninja executes the final build graph (see the Android build overview). Similar to the Make build tool, Ninja is timestamp-based. If a build step’s input file is newer than the existing output file, Ninja rebuilds the output file. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-58631.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p id="sec-end-46814">Analyzing the AOSP code for Android 17 highlights the sheer disk footprint and file count involved in a single checkout and build.</p>
 <p style="margin-top: 25px;">
 <a href="https://developers.googleblog.com/accelerating-development-for-massive-git-repositories/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
@@ -178,20 +178,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="senate-passes-baaja-the-massive-permitting-bill-that-will-expedit-44913.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #44913. Senate Passes BAAJA, the Massive Permitting Bill That Will Expedite Development on Public Lands
+        <a href="senate-passes-baaja-the-massive-permitting-bill-that-will-expedit-56329.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #56329. Senate Passes BAAJA, the Massive Permitting Bill That Will Expedite Development on Public Lands
         </a>
         
-        <a href="industry-news-worlds-first-superconducting-quantum-heat-engine-co-47137.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47137. Industry News: World’s first superconducting quantum heat engine could help unlock massive quantum computers
+        <a href="accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-58598.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58598. Accelerating PyTorch distributed fine-tuning with Intel technologies
         </a>
         
-        <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-47063.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47063. Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1
+        <a href="mteb-massive-text-embedding-benchmark-58503.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58503. MTEB: Massive Text Embedding Benchmark
         </a>
         
-        <a href="ai-for-game-development-creating-a-farming-game-in-5-days-part-1-47059.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47059. AI for Game Development: Creating a Farming Game in 5 Days. Part 1
+        <a href="latest-update-accelerating-document-ai-58492.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58492. Latest Update: Accelerating Document AI
         </a>
         
     </div>

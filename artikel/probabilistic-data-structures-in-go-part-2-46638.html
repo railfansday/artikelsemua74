@@ -151,21 +151,21 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46638">Probabilistic data structures give you approximate answers to questions about the data they handle. Does the set contain a certain item? How many unique items are in the collection? What is the 99th percentile in a stream of numbers? How similar are two sets? Unlike deterministic structures, the answers might not be exact, but in return, you can save a lot of memory.</p>
 <p>Previously, we reviewed the following data structures: Bloom filter (for checking if an item is in a set), Count-min sketch (for counting items), HyperLogLog (for counting unique items), T-digest (for finding quantiles), and Top-k (for finding the most frequent items).</p>
-<p>In this post, we'll talk about other probabilistic structures and compare them to the ones we've already covered. We'll look at how they work and what kinds of guarantees they provide. <span style="font-size:13px;">(Related: <a href="latest-update-airline-responds-after-passengers-find-bags-covered-47175.html" style="color:#2563eb; font-weight:600;">Latest Update: Airline responds after passengers find b...</a>)</span></p>
+<p>In this post, we'll talk about other probabilistic structures and compare them to the ones we've already covered. We'll look at how they work and what kinds of guarantees they provide.</p>
 <p>All examples use unsure — a package that implements these structures in Go.</p>
 <p>Binary fuse filter •
 UltraLogLog •
 Log-linear histogram •
 MinHash.</p>
-<p>According to recent reports, A binary fuse filter is a set that trades certainty for space, like a Bloom filter1. It can tell you that an item is definitely not in the set, or that it probably is (which might be a false positive). The filter doesn't store the items, so it's much more compact than a regular set. <span style="font-size:13px;">(Related: <a href="nasas-fresh-ai-space-chip-could-let-spacecraft-think-for-themselv-47159.html" style="color:#2563eb; font-weight:600;">NASA’s fresh AI space chip could let spacecraft think f...</a>)</span></p>
+<p>According to recent reports, A binary fuse filter is a set that trades certainty for space, like a Bloom filter1. It can tell you that an item is definitely not in the set, or that it probably is (which might be a false positive). The filter doesn't store the items, so it's much more compact than a regular set.</p>
 <p>Unlike a Bloom filter, a binary fuse filter is static: you build it once from all the items, and you can't add more later. In exchange, it uses less memory than a Bloom filter with the same false positive rate. For example, a fuse filter for 1,000,000 items with a 0.39% false positive rate takes 1.13 MB (9 bits per item), while a Bloom filter takes 1.51 MB (12 bits per item).</p>
 <p>This makes binary fuse filters a good fit for data that is written once and read many times, like the key set of an immutable file in a database (to skip files that don't have the key), or a list of known bad items, such as leaked passwords or malicious URLs.</p>
 <p>The fingerprint type (T in Fresh[T]) determines the false positive rate and the memory use:.</p>
-<p>The constructor takes an iterator of items to add to the filter and the expected number of items (0 if unknown). The number is only used to preallocate memory, so a good estimate makes the build faster.</p>
+<p>The constructor takes an iterator of items to add to the filter and the expected number of items (0 if unknown). The number is only used to preallocate memory, so a good estimate makes the build faster. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58634.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>You can check if an item is in the filter, but you cannot add or delete an item, count the number of items, or iterate over them.</p>
 <p>In a recent development, the filter2 is an array of b-bit fingerprints (for example, b = 8 for uint8). Each item is hashed to a 64-bit value h, which gives the item's fingerprint f (b bits computed from h) and three positions in the array (cells). The array is filled so that for every item, the XOR of its cells equals f.</p>
 <p>To check an item, you compute h, look up its three cells, and compare their XOR with f. For an item in the set, they always match. For any other item, the XOR is a random b-bit value, which matches f with probability 2^-b.</p>
-<p>Sources indicate that each check reads three cells, so for large filters it's three cache misses, against one for a blocked Bloom filter. However, since the reads are independent, the CPU can do them concurrently, so the checks are about as fast as with a Bloom filter.</p>
+<p>Sources indicate that each check reads three cells, so for large filters it's three cache misses, against one for a blocked Bloom filter. However, since the reads are independent, the CPU can do them concurrently, so the checks are about as fast as with a Bloom filter. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-58623.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
 <p>The filter uses the local wyhash3 implementation for hashing. It performs roughly the same as xxh34 but has a much simpler implementation, without SIMD or assembly.</p>
 <p>Here's an excerpt from the full benchmarks5, comparing unsure to xorfilter6 (binary fuse by the authors of the paper) and bloom (unsure's own Bloom filter) with 8-bit fingerprints (ns/op, lower is better):.</p>
 <p>Memory, bits per item (lower is better):.</p>
@@ -279,16 +279,16 @@ MinHash.</p>
             📰 #46942. PRX Part 4: Our Data Strategy
         </a>
         
-        <a href="this-new-chip-could-slash-data-center-energy-waste-47179.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47179. This new chip could slash data center energy waste
+        <a href="scaling-up-bert-inference-on-cpu-part-1-58616.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58616. Scaling-up BERT Inference on CPU (Part 1)
         </a>
         
-        <a href="industry-news-spacex-wants-to-build-ai-data-centers-in-space-will-47151.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47151. Industry News: SpaceX wants to build AI data centers in space. Will it work?
+        <a href="scaling-up-bert-like-model-inference-on-modern-cpu-part-2-58599.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58599. Scaling up BERT-like model Inference on modern CPU  - Part 2
         </a>
         
-        <a href="latest-update-ai-data-center-power-demand-will-double-by-2030-tha-47106.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47106. Latest Update: AI data center power demand will double by 2030 thanks to $4 trillion in spending, adding an entire Great Britain to energy strain
+        <a href="introducing-the-data-measurements-tool-an-interactive-tool-for-lo-58597.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58597. Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
         </a>
         
     </div>

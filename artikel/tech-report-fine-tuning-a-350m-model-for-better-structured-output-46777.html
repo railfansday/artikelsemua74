@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46777">It has been revealed that this guide is a fully public, inexpensive recipe for making a small model substantially better at structured-output compliance. We fine-tune LFM2.5-350M with Group Relative Policy Optimization (GRPO) using the TRL library and evaluate it on the IFStruct benchmark. The full run takes around 500 samples and 100 training steps, small enough for a free-tier Colab or Kaggle GPU, and is available on GitHub. The results show that even a light fine-tuning procedure improves performance from 22.6% to 29.7% on the IFStruct benchmark.</p>
-<p>Structured output is one of the most common real-world tasks for LLMs, yet most benchmarks fold it into broader reasoning or extraction scores rather than measuring it on its own. Whether a model reliably returns valid, parseable output in the requested format and shape — schema compliance — is often what decides whether it can be wired into a downstream system at all. <span style="font-size:13px;">(Related: <a href="breaking-quantum-mechanics-once-baffled-scientists-now-its-changi-47148.html" style="color:#2563eb; font-weight:600;">Breaking: Quantum mechanics once baffled scientists. No...</a>)</span></p>
-<p>Note that the training pipeline described here is not the one used to train the RL model described in the IFStruct blog. This notebook doesn't aim to recreate the IFStruct benchmark score, but to show how task-specific fine-tuning of smaller models can improve performance and match that of far larger models.</p>
-<p>This guide has two halves that run in different places:. <span style="font-size:13px;">(Related: <a href="latest-update-kfc-just-released-fried-cheese-with-four-different--47152.html" style="color:#2563eb; font-weight:600;">Latest Update: KFC just released fried cheese with four...</a>)</span></p>
+<p>Structured output is one of the most common real-world tasks for LLMs, yet most benchmarks fold it into broader reasoning or extraction scores rather than measuring it on its own. Whether a model reliably returns valid, parseable output in the requested format and shape — schema compliance — is often what decides whether it can be wired into a downstream system at all. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Note that the training pipeline described here is not the one used to train the RL model described in the IFStruct blog. This notebook doesn't aim to recreate the IFStruct benchmark score, but to show how task-specific fine-tuning of smaller models can improve performance and match that of far larger models. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58634.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>This guide has two halves that run in different places:.</p>
 <p>Industry observers note that we will need uv for the Python tooling and llama.cpp for serving. Following the Liquid AI llama.cpp deployment docs, install llama.cpp with Homebrew and verify that llama-server is available:.</p>
 <p>Before we begin, let's evaluate LFM2.5-350M on the IFStruct benchmark and see whether we can reproduce the reported score of 21.1%.</p>
 <p>According to recent reports, IFStruct is a benchmark for testing the validity of LLM outputs and schema adherence. The benchmark is open-source in Liquid4All/ifstruct, with the public benchmark dataset available on Hugging Face at LiquidAI/ifstruct-v1.0.</p>
@@ -200,20 +200,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-fine-tuning-llama-2-70b-using-pytorch-fsdp-58360.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58360. Tech Report: Fine-tuning Llama 2 70B using PyTorch FSDP
+        </a>
+        
         <a href="tech-report-accelerating-transformers-fine-tuning-with-nvidia-nem-46972.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #46972. Tech Report: Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel
         </a>
         
-        <a href="tech-report-parameter-efficient-fine-tuning-using-peft-35575.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35575. Tech Report: Parameter-Efficient Fine-Tuning using 🤗 PEFT
+        <a href="fine-tuning-clip-with-remote-sensing-satellite-images-and-caption-58604.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58604. Fine tuning CLIP with Remote Sensing (Satellite) images and captions
         </a>
         
-        <a href="beyond-lora-can-you-beat-the-most-popular-fine-tuning-technique-46997.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46997. Beyond LoRA: Can you beat the most popular fine-tuning technique?
-        </a>
-        
-        <a href="tech-report-honor-just-supercharged-its-smartwatch-lineup-with-a--46977.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46977. Tech Report: Honor just supercharged its smartwatch lineup with a fresh Pro model
+        <a href="accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-58598.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58598. Accelerating PyTorch distributed fine-tuning with Intel technologies
         </a>
         
     </div>

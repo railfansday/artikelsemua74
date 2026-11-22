@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57810">Hugging Face Models and Datasets repos are great for publishing final artifacts. But production ML generates a constant stream of intermediate files (checkpoints, optimizer states, processed shards, logs, traces, etc.) that change often, arrive from many jobs at once, and rarely need version control.</p>
-<p>According to recent reports, storage Buckets are built exactly for this: mutable, S3-like object storage you can browse on the Hub, script from Python, or manage with the hf CLI. And because they are backed by Xet, they are especially efficient for ML artifacts that share content across files.</p>
+<p>According to recent reports, storage Buckets are built exactly for this: mutable, S3-like object storage you can browse on the Hub, script from Python, or manage with the hf CLI. And because they are backed by Xet, they are especially efficient for ML artifacts that share content across files. <span style="font-size:13px;">(Related: <a href="phison-details-ssd-with-a-built-in-npu-and-64gb-of-memory-that-su-70027.html" style="color:#2563eb; font-weight:600;">Phison details SSD with a built-in NPU and 64GB of memo...</a>)</span></p>
 <p>Git starts to feel like the wrong abstraction pretty rapidly when you're dealing with:.</p>
-<p>The storage need in all these cases is the same: write fast, overwrite when needed, sync directories, remove stale files, and keep things moving.</p>
-<p>According to recent reports, A Bucket is a non-versioned storage container on the Hub. It lives under a user or organization namespace, has standard Hugging Face permissions, can be private or public, has a page you can open in your browser, and can be addressed programmatically with a handle like hf://buckets/username/my-training-bucket. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-58627.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
-<p>Buckets are built on Xet, Hugging Face’s chunk-based storage backend, and this matters more than it might seem. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58633.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>The storage need in all these cases is the same: write fast, overwrite when needed, sync directories, remove stale files, and keep things moving. <span style="font-size:13px;">(Related: <a href="latest-update-save-2400-on-a-tricked-out-corsair-rtx-5090-prebuil-70016.html" style="color:#2563eb; font-weight:600;">Latest Update: Save $2,400 on a tricked-out Corsair RTX...</a>)</span></p>
+<p>According to recent reports, A Bucket is a non-versioned storage container on the Hub. It lives under a user or organization namespace, has standard Hugging Face permissions, can be private or public, has a page you can open in your browser, and can be addressed programmatically with a handle like hf://buckets/username/my-training-bucket.</p>
+<p>Buckets are built on Xet, Hugging Face’s chunk-based storage backend, and this matters more than it might seem.</p>
 <p>In a recent development, instead of treating files as monolithic blobs, Xet breaks content into chunks and deduplicates across them. Upload a processed dataset that’s mostly similar to the raw one? Many chunks already exist. Store successive checkpoints where large parts of the model are frozen? Same story. Buckets skip the bytes that are already there, which means less bandwidth, faster transfers, and more efficient storage.</p>
 <p>It has been revealed that this is a natural fit for ML workloads. Training pipelines constantly produce families of related artifacts — raw and processed data, successive checkpoints, Agent traces and derived summaries — and Xet is designed to take advantage of that overlap.</p>
 <p>Recent findings suggest that for Enterprise customers, billing is based on deduplicated storage, so shared chunks directly reduce the billed footprint. Deduplication helps with both speed and cost.</p>
@@ -213,20 +213,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="record-train-and-deploy-from-one-place-with-strands-agents-lerobo-69705.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69705. Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets
+        </a>
+        
         <a href="tech-report-introducing-bertopic-integration-with-the-hugging-fac-58415.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58415. Tech Report: Introducing BERTopic Integration with the Hugging Face Hub
         </a>
         
-        <a href="record-train-and-deploy-from-one-place-with-strands-agents-lerobo-46839.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46839. Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets
+        <a href="latest-update-from-the-hugging-face-hub-to-robot-hardware-with-st-69880.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69880. Latest Update: From the Hugging Face Hub to robot hardware with Strands Agents and LeRobot
         </a>
         
-        <a href="sentence-transformers-in-the-hugging-face-hub-58613.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58613. Sentence Transformers in the Hugging Face Hub
-        </a>
-        
-        <a href="latest-update-welcome-spacy-to-the-hugging-face-hub-58611.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58611. Latest Update: Welcome spaCy to the Hugging Face Hub
+        <a href="run-ai-workloads-on-any-cloud-store-on-hugging-face-zero-egress-s-69808.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69808. Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot
         </a>
         
     </div>

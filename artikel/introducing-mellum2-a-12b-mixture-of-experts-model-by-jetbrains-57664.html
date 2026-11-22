@@ -151,13 +151,13 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57664">Today we’re releasing Mellum2, an open Mixture-of-Experts model optimized for low-latency text-and-code workloads. Mellum originally started as a code completion model. With Mellum2, we extend that foundation to a broader set of natural language and software engineering tasks while keeping the model focused on efficient inference and deployability. Modern AI systems increasingly rely on multiple model calls: routing, retrieval, summarization, planning, validation, and tool use. Many of these operations are latency-sensitive and do not require the largest available model. Mellum2 targets these workloads.</p>
 <p>According to recent reports, in our technical report, we evaluate Mellum2 across code generation, reasoning, science, and math benchmarks. Mellum2 is competitive with similarly sized open models while delivering more than 2x faster inference, making it suitable for high-throughput production workloads. Model architecture
-Mellum2 is a Mixture-of-Experts model:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>The MoE architecture keeps total model capacity high while activating only a subset of parameters for each token. This makes inference more efficient and helps reduce serving cost for real-time workloads. Mellum2 is intentionally focused on text and code rather than multimodal tasks. This specialization keeps the model compact and efficient for software engineering workloads. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-58630.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+Mellum2 is a Mixture-of-Experts model:. <span style="font-size:13px;">(Related: <a href="ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-70037.html" style="color:#2563eb; font-weight:600;">AI breakthrough cuts energy use by 100x while boosting ...</a>)</span></p>
+<p>The MoE architecture keeps total model capacity high while activating only a subset of parameters for each token. This makes inference more efficient and helps reduce serving cost for real-time workloads. Mellum2 is intentionally focused on text and code rather than multimodal tasks. This specialization keeps the model compact and efficient for software engineering workloads.</p>
 <p>Mellum2 works well as a lightweight routing and orchestration model in multi-model systems, including prompt classification, tool selection, and intermediate control-flow steps.</p>
 <p>The model is well suited for latency-sensitive retrieval pipelines, including context compression, summarization, and retrieval post-processing.</p>
 <p id="sec-mid-57664">Mellum2 can be used for agent subtasks such as planning, validation, transformation, and context preparation, reducing the need to invoke larger models for intermediate operations.</p>
 <p>Because Mellum2 is open and efficient to serve, it can be deployed in self-hosted environments involving proprietary code or internal data.</p>
-<p>As AI systems mature, the most effective architectures are becoming less monolithic. A single frontier model can be powerful, but production systems often need several specialized components working together: retrievers, routers, code-aware models, validators, tool callers, and larger reasoning models. We think of Mellum2 as a “focal” model: a fast, well-scoped model optimized for high-frequency tasks inside larger AI systems. The goal is not to replace every model in the stack. The goal is to make the stack faster, cheaper, and easier to control.</p>
+<p>As AI systems mature, the most effective architectures are becoming less monolithic. A single frontier model can be powerful, but production systems often need several specialized components working together: retrievers, routers, code-aware models, validators, tool callers, and larger reasoning models. We think of Mellum2 as a “focal” model: a fast, well-scoped model optimized for high-frequency tasks inside larger AI systems. The goal is not to replace every model in the stack. The goal is to make the stack faster, cheaper, and easier to control. <span style="font-size:13px;">(Related: <a href="dna-robots-could-deliver-drugs-and-hunt-viruses-inside-your-body-70038.html" style="color:#2563eb; font-weight:600;">DNA robots could deliver drugs and hunt viruses inside ...</a>)</span></p>
 <p>If you are building AI systems for software engineering – inside an IDE, in a RAG pipeline, as part of an agent workflow, or on private infrastructure – Mellum2 is ready to try.</p>
 <p id="sec-end-57664">I tried it on Opencode. I asked it to load the same codeatlas.md than I use in Opencode with Luna 6. It seems it understands it but as soon I ask for changes in natural language it fails. Not useful for natural language project development.</p>
 <p style="margin-top: 25px;">
@@ -183,8 +183,12 @@ Mellum2 is a Mixture-of-Experts model:. <span style="font-size:13px;">(Related: 
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="welcome-muse-spark-open-open-weight-frontier-multimodal-mixture-o-46691.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46691. Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta
+        <a href="industry-news-welcome-muse-spark-open-open-weight-frontier-multim-69549.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69549. Industry News: Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta
+        </a>
+        
+        <a href="introducing-harness-adapters-adapt-your-favorite-model-to-your-ha-69312.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69312. Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost
         </a>
         
         <a href="latest-update-introducing-the-worlds-largest-open-multilingual-la-58540.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
@@ -193,10 +197,6 @@ Mellum2 is a Mixture-of-Experts model:. <span style="font-size:13px;">(Related: 
         
         <a href="introducing-idefics-an-open-reproduction-of-state-of-the-art-visu-58371.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58371. Introducing IDEFICS: An Open Reproduction of State-of-the-art Visual Langage Model
-        </a>
-        
-        <a href="mixture-of-experts-explained-58329.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58329. Mixture of Experts Explained
         </a>
         
     </div>

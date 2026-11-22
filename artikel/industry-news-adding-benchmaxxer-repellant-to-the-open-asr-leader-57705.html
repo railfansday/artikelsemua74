@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57705">"When a measure becomes a target, it ceases to be a good measure." (Goodhart’s Law).</p>
-<p>TLDR: Appen Inc. and DataoceanAI have provided high-quality English ASR datasets covering scripted and conversational speech over multiple accents. To prevent potential risks of benchmaxxing or test-set contamination, we will keep these datasets private for a high-quality measure of performance on multiple tasks. <span style="font-size:13px;">(Related: <a href="industry-news-fine-tune-wav2vec2-for-english-asr-in-hugging-face--58622.html" style="color:#2563eb; font-weight:600;">Industry News: Fine-Tune Wav2Vec2 for English ASR in Hu...</a>)</span></p>
-<p>We’re not updating the average WER at this time: by default, the leaderboard’s Average WER remains computed on public datasets only. You can optionally include the private datasets using the toggle to see their impact 👀. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>TLDR: Appen Inc. and DataoceanAI have provided high-quality English ASR datasets covering scripted and conversational speech over multiple accents. To prevent potential risks of benchmaxxing or test-set contamination, we will keep these datasets private for a high-quality measure of performance on multiple tasks.</p>
+<p>We’re not updating the average WER at this time: by default, the leaderboard’s Average WER remains computed on public datasets only. You can optionally include the private datasets using the toggle to see their impact 👀.</p>
 <p>Industry observers note that since its launch in September 2023, the Open ASR Leaderboard has been visited over 710K times. We’re blown away by the community’s interest and motivation to keep pushing speech recognition 🗣️.</p>
 <p>Two words sum up the objectives (but also challenges) in maintaining a benchmark like the Open ASR Leaderboard:.</p>
-<p>It has been revealed that standardization: models can have different conventions for their usage and outputs, e.g. with/without punctuation and casing. Datasets have the same challenges and can be structured differently. To this end, all test sets have been gathered into a single dataset on the Hub for easy access and previewing. Moreover, to standardize model outputs and dataset transcripts, we use a normalizer that (among other things) removes punctuation and casing, and maps to American spelling. It is based on the normalizer of Whisper.</p>
-<p>Openness: the UI code and evaluation scripts are open-sourced. This has helped not only to incorporate upcoming models, but also to improve the quality of the evaluation procedure through community feedback and contributions.</p>
+<p>It has been revealed that standardization: models can have different conventions for their usage and outputs, e.g. with/without punctuation and casing. Datasets have the same challenges and can be structured differently. To this end, all test sets have been gathered into a single dataset on the Hub for easy access and previewing. Moreover, to standardize model outputs and dataset transcripts, we use a normalizer that (among other things) removes punctuation and casing, and maps to American spelling. It is based on the normalizer of Whisper. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-70026.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
+<p>Openness: the UI code and evaluation scripts are open-sourced. This has helped not only to incorporate upcoming models, but also to improve the quality of the evaluation procedure through community feedback and contributions. <span style="font-size:13px;">(Related: <a href="breaking-upcoming-app-punishes-you-and-your-friends-for-spending--70024.html" style="color:#2563eb; font-weight:600;">Breaking: Upcoming app punishes you and your friends fo...</a>)</span></p>
 <p>Sources indicate that standardization and openness are essential for meaningful benchmarking, but they also make benchmarks more susceptible to benchmark-specific optimization ("benchmaxxing"), where models improve leaderboard performance without corresponding gains in real-world robustness. As models and use cases evolve, the Open ASR Leaderboard will continue incorporating high-quality datasets and new evaluation settings to better reflect real-world performance and improve robustness against benchmark-specific optimization.</p>
 <p>It has been revealed that as discussed in our report, there is no single "catch-all" ASR model: some perform better on American English, others on diverse accents and multilingual settings, while others are optimized for speed or conversational audio. Different applications also prioritize different capabilities, so a model that performs less well on one dimension is not necessarily a worse model overall. The goal of the Open ASR Leaderboard is to capture these nuances and provide a more holistic view of ASR performance.</p>
 <p>Industry observers note that to this end, we have worked with Appen Inc. and DataoceanAI to curate high-quality datasets for ASR benchmarking. Below is some information on the various splits.</p>
@@ -205,20 +205,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="the-open-asr-leaderboard-adds-its-first-global-south-language-69646.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69646. The Open ASR Leaderboard Adds Its First Global South Language
+        </a>
+        
+        <a href="latest-update-egyptian-and-nigerian-english-join-the-open-asr-lea-69412.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69412. Latest Update: Egyptian and Nigerian English join the Open ASR Leaderboard
+        </a>
+        
         <a href="open-asr-leaderboard-trends-and-insights-with-fresh-multilingual--57897.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #57897. Open ASR Leaderboard: Trends and Insights with Fresh Multilingual & Long-Form Tracks
         </a>
         
-        <a href="industry-news-introducing-the-ffasr-leaderboard-benchmarking-asr--46976.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46976. Industry News: Introducing the FFASR Leaderboard: Benchmarking ASR in the Real World
-        </a>
-        
-        <a href="the-open-asr-leaderboard-adds-its-first-global-south-language-46796.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46796. The Open ASR Leaderboard Adds Its First Global South Language
-        </a>
-        
-        <a href="egyptian-and-nigerian-english-join-the-open-asr-leaderboard-46573.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46573. Egyptian and Nigerian English join the Open ASR Leaderboard
+        <a href="introducing-the-open-arabic-llm-leaderboard-69931.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69931. Introducing the Open Arabic LLM Leaderboard
         </a>
         
     </div>

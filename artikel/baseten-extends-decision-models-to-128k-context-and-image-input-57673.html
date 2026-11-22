@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57673">Sources indicate that baseten released bison-1 and groundhog-1 on November 20, 2026, two open-weight models post-trained from Google’s Gemma 4 to return calibrated probabilities for predefined decisions. Artificial Analysis scored bison-1 at 76 on Decision Index v2.1, placing it first among 19 evaluated decision models.</p>
-<p>Both are available through Baseten Model APIs and as weights on Hugging Face. They accept text and images and support 131,072 tokens; Baseten says that is eight times the 16K context of its previous mammoth-1, elephant-1 and joey-1 APIs. A request can bundle one state and any number of yes/no, named-choice or ordered-score questions into one shared-prefix prefill, without generating text. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>Recent findings suggest that bison-1 is a dense 31B-parameter model post-trained from Gemma 4 31B. Groundhog-1 is a 26B mixture-of-experts model based on Gemma 4 26B-A4B, with about 4B active parameters per token. Baseten prices them at $0.10 and $0.035 per million tokens, respectively, matching mammoth-1 and elephant-1. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58633.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
-<p>Both use the same API as Baseten’s earlier decision models, and requests above the trained length limits are rejected rather than truncated. Google’s Gemma 4 base models carry Apache License 2.0 terms; Baseten’s modifications are released under the MIT License, with use subject to both licenses.</p>
+<p>Both are available through Baseten Model APIs and as weights on Hugging Face. They accept text and images and support 131,072 tokens; Baseten says that is eight times the 16K context of its previous mammoth-1, elephant-1 and joey-1 APIs. A request can bundle one state and any number of yes/no, named-choice or ordered-score questions into one shared-prefix prefill, without generating text. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-70026.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
+<p>Recent findings suggest that bison-1 is a dense 31B-parameter model post-trained from Gemma 4 31B. Groundhog-1 is a 26B mixture-of-experts model based on Gemma 4 26B-A4B, with about 4B active parameters per token. Baseten prices them at $0.10 and $0.035 per million tokens, respectively, matching mammoth-1 and elephant-1.</p>
+<p>Both use the same API as Baseten’s earlier decision models, and requests above the trained length limits are rejected rather than truncated. Google’s Gemma 4 base models carry Apache License 2.0 terms; Baseten’s modifications are released under the MIT License, with use subject to both licenses. <span style="font-size:13px;">(Related: <a href="latest-update-kfc-just-released-fried-cheese-with-four-different--70015.html" style="color:#2563eb; font-weight:600;">Latest Update: KFC just released fried cheese with four...</a>)</span></p>
 <p>It has been revealed that the Artificial Analysis Decision Index v2.1 combines six evaluations conducted independently by Artificial Analysis. AA-Paperclip, covering decisions and extraction across 1,500 resumes, receipts, invoices and research papers, carries 30% of the weight. The When2Call tool-calling evaluation carries 10%, while tests of workplace judgement, knowledge and hallucination, reasoning and decision invariance each carry 15%.</p>
 <p>In a recent development, its Decision Score subtracts a Brier calibration penalty from accuracy. The underlying probabilities also support confidence thresholds that answer some cases and route others elsewhere, making calibration relevant to how a decision system is deployed.</p>
 <p>Industry observers note that artificial Analysis’s November 19, 2026 results place d1.2-ultra second at 75 and mammoth-1 at 71, while bison-1’s 0.14 Brier score is the index’s lowest, against 0.15 for d1.2-ultra. The Brier measure calculates the mean squared gap between the probability assigned to the chosen answer and whether that answer is correct. Lower values indicate confidence that more closely matches actual outcomes.</p>
@@ -194,6 +194,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="decision-models-in-hugging-face-69401.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69401. Decision Models in Hugging Face
+        </a>
+        
         <a href="ethics-and-society-newsletter-4-bias-in-text-to-image-models-58397.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58397. Ethics and Society Newsletter #4: Bias in Text-to-Image Models
         </a>
@@ -204,10 +208,6 @@
         
         <a href="training-design-for-text-to-image-models-lessons-from-ablations-57854.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #57854. Training Design for Text-to-Image Models: Lessons from Ablations
-        </a>
-        
-        <a href="decision-models-in-hugging-face-46558.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46558. Decision Models in Hugging Face
         </a>
         
     </div>

@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57640">Industry observers note that if you have a GitHub repository and you have GitHub Actions enabled, you probably use GitHub-hosted runners for CI. That is the default for many projects because it is simple: add a workflow, write runs-on: ubuntu-latest, and GitHub gives you a machine.</p>
-<p>That default is convenient, but it also has limits. GitHub Actions can be slow or down for maintenance, the hosted machines are generic, and GPU access is not something most open-source projects can just turn on. For Trackio, those limits started to matter. We wanted both reliable CPU CI for basic unit tests and frontend checks, but also GPU CI for tests that need to run on actual CUDA hardware. <span style="font-size:13px;">(Related: <a href="the-reformer-pushing-the-limits-of-language-modeling-58635.html" style="color:#2563eb; font-weight:600;">The Reformer - Pushing the limits of language modeling...</a>)</span></p>
-<p>So built an alternative: keep GitHub Actions in charge of CI, but run the jobs on Hugging Face Jobs. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-58627.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
+<p>That default is convenient, but it also has limits. GitHub Actions can be slow or down for maintenance, the hosted machines are generic, and GPU access is not something most open-source projects can just turn on. For Trackio, those limits started to matter. We wanted both reliable CPU CI for basic unit tests and frontend checks, but also GPU CI for tests that need to run on actual CUDA hardware. <span style="font-size:13px;">(Related: <a href="forget-electrons-this-breakthrough-uses-light-matter-particles-to-70008.html" style="color:#2563eb; font-weight:600;">Forget electrons, this breakthrough uses light-matter p...</a>)</span></p>
+<p>So built an alternative: keep GitHub Actions in charge of CI, but run the jobs on Hugging Face Jobs. <span style="font-size:13px;">(Related: <a href="phison-details-ssd-with-a-built-in-npu-and-64gb-of-memory-that-su-70027.html" style="color:#2563eb; font-weight:600;">Phison details SSD with a built-in NPU and 64GB of memo...</a>)</span></p>
 <p>The result: Trackio's CI now runs on Hugging Face Jobs and streams back real-time logs, cutting our CI time for CPU jobs by about 30% and enabling a whole new test suite that runs on GPU machines!</p>
 <p>It has been revealed that in this article, we explain step-by-step how to recreate the same setup for your GitHub repo. If you are using an agent, you can point it to this article, since we provide CLI instructions alongside browser-based instructions for us humans.</p>
 <p>Let's start with a quick intro to Hugging Face Jobs!</p>
@@ -220,20 +220,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-how-hugging-face-inference-endpoints-jobs-and-bucke-69667.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69667. Latest Update: How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code
+        </a>
+        
         <a href="train-ai-models-with-unsloth-and-hugging-face-jobs-for-free-57839.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #57839. Train AI models with Unsloth and Hugging Face Jobs for FREE
         </a>
         
-        <a href="how-hugging-face-inference-endpoints-jobs-and-buckets-power-searc-46813.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46813. How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code
+        <a href="tech-report-how-an-agent-built-a-3d-paris-gallery-by-chaining-two-69893.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69893. Tech Report: How an Agent Built a 3D Paris Gallery by Chaining Two Hugging Face Spaces
         </a>
         
-        <a href="faster-tensorflow-models-in-hugging-face-transformers-58627.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58627. Faster TensorFlow models in Hugging Face Transformers
-        </a>
-        
-        <a href="hugging-face-on-pytorch-xla-tpus-58626.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58626. Hugging Face on PyTorch / XLA TPUs
+        <a href="latest-update-from-the-hugging-face-hub-to-robot-hardware-with-st-69880.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69880. Latest Update: From the Hugging Face Hub to robot hardware with Strands Agents and LeRobot
         </a>
         
     </div>

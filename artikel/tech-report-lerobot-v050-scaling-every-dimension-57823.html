@@ -150,15 +150,15 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57823">According to recent reports, with over 200 merged PRs and over 50 new contributors since v0.4.0, LeRobot v0.5.0 is our biggest release yet — expanding in every direction at once. More robots (including our first humanoid), more policies (including the comeback of autoregressive VLAs), faster datasets, simulation environments you can load straight from the Hub, and a modernized codebase running on Python 3.12 and Transformers v5. Whether you're training policies in simulation or deploying them on real hardware, v0.5.0 has something for you.</p>
-<p>LeRobot v0.5.0 adds full Unitree G1 humanoid support (whole-body control models), fresh policies –including Pi0-FAST autoregressive VLAs and Real-Time Chunking for responsive inference–, and streaming video encoding that eliminates wait times between recording episodes. The release also introduces EnvHub for loading simulation environments from the Hugging Face Hub, NVIDIA IsaacLab-Arena integration, and a major codebase modernization with Python 3.12+, Transformers v5, and third-party policy plugins. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>LeRobot v0.5.0 dramatically expands the roster of supported hardware — from arms and mobile robots to a full humanoid.</p>
+<p>LeRobot v0.5.0 adds full Unitree G1 humanoid support (whole-body control models), fresh policies –including Pi0-FAST autoregressive VLAs and Real-Time Chunking for responsive inference–, and streaming video encoding that eliminates wait times between recording episodes. The release also introduces EnvHub for loading simulation environments from the Hugging Face Hub, NVIDIA IsaacLab-Arena integration, and a major codebase modernization with Python 3.12+, Transformers v5, and third-party policy plugins. <span style="font-size:13px;">(Related: <a href="this-fresh-chip-survives-1300f-700c-and-could-change-ai-forever-70036.html" style="color:#2563eb; font-weight:600;">This fresh chip survives 1300°F (700°C) and could chang...</a>)</span></p>
+<p>LeRobot v0.5.0 dramatically expands the roster of supported hardware — from arms and mobile robots to a full humanoid. <span style="font-size:13px;">(Related: <a href="dna-robots-could-deliver-drugs-and-hunt-viruses-inside-your-body-70038.html" style="color:#2563eb; font-weight:600;">DNA robots could deliver drugs and hunt viruses inside ...</a>)</span></p>
 <p>It has been revealed that the biggest hardware addition in this release: full Unitree G1 humanoid support. This is LeRobot's first humanoid integration, and it's comprehensive:.</p>
 <p>The G1 integration represents a major step toward general-purpose robotics within LeRobot — moving beyond tabletop arms into full-body embodied AI. Try it out yourself by following the documentation.</p>
 <p>We've added support for the OpenArm robot and its companion OpenArm Mini teleoperator. OpenArm is a capable robot arm with full LeRobot integration, and the Mini serves as its natural teleoperation device. Both support bi-manual configurations, enabling dual-arm setups for more complex manipulation tasks. Check it out in the documentation.</p>
 <p>The hardware ecosystem keeps growing:.</p>
 <p>Fresh motor controller support via CAN (Controller Area Network) bus opens the door to higher-performance actuators:.</p>
 <p>These additions mean LeRobot can now drive a wider variety of professional-grade actuators beyond the existing Dynamixel and Feetech ecosystem.</p>
-<p>This release brings six newly introduced policies and techniques into LeRobot, pushing the boundaries of what's possible with open-source robot learning. <span style="font-size:13px;">(Related: <a href="the-reformer-pushing-the-limits-of-language-modeling-58635.html" style="color:#2563eb; font-weight:600;">The Reformer - Pushing the limits of language modeling...</a>)</span></p>
+<p>This release brings six newly introduced policies and techniques into LeRobot, pushing the boundaries of what's possible with open-source robot learning.</p>
 <p>Pi0-FAST brings autoregressive Vision-Language-Action models to LeRobot with FAST (Frequency-space Action Sequence Tokenization). Unlike the flow-matching approach of Pi0, Pi0-FAST uses an autoregressive action expert (based on Gemma 300M) that generates discretized action tokens, enabling:.</p>
 <p>Real-Time Chunking is an inference-time technique from Physical Intelligence that makes flow-matching policies dramatically more responsive. Instead of waiting for a full action chunk to finish before replanning, RTC continuously blends upcoming predictions with in-progress actions, producing smoother and more reactive behavior.</p>
 <p>Sources indicate that RTC is not a standalone policy — it's an enhancement that plugs into existing flow-matching policies (Pi0 family, SmolVLA &amp; Diffusion). Configure it via --policy.rtc_config.enabled=true.</p>
@@ -205,20 +205,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-post-training-isaac-gr00t-n15-for-lerobot-so-101-arm-58012.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58012. Tech Report: Post-Training Isaac GR00T N1.5 for LeRobot SO-101 Arm
+        <a href="qcon-san-francisco-2026-scaling-tech-by-aligning-humans-69511.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69511. QCon San Francisco 2026: Scaling Tech by Aligning Humans
         </a>
         
-        <a href="tech-report-the-bottleneck-in-every-classroom-working-memory-cogn-55025.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #55025. Tech Report: The bottleneck in every classroom: Working memory, cognitive load, and the conditions for learning
+        <a href="tech-report-the-9-best-stability-shoes-for-every-type-of-runner-68345.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #68345. Tech Report: The 9 Best Stability Shoes for Every Type of Runner
         </a>
         
-        <a href="latest-update-35-clever-tech-gifts-that-will-upgrade-every-aspect-54795.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #54795. Latest Update: 35 Clever Tech Gifts That Will Upgrade Every Aspect of Their Day
+        <a href="tech-report-every-japanese-maple-needs-some-tlc-before-winter-6-e-67373.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #67373. Tech Report: Every Japanese Maple Needs Some TLC Before Winter – 6 Easy Tasks to Protect Your Prized Tree
         </a>
         
-        <a href="tech-report-ais-next-build-out-inference-racks-that-resize-themse-53446.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #53446. Tech Report: AI’s next build-out: Inference racks that resize themselves for every new model
+        <a href="tech-report-senior-product-marketing-manager-scaling-creators-at--66622.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #66622. Tech Report: Senior Product Marketing Manager - Scaling Creators at Kit
         </a>
         
     </div>

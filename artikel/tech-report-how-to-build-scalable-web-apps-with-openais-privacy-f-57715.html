@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57715">In a recent development, openAI released Privacy Filter on the Hub this week: an open-source personally-identifiable information (PII) detector that labels text across eight categories in a single forward pass over a 128k context. Model card. We spent a few hours building with it and landed on three apps that each reveals a different slice of what it can do.</p>
-<p>All three are built on gradio.Server, which lets you pair custom HTML/JS frontends with Gradio's queueing, ZeroGPU allocation, and gradio_client SDK. In all these apps, gradio.Server plays the same backend role, and that consistency is exactly what makes it really powerful. <span style="font-size:13px;">(Related: <a href="using-mixing-hugging-face-models-with-gradio-20-58615.html" style="color:#2563eb; font-weight:600;">Using &amp; Mixing Hugging Face Models with Gradio 2.0...</a>)</span></p>
-<p>Industry observers note that privacy Filter is a 1.5B-parameter model with 50M active parameters, permissively licensed under Apache 2.0. PII categories are private_person, private_address, private_email, private_phone, private_url, private_date, account_number, secret. Context is 128,000 tokens. Achieves state-of-the-art performance on the PII-Masking-300k benchmark. Full numbers and methodology are in the official release blog. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>All three are built on gradio.Server, which lets you pair custom HTML/JS frontends with Gradio's queueing, ZeroGPU allocation, and gradio_client SDK. In all these apps, gradio.Server plays the same backend role, and that consistency is exactly what makes it really powerful. <span style="font-size:13px;">(Related: <a href="phison-details-ssd-with-a-built-in-npu-and-64gb-of-memory-that-su-70027.html" style="color:#2563eb; font-weight:600;">Phison details SSD with a built-in NPU and 64GB of memo...</a>)</span></p>
+<p>Industry observers note that privacy Filter is a 1.5B-parameter model with 50M active parameters, permissively licensed under Apache 2.0. PII categories are private_person, private_address, private_email, private_phone, private_url, private_date, account_number, secret. Context is 128,000 tokens. Achieves state-of-the-art performance on the PII-Masking-300k benchmark. Full numbers and methodology are in the official release blog. <span style="font-size:13px;">(Related: <a href="thousands-of-vulnerable-fridges-patched-against-cyberattacks-in-s-70029.html" style="color:#2563eb; font-weight:600;">Thousands of vulnerable fridges patched against cyberat...</a>)</span></p>
 <p>Try it at ysharma/OPF-Document-PII-Explorer.</p>
 <p>It has been revealed that user problem. You want to read a PII-heavy document (a contract, a resume, an exported chat log) with every detected span highlighted by category, a filter in the sidebar, and a summary dashboard up top. The reading experience should feel like a normal document, not a form.</p>
 <p>What Privacy Filter does here. The whole file goes through in a single 128k-context forward pass, so there's no chunking, no stitching, and span offsets line up directly with the rendered text. BIOES decoding keeps span boundaries clean through long ambiguous runs.</p>
@@ -196,20 +196,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-data-is-better-together-enabling-communities-to-colle-58293.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58293. Tech Report: Data is better together: Enabling communities to collectively build better datasets together using Argilla and Hugging Face Spaces
+        <a href="tech-report-build-low-latency-multilingual-voice-agents-open-weig-69723.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69723. Tech Report: Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS
         </a>
         
-        <a href="why-your-ai-agent-cant-read-the-web-and-how-to-build-a-fetch-laye-58038.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58038. Why Your AI Agent Can't Read the Web (and How to Build a Fetch Layer That Can)
+        <a href="build-full-stack-android-apps-with-gemini-in-google-ai-studio-69668.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69668. Build full-stack Android apps with Gemini in Google AI Studio
         </a>
         
-        <a href="how-to-build-a-unified-lead-tracking-pipeline-for-web-forms-and-p-57741.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57741. How to Build a Unified Lead Tracking Pipeline for Web Forms and Phone Calls
+        <a href="tech-report-openai-proposes-shared-ai-development-limits-tied-to--69422.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69422. Tech Report: OpenAI Proposes Shared AI Development Limits Tied to Safety Milestones
         </a>
         
-        <a href="tech-report-vegetarian-bodybuilding-4-tips-to-build-muscle-57088.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57088. Tech Report: Vegetarian Bodybuilding: 4 Tips to Build Muscle
+        <a href="tech-report-the-best-apps-for-controlling-and-limiting-kids-scree-67677.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #67677. Tech Report: The Best Apps for Controlling and Limiting Kids’ Screen Time
         </a>
         
     </div>

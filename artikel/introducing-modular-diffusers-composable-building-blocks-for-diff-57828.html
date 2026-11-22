@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57828">Sources indicate that modular Diffusers introduces a newly introduced way to build diffusion pipelines by composing reusable blocks. Instead of writing entire pipelines from scratch, you can mix and match blocks to create workflows tailored to your needs! This complements the existing DiffusionPipeline class with a more flexible, composable alternative.</p>
-<p>In this post, we'll walk through how Modular Diffusers works — from the familiar API to run a modular pipeline, to building fully custom blocks and composing them into your own workflow. We'll also show how it integrates with Mellon, a node-based visual workflow interface that you can use to wire Modular Diffusers blocks together. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58633.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
-<p>Here is a simple example of how to run inference with FLUX.2 Klein 4B using pre-built blocks:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>You get the same results as with a standard DiffusionPipeline, but the pipeline is very different under the hood: it's composed of flexible blocks — text encoding, image encoding, denoising, and decoding — that you can inspect directly:.</p>
+<p>In this post, we'll walk through how Modular Diffusers works — from the familiar API to run a modular pipeline, to building fully custom blocks and composing them into your own workflow. We'll also show how it integrates with Mellon, a node-based visual workflow interface that you can use to wire Modular Diffusers blocks together.</p>
+<p>Here is a simple example of how to run inference with FLUX.2 Klein 4B using pre-built blocks:. <span style="font-size:13px;">(Related: <a href="this-simple-change-stops-robot-swarms-from-getting-stuck-70033.html" style="color:#2563eb; font-weight:600;">This simple change stops robot swarms from getting stuc...</a>)</span></p>
+<p>You get the same results as with a standard DiffusionPipeline, but the pipeline is very different under the hood: it's composed of flexible blocks — text encoding, image encoding, denoising, and decoding — that you can inspect directly:. <span style="font-size:13px;">(Related: <a href="latest-update-kfc-just-released-fried-cheese-with-four-different--70015.html" style="color:#2563eb; font-weight:600;">Latest Update: KFC just released fried cheese with four...</a>)</span></p>
 <p>Sources indicate that each block is self-contained with its own inputs and outputs. You can run any block independently as its own pipeline, or add, remove, and swap blocks freely — they dynamically recompose to work with whatever blocks remain. Use .init_pipeline() to convert blocks into a runnable pipeline, and .load_components() to load the model weights.</p>
 <p>For more on block types, composition patterns, lazy loading, and memory management with ComponentsManager, check out the Modular Diffusers documentation.</p>
 <p>Modular Diffusers really shines when creating your own blocks. A custom block is a Python class that defines its components, inputs, outputs, and computation logic — and once defined, you can plug it into any workflow.</p>
@@ -201,20 +201,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="breaking-diffusers-welcomes-stable-diffusion-3-69928.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69928. Breaking: Diffusers welcomes Stable Diffusion 3
+        </a>
+        
+        <a href="industry-news-bringing-nunchaku-4-bit-diffusion-inference-to-diff-69756.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69756. Industry News: Bringing Nunchaku 4-bit Diffusion Inference to Diffusers
+        </a>
+        
         <a href="latest-update-stable-diffusion-with-diffusers-58520.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58520. Latest Update: Stable Diffusion with 🧨 Diffusers
         </a>
         
         <a href="training-stable-diffusion-with-dreambooth-using-diffusers-58498.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58498. Training Stable Diffusion with Dreambooth using Diffusers
-        </a>
-        
-        <a href="latest-update-swift-diffusers-fast-stable-diffusion-for-mac-58456.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58456. Latest Update: Swift 🧨Diffusers - Fast Stable Diffusion for Mac
-        </a>
-        
-        <a href="latest-update-introducing-wrstchen-fast-diffusion-for-image-gener-58359.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58359. Latest Update: Introducing Würstchen: Fast Diffusion for Image Generation
         </a>
         
     </div>

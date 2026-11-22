@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57668">What you cannot profile, you cannot optimize.</p>
-<p>Whether you are trying to squeeze more tokens per second out of a Large Language Model (LLM), shave milliseconds off inference, or just understand why your training loop runs slower than the spec sheet promises, the path eventually runs through profiling. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Whether you are trying to squeeze more tokens per second out of a Large Language Model (LLM), shave milliseconds off inference, or just understand why your training loop runs slower than the spec sheet promises, the path eventually runs through profiling. <span style="font-size:13px;">(Related: <a href="this-ai-knew-the-answers-but-didnt-understand-the-questions-70023.html" style="color:#2563eb; font-weight:600;">This AI knew the answers but didn’t understand the ques...</a>)</span></p>
 <p>The catch is that profiling has a steep on-ramp. The traces are dense walls of colored rectangles. The events carry intimidating names. Most tutorials assume you can already read them. So even when we know we should be profiling, opening a trace can feel like a chore best left for later (or for someone else). This post, and the series it kicks off, is our attempt to lower that on-ramp.</p>
-<p>This is the opening post of Profiling in PyTorch, a series where we slowly build the skill of reading profiler traces and use it to drive optimization:. <span style="font-size:13px;">(Related: <a href="hugging-face-on-pytorch-xla-tpus-58626.html" style="color:#2563eb; font-weight:600;">Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
+<p>This is the opening post of Profiling in PyTorch, a series where we slowly build the skill of reading profiler traces and use it to drive optimization:. <span style="font-size:13px;">(Related: <a href="phison-details-ssd-with-a-built-in-npu-and-64gb-of-memory-that-su-70027.html" style="color:#2563eb; font-weight:600;">Phison details SSD with a built-in NPU and 64GB of memo...</a>)</span></p>
 <p>It has been revealed that we document the journey from a beginner's point of view. No prerequisites apart from basic PyTorch. Treat this as a leisurely read with some "Aha!" moments. The structure of the post is intentionally question-led: we open a trace, ask "wait, why is that happening?", and chase the answer until something clicks. By the end you should know:.</p>
 <p>Before we begin, two definitions that will make everything below read better:.</p>
 <p>You don't usually have to write GPU kernels yourself; when you use a PyTorch operation, it is automatically translated to one or more kernels that do the job on GPU.</p>
@@ -270,20 +270,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-profiling-in-pytorch-part-2-from-nnlinear-to-a-fused-mlp-57634.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57634. Breaking: Profiling in PyTorch (Part 2): From nn.Linear to a Fused MLP
+        <a href="latest-update-profiling-in-pytorch-part-2-from-nnlinear-to-a-fuse-69889.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69889. Latest Update: Profiling in PyTorch (Part 2): From nn.Linear to a Fused MLP
         </a>
         
-        <a href="profiling-in-pytorch-part-3-attention-is-all-you-profile-46916.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46916. Profiling in PyTorch (Part 3): Attention is all you profile
+        <a href="industry-news-profiling-in-pytorch-part-3-attention-is-all-you-pr-69792.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69792. Industry News: Profiling in PyTorch (Part 3): Attention is all you profile
         </a>
         
-        <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-58466.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58466. Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 2
+        <a href="breaking-accelerating-pytorch-transformers-with-intel-sapphire-ra-69948.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69948. Breaking: Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1
         </a>
         
-        <a href="how-to-calculate-your-rising-and-moon-sign-a-beginners-guide-57108.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57108. How to Calculate Your Rising and Moon Sign: A Beginner’s Guide
+        <a href="profiling-torchneuron-part-1-system-level-profiling-on-aws-traini-69514.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69514. Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.
         </a>
         
     </div>

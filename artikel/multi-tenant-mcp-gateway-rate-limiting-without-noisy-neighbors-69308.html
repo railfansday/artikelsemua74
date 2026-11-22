@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tenant MCP Gateway Rate Limiting Without Noisy Neighbors</title>
+    <meta name="description" content="According to recent reports, quick answer: Rate-limit a multi-tenant MCP gateway at two levels. Give each tenant a bucket keyed to a distinct access key, a">
+    <meta name="keywords" content="tenant, shared, budget, gateway, capacity, upstream, bucket, limits">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/multi-tenant-mcp-gateway-rate-limiting-without-noisy-neighbors-69308.html">
+    
+    <meta property="og:title" content="Multi-Tenant MCP Gateway Rate Limiting Without Noisy Neighbors">
+    <meta property="og:description" content="According to recent reports, quick answer: Rate-limit a multi-tenant MCP gateway at two levels. Give each tenant a bucket keyed to a distinct access key, a">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh1vqs3md7blqfb5089rz.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/multi-tenant-mcp-gateway-rate-limiting-without-noisy-neighbors-69308.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Multi-Tenant MCP Gateway Rate Limiting Without Noisy Neighbors">
+    <meta name="twitter:description" content="According to recent reports, quick answer: Rate-limit a multi-tenant MCP gateway at two levels. Give each tenant a bucket keyed to a distinct access key, a">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh1vqs3md7blqfb5089rz.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Multi-Tenant MCP Gateway Rate Limiting Without Noisy Neighbors", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh1vqs3md7blqfb5089rz.png"], "datePublished": "2026-11-22T19:29:26", "dateModified": "2026-11-22T19:33:29.349655", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/multi-tenant-mcp-gateway-rate-limiting-without-noisy-neighbors-69308.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Multi-Tenant MCP Gateway Rate Limiting Without Noisy Neighbors?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Multi-Tenant MCP Gateway Rate Limiting Without Noisy Neighbo' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Multi-Tenant MCP Gateway Rate Limiting Without Noisy Neighbors</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 4 min read (808 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, quick answer: Rate-limit a multi-tenant MCP gateway at two levels.</li><li style='margin-bottom:6px;'>Industry observers note that when several teams or agents share one MCP gateway, they share one pool of upstream connections and backend quotas.</li><li style='margin-bottom:6px;'>Industry observers note that A limiter is only fair if it knows who is calling.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-69308"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-69308"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-69308"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Multi-Tenant MCP Gateway Rate Limiting Without Noisy Neighbors" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh1vqs3md7blqfb5089rz.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-69308">According to recent reports, quick answer: Rate-limit a multi-tenant MCP gateway at two levels. Give each tenant a bucket keyed to a distinct access key, and enforce a shared budget that matches upstream capacity. Per-tenant limits stop one noisy agent from starving the others; the shared budget stops well-behaved tenants from overwhelming the backend together. Return 429 with Retry-After on each rejection, and count rejections per tenant so a misconfigured agent demonstrates up early.</p>
+<p>Industry observers note that when several teams or agents share one MCP gateway, they share one pool of upstream connections and backend quotas. Without tenant-aware limits, capacity is first-come, first-served: one agent in a retry loop can hold most connections and burn the shared budget, leaving other tenants on 429s though they changed nothing. The failure is quiet, since each request the noisy tenant sends is valid and the gateway stays healthy. A per-tenant limit makes shared capacity a defended resource, so excess traffic is rejected at the gateway before it reaches the backend. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-70026.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
+<p>Industry observers note that A limiter is only fair if it knows who is calling. Authenticate each agent with a distinct key and resolve it to a stable tenant identifier before touching any counter; shared keys make per-tenant accounting impossible. Powerduck Cloud keeps the hosted MCP endpoint off by default until you expose it and problems a separate MCP access key for each agent, so every caller has a distinct identity the gateway can count and revoke independently. The comparison hub places this access model among the wider trade-offs. <span style="font-size:13px;">(Related: <a href="think-ai-knows-what-its-doing-scientists-say-think-again-70030.html" style="color:#2563eb; font-weight:600;">Think AI "knows" what it’s doing? Scientists say think ...</a>)</span></p>
+<p>MCP traffic is not only request rate. Streamable HTTP and SSE hold long-lived connections, so concurrent connections are a separate dimension from requests per second, and a heavy tool call costs far more than a light one.</p>
+<p>A token bucket allows a controlled burst at a steady average, which fits agents that call in batches. A sliding window smooths output more strictly but costs more to track; a fixed window lets a tenant spike at the boundary. Most gateways use per-tenant token buckets and cap connections separately.</p>
+<p>Per-tenant buckets alone are not enough. If every tenant stays under its own limit but the totals exceed backend capacity, the upstream still rejects requests that land on tenants who did nothing wrong. Run a global budget that mirrors the upstream ceiling, checked after the tenant bucket in a layered token bucket. When the shared bucket is empty, the gateway returns its own 429 instead of relaying the upstream error. To give one tenant headroom, raise that tenant's bucket rather than loosen the global ceiling.</p>
+<p id="sec-mid-69308">Sources indicate that A rejection should say what happened and when to retry. Return 429 with Retry-After, and distinguish a tenant-level rejection from a shared-capacity one in a header or log, since the remedies differ: fix the agent's cadence in the first case, add capacity in the second. Track per-tenant request count, rejection count, peak connections, and share of the global budget, and alert on a climbing rejection rate, which usually signals a retry loop. On a multi-instance gateway, keep counters in a shared store; per-node counters multiply the real limit by the node count.</p>
+<p>Recent findings suggest that rate limiting enforces fairness, not availability. If the backend is down or the global budget sits above real capacity, correct per-tenant limits still produce 429s. Limiting is also not authorization: a caller within quota can still invoke every tool its key grants, so scope and rate stay separate. Request-count limits treat every call as equal and underweight a tenant that sends few calls but runs the heaviest tools; weight the bucket or cap concurrency if that fits.</p>
+<p>How is a tenant-level 429 different from an upstream 429? A tenant-level 429 means that caller spent its allocation and should slow down. An upstream 429 means shared backend capacity is exhausted, and the gateway should absorb it rather than forward traffic. The fix is per-tenant first, platform-wide second.</p>
+<p>Should I key limits to the API key or the IP address? The API key or resolved tenant identity. IPs are shared behind NAT and load balancers, so an IP-based limiter either groups unrelated agents or misses the real source.</p>
+<p>Do per-tenant limits remove the need for a global budget? No. They cap each tenant but not the sum. A global budget matching the upstream ceiling is still needed to keep well-behaved tenants from exceeding backend capacity together.</p>
+<p id="sec-end-69308">Treat a multi-tenant MCP gateway as a capacity boundary with two doors, the tenant bucket and the shared upstream budget, and make every caller present a distinct key first. Per-tenant limits without a global budget protect tenants from each other but not their combined load; a global budget without per-tenant limits lets the loudest agent decide who gets served. Keep counters shared across instances, return actionable 429s, and watch per-tenant rejection rates.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/jeff_pdc/multi-tenant-mcp-gateway-rate-limiting-without-noisy-neighbors-2fc2" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="securing-fastapi-applications-jwt-authentication-and-rate-limitin-57732.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57732. Securing FastAPI Applications: JWT Authentication and Rate Limiting with Redis
+        </a>
+        
+        <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-70026.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #70026. AI swarms could hijack democracy without anyone noticing
+        </a>
+        
+        <a href="nasa-just-used-satellites-and-debris-to-navigate-without-gps-69965.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69965. NASA just used satellites and debris to navigate without GPS
+        </a>
+        
+        <a href="ishowspeed-breaks-down-in-tears-after-finishing-gta-6-in-52-hours-69952.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69952. IShowSpeed breaks down in tears after finishing GTA 6 in 52 hours without sleeping
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

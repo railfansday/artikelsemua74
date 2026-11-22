@@ -153,11 +153,11 @@
 <p>Sources indicate that weekly. Free. One click to leave.</p>
 <p>7 Day Free Trial. Cancel Anytime.</p>
 <p>We sent 1,000 streaming calls at the same moment through three self-hosted LLM gateways: the Langfuse AI Gateway, the LiteLLM proxy and AcruxCore. Each gateway was limited to 2 CPUs. As shipped, Langfuse finished 261 of the 1,000 streams and LiteLLM finished 403. Neither failure came from the gateway's own code.</p>
-<p>Langfuse's failures came from Linux's open-file limit, which Docker sets to 1,024 by default. LiteLLM had that problem too, plus a second one: an empty key cache sent hundreds of database lookups at once, and the ones that waited longer than 10 seconds were rejected. This article highlights how each failure looked, how we traced it to its cause, and the settings that fixed it.</p>
-<p>This benchmark measured the resource consumption of three LLM gateways under scaling concurrent streaming loads. <span style="font-size:13px;">(Related: <a href="scaling-up-bert-inference-on-cpu-part-1-58616.html" style="color:#2563eb; font-weight:600;">Scaling-up BERT Inference on CPU (Part 1)...</a>)</span></p>
+<p>Langfuse's failures came from Linux's open-file limit, which Docker sets to 1,024 by default. LiteLLM had that problem too, plus a second one: an empty key cache sent hundreds of database lookups at once, and the ones that waited longer than 10 seconds were rejected. This article highlights how each failure looked, how we traced it to its cause, and the settings that fixed it. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-70034.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
+<p>This benchmark measured the resource consumption of three LLM gateways under scaling concurrent streaming loads. <span style="font-size:13px;">(Related: <a href="latest-update-razers-mmo-mouse-hits-all-time-low-price-at-under-6-70007.html" style="color:#2563eb; font-weight:600;">Latest Update: Razer's MMO mouse hits all-time low pric...</a>)</span></p>
 <p>Full latency, memory, and feature results are available in the Langfuse vs LiteLLM vs AcruxCore benchmark.</p>
 <p>First-token times are medians of the streams that succeeded. Up to 250 streams, every gateway succeeded. Then the errors started, and they did not look alike:.</p>
-<p>Industry observers note that A 502 and a 503 point at different layers, so we expected two different causes. Two of the three turned out to share one cause. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-58636.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>Industry observers note that A 502 and a 503 point at different layers, so we expected two different causes. Two of the three turned out to share one cause.</p>
 <p>Sources indicate that linux counts every network connection as an open file, and it caps how many open files one process may hold. The cap has two values. The soft limit is the cap that is in force now. The hard limit is the ceiling: a process may raise its own soft limit up to that value, and no further.</p>
 <p>According to recent reports, A streaming gateway holds two connections for each stream: one from the client, and one to the model provider. That makes about 1,000 open files at 500 streams, and about 2,000 at 1,000 streams. A gateway also needs a few more files for its database, its logs and its own libraries.</p>
 <p>Docker on our machine gave every container a soft limit of 1,024 and a hard limit of 524,288. All three gateways received the same two numbers. What differed was how each program treats them when it starts:.</p>
@@ -208,16 +208,16 @@
             📰 #57791. How Much Latency Does a Self-Hosted LLM Gateway Add? Langfuse vs LiteLLM vs AcruxCore
         </a>
         
-        <a href="prefill-and-decode-for-concurrent-requests-optimizing-llm-perform-58047.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58047. Prefill and Decode for Concurrent Requests - Optimizing LLM Performance
+        <a href="qwen-incidents-show-self-hosted-ai-models-need-stronger-steering-69357.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69357. Qwen Incidents Show Self-Hosted AI Models Need Stronger Steering
         </a>
         
-        <a href="self-hosted-langsmith-alternatives-4-tools-tested-on-one-typescri-57975.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57975. Self-Hosted LangSmith Alternatives: 4 Tools Tested on One TypeScript Agent
+        <a href="ripple-usd-rlusd-breaks-into-global-top-five-stablecoins-as-suppl-64375.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #64375. Ripple USD (RLUSD) Breaks Into Global Top Five Stablecoins as Supply Hits New ATH
         </a>
         
-        <a href="1973-classic-ranked-no-1-on-the-greatest-country-songs-of-all-tim-56843.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #56843. 1973 Classic Ranked No. 1 on the ‘Greatest Country Songs of All Time’ Hits 1 Billion Spotify Streams
+        <a href="bitcoin-breaks-below-60k-as-crypto-fear-index-hits-worst-level-si-64303.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #64303. Bitcoin Breaks Below $60K as Crypto Fear Index Hits Worst Level Since February
         </a>
         
     </div>

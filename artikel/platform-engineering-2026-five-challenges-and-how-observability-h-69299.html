@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform engineering 2026: five challenges and how observability helps meet them</title>
+    <meta name="description" content="Recent findings suggest that platform engineering in 2026 no longer has to prove its worth: the vast majority of organisations that practise it have an int">
+    <meta name="keywords" content="platform, tools, engineering, teams, telemetry, context, their, observability">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/platform-engineering-2026-five-challenges-and-how-observability-h-69299.html">
+    
+    <meta property="og:title" content="Platform engineering 2026: five challenges and how observability helps meet them">
+    <meta property="og:description" content="Recent findings suggest that platform engineering in 2026 no longer has to prove its worth: the vast majority of organisations that practise it have an int">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F10%2Fplatform-engineering-2026-defis-photo.webp">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/platform-engineering-2026-five-challenges-and-how-observability-h-69299.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Platform engineering 2026: five challenges and how observability helps meet them">
+    <meta name="twitter:description" content="Recent findings suggest that platform engineering in 2026 no longer has to prove its worth: the vast majority of organisations that practise it have an int">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F10%2Fplatform-engineering-2026-defis-photo.webp">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Platform engineering 2026: five challenges and how observability helps meet them", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F10%2Fplatform-engineering-2026-defis-photo.webp"], "datePublished": "2026-11-22T19:30:19", "dateModified": "2026-11-22T19:33:28.982704", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/platform-engineering-2026-five-challenges-and-how-observability-h-69299.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Platform engineering 2026: five challenges and how observability helps meet them?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Platform engineering 2026: five challenges and how observabi' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Platform engineering 2026: five challenges and how observability helps meet them</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 5 min read (972 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that platform engineering in 2026 no longer has to prove its worth: the vast majority of organisations that practise it have an internal developer platform, and many have rolled it out widely.</li><li style='margin-bottom:6px;'>According to recent reports, dynatrace’s State of SRE and Platform Engineering 2026 study puts figures on these frictions: difficult integration, automation gains below expectations, value that is hard to demonstrate and a growing workload from AI governance.</li><li style='margin-bottom:6px;'>This article reviews five concrete challenges and proposes, for each one, an operational answer in which observability acts as the common foundation.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-69299"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-69299"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-69299"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Platform engineering 2026: five challenges and how observability helps meet them" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F10%2Fplatform-engineering-2026-defis-photo.webp" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-69299">Recent findings suggest that platform engineering in 2026 no longer has to prove its worth: the vast majority of organisations that practise it have an internal developer platform, and many have rolled it out widely. The challenge has changed in nature. It is no longer about building the platform, but about keeping it standing under pressure from latest tools, ever more cloud services and, above all, the arrival of AI in pipelines as well as in applications. Here are the concrete platform engineering 2026 challenges, and how observability helps to meet them.</p>
+<p>According to recent reports, dynatrace’s State of SRE and Platform Engineering 2026 study puts figures on these frictions: difficult integration, automation gains below expectations, value that is hard to demonstrate and a growing workload from AI governance. Nothing surprising for anyone who runs a platform day to day, but the convergence of the answers is instructive. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-70026.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
+<p>This article reviews five concrete challenges and proposes, for each one, an operational answer in which observability acts as the common foundation.</p>
+<p>For 37% of respondents, getting existing tools to work with the platform is the main difficulty, and nearly a third struggle to maintain consistent standards across teams. AI adds another layer: every coding assistant, agent or model-tracking tool requires its own access, tokens and rules. <span style="font-size:13px;">(Related: <a href="this-simple-change-stops-robot-swarms-from-getting-stuck-70033.html" style="color:#2563eb; font-weight:600;">This simple change stops robot swarms from getting stuc...</a>)</span></p>
+<p>Sources indicate that the answer lies in interoperability standards. OpenTelemetry for telemetry, and now the Model Context Protocol to give assistants structured access to tools and data. Rather than writing one connector per pair of tools, the platform exposes governed MCP servers. Our guide to the Model Context Protocol explains the principle, and the example of Dynatrace in Microsoft Teams via MCP highlights what it looks like in practice.</p>
+<p>Teams expected AI to bring less repetitive work, more regular releases, lower costs and faster incident resolution. The study shows a consistent gap between expectations and observed results, except on one point: developer productivity, where the gains observed are close to what was hoped for.</p>
+<p>Industry observers note that the most likely explanation is context. Automation that knows neither the topology, nor a service’s owner, nor its criticality makes fragile decisions. Before extending the autonomy of AI-driven workflows, you need to feed them with correlated telemetry and keep a human in the loop. The topic is developed from the SRE point of view in AI and day-to-day reliability.</p>
+<p>About three organisations in ten say they struggle to justify their platform. A platform treated as a product needs product indicators: adoption, time to onboard a new project, share of deployments that go through the paved road, incidents avoided. These indicators can be measured with the telemetry the platform already produces, provided it is collected consistently.</p>
+<p>In a recent development, nearly half of teams carry out at least some compliance checks by hand, and the complexity of security and compliance remains a source of friction. The most effective route is well known: describe everything as code (infrastructure, configuration, observability, policies), version it, and have the pipeline validate it automatically. Along the way, you get a usable audit trail.</p>
+<p>It has been revealed that more than half of platform engineers now spend time monitoring AI tools: data security, performance, accuracy. It is work that nobody had planned for. AI systems drift, behave probabilistically and raise questions of cost and accountability that did not arise for a classic service. The corresponding requirements are detailed in what AI workloads change for SREs.</p>
+<p>In a recent development, A single format (OpenTelemetry), a single collection point per environment, and mandatory context attributes: owning team, criticality, environment. Without these attributes, telemetry remains noise that is hard to use.</p>
+<p id="sec-mid-69299">The project template provided by the platform includes telemetry, SLOs, security checks and, for AI services, token tracking and evaluations from the outset. A project descriptor might look like this (generic format):.</p>
+<p>It has been revealed that rather than letting each team connect its assistant to five tools, the platform publishes a small number of MCP servers, with read-only rights by default and logging of calls. Securing these servers is covered in our dedicated article.</p>
+<p>The pipeline compares the signals of the new version (errors, latency, consumption, evaluation score for AI) with those of the previous version and blocks it if there is a regression. Compliance becomes an automatic check rather than a checklist.</p>
+<p>A dashboard for the platform itself: number of services created via the paved road, onboarding time, share of compliant deployments, time spent on manual tasks. These are the figures that answer the question of value.</p>
+<p>For the complete view of the AI systems lifecycle, from prototype to production, see our guide to AI observability.</p>
+<p>Tool integration, consistent standards across teams, automation gains below expectations, difficulty demonstrating value, compliance that is still manual and the governance of AI tools.</p>
+<p>It provides the common context (telemetry, topology, owners, criticality) on which automation, release validation, governance and measuring the platform’s value all rely.</p>
+<p>Recent findings suggest that yes, as a standard for connecting assistants and agents to internal tools in a governed way, rather than multiplying specific integrations. In return, it demands real attention to security and permissions.</p>
+<p>It has been revealed that platform engineering in 2026 is a mature discipline facing a upcoming wave of complexity. The teams that succeed standardise their instrumentation, equip their paved roads for AI, automate compliance and measure their platform as a product. For the standards mentioned, the official Model Context Protocol documentation is a good starting point.</p>
+<p>Further reading: How to tackle platform engineering’s biggest challenges in 2026 (Dynatrace blog).</p>
+<p>Sources indicate that span.observer is an independent community blog, not affiliated with Dynatrace LLC or the projects mentioned. Trademarks belong to their respective owners. Tools change quickly: check commands and options in their official documentation.</p>
+<p id="sec-end-69299">Industry observers note that originally published on span.observer. French version: https://span.observer/fr/platform-engineering-2026-defis/.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/spanobserver/platform-engineering-2026-five-challenges-and-how-observability-helps-meet-them-49oh" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="battlefield-6-streamlines-some-of-the-most-annoying-challenges-ye-63883.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #63883. Battlefield 6 streamlines some of the most annoying Challenges yet again, takes out a few of them entirely
+        </a>
+        
+        <a href="ai-lets-chemists-design-molecules-by-simply-describing-them-70020.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #70020. AI lets chemists design molecules by simply describing them
+        </a>
+        
+        <a href="breaking-as-blockbuster-game-releases-run-scared-from-gta-6-meet--69888.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69888. Breaking: As blockbuster game releases run scared from GTA 6, meet the brave devs tackling Rockstar's behemoth head-on
+        </a>
+        
+        <a href="lenders-back-spacexs-43-billion-nvidia-gpu-deal-but-worry-the-col-69886.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69886. Lenders back SpaceX's $43 billion Nvidia GPU deal but worry the collateral could end up in orbit, making them impossible to reclaim if Musk defaults
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

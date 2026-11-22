@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57723">We recently released a Transformers.js demo browser extension powered by Gemma 4 E2B to help users navigate the web.</p>
-<p>While building it, we ran into several practical observations about Manifest V3 runtimes, model loading, and messaging that are worth sharing. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58637.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>This guide is for developers who want to run local AI features in a Chrome extension with Transformers.js under Manifest V3 constraints. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-58636.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>While building it, we ran into several practical observations about Manifest V3 runtimes, model loading, and messaging that are worth sharing. <span style="font-size:13px;">(Related: <a href="ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-70037.html" style="color:#2563eb; font-weight:600;">AI breakthrough cuts energy use by 100x while boosting ...</a>)</span></p>
+<p>This guide is for developers who want to run local AI features in a Chrome extension with Transformers.js under Manifest V3 constraints. <span style="font-size:13px;">(Related: <a href="latest-update-razers-mmo-mouse-hits-all-time-low-price-at-under-6-70007.html" style="color:#2563eb; font-weight:600;">Latest Update: Razer's MMO mouse hits all-time low pric...</a>)</span></p>
 <p>By the end, you will have the same architecture used in this project: a background service worker that hosts models, a side panel chat UI, and a content script for page-level actions.</p>
 <p>In this guide, we will recreate the core architecture of Transformers.js Gemma 4 Browser Assistant, using the published extension as a reference and the open-source codebase as the implementation map.</p>
 <p>Recent findings suggest that before diving in, a quick scope note: I will not go deep on the React UI layer or Vite build configuration. The focus here is the high-level architecture decisions: what runs in each Chrome runtime and how those pieces are orchestrated.</p>
@@ -209,20 +209,20 @@ What is Manifest V3?.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-fine-tune-wav2vec2-for-english-asr-in-hugging-face--58622.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58622. Industry News: Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        <a href="industry-news-tiny-nanolaser-could-cut-computer-energy-use-in-hal-69944.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69944. Industry News: Tiny nanolaser could cut computer energy use in half
         </a>
         
-        <a href="industry-news-introducing-optimum-the-optimization-toolkit-for-tr-58609.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58609. Industry News: Introducing Optimum: The Optimization Toolkit for Transformers at Scale
+        <a href="industry-news-three-photographers-sue-police-over-use-of-tear-gas-68725.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #68725. Industry News: Three Photographers Sue Police Over Use of Tear Gas and Pepper Spray During ICE Raid
         </a>
         
-        <a href="industry-news-hugging-face-and-graphcore-partner-for-ipu-optimize-58608.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58608. Industry News: Hugging Face and Graphcore partner for IPU-optimized Transformers
+        <a href="industry-news-the-easiest-craft-laser-machine-to-use-is-at-a-reco-68685.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #68685. Industry News: The easiest craft laser machine to use is at a record low price
         </a>
         
-        <a href="industry-news-a-gentle-introduction-to-8-bit-matrix-multiplicatio-58524.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58524. Industry News: A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using transformers, accelerate and bitsandbytes
+        <a href="industry-news-how-to-use-a-portable-gas-generator-the-right-way-67243.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #67243. Industry News: How to Use a Portable Gas Generator the Right Way
         </a>
         
     </div>

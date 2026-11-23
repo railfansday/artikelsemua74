@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why did my Kubernetes change disappear? Argo CD Self-heal explained</title>
+    <meta name="description" content="You scale a Deployment directly in Kubernetes. Later, it returns to the replica count stored in Git. Recent findings suggest that before treating that as a">
+    <meta name="keywords" content="argo, deployment, recent, live, configuration, change, application, sync">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/why-did-my-kubernetes-change-disappear-argo-cd-self-heal-explaine-80444.html">
+    
+    <meta property="og:title" content="Why did my Kubernetes change disappear? Argo CD Self-heal explained">
+    <meta property="og:description" content="You scale a Deployment directly in Kubernetes. Later, it returns to the replica count stored in Git. Recent findings suggest that before treating that as a">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3bhuxjl41p0wpqlfhhgv.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/why-did-my-kubernetes-change-disappear-argo-cd-self-heal-explaine-80444.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why did my Kubernetes change disappear? Argo CD Self-heal explained">
+    <meta name="twitter:description" content="You scale a Deployment directly in Kubernetes. Later, it returns to the replica count stored in Git. Recent findings suggest that before treating that as a">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3bhuxjl41p0wpqlfhhgv.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Why did my Kubernetes change disappear? Argo CD Self-heal explained", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3bhuxjl41p0wpqlfhhgv.png"], "datePublished": "2026-11-23T07:00:00", "dateModified": "2026-11-23T07:11:15.320369", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/why-did-my-kubernetes-change-disappear-argo-cd-self-heal-explaine-80444.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Why did my Kubernetes change disappear? Argo CD Self-heal explained?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Why did my Kubernetes change disappear? Argo CD Self-heal ex' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Why did my Kubernetes change disappear? Argo CD Self-heal explained</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 2 min read (499 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>You scale a Deployment directly in Kubernetes.</li><li style='margin-bottom:6px;'>Recent findings suggest that before treating that as a failed command, check the Argo CD Application's sync policy.</li><li style='margin-bottom:6px;'>According to recent reports, consider one Argo CD-managed Deployment named demo-app in a disposable namespace named gitops-demo.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-80444"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-80444"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-80444"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Why did my Kubernetes change disappear? Argo CD Self-heal explained" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3bhuxjl41p0wpqlfhhgv.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-80444">You scale a Deployment directly in Kubernetes. Later, it returns to the replica count stored in Git.</p>
+<p>Recent findings suggest that before treating that as a failed command, check the Argo CD Application's sync policy. Self-heal may be restoring the desired configuration.</p>
+<p>According to recent reports, consider one Argo CD-managed Deployment named demo-app in a disposable namespace named gitops-demo. No autoscaler or other controller manages its replica count, and /spec/replicas is included in Argo CD's comparison and synchronization.</p>
+<p>Git contains this fragment of the Deployment manifest:.</p>
+<p>Someone changes the live Deployment to four replicas. Git still requests two. Kubernetes supports this kind of direct scaling through kubectl scale; it changes the live resource rather than your source file. Deployment scaling. <span style="font-size:13px;">(Related: <a href="scaling-up-bert-inference-on-cpu-part-1-81446.html" style="color:#2563eb; font-weight:600;">Scaling-up BERT Inference on CPU (Part 1)...</a>)</span></p>
+<p>Sources indicate that argo CD compares desired configuration with live resources. Here, the tracked difference is live drift. OutOfSync identifies a mismatch; it doesn't tell you whether the manual change was useful, mistaken, or temporary. Core concepts.</p>
+<p>According to recent reports, automated sync can apply changes from the tracked source without someone starting a manual sync. Self-heal enables automated synchronization in response to live-state deviations when that source hasn't changed.</p>
+<p>For this example, the Application policy fragment is:.</p>
+<p>Recent findings suggest that with that policy active, Argo CD can attempt to restore the Deployment's replica setting to two. This describes a configuration change, not a promise that the application becomes ready immediately.</p>
+<p id="sec-mid-80444">Recent findings suggest that self-heal does not write the manual value of four back to Git. See the automated sync policy for the exact behavior and settings.</p>
+<p>Recent findings suggest that use an existing demo Application named demo-app that manages this Deployment. The commands below change cluster state; confirm your context and namespace first. Do not run them against a production workload.</p>
+<p>If reconciliation happens quickly, you may miss the temporary four-replica setting. Observe the Application's operation history as well. The diff command exits with code 1 when differences exist, so a script should handle that result deliberately. Diff command reference.</p>
+<p>Industry observers note that if four replicas is the intended lasting configuration, change spec.replicas to 4 in the source manifest, review it, and commit it to the revision Argo CD tracks. Then synchronize through your configured workflow. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-81450.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
+<p>Now the desired setting itself is four. The deployment configuration carries the decision, instead of depending on an unrecorded live edit.</p>
+<p>An autoscaler may legitimately manage replicas. Don't apply this example unchanged to that situation. Argo CD supports comparison customization for fields owned elsewhere. Ignoring a field during comparison and omitting it during synchronization are distinct configuration choices; RespectIgnoreDifferences affects the latter. Diff customization, sync options.</p>
+<p>For urgent live edits, agree on the exception workflow before an incident. Record what changed, decide whether Git should adopt it, and restore the intended automation afterward.</p>
+<p>How does your team keep emergency cluster edits and Git aligned?</p>
+<p id="sec-end-80444">In a recent development, I'm Ameni Ben Saada, a software engineer working across full-stack development and cloud delivery. My work: amenibensaada.tn.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/amenibensaada/why-did-my-kubernetes-change-disappear-argo-cd-self-heal-explained-2db8" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="bert-101-state-of-the-art-nlp-model-explained-81412.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81412. BERT 101 - State Of The Art NLP Model Explained
+        </a>
+        
+        <a href="nystrmformer-approximating-self-attention-in-linear-time-and-memo-81360.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81360. Nyströmformer: Approximating self-attention in linear time and memory via the Nyström method
+        </a>
+        
+        <a href="tech-report-deploying-vit-on-kubernetes-with-tf-serving-81356.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81356. Tech Report: Deploying 🤗 ViT on Kubernetes with TF Serving
+        </a>
+        
+        <a href="mixture-of-experts-explained-81158.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81158. Mixture of Experts Explained
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

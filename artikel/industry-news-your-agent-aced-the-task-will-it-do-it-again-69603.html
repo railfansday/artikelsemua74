@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69603">Your agent works in rehearsal, but during the live demo, it takes a different path and fails the same task.</p>
-<p>That is embarrassing onstage. In production, it is a reliability problem: a workflow that succeeded once may fail the next time a user makes the same request. For mission-critical work, such as reconciling a financial transaction or checking a contract for an obligation, that can be a showstopper. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-70034.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
-<p>Most benchmarks hide this variability behind an average. On AppWorld, a ReAct agent using GPT-4.1 succeeded on 77.4% of runs across five repetitions. But it succeeded in all five runs for only 53.0% of tasks — a 24.4-point consistency gap.</p>
-<p>Industry observers note that most benchmarks report the first number. We built a way to measure the second — and improve it. <span style="font-size:13px;">(Related: <a href="phison-details-ssd-with-a-built-in-npu-and-64gb-of-memory-that-su-70027.html" style="color:#2563eb; font-weight:600;">Phison details SSD with a built-in NPU and 64GB of memo...</a>)</span></p>
+<p>That is embarrassing onstage. In production, it is a reliability problem: a workflow that succeeded once may fail the next time a user makes the same request. For mission-critical work, such as reconciling a financial transaction or checking a contract for an obligation, that can be a showstopper.</p>
+<p>Most benchmarks hide this variability behind an average. On AppWorld, a ReAct agent using GPT-4.1 succeeded on 77.4% of runs across five repetitions. But it succeeded in all five runs for only 53.0% of tasks — a 24.4-point consistency gap. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Industry observers note that most benchmarks report the first number. We built a way to measure the second — and improve it. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-81450.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
 <p>In an earlier post, we introduced ALTK-Evolve — a system that turns an agent's own past trajectories into reusable guidelines, distilled automatically and injected back at inference time. It measurably improves task success, but those results only asked the average-case question too. This post introduces consistency guidelines, a upcoming guideline type in altk-evolve built on top of a diagnostic tool we call the Consistency Analyzer, that targets this gap directly.</p>
 <p>Standard agent evaluation reports Mean@k: run a benchmark k times, average the pass rate. Often k=3, sometimes just 1. It's the number on every leaderboard, and it's what "77% accurate" means in practice.</p>
 <p>Sources indicate that mean@k answers "how good is this agent, on average?" It does not answer the question a real user cares about: will it still be good if I ask this exact question again? For that you need Pass^k: the fraction of tasks where the agent succeeds on all k runs.</p>
@@ -214,20 +214,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-securing-your-agents-a-hands-on-guide-to-agent-anom-69710.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69710. Industry News: Securing Your Agents: A Hands-On Guide to Agent Anomaly Detection
+        <a href="industry-news-jack-of-all-trades-master-of-some-a-multi-purpose-t-81093.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81093. Industry News: Jack of All Trades, Master of Some, a Multi-Purpose Transformer Agent
         </a>
         
-        <a href="industry-news-coding-agent-horror-stories-the-cve-that-did-not-ex-69644.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69644. Industry News: Coding Agent Horror Stories: The CVE That Did Not Exist
+        <a href="industry-news-introducing-the-newly-introduced-microsoft-iq-putti-81080.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81080. Industry News: Introducing the newly introduced Microsoft IQ: Putting your organization’s intelligence to work in every agent
         </a>
         
-        <a href="industry-news-google-donates-agent-substrate-and-gvisor-to-the-cn-69553.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69553. Industry News: Google Donates Agent Substrate and gVisor to the CNCF to Secure AI Agents at Scale
+        <a href="industry-news-our-transformers-code-agent-beats-the-gaia-benchmar-81056.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81056. Industry News: Our Transformers Code Agent beats the GAIA benchmark 🏅
         </a>
         
-        <a href="industry-news-senior-leader-of-the-sinaloa-cartel-and-one-of-fbis-67091.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #67091. Industry News: Senior Leader of the Sinaloa Cartel and One of FBI’s Ten Most Wanted Fugitives Arrested in Mexico Following a Homeland Security Task Force Investigation
+        <a href="industry-news-tiny-agents-in-python-a-mcp-powered-agent-in-70-lin-80856.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80856. Industry News: Tiny Agents in Python: a MCP-powered agent in ~70 lines of code
         </a>
         
     </div>

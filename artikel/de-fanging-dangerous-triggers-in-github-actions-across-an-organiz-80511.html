@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De-fanging dangerous triggers in GitHub Actions across an organization</title>
+    <meta name="description" content="It has been revealed that on December 2, 2026, GitHub will start blocking the pull_request_target trigger by default in public repositories. If that senten">
+    <meta name="keywords" content="github, workflow, pypi, python, pull, request, triggers, seth">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/de-fanging-dangerous-triggers-in-github-actions-across-an-organiz-80511.html">
+    
+    <meta property="og:title" content="De-fanging dangerous triggers in GitHub Actions across an organization">
+    <meta property="og:description" content="It has been revealed that on December 2, 2026, GitHub will start blocking the pull_request_target trigger by default in public repositories. If that senten">
+    <meta property="og:image" content="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/psf/grants/report-2006-10/psf-logo.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/de-fanging-dangerous-triggers-in-github-actions-across-an-organiz-80511.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="De-fanging dangerous triggers in GitHub Actions across an organization">
+    <meta name="twitter:description" content="It has been revealed that on December 2, 2026, GitHub will start blocking the pull_request_target trigger by default in public repositories. If that senten">
+    <meta name="twitter:image" content="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/psf/grants/report-2006-10/psf-logo.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "De-fanging dangerous triggers in GitHub Actions across an organization", "image": ["https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/psf/grants/report-2006-10/psf-logo.png"], "datePublished": "2026-11-23T03:02:13", "dateModified": "2026-11-23T07:11:19.958355", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/de-fanging-dangerous-triggers-in-github-actions-across-an-organiz-80511.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding De-fanging dangerous triggers in GitHub Actions across an organization?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Blogspot."}}, {"@type": "Question", "name": "Which category does 'De-fanging dangerous triggers in GitHub Actions across an or' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>De-fanging dangerous triggers in GitHub Actions across an organization</h1>
+        <div class="meta-line">🌐 Source: <strong>Blogspot</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 4 min read (790 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>It has been revealed that on December 2, 2026, GitHub will start blocking the pull_request_target trigger by default in public repositories.</li><li style='margin-bottom:6px;'>According to recent reports, the short version: a handful of GitHub Actions triggers let a stranger on the internet start a workflow that may have access to your secrets.</li><li style='margin-bottom:6px;'>Mike Fiedler, PyPI Safety and Security Engineer, and Seth Larson, Security Developer in Residence, have removed dangerous triggers and applied these policies to the Python Software Foundation (PSF) stewarded GitHub organizations (psf, python, pypi).</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-80511"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-80511"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-80511"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="De-fanging dangerous triggers in GitHub Actions across an organization" loading="lazy" src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/psf/grants/report-2006-10/psf-logo.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-80511">It has been revealed that on December 2, 2026, GitHub will start blocking the pull_request_target trigger by default in public repositories. If that sentence means nothing to you, this post is for you. If it fills you with dread, it is also for you.</p>
+<p>According to recent reports, the short version: a handful of GitHub Actions triggers let a stranger on the internet start a workflow that may have access to your secrets. On a GitHub Team or Enterprise proposal, you can turn them off for every repository in your organization with one policy. On a Free plan, you can do it one repository at a time. Set the policy up, check what it would block, then enforce it. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-81464.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Mike Fiedler, PyPI Safety and Security Engineer, and Seth Larson, Security Developer in Residence, have removed dangerous triggers and applied these policies to the Python Software Foundation (PSF) stewarded GitHub organizations (psf, python, pypi). They also wrote up technical documentation on how to roll these policies out to your own projects and organizations. The full details and technical documentation are available on the Alpha-Omega blog. <span style="font-size:13px;">(Related: <a href="showcase-your-projects-in-spaces-using-gradio-81436.html" style="color:#2563eb; font-weight:600;">Showcase Your Projects in Spaces using Gradio...</a>)</span></p>
+<p>Yes, repeatedly. A few that have affected projects hosted on PyPI directly:.</p>
+<p>According to recent reports, ultralytics, December 2024. The project's GitHub Actions workflows were compromised and the build cache was poisoned, which put malicious releases on PyPI. Seth wrote PyPI's analysis. William Woodruff's write-up traces the entry point to a pull_request_target workflow.</p>
+<p>It has been revealed that liteLLM and Telnyx, March 2026. Malicious releases of both packages were published after an API token was exposed through an exploited Trivy dependency. StepSecurity traced the Trivy compromise back to a pull_request_target workflow exploited three weeks earlier. We worked with both maintainer teams on token rotation, release removals, and moving to Trusted Publishers, which both projects have since adopted.</p>
+<p>Recent findings suggest that elementary-data, April 2026. A workflow triggered by comments puts the comment text straight into a shell script. One crafted comment on a pull request ran with a token that could be written to the repository. The attacker used it to commit a malicious file and push a release tag, and the project's own release pipeline published the result to PyPI.</p>
+<p>Sources indicate that the maintainers behind these projects weren't careless. These triggers look harmless in a workflow file, and the unsafe version is one line away from the safe one.</p>
+<p>Insecure triggers can run workflows with access to your secrets, and a stranger can start them.</p>
+<p>When someone opens a pull request from a fork, the pull_request trigger runs their code with a read-only token and no secrets. That's the safe one.</p>
+<p id="sec-mid-80511">Industry observers note that pull_request_target looks almost the same in a workflow file and behaves very differently. It runs with a read/write token and access to your repository and organization secrets. GitHub built it for chores like labeling pull requests from forks, where the workflow never touches the contributor's code. The trouble starts when a workflow checks out the pull request and runs it anyway:.</p>
+<p>Anyone with a GitHub account can open that pull request. Their code now runs with your credentials. This is called a "pwn request", and GitHub's docs describe it as the root cause of multiple supply-chain compromises.</p>
+<p>In a recent development, the issue_comment trigger carries the same risk. This trigger fires when anyone comments on an issue or pull request, and the workflow runs with the repository's token and secrets. Sometimes the victim is a "comment /test to run CI" bot that checks out the pull request and runs their code. Sometimes the workflow pastes the comment text into a templated shell command, and the comment turns out to inject different instructions into the workflow shell.</p>
+<p>That support is what gives us the time for the work behind this post:.</p>
+<p>Seth wrote PyPI's analysis of the Ultralytics attack.</p>
+<p>Mike and Seth worked with the LiteLLM and Telnyx maintainers during their incident, and wrote up the guidance for everyone else.</p>
+<p>Mike set up the event policy for the pypi GitHub organization.</p>
+<p>Seth is working to migrate the few remaining repositories using insecure triggers in the python GitHub organization before enabling the event policy.</p>
+<p>Mike and Seth wrote this guide so other organizations can do the same!</p>
+<p id="sec-end-80511">Recent findings suggest that the PSF is a non-profit whose mission is to promote, protect, and advance the Python programming language, and to support and facilitate the growth of a diverse and international community of Python programmers. The PSF supports the Python community using corporate sponsorships, grants, and donations. Are you interested in sponsoring or donating to the PSF so it can continue supporting Python and its community? Check out our sponsorship program, donate directly here, or contact our team!</p>
+<p style="margin-top: 25px;">
+<a href="https://pyfound.blogspot.com/2026/11/de-fanging-dangerous-triggers-in-github.html" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-python-devs-document-de-fanging-dangerous-triggers--69536.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69536. Latest Update: Python Devs Document 'De-fanging Dangerous Triggers In GitHub Actions'
+        </a>
+        
+        <a href="github-actions-accepts-invalid-yaml-80488.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80488. GitHub Actions accepts invalid YAML
+        </a>
+        
+        <a href="deflock-amerca-facebook-group-suspended-as-a-dangerous-organizati-73982.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #73982. DeFlock Amerca Facebook Group Suspended as a Dangerous Organization
+        </a>
+        
+        <a href="industry-news-introducing-the-newly-introduced-microsoft-iq-putti-81080.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81080. Industry News: Introducing the newly introduced Microsoft IQ: Putting your organization’s intelligence to work in every agent
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

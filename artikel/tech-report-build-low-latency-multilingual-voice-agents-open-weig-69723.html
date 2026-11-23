@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69723">Every voice interaction has a latency budget.</p>
-<p>By the time a user hears your application respond, you've already spent precious milliseconds capturing audio, transcribing speech, running an LLM, retrieving context, and generating a response. Text-to-speech (TTS) is the final step — and the one consumers notice most. If speech generation is slow, the whole experience feels slow.</p>
-<p>The more of that pipeline you can run and tune yourself, the more of the latency budget you get back.</p>
-<p>It has been revealed that voice AI is moving fast. Integrated speech models offer simplicity — one API call, audio in, audio out — but they trade the ability to fine-tune each component for your domain, swap in better models as they ship, enforce data residency, and understand exactly where latency is coming from. For more control, a cascaded architecture — purpose-built ASR, TTS, and LLM components running together — keeps each layer independently tunable and deployable on infrastructure you own. <span style="font-size:13px;">(Related: <a href="phison-details-ssd-with-a-built-in-npu-and-64gb-of-memory-that-su-70027.html" style="color:#2563eb; font-weight:600;">Phison details SSD with a built-in NPU and 64GB of memo...</a>)</span></p>
-<p>NVIDIA Magpie Multilingual TTS is built for that. With open weights, production-ready NVIDIA NIM, and support for 12 languages, you can deploy multilingual speech inside your own infrastructure, optimize latency for your workload, and customize the model for your domain — end to end, in your own environment. <span style="font-size:13px;">(Related: <a href="dna-robots-could-deliver-drugs-and-hunt-viruses-inside-your-body-70038.html" style="color:#2563eb; font-weight:600;">DNA robots could deliver drugs and hunt viruses inside ...</a>)</span></p>
+<p>By the time a user hears your application respond, you've already spent precious milliseconds capturing audio, transcribing speech, running an LLM, retrieving context, and generating a response. Text-to-speech (TTS) is the final step — and the one consumers notice most. If speech generation is slow, the whole experience feels slow. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-81466.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>The more of that pipeline you can run and tune yourself, the more of the latency budget you get back. <span style="font-size:13px;">(Related: <a href="latest-update-my-journey-to-a-serverless-transformers-pipeline-on-81451.html" style="color:#2563eb; font-weight:600;">Latest Update: My Journey to a serverless transformers ...</a>)</span></p>
+<p>It has been revealed that voice AI is moving fast. Integrated speech models offer simplicity — one API call, audio in, audio out — but they trade the ability to fine-tune each component for your domain, swap in better models as they ship, enforce data residency, and understand exactly where latency is coming from. For more control, a cascaded architecture — purpose-built ASR, TTS, and LLM components running together — keeps each layer independently tunable and deployable on infrastructure you own.</p>
+<p>NVIDIA Magpie Multilingual TTS is built for that. With open weights, production-ready NVIDIA NIM, and support for 12 languages, you can deploy multilingual speech inside your own infrastructure, optimize latency for your workload, and customize the model for your domain — end to end, in your own environment.</p>
 <p>The latest release expands multilingual coverage with Modern Standard Arabic, Korean, and Brazilian Portuguese, while improving quality across many existing languages through updated training data and model improvements.</p>
 <p>Whether you're building customer support agents, healthcare assistants, enterprise copilots, translation systems, or conversational AI applications, Magpie provides an open foundation for production voice AI.</p>
 <p>Today's voice applications don't serve a single language.</p>
@@ -213,16 +213,16 @@
             📰 #69572. Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning
         </a>
         
-        <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-69908.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69908. How to Build a Healthcare Robot from Simulation to Deployment with NVIDIA Isaac for Healthcare
+        <a href="tech-report-a-new-framework-for-evaluating-voice-agents-eva-80578.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80578. Tech Report: A New Framework for Evaluating Voice Agents (EVA)
         </a>
         
-        <a href="tech-report-nvidia-shares-sink-to-52-week-low-after-report-sec-is-64234.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #64234. Tech Report: Nvidia Shares Sink to 52-Week Low After Report SEC Is Probing Accounting
+        <a href="tech-report-introducing-nvidia-nemotron-3-nano-omni-long-context--80518.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80518. Tech Report: Introducing NVIDIA Nemotron 3 Nano Omni: Long-Context Multimodal Intelligence for Documents, Audio and Video Agents
         </a>
         
-        <a href="tech-report-nvidia-brings-agents-to-life-with-dgx-spark-and-reach-57873.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57873. Tech Report: NVIDIA brings agents to life with DGX Spark and Reachy Mini
+        <a href="tech-report-how-security-vendors-are-tackling-access-control-chal-80470.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80470. Tech Report: How Security Vendors Are Tackling Access-Control Challenges for AI Agents
         </a>
         
     </div>

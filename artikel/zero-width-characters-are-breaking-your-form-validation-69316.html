@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69316">Some users paste text that looks empty. Your form still treats it as filled in. That is often a zero width character at work.</p>
-<p>Zero width characters take up no visible space. They still count as characters. Three common ones cause most of the trouble. <span style="font-size:13px;">(Related: <a href="nasas-new-ai-space-chip-could-let-spacecraft-think-for-themselves-70011.html" style="color:#2563eb; font-weight:600;">NASA’s new AI space chip could let spacecraft think for...</a>)</span></p>
-<p>Zero width space is U+200B. It can break a word without showing a gap. Zero width joiner is U+200D. It joins emoji and some scripts into one visible unit. Hangul filler is U+3164. It looks blank on its own, and people use it to make empty looking text. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-70026.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
+<p>Zero width characters take up no visible space. They still count as characters. Three common ones cause most of the trouble.</p>
+<p>Zero width space is U+200B. It can break a word without showing a gap. Zero width joiner is U+200D. It joins emoji and some scripts into one visible unit. Hangul filler is U+3164. It looks blank on its own, and people use it to make empty looking text. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-81454.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
 <p>Recent findings suggest that these characters are useful in some places. They also slip into forms through copy and paste. A user may copy a name from a chat app or a document. The pasted text can carry an invisible character at the start or the end. The field looks empty or normal. The stored value is not what you expect.</p>
 <p>Here is a small example in JavaScript.</p>
-<p id="sec-mid-69316">Industry observers note that that one character breaks a simple empty check. It can also break search. A name with a hidden character will not match the same name without it. It can break duplicate checks too. Two accounts may look the same in a list, but their stored values differ by one invisible code point. Support teams then see two records for one person.</p>
+<p id="sec-mid-69316">Industry observers note that that one character breaks a simple empty check. It can also break search. A name with a hidden character will not match the same name without it. It can break duplicate checks too. Two accounts may look the same in a list, but their stored values differ by one invisible code point. Support teams then see two records for one person. <span style="font-size:13px;">(Related: <a href="breaking-hyperparameter-search-with-transformers-and-ray-tune-81462.html" style="color:#2563eb; font-weight:600;">Breaking: Hyperparameter Search with Transformers and R...</a>)</span></p>
 <p>Sources indicate that validation should look past what the eye sees. Strip known invisible characters before you check length. Check the cleaned value, not the raw input. You can also warn the user when a value contains one of these characters. That helps them fix a paste instead of seeing a confusing error.</p>
 <p>Industry observers note that A simple cleanup step can use a regular expression. Remove U+200B, U+200C, U+200D, U+FEFF, and U+3164 from the input. Then trim the result. Then run your normal checks for empty values, length, and duplicates. Keep the original input in a log if you need to debug a case later. That log will show you what the user actually sent.</p>
 <p>Detection matters as much as cleanup. If a string looks empty but has a length above zero, inspect each code point. An invisible text detector can show you the hidden characters in a pasted value. That makes the problem easy to explain to a teammate or a user.</p>
@@ -182,20 +182,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="zenless-zone-zeros-substantial-end-of-year-enhancement-brings-mul-63723.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #63723. Zenless Zone Zero's substantial end-of-year enhancement brings multiplayer combat, free Zhao, and the first dual-form Agent
+        <a href="zenless-zone-zeros-major-end-of-year-upgrade-brings-multiplayer-c-75022.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #75022. Zenless Zone Zero's major end-of-year upgrade brings multiplayer combat, free Zhao, and the first dual-form Agent
         </a>
         
-        <a href="brain-inspired-chip-runs-near-absolute-zero-and-could-transform-q-69999.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69999. Brain-inspired chip runs near absolute zero and could transform quantum computing
+        <a href="fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-81458.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81458. Fit More and Train Faster With ZeRO via DeepSpeed and FairScale
         </a>
         
-        <a href="gta-6-streamer-with-zero-viewers-left-in-tears-after-ibai-sent-th-69878.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69878. GTA 6 streamer with zero viewers left in tears after Ibai sent thousands of people to his broadcast
+        <a href="zero-shot-image-segmentation-with-clipseg-81306.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81306. Zero-shot image segmentation with CLIPSeg
         </a>
         
-        <a href="run-ai-workloads-on-any-cloud-store-on-hugging-face-zero-egress-s-69808.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69808. Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot
+        <a href="zero-shot-image-to-text-generation-with-blip-2-81288.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81288. Zero-shot image-to-text generation with BLIP-2
         </a>
         
     </div>

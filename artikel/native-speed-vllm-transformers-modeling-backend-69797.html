@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69797">TL;DR: The transformers vLLM backend is now as fast (or faster) than custom vLLM implementations for many LLM architectures. Model authors can automatically leverage their transformers implementations to get ultra fast vLLM inference, for free.</p>
-<p>The transformers library has become the reference modeling library for Machine Learning. It supports 450+ architectures through consistent APIs, and is designed with the main goal that model implementations are self contained and easy to understand. Going through transformers code makes it easy for contributors to learn how an architecture works, and then port it to other frameworks such as vLLM, SGLang, MLX, llama.cpp, and many others. <span style="font-size:13px;">(Related: <a href="phison-details-ssd-with-a-built-in-npu-and-64gb-of-memory-that-su-70027.html" style="color:#2563eb; font-weight:600;">Phison details SSD with a built-in NPU and 64GB of memo...</a>)</span></p>
-<p>We have fully embraced this role in the ecosystem and are investing a lot of effort to make it easier. A big step in this direction was the integration last year of transformers as a modeling backend in vLLM. This has been allowing model authors to run transformers models (LLMs and VLMs alike) inside vLLM, without having to port anything. Transformers provides the modeling code, and vLLM provides extremely optimized inference techniques such as continuous batching and custom attention kernels. <span style="font-size:13px;">(Related: <a href="dna-robots-could-deliver-drugs-and-hunt-viruses-inside-your-body-70038.html" style="color:#2563eb; font-weight:600;">DNA robots could deliver drugs and hunt viruses inside ...</a>)</span></p>
+<p>The transformers library has become the reference modeling library for Machine Learning. It supports 450+ architectures through consistent APIs, and is designed with the main goal that model implementations are self contained and easy to understand. Going through transformers code makes it easy for contributors to learn how an architecture works, and then port it to other frameworks such as vLLM, SGLang, MLX, llama.cpp, and many others. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>We have fully embraced this role in the ecosystem and are investing a lot of effort to make it easier. A big step in this direction was the integration last year of transformers as a modeling backend in vLLM. This has been allowing model authors to run transformers models (LLMs and VLMs alike) inside vLLM, without having to port anything. Transformers provides the modeling code, and vLLM provides extremely optimized inference techniques such as continuous batching and custom attention kernels. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-81466.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>This integration gets better now 🚀!</p>
 <p>We put the transformers modeling backend for vLLM head to head with vLLM's hand written native implementations across three very different Qwen3 models:.</p>
 <p>Industry observers note that running any* Hugging Face model through the transformers modeling backend is a single flag — --model-impl transformers. It composes with the usual parallelism options, so nothing about your serving setup changes:.</p>
@@ -189,20 +189,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-transformers-backend-integration-in-sglang-58004.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58004. Breaking: Transformers backend integration in SGLang
+        <a href="transformers-backend-integration-in-sglang-80835.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80835. Transformers backend integration in SGLang
         </a>
         
-        <a href="paddleocr-35-running-ocr-and-document-parsing-tasks-with-a-transf-57694.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57694. PaddleOCR 3.5: Running OCR and Document Parsing Tasks with a Transformers Backend
+        <a href="paddleocr-35-running-ocr-and-document-parsing-tasks-with-a-transf-80487.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80487. PaddleOCR 3.5: Running OCR and Document Parsing Tasks with a Transformers Backend
         </a>
         
-        <a href="tech-report-fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-tra-69963.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69963. Tech Report: Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers
+        <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81467. How to train a new language model from scratch using Transformers and Tokenizers
         </a>
         
-        <a href="breaking-accelerating-pytorch-transformers-with-intel-sapphire-ra-69948.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69948. Breaking: Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1
+        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-81466.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81466. How to generate text: using different decoding methods for language generation with Transformers
         </a>
         
     </div>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Implementation: Cost, Timeline and Failure Modes</title>
+    <meta name="description" content="A Salesforce implementation gets approved as a licence line and delivered as a programme. The licence line is public, per user, per month, and easy to defe">
+    <meta name="keywords" content="data, salesforce, than, recent, rather, system, migration, licence">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/salesforce-implementation-cost-timeline-and-failure-modes-80442.html">
+    
+    <meta property="og:title" content="Salesforce Implementation: Cost, Timeline and Failure Modes">
+    <meta property="og:description" content="A Salesforce implementation gets approved as a licence line and delivered as a programme. The licence line is public, per user, per month, and easy to defe">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6htrv5gfdecc1n1iz6oq.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/salesforce-implementation-cost-timeline-and-failure-modes-80442.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Salesforce Implementation: Cost, Timeline and Failure Modes">
+    <meta name="twitter:description" content="A Salesforce implementation gets approved as a licence line and delivered as a programme. The licence line is public, per user, per month, and easy to defe">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6htrv5gfdecc1n1iz6oq.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Salesforce Implementation: Cost, Timeline and Failure Modes", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6htrv5gfdecc1n1iz6oq.png"], "datePublished": "2026-11-23T07:00:00", "dateModified": "2026-11-23T07:11:15.157453", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/salesforce-implementation-cost-timeline-and-failure-modes-80442.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Salesforce Implementation: Cost, Timeline and Failure Modes?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Salesforce Implementation: Cost, Timeline and Failure Modes' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Salesforce Implementation: Cost, Timeline and Failure Modes</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 28 min read (5506 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>A Salesforce implementation gets approved as a licence line and delivered as a programme.</li><li style='margin-bottom:6px;'>Salesforce publishes UK pricing in pounds.</li><li style='margin-bottom:6px;'>In a recent development, the word that matters most in what follows is adoption, because a technically correct system nobody uses is not a partial success.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-80442"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-80442"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-80442"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Salesforce Implementation: Cost, Timeline and Failure Modes" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6htrv5gfdecc1n1iz6oq.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-80442">A Salesforce implementation gets approved as a licence line and delivered as a programme. The licence line is public, per user, per month, and easy to defend in a board paper. Everything that turns those licences into a system somebody actually uses sits outside it, and that is the part that decides whether the number in the business case survives the first quarter.</p>
+<p>Salesforce publishes UK pricing in pounds. Sales Cloud Enterprise is £140 per user per month billed annually and Unlimited is £280. Fifty Enterprise users is £84,000 a year before anybody has configured a single field. Our house estimate for the services that put that org into production is one to three times the first year licence spend, and the position inside that range is not random. Four things move it, and only one is technical. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-81453.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
+<p>In a recent development, the word that matters most in what follows is adoption, because a technically correct system nobody uses is not a partial success. It is a total loss with a maintenance bill attached. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-81461.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+<p>What does a Salesforce implementation cost? The licence is usually the smaller half. Salesforce lists Sales Cloud Enterprise at £140 per user per month in the UK, so fifty consumers comes to £84,000 a year, and our house estimate for implementation services on top is one to three times that first year licence spend. The multiplier is driven by the number of integrated systems, the state of the source data, the degree of process customisation, and whether the organisation will change its process to fit the product.</p>
+<p>There are six cost lines in a Salesforce programme and only one of them appears on a pricing page.</p>
+<p>According to recent reports, the first is the licence, per user and per month, published. The second is implementation services: the consultants and developers who configure the org, build what configuration cannot, and run the project. The third is data migration, scoped as a task inside implementation and behaving like a project of its own. The fourth is integration, connecting Salesforce to the systems that already hold your data. The fifth is training and change management. The sixth is ongoing administration, which never appears in a business case because it starts after every other invoice has been paid.</p>
+<p>Sources indicate that A business case that names only the licence is not wrong by a small margin. It is commonly wrong by a factor of two to four, and the gap is almost entirely in lines three, five and six.</p>
+<p>Salesforce's UK Sales Cloud pricing is public and quoted in pounds.</p>
+<p>The Starter Suite is £20 per user per month. Pro Suite is £80 billed annually. Enterprise, the edition most UK mid-market buyers land on because it is the first tier with a web API, is £140. Unlimited is £280 and bundles a Full sandbox and the Premier Success Plan. Agentforce 1 Sales sits at £440. Bought separately, the Premier Success Plan is priced at 30% of net licence fees.</p>
+<p>Two things follow. The jump from Pro Suite to Enterprise is £60 per user per month, which for 50 people is £36,000 a year, and it is frequently forced by one integration requirement rather than by any feature a sales team asked for. And the support plan is a percentage, so it scales with the licence bill rather than with the support you consume.</p>
+<p>In a recent development, the useful planning number is not the day rate. It is the ratio of first year services to first year licence spend, because that ratio is stable enough to argue about.</p>
+<p>Our house bands, from UK mid-market work, are these. A near vanilla single cloud rollout with clean data and no integrations lands at roughly 0.5 to 1 times first year licence spend. A typical implementation with two or three integrations and a moderate amount of custom objects and automation lands at 1 to 3 times. A multi cloud programme with legacy data, five or more integrations and heavy process customisation runs at 3 to 5 times and sometimes beyond. These are our estimates, not published figures, and a partner quoting a fixed industry ratio should be asked where it came from.</p>
+<p>It has been revealed that on the £84,000 example that is £42,000 at the bottom, £84,000 to £252,000 in the middle, and £252,000 upward at the top. The spread is the whole story. A buyer who has only heard "roughly the same as the licence" has anchored on the middle of a range ten times wide at the edges.</p>
+<p>Only four things reliably move a Salesforce project from one band to the next, and every scoping conversation should establish all four before anybody produces a number.</p>
+<p>The first is the number of integrated systems. Each one is a separate design, a separate set of credentials, a separate error path and a separate thing that breaks when the other vendor ships a release. Integrations are not additive in cost, they are slightly worse than additive, because the failure modes multiply.</p>
+<p>According to recent reports, the second is data quality in the source. Not volume. Quality. It is covered in depth below because it is the most consistently underestimated line in the programme.</p>
+<p>The third is the degree of process customisation, meaning how far the target design departs from what the product does when you install it.</p>
+<p>The fourth is whether the organisation will change its process to fit the product. That is the single biggest predictor of both cost and success, and almost nobody scopes it, because it is a question about people asked during a technical evaluation.</p>
+<p>An organisation that adapts its sales process to Salesforce's opportunity model gets a cheap, upgradeable, well supported system. One that insists Salesforce reproduce its existing spreadsheet gets an expensive system that fights every release.</p>
+<p>According to recent reports, the tell during discovery is the language. When a stakeholder claims "we need the system to work the way we work", the customisation budget is about to double. When a stakeholder says "show me how it is supposed to work and tell me why", it is about to halve. Both sentences are reasonable. Only one of them is cheap.</p>
+<p>Recent findings suggest that the honest way to handle this is to price it. Put two numbers in the proposal, one for the standard model and one for the bespoke, and let the difference make the argument. A buyer who sees that a stage naming convention costs £18,000 in custom automation and permanent upgrade risk will usually change the convention. A buyer told "we can do that" will not.</p>
+<p>Discovery is the phase most often cut to win a deal and most often blamed afterwards. A discovery that produces a slide deck was a sales exercise. One that produces four artefacts was an engineering exercise.</p>
+<p>The first is a process map: the actual sequence of steps a lead takes to become revenue, with the decision points and the people who own them, drawn from watching the work rather than from asking managers to describe it.</p>
+<p>In a recent development, the second is a data model: objects, fields, relationships, picklist values, and for every field a named person who will maintain it. Fields without an owner become the fields nobody fills in.</p>
+<p>The third is an integration inventory: every system sending data to Salesforce or receiving it, with direction, volume, frequency, the identifier that joins the records, and what happens when the connection fails.</p>
+<p>The fourth is a definition of done that is measurable. Not "the sales team is using Salesforce" but something like "90% of opportunities closed in the quarter have a close date, an amount and a stage set by the owner, and the weekly pipeline meeting runs from the Salesforce dashboard with no spreadsheet present".</p>
+<p>In a competitive process the software RFP guidance applies directly: ask every bidder what discovery produces and refuse the ones who cannot name the artefacts.</p>
+<p>Migration is quoted as a percentage of the build and consumed as a multiple of it, because of one misunderstanding: teams estimate against record count, and migration effort scales with source quality.</p>
+<p>According to recent reports, two million clean rows from one well maintained system with a reliable primary key is a week of careful work. Forty thousand rows spread across a legacy CRM, three regional spreadsheets and an accounts package, with no shared identifier and eleven years of free text in the notes field, is two months and will still be wrong at go live. The second job has one fiftieth of the records and eight times the effort.</p>
+<p>Recent findings suggest that profiling is counting things before you agree a date. Run it on every source, and run it before the migration line in the proposal is signed.</p>
+<p>Count nulls per field. Count distinct values in every field you intend to make a picklist, because a "country" column with 340 distinct values is not a picklist, it is a cleaning project. Count how many records share a candidate key. Measure format consistency in dates, phone numbers and postcodes. Count the records with no owner, no email address and no activity in three years, because nobody will defend those when you propose leaving them behind.</p>
+<p>Profiling costs two to five days on a mid-sized estate. It is the cheapest risk reduction in the programme, and skipping it is why migration estimates are wrong in one direction only.</p>
+<p>Industry observers note that salesforce has native duplicate management, and its limits shape the design. You can have up to five active duplicate rules per object and one active matching rule per object, rising to five active matching rules per object when you use multiple duplicate rules, and each duplicate rule can reference up to three matching rules.</p>
+<p>Two behaviours matter more than the counts. Match keys narrow the comparison to the 100 most likely duplicates before the matching equation is applied, so a record with more than 100 genuine near matches will not be fully evaluated. And the rules simply do not run in several common paths, including Quick Create and lead conversion without Apex lead convert enabled, which is how duplicates appear in an org that has duplicate rules switched on.</p>
+<p>Sources indicate that so deduplication is a migration activity, done in the staging data before loading, not a runtime feature you enable and forget. Native rules are the second line of defence.</p>
+<p>In a recent development, every migrated object needs an external ID: an indexed custom field holding the primary key from the source system. This is the single highest value decision in the migration design and it costs nothing to make.</p>
+<p>With an external ID you can use upsert, which uses that field to decide whether to create or update a record. If the value is not matched a record is created, if it is matched once the record is updated, and if it is matched more than once an error is returned rather than a duplicate. That makes every load idempotent, which means you can run it twice without doubling your data, which means you can rehearse.</p>
+<p>Two details bite. Matching by external ID is case insensitive only when the field has the Unique attribute and the case insensitive option selected, so "ABC123" and "abc123" are otherwise two different records. And if the field is an external ID without a unique index, the loading account needs the View All Data permission.</p>
+<p>According to recent reports, the default request is "bring everything across". It is almost always wrong, and it is expensive in three separate ways.</p>
+<p>It costs migration effort, because the oldest data is the dirtiest and consumes cleaning time out of proportion to its value. It costs storage, and storage is a real line: Enterprise, Professional and Unlimited orgs are allocated 10 GB of data storage plus 20 MB per user licence, so 50 Enterprise customers is 11 GB in total, not 11 GB per user. And it costs adoption, because a system full of dead records trains users not to trust search results.</p>
+<p>It has been revealed that the defensible position is to migrate open and recent records in full, migrate closed records for the period the business actually reports on, and archive the rest somewhere readable. Keeping personal data you have no use for is a liability rather than an asset, so the storage argument and the compliance argument point the same way for once.</p>
+<p>It has been revealed that every requirement in Salesforce can be met declaratively, with code, or with a mixture, and the choice determines what the system costs to own for the next decade. The distinction is worth holding clearly even if you never open a code editor.</p>
+<p>Declarative means built by configuration: objects, fields, page layouts, validation rules and Flow, which is Salesforce's visual automation builder. It is changed by an administrator, it survives platform upgrades because Salesforce owns the runtime, and it is visible to anyone with the right permission.</p>
+<p>Salesforce's own record-triggered automation decision guide gives a usable threshold. It measures automation density across three dimensions: the number of automations firing on one data change, the record volume per transaction, and how far downstream updates cascade into related objects. Low density, meaning fewer than fifteen automations, batches of 1 to 200 records and at most one downstream write, should be record-triggered Flow.</p>
+<p>Sources indicate that the same guide gives one rule that saves more money than any other on this list: use a single entry point per object. Mixing Flow and Apex triggers on the same object is how ordering bugs become permanent.</p>
+<p>Medium density belongs to a hybrid, with Flow orchestrating and invocable Apex doing the heavy lifting, so the sequence stays visible while the compute sits in something testable. High density belongs to Apex triggers outright, because at that point declarative tooling is being used to build a system it was not designed to build.</p>
+<p>Code is also right when the logic is genuinely complex, when it needs to be unit tested properly, and when the same operation is called from several entry points and should exist once. If you are commissioning that work rather than staffing it, our software development services exist for exactly this boundary, where the platform stops and bespoke engineering starts.</p>
+<p>Recent findings suggest that salesforce retires tools, and a proposal written against retired ones tells you when it was actually written. Salesforce stopped supporting Workflow Rules and Process Builder on 31 December 2025. Existing rules keep running, but there is no customer support and no bug fixes, and the recommended path is migration to Flow Builder using the Migrate to Flow tool.</p>
+<p>Declarative work is cheaper to build and cheaper to change, and its cost is dilution: a hundred undocumented flows become a system where nobody can predict what a record save will do.</p>
+<p>It has been revealed that code is more expensive to build and far cheaper to reason about at scale, because it can be read, versioned and tested. Its cost is that it needs developers, and an organisation with no Salesforce developer and no retainer will eventually be unable to change its own system.</p>
+<p>In a recent development, the failure that costs the most is neither of these. It is a system built entirely declaratively by a partner who then leaves, in an org with no documentation and no named owner. Everything works and nothing can be changed safely, which is the same position as unmaintained bespoke software, described at length in our piece on what software maintenance actually costs.</p>
+<p>Sources indicate that integration has its own treatment in our post on Salesforce integration limits and real costs. The point that belongs here is that platform limits are an architectural input, not an operational detail discovered in week nine.</p>
+<p>Two limits do most of the shaping. Total API request allocations for an Enterprise Edition org are 100,000 calls per 24 hours plus the number of licences multiplied by the calls each licence type carries, which is 1,000 for a Salesforce licence, plus any add-ons purchased. Salesforce's own worked example is an Enterprise org with 15 Salesforce licences getting 115,000 requests. The allocation is org wide and not per user, and concurrent inbound requests running 20 seconds or longer are capped at 25 in production.</p>
+<p>The second is Apex governor limits, enforced per transaction: 100 SOQL queries synchronously and 200 asynchronously, 50,000 records retrieved by SOQL, 150 DML statements, 10,000 records processed by DML, 6 MB of heap synchronously and 12 MB asynchronously, and 10,000 milliseconds of CPU time synchronously against 60,000 asynchronously.</p>
+<p>A design that ignores these passes user acceptance testing on twenty records and fails on the first real nightly load. That is not a bug. It is an architecture decision made by default.</p>
+<p id="sec-mid-80442">Salesforce gives you four sandbox types with different storage and refresh intervals, and choosing the wrong set is a scheduling error that surfaces late.</p>
+<p>Developer sandboxes hold 200 MB and refresh once a day. Developer Pro holds 1 GB and also refreshes daily. Partial Copy holds 5 GB, copies a sample of production data defined by a template, and refreshes every five days. Full is a replica of production and refreshes every 29 days. Enterprise Edition includes 25 Developer sandboxes and one Partial Copy; Full sandboxes come with Unlimited and Performance or are bought as an add-on.</p>
+<p>The 29 day interval on Full sandboxes is the constraint people initiative around too late. Your only realistic migration rehearsal environment refreshes once a month, so a rehearsal that reveals a problem costs a month before you can rehearse cleanly again. Two Full sandbox rehearsals is a nine week window, not a fortnight.</p>
+<p>Developer and Developer Pro sandboxes copy metadata only, so anything a developer loaded into one to test against is gone after a refresh. Test data has to be a rerunnable script held in version control, or the team loses a day per refresh recreating it by hand.</p>
+<p>You cannot develop Apex in a production org, so every change starts elsewhere and has to be moved. How it moves is a decision with a long tail.</p>
+<p>Change sets are the built in mechanism. They carry only what you can change through Setup, never records, they require a deployment connection between orgs affiliated with the same production org, and an inbound change set deploys as a whole rather than component by component. They are assembled by clicking, so they are not diffable, not reviewable and not repeatable, and the same change set assembled twice by two people will differ.</p>
+<p>That works for a small org with one administrator and monthly releases. It stops working the moment two people change the same org, because there is no merge and no history, and the record of what shipped lives in somebody's memory.</p>
+<p>According to recent reports, the alternative is a source driven pipeline: metadata in Git, changes reviewed as diffs, deployments run from a branch. It costs a few days to set up and turns release management from a memory exercise into a repeatable one. With more than one builder, treat it as part of the build rather than an improvement for later.</p>
+<p>According to recent reports, deploying Apex to production requires that unit tests cover at least 75% of your Apex code and that those tests pass. Salesforce is explicit that coverage indicates test effectiveness without guaranteeing it, and that tests should assert behaviour.</p>
+<p>Read what that means commercially. 75% is a gate, and gates get gamed. Test classes written to hit the number rather than to assert anything will pass, deploy, and catch nothing. When you review a partner's work, do not ask what the coverage percentage is. Ask to see three test methods and count the assertions.</p>
+<p>Recent findings suggest that the system goes live, the project closes, the invoice is paid, and eight months later the sales director is still running the forecast from a spreadsheet. Nothing broke. That is the most common outcome of a failed Salesforce programme and it is invisible to every technical measure.</p>
+<p>Industry observers note that the economics are brutal because the licence cost continues regardless. Fifty Enterprise users at £140 per month is £84,000 a year whether the system is used or not, so a 40% adoption rate is roughly £50,000 a year of pure waste on the licence alone, before the implementation cost is amortised over anything.</p>
+<p>In a recent development, adoption is also the only failure mode that cannot be fixed by the technical team. A partner can build exactly what was specified, meet every acceptance criterion, and leave behind something nobody opens. That is why the definition of done in discovery has to be about usage, and why the project should not be considered closed at go live.</p>
+<p>Four things reliably shift adoption, and none of them is a training video.</p>
+<p>Role based training, delivered separately. A sales representative and a sales manager use different parts of the system for different reasons, and one combined session teaches neither well. Train each role on its own workflow and nothing else.</p>
+<p>A small mandatory field set. Pick the fewest fields that make the reporting work, require those, and leave everything else optional. Every extra required field is a reason to abandon a record halfway through, and a system that punishes data entry gets less of it.</p>
+<p>Sources indicate that manager reporting that depends on the data. This is the one that works. If the weekly pipeline meeting runs from a Salesforce dashboard with no spreadsheet in the room, the data gets entered, because the alternative is being absent from the conversation. If the manager keeps a private spreadsheet, the CRM is optional and everybody knows it.</p>
+<p>Sources indicate that A named owner with time in their week. Not a committee. One person who owns the org, holds the administrator permissions, is measured on adoption and has hours allocated for it. Orgs without this decay from the first month.</p>
+<p>Six failure modes account for most of the Salesforce implementation failure we are asked to repair, and each demonstrates a sign well before the damage does.</p>
+<p>Replicating a broken process. The warning sign is a requirements document describing the current system rather than the desired outcome, in the old system's field names. Automating a bad process makes it faster and harder to change.</p>
+<p>Sources indicate that unbounded customisation. The warning sign is a change request log with no rejections on it. Enterprise Edition allows 500 custom fields per object and 200 custom objects, enough headroom to build something nobody can maintain long before you reach a platform limit.</p>
+<p>No single owner. The warning sign is that the answer to "who owns Salesforce" contains the word "and".</p>
+<p>Migrating everything. The warning sign is a migration scope defined by record count instead of by a retention decision.</p>
+<p>No test environment discipline. The warning sign is anyone saying "just make the change in production, it is only a picklist value".</p>
+<p>Measuring go live rather than usage. The warning sign is a project blueprint whose last milestone is a date rather than a number.</p>
+<p>Recent findings suggest that elapsed time and effort are different questions and buyers conflate them. These are our house bands from UK mid-market work, not published figures.</p>
+<p>In a recent development, A small implementation, up to about 25 owners on one cloud with at most one integration and a single clean data source, runs 6 to 10 weeks elapsed and 20 to 45 consultant days. A mid-sized one, 25 to 150 users across one or two clouds with two to four integrations and a real migration, runs 4 to 7 months and 90 to 220 days. A complex programme, 150 users upward, multi cloud, five or more integrations and more than one country, runs 9 to 18 months and 400 days upward.</p>
+<p>Sources indicate that inside those totals, discovery is 10 to 15% of effort, configuration and build 30 to 40%, data migration 20 to 30% and rising sharply with poor source quality, integration 10 to 20%, and testing, training and hypercare 15 to 20%. The line that expands is migration, every time.</p>
+<p>It has been revealed that elapsed time exceeds effort divided by team size for reasons that are not the team's fault: sandbox refresh intervals, stakeholder availability for user acceptance testing, and the wait for the third party whose API you need. Who carries that risk is decided by the contract, which is why the fixed price against time and materials question matters more on CRM work than on most.</p>
+<p>A CRM is a database of people, so UK GDPR applies to essentially all of it, and three questions come up on every implementation.</p>
+<p>The ICO's guidance on when a DPIA is required sets out the general rule from Article 35(1), that a DPIA is needed where processing is likely to result in a high risk to people's rights and freedoms, and lists the ICO's own set of operations under Article 35(4).</p>
+<p>Two of those land squarely on a typical CRM migration. Data matching, defined as combining, comparing or matching personal data obtained from multiple sources, is precisely what a consolidation migration does. Large scale profiling covers lead and account scoring. The ICO also notes that in most cases a combination of two of the European criteria indicates a DPIA is needed, though it is not a strict rule. Note that this guidance is currently under review because of changes made by the Data (Use and Access) Act, so check it rather than relying on a summary.</p>
+<p>Sources indicate that salesforce is a global platform and the instance your org runs on is a contractual matter, not an assumption. The ICO's brief guide to international transfers, last updated on 15 January 2026, gives a three step test: does UK GDPR apply to the processing, are you initiating the transfer to an organisation outside the UK, and is the recipient a separate legal entity. Three yeses make it a restricted transfer.</p>
+<p>Industry observers note that restricted transfers need UK adequacy regulations, appropriate safeguards such as the International Data Transfer Agreement, the Addendum or binding corporate rules, or an exception. Where you rely on safeguards, the ICO expects a transfer risk assessment. This is a contract review, not an engineering task, and it should happen before migration rather than after.</p>
+<p>Industry observers note that when a partner configures your org, loads your data and holds credentials to it, they are processing personal data on your behalf. The ICO's guidance on controllers and processors sets out what follows, and the practical implications are contractual.</p>
+<p>You need a written agreement covering documented instructions, confidentiality, security, sub-processors, audit rights, and deletion or return of data at the end of the engagement. That last one is the clause most often missing. A partner who has held a full copy of your customer database in a Full sandbox for eleven months, and whose contract says nothing about deleting it, is an open liability on your side of the line, not theirs.</p>
+<p>Six questions, and the answers that should end the conversation.</p>
+<p>Ask what discovery produces. If the answer is a proposal rather than a process map, a data model, an integration inventory and a measurable definition of done, they are selling, not scoping.</p>
+<p>According to recent reports, ask how they will profile the source data and when. If profiling happens after the migration estimate is agreed, the estimate is a guess.</p>
+<p>Sources indicate that ask what their default is for automation, and listen for the density argument. A partner who states "always Flow" or "always Apex" has one tool. A partner who specifies Process Builder in 2026 has not read a retirement notice in three years.</p>
+<p>Ask how changes move from sandbox to production. "Change sets" is acceptable for a one administrator org and a warning on anything larger.</p>
+<p>Ask who owns the org after go live and how many hours a week that is. If they cannot answer, adoption is nobody's problem.</p>
+<p>In a recent development, ask what happens to your data in their sandboxes when the engagement ends, and get the answer in the contract rather than in an email. The same discipline set out in our technical due diligence guide applies here: verify the claim rather than accept the assurance.</p>
+<p>According to recent reports, if you have fewer than about ten people, no integration requirement and a process that fits a five stage pipeline, the Enterprise licence and its implementation are both larger than the problem. A cheaper CRM, or the Starter Suite at £20 per user, does the job and can be replaced later at a cost you can absorb.</p>
+<p>In a recent development, if your actual requirement is one workflow no product supports and everything else is already handled, you are buying a platform to host a single application. That is usually a case for a purpose built system, and our custom software development work starts from that premise. The build against buy decision turns on whether the differentiating process is the core of the business or a detail around it.</p>
+<p>Sources indicate that if nobody will own the system, do not buy it. This is the hardest thing to say during a sales process and the most reliable predictor of waste. An unowned CRM does not fail loudly. It quietly becomes a duplicate of the spreadsheet it was meant to replace, at £140 per user per month.</p>
+<p>According to recent reports, and if the goal is an AI agent layer rather than a CRM, it sits on top of a working implementation rather than replacing one. The economics are covered in our piece on what Agentforce actually costs.</p>
+<p>The order that works is: profile the data, run discovery to four artefacts, agree the standard model and price every departure from it, build to one automation entry point per object, rehearse the migration twice in a Full sandbox, train by role, and hold the project open until a usage number is met rather than a date.</p>
+<p>The order that fails is: sign, configure, migrate late, train once, go live on the date, close the project.</p>
+<p>Sources indicate that mecanik works on the parts of this that are engineering rather than licence administration: integration design against real platform limits, migration profiling and tooling, custom development where configuration runs out, and the front end work that puts CRM data in front of customers. Our software development services and web developer hire pages cover how we engage. If you want a second opinion on a partner's estimate before you sign it, you can hire a developer for the review alone.</p>
+<p>It has been revealed that how much does a Salesforce implementation cost in the UK? Salesforce lists Sales Cloud Enterprise at £140 per user per month in the UK billed annually, so 50 customers is £84,000 a year in licences alone. Our house estimate for implementation services on top is 0.5 to 1 times first year licence spend for a near vanilla rollout, 1 to 3 times for a typical mid-market project, and 3 to 5 times for a multi cloud programme with legacy data and heavy customisation.</p>
+<p>How long does a Salesforce implementation take? Our house bands are 6 to 10 weeks and 20 to 45 consultant days for up to 25 users on one cloud with clean data, 4 to 7 months and 90 to 220 days for 25 to 150 users with two to four integrations, and 9 to 18 months and 400 days upward for a multi cloud programme with legacy migration. Data migration is the phase that expands, because its effort scales with source data quality rather than record count.</p>
+<p>Sources indicate that why do Salesforce implementations fail? Almost always at adoption rather than at go live. A technically correct system that nobody uses is a total loss with a running licence bill attached. The common causes are replicating a broken process, unbounded customisation, no single named owner, migrating all historical data, no test environment discipline, and measuring go live instead of usage.</p>
+<p>Should Salesforce be built with configuration or custom code? Salesforce's own decision guide sets the threshold by automation density. Fewer than fifteen automations on an object, batches of 1 to 200 records and at most one downstream write should be record-triggered Flow. Medium density suits Flow orchestrating invocable Apex. High density suits Apex triggers. Use one entry point per object rather than mixing Flow and Apex triggers on the same one.</p>
+<p id="sec-end-80442">It has been revealed that do we need a DPIA for a Salesforce implementation? Often yes. The ICO lists data matching, meaning combining or comparing personal data from multiple sources, and large scale profiling among the operations that indicate a DPIA is required, and a consolidation migration with lead scoring does both. The guidance is right now under review following the Data (Use and Access) Act, so check the ICO's current position rather than a summary of it.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/mecanik-dev/salesforce-implementation-cost-timeline-and-failure-modes-2op2" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-inside-vakra-reasoning-tool-use-and-failure-modes-o-80542.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80542. Latest Update: Inside VAKRA: Reasoning, Tool Use, and Failure Modes of Agents
+        </a>
+        
+        <a href="early-data-points-to-vulcans-first-stage-in-launch-failure-that-c-76125.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #76125. Early data points to Vulcan’s first stage in launch failure that cost Amazon 40 Leo satellites
+        </a>
+        
+        <a href="tech-report-the-n-implementation-details-of-rlhf-with-ppo-81172.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81172. Tech Report: The N Implementation Details of RLHF with PPO
+        </a>
+        
+        <a href="industry-news-building-cost-efficient-enterprise-rag-applications-81086.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81086. Industry News: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

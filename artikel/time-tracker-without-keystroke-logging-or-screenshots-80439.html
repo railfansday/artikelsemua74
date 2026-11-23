@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time tracker without keystroke logging or screenshots</title>
+    <meta name="description" content="Yes. TimeUno does not log keystrokes and saves no screenshots. It records the app in front of you, the window title, idle time and a count of seconds with ">
+    <meta name="keywords" content="timeuno, screenshots, screen, days, time, text, only, records">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/time-tracker-without-keystroke-logging-or-screenshots-80439.html">
+    
+    <meta property="og:title" content="Time tracker without keystroke logging or screenshots">
+    <meta property="og:description" content="Yes. TimeUno does not log keystrokes and saves no screenshots. It records the app in front of you, the window title, idle time and a count of seconds with ">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F39udyqrg09nzeqhnqyyc.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/time-tracker-without-keystroke-logging-or-screenshots-80439.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Time tracker without keystroke logging or screenshots">
+    <meta name="twitter:description" content="Yes. TimeUno does not log keystrokes and saves no screenshots. It records the app in front of you, the window title, idle time and a count of seconds with ">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F39udyqrg09nzeqhnqyyc.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Time tracker without keystroke logging or screenshots", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F39udyqrg09nzeqhnqyyc.png"], "datePublished": "2026-11-23T07:00:03", "dateModified": "2026-11-23T07:11:14.991596", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/time-tracker-without-keystroke-logging-or-screenshots-80439.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Time tracker without keystroke logging or screenshots?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Time tracker without keystroke logging or screenshots' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Time tracker without keystroke logging or screenshots</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 2 min read (413 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>TimeUno does not log keystrokes and saves no screenshots.</li><li style='margin-bottom:6px;'>The page text is the main extra data, and you should know about it before you install the browser extension.</li><li style='margin-bottom:6px;'>Sources indicate that no screenshots are saved.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-80439"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-80439"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-80439"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Time tracker without keystroke logging or screenshots" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F39udyqrg09nzeqhnqyyc.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-80439">Yes. TimeUno does not log keystrokes and saves no screenshots. It records the app in front of you, the window title, idle time and a count of seconds with keyboard or mouse input. It never records which keys you press. This post lists exactly what it records so you can decide before installing.</p>
+<p>The page text is the main extra data, and you should know about it before you install the browser extension.</p>
+<p>Sources indicate that no screenshots are saved. The screen image used to read on-screen text is processed in memory only. On a Mac, reading screen text needs the Screen Recording permission. Workspace owners and admins never see screen text.</p>
+<p>Sources indicate that not only on your device. It is stored on servers in Germany, hosted with Hetzner. If you need a tracker that keeps everything local, TimeUno is not that tool. When rules cannot place an activity, Cloudflare Workers AI classifies it.</p>
+<p>Industry observers note that raw activity is kept 90 days by default. You can choose 30, 90, 180 or 365 days. Backups are kept 14 days. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-81450.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
+<p>Sources indicate that you correct category, verdict and project from the timeline. Your rules under Settings, Productivity beat the defaults and the AI. TimeUno is built for tracking your own time, not employee monitoring. Whether tracking someone else is allowed is a separate legal question that depends on where you are.</p>
+<p id="sec-mid-80439">Sources indicate that to try it, install the desktop app from the download page. Every plan starts with a 14-day trial that starts with a card, charged only when the 14 days end, and there is no free tier (see pricing). Other answers are in the FAQ, and the original post is on timeuno.io.</p>
+<p>In a recent development, no. It counts the seconds that had any keyboard or mouse input and never records which keys you press.</p>
+<p>TimeUno saves no screenshots, and workspace owners and admins never see screen text. It is built for tracking your own time, not employee monitoring.</p>
+<p>No. Data is stored on Hetzner servers in Germany, so TimeUno is not local-only.</p>
+<p>In a recent development, yes. Choose 30, 90, 180 or 365 days. The default is 90 days for raw activity.</p>
+<p>Recent findings suggest that it does not record keys, save screenshots or keep data only on your device. It has no mobile app and no free tier.</p>
+<p id="sec-end-80439">I work on TimeUno, the tool this post discusses. The full version is at https://timeuno.io/blog/time-tracker-without-keystroke-recording-or-screenshots.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/timeuno/time-tracker-without-keystroke-logging-or-screenshots-4jed" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="logging-ai-prompts-and-responses-in-java-without-leaking-sensitiv-80579.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80579. Logging AI Prompts and Responses in Java Without Leaking Sensitive Data
+        </a>
+        
+        <a href="united-airlines-remembers-your-bad-flightand-may-upgrade-you-next-76809.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #76809. United Airlines Remembers Your Bad Flight—And May Upgrade You Next Time, Even Without Status
+        </a>
+        
+        <a href="4-ways-i-gave-my-employees-more-time-off-without-sacrificing-resu-69804.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69804. 4 ways I gave my employees more time off without sacrificing results
+        </a>
+        
+        <a href="efficient-table-pre-training-without-real-data-an-introduction-to-81383.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81383. Efficient Table Pre-training without Real Data: An Introduction to TAPEX
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

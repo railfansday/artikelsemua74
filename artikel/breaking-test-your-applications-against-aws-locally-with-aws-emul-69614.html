@@ -152,8 +152,8 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69614">According to recent reports, today we’re announcing AWS Emulator, a local emulator for Amazon Web Services (AWS) that you run on your machine. The AWS Command Line Interface (AWS CLI), the AWS SDKs, and your coding agents speak to it over a local HTTPS endpoint using the same AWS APIs they would use in the cloud, from your laptop. AWS Emulator has no additional service fee. You pay only for AWS resources when you deploy on AWS. Its source is on GitHub. You install it from an RPM or Debian package on Linux, and on macOS and Windows you run it in Docker.</p>
 <p>Industry observers note that how it works
-         You install the emulator, start it, and point your tools at the local endpoint. When AWS Emulator starts, it generates its own credentials, a config file, and a certificate, and writes them to ~/.aws/emulator/9297/. You set environment variables so the AWS SDK talks to your laptop instead of AWS, and your application code stays unchanged. <span style="font-size:13px;">(Related: <a href="us-police-forces-worried-gta-6-players-will-start-committing-real-70009.html" style="color:#2563eb; font-weight:600;">US police forces worried GTA 6 players will start commi...</a>)</span></p>
-<p>In a recent development, from there, your existing tests, CLI scripts, and coding agents keep working the way they already do. A unit test that creates an Amazon DynamoDB table, writes an item, and reads it back is the same test, and it runs on your machine without a deployment. A coding agent can create resources, check the result, and iterate again without waiting on a deployment in a Region. <span style="font-size:13px;">(Related: <a href="think-ai-knows-what-its-doing-scientists-say-think-again-70030.html" style="color:#2563eb; font-weight:600;">Think AI "knows" what it’s doing? Scientists say think ...</a>)</span></p>
+         You install the emulator, start it, and point your tools at the local endpoint. When AWS Emulator starts, it generates its own credentials, a config file, and a certificate, and writes them to ~/.aws/emulator/9297/. You set environment variables so the AWS SDK talks to your laptop instead of AWS, and your application code stays unchanged. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-81450.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
+<p>In a recent development, from there, your existing tests, CLI scripts, and coding agents keep working the way they already do. A unit test that creates an Amazon DynamoDB table, writes an item, and reads it back is the same test, and it runs on your machine without a deployment. A coding agent can create resources, check the result, and iterate again without waiting on a deployment in a Region. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-81453.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
 <p>The emulator is implemented in Rust so that it stays light on CPU and memory on a laptop. It supports the APIs of AWS services that have an API model in the AWS API models repository on GitHub, and because it’s built from those models, the same ones the AWS SDKs use, your requests and the errors you get back have the same shape as on AWS.</p>
 <p>If you are a developer, especially one working with coding agents such as Kiro or Claude Code, you can use that loop to test AWS interactions of real complexity locally.</p>
 <p>Let’s try it out
@@ -207,6 +207,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="testing-terraform-with-aws-emulator-80507.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80507. Testing Terraform with AWS Emulator
+        </a>
+        
         <a href="aws-weekly-roundup-aws-nitro-sandboxes-aws-emulator-and-more-nove-69609.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #69609. AWS Weekly Roundup: AWS Nitro Sandboxes, AWS Emulator, and more (November 16, 2026)
         </a>
@@ -215,12 +219,8 @@
             📰 #69588. Industry News: AWS Releases a Free Local Emulator of AWS Built Entirely by Agents
         </a>
         
-        <a href="latest-update-testing-terraform-with-aws-emulator-62577.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #62577. Latest Update: Testing Terraform with AWS Emulator
-        </a>
-        
-        <a href="thousands-of-vulnerable-fridges-patched-against-cyberattacks-in-s-70029.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70029. Thousands of vulnerable fridges patched against cyberattacks in secret operation
+        <a href="tech-report-accelerate-bert-inference-with-hugging-face-transform-81409.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81409. Tech Report: Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
         </a>
         
     </div>

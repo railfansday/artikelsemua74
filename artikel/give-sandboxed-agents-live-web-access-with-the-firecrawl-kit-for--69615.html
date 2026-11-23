@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69615">In a recent development, A coding agent in Docker Sandboxes runs inside an isolated VM, the sandbox controls which hosts it can reach, and credentials stay on the host behind a proxy. The same controls keep the agent from opening a docs page, reading a changelog, or looking up an API that shipped after its training cutoff, so it writes code against the version it remembers. The usual fix is to widen the allowlist until the agent can fetch anything, which hands back most of what the sandbox took away.</p>
-<p>The Firecrawl kit gives the agent web search, page scraping, and site crawling through one added host, api.firecrawl.dev, and every page comes back as clean markdown.</p>
+<p>The Firecrawl kit gives the agent web search, page scraping, and site crawling through one added host, api.firecrawl.dev, and every page comes back as clean markdown. <span style="font-size:13px;">(Related: <a href="breaking-hyperparameter-search-with-transformers-and-ray-tune-81462.html" style="color:#2563eb; font-weight:600;">Breaking: Hyperparameter Search with Transformers and R...</a>)</span></p>
 <p>The Firecrawl kit is a mixin (kind: mixin): it extends whichever workload you already run rather than defining a new sandbox. Its descriptor, firecrawl/firecrawl.yaml, declares four typed capabilities:.</p>
-<p>Industry observers note that the kit adds to the sandbox’s allowlist and does not narrow it, so everything else is set by your global sbx policy. Docker’s balanced preset allows package registries, GitHub, and a curated list of vendor domains, and returns a 403 for general websites, including most documentation sites, so Firecrawl is the agent’s route to those. Under deny-all, it is the agent’s only web host. <span style="font-size:13px;">(Related: <a href="latest-update-razers-mmo-mouse-hits-all-time-low-price-at-under-6-70007.html" style="color:#2563eb; font-weight:600;">Latest Update: Razer's MMO mouse hits all-time low pric...</a>)</span></p>
-<p>Sources indicate that kits are experimental and in Early Access, so the kit format and sbx commands may change. The steps below are current for October 2026; the repository README carries the latest. <span style="font-size:13px;">(Related: <a href="this-fresh-chip-survives-1300f-700c-and-could-change-ai-forever-70036.html" style="color:#2563eb; font-weight:600;">This fresh chip survives 1300°F (700°C) and could chang...</a>)</span></p>
+<p>Industry observers note that the kit adds to the sandbox’s allowlist and does not narrow it, so everything else is set by your global sbx policy. Docker’s balanced preset allows package registries, GitHub, and a curated list of vendor domains, and returns a 403 for general websites, including most documentation sites, so Firecrawl is the agent’s route to those. Under deny-all, it is the agent’s only web host. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-81450.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
+<p>Sources indicate that kits are experimental and in Early Access, so the kit format and sbx commands may change. The steps below are current for October 2026; the repository README carries the latest.</p>
 <p>Sources indicate that kit: docker.io/firecrawl/sbx-kit-firecrawl:1.0.0 on Docker Hub, for linux/amd64 and linux/arm64. Source: github.com/firecrawl/firecrawl-docker-sandbox.</p>
 <p>Recent findings suggest that 1. Store the key once on the host. The command prompts for the key. Service secrets are global by default, so every sandbox that requests the firecrawl service can use it once you approve. The kit never sees the value; the proxy injects it at request time.</p>
 <p>Sources indicate that 2. Start a sandbox with the kit. The kit is an ordinary OCI image with its descriptor in the manifest, so a version tag is all you need. Each --kit adds a mixin to the workload, and the trailing . mounts your project directory.</p>
@@ -200,16 +200,16 @@
             📰 #69621. Docker Sandboxes vs. Containers: Choosing the Right Isolation for AI Agents
         </a>
         
-        <a href="where-should-your-code-live-in-a-docker-sandbox-69641.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69641. Where should your code live in a Docker Sandbox?
+        <a href="introducing-agentsjs-give-tools-to-your-llms-using-javascript-81214.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81214. Introducing Agents.js: Give tools to your LLMs using JavaScript
         </a>
         
-        <a href="give-your-coding-agents-a-memory-you-own-69629.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69629. Give Your Coding Agents a Memory You Own
+        <a href="tech-report-how-security-vendors-are-tackling-access-control-chal-80470.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80470. Tech Report: How Security Vendors Are Tackling Access-Control Challenges for AI Agents
         </a>
         
-        <a href="cisco-intros-privileged-infrastructure-access-for-people-and-ai-a-66396.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #66396. Cisco Intros Privileged Infrastructure Access for People and AI Agents
+        <a href="cisco-intros-privileged-infrastructure-access-for-people-and-ai-a-77775.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #77775. Cisco Intros Privileged Infrastructure Access for People and AI Agents
         </a>
         
     </div>

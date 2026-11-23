@@ -150,15 +150,15 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69687">According to recent reports, CSS optimization is a deceptive topic. On the one hand, it feels like something simple that we should already have all the tooling for — especially when it comes to minification. On the other hand, the idea that we already exploited “everything” there is around CSS optimization may be considered naive. Such a claim looks hard to defend for a language that evolves almost daily.</p>
-<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”.</p>
+<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>According to recent reports, aware of an older source? Please comment!</p>
 <p>The technique is inspired by the principle of DRY, “don’t repeat yourself”, in that it works by identifying and reducing (if not eliminating) declaration repetition.</p>
 <p>So, if there’s something like display: flex and it appears two or more times, it gets reconciled in one rule:.</p>
-<p>Recent findings suggest that the outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how massive file size savings are. <span style="font-size:13px;">(Related: <a href="this-fresh-chip-survives-1300f-700c-and-could-change-ai-forever-70036.html" style="color:#2563eb; font-weight:600;">This fresh chip survives 1300°F (700°C) and could chang...</a>)</span></p>
-<p>In a recent development, if you’re interested, my article on “DRY CSS” describes the mechanics in more detail. The question here is: Is UDJO still effective and still relevant today? <span style="font-size:13px;">(Related: <a href="jensen-huang-question-gets-reporter-ejected-from-trump-xi-putin-s-70031.html" style="color:#2563eb; font-weight:600;">Jensen Huang question gets reporter ejected from Trump-...</a>)</span></p>
+<p>Recent findings suggest that the outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how massive file size savings are.</p>
+<p>In a recent development, if you’re interested, my article on “DRY CSS” describes the mechanics in more detail. The question here is: Is UDJO still effective and still relevant today?</p>
 <p>When we try to answer this question, however, we end up with a problem: When sites are complex and their style sheet declarations have not been de-duplicated before, UDJO can require a lot of work.</p>
 <p>To save some time, I built tooling for this work. While it didn’t seem like it would immediately be as comprehensive as manually going through and testing style sheets, it seemed realistic enough that a tool could catch some repetition.</p>
-<p>Industry observers note that skipping ahead, I created CSS Dedup not only to identify repetition, but also to deduplicate what could safely be optimized (CSS Dedup has some documentation on this but in essence, deduplication affects selector locations, which is part of how the cascade works). This, then, gives us some data:.</p>
+<p>Industry observers note that skipping ahead, I created CSS Dedup not only to identify repetition, but also to deduplicate what could safely be optimized (CSS Dedup has some documentation on this but in essence, deduplication affects selector locations, which is part of how the cascade works). This, then, gives us some data:. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-81450.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
 <p id="sec-mid-69687">For the first batch, I arbitrarily picked 20 websites to analyze. I then used CSS Dedup to check what the file size changes would be if we deduplicated what seemed provably safe, and also what seemed probably safe, but only if it led to file size savings.</p>
 <p>Recent findings suggest that I picked those two options to provide the “natural” result of deduplication, but also the one site owners may be most interested in to reduce repetition but also decrease transfer size. After all, UDJO as a CSS optimization technique can improve both maintainability and performance.</p>
 <p>In a recent development, important note: These values cannot be used to tell CSS quality—they depend on selector length and also on verifying if deduplication, in the respective case, actually leads to better maintainability. Also note that this leaves out changes after compression—this was not part of the experiment but would be fair to test, too.</p>
@@ -192,20 +192,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="scott-eastwood-is-still-seeking-a-rush-just-at-a-slower-pace-68285.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #68285. Scott Eastwood Is Still Seeking a Rush, Just at a Slower Pace
+        <a href="scott-eastwood-is-still-seeking-a-rush-just-at-a-slower-pace-79630.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #79630. Scott Eastwood Is Still Seeking a Rush, Just at a Slower Pace
         </a>
         
-        <a href="31-years-ago-today-tom-hanks-starred-in-one-of-the-best-movies-of-68262.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #68262. 31 Years Ago Today, Tom Hanks Starred in One of the 'Best Movies of All Time'—And It's Still Making History
+        <a href="industry-news-10-best-n64-racing-games-that-still-hold-up-today-75001.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #75001. Industry News: 10 Best N64 Racing Games That Still Hold Up Today
         </a>
         
-        <a href="10-best-n64-racing-games-that-still-hold-up-today-63510.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #63510. 10 Best N64 Racing Games That Still Hold Up Today
+        <a href="microsofts-sidewinder-strategic-commander-was-a-failed-attempt-to-74664.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #74664. Microsoft's SideWinder Strategic Commander was a failed attempt to reimagine RTS controls. 23 years later, why are some players still using it?
         </a>
         
-        <a href="latest-update-microsofts-sidewinder-strategic-commander-was-a-fai-63229.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #63229. Latest Update: Microsoft's SideWinder Strategic Commander was a failed attempt to reimagine RTS controls. 23 years later, why are some players still using it?
+        <a href="gta-6-players-hate-using-atms-just-let-me-type-in-a-number-74325.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #74325. GTA 6 Players Hate Using ATMs: ‘Just Let Me Type In A Number!”
         </a>
         
     </div>

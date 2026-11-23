@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69556">Industry observers note that LFM2.5-24B-A2B is a 24B-parameter reasoning model with just 2B active parameters, built for fast, private agents on-device. It thinks before it answers, calls tools, and works through multi-step tasks inside popular agent harnesses. Because only 2B parameters are active per token, each reasoning token is cheap, so you can run agents continuously on your own hardware.</p>
-<p>Industry observers note that LFM2.5-24B-A2B builds on LFM2-24B-A2B and keeps its architecture: 40 layers, 64 experts per MoE block with top-4 routing, and the same hybrid of gated short convolutions and GQA. The context window grows from 32K to 131K tokens, and an in-place tokenizer expansion doubles the vocabulary from 65K to 128K tokens for better non-Latin tokenization. Unlike its predecessor, it is a reasoning-only model that produces an explicit chain of thought before its final answer. <span style="font-size:13px;">(Related: <a href="latest-update-clavicular-allegedly-told-17-year-old-to-call-vodka-70021.html" style="color:#2563eb; font-weight:600;">Latest Update: Clavicular allegedly told 17-year-old to...</a>)</span></p>
-<p>According to recent reports, pre-training was scaled up from ~17T to ~33T tokens. Mid-training then adds 2T tokens at 32K context, weighted toward reasoning, math, code, instruction following, and multilingual text, and 300B tokens at 131K context, weighted toward long-context data. Tool calls and multi-turn trajectories appear throughout both phases. Post-training turns the base model into an agent in five stages:.</p>
-<p>Industry observers note that we evaluated LFM2.5-24B-A2B against Qwen3.6-35B-A3B, Gemma-4-26B-A4B-it, and Nemotron-3.5-Lightning on 16 benchmarks covering tool use and agentic workflows, knowledge, instruction following, math, and coding. It is the smallest model in the group, yet it is competitive with MoEs with ~50% more total and active parameters. <span style="font-size:13px;">(Related: <a href="thousands-of-vulnerable-fridges-patched-against-cyberattacks-in-s-70029.html" style="color:#2563eb; font-weight:600;">Thousands of vulnerable fridges patched against cyberat...</a>)</span></p>
+<p>Industry observers note that LFM2.5-24B-A2B builds on LFM2-24B-A2B and keeps its architecture: 40 layers, 64 experts per MoE block with top-4 routing, and the same hybrid of gated short convolutions and GQA. The context window grows from 32K to 131K tokens, and an in-place tokenizer expansion doubles the vocabulary from 65K to 128K tokens for better non-Latin tokenization. Unlike its predecessor, it is a reasoning-only model that produces an explicit chain of thought before its final answer. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>According to recent reports, pre-training was scaled up from ~17T to ~33T tokens. Mid-training then adds 2T tokens at 32K context, weighted toward reasoning, math, code, instruction following, and multilingual text, and 300B tokens at 131K context, weighted toward long-context data. Tool calls and multi-turn trajectories appear throughout both phases. Post-training turns the base model into an agent in five stages:. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-81460.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>Industry observers note that we evaluated LFM2.5-24B-A2B against Qwen3.6-35B-A3B, Gemma-4-26B-A4B-it, and Nemotron-3.5-Lightning on 16 benchmarks covering tool use and agentic workflows, knowledge, instruction following, math, and coding. It is the smallest model in the group, yet it is competitive with MoEs with ~50% more total and active parameters.</p>
 <p>*All the models were evaluated with vLLM, using each benchmark's recommended generation parameters.</p>
 <p>In a recent development, for your app, the strengths are tool use and instruction following. LFM2.5-24B-A2B leads or matches the competition on five of the eight tool-use and agentic benchmarks (AutomationBench, BFCLv4, ToolSandbox, LiveClaw, and τ³-Bench Banking), and on AutomationBench it scores more than three times the next-best model. It also leads on all three instruction-following benchmarks. Larger models keep an edge on knowledge-heavy benchmarks like GPQA Diamond, HLE, and AA-Omniscience, and on coding benchmarks like SWE-Bench Verified (OpenCode) and SciCode, so pair LFM2.5-24B-A2B with retrieval or web search for knowledge-heavy workloads.</p>
 <p>These results make LFM2.5-24B-A2B a strong foundation for agents that need to reason, call tools, and run reliably on your device.</p>
@@ -189,20 +189,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="releasing-swift-transformers-run-on-device-llms-in-apple-devices-81205.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81205. Releasing Swift Transformers: Run On-Device LLMs in Apple Devices
+        </a>
+        
+        <a href="llama-can-now-see-and-run-on-your-device-welcome-llama-32-81018.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81018. Llama can now see and run on your device - welcome Llama 3.2
+        </a>
+        
+        <a href="holo31-fast-local-computer-use-agents-80457.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80457. Holo3.1: Fast & Local Computer Use Agents
+        </a>
+        
         <a href="how-to-run-claude-code-and-other-coding-agents-in-the-cloud-247-69479.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #69479. How to Run Claude Code and Other Coding Agents in the Cloud 24/7
-        </a>
-        
-        <a href="breaking-releasing-swift-transformers-run-on-device-llms-in-apple-58377.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58377. Breaking: Releasing Swift Transformers: Run On-Device LLMs in Apple Devices
-        </a>
-        
-        <a href="breaking-llama-can-now-see-and-run-on-your-device-welcome-llama-3-58187.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58187. Breaking: Llama can now see and run on your device - welcome Llama 3.2
-        </a>
-        
-        <a href="holo31-fast-local-computer-use-agents-57662.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57662. Holo3.1: Fast & Local Computer Use Agents
         </a>
         
     </div>

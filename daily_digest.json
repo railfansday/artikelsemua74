@@ -1,86 +1,86 @@
 {
-  "generatedAt": "2026-11-22T20:15:25.150072",
-  "totalArticles": 12403,
+  "generatedAt": "2026-11-23T07:45:46.044142",
+  "totalArticles": 12427,
   "categoryBreakdown": {
-    "AI & Tech": 999,
-    "General": 10113,
-    "Hardware & Chips": 153,
-    "Business & Policy": 576,
-    "Gadgets": 331,
-    "EV & Auto": 231
+    "General": 10134,
+    "AI & Tech": 1018,
+    "Hardware & Chips": 154,
+    "Business & Policy": 567,
+    "Gadgets": 319,
+    "EV & Auto": 235
   },
   "topSources": {
     "Hugging Face": 914,
-    "Co": 820,
-    "Sciencedaily": 211,
+    "Co": 808,
+    "Sciencedaily": 212,
     "Eschoolnews": 200,
-    "Cbssports": 171,
+    "Cbssports": 169,
     "Electrek": 149,
-    "Yahoo": 146,
-    "Dw": 140,
+    "Yahoo": 148,
     "Dailymail": 139,
-    "Realworkfromanywhere": 121
+    "Dw": 139,
+    "Realworkfromanywhere": 119
   },
   "latestHeadlines": [
     {
-      "id": 70040,
-      "title": "Scientists discover AI can make humans more creative",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/scientists-discover-ai-can-make-humans-more-creative-70040.html",
-      "category": "AI & Tech"
-    },
-    {
-      "id": 70039,
-      "title": "AI-powered robot learns how to harvest tomatoes more efficiently",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/ai-powered-robot-learns-how-to-harvest-tomatoes-more-efficiently-70039.html",
-      "category": "AI & Tech"
-    },
-    {
-      "id": 70038,
-      "title": "DNA robots could deliver drugs and hunt viruses inside your body",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/dna-robots-could-deliver-drugs-and-hunt-viruses-inside-your-body-70038.html",
+      "id": 81467,
+      "title": "How to train a new language model from scratch using Transformers and Tokenizers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html",
       "category": "General"
     },
     {
-      "id": 70037,
-      "title": "AI breakthrough cuts energy use by 100x while boosting accuracy",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-70037.html",
-      "category": "AI & Tech"
-    },
-    {
-      "id": 70036,
-      "title": "This fresh chip survives 1300°F (700°C) and could change AI forever",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-fresh-chip-survives-1300f-700c-and-could-change-ai-forever-70036.html",
-      "category": "AI & Tech"
-    },
-    {
-      "id": 70035,
-      "title": "This latest chip could slash data center energy waste",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-latest-chip-could-slash-data-center-energy-waste-70035.html",
-      "category": "Hardware & Chips"
-    },
-    {
-      "id": 70034,
-      "title": "“Giant superatoms” could finally solve quantum computing’s biggest problem",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/giant-superatoms-could-finally-solve-quantum-computings-biggest-p-70034.html",
+      "id": 81466,
+      "title": "How to generate text: using different decoding methods for language generation with Transformers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-81466.html",
       "category": "General"
     },
     {
-      "id": 70033,
-      "title": "This simple change stops robot swarms from getting stuck",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-simple-change-stops-robot-swarms-from-getting-stuck-70033.html",
-      "category": "AI & Tech"
+      "id": 81465,
+      "title": "The Reformer - Pushing the limits of language modeling",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/the-reformer-pushing-the-limits-of-language-modeling-81465.html",
+      "category": "General"
     },
     {
-      "id": 70032,
-      "title": "Quantum AI just got shockingly good at predicting chaos",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/quantum-ai-just-got-shockingly-good-at-predicting-chaos-70032.html",
-      "category": "AI & Tech"
+      "id": 81464,
+      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-81464.html",
+      "category": "General"
     },
     {
-      "id": 70031,
-      "title": "Jensen Huang question gets reporter ejected from Trump-Xi-Putin summit",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/jensen-huang-question-gets-reporter-ejected-from-trump-xi-putin-s-70031.html",
-      "category": "Business & Policy"
+      "id": 81463,
+      "title": "Tech Report: Transformer-based Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-transformer-based-encoder-decoder-models-81463.html",
+      "category": "General"
+    },
+    {
+      "id": 81462,
+      "title": "Breaking: Hyperparameter Search with Transformers and Ray Tune",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-hyperparameter-search-with-transformers-and-ray-tune-81462.html",
+      "category": "General"
+    },
+    {
+      "id": 81461,
+      "title": "Porting fairseq wmt19 translation system to transformers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/porting-fairseq-wmt19-translation-system-to-transformers-81461.html",
+      "category": "General"
+    },
+    {
+      "id": 81460,
+      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-81460.html",
+      "category": "General"
+    },
+    {
+      "id": 81459,
+      "title": "How we sped up transformer inference 100x for 🤗 API customers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-81459.html",
+      "category": "General"
+    },
+    {
+      "id": 81458,
+      "title": "Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-81458.html",
+      "category": "General"
     }
   ]
 }

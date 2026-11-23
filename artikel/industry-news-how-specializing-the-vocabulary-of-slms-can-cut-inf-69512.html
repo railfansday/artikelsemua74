@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69512">Models specialized for a domain or a task by fine-tuning general open-source models, such as Qwen and Gemma, inherit a vocabulary built for many domains and general applications.</p>
-<p>In an essay grader we run in production, that vocabulary split the text the model writes most into many tokens. This article previews some results from the VocabX paper, which we will publish soon: how we specialized the vocabulary around the cost of each token rather than its frequency, and cut measured inference cost by 77% without changing the base model. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-70026.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
-<p>It has been revealed that the tokenizer is usually treated as a fixed property of the base model, inherited and left alone. For a model specialized in a single domain, it can be one of the largest cost levers, and it is set before any training step. <span style="font-size:13px;">(Related: <a href="latest-update-clavicular-allegedly-told-17-year-old-to-call-vodka-70021.html" style="color:#2563eb; font-weight:600;">Latest Update: Clavicular allegedly told 17-year-old to...</a>)</span></p>
+<p>In an essay grader we run in production, that vocabulary split the text the model writes most into many tokens. This article previews some results from the VocabX paper, which we will publish soon: how we specialized the vocabulary around the cost of each token rather than its frequency, and cut measured inference cost by 77% without changing the base model. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>It has been revealed that the tokenizer is usually treated as a fixed property of the base model, inherited and left alone. For a model specialized in a single domain, it can be one of the largest cost levers, and it is set before any training step. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-81460.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
 <p>One of the systems we run in production is an automated grader for Portuguese essays, built on Qwen3-4B. It receives the essay, the prompt and the supporting texts, and returns a JSON assessment with a grade and a comment for each competency.</p>
 <p>The model was already small, at 4 billion parameters, and had already been trained for the task. Its tokenizer, however, was still the original Qwen3-4B one, built for many languages and many kinds of text. In the grader, it was used for a single language, Portuguese, and a single response format. That had two costs: the text the grader writes on every request took more tokens than it needed, and at every generated token the model scored a vocabulary of 151,669 entries, including many this task almost never uses.</p>
 <p>Industry observers note that we rebuilt that vocabulary with a method we call VocabX, keeping the same base model, the same data and the same training recipe. The numbers in this article come from the current version of the paper, still under review, and may change before publication.</p>
@@ -209,20 +209,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-tiny-nanolaser-could-cut-computer-energy-use-in-hal-69944.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69944. Industry News: Tiny nanolaser could cut computer energy use in half
+        <a href="industry-news-building-cost-efficient-enterprise-rag-applications-81086.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81086. Industry News: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon
         </a>
         
-        <a href="industry-news-bringing-nunchaku-4-bit-diffusion-inference-to-diff-69756.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69756. Industry News: Bringing Nunchaku 4-bit Diffusion Inference to Diffusers
+        <a href="industry-news-goodbye-cold-boot-how-we-made-lora-inference-300-fa-81162.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81162. Industry News: Goodbye cold boot - how we made LoRA Inference 300% faster
         </a>
         
-        <a href="industry-news-this-plant-extract-helps-people-cut-back-on-binge-d-69099.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69099. Industry News: This Plant Extract Helps People Cut Back On Binge Drinking (M)
+        <a href="industry-news-public-ai-on-hugging-face-inference-providers-80771.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80771. Industry News: Public AI on Hugging Face Inference Providers 🔥
         </a>
         
-        <a href="industry-news-threert-real-time-ray-tracing-for-threejs-68953.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #68953. Industry News: ThreeRT: Real-Time Ray Tracing for three.js
+        <a href="industry-news-scaleway-on-hugging-face-inference-providers-80768.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80768. Industry News: Scaleway on Hugging Face Inference Providers 🔥
         </a>
         
     </div>

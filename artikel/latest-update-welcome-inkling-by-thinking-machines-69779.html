@@ -151,9 +151,9 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69779">It has been revealed that update: Inkling 2 Small is here! 🤗
 Thinking Machines released Inkling 2 Small, the next generation of the Inkling family. We have updated this post with a upcoming section on Inkling 2 Small, covering what changed in the architecture and how to run it with transformers.</p>
-<p>Inkling is Thinking Machines' family of open multimodal models, and it now spans two generations on the Hub:.</p>
-<p>It has been revealed that in this post, we start with the first-generation architecture, then walk through what changed in Inkling 2 Small and how to run it. The rest of the post covers inference, use cases, post-training, and deployment, with examples built on the first-generation checkpoints. <span style="font-size:13px;">(Related: <a href="phison-details-ssd-with-a-built-in-npu-and-64gb-of-memory-that-su-70027.html" style="color:#2563eb; font-weight:600;">Phison details SSD with a built-in NPU and 64GB of memo...</a>)</span></p>
-<p>In a recent development, inkling is the first large open model with ~1T parameters and 1M context window to natively receive image, text, and audio inputs, trained on 45 trillion tokens of text, images, audio and video. It’s focused on reasoning across modalities such as audio, images, and text. It is intended for domain adaptation via fine-tuning. We’ve tinkered (pun intended) with this model to build some demos and explore the architecture, and we think it’s great for building a fresh wave of multimodal reasoning apps. <span style="font-size:13px;">(Related: <a href="this-fresh-chip-survives-1300f-700c-and-could-change-ai-forever-70036.html" style="color:#2563eb; font-weight:600;">This fresh chip survives 1300°F (700°C) and could chang...</a>)</span></p>
+<p>Inkling is Thinking Machines' family of open multimodal models, and it now spans two generations on the Hub:. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-81464.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>It has been revealed that in this post, we start with the first-generation architecture, then walk through what changed in Inkling 2 Small and how to run it. The rest of the post covers inference, use cases, post-training, and deployment, with examples built on the first-generation checkpoints. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-81466.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>In a recent development, inkling is the first large open model with ~1T parameters and 1M context window to natively receive image, text, and audio inputs, trained on 45 trillion tokens of text, images, audio and video. It’s focused on reasoning across modalities such as audio, images, and text. It is intended for domain adaptation via fine-tuning. We’ve tinkered (pun intended) with this model to build some demos and explore the architecture, and we think it’s great for building a fresh wave of multimodal reasoning apps.</p>
 <p>According to recent reports, inkling is a decoder-only multimodal Mixture-of-Experts (MoEs) model with 975B total and 41B active parameters. There are a lot of things going on, so let’s break each part down:.</p>
 <p>Here’s a quick glance of the architecture.</p>
 <p>Sources indicate that relative attention: Instead of RoPE, which is the usual method to inject positional information in transformers models, Inkling uses relative attention to encode position information. Each attention layer learns position directly in the attention logits. Aside from key-query-values, there's a fourth projection producing a per-token, per-head relative feature R. This projection tensor is then tweaked with distance information (distance between the key and the query vector) and propagated into the attention module.</p>
@@ -236,16 +236,16 @@ Thinking Machines released Inkling 2 Small, the next generation of the Inkling f
             📰 #69302. Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup
         </a>
         
-        <a href="welcome-gemma-googles-new-open-llm-69936.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69936. Welcome Gemma - Google’s new open LLM
+        <a href="welcome-spacy-to-the-hugging-face-hub-81441.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81441. Welcome spaCy to the Hugging Face Hub
         </a>
         
-        <a href="breaking-thinking-of-ace-we-can-do-it-with-fewer-tokens-69717.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69717. Breaking: Thinking of ACE? We Can Do It with Fewer Tokens
+        <a href="breaking-welcome-stable-baselines3-to-the-hugging-face-hub-81417.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81417. Breaking: Welcome Stable-baselines3 to the Hugging Face Hub 🤗
         </a>
         
-        <a href="welcome-rl-environments-to-the-hub-69584.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69584. Welcome RL Environments to the hub
+        <a href="industry-news-welcome-fastai-to-the-hugging-face-hub-81393.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81393. Industry News: Welcome fastai to the Hugging Face Hub
         </a>
         
     </div>

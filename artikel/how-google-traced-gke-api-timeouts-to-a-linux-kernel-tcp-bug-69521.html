@@ -167,9 +167,9 @@ How Google Traced GKE API Timeouts to a Linux Kernel TCP Bug.</p>
 									
 									3
 									min read.</p>
-<p>Google recently detailed how three interacting bugs across Google Kubernetes Engine (GKE), Private Service Connect, and the Linux kernel caused intermittent Kubernetes API connectivity failures, blocking around 800 developers from deploying to production. <span style="font-size:13px;">(Related: <a href="latest-update-south-korea-busts-54-students-cheating-on-national--70013.html" style="color:#2563eb; font-weight:600;">Latest Update: South Korea busts 54 students cheating o...</a>)</span></p>
-<p>In January, a customer running multiple GKE clusters with Private Service Connect (PSC) for private control-plane access experienced intermittent timeouts when pods attempted to reach the Kubernetes API server. <span style="font-size:13px;">(Related: <a href="gta-6-glitch-lets-players-access-first-person-mode-70003.html" style="color:#2563eb; font-weight:600;">GTA 6 glitch lets players access first-person mode...</a>)</span></p>
-<p>Packet captures revealed that the control plane was responding to upcoming TCP connection requests with stale ACK packets belonging to previously closed connections. The root cause involved three separate bugs across different networking layers. Akash Thakur, senior technical solutions engineer at Google Cloud, describes how engineers across multiple Google teams identified three root causes and ultimately addressed them:.</p>
+<p>Google recently detailed how three interacting bugs across Google Kubernetes Engine (GKE), Private Service Connect, and the Linux kernel caused intermittent Kubernetes API connectivity failures, blocking around 800 developers from deploying to production. <span style="font-size:13px;">(Related: <a href="latest-update-my-journey-to-a-serverless-transformers-pipeline-on-81451.html" style="color:#2563eb; font-weight:600;">Latest Update: My Journey to a serverless transformers ...</a>)</span></p>
+<p>In January, a customer running multiple GKE clusters with Private Service Connect (PSC) for private control-plane access experienced intermittent timeouts when pods attempted to reach the Kubernetes API server.</p>
+<p>Packet captures revealed that the control plane was responding to upcoming TCP connection requests with stale ACK packets belonging to previously closed connections. The root cause involved three separate bugs across different networking layers. Akash Thakur, senior technical solutions engineer at Google Cloud, describes how engineers across multiple Google teams identified three root causes and ultimately addressed them:. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-81466.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Industry observers note that in a race to fix the problem, we involved engineers across Google Kubernetes Engine (GKE), Private Service Connect, networking, hostnet, kernel, and the Linux upstream community, who together tracked down not one but three distinct root causes. And the final fix landed not as a config change or a feature flag, but as a patch to the Linux kernel itself.</p>
 <p>The investigation identified three interacting causes: packet reordering in PSC, Envoy's half-close behavior preventing TCP connections from being properly closed, and a Linux kernel bug that discarded certain reordered FIN packets.</p>
 <p>Industry observers note that thakur describes a complex troubleshooting case involving I/O timeouts across Private Service Connect, virtual network interfaces, and the Linux TCP state machine, which ultimately revealed a kernel problem leaving sockets stuck indefinitely in the FIN_WAIT_2 state. Thakur explains:.</p>
@@ -206,20 +206,20 @@ How Google Traced GKE API Timeouts to a Linux Kernel TCP Bug.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="google-claims-last-weeks-critical-vmware-bug-was-under-attack-in--80517.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80517. Google claims last week’s critical VMware bug was under attack in September
+        </a>
+        
         <a href="google-project-zero-slashes-bug-disclosure-deadlines-splitting-ex-69389.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #69389. Google Project Zero Slashes Bug Disclosure Deadlines, Splitting Experts
         </a>
         
-        <a href="best-black-friday-deals-now-live-google-pixel-samsung-amazon-echo-69954.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69954. Best Black Friday deals now live: Google Pixel, Samsung, Amazon Echo, TVs, Anker, much more
+        <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-81459.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81459. How we sped up transformer inference 100x for 🤗 API customers
         </a>
         
-        <a href="welcome-gemma-googles-new-open-llm-69936.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69936. Welcome Gemma - Google’s new open LLM
-        </a>
-        
-        <a href="google-store-black-friday-2026-refurb-pixel-discounts-fitbit-edge-69935.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69935. Google Store Black Friday 2026: Refurb Pixel discounts, Fitbit Edge trade-in, more
+        <a href="latest-update-my-journey-to-a-serverless-transformers-pipeline-on-81451.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81451. Latest Update: My Journey to a serverless transformers pipeline on Google Cloud
         </a>
         
     </div>

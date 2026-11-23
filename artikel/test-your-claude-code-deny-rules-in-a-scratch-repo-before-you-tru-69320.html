@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69320">It has been revealed that most advice on making Claude Code safer states "write deny rules". I'm Denys, a Forward Deployed Engineer. Written with AI assistance, checked by me. I think the advice is right and incomplete, because a rule you never tried to get around is a guess. Here is how I would test one.</p>
-<p>Anthropic's permissions page says rules are enforced by Claude Code and not by the model, and that instructions in CLAUDE.md don't change what the agent is allowed to do. It also says a rule matches the command text, so git -C . push is not matched by a rule for git push. <span style="font-size:13px;">(Related: <a href="this-fresh-chip-survives-1300f-700c-and-could-change-ai-forever-70036.html" style="color:#2563eb; font-weight:600;">This fresh chip survives 1300°F (700°C) and could chang...</a>)</span></p>
-<p>Recent findings suggest that A public GitHub concern (#39459) reports the same thing in practice. With Bash(rm *) denied, the agent deleted the file with a Python one-liner. I am quoting the docs and that report here. I did not rerun them for this post, which is exactly why you should run yours.</p>
-<p>Sources indicate that I sorted 93 public incident reports by cause in Is Claude Code safe? What 93 incident reports show, and the rule bypass was one of five patterns. This post is the method for finding out whether you have it. <span style="font-size:13px;">(Related: <a href="anthropic-mathematician-claims-to-have-solved-167-year-old-math-p-70019.html" style="color:#2563eb; font-weight:600;">Anthropic mathematician claims to have solved 167-year-...</a>)</span></p>
+<p>Anthropic's permissions page says rules are enforced by Claude Code and not by the model, and that instructions in CLAUDE.md don't change what the agent is allowed to do. It also says a rule matches the command text, so git -C . push is not matched by a rule for git push. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Recent findings suggest that A public GitHub concern (#39459) reports the same thing in practice. With Bash(rm *) denied, the agent deleted the file with a Python one-liner. I am quoting the docs and that report here. I did not rerun them for this post, which is exactly why you should run yours. <span style="font-size:13px;">(Related: <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-81444.html" style="color:#2563eb; font-weight:600;">Few-shot learning in practice: GPT-Neo and the 🤗 Accele...</a>)</span></p>
+<p>Sources indicate that I sorted 93 public incident reports by cause in Is Claude Code safe? What 93 incident reports show, and the rule bypass was one of five patterns. This post is the method for finding out whether you have it.</p>
 <p>Use a folder with nothing in it you care about, and a bare repo in a temp folder as the fake remote.</p>
 <p>Nothing here touches a real project, and if a test goes wrong the damage is one temp folder.</p>
 <p id="sec-mid-69320">Recent findings suggest that for each rule, state the goal in plain words and let the agent pick the route. Don't type the denied command yourself, because that tests nothing.</p>
@@ -184,20 +184,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="how-to-run-claude-code-and-other-coding-agents-in-the-cloud-247-69479.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69479. How to Run Claude Code and Other Coding Agents in the Cloud 24/7
+        <a href="how-to-test-ai-generated-content-before-it-reaches-your-people-80952.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80952. How to Test AI-Generated Content Before It Reaches Your People
         </a>
         
-        <a href="tech-report-how-to-learn-supply-chain-analytics-in-2027-with-clau-69466.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69466. Tech Report: How to Learn Supply Chain Analytics in 2027 with Claude Code
+        <a href="how-product-teams-can-use-ai-user-research-to-test-assumptions-be-80913.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80913. How Product Teams Can Use AI User Research to Test Assumptions Before Sprint Planning
         </a>
         
-        <a href="claude-code-has-been-leaking-secrets-through-its-dont-ask-again-f-69456.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69456. Claude Code Has Been Leaking Secrets Through Its "Don't Ask Again" Feature
+        <a href="top-6-ai-detector-tools-in-2026-features-accuracy-claims-and-when-80621.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80621. Top 6 AI Detector Tools in 2026: Features, Accuracy Claims and When to Trust Them
         </a>
         
-        <a href="attackers-crash-claudes-office-party-flaw-to-run-malicious-code-o-69451.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69451. Attackers Crash Claude's 'Office Party' Flaw to Run Malicious Code on Linux
+        <a href="latest-update-for-years-doctors-blamed-my-mysterious-symptoms-on--79700.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #79700. Latest Update: For Years, Doctors Blamed My Mysterious Symptoms on Running. A Simple Blood Test Proved Them Wrong.
         </a>
         
     </div>

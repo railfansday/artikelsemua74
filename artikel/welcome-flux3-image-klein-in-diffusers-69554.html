@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69554">Industry observers note that black Forest Labs FLUX.3 Image Klein is here, and it runs in Diffusers from day one. One model does text-to-image and multi-reference image-to-image, and it adds something new, the layout control. You write bounding boxes into the prompt to say where each part of the image should go, or which parts of a reference image to move.</p>
-<p>Both open checkpoints are in the FLUX.3 Image Klein collection:.</p>
-<p>You can head on to the Hugging Face space and generate some images right now! <span style="font-size:13px;">(Related: <a href="nasas-new-ai-space-chip-could-let-spacecraft-think-for-themselves-70011.html" style="color:#2563eb; font-weight:600;">NASA’s new AI space chip could let spacecraft think for...</a>)</span></p>
+<p>Both open checkpoints are in the FLUX.3 Image Klein collection:. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-81460.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>You can head on to the Hugging Face space and generate some images right now! <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-81466.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Install the latest diffusers and transformers (for the Qwen3-VL text encoder):.</p>
 <p>Load the distilled checkpoint and generate an image:.</p>
-<p>Industry observers note that FLUX.3 responds best to a full scene description with the subject, the setting, the light, the composition, and the style. The official prompting guide from Black Forest Labs has more tips. The distilled checkpoint generates a 1024 × 1024 image in 16 steps by default. Pass height, width, or num_inference_steps to change them. <span style="font-size:13px;">(Related: <a href="this-fresh-chip-survives-1300f-700c-and-could-change-ai-forever-70036.html" style="color:#2563eb; font-weight:600;">This fresh chip survives 1300°F (700°C) and could chang...</a>)</span></p>
+<p>Industry observers note that FLUX.3 responds best to a full scene description with the subject, the setting, the light, the composition, and the style. The official prompting guide from Black Forest Labs has more tips. The distilled checkpoint generates a 1024 × 1024 image in 16 steps by default. Pass height, width, or num_inference_steps to change them.</p>
 <p>Pass a reference image (or more) with the image argument. Write the prompt as a caption of the image you want, with the change included.</p>
 <p>In a recent development, with several references, refer to them in the prompt as , , ... in the order they are passed to image:.</p>
 <p>Industry observers note that add a JSON list of regions after the caption. Each region has an id, a bbox, and a desc, and the caption mentions it as .</p>
@@ -226,20 +226,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="welcome-amused-efficient-text-to-image-generation-58324.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58324. Welcome aMUSEd: Efficient Text-to-Image Generation
+        <a href="welcome-amused-efficient-text-to-image-generation-81153.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81153. Welcome aMUSEd: Efficient Text-to-Image Generation
         </a>
         
-        <a href="fast-lora-inference-for-flux-with-diffusers-and-peft-57977.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57977. Fast LoRA inference for Flux with Diffusers and PEFT
+        <a href="fast-lora-inference-for-flux-with-diffusers-and-peft-80809.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80809. Fast LoRA inference for Flux with Diffusers and PEFT
         </a>
         
-        <a href="diffusers-welcomes-flux-2-57890.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57890. Diffusers welcomes FLUX-2
+        <a href="diffusers-welcomes-flux-2-80718.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80718. Diffusers welcomes FLUX-2
         </a>
         
-        <a href="welcome-gemma-googles-new-open-llm-69936.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69936. Welcome Gemma - Google’s new open LLM
+        <a href="welcome-spacy-to-the-hugging-face-hub-81441.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81441. Welcome spaCy to the Hugging Face Hub
         </a>
         
     </div>

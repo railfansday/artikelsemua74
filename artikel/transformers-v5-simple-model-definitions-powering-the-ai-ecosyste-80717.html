@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80717">In a recent development, transformers' version v4.0.0rc-1, the initial release candidate for version 4, was released on November 19th, 2020. Five years later, we now release v5.0.0rc-0.</p>
-<p>In a recent development, today, as we launch v5, Transformers is installed more than 3 million times each day via pip - up from 20,000/day in v4 🤯. Altogether, it has now surpassed 1.2 billion installs! <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>The ecosystem has expanded from 40 model architectures in v4 to over 400 today, and the community has contributed more than 750,000 model checkpoints on the Hub compatible with Transformers, up from roughly 1,000 at the time of v4. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-81466.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>In a recent development, today, as we launch v5, Transformers is installed more than 3 million times each day via pip - up from 20,000/day in v4 🤯. Altogether, it has now surpassed 1.2 billion installs!</p>
+<p>The ecosystem has expanded from 40 model architectures in v4 to over 400 today, and the community has contributed more than 750,000 model checkpoints on the Hub compatible with Transformers, up from roughly 1,000 at the time of v4.</p>
 <p>This growth is powered by the evolution of the field and the now mainstream access to AI. As a leading model-definition library in the ecosystem, we need to continuously evolve and adapt the library to continue being relevant. Reinvention is key for longevity in AI.</p>
-<p>We’re fortunate to collaborate with many libraries and apps built on transformers, in no specific order: llama.cpp, MLX, onnxruntime, Jan, LMStudio, vLLM, SGLang, Unsloth, LlamaFactory, dLLM, MaxText, TensorRT, Argmax, among many other friends.</p>
-<p>Recent findings suggest that for v5, we wanted to work on several notable aspects: simplicity, training, inference, and production. We detail the work that went into them in this post.</p>
+<p>We’re fortunate to collaborate with many libraries and apps built on transformers, in no specific order: llama.cpp, MLX, onnxruntime, Jan, LMStudio, vLLM, SGLang, Unsloth, LlamaFactory, dLLM, MaxText, TensorRT, Argmax, among many other friends. <span style="font-size:13px;">(Related: <a href="breaking-discord-can-now-automatically-save-gaming-clips-when-you-92970.html" style="color:#2563eb; font-weight:600;">Breaking: Discord can now automatically save gaming cli...</a>)</span></p>
+<p>Recent findings suggest that for v5, we wanted to work on several notable aspects: simplicity, training, inference, and production. We detail the work that went into them in this post. <span style="font-size:13px;">(Related: <a href="shelter-saves-19-year-old-dog-after-owners-wanted-him-put-down-92963.html" style="color:#2563eb; font-weight:600;">Shelter saves 19-year-old dog after owners wanted him p...</a>)</span></p>
 <p>Industry observers note that the first focus of the team was on simplicity. Working on transformers, we see the code as the product. We want our model integrations to be clean, so that the ecosystem may depend on our model definitions and understand what’s really happening under the hood, how models differ from each other, and the key features of each new model. Simplicity results in wider standardization, generality, and wider support.</p>
 <p>Sources indicate that transformers is the backbone of hundreds of thousands of projects, Unsloth included. We build on Transformers to
 help people fine-tune and train models efficiently, whether that’s BERT, text-to-speech (TTS), or others; to run
@@ -241,16 +241,16 @@ features, and improving documentation for broader adoption in the V5.</p>
             📰 #80864. Tech Report: The Transformers Library: standardizing model definitions
         </a>
         
+        <a href="model-routing-is-simple-until-it-isnt-92525.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92525. Model Routing Is Simple. Until It Isn’t.
+        </a>
+        
+        <a href="industry-news-transformers-model-integration-contracts-92298.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92298. Industry News: Transformers Model Integration Contracts
+        </a>
+        
         <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81467. How to train a new language model from scratch using Transformers and Tokenizers
-        </a>
-        
-        <a href="training-a-language-model-with-transformers-using-tensorflow-and--81261.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81261. Training a language model with 🤗 Transformers using TensorFlow and TPUs
-        </a>
-        
-        <a href="breaking-timm-transformers-use-any-timm-model-with-transformers-80950.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80950. Breaking: Timm ❤️ Transformers: Use any timm model with transformers
         </a>
         
     </div>

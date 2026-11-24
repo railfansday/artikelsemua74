@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80705">Transformers v5 redesigns how tokenizers work. The big tokenizers reformat separates tokenizer design from trained vocabulary (much like how PyTorch separates neural network architecture from learned weights). The result is tokenizers you can inspect, customize, and train from scratch with far less friction.</p>
-<p>It has been revealed that TL;DR: This blog explains how tokenization works in Transformers and why v5 is a major redesign, with clearer internals, a clean class hierarchy, and a single fast backend. It’s a practical guide for anyone who wants to understand, customize, or train model-specific tokenizers instead of treating them as black boxes. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>For experts: If you're already familiar with the concepts and want to understand the changes in v5, go to v5 Separates Tokenizer Architecture from Trained Vocab. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-81460.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
-<p>Before diving into the changes, let's swiftly cover what tokenization does and how the pieces fit together.</p>
+<p>It has been revealed that TL;DR: This blog explains how tokenization works in Transformers and why v5 is a major redesign, with clearer internals, a clean class hierarchy, and a single fast backend. It’s a practical guide for anyone who wants to understand, customize, or train model-specific tokenizers instead of treating them as black boxes. <span style="font-size:13px;">(Related: <a href="gta-6-boss-explains-why-classic-mini-games-from-previous-games-ar-92990.html" style="color:#2563eb; font-weight:600;">GTA 6 boss explains why classic mini-games from previou...</a>)</span></p>
+<p>For experts: If you're already familiar with the concepts and want to understand the changes in v5, go to v5 Separates Tokenizer Architecture from Trained Vocab.</p>
+<p>Before diving into the changes, let's swiftly cover what tokenization does and how the pieces fit together. <span style="font-size:13px;">(Related: <a href="industry-news-cat-takes-37-mile-train-trip-to-london-before-staff-92985.html" style="color:#2563eb; font-weight:600;">Industry News: Cat takes 37-mile train trip to London b...</a>)</span></p>
 <p>Industry observers note that language models don't read raw text. They consume sequences of integers usually called token IDs or input IDs. Tokenization is the process of converting raw text into these token IDs. (Try the tokenization playground here to visualize tokenization.).</p>
 <p>Recent findings suggest that tokenization is a broad concept used across natural language processing and text processing generally. This post focuses specifically on tokenization for Large Language Models (LLMs) using the transformers and tokenizers libraries.</p>
 <p>Ġworld (above) is a single token that represents the character sequence " world" (with the space).</p>
@@ -239,6 +239,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-transformers-model-integration-contracts-92298.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92298. Industry News: Transformers Model Integration Contracts
+        </a>
+        
         <a href="industry-news-fine-tune-vit-for-image-classification-with-transfo-81413.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81413. Industry News: Fine-Tune ViT for Image Classification with 🤗 Transformers
         </a>
@@ -249,10 +253,6 @@
         
         <a href="industry-news-accelerating-hugging-face-transformers-with-aws-inf-81266.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81266. Industry News: Accelerating Hugging Face Transformers with AWS Inferentia2
-        </a>
-        
-        <a href="industry-news-our-transformers-code-agent-beats-the-gaia-benchmar-81056.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81056. Industry News: Our Transformers Code Agent beats the GAIA benchmark 🏅
         </a>
         
     </div>

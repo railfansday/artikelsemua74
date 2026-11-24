@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80594">TL;DR -- For those of you who don't have time to read 5,000 words about async RL plumbing (we get it, you have models to train):.</p>
-<p>If you'd rather skip straight to the good part, here's the full comparison table (no reading required, we won't judge).</p>
+<p>If you'd rather skip straight to the good part, here's the full comparison table (no reading required, we won't judge). <span style="font-size:13px;">(Related: <a href="gta-6-hacker-released-from-prison-after-judge-warns-him-not-to-do-92980.html" style="color:#2563eb; font-weight:600;">GTA 6 hacker released from prison after judge warns him...</a>)</span></p>
 <p>But seriously, if you stick around, you might learn a thing or two about why your GPUs are idle 60% of the time.</p>
-<p>In a recent development, async RL training has emerged as the dominant paradigm for post-training at scale. Several trends in modern post-training have made synchronous training loops nearly impossible to scale:. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-81448.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
-<p>The open-source ecosystem has converged on a common architectural response: disaggregate inference from training onto separate GPU pools, connect them with a rollout buffer, and let both sides run concurrently. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-81459.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
-<p>It has been revealed that we are developing a newly introduced async trainer for TRL, one of the most widely used libraries for model post-training. To guide our design, we surveyed sixteen open-source libraries that were built from the ground up around asynchronous training and compared them across seven axes: orchestration primitives, buffer design, weight sync protocols, staleness management, partial rollout handling, LoRA support, and distributed training backends. This article distills the design principles we extracted from that survey.</p>
+<p>In a recent development, async RL training has emerged as the dominant paradigm for post-training at scale. Several trends in modern post-training have made synchronous training loops nearly impossible to scale:.</p>
+<p>The open-source ecosystem has converged on a common architectural response: disaggregate inference from training onto separate GPU pools, connect them with a rollout buffer, and let both sides run concurrently.</p>
+<p>It has been revealed that we are developing a newly introduced async trainer for TRL, one of the most widely used libraries for model post-training. To guide our design, we surveyed sixteen open-source libraries that were built from the ground up around asynchronous training and compared them across seven axes: orchestration primitives, buffer design, weight sync protocols, staleness management, partial rollout handling, LoRA support, and distributed training backends. This article distills the design principles we extracted from that survey. <span style="font-size:13px;">(Related: <a href="this-newly-introduced-chip-survives-1300f-700c-and-could-change-a-92966.html" style="color:#2563eb; font-weight:600;">This newly introduced chip survives 1300°F (700°C) and ...</a>)</span></p>
 <p>Industry observers note that beyond RL, the need for async infrastructure is increasingly evident. For example, on-policy distillation, where a student generates sequences and a teacher scores them, mirrors GRPO but swaps the reward function for a teacher forward pass. Recognizing this structural similarity, everything in this survey applies equally to async distillation. We'll return to this broader point in Section 5.</p>
 <p>Sources indicate that TRL's current GRPOTrainer implements the full GRPO loop (prompt sampling, generation, reward scoring, advantage computation, gradient enhancement, and weight sync) in a single synchronous training_step() call. This design is simple and correct, but it cannot overlap generation with training, leaving significant GPU utilisation on the table.</p>
 <p>Looking at the GRPOTrainer, we have the following phases sequentially within each training step:.</p>
@@ -298,20 +298,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-openrail-towards-open-and-responsible-ai-licensing-fr-81347.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81347. Tech Report: OpenRAIL: Towards open and responsible AI licensing frameworks
+        <a href="tech-report-the-best-things-in-open-source-are-built-together-92486.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92486. Tech Report: The best things in open source are built together
         </a>
         
-        <a href="announcing-the-open-source-ai-game-jam-81242.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81242. Announcing the Open Source AI Game Jam 🎮
+        <a href="cncf-score-project-improved-its-security-posture-by-joining-the-d-92606.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92606. CNCF Score project improved its security posture by joining the Docker-Sponsored Open Source Program
         </a>
         
-        <a href="open-source-text-generation-llm-ecosystem-at-hugging-face-81219.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81219. Open-Source Text Generation & LLM Ecosystem at Hugging Face
+        <a href="the-open-source-community-is-backing-openenv-for-agentic-rl-92603.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92603. The Open Source Community is backing OpenEnv for Agentic RL
         </a>
         
-        <a href="results-of-the-open-source-ai-game-jam-81215.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81215. Results of the Open Source AI Game Jam
+        <a href="amazon-scoops-up-ai-accelerator-tech-to-keep-chips-busy-at-all-ti-92502.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92502. Amazon scoops up AI accelerator tech to keep chips busy at all times
         </a>
         
     </div>

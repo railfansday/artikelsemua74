@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80480">In a recent development, llamaIndex released the open weights for OCRia-nano-1 on November 23, 2026, introducing an 8.1-million-parameter document-parsing pipeline that runs on local CPUs. The seven-model system targets high-volume ingestion and agents processing everyday reports, contracts, invoices and routine scans.</p>
-<p>Sources indicate that llamaIndex reports an average of 426 milliseconds per page on one core, with 90% of pages finishing within 862 milliseconds. Those timings cover LiteParse’s complete pipeline, from text recognition through structure recovery, measuring finished parsing work rather than an isolated OCR step. <span style="font-size:13px;">(Related: <a href="latest-update-my-journey-to-a-serverless-transformers-pipeline-on-81451.html" style="color:#2563eb; font-weight:600;">Latest Update: My Journey to a serverless transformers ...</a>)</span></p>
-<p>It has been revealed that logan Markewich’s technical report compares the release with other local CPU parsers on ParseBench-2 v2.07. LlamaIndex reports these results from its own runs; throughput testing used 300 random ParseBench pages and 16 single-core workers in a 16-vCPU container, averaged over five cloud hosts with every configuration run in the same container on each host.</p>
-<p>In a recent development, the report’s comparison identifies structure recovery as Nano’s clearest advantage. Indra is faster, but Nano scores higher overall and on tables, while also improving on Tesseract in both accuracy and throughput. Layout grounding reaches 72.4 with Nano, against 65.2 for Indra and 49.4 for the Tesseract configuration. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-81464.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Sources indicate that llamaIndex reports an average of 426 milliseconds per page on one core, with 90% of pages finishing within 862 milliseconds. Those timings cover LiteParse’s complete pipeline, from text recognition through structure recovery, measuring finished parsing work rather than an isolated OCR step.</p>
+<p>It has been revealed that logan Markewich’s technical report compares the release with other local CPU parsers on ParseBench-2 v2.07. LlamaIndex reports these results from its own runs; throughput testing used 300 random ParseBench pages and 16 single-core workers in a 16-vCPU container, averaged over five cloud hosts with every configuration run in the same container on each host. <span style="font-size:13px;">(Related: <a href="trump-hosts-crypto-traders-as-demand-for-his-meme-coin-fades-92997.html" style="color:#2563eb; font-weight:600;">Trump hosts crypto traders as demand for his meme coin ...</a>)</span></p>
+<p>In a recent development, the report’s comparison identifies structure recovery as Nano’s clearest advantage. Indra is faster, but Nano scores higher overall and on tables, while also improving on Tesseract in both accuracy and throughput. Layout grounding reaches 72.4 with Nano, against 65.2 for Indra and 49.4 for the Tesseract configuration. <span style="font-size:13px;">(Related: <a href="democrats-to-open-2028-primary-debates-in-june-after-pushback-aga-92995.html" style="color:#2563eb; font-weight:600;">Democrats to open 2028 primary debates in June after pu...</a>)</span></p>
 <p>In a recent development, the pipeline divides its parameters between a 3.9-million-parameter OCR stack and LayoutNet, which contributes 4.27 million. A text-line detector and script router feed separate Latin, Chinese/Japanese/Korean, right-to-left and world-script recognizers. LayoutNet uses text, geometry, page images and measurements from LiteParse’s spatial grid projection to recover table rows, columns and cells and classify text units into 13 layout classes.</p>
 <p>LiteParse reads usable embedded PDF text directly and invokes OCR for scans, embedded images, or missing, invisible and garbled text layers before merging the native and recognized text. The router selects a page’s majority script, allows confident line-level overrides for mixed-script pages and detects upside-down pages before recognition.</p>
 <p>For training, LlamaIndex distilled labels from OCRia-1, its 4-billion-parameter document vision-language model, alongside permissive public data and synthetic pages. It retained a training line only when a second reader, such as the PDF text layer or PP-OCRv6, agreed with the principal label within a character error rate of 0.15. The report states the resulting system reaches about two-thirds of the teacher’s 87.0 ParseBench-2 score with roughly 1/500th of its parameters.</p>
@@ -191,20 +191,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="build-low-latency-multilingual-voice-agents-open-weights-full-dep-92490.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92490. Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS
+        </a>
+        
+        <a href="webai-releases-twil-8b-a-5-gib-open-weight-reasoning-model-with-a-87457.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #87457. webAI Releases TwIL-8B: A 5 GiB Open-Weight Reasoning Model With a 98.2 MATH-500 Score
+        </a>
+        
+        <a href="cyberleek-releases-executable-for-gta-6-xbox-build-leaked-last-we-86011.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #86011. Cyberleek releases executable for GTA 6 Xbox build leaked last week: 'The torch passes to the open source recomp and emulation projects'
+        </a>
+        
         <a href="latest-update-open-sourcing-knowledge-distillation-code-and-weigh-81211.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81211. Latest Update: Open-sourcing Knowledge Distillation Code and Weights of SD-Small and SD-Tiny
-        </a>
-        
-        <a href="the-open-evaluation-standard-benchmarking-nvidia-nemotron-3-nano--80706.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80706. The Open Evaluation Standard: Benchmarking NVIDIA Nemotron 3 Nano with NeMo Evaluator
-        </a>
-        
-        <a href="tech-report-aawireless-releases-new-smaller-nexus-and-nano-wirele-80620.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80620. Tech Report: AAWireless releases new, smaller Nexus and Nano wireless Android Auto adapters
-        </a>
-        
-        <a href="paddleocr-35-running-ocr-and-document-parsing-tasks-with-a-transf-80487.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80487. PaddleOCR 3.5: Running OCR and Document Parsing Tasks with a Transformers Backend
         </a>
         
     </div>

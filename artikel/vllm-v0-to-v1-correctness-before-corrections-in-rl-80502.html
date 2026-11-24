@@ -159,7 +159,7 @@ the vLLM V0 to V1 migration.</p>
 <p>In a recent development, TL;DR. vLLM V1 matched our vLLM V0 reference after we fixed four things:
 processed rollout logprobs, V1-specific runtime defaults, the inflight
 weight-upgrade path, and the fp32 lm_head used for the final projection. We
-fixed the backend behavior before changing the RL objective.</p>
+fixed the backend behavior before changing the RL objective. <span style="font-size:13px;">(Related: <a href="industry-news-cat-takes-37-mile-train-trip-to-london-before-staff-92985.html" style="color:#2563eb; font-weight:600;">Industry News: Cat takes 37-mile train trip to London b...</a>)</span></p>
 <p>Sources indicate that the reference run used vLLM 0.8.5; the V1 runs used vLLM 0.18.1. Figure 1
 reveals the final result. The red run is the initial V1 attempt, and the green
 run is the final V1 run after the fixes described below.</p>
@@ -168,9 +168,9 @@ therefore deliberately narrow:.</p>
 <p>The first visible symptoms appeared in:.</p>
 <p>Those metrics came from a GSPO training run, the objective used for this
 experiment. The same class of mismatch can surface in PPO, GRPO, or any online
-RL system that treats rollout-side logprobs as part of the optimization target. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-81461.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+RL system that treats rollout-side logprobs as part of the optimization target. <span style="font-size:13px;">(Related: <a href="ai-fire-detection-system-sprays-food-booths-fake-flames-in-bizarr-92976.html" style="color:#2563eb; font-weight:600;">AI fire detection system sprays food booth’s fake flame...</a>)</span></p>
 <p>It has been revealed that the initial V1 run highlighted the problem clearly. The trainer-side logprobs and
-reward moved away from the V0 reference early in training. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-81448.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
+reward moved away from the V0 reference early in training.</p>
 <p>The same pattern appears in the trainer metrics. Clip rate is the easiest signal
 to read in the initial comparison.</p>
 <p>We separated the possible causes into three layers:.</p>
@@ -263,20 +263,20 @@ then add corrections for the mismatch that remains.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="testing-json-ld-like-an-api-7-checks-before-your-next-release-80999.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80999. Testing JSON-LD Like an API: 7 Checks Before Your Next Release
+        <a href="industry-news-cat-takes-37-mile-train-trip-to-london-before-staff-92985.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92985. Industry News: Cat takes 37-mile train trip to London before staff escort him home
         </a>
         
-        <a href="how-to-test-ai-generated-content-before-it-reaches-your-people-80952.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80952. How to Test AI-Generated Content Before It Reaches Your People
+        <a href="serving-a-local-llm-to-several-people-ollama-lm-studio-llamacpp-a-92806.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92806. Serving a Local LLM to Several People: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
         </a>
         
-        <a href="introducing-multi-backends-trt-llm-vllm-support-for-text-generati-80951.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80951. Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference
+        <a href="jensen-huang-confessed-to-more-affairs-before-the-board-reinstate-92799.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92799. Jensen Huang confessed to more affairs before the board reinstated him as Nvidia CEO, report claims
         </a>
         
-        <a href="how-product-teams-can-use-ai-user-research-to-test-assumptions-be-80913.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80913. How Product Teams Can Use AI User Research to Test Assumptions Before Sprint Planning
+        <a href="what-to-check-before-adding-a-tripo-model-to-a-website-92718.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92718. What to Check Before Adding a Tripo Model to a Website
         </a>
         
     </div>

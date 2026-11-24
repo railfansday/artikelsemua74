@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80511">It has been revealed that on December 2, 2026, GitHub will start blocking the pull_request_target trigger by default in public repositories. If that sentence means nothing to you, this post is for you. If it fills you with dread, it is also for you.</p>
-<p>According to recent reports, the short version: a handful of GitHub Actions triggers let a stranger on the internet start a workflow that may have access to your secrets. On a GitHub Team or Enterprise proposal, you can turn them off for every repository in your organization with one policy. On a Free plan, you can do it one repository at a time. Set the policy up, check what it would block, then enforce it. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-81464.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
-<p>Mike Fiedler, PyPI Safety and Security Engineer, and Seth Larson, Security Developer in Residence, have removed dangerous triggers and applied these policies to the Python Software Foundation (PSF) stewarded GitHub organizations (psf, python, pypi). They also wrote up technical documentation on how to roll these policies out to your own projects and organizations. The full details and technical documentation are available on the Alpha-Omega blog. <span style="font-size:13px;">(Related: <a href="showcase-your-projects-in-spaces-using-gradio-81436.html" style="color:#2563eb; font-weight:600;">Showcase Your Projects in Spaces using Gradio...</a>)</span></p>
+<p>According to recent reports, the short version: a handful of GitHub Actions triggers let a stranger on the internet start a workflow that may have access to your secrets. On a GitHub Team or Enterprise proposal, you can turn them off for every repository in your organization with one policy. On a Free plan, you can do it one repository at a time. Set the policy up, check what it would block, then enforce it. <span style="font-size:13px;">(Related: <a href="democrats-to-open-2028-primary-debates-in-june-after-pushback-aga-92995.html" style="color:#2563eb; font-weight:600;">Democrats to open 2028 primary debates in June after pu...</a>)</span></p>
+<p>Mike Fiedler, PyPI Safety and Security Engineer, and Seth Larson, Security Developer in Residence, have removed dangerous triggers and applied these policies to the Python Software Foundation (PSF) stewarded GitHub organizations (psf, python, pypi). They also wrote up technical documentation on how to roll these policies out to your own projects and organizations. The full details and technical documentation are available on the Alpha-Omega blog.</p>
 <p>Yes, repeatedly. A few that have affected projects hosted on PyPI directly:.</p>
 <p>According to recent reports, ultralytics, December 2024. The project's GitHub Actions workflows were compromised and the build cache was poisoned, which put malicious releases on PyPI. Seth wrote PyPI's analysis. William Woodruff's write-up traces the entry point to a pull_request_target workflow.</p>
 <p>It has been revealed that liteLLM and Telnyx, March 2026. Malicious releases of both packages were published after an API token was exposed through an exploited Trivy dependency. StepSecurity traced the Trivy compromise back to a pull_request_target workflow exploited three weeks earlier. We worked with both maintainer teams on token rotation, release removals, and moving to Trusted Publishers, which both projects have since adopted.</p>
-<p>Recent findings suggest that elementary-data, April 2026. A workflow triggered by comments puts the comment text straight into a shell script. One crafted comment on a pull request ran with a token that could be written to the repository. The attacker used it to commit a malicious file and push a release tag, and the project's own release pipeline published the result to PyPI.</p>
+<p>Recent findings suggest that elementary-data, April 2026. A workflow triggered by comments puts the comment text straight into a shell script. One crafted comment on a pull request ran with a token that could be written to the repository. The attacker used it to commit a malicious file and push a release tag, and the project's own release pipeline published the result to PyPI. <span style="font-size:13px;">(Related: <a href="youtuber-charlotte-dobre-states-youtube-should-make-people-use-re-92983.html" style="color:#2563eb; font-weight:600;">YouTuber Charlotte Dobre states YouTube should make peo...</a>)</span></p>
 <p>Sources indicate that the maintainers behind these projects weren't careless. These triggers look harmless in a workflow file, and the unsafe version is one line away from the safe one.</p>
 <p>Insecure triggers can run workflows with access to your secrets, and a stranger can start them.</p>
 <p>When someone opens a pull request from a fork, the pull_request trigger runs their code with a read-only token and no secrets. That's the safe one.</p>
@@ -192,20 +192,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="latest-update-python-devs-document-de-fanging-dangerous-triggers--69536.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69536. Latest Update: Python Devs Document 'De-fanging Dangerous Triggers In GitHub Actions'
-        </a>
-        
         <a href="github-actions-accepts-invalid-yaml-80488.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #80488. GitHub Actions accepts invalid YAML
         </a>
         
-        <a href="deflock-amerca-facebook-group-suspended-as-a-dangerous-organizati-73982.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #73982. DeFlock Amerca Facebook Group Suspended as a Dangerous Organization
+        <a href="industry-news-ai-uncovers-hidden-ozempic-side-effects-across-4000-92839.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92839. Industry News: AI uncovers hidden Ozempic side effects across 400,000 Reddit posts
         </a>
         
-        <a href="industry-news-introducing-the-newly-introduced-microsoft-iq-putti-81080.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81080. Industry News: Introducing the newly introduced Microsoft IQ: Putting your organization’s intelligence to work in every agent
+        <a href="go-ad-free-across-toms-hardware-by-subscribing-to-premium-from-7--92835.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92835. Go ad-free across Tom’s Hardware by subscribing to Premium from $7 a month, or $29 annually
+        </a>
+        
+        <a href="rockstar-nukes-15-year-olds-gta-6-recompilation-project-discord-a-92795.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92795. Rockstar nukes 15-year-old’s GTA 6 recompilation project, Discord and GitHub servers taken down
         </a>
         
     </div>

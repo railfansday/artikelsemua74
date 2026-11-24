@@ -152,11 +152,11 @@
 <p id="sec-start-80616">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
 <p>Recent findings suggest that weekly. Free. One click to leave.</p>
 <p>Recent findings suggest that 7 Day Free Trial. Cancel Anytime.</p>
-<p>A self-hosted LLM gateway sits between your app and the model provider, so every call pays for one extra hop. We measured that cost for three open-source gateways: the Langfuse AI Gateway, the LiteLLM proxy and AcruxCore. Each one ran on the same machine, in front of the same OpenAI model. LiteLLM added 61 to 67 ms to every non-streaming call. AcruxCore added 15 to 24 ms. Langfuse's number could not be told apart from zero. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>In a recent development, the bigger lesson was about the measurement itself. Before we controlled for it, one OpenAI network address moved our results by more than any gateway did.</p>
+<p>A self-hosted LLM gateway sits between your app and the model provider, so every call pays for one extra hop. We measured that cost for three open-source gateways: the Langfuse AI Gateway, the LiteLLM proxy and AcruxCore. Each one ran on the same machine, in front of the same OpenAI model. LiteLLM added 61 to 67 ms to every non-streaming call. AcruxCore added 15 to 24 ms. Langfuse's number could not be told apart from zero. <span style="font-size:13px;">(Related: <a href="ex-rockstar-artist-explains-main-difference-between-red-dead-2-an-92988.html" style="color:#2563eb; font-weight:600;">Ex-Rockstar artist explains main difference between Red...</a>)</span></p>
+<p>In a recent development, the bigger lesson was about the measurement itself. Before we controlled for it, one OpenAI network address moved our results by more than any gateway did. <span style="font-size:13px;">(Related: <a href="industry-news-cat-takes-37-mile-train-trip-to-london-before-staff-92985.html" style="color:#2563eb; font-weight:600;">Industry News: Cat takes 37-mile train trip to London b...</a>)</span></p>
 <p>Sources indicate that each number is the median time a gateway added to a direct OpenAI call, with its 95% interval in brackets. A gateway can log each call, and logging takes time, so we ran the test three times with three logging levels.</p>
 <p>Recent findings suggest that the direct call took 781 to 831 ms at the median, so even LiteLLM's cost is under 9% of a short call. Read the tables this way:.</p>
-<p>Industry observers note that the obvious test is to time 100 calls through the gateway, time 100 direct calls, and compare the two medians. That test gives the wrong answer, for two reasons. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-81450.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
+<p>Industry observers note that the obvious test is to time 100 calls through the gateway, time 100 direct calls, and compare the two medians. That test gives the wrong answer, for two reasons.</p>
 <p>Sources indicate that the first reason is noise. OpenAI's own response time moved by hundreds of milliseconds between calls in our runs. The direct call's p95 was 1,047 to 1,233 ms against a median near 800 ms. A gateway that adds 20 ms is hidden inside that spread unless the test removes it.</p>
 <p>In a recent development, the second reason is the network path to OpenAI. It does not stay the same between a direct client and a gateway, and that difference can be larger than the gateway itself.</p>
 <p>api.openai.com resolves to more than one address. From our network, DNS returned two Cloudflare addresses, and one was much farther away than the other. We measured both with a script that pins one address at a time:.</p>
@@ -209,16 +209,16 @@
             📰 #80722. Breaking: What Breaks When a Self-Hosted LLM Gateway Hits 1,000 Concurrent Streams
         </a>
         
-        <a href="industry-news-make-llm-fine-tuning-2x-faster-with-unsloth-and-trl-81152.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81152. Industry News: Make LLM Fine-tuning 2x faster with Unsloth and 🤗 TRL
+        <a href="industry-news-how-to-add-ai-facial-expression-editing-to-your-vid-92688.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92688. Industry News: How to Add AI Facial Expression Editing to Your Video Pipeline (2026)
         </a>
         
-        <a href="industry-news-how-to-build-an-ai-assisted-workflow-that-does-not--80898.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80898. Industry News: How to Build an AI-Assisted Workflow That Does Not Leak
+        <a href="latest-update-how-much-memory-does-your-agent-actually-need-92466.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92466. Latest Update: How Much Memory Does Your Agent Actually Need?
         </a>
         
-        <a href="industry-news-efficient-request-queueing-optimizing-llm-performan-80894.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80894. Industry News: Efficient Request Queueing – Optimizing LLM Performance
+        <a href="tech-report-qwen-incidents-show-self-hosted-ai-models-need-strong-92271.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92271. Tech Report: Qwen Incidents Show Self-Hosted AI Models Need Stronger Steering
         </a>
         
     </div>

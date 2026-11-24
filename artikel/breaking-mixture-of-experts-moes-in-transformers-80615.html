@@ -151,13 +151,13 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80615">Industry observers note that over the past few years, scaling dense language models has driven most progress in LLMs. From early models like the original ULMFiT (~30M parameters) or GPT-2 (1.5B parameters, which at the time was considered "too dangerous to release" 🧌), and eventually to today’s hundred-billion–parameter systems, the recipe was simple:.</p>
 <p>More data + more parameters gives better performance.</p>
-<p>Scaling laws reinforced this trend, but dense scaling has practical limits:. <span style="font-size:13px;">(Related: <a href="the-reformer-pushing-the-limits-of-language-modeling-81465.html" style="color:#2563eb; font-weight:600;">The Reformer - Pushing the limits of language modeling...</a>)</span></p>
+<p>Scaling laws reinforced this trend, but dense scaling has practical limits:.</p>
 <p>This is where Mixture of Experts (MoEs) enter the picture.</p>
-<p>If you're already familiar with MoEs and want to jump straight into the engineering work done in transformers, you can head directly to Transformers and MoEs. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>If you're already familiar with MoEs and want to jump straight into the engineering work done in transformers, you can head directly to Transformers and MoEs.</p>
 <p>Recent findings suggest that A Mixture of Experts model keeps the Transformer backbone, but replaces certain dense feed-forward layers with a set of experts. An “expert” is not a topic-specialized module (e.g., "math expert", "code expert"). It is simply a learnable sub-network. For each token, a router selects a small subset of experts to process it.</p>
-<p>Different tokens activate different experts, based on their hidden representations.</p>
+<p>Different tokens activate different experts, based on their hidden representations. <span style="font-size:13px;">(Related: <a href="all-my-favorite-xreal-glasses-are-at-their-lowest-price-ever-for--92961.html" style="color:#2563eb; font-weight:600;">All my favorite XREAL glasses are at their lowest price...</a>)</span></p>
 <p>Model capacity depends on total parameters, but inference speed depends on active parameters.</p>
-<p>For example, take gpt-oss-20b. It has 21B total parameters, but uses 4 active experts per token, out of a total of 32 experts. Considering the shared components plus the active experts, this model uses ~3.6B active parameters per token. Running this model on an M3 Ultra Mac, which has a memory bandwidth of about 800 GB, we could estimate generation speed as ~ 800 / (3.6 * 2) in bfloat16, where each parameter takes 2 bytes. This yields about 111 tokens per second. The actual performance number we get is ~115 tok/s, which is very close to the back-of-the-envelope calculation.</p>
+<p>For example, take gpt-oss-20b. It has 21B total parameters, but uses 4 active experts per token, out of a total of 32 experts. Considering the shared components plus the active experts, this model uses ~3.6B active parameters per token. Running this model on an M3 Ultra Mac, which has a memory bandwidth of about 800 GB, we could estimate generation speed as ~ 800 / (3.6 * 2) in bfloat16, where each parameter takes 2 bytes. This yields about 111 tokens per second. The actual performance number we get is ~115 tok/s, which is very close to the back-of-the-envelope calculation. <span style="font-size:13px;">(Related: <a href="industry-news-cat-takes-37-mile-train-trip-to-london-before-staff-92985.html" style="color:#2563eb; font-weight:600;">Industry News: Cat takes 37-mile train trip to London b...</a>)</span></p>
 <p>This super fast speed confirms the model works approximately as a 3.6B parameter one, but it has the same capacity (or quality) as a 21B parameter model.</p>
 <p>(Note: speed would be even faster if we used kernels for the native mxfp4 quantization the model uses).</p>
 <p>MoEs are attractive for these reasons:.</p>
@@ -241,20 +241,20 @@ GPU: 1× A100 (80GB).</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="introducing-mellum2-a-12b-mixture-of-experts-model-by-jetbrains-92619.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92619. Introducing Mellum2: A 12B Mixture-of-Experts Model by JetBrains
+        </a>
+        
+        <a href="welcome-muse-spark-open-open-weight-frontier-multimodal-mixture-o-92376.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92376. Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta
+        </a>
+        
         <a href="mixture-of-experts-explained-81158.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81158. Mixture of Experts Explained
         </a>
         
         <a href="welcome-mixtral-a-sota-mixture-of-experts-on-hugging-face-81157.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81157. Welcome Mixtral - a SOTA Mixture of Experts on Hugging Face
-        </a>
-        
-        <a href="industry-news-segmoe-segmind-mixture-of-diffusion-experts-81135.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81135. Industry News: SegMoE: Segmind Mixture of Diffusion Experts
-        </a>
-        
-        <a href="breaking-introducing-mellum2-a-12b-mixture-of-experts-model-by-je-80462.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80462. Breaking: Introducing Mellum2: A 12B Mixture-of-Experts Model by JetBrains
         </a>
         
     </div>

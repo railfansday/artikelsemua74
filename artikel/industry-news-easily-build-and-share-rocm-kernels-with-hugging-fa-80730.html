@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80730">Custom kernels are the backbone of high-performance deep learning, enabling GPU operations tailored precisely to your workload; whether that’s image processing, tensor transformations, or other compute-heavy tasks. But compiling these kernels for the right architectures, wiring all the build flags, and integrating them cleanly into PyTorch extensions can quickly become a mess of CMake/Nix, compiler errors, and ABI concerns, which is not fun. Hugging Face’s kernels library makes it easy to build (with kernel-builder) and share these kernels with the kernels-community, with support for multiple GPU and accelerator backends, including CUDA, ROCm, Metal, and XPU. This ensures your kernels are fast, portable, and seamlessly integrated with PyTorch.</p>
-<p>In this guide, we focus exclusively on ROCm-compatible kernels and show how to build, test, and share them using kernels. You’ll learn how to create kernels that run efficiently on AMD GPUs, along with best practices for reproducibility, packaging, and deployment. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-81467.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>This ROCm-specific walkthrough is a streamlined version of the original kernel-builder guide. If you’re looking for the broader CUDA-focused version, you can find it here: A Guide to Building and Scaling Production-Ready CUDA Kernels. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-81454.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>In this guide, we focus exclusively on ROCm-compatible kernels and show how to build, test, and share them using kernels. You’ll learn how to create kernels that run efficiently on AMD GPUs, along with best practices for reproducibility, packaging, and deployment.</p>
+<p>This ROCm-specific walkthrough is a streamlined version of the original kernel-builder guide. If you’re looking for the broader CUDA-focused version, you can find it here: A Guide to Building and Scaling Production-Ready CUDA Kernels. <span style="font-size:13px;">(Related: <a href="breaking-who-is-ready-for-some-presidential-debates-92993.html" style="color:#2563eb; font-weight:600;">Breaking: Who is ready for some presidential debates?...</a>)</span></p>
 <p>In a recent development, we will use the GEMM kernel from RadeonFlow_Kernels as an example. If you want to go straight to the guide, click here.</p>
 <p>This section was written by the RadeonFlow GEMM kernel authors to introduce the kernel.Authors: ColorsWind, Zesen Liu, and Andy.</p>
-<p>According to recent reports, the RadeonFlow GEMM kernel is a high-performance, FP8 block-wise matrix multiplication implementation optimized for the AMD Instinct MI300X GPU. GEMM (General Matrix Multiplication) is the core building block behind most deep learning workloads: given two matrices A and B, you compute their product C = A × B. Here it’s implemented in FP8, a low-precision floating-point format that trades a bit of accuracy for much higher throughput and lower memory bandwidth. This kernel was developed for the AMD Developer Challenge 2025, it was awarded the 🏆 Grand Prize in June 2025, recognizing its excellence in performance and innovation on AMD hardware.</p>
+<p>According to recent reports, the RadeonFlow GEMM kernel is a high-performance, FP8 block-wise matrix multiplication implementation optimized for the AMD Instinct MI300X GPU. GEMM (General Matrix Multiplication) is the core building block behind most deep learning workloads: given two matrices A and B, you compute their product C = A × B. Here it’s implemented in FP8, a low-precision floating-point format that trades a bit of accuracy for much higher throughput and lower memory bandwidth. This kernel was developed for the AMD Developer Challenge 2025, it was awarded the 🏆 Grand Prize in June 2025, recognizing its excellence in performance and innovation on AMD hardware. <span style="font-size:13px;">(Related: <a href="ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-92969.html" style="color:#2563eb; font-weight:600;">AI breakthrough cuts energy use by 100x while boosting ...</a>)</span></p>
 <p>The kernel operates on quantized inputs using the e4m3fnuz floating-point format and applies per-block scaling to preserve accuracy during low-precision computation. The e4m3fnuz format is an FP8 variant with 4 exponent bits and 3 mantissa bits, designed to be efficient for neural network workloads. Because FP8 has a much smaller dynamic range than FP16/FP32, we apply per-block scaling factors (a_scale and b_scale) so that each block of values is rescaled into a numerically “comfortable” range before and after computation, which helps preserve accuracy despite the low precision. It takes the following arguments:.</p>
 <p>where a and b are the input matrices, a_scale and b_scale are the scaling factors for a and b respectively,
 and c is the output matrix:.</p>
@@ -221,20 +221,20 @@ and c is the output matrix:.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-migrating-your-github-ci-to-hugging-face-jobs-92601.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92601. Industry News: Migrating Your GitHub CI to Hugging Face Jobs
+        </a>
+        
+        <a href="industry-news-welcome-le-chonk-mistral-large-4-on-hugging-face-92312.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92312. Industry News: Welcome Le Chonk: Mistral Large 4 on Hugging Face
+        </a>
+        
         <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-81450.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81450. Industry News: The Partnership: Amazon SageMaker and Hugging Face
         </a>
         
         <a href="industry-news-using-mixing-hugging-face-models-with-gradio-20-81445.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81445. Industry News: Using & Mixing Hugging Face Models with Gradio 2.0
-        </a>
-        
-        <a href="deploy-hugging-face-models-easily-with-amazon-sagemaker-81442.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81442. Deploy Hugging Face models easily with Amazon SageMaker
-        </a>
-        
-        <a href="industry-news-welcome-fastai-to-the-hugging-face-hub-81393.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81393. Industry News: Welcome fastai to the Hugging Face Hub
         </a>
         
     </div>

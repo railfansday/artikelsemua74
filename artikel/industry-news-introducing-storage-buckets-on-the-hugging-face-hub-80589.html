@@ -153,12 +153,12 @@
 <p>Recent findings suggest that storage Buckets are built exactly for this: mutable, S3-like object storage you can browse on the Hub, script from Python, or manage with the hf CLI. And because they are backed by Xet, they are especially efficient for ML artifacts that share content across files.</p>
 <p>Git starts to feel like the wrong abstraction pretty promptly when you're dealing with:.</p>
 <p>The storage need in all these cases is the same: write fast, overwrite when needed, sync directories, remove stale files, and keep things moving.</p>
-<p>A Bucket is a non-versioned storage container on the Hub. It lives under a user or organization namespace, has standard Hugging Face permissions, can be private or public, has a page you can open in your browser, and can be addressed programmatically with a handle like hf://buckets/username/my-training-bucket. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-81457.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
-<p>Buckets are built on Xet, Hugging Face’s chunk-based storage backend, and this matters more than it might seem. <span style="font-size:13px;">(Related: <a href="tech-report-transformer-based-encoder-decoder-models-81463.html" style="color:#2563eb; font-weight:600;">Tech Report: Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>A Bucket is a non-versioned storage container on the Hub. It lives under a user or organization namespace, has standard Hugging Face permissions, can be private or public, has a page you can open in your browser, and can be addressed programmatically with a handle like hf://buckets/username/my-training-bucket. <span style="font-size:13px;">(Related: <a href="best-black-friday-gaming-deals-for-under-100-92975.html" style="color:#2563eb; font-weight:600;">Best Black Friday gaming deals for under $100...</a>)</span></p>
+<p>Buckets are built on Xet, Hugging Face’s chunk-based storage backend, and this matters more than it might seem.</p>
 <p>Recent findings suggest that instead of treating files as monolithic blobs, Xet breaks content into chunks and deduplicates across them. Upload a processed dataset that’s mostly similar to the raw one? Many chunks already exist. Store successive checkpoints where large parts of the model are frozen? Same story. Buckets skip the bytes that are already there, which means less bandwidth, faster transfers, and more efficient storage.</p>
 <p>Sources indicate that this is a natural fit for ML workloads. Training pipelines constantly produce families of related artifacts — raw and processed data, successive checkpoints, Agent traces and derived summaries — and Xet is designed to take advantage of that overlap.</p>
 <p>For Enterprise customers, billing is based on deduplicated storage, so shared chunks directly reduce the billed footprint. Deduplication helps with both speed and cost.</p>
-<p>Recent findings suggest that buckets live on the Hub, which means global storage by default. But not every workload can afford to pull data from wherever it happens to live, for distributed training and large-scale pipelines, storage location directly affects throughput.</p>
+<p>Recent findings suggest that buckets live on the Hub, which means global storage by default. But not every workload can afford to pull data from wherever it happens to live, for distributed training and large-scale pipelines, storage location directly affects throughput. <span style="font-size:13px;">(Related: <a href="breaking-russia-readying-nuclear-armed-satellite-that-could-destr-92958.html" style="color:#2563eb; font-weight:600;">Breaking: Russia readying nuclear-armed satellite that ...</a>)</span></p>
 <p>Pre-warming lets you bring hot data closer to the cloud provider and region where your compute runs. Instead of data traveling across regions on every read, you declare where you need it and Buckets make sure it's already there when your jobs start. This is especially useful for training clusters that need fast access to large datasets or checkpoints, and for multi-region setups where different parts of a pipeline run in different clouds.</p>
 <p>We are partnering with AWS and GCP to start with, more more cloud providers coming in the future.</p>
 <p>Create a bucket for your project:.</p>
@@ -213,6 +213,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="record-train-and-deploy-from-one-place-with-strands-agents-lerobo-92478.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92478. Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets
+        </a>
+        
         <a href="industry-news-welcome-fastai-to-the-hugging-face-hub-81393.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81393. Industry News: Welcome fastai to the Hugging Face Hub
         </a>
@@ -221,12 +225,8 @@
             📰 #81244. Introducing BERTopic Integration with the Hugging Face Hub
         </a>
         
-        <a href="record-train-and-deploy-from-one-place-with-strands-agents-lerobo-69705.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69705. Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets
-        </a>
-        
-        <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-81450.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81450. Industry News: The Partnership: Amazon SageMaker and Hugging Face
+        <a href="industry-news-migrating-your-github-ci-to-hugging-face-jobs-92601.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92601. Industry News: Migrating Your GitHub CI to Hugging Face Jobs
         </a>
         
     </div>

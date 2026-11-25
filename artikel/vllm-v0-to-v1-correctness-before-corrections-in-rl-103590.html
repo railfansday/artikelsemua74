@@ -159,18 +159,18 @@ the vLLM V0 to V1 migration.</p>
 <p>TL;DR. vLLM V1 matched our vLLM V0 reference after we fixed four things:
 processed rollout logprobs, V1-specific runtime defaults, the inflight
 weight-upgrade path, and the fp32 lm_head used for the final projection. We
-fixed the backend behavior before changing the RL objective.</p>
+fixed the backend behavior before changing the RL objective. <span style="font-size:13px;">(Related: <a href="tech-report-why-you-should-upgrade-to-an-oled-for-gta-6-115924.html" style="color:#2563eb; font-weight:600;">Tech Report: Why you should upgrade to an OLED for GTA ...</a>)</span></p>
 <p>In a recent development, the reference run used vLLM 0.8.5; the V1 runs used vLLM 0.18.1. Figure 1
 demonstrates the final result. The red run is the initial V1 attempt, and the green
-run is the final V1 run after the fixes described below.</p>
+run is the final V1 run after the fixes described below. <span style="font-size:13px;">(Related: <a href="birdwatching-expert-gives-final-verdict-on-gta-6s-birds-after-fin-115916.html" style="color:#2563eb; font-weight:600;">Birdwatching expert gives final verdict on GTA 6’s bird...</a>)</span></p>
 <p>In a recent development, vLLM V1 is a substantial rewrite of the V0 engine. Our migration target was
 therefore deliberately narrow:.</p>
 <p>The first visible symptoms appeared in:.</p>
 <p>Those metrics came from a GSPO training run, the objective used for this
 experiment. The same class of mismatch can surface in PPO, GRPO, or any online
-RL system that treats rollout-side logprobs as part of the optimization target. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-104480.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+RL system that treats rollout-side logprobs as part of the optimization target.</p>
 <p>The initial V1 run showed the problem clearly. The trainer-side logprobs and
-reward moved away from the V0 reference early in training. <span style="font-size:13px;">(Related: <a href="latest-update-distributed-training-train-bartt5-for-summarization-104467.html" style="color:#2563eb; font-weight:600;">Latest Update: Distributed Training: Train BART/T5 for ...</a>)</span></p>
+reward moved away from the V0 reference early in training.</p>
 <p>According to recent reports, the same pattern appears in the trainer metrics. Clip rate is the easiest signal
 to read in the initial comparison.</p>
 <p>We separated the possible causes into three layers:.</p>
@@ -263,20 +263,20 @@ then add corrections for the mismatch that remains.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="introducing-multi-backends-trt-llm-vllm-support-for-text-generati-103981.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103981. Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference
+        <a href="latest-update-f1-star-max-verstappen-played-40-hours-of-gta-6-bef-115822.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115822. Latest Update: F1 star Max Verstappen played 40 hours of GTA 6 before winning Las Vegas grand prix
         </a>
         
-        <a href="how-to-test-ai-generated-content-before-it-reaches-your-owners-103930.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103930. How to Test AI-Generated Content Before It Reaches Your Owners
+        <a href="industry-news-serving-a-local-llm-to-several-users-ollama-lm-stud-115725.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115725. Industry News: Serving a Local LLM to Several Users: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
         </a>
         
-        <a href="how-product-teams-can-use-ai-user-research-to-test-assumptions-be-103899.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103899. How Product Teams Can Use AI User Research to Test Assumptions Before Sprint Planning
+        <a href="latest-update-what-to-check-before-adding-a-tripo-model-to-a-webs-115652.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115652. Latest Update: What to Check Before Adding a Tripo Model to a Website
         </a>
         
-        <a href="breaking-no-gpu-left-behind-unlocking-efficiency-with-co-located--103888.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103888. Breaking: No GPU left behind: Unlocking Efficiency with Co-located vLLM in TRL
+        <a href="what-to-get-right-before-you-ship-webhooks-115635.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115635. What to get right before you ship webhooks
         </a>
         
     </div>

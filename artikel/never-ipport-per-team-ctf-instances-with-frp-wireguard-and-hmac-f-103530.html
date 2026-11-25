@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103530">Picture a CTF where every web or pwn challenge is published as public-ip:port. Two teammates launch the same challenge and step on each other's box. A player runs a port scan against the platform and lands on another team's instance. And on boot2root machines, where finding the services is the challenge, you have just handed out the answer in the connection string.</p>
-<p>Sources indicate that that was the model we started from. This article is about the one we ended up running instead: one container per player, one flag per team, and a rule that no instance is ever reachable as IP:port. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
-<p>Recent findings suggest that NCTF26 is the 4th National CTF of Togo, organized by CERT.tg: an online qualifier (6 November 19:00 to 7 November 23:59 UTC), then a 24-hour on-site final in Lomé (19 November 11:40 to 20 November 11:40 UTC) for 10 teams and 47 players. 609 challenges were played over the two phases. I was the technical lead. The public site is still up at https://ctf.tg; the cloud infrastructure was deleted on 21 November 2026. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-104470.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>Sources indicate that that was the model we started from. This article is about the one we ended up running instead: one container per player, one flag per team, and a rule that no instance is ever reachable as IP:port. <span style="font-size:13px;">(Related: <a href="pokemon-fans-disappointed-after-cryptic-countdown-reveals-music-v-115911.html" style="color:#2563eb; font-weight:600;">Pokemon fans disappointed after cryptic countdown revea...</a>)</span></p>
+<p>Recent findings suggest that NCTF26 is the 4th National CTF of Togo, organized by CERT.tg: an online qualifier (6 November 19:00 to 7 November 23:59 UTC), then a 24-hour on-site final in Lomé (19 November 11:40 to 20 November 11:40 UTC) for 10 teams and 47 players. 609 challenges were played over the two phases. I was the technical lead. The public site is still up at https://ctf.tg; the cloud infrastructure was deleted on 21 November 2026. <span style="font-size:13px;">(Related: <a href="birdwatching-expert-gives-final-verdict-on-gta-6s-birds-after-fin-115916.html" style="color:#2563eb; font-weight:600;">Birdwatching expert gives final verdict on GTA 6’s bird...</a>)</span></p>
 <p>In a recent development, the arena never exposes a challenge port to the internet. Each container publishes its port on the arena's loopback only, and the frp client opens an outbound tunnel to the front. Players only ever talk to the front.</p>
 <p>Sources indicate that CTFd reaches the arena's Docker daemon through a filtering proxy, not a raw socket. That proxy only lets through the operations the instancer needs, keeps published ports on loopback, and refuses extra capabilities, sysctls and devices, with one narrow exception for the WireGuard gateway image. A web app that can create containers is a web app that can own the host; we treated that channel as the most sensitive part of the design.</p>
 <p>The instancer is a CTFd plugin (about 2,400 lines of Python). From the player's side it comes down to four actions: launch, check status, renew, destroy.</p>
@@ -205,20 +205,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-man-utd-wonderkid-who-ignored-sir-alex-breaks-goals-106458.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #106458. Latest Update: Man Utd wonderkid who 'ignored Sir Alex' breaks goalscoring record for team you've never heard of
+        </a>
+        
         <a href="running-wireguard-for-a-development-team-the-hidden-cost-of-vpn-m-103732.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #103732. Running WireGuard for a Development Team: The Hidden Cost of VPN Maintenance
         </a>
         
-        <a href="tech-report-pin-vs-noon-in-2026-which-ai-recruiter-fits-your-team-103912.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103912. Tech Report: Pin vs Noon in 2026: Which AI Recruiter Fits Your Team?
+        <a href="breaking-rockstar-shuts-down-discord-server-trying-to-make-gta-6--115919.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115919. Breaking: Rockstar shuts down Discord server trying to make GTA 6 PC port
         </a>
         
-        <a href="data-driven-pages-that-never-go-stale-a-practical-guide-103736.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103736. Data-Driven Pages That Never Go Stale: A Practical Guide
-        </a>
-        
-        <a href="rust-1100-ships-the-never-type-after-ten-years-and-five-failed-at-103587.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103587. Rust 1.100 Ships the Never Type After Ten Years and Five Failed Attempts
+        <a href="the-ssd-crisis-is-being-defeated-with-black-friday-1tb-and-2tb-de-115891.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115891. The SSD crisis is being defeated with Black Friday 1TB and 2TB deals at less than $0.15 per GB
         </a>
         
     </div>

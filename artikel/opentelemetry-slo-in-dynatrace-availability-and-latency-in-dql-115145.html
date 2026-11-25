@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenTelemetry SLO in Dynatrace: availability and latency in DQL</title>
+    <meta name="description" content="Recent findings suggest that your services send their traces over OTLP, but your reliability targets remain numbers on a wiki page. Without an OpenTelemetr">
+    <meta name="keywords" content="service, opentelemetry, dynatrace, recent, requests, span, budget, spans">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/opentelemetry-slo-in-dynatrace-availability-and-latency-in-dql-115145.html">
+    
+    <meta property="og:title" content="OpenTelemetry SLO in Dynatrace: availability and latency in DQL">
+    <meta property="og:description" content="Recent findings suggest that your services send their traces over OTLP, but your reliability targets remain numbers on a wiki page. Without an OpenTelemetr">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F10%2Fslo-opentelemetry-dynatrace-dql-photo-202610301252.webp">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/opentelemetry-slo-in-dynatrace-availability-and-latency-in-dql-115145.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OpenTelemetry SLO in Dynatrace: availability and latency in DQL">
+    <meta name="twitter:description" content="Recent findings suggest that your services send their traces over OTLP, but your reliability targets remain numbers on a wiki page. Without an OpenTelemetr">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F10%2Fslo-opentelemetry-dynatrace-dql-photo-202610301252.webp">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "OpenTelemetry SLO in Dynatrace: availability and latency in DQL", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F10%2Fslo-opentelemetry-dynatrace-dql-photo-202610301252.webp"], "datePublished": "2026-11-25T21:30:16", "dateModified": "2026-11-25T21:39:32.822402", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/opentelemetry-slo-in-dynatrace-availability-and-latency-in-dql-115145.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding OpenTelemetry SLO in Dynatrace: availability and latency in DQL?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'OpenTelemetry SLO in Dynatrace: availability and latency in ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>OpenTelemetry SLO in Dynatrace: availability and latency in DQL</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 25 Nov 2026 &bull; ⏱️ 3 min read (696 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that your services send their traces over OTLP, but your reliability targets remain numbers on a wiki page.</li><li style='margin-bottom:6px;'>Goal of this tutorial: create two SLOs in Dynatrace from OpenTelemetry spans, one for availability and one for latency, written in DQL, then check their values.</li><li style='margin-bottom:6px;'>If you are still unsure which indicators to measure, first read how to choose SLIs: the practical method.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-115145"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-115145"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-115145"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="OpenTelemetry SLO in Dynatrace: availability and latency in DQL" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F10%2Fslo-opentelemetry-dynatrace-dql-photo-202610301252.webp" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-115145">Recent findings suggest that your services send their traces over OTLP, but your reliability targets remain numbers on a wiki page. Without an OpenTelemetry SLO wired to that data, nobody knows whether the service keeps its promise, or how much error budget is left before freezing releases.</p>
+<p>Goal of this tutorial: create two SLOs in Dynatrace from OpenTelemetry spans, one for availability and one for latency, written in DQL, then check their values. The content targets Dynatrace SaaS (Grail, Service-Level Objectives app). One section gives the alternative for Dynatrace Managed. <span style="font-size:13px;">(Related: <a href="birdwatching-expert-gives-final-verdict-on-gta-6s-birds-after-fin-115916.html" style="color:#2563eb; font-weight:600;">Birdwatching expert gives final verdict on GTA 6’s bird...</a>)</span></p>
+<p>If you are still unsure which indicators to measure, first read how to choose SLIs: the practical method.</p>
+<p>According to recent reports, both SLIs are « good events / valid events » ratios. This format makes the error budget readable: 0.5% of requests may fail over the window. <span style="font-size:13px;">(Related: <a href="breaking-influencer-screwed-after-ai-trick-to-get-flight-upgrades-115926.html" style="color:#2563eb; font-weight:600;">Breaking: Influencer “screwed” after AI trick to get fl...</a>)</span></p>
+<p>Before writing the SLI, check the available fields:.</p>
+<p>Critical lines: span.kind == "server" keeps only incoming requests, not outgoing calls. span.status_code carries the OpenTelemetry status. If your HTTP spans are not marked as errors on 5xx responses, filter on http.response.status_code &gt;= 500 instead. The exact field names in Grail are described in the Semantic Dictionary documentation: check them before going further.</p>
+<p>Sources indicate that the SLO app expects a time series that returns a percentage. So we turn the spans into series with makeTimeseries:.</p>
+<p>In the Service-Level Objectives app, create an SLO with a custom SLI, paste the query, then set the target to 99.5 and the window to 28 days. The expected shape (result field name, query timeframe handled by the app) may change: compare with a template offered by the app.</p>
+<p>We measure a ratio of fast requests rather than a percentile. A percentile does not add up over 28 days; a ratio does. Target: 95. Create this second SLO the same way.</p>
+<p>An SLO re-evaluates its query regularly. Querying every span of a high-traffic service is expensive in Grail reads. Two leaner options:.</p>
+<p>Example with an extracted metric (name to adapt to your pipeline):.</p>
+<p id="sec-mid-115145">See metrics and histograms with OpenPipeline for the extraction.</p>
+<p>Managed has neither Grail nor DQL. Ingested OpenTelemetry spans become service requests there: a classic SLO can then rely on a metric expression, for example (100)*(builtin:service.errors.server.successCount:splitBy())/(builtin:service.requestCount.server:splitBy()), filtered on the service. Check in the documentation for your version that the OpenTelemetry service does expose these metrics.</p>
+<p>In a recent development, with 99.5% over 28 days and 2 million requests in the window, the budget allows 10,000 failed requests. If 4,000 have already failed halfway through the window, 40% of the budget is consumed: the pace is healthy. If 8,000 have failed in one week, the team slows down releases and prioritises reliability. This rule, written in advance and agreed with product, avoids debates during the incident.</p>
+<p>According to recent reports, spans are enough to start. For a high-traffic service, a derived metric is cheaper and faster to evaluate.</p>
+<p>A 28-day window always contains four full weeks: each weekday weighs the same, which makes SLOs comparable from one period to the next.</p>
+<p>In a recent development, an empty SLI signals no traffic in the interval (division by zero). An SLI above 100 signals a badly filtered numerator. Go back to step 1 and compare the counters.</p>
+<p>Two DQL queries are enough to go from OpenTelemetry traces to availability and latency SLOs. Start with one critical service, validate the numbers in a Notebook, then add the burn rate alerts.</p>
+<p>Recommended next step: present these two SLOs at a team review, together with the release freeze rule tied to the error budget. An SLO that product shares and understands is worth more than a perfect SLO that only on-call looks at. Then review the thresholds after a month of real data.</p>
+<p>Keep the Notebook with your exploration queries: it becomes the reference when someone asks why the SLI dropped, and it shortens the next investigation.</p>
+<p>Sources indicate that span.observer is an independent community blog, not affiliated with Dynatrace LLC. Dynatrace is a trademark of Dynatrace LLC. SaaS features evolve quickly: check their availability in your environment and in the official documentation.</p>
+<p id="sec-end-115145">In a recent development, originally published on span.observer. French version: https://span.observer/fr/slo-opentelemetry-dynatrace-dql/.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/spanobserver/opentelemetry-slo-in-dynatrace-availability-and-latency-in-dql-3n7n" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-best-buy-brings-back-4k-blu-ray-discs-with-an-expandi-115811.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115811. Tech Report: Best Buy brings back 4K Blu-ray discs with an expanding collection, in-store availability [U]
+        </a>
+        
+        <a href="how-consumer-ai-companions-handle-context-windows-persistent-memo-115738.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115738. How Consumer AI Companions Handle Context Windows, Persistent Memory, and Voice Latency
+        </a>
+        
+        <a href="aws-weekly-roundup-amazon-bedrock-managed-agents-powered-by-opena-115538.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115538. AWS Weekly Roundup: Amazon Bedrock Managed Agents powered by OpenAI, Q3 service availability updates, Kiro workflows, and more (October 5, 2026)
+        </a>
+        
+        <a href="build-low-latency-multilingual-voice-agents-open-weights-full-dep-115445.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115445. Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

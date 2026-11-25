@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103735">llama.cpp server now ships with router mode, which lets you dynamically load, unload, and switch between multiple models without restarting.</p>
-<p>Reminder: llama.cpp server is a lightweight, OpenAI-compatible HTTP server for running LLMs locally.</p>
-<p>This feature was a popular request to bring Ollama-style model management to llama.cpp. It uses a multi-process architecture where each model runs in its own process, so if one model crashes, others remain unaffected. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
-<p>Start the server in router mode by not specifying a model:. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-104479.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>Reminder: llama.cpp server is a lightweight, OpenAI-compatible HTTP server for running LLMs locally. <span style="font-size:13px;">(Related: <a href="breaking-rockstar-shuts-down-discord-server-trying-to-make-gta-6--115919.html" style="color:#2563eb; font-weight:600;">Breaking: Rockstar shuts down Discord server trying to ...</a>)</span></p>
+<p>This feature was a popular request to bring Ollama-style model management to llama.cpp. It uses a multi-process architecture where each model runs in its own process, so if one model crashes, others remain unaffected.</p>
+<p>Start the server in router mode by not specifying a model:. <span style="font-size:13px;">(Related: <a href="breaking-discord-can-now-automatically-save-gaming-clips-when-you-115928.html" style="color:#2563eb; font-weight:600;">Breaking: Discord can now automatically save gaming cli...</a>)</span></p>
 <p>Industry observers note that this auto-discovers models from your llama.cpp cache (LLAMA_CACHE or ~/.cache/llama.cpp). If you've previously downloaded models via llama-server -hf user/model, they'll be available automatically.</p>
 <p>You can also point to a local directory of GGUF files:.</p>
 <p>In a recent development, on the first request, the server automatically loads the model into memory (loading time depends on model size). Subsequent requests to the same model are instant since it's already loaded.</p>
@@ -200,20 +200,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-serving-a-local-llm-to-several-users-ollama-lm-stud-115725.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115725. Industry News: Serving a Local LLM to Several Users: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
+        </a>
+        
+        <a href="transformers-now-runs-llamacpp-quants-115366.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115366. Transformers now runs llama.cpp quants
+        </a>
+        
+        <a href="llamacpp-v100-a-stronger-foundation-for-the-local-ai-ecosystem-115175.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115175. llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
+        </a>
+        
         <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-103690.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #103690. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
-        </a>
-        
-        <a href="serving-a-local-llm-to-several-people-ollama-lm-studio-llamacpp-a-92806.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92806. Serving a Local LLM to Several People: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
-        </a>
-        
-        <a href="transformers-now-runs-llamacpp-quants-92413.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92413. Transformers now runs llama.cpp quants
-        </a>
-        
-        <a href="industry-news-llamacpp-v100-a-stronger-foundation-for-the-local-a-92242.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92242. Industry News: llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
         </a>
         
     </div>

@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103555">Voice agent prompts are code. They control what the agent claims, when it moves between states, and what it refuses to do. But prompt changes rarely get the testing code changes get. Someone edits a system prompt, makes a few test calls by hand, and ships it. If it broke something, you usually find out from a customer.</p>
-<p>Earlier posts covered running voicetest in GitHub Actions and how the LLM judges score. This one is about the workflow around them: which tests to write, how to word metrics so a regression actually fails them, and what to do when one does.</p>
-<p>A regression is a change that breaks behavior that used to work. In voice agents, the common ones are:.</p>
+<p>Earlier posts covered running voicetest in GitHub Actions and how the LLM judges score. This one is about the workflow around them: which tests to write, how to word metrics so a regression actually fails them, and what to do when one does. <span style="font-size:13px;">(Related: <a href="mcdonalds-tests-major-chicken-menu-overhaul-with-five-hand-breade-115910.html" style="color:#2563eb; font-weight:600;">McDonald’s tests major chicken menu overhaul with five ...</a>)</span></p>
+<p>A regression is a change that breaks behavior that used to work. In voice agents, the common ones are:. <span style="font-size:13px;">(Related: <a href="this-newly-introduced-chip-survives-1300f-700c-and-could-change-a-115938.html" style="color:#2563eb; font-weight:600;">This newly introduced chip survives 1300°F (700°C) and ...</a>)</span></p>
 <p>None of these show up in a code review of the prompt diff, and voice agents don't produce the same conversation twice, so you can't assert on exact output. You need tests that check intent.</p>
-<p>In a recent development, the most valuable regression tests are the ones written from real failures. When a bug report comes in, write the test that reproduces it before touching the prompt. Then fix the prompt until the test passes. The test stays in the suite, and that bug can't come back unnoticed. <span style="font-size:13px;">(Related: <a href="predicting-and-detecting-failures-how-azure-strengthens-reliabili-104484.html" style="color:#2563eb; font-weight:600;">Predicting and detecting failures: How Azure strengthen...</a>)</span></p>
+<p>In a recent development, the most valuable regression tests are the ones written from real failures. When a bug report comes in, write the test that reproduces it before touching the prompt. Then fix the prompt until the test passes. The test stays in the suite, and that bug can't come back unnoticed.</p>
 <p>An LLM test describes the caller and lists what the agent must do:.</p>
-<p>Industry observers note that for things that must never vary, use a rule test. It's deterministic, needs no LLM, and costs nothing to run:. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
+<p>Industry observers note that for things that must never vary, use a rule test. It's deterministic, needs no LLM, and costs nothing to run:.</p>
 <p>Rule tests also support includes for required phrases, such as a recording disclosure, and patterns for regexes, such as a confirmation code format.</p>
 <p>A metric that passes no matter what the agent does is worse than no metric, because it makes the suite look healthier than it is. Weak metrics share a few habits:.</p>
 <p>Industry observers note that strong metrics name something observable in the transcript. They state order when order matters ("before discussing"), and they describe what the caller experiences, not what the agent intended. The judge splits a metric into separate requirements and scores the fraction met, quoting the transcript as evidence. A metric with three clear requirements produces a score you can act on. A vague one produces a confident 0.9.</p>
@@ -196,20 +196,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-how-to-proposal-retries-for-multi-agent-workflows-before-92340.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92340. Breaking: How to Proposal Retries for Multi-Agent Workflows Before You Write Code
+        <a href="how-to-plan-retries-for-multi-agent-workflows-before-you-write-co-115246.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115246. How to Plan Retries for Multi-Agent Workflows Before You Write Code
         </a>
         
-        <a href="what-makes-a-dialog-agent-useful-104319.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104319. What Makes a Dialog Agent Useful?
+        <a href="tech-report-an-indic-voice-agent-with-cuga-115129.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115129. Tech Report: An Indic Voice Agent with CUGA
         </a>
         
-        <a href="introducing-the-fresh-microsoft-iq-putting-your-organizations-int-104129.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104129. Introducing the fresh Microsoft IQ: Putting your organization’s intelligence to work in every agent
+        <a href="google-files-patent-for-ai-generated-tv-channel-that-uses-your-fa-115895.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115895. Google files patent for AI-generated TV channel that uses your face and voice for shows
         </a>
         
-        <a href="jack-of-all-trades-master-of-some-a-multi-purpose-transformer-age-104112.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104112. Jack of All Trades, Master of Some, a Multi-Purpose Transformer Agent
+        <a href="latest-update-f1-star-max-verstappen-played-40-hours-of-gta-6-bef-115822.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115822. Latest Update: F1 star Max Verstappen played 40 hours of GTA 6 before winning Las Vegas grand prix
         </a>
         
     </div>

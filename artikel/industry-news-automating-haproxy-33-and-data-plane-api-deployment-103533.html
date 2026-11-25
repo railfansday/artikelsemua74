@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103533">Sources indicate that HAProxy is one of the most powerful open-source load balancers, widely used for its reliability, security, and performance. The Data Plane API adds a REST API to manage its configuration. Installing both by hand means a repository, a pinned package, a binary from GitHub, two config files and a systemd unit, on every load balancer.</p>
-<p>This post walks through one Ansible playbook that does all of that, from the official HAProxy repositories, and gives the same result on every run.</p>
-<p>The flow: add the repository → install HAProxy → write haproxy.cfg (first run only) → install the API binary → write its config → start the service.</p>
+<p>This post walks through one Ansible playbook that does all of that, from the official HAProxy repositories, and gives the same result on every run. <span style="font-size:13px;">(Related: <a href="birdwatching-expert-gives-final-verdict-on-gta-6s-birds-after-fin-115916.html" style="color:#2563eb; font-weight:600;">Birdwatching expert gives final verdict on GTA 6’s bird...</a>)</span></p>
+<p>The flow: add the repository → install HAProxy → write haproxy.cfg (first run only) → install the API binary → write its config → start the service. <span style="font-size:13px;">(Related: <a href="breaking-discord-can-now-automatically-save-gaming-clips-when-you-115928.html" style="color:#2563eb; font-weight:600;">Breaking: Discord can now automatically save gaming cli...</a>)</span></p>
 <p>Before running this playbook, ensure that:.</p>
 <p>HAProxy has two kinds of stable branches:.</p>
 <p>This playbook uses 3.3, the newest branch the PPA builds for Ubuntu 24.04 (3.4 LTS is only built for Ubuntu 26.04 and Debian 13). For a long-lived Ubuntu 24.04 install, set haproxy_version: "3.2" to stay on an LTS branch.</p>
@@ -160,7 +160,7 @@
 <p>The playbook writes this file only once; after that the Data Plane API owns haproxy.cfg:.</p>
 <p>The Data Plane API authenticates against the dataplaneapi userlist in haproxy.cfg. It also rewrites this file in its own normalized form every time it starts, so the template is written in exactly that form; otherwise every playbook run would report it as changed.</p>
 <p>The playbook from this post, split into roles, plus Terraform code for the machine, is on GitHub:
-pderuiter/blog-haproxy-ansible. It creates an Ubuntu 24.04 VM and installs HAProxy and the Data Plane API exactly as above; set the API password in the vault and run ansible-playbook site.yml. <span style="font-size:13px;">(Related: <a href="latest-update-the-age-of-machine-learning-as-code-has-arrived-104452.html" style="color:#2563eb; font-weight:600;">Latest Update: The Age of Machine Learning As Code Has ...</a>)</span></p>
+pderuiter/blog-haproxy-ansible. It creates an Ubuntu 24.04 VM and installs HAProxy and the Data Plane API exactly as above; set the API password in the vault and run ansible-playbook site.yml.</p>
 <p>One playbook installs HAProxy and the Data Plane API the same way on every machine, and a version bump is a variable change.</p>
 <p>Next: use the API to manage backends (Data Plane API post) or to fill them from Consul (Consul post).</p>
 <p id="sec-end-103533">Originally published on A DevOps Blog.</p>
@@ -187,20 +187,20 @@ pderuiter/blog-haproxy-ansible. It creates an Ubuntu 24.04 VM and installs HAPro
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="latest-update-how-to-get-a-youtube-api-key-and-use-the-data-api-2-103858.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103858. Latest Update: How to Get a YouTube API Key and Use the Data API (2026)
+        <a href="breaking-every-industry-gave-ai-their-data-115183.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115183. Breaking: Every Industry Gave AI Their Data
         </a>
         
-        <a href="googles-branded-api-data-cdn-advice-ask-maps-calls-seo-pulse-via--101280.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #101280. Google’s Branded API Data, CDN Advice & Ask Maps Calls – SEO Pulse via @sejournal, @MattGSouthern
+        <a href="googles-branded-api-data-cdn-advice-ask-maps-calls-seo-pulse-via--112708.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #112708. Google’s Branded API Data, CDN Advice & Ask Maps Calls – SEO Pulse via @sejournal, @MattGSouthern
         </a>
         
-        <a href="industry-news-the-hidden-cost-of-fragmented-student-data-in-k12-s-101196.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #101196. Industry News: The hidden cost of fragmented student data in K–12 schools
+        <a href="industry-news-elon-musks-spacex-gets-fcc-approval-to-launch-ai-da-110074.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #110074. Industry News: Elon Musk’s SpaceX Gets FCC Approval to Launch AI Data Centers in Space
         </a>
         
-        <a href="industry-news-they-should-be-subsidizing-the-ratepayers-nc-govern-99469.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #99469. Industry News: ‘They should be subsidizing the ratepayers’: NC governor claims data center subsidies should be rolled back
+        <a href="industry-news-10-year-treasury-yield-slides-despite-sticky-inflat-107947.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #107947. Industry News: 10-year Treasury yield slides despite sticky inflation data as investors buy bonds for protection
         </a>
         
     </div>

@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103570">Your company already keeps its HR policies in a database. An employee types: "Can I carry over my unused holidays to next year?" The answer is sitting right there in a table, and the search box still returns nothing useful.</p>
-<p>Recent findings suggest that this post explains why that happens, what RAG (Retrieval-Augmented Generation) adds on top of your database, and when you don't need it at all. You'll see a small before-and-after in Python. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-104486.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>A database is a very fast, very literal librarian. Ask for the book with ID 4021 and you get it instantly. Ask for "rows where the text contains carry over" and it checks every row for those exact letters. If the policy says "rolled forward" instead, the librarian shrugs. It isn't being lazy; it was never built to understand language. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
+<p>Recent findings suggest that this post explains why that happens, what RAG (Retrieval-Augmented Generation) adds on top of your database, and when you don't need it at all. You'll see a small before-and-after in Python.</p>
+<p>A database is a very fast, very literal librarian. Ask for the book with ID 4021 and you get it instantly. Ask for "rows where the text contains carry over" and it checks every row for those exact letters. If the policy says "rolled forward" instead, the librarian shrugs. It isn't being lazy; it was never built to understand language. <span style="font-size:13px;">(Related: <a href="latest-update-this-ai-knew-the-answers-but-didnt-understand-the-q-115927.html" style="color:#2563eb; font-weight:600;">Latest Update: This AI knew the answers but didn’t unde...</a>)</span></p>
 <p>Here is our running example. The table holds four policy lines:.</p>
-<p>The employee says "carry over" and "holidays". The policy says "rolled forward" and "annual leave". Same meaning, zero shared words. Worse, the word "holidays" does appear, but in the wrong row (public holidays).</p>
+<p>The employee says "carry over" and "holidays". The policy says "rolled forward" and "annual leave". Same meaning, zero shared words. Worse, the word "holidays" does appear, but in the wrong row (public holidays). <span style="font-size:13px;">(Related: <a href="latest-update-innocent-pizzeria-flooded-with-death-threats-after--115906.html" style="color:#2563eb; font-weight:600;">Latest Update: Innocent pizzeria flooded with death thr...</a>)</span></p>
 <p>It has been revealed that you might say: "Postgres has full-text search." It helps. Postgres can reduce words to a base form, so rats matches rat, and it can rank results by relevance. But matching "carry over" to "rolled forward" needs a synonym dictionary that someone writes and maintains by hand. Nobody can list every way a person might phrase a question.</p>
 <p>That gap is what RAG fills. Three terms first:.</p>
 <p>RAG = Retrieve the most relevant text by meaning, Augment (add) it to the question, and let the LLM Generate an answer from it. The idea was introduced in a 2020 paper by Lewis and colleagues at Facebook AI Research. Their main point still holds: a model's built-in knowledge is hard to upgrade and hard to check, while text you fetch from a store can be updated any time and shown as evidence.</p>
@@ -195,20 +195,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="bert-101-state-of-the-art-nlp-model-explained-104431.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104431. BERT 101 - State Of The Art NLP Model Explained
+        <a href="ai-lets-chemists-design-molecules-by-simply-describing-them-115925.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115925. AI lets chemists design molecules by simply describing them
         </a>
         
-        <a href="latest-update-mixture-of-experts-explained-104178.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104178. Latest Update: Mixture of Experts Explained
+        <a href="us-treasury-information-chief-spent-three-days-vibecoding-civiliz-115693.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115693. US Treasury information chief spent three days vibecoding Civilization game clone amidst Treasury database hack
         </a>
         
-        <a href="vision-language-models-explained-104120.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104120. Vision Language Models Explained
+        <a href="nyt-connections-answers-explained-for-thursday-november-26-115692.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115692. NYT 'Connections’ Answers Explained For Thursday, November 26
         </a>
         
-        <a href="industry-news-building-cost-efficient-enterprise-rag-applications-104105.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104105. Industry News: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon
+        <a href="sizing-gpu-memory-for-a-rag-service-kv-cache-context-and-concurre-115687.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115687. Sizing GPU Memory for a RAG Service: KV Cache, Context and Concurrency
         </a>
         
     </div>

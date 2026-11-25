@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103767">We boosted load_dataset('dataset', streaming=True), streaming datasets without downloading them with one line of code!</p>
-<p>Start training on multi-TB datasets immediately, without complex setups, downloading, no "disk out of space", or 429 “stop requesting!” errors.It's super fast! Outrunning our local SSDs when training on 64xH100 with 256 workers downloading data. We've improved streaming to have 100x fewer requests, → 10× faster data resolution → 2x sample/sec, → 0 worker crashes at 256 concurrent workers. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-104483.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
-<p>Loading data, especially at the terabyte scale, is a major pain in any machine learning workflow. We suffered this while training SmolLM3, at one point we had to wait 3 hours before each run to download enough data. <span style="font-size:13px;">(Related: <a href="latest-update-distributed-training-train-bartt5-for-summarization-104467.html" style="color:#2563eb; font-weight:600;">Latest Update: Distributed Training: Train BART/T5 for ...</a>)</span></p>
+<p>Start training on multi-TB datasets immediately, without complex setups, downloading, no "disk out of space", or 429 “stop requesting!” errors.It's super fast! Outrunning our local SSDs when training on 64xH100 with 256 workers downloading data. We've improved streaming to have 100x fewer requests, → 10× faster data resolution → 2x sample/sec, → 0 worker crashes at 256 concurrent workers. <span style="font-size:13px;">(Related: <a href="tech-report-ai-swarms-could-hijack-democracy-without-anyone-notic-115929.html" style="color:#2563eb; font-weight:600;">Tech Report: AI swarms could hijack democracy without a...</a>)</span></p>
+<p>Loading data, especially at the terabyte scale, is a major pain in any machine learning workflow. We suffered this while training SmolLM3, at one point we had to wait 3 hours before each run to download enough data. <span style="font-size:13px;">(Related: <a href="mcdonalds-tests-major-chicken-menu-overhaul-with-five-hand-breade-115910.html" style="color:#2563eb; font-weight:600;">McDonald’s tests major chicken menu overhaul with five ...</a>)</span></p>
 <p>Recent findings suggest that streaming has always been possible in the datasets library, but large scale training with massive datasets remained a challenge. That changes today 🔥. We spent a few months improving the backend, focusing on streaming datasets to make it faster and more efficient.</p>
 <p>Industry observers note that first things first: our changes are backwards compatible. You can still stream any dataset from the Hub with the same simple streaming=True flag. It's as easy as ever. 🚀.</p>
 <p>Thousands of AI developers around the world use datasets daily; they should just get improved performance with zero extra work.</p>
@@ -204,20 +204,20 @@ To improve throughput during streaming itself, we've introduced two fresh featur
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-hosting-your-models-and-datasets-on-hugging-face-spaces--104454.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104454. Breaking: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        <a href="google-meet-unlocks-1080p-video-streaming-for-all-accounts-on-web-115744.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115744. Google Meet unlocks 1080p video streaming for all accounts on web
         </a>
         
-        <a href="introducing-the-data-measurements-tool-an-interactive-tool-for-lo-104446.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104446. Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        <a href="disney-and-hulu-drops-to-499month-for-a-year-as-black-fridays-bes-115675.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115675. Disney+ and Hulu drops to $4.99/month for a year as Black Friday’s best streaming deals go live
         </a>
         
-        <a href="breaking-image-search-with-datasets-104429.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104429. Breaking: Image search with 🤗 datasets
+        <a href="distributed-llm-training-across-metros-streaming-diloco-in-maxtex-115591.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115591. Distributed LLM Training Across Metros: Streaming DiLoCo in MaxText
         </a>
         
-        <a href="efficient-table-pre-training-without-real-data-an-introduction-to-104403.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104403. Efficient Table Pre-training without Real Data: An Introduction to TAPEX
+        <a href="government-may-apply-tv-license-fee-to-streaming-services-to-fund-115428.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115428. Government may apply TV license fee to streaming services to fund the BBC
         </a>
         
     </div>

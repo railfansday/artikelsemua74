@@ -150,14 +150,14 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103724">In a recent development, open Responses is a latest and open inference standard. Initiated by OpenAI, built by the open source AI community, and backed by the Hugging Face ecosystem, Open Responses is based on the Responses API and is designed for the future of Agents. In this blog post, we’ll look at how Open Responses works and why the open source community should use Open Responses.</p>
-<p>The era of the chatbot is long gone, and agents dominate inference workloads. Developers are shifting toward autonomous systems that reason, plan, and act over long-time horizons. Despite this shift, much of the ecosystem still uses the Chat Completion format, which was designed for turn-based conversations and falls short for agentic use cases. The Responses format was designed to address these limitations, but it is closed and not as widely adopted. The Chat Completion format is still the de facto standard despite the alternatives. <span style="font-size:13px;">(Related: <a href="predicting-and-detecting-failures-how-azure-strengthens-reliabili-104484.html" style="color:#2563eb; font-weight:600;">Predicting and detecting failures: How Azure strengthen...</a>)</span></p>
-<p>According to recent reports, this mismatch between the agentic workflow requirements and entrenched interfaces motivates the need for an open inference standard. Over the coming months, we will collaborate with the community and inference providers to implement and adapt Open Responses to a shared format, practically capable of replacing chat completions. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-104478.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
+<p>The era of the chatbot is long gone, and agents dominate inference workloads. Developers are shifting toward autonomous systems that reason, plan, and act over long-time horizons. Despite this shift, much of the ecosystem still uses the Chat Completion format, which was designed for turn-based conversations and falls short for agentic use cases. The Responses format was designed to address these limitations, but it is closed and not as widely adopted. The Chat Completion format is still the de facto standard despite the alternatives. <span style="font-size:13px;">(Related: <a href="latest-update-trump-pushes-huangs-reinstatement-despite-voters-de-115940.html" style="color:#2563eb; font-weight:600;">Latest Update: Trump pushes Huang’s reinstatement despi...</a>)</span></p>
+<p>According to recent reports, this mismatch between the agentic workflow requirements and entrenched interfaces motivates the need for an open inference standard. Over the coming months, we will collaborate with the community and inference providers to implement and adapt Open Responses to a shared format, practically capable of replacing chat completions.</p>
 <p>Open Responses builds on the direction OpenAI has set with their  Responses API  released in March 2025, which superseded the existing Completion and Assistants APIs with a consistent way to:.</p>
 <p>Open Responses extends and open-sources the Responses API,  making it more accessible for builders and routing providers to interoperate and collaborate on shared interests.</p>
 <p>We’ll briefly explore the core changes that impact most community members. If you want to deep dive into the specification, check out the Open Responses documentation.</p>
 <p>Client requests to Open Responses are similar to the existing Responses API. Below we demonstrate a request to the Open Responses API using curl. We're calling a proxy endpoint that routes to Inference Providers using the Open Responses API schema.</p>
 <p>It has been revealed that clients that already support the Responses API can migrate to Open Responses with relatively little effort. The main
-changes involve how reasoning content is exposed:.</p>
+changes involve how reasoning content is exposed:. <span style="font-size:13px;">(Related: <a href="a-classic-brain-test-exposed-ais-biggest-weakness-115909.html" style="color:#2563eb; font-weight:600;">A classic brain test exposed AI's biggest weakness...</a>)</span></p>
 <p>OpenAI models used to only expose summary and encrypted_content. With Open Responses, providers may expose their raw reasoning via the API. Clients migrating from providers that previously returned only summaries and encrypted content will now have the
 opportunity to receive and handle raw reasoning streams when supported by their chosen provider.</p>
 <p>It has been revealed that for Model Providers, implementing the changes for Open Responses should be straightforward if they already adhere to the Responses API specification. For Routers, there is now the opportunity to standardize on a consistent endpoint and support configuration options for customization where needed.</p>
@@ -212,20 +212,20 @@ opportunity to receive and handle raw reasoning streams when supported by their 
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-what-ai-gets-wrong-about-the-front-end-and-why-you-st-103784.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103784. Tech Report: What AI Gets Wrong About the Front End, and Why You Still Need to Know
+        <a href="what-is-blockchain-everything-you-need-to-know-2022-115148.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115148. What is Blockchain: Everything You Need to Know (2022)
         </a>
         
-        <a href="should-i-exercise-with-a-phlegmy-cough-what-you-need-to-know-103022.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103022. Should I Exercise with a Phlegmy Cough? What You Need to Know
+        <a href="latest-update-should-i-exercise-with-a-phlegmy-cough-what-you-nee-114545.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #114545. Latest Update: Should I Exercise with a Phlegmy Cough? What You Need to Know
         </a>
         
-        <a href="latest-update-does-creatine-increase-dht-what-you-need-to-know-103019.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103019. Latest Update: Does Creatine Increase DHT? What You Need to Know
+        <a href="does-creatine-increase-dht-what-you-need-to-know-114542.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #114542. Does Creatine Increase DHT? What You Need to Know
         </a>
         
-        <a href="industry-news-wildfires-closed-189-miles-of-the-pacific-crest-tra-102299.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #102299. Industry News: Wildfires Closed 189 Miles of the Pacific Crest Trail in 2026: What 2027 Hikers Need To Know
+        <a href="essentials-you-need-to-know-about-internet-safety-for-kids-113535.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #113535. Essentials You Need To Know About Internet Safety For Kids
         </a>
         
     </div>

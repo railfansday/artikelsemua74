@@ -1,86 +1,86 @@
 {
-  "generatedAt": "2026-11-25T10:46:39.904099",
-  "totalArticles": 12490,
+  "generatedAt": "2026-11-25T22:13:24.577855",
+  "totalArticles": 12454,
   "categoryBreakdown": {
-    "General": 10134,
-    "AI & Tech": 981,
-    "Hardware & Chips": 237,
-    "Business & Policy": 566,
+    "General": 10180,
+    "Business & Policy": 537,
+    "AI & Tech": 971,
+    "Hardware & Chips": 212,
     "Gadgets": 336,
-    "EV & Auto": 236
+    "EV & Auto": 218
   },
   "topSources": {
-    "Hugging Face": 915,
-    "Co": 833,
-    "Sciencedaily": 210,
+    "Hugging Face": 917,
+    "Co": 811,
+    "Sciencedaily": 209,
     "Eschoolnews": 200,
     "Cbssports": 170,
     "Electrek": 149,
-    "Yahoo": 147,
     "Dw": 144,
-    "Dailymail": 136,
-    "Realworkfromanywhere": 129
+    "Yahoo": 140,
+    "Dailymail": 138,
+    "Realworkfromanywhere": 120
   },
   "latestHeadlines": [
     {
-      "id": 104487,
-      "title": "Industry News: How to train a new language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html",
+      "id": 115941,
+      "title": "Industry News: Texas’s outgoing GOP attorney general drops multiple culture war lawsuits",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/industry-news-texass-outgoing-gop-attorney-general-drops-multiple-115941.html",
       "category": "General"
     },
     {
-      "id": 104486,
-      "title": "How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-104486.html",
+      "id": 115940,
+      "title": "Latest Update: Trump pushes Huang’s reinstatement despite voters’ demand for accountability",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/latest-update-trump-pushes-huangs-reinstatement-despite-voters-de-115940.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 115939,
+      "title": "Sen. Deb Fischer’s husband dies",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/sen-deb-fischers-husband-dies-115939.html",
       "category": "General"
     },
     {
-      "id": 104485,
-      "title": "The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/the-reformer-pushing-the-limits-of-language-modeling-104485.html",
+      "id": 115938,
+      "title": "This newly introduced chip survives 1300°F (700°C) and could change AI forever",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-newly-introduced-chip-survives-1300f-700c-and-could-change-a-115938.html",
+      "category": "AI & Tech"
+    },
+    {
+      "id": 115937,
+      "title": "This fresh chip could slash data center energy waste",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-fresh-chip-could-slash-data-center-energy-waste-115937.html",
+      "category": "Hardware & Chips"
+    },
+    {
+      "id": 115936,
+      "title": "“Giant superatoms” could finally solve quantum computing’s biggest problem",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/giant-superatoms-could-finally-solve-quantum-computings-biggest-p-115936.html",
       "category": "General"
     },
     {
-      "id": 104484,
-      "title": "Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/predicting-and-detecting-failures-how-azure-strengthens-reliabili-104484.html",
-      "category": "General"
+      "id": 115935,
+      "title": "This simple change stops robot swarms from getting stuck",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-simple-change-stops-robot-swarms-from-getting-stuck-115935.html",
+      "category": "AI & Tech"
     },
     {
-      "id": 104483,
-      "title": "Breaking: Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-104483.html",
-      "category": "General"
+      "id": 115934,
+      "title": "Quantum AI just got shockingly good at predicting chaos",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/quantum-ai-just-got-shockingly-good-at-predicting-chaos-115934.html",
+      "category": "AI & Tech"
     },
     {
-      "id": 104482,
-      "title": "Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/transformer-based-encoder-decoder-models-104482.html",
-      "category": "General"
+      "id": 115933,
+      "title": "Tech Report: Think AI \"knows\" what it’s doing? Scientists say think again",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-think-ai-knows-what-its-doing-scientists-say-think-ag-115933.html",
+      "category": "AI & Tech"
     },
     {
-      "id": 104481,
-      "title": "Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/hyperparameter-search-with-transformers-and-ray-tune-104481.html",
-      "category": "General"
-    },
-    {
-      "id": 104480,
-      "title": "Porting fairseq wmt19 translation system to transformers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/porting-fairseq-wmt19-translation-system-to-transformers-104480.html",
-      "category": "General"
-    },
-    {
-      "id": 104479,
-      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-104479.html",
-      "category": "General"
-    },
-    {
-      "id": 104478,
-      "title": "How we sped up transformer inference 100x for 🤗 API customers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-104478.html",
-      "category": "General"
+      "id": 115932,
+      "title": "New York hosts spy lookalike contest inspired by Nvidia CEO controversy",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/new-york-hosts-spy-lookalike-contest-inspired-by-nvidia-ceo-contr-115932.html",
+      "category": "Hardware & Chips"
     }
   ]
 }

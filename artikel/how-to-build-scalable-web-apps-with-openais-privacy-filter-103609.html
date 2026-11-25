@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103609">OpenAI released Privacy Filter on the Hub this week: an open-source personally-identifiable information (PII) detector that labels text across eight categories in a single forward pass over a 128k context. Model card. We spent a few hours building with it and landed on three apps that each reveals a different slice of what it can do.</p>
-<p>All three are built on gradio.Server, which lets you pair custom HTML/JS frontends with Gradio's queueing, ZeroGPU allocation, and gradio_client SDK. In all these apps, gradio.Server plays the same backend role, and that consistency is exactly what makes it really powerful. <span style="font-size:13px;">(Related: <a href="using-mixing-hugging-face-models-with-gradio-20-104464.html" style="color:#2563eb; font-weight:600;">Using &amp; Mixing Hugging Face Models with Gradio 2.0...</a>)</span></p>
-<p>Privacy Filter is a 1.5B-parameter model with 50M active parameters, permissively licensed under Apache 2.0. PII categories are private_person, private_address, private_email, private_phone, private_url, private_date, account_number, secret. Context is 128,000 tokens. Achieves state-of-the-art performance on the PII-Masking-300k benchmark. Full numbers and methodology are in the official release blog. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
+<p>All three are built on gradio.Server, which lets you pair custom HTML/JS frontends with Gradio's queueing, ZeroGPU allocation, and gradio_client SDK. In all these apps, gradio.Server plays the same backend role, and that consistency is exactly what makes it really powerful. <span style="font-size:13px;">(Related: <a href="breaking-influencer-screwed-after-ai-trick-to-get-flight-upgrades-115926.html" style="color:#2563eb; font-weight:600;">Breaking: Influencer “screwed” after AI trick to get fl...</a>)</span></p>
+<p>Privacy Filter is a 1.5B-parameter model with 50M active parameters, permissively licensed under Apache 2.0. PII categories are private_person, private_address, private_email, private_phone, private_url, private_date, account_number, secret. Context is 128,000 tokens. Achieves state-of-the-art performance on the PII-Masking-300k benchmark. Full numbers and methodology are in the official release blog.</p>
 <p>Try it at ysharma/OPF-Document-PII-Explorer.</p>
-<p>Sources indicate that user problem. You want to read a PII-heavy document (a contract, a resume, an exported chat log) with every detected span highlighted by category, a filter in the sidebar, and a summary dashboard up top. The reading experience should feel like a normal document, not a form.</p>
+<p>Sources indicate that user problem. You want to read a PII-heavy document (a contract, a resume, an exported chat log) with every detected span highlighted by category, a filter in the sidebar, and a summary dashboard up top. The reading experience should feel like a normal document, not a form. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-115936.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>Sources indicate that what Privacy Filter does here. The whole file goes through in a single 128k-context forward pass, so there's no chunking, no stitching, and span offsets line up directly with the rendered text. BIOES decoding keeps span boundaries clean through long ambiguous runs.</p>
 <p>What gr.Server does here. You could wire this up in Blocks with gr.HighlightedText and a sidebar, and it would work. The reading experience we wanted (serif body, category filters that toggle CSS classes client-side instead of re-running the model, a summary dashboard that doesn't force a page re-render) was easier to hand-author than to compose. gr.Server lets us serve the reader view as a single HTML file and expose the model behind one queued endpoint:.</p>
 <p>Note the decorator: @server.api(name="analyze_document"), not a plain @server.post. That's the piece that plugs the handler into Gradio's queue, so concurrent uploads are serialized, @spaces.GPU composes correctly on ZeroGPU, and the same endpoint is reachable from both the browser and gradio_client with no duplicated code. The browser calls it with the Gradio JS client:.</p>
@@ -196,20 +196,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="build-full-stack-android-apps-with-gemini-in-google-ai-studio-115608.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115608. Build full-stack Android apps with Gemini in Google AI Studio
+        </a>
+        
+        <a href="tech-report-canadas-upcoming-childrens-privacy-code-sets-ground-r-113586.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #113586. Tech Report: Canada’s Upcoming Children’s Privacy Code Sets Ground Rules For Apps
+        </a>
+        
+        <a href="bypassing-ios-safaris-60-fps-limit-to-build-web-applications-that-108514.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #108514. Bypassing iOS Safari's 60 FPS Limit to Build Web Applications That Feel Native
+        </a>
+        
         <a href="why-your-ai-agent-cant-read-the-web-and-how-to-build-a-fetch-laye-103867.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #103867. Why Your AI Agent Can't Read the Web (and How to Build a Fetch Layer That Can)
-        </a>
-        
-        <a href="how-to-build-a-unified-lead-tracking-pipeline-for-web-forms-and-p-103662.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103662. How to Build a Unified Lead Tracking Pipeline for Web Forms and Phone Calls
-        </a>
-        
-        <a href="canadas-new-childrens-privacy-code-sets-ground-rules-for-apps-102014.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #102014. Canada’s New Children’s Privacy Code Sets Ground Rules For Apps
-        </a>
-        
-        <a href="build-full-stack-android-apps-with-gemini-in-google-ai-studio-92672.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92672. Build full-stack Android apps with Gemini in Google AI Studio
         </a>
         
     </div>

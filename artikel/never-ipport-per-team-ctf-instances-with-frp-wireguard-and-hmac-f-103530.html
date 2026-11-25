@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Never IP:port — per-team CTF instances with frp, WireGuard and HMAC flags</title>
+    <meta name="description" content="Picture a CTF where every web or pwn challenge is published as public-ip:port. Two teammates launch the same challenge and step on each other's box. A play">
+    <meta name="keywords" content="team, challenge, player, flag, instance, port, november, never">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/never-ipport-per-team-ctf-instances-with-frp-wireguard-and-hmac-f-103530.html">
+    
+    <meta property="og:title" content="Never IP:port — per-team CTF instances with frp, WireGuard and HMAC flags">
+    <meta property="og:description" content="Picture a CTF where every web or pwn challenge is published as public-ip:port. Two teammates launch the same challenge and step on each other's box. A play">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fctf.tg%2Fimages%2Farticles%2Fnctf26-03.png%3Fv%3D2">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/never-ipport-per-team-ctf-instances-with-frp-wireguard-and-hmac-f-103530.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Never IP:port — per-team CTF instances with frp, WireGuard and HMAC flags">
+    <meta name="twitter:description" content="Picture a CTF where every web or pwn challenge is published as public-ip:port. Two teammates launch the same challenge and step on each other's box. A play">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fctf.tg%2Fimages%2Farticles%2Fnctf26-03.png%3Fv%3D2">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Never IP:port — per-team CTF instances with frp, WireGuard and HMAC flags", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fctf.tg%2Fimages%2Farticles%2Fnctf26-03.png%3Fv%3D2"], "datePublished": "2026-11-25T08:00:03", "dateModified": "2026-11-25T08:08:45.964408", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/never-ipport-per-team-ctf-instances-with-frp-wireguard-and-hmac-f-103530.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Never IP:port — per-team CTF instances with frp, WireGuard and HMAC flags?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Never IP:port — per-team CTF instances with frp, WireGuard a' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Never IP:port — per-team CTF instances with frp, WireGuard and HMAC flags</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 25 Nov 2026 &bull; ⏱️ 8 min read (1564 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Picture a CTF where every web or pwn challenge is published as public-ip:port.</li><li style='margin-bottom:6px;'>Sources indicate that that was the model we started from.</li><li style='margin-bottom:6px;'>Recent findings suggest that NCTF26 is the 4th National CTF of Togo, organized by CERT.tg: an online qualifier (6 November 19:00 to 7 November 23:59 UTC), then a 24-hour on-site final in Lomé (19 November 11:40 to 20 November 11:40 UTC) for 10 teams and 47 players.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-103530"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-103530"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-103530"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Never IP:port — per-team CTF instances with frp, WireGuard and HMAC flags" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fctf.tg%2Fimages%2Farticles%2Fnctf26-03.png%3Fv%3D2" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-103530">Picture a CTF where every web or pwn challenge is published as public-ip:port. Two teammates launch the same challenge and step on each other's box. A player runs a port scan against the platform and lands on another team's instance. And on boot2root machines, where finding the services is the challenge, you have just handed out the answer in the connection string.</p>
+<p>Sources indicate that that was the model we started from. This article is about the one we ended up running instead: one container per player, one flag per team, and a rule that no instance is ever reachable as IP:port. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
+<p>Recent findings suggest that NCTF26 is the 4th National CTF of Togo, organized by CERT.tg: an online qualifier (6 November 19:00 to 7 November 23:59 UTC), then a 24-hour on-site final in Lomé (19 November 11:40 to 20 November 11:40 UTC) for 10 teams and 47 players. 609 challenges were played over the two phases. I was the technical lead. The public site is still up at https://ctf.tg; the cloud infrastructure was deleted on 21 November 2026. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-104470.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>In a recent development, the arena never exposes a challenge port to the internet. Each container publishes its port on the arena's loopback only, and the frp client opens an outbound tunnel to the front. Players only ever talk to the front.</p>
+<p>Sources indicate that CTFd reaches the arena's Docker daemon through a filtering proxy, not a raw socket. That proxy only lets through the operations the instancer needs, keeps published ports on loopback, and refuses extra capabilities, sysctls and devices, with one narrow exception for the WireGuard gateway image. A web app that can create containers is a web app that can own the host; we treated that channel as the most sensitive part of the design.</p>
+<p>The instancer is a CTFd plugin (about 2,400 lines of Python). From the player's side it comes down to four actions: launch, check status, renew, destroy.</p>
+<p>Spawn. The plugin checks that the challenge is visible and its prerequisites are met, that the player is in a team, and that the per-team and global caps are not exceeded. It re-checks the caps after inserting the instance row, so two teammates clicking at the same time settle it without an SQL lock. Then it:.</p>
+<p>Each box got 128 MiB of RAM, half a CPU and a 256-process limit by default, overridable per challenge up to a ceiling. An instance lived one hour and could be renewed five times. The global cap was 480 instances.</p>
+<p>It has been revealed that one instance per (player, challenge), flag per team. In the first version, teammates shared one instance and kept getting in each other's way. On 29 October we switched to one box per player and kept the flag and the quota at team level. The per-team cap went from 4 to 6 between the qualifier and the final, because the Defense challenges keep a "production box" alive per team.</p>
+<p>It has been revealed that reaper. A background thread, run by a single worker thanks to a file lock, passes every 30 seconds. It deletes expired instances, rows whose container vanished, labelled containers with no row, and stops a team's VPN gateway when the team has no VPN instance left.</p>
+<p>A generic sketch of the spawn path, stripped of everything specific:.</p>
+<p>Sources indicate that on 30 October, a week before the qualifier, we decided that instances would no longer be exposed as public IP:port. Three modes replaced it, chosen per challenge.</p>
+<p>https. The simplest one. A wildcard certificate in front of nginx, and frp's HTTP vhost routes on the subdomain. With 80 random bits per label, you do not guess another team's instance.</p>
+<p>Recent findings suggest that tls. For services that speak raw TCP, there is no Host header to route on. The SNI of the TLS handshake plays that role. The router terminates TLS with the same wildcard certificate, asks CTFd which private port the label maps to (an internal endpoint protected by a shared key, which answers an empty 404 on any failure), and pipes bytes. For the player:.</p>
+<p>vpn. For machines where discovering services is part of the game, a subdomain does not help: it hides nothing about the ports. Each team gets its own WireGuard gateway container on the arena, its own Docker network and its own private /24. Instances in VPN mode get a fixed private IP; the player scans them like a lab.</p>
+<p>The design goals were: no state to leak, nothing else reachable, and no per-player setup by an organizer.</p>
+<p id="sec-mid-103530">Industry observers note that the client file is deliberately minimal: no DNS line, no default route. Only challenge traffic goes through the tunnel.</p>
+<p>Because ping does not always cross the tunnel, the advice we drafted for players was a TCP scan without host discovery:.</p>
+<p>According to recent reports, every instance challenge has a flag of type "team HMAC". Its content is just the challenge's slug. The flag is computed, never stored:.</p>
+<p>According to recent reports, at submission, CTFd recomputes the expected flag for the submitting team and compares in constant time. Consequences we relied on:.</p>
+<p>199 challenges used per-team flags during the qualifier.</p>
+<p>The unsafe default was still the default. The code fell back to port mode when a challenge had no mode, or when the infrastructure for its mode was not configured, and it did so silently. Our import tool for creators' challenges never wrote the access mode. A dry run on 14 November, five days before the final, found the gap in the release strategy. On 15 November we classified the 46 challenges that still had no mode: 18 VPN, 10 HTTPS, 18 TLS. We fixed the data; the default itself was never changed. That is the first thing I would fix.</p>
+<p>A proxy chain is not transparent. In https mode, nginx and frp route on Host, set their own X-Forwarded-* headers and normalize requests. Any challenge whose intended solve spoofs those headers, or relies on HTTP request smuggling, breaks. Four challenges had to move to tls between 15 and 17 November. We searched solvers and writeups for those headers, but a challenge without a text solver escapes that search; only replaying the solver through the player's URL catches it.</p>
+<p>It has been revealed that A blocking lock under gevent. The frp configuration is edited under a file lock. The first version used a blocking flock. Under gevent, a second greenlet waiting on that lock froze its whole worker, and the holder could never release it. On 7 November that turned into 502s with the CPU at 0%. The fix was a non-blocking lock in a cooperative retry loop:.</p>
+<p>That incident gets its own article in this series.</p>
+<p>Industry observers note that frpc stopped answering reloads. The same day, the frp client, running for eight days, still answered "read config" but no longer "reload". Every spawn held the lock during a reload that never returned. A restart fixed it; from then on, a watcher probed reload latency every 3 minutes and alerted after two slow or failed probes in a row.</p>
+<p>According to recent reports, orphan proxies. When removing a proxy failed, its block stayed in the config while the container was gone. The port went back to the pool, got reassigned, and the frp server refused the duplicate. We cleaned 33 orphans by hand. The reaper never learned to sweep proxies without a container.</p>
+<p>Volumes leak. Containers were removed without their anonymous volumes. By 15 November the arena held 801 orphan volumes, 25.65 GB.</p>
+<p>Entrypoints that ignore FLAG. Every "correct flag rejected" of the event had the same root cause: a creator's entrypoint that generated its own random flag, or a Dockerfile ENV that took precedence. Our pre-flight check confirmed that FLAG was in the environment, not that the file the player reads contained it. One of these surfaced mid-final. We fixed the image, but a flag read from the broken image could never be accepted: the team had to relaunch the instance and solve again. A related shell trap worth knowing:.</p>
+<p>According to recent reports, the VPN lifecycle surprised players. The tunnel of a team only exists while it has at least one VPN instance. A player who connects WireGuard before launching anything has nothing in front of them. During the final, gateways were recreated several times an hour as teams released and destroyed boxes. The fix was an instruction to players, not code: launch first, then connect, and reconnect if the gateway was just recreated. And I only ran the complete player path (real client, handshake, HTTP 200, flag accepted) for the first time the night before the final. It worked, but that was luck, not process.</p>
+<p>Again: loopback-only ports plus an outbound tunnel; random labels; a per-team VPN with derived keys and a firewall set before the interface; flags derived instead of stored; a filtering proxy in front of the Docker API; hard resource limits on every box.</p>
+<p>This is part of NCTF26: running a national CTF. The next article is the post-mortem of the day the platform froze at 0% CPU. Results are on ctf.tg, the credits of every challenge author at ctf.tg/merci, community writeups at ctf.tg/writeups and ideas for NCTF27 at ctf.tg/idees.</p>
+<p id="sec-end-103530">Next in the series: CPU at 0% and 502s in a loop: how one blocking lock froze our national CTF platform.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/hi3ris/never-ipport-per-team-ctf-instances-with-frp-wireguard-and-hmac-flags-48ml" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="running-wireguard-for-a-development-team-the-hidden-cost-of-vpn-m-103732.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103732. Running WireGuard for a Development Team: The Hidden Cost of VPN Maintenance
+        </a>
+        
+        <a href="tech-report-pin-vs-noon-in-2026-which-ai-recruiter-fits-your-team-103912.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103912. Tech Report: Pin vs Noon in 2026: Which AI Recruiter Fits Your Team?
+        </a>
+        
+        <a href="data-driven-pages-that-never-go-stale-a-practical-guide-103736.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103736. Data-Driven Pages That Never Go Stale: A Practical Guide
+        </a>
+        
+        <a href="rust-1100-ships-the-never-type-after-ten-years-and-five-failed-at-103587.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103587. Rust 1.100 Ships the Never Type After Ten Years and Five Failed Attempts
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

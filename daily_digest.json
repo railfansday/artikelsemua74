@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-24T23:02:48.922278",
-  "totalArticles": 12530,
+  "generatedAt": "2026-11-25T10:46:39.904099",
+  "totalArticles": 12490,
   "categoryBreakdown": {
-    "Business & Policy": 548,
-    "General": 10129,
-    "Hardware & Chips": 256,
-    "AI & Tech": 1007,
-    "Gadgets": 350,
-    "EV & Auto": 240
+    "General": 10134,
+    "AI & Tech": 981,
+    "Hardware & Chips": 237,
+    "Business & Policy": 566,
+    "Gadgets": 336,
+    "EV & Auto": 236
   },
   "topSources": {
     "Hugging Face": 915,
-    "Co": 818,
-    "Sciencedaily": 211,
+    "Co": 833,
+    "Sciencedaily": 210,
     "Eschoolnews": 200,
     "Cbssports": 170,
-    "Electrek": 150,
-    "Yahoo": 146,
-    "Dw": 143,
-    "9to5google": 136,
-    "Dailymail": 135
+    "Electrek": 149,
+    "Yahoo": 147,
+    "Dw": 144,
+    "Dailymail": 136,
+    "Realworkfromanywhere": 129
   },
   "latestHeadlines": [
     {
-      "id": 92997,
-      "title": "Trump hosts crypto traders as demand for his meme coin fades",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/trump-hosts-crypto-traders-as-demand-for-his-meme-coin-fades-92997.html",
-      "category": "Business & Policy"
-    },
-    {
-      "id": 92996,
-      "title": "A dad who bluntly defended his gay daughter just unseated a powerful Republican",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/a-dad-who-bluntly-defended-his-gay-daughter-just-unseated-a-power-92996.html",
+      "id": 104487,
+      "title": "Industry News: How to train a new language model from scratch using Transformers and Tokenizers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html",
       "category": "General"
     },
     {
-      "id": 92995,
-      "title": "Democrats to open 2028 primary debates in June after pushback against earlier start",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/democrats-to-open-2028-primary-debates-in-june-after-pushback-aga-92995.html",
+      "id": 104486,
+      "title": "How to generate text: using different decoding methods for language generation with Transformers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-104486.html",
       "category": "General"
     },
     {
-      "id": 92994,
-      "title": "Industry News: Fight to chair the GOP tests Trump’s clout after midterm wipeout",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/industry-news-fight-to-chair-the-gop-tests-trumps-clout-after-mid-92994.html",
-      "category": "Business & Policy"
-    },
-    {
-      "id": 92993,
-      "title": "Breaking: Who is ready for some presidential debates?",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-who-is-ready-for-some-presidential-debates-92993.html",
+      "id": 104485,
+      "title": "The Reformer - Pushing the limits of language modeling",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/the-reformer-pushing-the-limits-of-language-modeling-104485.html",
       "category": "General"
     },
     {
-      "id": 92992,
-      "title": "GTA 6 streamer with zero viewers left in tears after Ibai sent thousands of people to his broadcast",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/gta-6-streamer-with-zero-viewers-left-in-tears-after-ibai-sent-th-92992.html",
+      "id": 104484,
+      "title": "Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/predicting-and-detecting-failures-how-azure-strengthens-reliabili-104484.html",
       "category": "General"
     },
     {
-      "id": 92991,
-      "title": "YouTuber accused of $1.8M jewelry heist reenacts robbery after tattoo led to arrest",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/youtuber-accused-of-18m-jewelry-heist-reenacts-robbery-after-tatt-92991.html",
+      "id": 104483,
+      "title": "Breaking: Block Sparse Matrices for Smaller and Faster Language Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-104483.html",
       "category": "General"
     },
     {
-      "id": 92990,
-      "title": "GTA 6 boss explains why classic mini-games from previous games are missing",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/gta-6-boss-explains-why-classic-mini-games-from-previous-games-ar-92990.html",
+      "id": 104482,
+      "title": "Transformer-based Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/transformer-based-encoder-decoder-models-104482.html",
       "category": "General"
     },
     {
-      "id": 92989,
-      "title": "GTA 6 actor has no idea who he plays & asks fans to find his character",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/gta-6-actor-has-no-idea-who-he-plays-asks-fans-to-find-his-charac-92989.html",
+      "id": 104481,
+      "title": "Hyperparameter Search with Transformers and Ray Tune",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/hyperparameter-search-with-transformers-and-ray-tune-104481.html",
       "category": "General"
     },
     {
-      "id": 92988,
-      "title": "Ex-Rockstar artist explains main difference between Red Dead 2 and GTA 6 open world",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/ex-rockstar-artist-explains-main-difference-between-red-dead-2-an-92988.html",
+      "id": 104480,
+      "title": "Porting fairseq wmt19 translation system to transformers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/porting-fairseq-wmt19-translation-system-to-transformers-104480.html",
+      "category": "General"
+    },
+    {
+      "id": 104479,
+      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-104479.html",
+      "category": "General"
+    },
+    {
+      "id": 104478,
+      "title": "How we sped up transformer inference 100x for 🤗 API customers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-104478.html",
       "category": "General"
     }
   ]

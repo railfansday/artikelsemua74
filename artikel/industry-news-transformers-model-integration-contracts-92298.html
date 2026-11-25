@@ -157,16 +157,16 @@ model types, and its test suite is big: 88,000+ CPU tests on main, plus
 (SDPA) for T5. As a side effect, UMT5's decoder could attend to future tokens. During training, it could peek at the answer it was supposed to predict. Nothing crashed, and the bug stayed in main for almost two months.</p>
 <p>Sources indicate that when we later replayed those commits, a small UMT5 model running on CPU flagged
 it on every one of them. This post is about that model and the tests built
-around it. <span style="font-size:13px;">(Related: <a href="industry-news-fight-to-chair-the-gop-tests-trumps-clout-after-mid-92994.html" style="color:#2563eb; font-weight:600;">Industry News: Fight to chair the GOP tests Trump’s clo...</a>)</span></p>
+around it. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
 <p>Recent findings suggest that transformers supports over 750
 model types, and its test suite is big: 88,000+ CPU tests on main, plus
 200,000+ GPU tests in a daily run. Model tests are only part of it: we also
 test pipelines, training, distributed execution, quantization and attention
-kernels.</p>
+kernels. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-104486.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Sources indicate that the integration tests load real checkpoints and exercise the model's API on
 real hardware. Running all of that on every PR would mean keeping a lot of GPUs
 busy all day long, which isn't practical. By the time a scheduled run finds a
-regression, it may already be in main. <span style="font-size:13px;">(Related: <a href="tiktoker-mama-tot-responds-after-jury-finds-man-who-fatally-shot--92978.html" style="color:#2563eb; font-weight:600;">TikToker Mama Tot responds after jury finds man who fat...</a>)</span></p>
+regression, it may already be in main.</p>
 <p>Our approach is to shrink the model instead. We build a fixture: a small
 model made from the real checkpoint's configuration, with fewer and narrower
 layers but every kind of layer it has, and its tokenizer and processor files
@@ -292,20 +292,20 @@ and contribute a usage path or review a generated contract.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-macbook-neo-falls-to-all-time-low-599-in-amazon-bla-92892.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92892. Industry News: MacBook Neo falls to all-time low $599 in Amazon Black Friday sale — 256GB Citrus model price matches its original launch (Update: now $649)
+        <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104487. Industry News: How to train a new language model from scratch using Transformers and Tokenizers
         </a>
         
-        <a href="industry-news-tpu-model-design-considerations-and-optimization-gu-92751.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92751. Industry News: TPU Model Design Considerations and Optimization Guide
+        <a href="industry-news-transformers-v5-simple-model-definitions-powering-t-103743.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103743. Industry News: Transformers v5: Simple model definitions powering the AI ecosystem
         </a>
         
-        <a href="industry-news-quantization-aware-healing-a-compressed-4-bit-model-92450.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92450. Industry News: Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original
+        <a href="industry-news-scaling-up-bert-like-model-inference-on-modern-cpu--104448.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104448. Industry News: Scaling up BERT-like model Inference on modern CPU  - Part 2
         </a>
         
-        <a href="industry-news-senior-contracts-manager-at-supabase-89623.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #89623. Industry News: Senior Contracts Manager at Supabase
+        <a href="industry-news-graphcore-and-hugging-face-launch-latest-lineup-of--104401.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104401. Industry News: Graphcore and Hugging Face Launch Latest Lineup of IPU-Ready Transformers
         </a>
         
     </div>

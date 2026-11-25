@@ -150,7 +150,7 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92174">It has been revealed that I'm not sure.. when was the last time I posted here.. its prolly been years.. but I built something that was long overdue, and had to share. So, most apps have at least one tree hiding in a table. Product categories, comment threads, folders, org charts. They usually look like this:.</p>
-<p>Recent findings suggest that storing a tree this way is easy. Reading it back is where it gets awkward. "Give me every subcategory of Clothing, however deep it goes" needs a recursive query, and Drizzle does not have a builder for that yet. The feature request has been open since 2023. <span style="font-size:13px;">(Related: <a href="breaking-russia-readying-nuclear-armed-satellite-that-could-destr-92958.html" style="color:#2563eb; font-weight:600;">Breaking: Russia readying nuclear-armed satellite that ...</a>)</span></p>
+<p>Recent findings suggest that storing a tree this way is easy. Reading it back is where it gets awkward. "Give me every subcategory of Clothing, however deep it goes" needs a recursive query, and Drizzle does not have a builder for that yet. The feature request has been open since 2023.</p>
 <p>You can do it today with the sql template and a WITH RECURSIVE CTE:.</p>
 <p>Yes, it works, but then you lose most of what you picked Drizzle for:.</p>
 <p>And you will write a second version for ancestors (breadcrumbs), and a third for the whole forest.. like, come on.</p>
@@ -158,11 +158,11 @@
 <p id="sec-mid-92174">rows is typed from your schema, with depth and path added. Keys are camelCase and dates are Date objects, as with any other Drizzle query.</p>
 <p>Breadcrumbs are the same call in the other direction:.</p>
 <p>And if you want a nested object for a sidebar menu:.</p>
-<p>This is the part I cared about most. descendants(), ancestors() and forest() return a CTE that you pass to db.with(), so it behaves like a table:. <span style="font-size:13px;">(Related: <a href="hila-klein-announces-end-of-h3-podcast-as-ethan-klein-working-on--92971.html" style="color:#2563eb; font-weight:600;">Hila Klein announces end of H3 Podcast as Ethan Klein w...</a>)</span></p>
+<p>This is the part I cared about most. descendants(), ancestors() and forest() return a CTE that you pass to db.with(), so it behaves like a table:.</p>
 <p>That gives you every product anywhere under Clothing, paginated, in one query.</p>
 <p>It has been revealed that the idea / inspo comes from laravel-adjacency-list, which has been the standard way to do this in Laravel's Eloquent for years. (And its one of my favorite repos)
 I wanted the same thing in TypeScript :).</p>
-<p id="sec-end-92174">According to recent reports, the repo is sabira-khan/drizzle-tree. If you store trees in a different shape, such as closure tables or materialized paths, I'd like to hear about it in the challenges.</p>
+<p id="sec-end-92174">According to recent reports, the repo is sabira-khan/drizzle-tree. If you store trees in a different shape, such as closure tables or materialized paths, I'd like to hear about it in the challenges. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-104486.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p style="margin-top: 25px;">
 <a href="https://dev.to/sabira-khan/recursive-tree-queries-in-drizzle-without-raw-sql-3lcm" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
                         → Read original article
@@ -186,20 +186,20 @@ I wanted the same thing in TypeScript :).</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-ai-swarms-could-hijack-democracy-without-anyone-noticing-92942.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92942. Breaking: AI swarms could hijack democracy without anyone noticing
+        <a href="efficient-table-pre-training-without-real-data-an-introduction-to-104403.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104403. Efficient Table Pre-training without Real Data: An Introduction to TAPEX
         </a>
         
-        <a href="nasa-just-used-satellites-and-debris-to-navigate-without-gps-92858.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92858. NASA just used satellites and debris to navigate without GPS
+        <a href="setfit-efficient-few-shot-learning-without-prompts-104360.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104360. SetFit: Efficient Few-Shot Learning Without Prompts
         </a>
         
-        <a href="tech-report-a-tiny-supercurrent-could-unlock-quantum-information--92783.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92783. Tech Report: A tiny supercurrent could unlock quantum information without destroying it
+        <a href="industry-news-introducing-the-sql-console-on-datasets-104043.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104043. Industry News: Introducing the SQL Console on Datasets
         </a>
         
-        <a href="dollar-trees-stock-is-skyrocketing-one-number-in-its-earnings-rep-92761.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92761. Dollar Tree’s stock is skyrocketing. One number in its earnings report helps explain why
+        <a href="how-to-use-ip-geolocation-to-stop-bots-and-fraud-without-hurting--103746.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103746. How to Use IP Geolocation to Stop Bots and Fraud (Without Hurting UX)
         </a>
         
     </div>

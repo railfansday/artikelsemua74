@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92419">It has been revealed that the tokenizer has not historically been the bottleneck within ML workflows. Compute-wise, tokenization is light compared to the heavy modeling happening in the rest of the pipeline. Yet, in some cases, it has rapidly become key to accelerating (or slowing down) your machine learning work.</p>
-<p>According to recent reports, as models become faster and workloads scale, that balance begins to shift. Training on massive datasets, serving many concurrent requests, or repeatedly processing long inputs can put enough pressure on the tokenizer that it starves the model of data. <span style="font-size:13px;">(Related: <a href="couple-become-meme-after-argument-at-football-game-caught-on-tv-92986.html" style="color:#2563eb; font-weight:600;">Couple become meme after argument at football game caug...</a>)</span></p>
-<p>Industry observers note that this is why we have chosen to heavily focus on performance for the upcoming version 1 of tokenizers. Tokenization should be light and should scale with your workflow. Your GPUs should never sit idle waiting for the CPU to complete its tokenization. <span style="font-size:13px;">(Related: <a href="industry-news-fight-to-chair-the-gop-tests-trumps-clout-after-mid-92994.html" style="color:#2563eb; font-weight:600;">Industry News: Fight to chair the GOP tests Trump’s clo...</a>)</span></p>
+<p>According to recent reports, as models become faster and workloads scale, that balance begins to shift. Training on massive datasets, serving many concurrent requests, or repeatedly processing long inputs can put enough pressure on the tokenizer that it starves the model of data. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
+<p>Industry observers note that this is why we have chosen to heavily focus on performance for the upcoming version 1 of tokenizers. Tokenization should be light and should scale with your workflow. Your GPUs should never sit idle waiting for the CPU to complete its tokenization. <span style="font-size:13px;">(Related: <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--104458.html" style="color:#2563eb; font-weight:600;">Introducing Optimum: The Optimization Toolkit for Trans...</a>)</span></p>
 <p>In this article, we look at what makes v1 faster than v0.23, often by tens of times.</p>
 <p>Sources indicate that this work was entirely possible thanks to the rest of the ecosystem. Tokenization is a very active area of open source work, and libraries such as gigatoken, tiktoken, kitoken, tokie, fastokens, wordchipper and ai-tokenizer, as well as many others, have each pushed on what a fast tokenizer can be. We read that work, and several of the ideas below reached us because another project showed they were worth trying.</p>
 <p>According to recent reports, before this refactor, tokenizers was nowhere near the performance it could have had, so contributing to it may not have seemed worth it. With this refactor, we hope to make clear that we intend tokenizers to be a library worth contributing to.</p>
@@ -211,20 +211,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-woman-known-as-firefighting-hero-arrested-for-startin-92987.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92987. Tech Report: Woman known as Firefighting hero arrested for starting fires and now faces years in jail
+        <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104487. Industry News: How to train a new language model from scratch using Transformers and Tokenizers
         </a>
         
-        <a href="tech-report-this-simple-change-stops-robot-swarms-from-getting-st-92957.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92957. Tech Report: This simple change stops robot swarms from getting stuck
+        <a href="tech-report-hugging-face-on-pytorch-xla-tpus-104475.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104475. Tech Report: Hugging Face on PyTorch / XLA TPUs
         </a>
         
-        <a href="tech-report-3d-printer-that-promises-simultaneous-printing-from-a-92937.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92937. Tech Report: 3D printer that promises simultaneous printing from all four heads gets $500,000 in crowdfunding
+        <a href="scaling-up-bert-inference-on-cpu-part-1-104465.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104465. Scaling-up BERT Inference on CPU (Part 1)
         </a>
         
-        <a href="tech-report-proton-pass-is-up-to-60-off-for-black-fridayand-it-do-92932.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92932. Tech Report: Proton Pass is up to 60% off for Black Friday—and it does way more than just store your passwords
+        <a href="industry-news-scaling-up-bert-like-model-inference-on-modern-cpu--104448.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104448. Industry News: Scaling up BERT-like model Inference on modern CPU  - Part 2
         </a>
         
     </div>

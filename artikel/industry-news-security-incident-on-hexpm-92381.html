@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92381">On November 23, 2026, an unauthorized third party exploited a vulnerability in hex.pm that let them run commands on our web servers. We blocked the traffic and deployed a fix within 20 minutes. Shortly afterwards we received a report of this exact vulnerability.</p>
-<p>We found no evidence of unauthorized package modifications, or database changes, or that the attacker maintained access to our systems. However, because database reads are not logged, we cannot rule out that the attacker accessed data stored in the database, including email addresses, password hashes, API key hashes, 2FA secrets, sessions, and audit logs.</p>
+<p>We found no evidence of unauthorized package modifications, or database changes, or that the attacker maintained access to our systems. However, because database reads are not logged, we cannot rule out that the attacker accessed data stored in the database, including email addresses, password hashes, API key hashes, 2FA secrets, sessions, and audit logs. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-104472.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
 <p>According to recent reports, because email addresses may have been exposed, be careful with emails that claim to come from Hex. Please double-check that the links they contain lead to hex.pm. Please forward suspicious emails to security@hex.pm.</p>
-<p>We checked every file written to package storage during the incident against our database and found nothing unexpected. Reads of private packages in that period came from our own servers and coincide with releases the same organizations published at the time. A read made from a compromised server would look like one of ours, so we can't fully rule one out, and reads of private documentation aren't logged. We will contact affected organizations directly. <span style="font-size:13px;">(Related: <a href="democrats-to-open-2028-primary-debates-in-june-after-pushback-aga-92995.html" style="color:#2563eb; font-weight:600;">Democrats to open 2028 primary debates in June after pu...</a>)</span></p>
-<p>The attacker's commands could read the credentials our servers use, so we replaced them: the storage, CDN, email and database credentials, and the keys that sign sessions and access tokens. This logged everyone out of hex.pm and Hex clients. We're building a newly introduced registry signing system that supports key rotation, with new Hex client releases in the coming days. Until then, don't trust third-party mirrors and fetch packages only from repo.hex.pm. We already deployed fixes for the vulnerability and are working on further hardening fixes. <span style="font-size:13px;">(Related: <a href="ai-fire-detection-system-sprays-food-booths-fake-flames-in-bizarr-92976.html" style="color:#2563eb; font-weight:600;">AI fire detection system sprays food booth’s fake flame...</a>)</span></p>
+<p>We checked every file written to package storage during the incident against our database and found nothing unexpected. Reads of private packages in that period came from our own servers and coincide with releases the same organizations published at the time. A read made from a compromised server would look like one of ours, so we can't fully rule one out, and reads of private documentation aren't logged. We will contact affected organizations directly.</p>
+<p>The attacker's commands could read the credentials our servers use, so we replaced them: the storage, CDN, email and database credentials, and the keys that sign sessions and access tokens. This logged everyone out of hex.pm and Hex clients. We're building a newly introduced registry signing system that supports key rotation, with new Hex client releases in the coming days. Until then, don't trust third-party mirrors and fetch packages only from repo.hex.pm. We already deployed fixes for the vulnerability and are working on further hardening fixes. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-104480.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>The vulnerability in Hex.pm is tracked as CVE-2026-129514.</p>
 <p id="sec-mid-92381">hex.pm decoded unauthenticated request bodies in Erlang term format with Plug.Crypto.non_executable_binary_to_term/2 which blocks most potentially harmful terms, but allows struct values through. These decoded struct values, when chained together correctly, turned into a remote command execution (RCE). This is the detailed playbook of the attack:.</p>
 <p>While investigating, we found the same class of vulnerability in Ash: its keyset pagination accepted crafted structs in client-supplied cursors, which could lead to command execution or SQL injection. We reported it and the Ash team released a fix in ash 3.38.0 on November 24. It is tracked as CVE-2026-124283.</p>
@@ -184,20 +184,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-the-shockingly-simple-math-behind-social-security-102462.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #102462. Industry News: The Shockingly Simple Math Behind Social Security
+        </a>
+        
+        <a href="industry-news-huangs-return-is-the-biggest-national-security-scan-99646.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #99646. Industry News: Huang’s Return Is the Biggest National Security Scandal in U.S. History
+        </a>
+        
+        <a href="industry-news-trump-notes-he-protected-musk-in-first-term-after-a-98061.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #98061. Industry News: Trump notes he ‘protected’ Musk in first term after ‘a tough incident’ – what could it be?
+        </a>
+        
         <a href="security-incident-disclosure-july-2026-92523.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92523. Security incident disclosure — July 2026
-        </a>
-        
-        <a href="industry-news-why-holiday-security-cant-wait-for-black-friday-92276.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92276. Industry News: Why Holiday Security Can't Wait for Black Friday
-        </a>
-        
-        <a href="industry-news-is-social-security-taxable-how-to-calculate-what-yo-92016.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92016. Industry News: Is Social Security Taxable? How to Calculate What You Owe
-        </a>
-        
-        <a href="industry-news-tempers-flare-as-future-of-social-security-debated-88310.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #88310. Industry News: Tempers flare as future of Social Security debated
         </a>
         
     </div>

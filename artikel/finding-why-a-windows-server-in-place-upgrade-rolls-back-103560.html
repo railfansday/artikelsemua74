@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Why a Windows Server In-Place Upgrade Rolls Back</title>
+    <meta name="description" content="Industry observers note that this post first appeared on the ET Ducky blog. I build ET Ducky, an RMM that reads ETW on Windows and eBPF on Linux. A Windows">
+    <meta name="keywords" content="server, driver, upgrade, setup, windows, microsoft, back, logs">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/finding-why-a-windows-server-in-place-upgrade-rolls-back-103560.html">
+    
+    <meta property="og:title" content="Finding Why a Windows Server In-Place Upgrade Rolls Back">
+    <meta property="og:description" content="Industry observers note that this post first appeared on the ET Ducky blog. I build ET Ducky, an RMM that reads ETW on Windows and eBPF on Linux. A Windows">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc6zscuphpfimkbsywn8c.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/finding-why-a-windows-server-in-place-upgrade-rolls-back-103560.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Finding Why a Windows Server In-Place Upgrade Rolls Back">
+    <meta name="twitter:description" content="Industry observers note that this post first appeared on the ET Ducky blog. I build ET Ducky, an RMM that reads ETW on Windows and eBPF on Linux. A Windows">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc6zscuphpfimkbsywn8c.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Finding Why a Windows Server In-Place Upgrade Rolls Back", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc6zscuphpfimkbsywn8c.png"], "datePublished": "2026-11-25T07:57:50", "dateModified": "2026-11-25T08:08:47.124758", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/finding-why-a-windows-server-in-place-upgrade-rolls-back-103560.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Finding Why a Windows Server In-Place Upgrade Rolls Back?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Finding Why a Windows Server In-Place Upgrade Rolls Back' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">📈 Bullish</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Finding Why a Windows Server In-Place Upgrade Rolls Back</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 25 Nov 2026 &bull; ⏱️ 5 min read (959 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that this post first appeared on the ET Ducky blog.</li><li style='margin-bottom:6px;'>A Windows Server in-place upgrade that reaches a late percentage, restarts, and comes back on the old version has rolled back.</li><li style='margin-bottom:6px;'>A recent r/sysadmin thread had a Windows Server 2016 to 2022 upgrade that stalled at 88% and rolled back.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-103560"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-103560"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-103560"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Finding Why a Windows Server In-Place Upgrade Rolls Back" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc6zscuphpfimkbsywn8c.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-103560">Industry observers note that this post first appeared on the ET Ducky blog. I build ET Ducky, an RMM that reads ETW on Windows and eBPF on Linux.</p>
+<p>A Windows Server in-place upgrade that reaches a late percentage, restarts, and comes back on the old version has rolled back. Setup records why in its own logs, and it keeps those logs after the rollback. This post covers how to read the error code, open the log that matches it, and fix the cause before the next attempt.</p>
+<p>A recent r/sysadmin thread had a Windows Server 2016 to 2022 upgrade that stalled at 88% and rolled back. SetupDiag reported 0xC1900101-0x4000D against the x86 copy of ntprint.inf, and SFC and DISM had already been run. The steps below follow a result like that back to the driver or file that stopped the upgrade.</p>
+<p>A Windows Setup error has a result code and an extend code. Result code 0xC1900101 is the generic rollback code, and Microsoft's documentation states the cause is usually an incompatible driver. The extend code after the dash says where setup was when it failed. Its first digit is the phase and its last two digits are the operation.</p>
+<p>Phase 1 is the down-level phase, while the old operating system is still running. Phase 2 is the Safe OS phase, 3 is the first boot into the fresh system, and 4 is the boot after that. Operation 0D is data migration, 17 is boot, and 18 is sysprep. So 0x4000D is a failure while setup migrated data after the second restart, and 0x30018 is a failure during the sysprep operation. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-104480.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+<p>Recent findings suggest that setupDiag reads the setup logs and reports the rule that matched the failure. Windows Setup extracts it to C:\$Windows.~BT\Sources and runs it on its own after a failed upgrade. It writes the result to %WinDir%\Logs\SetupDiag\SetupDiagResults.xml and to the registry under HKLM\SYSTEM\Setup\SetupDiag\Results. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-104472.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
+<p>When that file isn't there, download the current SetupDiag from Microsoft and run it from an elevated prompt on the server that failed. It needs .NET Framework 4.7.2 or later, and it finds the logs on that server without any arguments.</p>
+<p>Recent findings suggest that the result names the failure and often the file or driver package involved. In the thread above it named the x86 printer driver package. When SetupDiag reports no match, read the logs directly.</p>
+<p>Sources indicate that setup writes setupact.log for actions and setuperr.log for errors in a different folder for each phase. Both files are in the same folder.</p>
+<p>Search for the two strings Microsoft documents for a failed apply, and keep the last matches.</p>
+<p id="sec-mid-103560">Open the log at that line number and read the lines above it. The SP, MIG, and CONX entries come from the setup platform, the migration engine, and the compatibility checks, and they name the object setup was working on. Write down the timestamp, then find the same time in setuperr.log. Decode any Win32 error code you find there with certutil.</p>
+<p>In a recent development, microsoft's own example of this search ends at error 0x570, ERROR_FILE_CORRUPT, on a machine key file under C:\ProgramData\Microsoft\Crypto\RSA\S-1-5-18. Deleting that file resolved the upgrade in their example. The file or driver in your log is the one to fix.</p>
+<p>In a recent development, A 0x4000D rollback often follows a stop error during the second boot. The rollback folder keeps a minidump as setupmem.dmp, the event logs from the attempt as .evtx files, and the device install log at setupapi\setupapi.dev.log. Open setupmem.dmp in WinDbg, run !analyze -v, and read the MODULE_NAME and IMAGE_NAME lines. Update or remove the driver the dump names. For a 0x30018 rollback, read setupapi.dev.log for the device whose install ends in a failure status.</p>
+<p>For an x86 printer driver like the one in the thread, list the 32-bit drivers and remove each one from the driver store.</p>
+<p>A driver still assigned to a shared printer won't remove. Set that printer to its x64 driver only under Sharing, then Additional Drivers in Print Management, and remove the x86 driver after that.</p>
+<p>For other drivers, patch the driver or remove the device software that installed it. Microsoft lists antivirus filter and encryption drivers as a cause of 0x40017 rollbacks after the second restart, so uninstall third-party antivirus and do a clean boot before the next attempt. Check that the system drive has at least 20 GB free, the minimum Microsoft lists for a 64-bit upgrade.</p>
+<p>Microsoft's in-place upgrade guide asks for a full backup with a tested restore, and it rules out two kinds of server. Don't run an in-place upgrade on a domain controller. Build a new one and demote the old one instead. A clustered server takes Cluster-Aware Updating or a cluster operating system rolling upgrade instead.</p>
+<p>In a recent development, I'd run the next attempt on a restored copy of the server first. When it finishes there, the same fix is ready for the live server, and the copy gives you the time each phase takes for the maintenance window.</p>
+<p>I build ET Ducky, and its Windows agent reads process creation and file events from the kernel through ETW on every managed server. You can open a Live Session shell from the browser without the need for a VPN and run the Select-String and SetupDiag commands above on the server that rolled back.</p>
+<p>Industry observers note that you'd start a Multi-Agent Session across a server that upgraded and the one that rolled back. It compares the kernel events from both to find the outlier. Only counts-only summaries leave each host, and the raw kernel events stay on it.</p>
+<p id="sec-end-103560">One Windows or Linux server on the Free query tier with your own AI key costs $5 a month. Pricing is at https://etducky.com/pricing.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/et-ducky/finding-why-a-windows-server-in-place-upgrade-rolls-back-5704" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="the-bivo-trio-mini-keeps-finding-a-place-on-our-bikes-when-the-te-102793.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #102793. The Bivo Trio Mini Keeps Finding a Place on Our Bikes When the Temperatures Begin to Dip—Here’s Why
+        </a>
+        
+        <a href="battlefield-labs-is-coming-back-for-a-short-session-to-test-out-n-98223.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #98223. Battlefield Labs is coming back for a short session to test out next week's Battlefield 6 upgrade, and you can expect more tests in the future, too
+        </a>
+        
+        <a href="industry-news-the-sims-4-developer-hasnt-forgotten-about-its-qual-97897.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #97897. Industry News: The Sims 4 developer hasn't forgotten about its quality of life commitment, and is back with an upgrade on what to expect in 2026
+        </a>
+        
+        <a href="celtic-4-st-mirren-1-oxlade-chamberlain-rolls-back-the-years-as-c-95513.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #95513. Celtic 4 St Mirren 1: Oxlade-Chamberlain rolls back the years as champions put Buddies to the sword
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92341">According to recent reports, if you ever tried to run PyTorch on a TPU, you probably ported your code to torch_xla, or you ended up having to learn JAX. With TorchTPU, a native PyTorch backend, TPU is now just another device. It opens up native support of TPU in the Hugging Face ecosystem. Transformers, Diffusers and Kernels run natively on TPU. Pick a model from the Hub, send it to "tpu", and you're done.</p>
-<p>Industry observers note that TPU stands for Tensor Processing Unit. TPUs are Google's own AI accelerators. They are chips built for one job: the matrix math that neural networks spend most of their time on. Google has been designing them for about ten years, and uses them to train and serve its own models, including Gemini. <span style="font-size:13px;">(Related: <a href="industry-news-fight-to-chair-the-gop-tests-trumps-clout-after-mid-92994.html" style="color:#2563eb; font-weight:600;">Industry News: Fight to chair the GOP tests Trump’s clo...</a>)</span></p>
-<p>According to recent reports, TPUs are available on Google Cloud, from a single chip up to pods of thousands of chips. They shine when you need a lot of compute, for training or for serving at scale. <span style="font-size:13px;">(Related: <a href="gta-6-streamer-with-zero-viewers-left-in-tears-after-ibai-sent-th-92992.html" style="color:#2563eb; font-weight:600;">GTA 6 streamer with zero viewers left in tears after Ib...</a>)</span></p>
+<p>Industry observers note that TPU stands for Tensor Processing Unit. TPUs are Google's own AI accelerators. They are chips built for one job: the matrix math that neural networks spend most of their time on. Google has been designing them for about ten years, and uses them to train and serve its own models, including Gemini. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
+<p>According to recent reports, TPUs are available on Google Cloud, from a single chip up to pods of thousands of chips. They shine when you need a lot of compute, for training or for serving at scale. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-104470.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
 <p>The catch has always been software. The TPU stack grew up around TensorFlow and JAX, and PyTorch consumers had to work harder to get in.</p>
 <p>According to recent reports, until now, running PyTorch on TPUs meant going through PyTorch/XLA (torch_xla). It worked, but it had its quirks. Tensors were lazy (the tensors, not you), so your code didn't always run when you thought it did. Small changes could trigger graph recompilations, and debugging was hard to reason about.</p>
 <p>To make life easier, we built Optimum TPU. It gave Hugging Face models inference and training support on TPUs. Now that TorchTPU brings native support, Optimum TPU is not required anymore to run Hugging Face models with Transformers and Diffusers.</p>
@@ -197,20 +197,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="hugging-face-on-pytorch-xla-tpus-81456.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81456. Hugging Face on PyTorch / XLA TPUs
+        <a href="tech-report-hugging-face-on-pytorch-xla-tpus-104475.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104475. Tech Report: Hugging Face on PyTorch / XLA TPUs
         </a>
         
-        <a href="tech-report-google-cloud-tpus-made-available-to-hugging-face-cust-81052.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81052. Tech Report: Google Cloud TPUs made available to Hugging Face customers
+        <a href="google-cloud-tpus-made-available-to-hugging-face-owners-104072.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104072. Google Cloud TPUs made available to Hugging Face owners
         </a>
         
-        <a href="industry-news-migrating-your-github-ci-to-hugging-face-jobs-92601.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92601. Industry News: Migrating Your GitHub CI to Hugging Face Jobs
+        <a href="faster-tensorflow-models-in-hugging-face-transformers-104476.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104476. Faster TensorFlow models in Hugging Face Transformers
         </a>
         
-        <a href="how-an-agent-built-a-3d-paris-gallery-by-chaining-two-hugging-fac-92598.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92598. How an Agent Built a 3D Paris Gallery by Chaining Two Hugging Face Spaces
+        <a href="hugging-face-reads-feb-2021-long-range-transformers-104472.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104472. Hugging Face Reads, Feb. 2021 - Long-range Transformers
         </a>
         
     </div>

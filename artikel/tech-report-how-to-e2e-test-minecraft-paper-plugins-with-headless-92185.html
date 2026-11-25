@@ -152,10 +152,10 @@
 <p id="sec-start-92185">Recent findings suggest that most Minecraft plugin "testing" is: install the jar, join with your client, punch things, eyeball it. That doesn't scale when your plugin's whole job is managing death states — you need two clients, deterministic damage, and assertions on things that happen in the world after a player dies.</p>
 <p>Here's the setup I use to e2e-test Paper plugins on a headless VM: mineflayer bots + RCON.</p>
 <p>/kill reports damage source KILL, not GENERIC_KILL. Paper 1.21's last-damage-cause for the vanilla kill command is KILL — if your death listener filters on GENERIC_KILL it will never fire. I burned an hour on this.</p>
-<p>RCON responses don't include execute sub-command output. execute if block 0 65 0 chest run say FOUND prints FOUND to the server log, not the RCON response. Either read the log file, or use /data get block / /execute ... run return variants that do echo back. <span style="font-size:13px;">(Related: <a href="hila-klein-announces-end-of-h3-podcast-as-ethan-klein-working-on--92971.html" style="color:#2563eb; font-weight:600;">Hila Klein announces end of H3 Podcast as Ethan Klein w...</a>)</span></p>
+<p>RCON responses don't include execute sub-command output. execute if block 0 65 0 chest run say FOUND prints FOUND to the server log, not the RCON response. Either read the log file, or use /data get block / /execute ... run return variants that do echo back. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-104483.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
 <p id="sec-mid-92185">According to recent reports, A dead bot respawns at spawn — and the death chunk unloads. If you assert "is there a chest at the death point" after respawning, the chunk may already be unloaded. Keep a "spy" bot parked at the death location holding the chunk open.</p>
 <p>Physics is async. Waiting fixed milliseconds is flaky on a loaded VM. Poll bot.entity.position/bot.entity.velocity until quiescent, with a timeout.</p>
-<p>The bots count as players. online-mode=false test server, obviously — but also remember player-idle-timeout and per-player plugins (death chests keyed to UUID!) see the bot's UUID, so give each bot a distinct name. <span style="font-size:13px;">(Related: <a href="industry-news-rockstar-shuts-down-discord-server-trying-to-make-g-92960.html" style="color:#2563eb; font-weight:600;">Industry News: Rockstar shuts down Discord server tryin...</a>)</span></p>
+<p>The bots count as players. online-mode=false test server, obviously — but also remember player-idle-timeout and per-player plugins (death chests keyed to UUID!) see the bot's UUID, so give each bot a distinct name.</p>
 <p>That's it. Headless, repeatable, runs in CI. The full harness I use is ~300 lines of Node.</p>
 <p id="sec-end-92185">Built while developing SecondWind (DBNO revives — https://github.com/SecondWindMC/SecondWindRevive) and GraveGuard (death chests — https://github.com/SecondWindMC/GraveGuard). Both MIT-licensed Paper 1.21.x plugins.</p>
 <p style="margin-top: 25px;">
@@ -181,6 +181,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-kimina-prover-applying-test-time-rl-search-on-large-f-103852.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103852. Tech Report: Kimina-Prover: Applying Test-time RL Search on Large Formal Reasoning Models
+        </a>
+        
         <a href="tech-report-how-to-test-wcag-22-in-ci-what-axe-core-misses-92850.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92850. Tech Report: How to Test WCAG 2.2 in CI: What axe-core Misses
         </a>
@@ -189,12 +193,8 @@
             📰 #92239. Tech Report: Attackers Used Optimizely to A/B Test Malware on Top Websites
         </a>
         
-        <a href="tech-report-is-yetis-latest-performance-outdoor-clothing-any-good-87146.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #87146. Tech Report: Is Yeti’s Latest Performance Outdoor Clothing Any Good? I Put It to the Test to Find Out.
-        </a>
-        
-        <a href="tech-report-i-test-outdoor-gear-for-a-livinghere-are-6-gifts-natu-87076.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #87076. Tech Report: I Test Outdoor Gear for a Living—Here Are 6 Gifts Nature Lovers Will Actually Use
+        <a href="tech-report-hugging-face-on-pytorch-xla-tpus-104475.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104475. Tech Report: Hugging Face on PyTorch / XLA TPUs
         </a>
         
     </div>

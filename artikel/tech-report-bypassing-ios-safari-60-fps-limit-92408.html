@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92408">Rida F'kih · November 20, 2026 · 10 min read.</p>
-<p>Devon Govett of React Aria posted “Scrolling is All You Need: Building a Swipeable Sheet” back in October, and in it he talked about his team developing a sheet component that cleverly leverages the physics and smooth interactions provided by native browsers to provide the illusion of a native interaction.</p>
-<p>More recently, Jordan Walke, creator of React, posted a video of an experiment on X showing a convincing native-like mobile interaction using DOM &amp; CSS. It re-established a long-lived itch that I’ve had, and prompted this response from me. It’s something I could never justify building, however. Anything I built using this method would be pegged to 60 FPS. <span style="font-size:13px;">(Related: <a href="ai-fire-detection-system-sprays-food-booths-fake-flames-in-bizarr-92976.html" style="color:#2563eb; font-weight:600;">AI fire detection system sprays food booth’s fake flame...</a>)</span></p>
-<p>According to recent reports, what the video Jordan Walke posted doesn’t show is that, unless you flip the “Prefer Page Rendering Updates near 60fps” flag buried deep within the Safari developer settings on iOS, WebKit limits requestAnimationFrame to just 60 Hz on a 120 Hz screen, and on a regular page, touch and pointer events are held to that same rate. This is what makes even the best mobile websites feel irritating to use. <span style="font-size:13px;">(Related: <a href="influencer-screwed-after-ai-trick-to-get-flight-upgrades-makes-hi-92968.html" style="color:#2563eb; font-weight:600;">Influencer “screwed” after AI trick to get flight upgra...</a>)</span></p>
+<p>Devon Govett of React Aria posted “Scrolling is All You Need: Building a Swipeable Sheet” back in October, and in it he talked about his team developing a sheet component that cleverly leverages the physics and smooth interactions provided by native browsers to provide the illusion of a native interaction. <span style="font-size:13px;">(Related: <a href="breaking-simple-considerations-for-simple-people-building-fancy-n-104473.html" style="color:#2563eb; font-weight:600;">Breaking: Simple considerations for simple people build...</a>)</span></p>
+<p>More recently, Jordan Walke, creator of React, posted a video of an experiment on X showing a convincing native-like mobile interaction using DOM &amp; CSS. It re-established a long-lived itch that I’ve had, and prompted this response from me. It’s something I could never justify building, however. Anything I built using this method would be pegged to 60 FPS. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
+<p>According to recent reports, what the video Jordan Walke posted doesn’t show is that, unless you flip the “Prefer Page Rendering Updates near 60fps” flag buried deep within the Safari developer settings on iOS, WebKit limits requestAnimationFrame to just 60 Hz on a 120 Hz screen, and on a regular page, touch and pointer events are held to that same rate. This is what makes even the best mobile websites feel irritating to use.</p>
 <p>How can I make this experience suck less without resorting to flags? Let’s call back to the React Aria piece. The reason it feels so nice is that scrolling is the responsibility of the compositor. It runs in its own thread. It moves, clips and fades without a JavaScript round-trip.</p>
 <p>It has been revealed that finger to digitizer, digitizer to compositor, compositor to GPU. This will become the basis of our interaction.</p>
 <p>Behold, two grids. They both move a square when you drag. The one on the left uses JavaScript events and sets the transform attribute in CSS, while the one on the right simply places a square in a scrollable area.</p>
@@ -225,20 +225,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-senior-software-engineer-full-stack-ios-backend-at-ra-89605.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #89605. Tech Report: Senior Software Engineer, Full Stack (iOS & Backend) at Raya
+        <a href="tech-report-fhfa-raises-conforming-loan-limit-to-855400-in-2027-99162.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #99162. Tech Report: FHFA raises conforming loan limit to $855,400 in 2027
         </a>
         
-        <a href="tech-report-suits-stallions-is-a-classy-little-party-game-that-le-86368.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #86368. Tech Report: Suits & Stallions is a classy little party game that lets you race horses, now on iOS and Android
+        <a href="tech-report-newly-introduced-hunger-games-movie-blows-past-expect-97296.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #97296. Tech Report: Newly introduced Hunger Games Movie Blows Past Expectations After Some Feared GTA 6 Could Limit Its Reach
         </a>
         
-        <a href="tech-report-these-14-new-features-are-coming-to-ios-273-85581.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #85581. Tech Report: These 14 New Features Are Coming to iOS 27.3
+        <a href="tech-report-whatsapp-is-raising-group-chat-limit-to-1500-particip-97141.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #97141. Tech Report: WhatsApp is raising group chat limit to 1,500 participants
         </a>
         
-        <a href="tech-report-ios-27-has-a-clever-fix-for-unreliable-wi-fi-connecti-85385.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #85385. Tech Report: iOS 27 has a clever fix for unreliable Wi-Fi connections
+        <a href="tech-report-apple-calendar-got-two-feature-upgrades-it-really-nee-97098.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #97098. Tech Report: Apple Calendar got two feature upgrades it really needed in iOS 27
         </a>
         
     </div>

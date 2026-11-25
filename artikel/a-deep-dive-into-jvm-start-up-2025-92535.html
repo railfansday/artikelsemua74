@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92535">In a recent development, when you start a Java application, there might be an inclination to believe that the only code being executed is the Java byte code passed to the JVM, i.e. the  .class files that have been compiled by javac. The reality is that during start-up, the JVM goes through a complex series of steps to create a veritable universe for running a Java application. In this article we will walk through the steps the JVM goes through from $ java to printing Hello World. If you'd prefer video format, you can also watch this video on the Java YouTube channel:.</p>
-<p>To keep this walk-through of JVM start-up from venturing into "boil the ocean" territory, there are a few constraints I will be using to describe the process:. <span style="font-size:13px;">(Related: <a href="democrats-to-open-2028-primary-debates-in-june-after-pushback-aga-92995.html" style="color:#2563eb; font-weight:600;">Democrats to open 2028 primary debates in June after pu...</a>)</span></p>
-<p>I will be describing the JVM start-up process as it behaves with JDK 23. You can see the JVM specification for Java SE 23 here. <span style="font-size:13px;">(Related: <a href="breaking-discord-can-now-automatically-save-gaming-clips-when-you-92970.html" style="color:#2563eb; font-weight:600;">Breaking: Discord can now automatically save gaming cli...</a>)</span></p>
-<p>It has been revealed that I will be using the HotSpot JVM implementation as my example. This is by far the most widely used JVM implementation, with many popular JDK distributions using the HotSpot JVM or a derivative of it. Alternative JMV implementations might have a slightly different internal behaviour.</p>
+<p>To keep this walk-through of JVM start-up from venturing into "boil the ocean" territory, there are a few constraints I will be using to describe the process:. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
+<p>I will be describing the JVM start-up process as it behaves with JDK 23. You can see the JVM specification for Java SE 23 here.</p>
+<p>It has been revealed that I will be using the HotSpot JVM implementation as my example. This is by far the most widely used JVM implementation, with many popular JDK distributions using the HotSpot JVM or a derivative of it. Alternative JMV implementations might have a slightly different internal behaviour. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-104486.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Finally the primary code example I will be using to describe the JVM start-up process will be HelloWorld, even though this is as simple an application as you can write, it will still exercise all the key areas of the JVM start-up process.</p>
 <p>Despite these constraints, upon reading this article, you should have a reasonably comprehensive understanding of the processes the JVM goes through during start-up and why they are necessary. This knowledge could be helpful when debugging your application should issues occur during start-up, and in some niche cases improving start-up performance. Though we will cover this a bit more towards the end of the article.</p>
 <p>Recent findings suggest that when a user executes the java command, this starts the JVM start-up process by calling the JNI (Java Native Interface) function JNI_CreateJavaVM(), you can see the code for this function here. This JNI function performs several vital processes itself.</p>
@@ -243,20 +243,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="deep-dive-vision-transformers-on-hugging-face-optimum-graphcore-81352.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81352. Deep Dive: Vision Transformers On Hugging Face Optimum Graphcore
+        <a href="industry-news-deep-dive-vision-transformers-on-hugging-face-optim-104371.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104371. Industry News: Deep Dive: Vision Transformers On Hugging Face Optimum Graphcore
         </a>
         
-        <a href="comparing-the-performance-of-llms-a-deep-dive-into-roberta-llama--81167.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81167. Comparing the Performance of LLMs: A Deep Dive into Roberta, Llama 2, and Mistral for Disaster Tweets Analysis with Lora
+        <a href="comparing-the-performance-of-llms-a-deep-dive-into-roberta-llama--104187.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104187. Comparing the Performance of LLMs: A Deep Dive into Roberta, Llama 2, and Mistral for Disaster Tweets Analysis with Lora
         </a>
         
-        <a href="tech-report-open-llm-leaderboard-drop-deep-dive-81163.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81163. Tech Report: Open LLM Leaderboard: DROP deep dive
+        <a href="open-llm-leaderboard-drop-deep-dive-104183.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104183. Open LLM Leaderboard: DROP deep dive
         </a>
         
-        <a href="democrats-to-open-2028-primary-debates-in-june-after-pushback-aga-92995.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92995. Democrats to open 2028 primary debates in June after pushback against earlier start
+        <a href="deep-learning-over-the-internet-training-language-models-collabor-104459.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104459. Deep Learning over the Internet: Training Language Models Collaboratively
         </a>
         
     </div>

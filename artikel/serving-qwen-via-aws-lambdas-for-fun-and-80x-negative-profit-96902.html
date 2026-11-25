@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serving Qwen via AWS Lambdas for fun and 80x negative profit</title>
+    <meta name="description" content="In a recent development, in my work at Bevyl I was really impressed by the performance and cost characteristics of AWS Lambdas. They can massively distribu">
+    <meta name="keywords" content="lambdas, recent, model, layer, development, like, decision, tokens">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/serving-qwen-via-aws-lambdas-for-fun-and-80x-negative-profit-96902.html">
+    
+    <meta property="og:title" content="Serving Qwen via AWS Lambdas for fun and 80x negative profit">
+    <meta property="og:description" content="In a recent development, in my work at Bevyl I was really impressed by the performance and cost characteristics of AWS Lambdas. They can massively distribu">
+    <meta property="og:image" content="https://noahbuilt.it/og-lambda-layers.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/serving-qwen-via-aws-lambdas-for-fun-and-80x-negative-profit-96902.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Serving Qwen via AWS Lambdas for fun and 80x negative profit">
+    <meta name="twitter:description" content="In a recent development, in my work at Bevyl I was really impressed by the performance and cost characteristics of AWS Lambdas. They can massively distribu">
+    <meta name="twitter:image" content="https://noahbuilt.it/og-lambda-layers.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Serving Qwen via AWS Lambdas for fun and 80x negative profit", "image": ["https://noahbuilt.it/og-lambda-layers.jpg"], "datePublished": "2026-11-25T03:28:06", "dateModified": "2026-11-25T08:02:53.728487", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/serving-qwen-via-aws-lambdas-for-fun-and-80x-negative-profit-96902.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Serving Qwen via AWS Lambdas for fun and 80x negative profit?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Noahbuilt."}}, {"@type": "Question", "name": "Which category does 'Serving Qwen via AWS Lambdas for fun and 80x negative profit' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Serving Qwen via AWS Lambdas for fun and 80x negative profit</h1>
+        <div class="meta-line">🌐 Source: <strong>Noahbuilt</strong> &bull; 📅 25 Nov 2026 &bull; ⏱️ 2 min read (468 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In a recent development, in my work at Bevyl I was really impressed by the performance and cost characteristics of AWS Lambdas.</li><li style='margin-bottom:6px;'>Industry observers note that so I was curious if it was possible to run inference on self-hosted models using Lambdas.</li><li style='margin-bottom:6px;'>In a recent development, I picked H2O-Lightning, a fine-tune of Qwen3.5-4B, because I wanted a small model built for decisions.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-96902"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-96902"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-96902"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Serving Qwen via AWS Lambdas for fun and 80x negative profit" loading="lazy" src="https://noahbuilt.it/og-lambda-layers.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-96902">In a recent development, in my work at Bevyl I was really impressed by the performance and cost characteristics of AWS Lambdas. They can massively distribute and fan out CPU-bound work, which is amazing for things like ffmpeg on long videos.</p>
+<p>Industry observers note that so I was curious if it was possible to run inference on self-hosted models using Lambdas. It was a random idea built on a hunch, and I like to prove such ideas right or wrong by building. In this case I was very wrong, but it was a good lesson! <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
+<p>In a recent development, I picked H2O-Lightning, a fine-tune of Qwen3.5-4B, because I wanted a small model built for decisions. I figured if this architecture had any legs, only doing decision models (a single forward pass) is the move. A decision model reads a document and answers a question about it by picking one option. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-104483.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>In a recent development, so the trick, if it's possible, would be fanning out. I was inspired how Remotion uses massively parallelized Lambdas to render videos.</p>
+<p>In a recent development, I wanted to prove this was possible to do, so I kept a constraint of a 3 GB limit for Lambdas. The whole model is 9.3 GB, so it does not fit in one. But it has 32 layers of about 225 MB each, and one layer fits. That gave me one Lambda job per layer per block of tokens.</p>
+<p>In a recent development, think of the Lambda as a simple idempotent API. A job reads inputs from S3, does the math, and writes one object back.</p>
+<p id="sec-mid-96902">Recent findings suggest that each job waits on the layer above for the same block and on its own previous block. Each layer starts one step after the layer above it, like a staircase 32 layers deep.</p>
+<p>I'm proud of the win: splitting a model call across 5,600 Lambdas is kinda wild.</p>
+<p>If it was 40x slower but 50% cheaper, that'd be interesting.</p>
+<p>Reading a 4,000-token document takes 17 seconds and costs 3.4 cents. That works out to $8.40 per million tokens. Google sells a hosted decision model, Gemini Decision 1, for $0.10 per million tokens, so the same read costs 0.04 cents there. Mine is more than 80 times more expensive.</p>
+<p>Sources indicate that I'm a dumb application developer, but I was able to play with model layers and transformers API pretty easily! With good devex, it feels like open models are just another API at this point.</p>
+<p>Learned this the hard way but a very powerful lesson! One layer over a few thousand tokens is a big matrix multiply, which is what GPUs are built for. My goal was to learn anyway so it's a good lesson.</p>
+<p id="sec-end-96902">CPU still costs dollars, there's no arbitrage here.</p>
+<p style="margin-top: 25px;">
+<a href="https://noahbuilt.it/writing/qwen-on-5600-lambdas" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="llm-inference-on-edge-a-fun-and-easy-guide-to-run-llms-via-react--103947.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103947. LLM Inference on Edge: A Fun and Easy Guide to run LLMs via React Native on your Phone!
+        </a>
+        
+        <a href="fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-104477.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104477. Fit More and Train Faster With ZeRO via DeepSpeed and FairScale
+        </a>
+        
+        <a href="accelerate-bert-inference-with-hugging-face-transformers-and-aws--104428.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104428. Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
+        </a>
+        
+        <a href="tech-report-deploying-tensorflow-vision-models-in-hugging-face-wi-104384.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104384. Tech Report: Deploying TensorFlow Vision Models in Hugging Face with TF Serving
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

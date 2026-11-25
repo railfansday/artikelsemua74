@@ -151,16 +151,16 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92669">The title sounds a bit strange, right? Why re-implement an existing feature, that’s completely useless! I have two reasons for that. The first reason is to be able to adjust the :nth-child() arguments on the fly.</p>
 <p>Let’s suppose you have the following:.</p>
-<p>And you decide to enhancement the 5 or the 8. The only way is to manually rewrite the selector, which isn’t ideal. We cannot have something like the below where you can change the variables as you want:. <span style="font-size:13px;">(Related: <a href="this-newly-introduced-chip-survives-1300f-700c-and-could-change-a-92966.html" style="color:#2563eb; font-weight:600;">This newly introduced chip survives 1300°F (700°C) and ...</a>)</span></p>
+<p>And you decide to enhancement the 5 or the 8. The only way is to manually rewrite the selector, which isn’t ideal. We cannot have something like the below where you can change the variables as you want:.</p>
 <p>With my implementation, you will be able to do it!</p>
 <p>The second reason is to have fun and play with some new features. You will probably never need to rely on a dynamic :nth-child() selector, but I am sure you will learn one or two useful tricks along the way.</p>
 <p>We will rely on the same code structure in all the examples: a container with a bunch of  elements inside it.</p>
 <p>And the container controls the variables of :nth-child():.</p>
-<p>I am not saying that this structure is mandatory for the implementation. I just considered a simple one to keep things easy to follow.</p>
-<p>Let’s start with the simplest case, a selector that selects only one element:. <span style="font-size:13px;">(Related: <a href="democrats-to-open-2028-primary-debates-in-june-after-pushback-aga-92995.html" style="color:#2563eb; font-weight:600;">Democrats to open 2028 primary debates in June after pu...</a>)</span></p>
+<p>I am not saying that this structure is mandatory for the implementation. I just considered a simple one to keep things easy to follow. <span style="font-size:13px;">(Related: <a href="breaking-simple-considerations-for-simple-people-building-fancy-n-104473.html" style="color:#2563eb; font-weight:600;">Breaking: Simple considerations for simple people build...</a>)</span></p>
+<p>Let’s start with the simplest case, a selector that selects only one element:.</p>
 <p>According to recent reports, I don’t think I need to explain what this selector does. The 5 is nothing but the index of the selected element. So, if B is equal to the index of the element, that element is selected.</p>
 <p>We can translate this into the following CSS code:.</p>
-<p>I am using the fresh if() syntax that allows me to define a condition within style(). If that condition is true, the background color is set to red. Otherwise, nothing happens.</p>
+<p>I am using the fresh if() syntax that allows me to define a condition within style(). If that condition is true, the background color is set to red. Otherwise, nothing happens. <span style="font-size:13px;">(Related: <a href="industry-news-how-to-train-a-new-language-model-from-scratch-usin-104487.html" style="color:#2563eb; font-weight:600;">Industry News: How to train a new language model from s...</a>)</span></p>
 <p>It has been revealed that the if() syntax is not that complex. In our case, we only have one condition, so you can see it as follows:.</p>
 <p>The tricky part is how to define the condition within style(). I wrote a small post explaining this part, so do yourself a favor and go read it before we continue: “The Hidden Trick of Style Queries and if().” It’s a quick reading with crucial details that helps you better understand how if() works. From there, you will notice that our condition can be written several ways that are all valid:.</p>
 <p>Industry observers note that we have our first implementation! You can easily apply it to any property as well:.</p>
@@ -216,20 +216,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="modern-css-might-make-your-front-end-more-complex-103165.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103165. Modern CSS Might Make Your Front-End More Complex
+        </a>
+        
         <a href="taming-typography-building-a-modern-css-reset-92666.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92666. Taming Typography: Building a Modern CSS Reset
         </a>
         
-        <a href="modern-css-might-make-your-front-end-more-complex-91620.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #91620. Modern CSS Might Make Your Front-End More Complex
+        <a href="industry-news-scaling-up-bert-like-model-inference-on-modern-cpu--104448.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104448. Industry News: Scaling up BERT-like model Inference on modern CPU  - Part 2
         </a>
         
-        <a href="rss-club-css-tricks-redesign-preview-92663.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92663. RSS Club: CSS-Tricks Redesign Preview
-        </a>
-        
-        <a href="industry-news-css-tricks-version-20-92661.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92661. Industry News: CSS-Tricks, Version 20
+        <a href="case-study-millisecond-latency-using-hugging-face-infinity-and-mo-104437.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104437. Case Study: Millisecond Latency using Hugging Face Infinity and modern CPUs
         </a>
         
     </div>

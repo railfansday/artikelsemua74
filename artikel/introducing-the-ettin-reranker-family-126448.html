@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126448">Today I'm releasing six new Sentence Transformers CrossEncoder rerankers, state-of-the-art at their respective sizes, built on top of the Ettin ModernBERT encoders, together with the data and full training recipe that produced them:.</p>
-<p>The models were trained with a distillation recipe: pointwise MSE on mixedbread-ai/mxbai-rerank-large-v2 scores over cross-encoder/ettin-reranker-v1-data, which is a subset of lightonai/embeddings-pre-training mixed with a reranked subset of lightonai/embeddings-fine-tuning. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-127387.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
-<p>Our six rerankers paired with google/embeddinggemma-300m on MTEB(eng, v2) Retrieval. See Results for five more embedder pairings. <span style="font-size:13px;">(Related: <a href="breaking-retrieval-augmented-generation-with-huggingface-transfor-127378.html" style="color:#2563eb; font-weight:600;">Breaking: Retrieval Augmented Generation with Huggingfa...</a>)</span></p>
+<p>The models were trained with a distillation recipe: pointwise MSE on mixedbread-ai/mxbai-rerank-large-v2 scores over cross-encoder/ettin-reranker-v1-data, which is a subset of lightonai/embeddings-pre-training mixed with a reranked subset of lightonai/embeddings-fine-tuning.</p>
+<p>Our six rerankers paired with google/embeddinggemma-300m on MTEB(eng, v2) Retrieval. See Results for five more embedder pairings. <span style="font-size:13px;">(Related: <a href="google-files-patent-for-ai-generated-tv-channel-that-uses-your-fa-138842.html" style="color:#2563eb; font-weight:600;">Google files patent for AI-generated TV channel that us...</a>)</span></p>
 <p>It has been revealed that if you're newly introduced to rerankers and want the "why" first, jump to What is a reranker, and why pair one with an embedder?. If you just want to plug a model in, jump to Usage. If you want to train your own, jump to Training.</p>
 <p>I bootstrapped the training recipe below with the fresh train-sentence-transformers Agent Skill shipped in Sentence Transformers v5.5.0. Install it with hf skills add train-sentence-transformers [--global] [--claude] and ask your AI coding agent (Claude Code, Codex, Cursor, Gemini CLI, ...) to fine-tune a SentenceTransformer, CrossEncoder, or SparseEncoder model on your data.</p>
-<p>A reranker (a.k.a. pointwise cross-encoder) is a neural model that takes a (query, document) pair and outputs a single relevance score. Unlike an embedding model, which encodes the query and document separately and computes their similarity from the two embedding vectors, a reranker lets the two texts attend to each other through every transformer layer. That joint encoding is more accurate but also more expensive: the model has to be run once per (query, document) pair rather than once per text.</p>
+<p>A reranker (a.k.a. pointwise cross-encoder) is a neural model that takes a (query, document) pair and outputs a single relevance score. Unlike an embedding model, which encodes the query and document separately and computes their similarity from the two embedding vectors, a reranker lets the two texts attend to each other through every transformer layer. That joint encoding is more accurate but also more expensive: the model has to be run once per (query, document) pair rather than once per text. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-138813.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
 <p>Because cross-encoders are too expensive to run over a full corpus, the common production pattern is retrieve-then-rerank: a fast embedding model retrieves the top-K candidates (cheap), then a cross-encoder re-orders just those K with high accuracy. The total cost stays bounded while the final ranking is much closer to what an exhaustive cross-encoder pass would produce.</p>
 <p>Throughout this blogpost I'll use "reranker" and "cross-encoder" interchangeably.</p>
 <p>The released models are normal Sentence Transformers CrossEncoder models, so you can use them with just 3 lines of code:.</p>
@@ -263,16 +263,16 @@
             📰 #126695. Introducing the Palmyra-mini family: Powerful, lightweight, and ready to reason!
         </a>
         
-        <a href="introducing-accelerate-127370.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127370. Introducing 🤗 Accelerate
+        <a href="introducing-the-open-arabic-llm-leaderboard-138666.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138666. Introducing the Open Arabic LLM Leaderboard
         </a>
         
-        <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--127362.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127362. Introducing Optimum: The Optimization Toolkit for Transformers at Scale
+        <a href="latest-update-training-and-finetuning-reranker-models-with-senten-138658.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138658. Latest Update: Training and Finetuning Reranker Models with Sentence Transformers
         </a>
         
-        <a href="introducing-the-latest-microsoft-iq-putting-your-organizations-in-127361.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127361. Introducing the latest Microsoft IQ: Putting your organization’s intelligence to work in every agent
+        <a href="multimodal-embedding-reranker-models-with-sentence-transformers-138639.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138639. Multimodal Embedding & Reranker Models with Sentence Transformers
         </a>
         
     </div>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behind the Alias: How One Researcher Unmasked a Decade of Ransomware Actors</title>
+    <meta name="description" content="Cybersecurity In-Depth: Feature articles on security strategy, latest trends, and people to know. Ransomware isn't slowing down. A upcoming framework gives">
+    <meta name="keywords" content="morag, ransomware, threat, actors, organizations, framework, they, recovery">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/behind-the-alias-how-one-researcher-unmasked-a-decade-of-ransomwa-138151.html">
+    
+    <meta property="og:title" content="Behind the Alias: How One Researcher Unmasked a Decade of Ransomware Actors">
+    <meta property="og:description" content="Cybersecurity In-Depth: Feature articles on security strategy, latest trends, and people to know. Ransomware isn't slowing down. A upcoming framework gives">
+    <meta property="og:image" content="https://eu-images.contentstack.com/v3/assets/blt6d90778a997de1cd/blt525c0b544f1eeec1/6afe238519e68185a02d38c2/GettyImages-1428094247.jpg?disable=upscale&width=1200&height=630&fit=crop">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/behind-the-alias-how-one-researcher-unmasked-a-decade-of-ransomwa-138151.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Behind the Alias: How One Researcher Unmasked a Decade of Ransomware Actors">
+    <meta name="twitter:description" content="Cybersecurity In-Depth: Feature articles on security strategy, latest trends, and people to know. Ransomware isn't slowing down. A upcoming framework gives">
+    <meta name="twitter:image" content="https://eu-images.contentstack.com/v3/assets/blt6d90778a997de1cd/blt525c0b544f1eeec1/6afe238519e68185a02d38c2/GettyImages-1428094247.jpg?disable=upscale&width=1200&height=630&fit=crop">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Behind the Alias: How One Researcher Unmasked a Decade of Ransomware Actors", "image": ["https://eu-images.contentstack.com/v3/assets/blt6d90778a997de1cd/blt525c0b544f1eeec1/6afe238519e68185a02d38c2/GettyImages-1428094247.jpg?disable=upscale&width=1200&height=630&fit=crop"], "datePublished": "2026-11-23T17:45:52", "dateModified": "2026-11-26T21:29:02.043969", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/behind-the-alias-how-one-researcher-unmasked-a-decade-of-ransomwa-138151.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Behind the Alias: How One Researcher Unmasked a Decade of Ransomware Actors?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Darkreading."}}, {"@type": "Question", "name": "Which category does 'Behind the Alias: How One Researcher Unmasked a Decade of Ra' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Behind the Alias: How One Researcher Unmasked a Decade of Ransomware Actors</h1>
+        <div class="meta-line">🌐 Source: <strong>Darkreading</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 8 min read (1689 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Cybersecurity In-Depth: Feature articles on security strategy, latest trends, and people to know.</li><li style='margin-bottom:6px;'>A upcoming framework gives security teams the edge to trace attackers back to their source.</li><li style='margin-bottom:6px;'>Recent findings suggest that it's a now-familiar scenario: "Warning" abruptly displays on the computer screen as the system locks down.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-138151"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-138151"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-138151"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Behind the Alias: How One Researcher Unmasked a Decade of Ransomware Actors" loading="lazy" src="https://eu-images.contentstack.com/v3/assets/blt6d90778a997de1cd/blt525c0b544f1eeec1/6afe238519e68185a02d38c2/GettyImages-1428094247.jpg?disable=upscale&amp;width=1200&amp;height=630&amp;fit=crop" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-138151">Cybersecurity In-Depth: Feature articles on security strategy, latest trends, and people to know.</p>
+<p>Ransomware isn't slowing down. A upcoming framework gives security teams the edge to trace attackers back to their source. <span style="font-size:13px;">(Related: <a href="razer-x-durex-collab-gives-gamers-long-lasting-battle-armor-condo-138841.html" style="color:#2563eb; font-weight:600;">Razer x Durex collab gives gamers “Long-Lasting Battle ...</a>)</span></p>
+<p>Recent findings suggest that it's a now-familiar scenario: "Warning" abruptly displays on the computer screen as the system locks down. A ransom note follows, threatening data extortion and continued disruptions if a demand is not met. Although it may seem sudden at the moment, the attack was actually the final step in what may have been years of planning, all carried out by a sprawling, interconnected network of underground actors. <span style="font-size:13px;">(Related: <a href="japanese-vtuber-actually-escapes-gta-6s-impossible-6-star-wanted--138846.html" style="color:#2563eb; font-weight:600;">Japanese VTuber actually escapes GTA 6’s “impossible” 6...</a>)</span></p>
+<p>In a recent development, but a newly introduced framework based on an identity graph analysis, developed by Flare threat researcher Assaf Morag, aims to help defenders and law enforcement take a more proactive approach to ransomware risk by better understanding who they're up against. When applied during research, the framework can uncover the inner workings of these operations, including indicators of compromise (IoCs) that are critical to incident-response investigations. Researchers can also use it to find connections among various threat actors and groups, which is increasingly important as new groups emerge each year.</p>
+<p>Related:As Test Takers Turn to AI, Exam Security Plays Catch-Up.</p>
+<p>Sources indicate that mapping and understanding the connections among the various ransomware gangs is also vital when it comes to documenting the tactics, techniques, and procedures (TTPs) that ransomware groups use against organizations daily. Threat actors are highly adaptable, developing, buying, or renting fresh tools all the time to bypass endpoint detection and response (EDR) and to craft more convincing phishing emails. So the more available data about their operations, the more predictable their behaviors become for defenders.</p>
+<p>Morag plans to debut his repeatable investigative methodology for mapping criminal organizations in a briefing at Black Hat Europe 2026. He will walk through the framework step by step; anyone can use it to reproduce the research or apply the same process to a new investigation.</p>
+<p>Sources indicate that building a framework wasn't Morag's original goal. He first set out to study how initial access brokers (IABs) operate on Dark Web forums. But he realized the interconnected web of threat actors was too vast to dissect using available resources. His efforts to connect gang operators and affiliates to IABs actually took two long months of manual work, which wasn't a useful process for such a swiftly moving threat landscape. That's when Morag decided to develop a framework to help graph the activity. Once it was ready, the same research took only three hours.</p>
+<p>Sources indicate that to build the framework, Morag went into detective mode, gathering clues from forums and chat posts and sorting them into various buckets for "hard evidence" versus "soft evidence." The first included factors like specific messaging IDs, emails, or chat handles, while writing styles, typos, and reused phrases fell into the latter. Once he was able to verify a clue, he could use it to search for other connections. Eventually, the confirmations expanded into a massive map of connected identities with 21 personae, active over 17 years, with 5,437 posts.</p>
+<p>Related:NIST: Solo Shouldn't Mean Less Secure.</p>
+<p>Sources indicate that morag's findings support how ransomware attacks are rarely conducted by a single group from start to finish, and how operations often mirror legitimate businesses with everyone playing their role. That makes it hard to parse out exactly who's who.</p>
+<p>According to recent reports, that became obvious when Morag came across a notification posted to a Dark Web forum, translated from Russian, that read, "We are the oldest international Russian ransomware affiliate program." The group claimed to be a private program that emerged in 2018. But based on underground forum discussions, he noticed that some members had been active since 2010.</p>
+<p>Tracking Tox IDs was the primary way Morag traced the connections, unveiling the true identity behind the fake personae and generic aliases threat actors use, like "John" or "Michael." Ransomware ecosystems commonly use communication platforms like Tox, Discord, Telegram, and Jabber to conduct payment negotiations with organizations or to recruit new affiliates, among other actions.</p>
+<p>Related:Incidents Move Too Fast for Pen &amp; Paper.</p>
+<p>According to recent reports, when communicating with someone through a specific Tox address, Morag knew he was reaching one consistent endpoint, whether cloud-based or someone's personal computer. Either way, it's the same device every time, which matters because threat actors often operate under multiple aliases.</p>
+<p>"He can change his name, but if I can take these identifiers and connect them together, that could be a way to look beyond the persona's name, which is usually fake, and that's exactly what I did," Morag tells Dark Reading.</p>
+<p>During the course of investigation, Morag discovered six layers of operational roles across the business flow:.</p>
+<p>The homemade ransom layer: Useful for defenders to study, these are the people who develop ransomware strains, loader malware that bypasses antivirus and EDR, and infostealer payloads.</p>
+<p>The ransom deployment layer: The gang operators and their affiliates who select the ransomware/malware, deploy it, and extort the victims.</p>
+<p>Pen-testers: Folks who probe for weaknesses to find ways into organizations.</p>
+<p>The dealers: IABs that buy and sell that initial access, like a sales department for cybercrime. (Morag was able to pinpoint seven individuals active for over nine years, spanning 50 forums and a whopping 1,300 events.).</p>
+<p id="sec-mid-138151">Fraud recovery: Organizations that perform diagnostics, negotiate with attackers, and arrange settlements with victims.</p>
+<p>Crypto draining: Those that process stolen seed phrases and private keys at scale and cross-sell crypto services to ransomware victims to compromise and drain wallets.</p>
+<p>Industry observers note that while piecing it together, one link particularly surprised Morag: a tie between supposed good-guy fraud-recovery firms and the ransomware deployers. Companies claim to help ransomware victims but secretly defraud them, he notes, and victim organizations have no clue.</p>
+<p>Up until the fraud recovery layer in the business flow, everything was done in Russian. After that, Morag noticed an intentional switch to the English language. Once the ransomware locked an organization's system down, the ransomware deployers swooped in, posing as legitimate businesses looking to provide recovery services. They installed tools on victims' systems, ran diagnostics, offered data recovery, and legal compliance services, Morag claims.</p>
+<p>"This is not upcoming, and we've also seen a few cases in the past month in the US. These kinds of organizations that help other organizations fight against ransomware were actually defrauding them," Morag explains. "I haven't seen anyone make the connection between those who do the recovery fraud and those that actually deploy the ransom, which is really amazing.".</p>
+<p>It has been revealed that while deep in the underground forums, it also became clear to Morag how much threat actors value their reputations. For instance, on Exploit, "a reputable Russian market" where attackers pay $100 to $150 and undergo a test to get in, Morag observed infighting as threat actors accused one another of not being legitimate. The forum is a place where "you don’t want to lose your reputation" or your access, he stresses, because it's where threat actors discuss sensitive dealings, such as zero-day and known vulnerability exploits, and forge latest ransomware-as-a-service partnerships. Looking into these disputes offered critical intelligence about how operations run because threat actors will throw each other under the bus by revealing what tools they use, how they move money, or what access they are trading.</p>
+<p>Exploit, Morag says, is "a real gold mine because it explains how they work, what they're doing, the level of leadership, and who reports to who.".</p>
+<p>Exploit was one of more than 40 underground forums he visited that, when analyzed together with the framework, revealed the inner workings of cybercrime gangs. Unmasking the players provides more evidence for organizations to fight back against ransomware as the threat disrupts everything, from Coca-Cola production to Japanese frozen food.</p>
+<p>Industry observers note that the framework can't directly help organizations push back against ransomware, but it does provide much-needed contextual data for the private and public sectors as problems persist. Morag is applying the framework to help with attacks against financial systems — an obviously huge target for threat actors — for example. He also applied it to investigate another ransomware group more recently and says it yielded helpful results.</p>
+<p>Real insight into a large operation like the one Morag discovered, knowing it included a fake fraud recovery layer, may also make organizations think twice about negotiating. They never know who's on the other line.</p>
+<p>"It's [about] knowing your enemy," Morag says.</p>
+<p>According to recent reports, black Hat Europe returns to the Excel in London with a four-day program this December. The event will open with two-and four-day options of specialized cybersecurity Trainings, with courses of all skill levels. The two-day main conference boasts Briefings featuring the latest in research, developments, and trends in cybersecurity, along with dozens of open-source tool demos in Arsenal, a robust Business Hall, networking, and social events, and much more. Use the code: DARKREADING and get 10% off your pass.</p>
+<p>Arielle spent the last decade working as a reporter, transitioning from human interest stories to covering all things cybersecurity related in 2020. Now, as a features writer for Dark Reading, she delves into the security problems enterprises face daily, providing context and actionable steps. She looks for stories that go past the initial news to understand where the industry is going. Her coverage areas include identity and access management, cyber risk and operations, industrial control systems, operational technology, and ransomware trends.</p>
+<p>It has been revealed that she previously lived in Florida where she wrote for the Tampa Bay Times before returning to Boston where her cybersecurity career took off at TechTarget SearchSecurity. When she's not writing about cybersecurity, she pursues personal projects that include a mystery novel and poetry collection.</p>
+<p>It's a Bot World. We're Just Living in It.</p>
+<p>What We Missed: Nvidia CEO Scandal Rocks AI Industry.</p>
+<p>Navigating Vulnerability Hysteria in the AI Era.</p>
+<p>As Test Takers Turn to AI, Exam Security Plays Catch-Up.</p>
+<p>NIST: Solo Shouldn't Mean Less Secure.</p>
+<p>Black Hat Asia | Marina Bay Sands, Singapore.</p>
+<p id="sec-end-138151">Want more Dark Reading stories in your Google search results?</p>
+<p style="margin-top: 25px;">
+<a href="https://www.darkreading.com/cybersecurity-operations/alias-researcher-unmasked-ransomware-actors" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="ransomware-attacks-increase-behind-ai-but-payments-decline-138219.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138219. Ransomware Attacks Increase Behind AI, but Payments Decline
+        </a>
+        
+        <a href="tech-report-never-one-to-lag-behind-hsr-and-zzz-genshin-impact-wi-132209.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #132209. Tech Report: Never one to lag behind HSR and ZZZ, Genshin Impact will introduce its own newly introduced pink-haired animal-themed girl in Version Luna 6
+        </a>
+        
+        <a href="the-story-behind-filming-the-forging-of-the-one-ring-in-rings-of--132141.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #132141. The Story Behind Filming The Forging Of The One Ring In Rings Of Power Is Funnier Than I Expected
+        </a>
+        
+        <a href="no-one-gets-left-behind-cdpr-on-the-witcher-4-releasing-for-all-p-132103.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #132103. "No One Gets Left Behind" - CDPR On The Witcher 4 Releasing For All Platforms At The Same Time
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

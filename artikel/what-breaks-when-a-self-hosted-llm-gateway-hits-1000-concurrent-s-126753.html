@@ -151,10 +151,10 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126753">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
 <p>Weekly. Free. One click to leave.</p>
-<p>7 Day Free Trial. Cancel Anytime.</p>
-<p>We sent 1,000 streaming calls at the same moment through three self-hosted LLM gateways: the Langfuse AI Gateway, the LiteLLM proxy and AcruxCore. Each gateway was limited to 2 CPUs. As shipped, Langfuse finished 261 of the 1,000 streams and LiteLLM finished 403. Neither failure came from the gateway's own code.</p>
-<p>Industry observers note that langfuse's failures came from Linux's open-file limit, which Docker sets to 1,024 by default. LiteLLM had that problem too, plus a second one: an empty key cache sent hundreds of database lookups at once, and the ones that waited longer than 10 seconds were rejected. This article indicates how each failure looked, how we traced it to its cause, and the settings that fixed it. <span style="font-size:13px;">(Related: <a href="predicting-and-detecting-failures-how-azure-strengthens-reliabili-127394.html" style="color:#2563eb; font-weight:600;">Predicting and detecting failures: How Azure strengthen...</a>)</span></p>
-<p>This benchmark measured the resource consumption of three LLM gateways under scaling concurrent streaming loads. <span style="font-size:13px;">(Related: <a href="scaling-up-bert-inference-on-cpu-part-1-127369.html" style="color:#2563eb; font-weight:600;">Scaling-up BERT Inference on CPU (Part 1)...</a>)</span></p>
+<p>7 Day Free Trial. Cancel Anytime. <span style="font-size:13px;">(Related: <a href="breaking-christmas-market-forced-to-cancel-after-backlash-over-ai-138826.html" style="color:#2563eb; font-weight:600;">Breaking: Christmas market forced to cancel after backl...</a>)</span></p>
+<p>We sent 1,000 streaming calls at the same moment through three self-hosted LLM gateways: the Langfuse AI Gateway, the LiteLLM proxy and AcruxCore. Each gateway was limited to 2 CPUs. As shipped, Langfuse finished 261 of the 1,000 streams and LiteLLM finished 403. Neither failure came from the gateway's own code. <span style="font-size:13px;">(Related: <a href="man-calls-police-on-his-ex-for-taking-back-her-xbox-account-to-pl-138822.html" style="color:#2563eb; font-weight:600;">Man calls police on his ex for taking back her Xbox acc...</a>)</span></p>
+<p>Industry observers note that langfuse's failures came from Linux's open-file limit, which Docker sets to 1,024 by default. LiteLLM had that problem too, plus a second one: an empty key cache sent hundreds of database lookups at once, and the ones that waited longer than 10 seconds were rejected. This article indicates how each failure looked, how we traced it to its cause, and the settings that fixed it.</p>
+<p>This benchmark measured the resource consumption of three LLM gateways under scaling concurrent streaming loads.</p>
 <p>Full latency, memory, and feature results are available in the Langfuse vs LiteLLM vs AcruxCore benchmark.</p>
 <p>It has been revealed that first-token times are medians of the streams that succeeded. Up to 250 streams, every gateway succeeded. Then the errors started, and they did not look alike:.</p>
 <p>According to recent reports, A 502 and a 503 point at different layers, so we expected two different causes. Two of the three turned out to share one cause.</p>
@@ -208,16 +208,16 @@
             📰 #126627. How Much Latency Does a Self-Hosted LLM Gateway Add? Langfuse vs LiteLLM vs AcruxCore
         </a>
         
+        <a href="qwen-incidents-show-self-hosted-ai-models-need-stronger-steering-138168.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138168. Qwen Incidents Show Self-Hosted AI Models Need Stronger Steering
+        </a>
+        
+        <a href="breaking-ripple-usd-rlusd-breaks-into-global-top-five-stablecoins-133623.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #133623. Breaking: Ripple USD (RLUSD) Breaks Into Global Top Five Stablecoins as Supply Hits New ATH
+        </a>
+        
         <a href="industry-news-self-hosted-langsmith-alternatives-4-tools-tested-o-126887.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #126887. Industry News: Self-Hosted LangSmith Alternatives: 4 Tools Tested on One TypeScript Agent
-        </a>
-        
-        <a href="tech-report-prefill-and-decode-for-concurrent-requests-optimizing-126791.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126791. Tech Report: Prefill and Decode for Concurrent Requests - Optimizing LLM Performance
-        </a>
-        
-        <a href="latest-update-ripple-usd-rlusd-breaks-into-global-top-five-stable-122017.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #122017. Latest Update: Ripple USD (RLUSD) Breaks Into Global Top Five Stablecoins as Supply Hits New ATH
         </a>
         
     </div>

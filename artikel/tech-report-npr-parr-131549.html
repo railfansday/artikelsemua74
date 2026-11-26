@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: NP_R ≠ PAR_R</title>
+    <meta name="description" content="Motivated by the recent breakthrough on the VP vs VNP problem, the consumers (Samuel Everett and Deven Mithal) guided instances of ChatGPT and Claude to de">
+    <meta name="keywords" content="lean, results, paper, conversation, claude, proved, mathrm, against">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/tech-report-npr-parr-131549.html">
+    
+    <meta property="og:title" content="Tech Report: NP_R ≠ PAR_R">
+    <meta property="og:description" content="Motivated by the recent breakthrough on the VP vs VNP problem, the consumers (Samuel Everett and Deven Mithal) guided instances of ChatGPT and Claude to de">
+    <meta property="og:image" content="https://opengraph.githubassets.com/032c7d7177dd888b25aee5c0451bea606f406f60125e6991337c0806d172e406/samueleverett01/bss-permanent-separations">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/tech-report-npr-parr-131549.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: NP_R ≠ PAR_R">
+    <meta name="twitter:description" content="Motivated by the recent breakthrough on the VP vs VNP problem, the consumers (Samuel Everett and Deven Mithal) guided instances of ChatGPT and Claude to de">
+    <meta name="twitter:image" content="https://opengraph.githubassets.com/032c7d7177dd888b25aee5c0451bea606f406f60125e6991337c0806d172e406/samueleverett01/bss-permanent-separations">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: NP_R ≠ PAR_R", "image": ["https://opengraph.githubassets.com/032c7d7177dd888b25aee5c0451bea606f406f60125e6991337c0806d172e406/samueleverett01/bss-permanent-separations"], "datePublished": "2026-11-26T16:50:55", "dateModified": "2026-11-26T21:22:48.345104", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-npr-parr-131549.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: NP_R ≠ PAR_R?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Github."}}, {"@type": "Question", "name": "Which category does 'Tech Report: NP_R ≠ PAR_R' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: NP_R ≠ PAR_R</h1>
+        <div class="meta-line">🌐 Source: <strong>Github</strong> &bull; 📅 26 Nov 2026 &bull; ⏱️ 3 min read (600 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Motivated by the recent breakthrough on the VP vs VNP problem, the consumers (Samuel Everett and Deven Mithal) guided instances of ChatGPT and Claude to develop further, more granular algebraic complexity class separations.</li><li style='margin-bottom:6px;'>In the Blum–Shub–Smale (BSS) model, the graph {Y = per_m(X)} of the real permanent lies in parallel polynomial time PAR_ℝ and outside each of.</li><li style='margin-bottom:6px;'>and over the complex numbers outside NP_ℂ and coNP_ℂ.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-131549"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-131549"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-131549"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: NP_R ≠ PAR_R" loading="lazy" src="https://opengraph.githubassets.com/032c7d7177dd888b25aee5c0451bea606f406f60125e6991337c0806d172e406/samueleverett01/bss-permanent-separations" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-131549">Motivated by the recent breakthrough on the VP vs VNP problem, the consumers (Samuel Everett and Deven Mithal) guided instances of ChatGPT and Claude to develop further, more granular algebraic complexity class separations. This is a work in progress in both the development and dissemination of mathematical research with AI tools, and any feedback is appreciated. The results in this repository grew out of a conversation between Sam and Claude Fable 5.2. The initial prompts were inspired by a separate discussion between Sam and Deven, the latter of whom suggested combining the latest VP-VNP results with some of Sam's private work in the area. Claude Fable 5.2 found the proofs through the conversation with Sam, and then wrote most of the paper under his guidance. That conversation started from initial ideas in a separate, earlier conversation Sam had with ChatGPT Astra 6.2, which proved $\mathrm{BIP}{\mathbb R}^{\times}\subsetneq\mathrm{PAR}{\mathbb R}^{\times}$ (Boolean-message interactive proofs against parallel polynomial time, in the real model with multiplication). The conversation with Claude Fable 5.2 extended that starting point to the further separations listed below. All results are formalized in Lean 4 (see Lean formalization below), with the results cited from the literature as explicit hypotheses. The results have not been peer reviewed and should be read with that in mind.</p>
+<p>In the Blum–Shub–Smale (BSS) model, the graph {Y = per_m(X)} of the real permanent lies in parallel polynomial time PAR_ℝ and outside each of.</p>
+<p>and over the complex numbers outside NP_ℂ and coNP_ℂ. Each of these classes is therefore strictly contained in PAR_ℝ (respectively PAR_ℂ).</p>
+<p>Both closed thresholds, $Y \le \mathrm{per}_m(X)$ and $Y \ge \mathrm{per}_m(X)$, also lie in PAR_ℝ and outside NP_ℝ, coNP_ℝ and Σ₂^ℝ. Negating one matrix row and the claimed value interchanges the thresholds. Their intersection is the graph.</p>
+<p>The separations use the superpolynomial lower bound for the border complexity of the permanent (Theorem 2.3 in the paper, cited from the Anthropic manuscript "VP ≠ VNP over every field" and its Lean formalization). Two families of results use no lower bound:. <span style="font-size:13px;">(Related: <a href="scientists-find-field-of-washing-machines-in-ocean-during-shipwre-138811.html" style="color:#2563eb; font-weight:600;">Scientists find “field” of washing machines in ocean du...</a>)</span></p>
+<p>In a recent development, the directory lean/ contains a formalization of the paper in Lean 4 (v4.36.0) with Mathlib (v4.36.0), about 36 000 lines. To check it:.</p>
+<p id="sec-mid-131549">Every numbered lemma, proposition, theorem and corollary of §2–§7, Theorems A–F, and Remarks 4.3, 5.4 and 7.4(a) are stated and proved, with no sorry. #print axioms reports only propext, Classical.choice and Quot.sound for every result.</p>
+<p>The results that the paper cites are explicit hypotheses of the theorems that use them, not axioms:.</p>
+<p>In particular, every separation is conditional on PermLowerBound, exactly as in the paper.</p>
+<p>Recent findings suggest that fact (S1) holds by construction: semialgebraic sets are defined as first-order definable sets. Baur–Strassen, Ryser's formula, Hoeffding's inequality (from Mathlib) and the unrolling of machines into trees are proved.</p>
+<p>Appendix A of the paper (sections/lean.tex) and lean/README.md list the Lean name of each result, the modelling choices, and the few places where a formal proof differs from the text. lean/ClassSeparations/Pinned.lean restates the main statements verbatim and checks them against the proved theorems. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-138813.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
+<p>Industry observers note that the proofs have not been peer reviewed. The paper is mostly AI-written (see above). The results are formalized in Lean, conditional on the cited results listed above.</p>
+<p id="sec-end-131549">The bibliographic data in refs.bib were checked against publisher and Crossref records. The numbered results cited from the Anthropic manuscript, Bürgisser (2004, 2026), Baartse–Meer, Baur–Strassen and Cucker et al. were confirmed in the sources. Still to be confirmed against the full texts: the attributions to Cucker (1992, 1993), Koiran (1994), Blum–Cucker–Shub–Smale, and the numbering in Basu–Pollack–Roy, which follows the second edition (2006).</p>
+<p style="margin-top: 25px;">
+<a href="https://github.com/samueleverett01/bss-permanent-separations" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-gta-6-devs-reveal-major-gameplay-features-that-didnt--138785.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138785. Tech Report: GTA 6 devs reveal major gameplay features that didn’t make the final cut
+        </a>
+        
+        <a href="tech-report-black-friday-deals-fresh-android-alexa-tablets-from-1-138720.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138720. Tech Report: Black Friday deals: Fresh Android Alexa Tablets from $130, Echo smart speakers up to 60% off, Anker charger sale, more
+        </a>
+        
+        <a href="tech-report-has-rockstar-taken-the-grand-theft-auto-out-of-gta-6--138694.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138694. Tech Report: Has Rockstar taken the "Grand Theft Auto" out of GTA 6? Or has it just gamified car-jacking properly for the first time?
+        </a>
+        
+        <a href="tech-report-warhammer-40000-boltgun-2-captures-the-franchises-blo-138687.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138687. Tech Report: Warhammer 40,000: Boltgun 2 captures the franchise's bloody absurdity like nothing else
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

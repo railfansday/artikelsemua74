@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126663">We boosted load_dataset('dataset', streaming=True), streaming datasets without downloading them with one line of code!</p>
-<p>Start training on multi-TB datasets immediately, without complex setups, downloading, no "disk out of space", or 429 “stop requesting!” errors.It's super fast! Outrunning our local SSDs when training on 64xH100 with 256 workers downloading data. We've improved streaming to have 100x fewer requests, → 10× faster data resolution → 2x sample/sec, → 0 worker crashes at 256 concurrent workers. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-127392.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
-<p>Sources indicate that loading data, especially at the terabyte scale, is a major pain in any machine learning workflow. We suffered this while training SmolLM3, at one point we had to wait 3 hours before each run to download enough data. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-127371.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
+<p>Start training on multi-TB datasets immediately, without complex setups, downloading, no "disk out of space", or 429 “stop requesting!” errors.It's super fast! Outrunning our local SSDs when training on 64xH100 with 256 workers downloading data. We've improved streaming to have 100x fewer requests, → 10× faster data resolution → 2x sample/sec, → 0 worker crashes at 256 concurrent workers. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-138837.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
+<p>Sources indicate that loading data, especially at the terabyte scale, is a major pain in any machine learning workflow. We suffered this while training SmolLM3, at one point we had to wait 3 hours before each run to download enough data. <span style="font-size:13px;">(Related: <a href="costcos-40-last-minute-thanksgiving-dinner-kit-comes-with-enough--138833.html" style="color:#2563eb; font-weight:600;">Costco’s $40 last-minute Thanksgiving Dinner Kit comes ...</a>)</span></p>
 <p>Industry observers note that streaming has always been possible in the datasets library, but large scale training with massive datasets remained a challenge. That changes today 🔥. We spent a few months improving the backend, focusing on streaming datasets to make it faster and more efficient.</p>
 <p>First things first: our changes are backwards compatible. You can still stream any dataset from the Hub with the same simple streaming=True flag. It's as easy as ever. 🚀.</p>
 <p>Thousands of AI developers around the world use datasets daily; they should just get improved performance with zero extra work.</p>
@@ -204,20 +204,20 @@ To improve throughput during streaming itself, we've introduced two latest featu
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-disney-and-hulu-drops-to-499month-for-a-year-as-black-138589.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138589. Tech Report: Disney+ and Hulu drops to $4.99/month for a year as Black Friday’s best streaming deals go live
+        </a>
+        
+        <a href="tech-report-these-are-the-4-best-streaming-devices-weve-tested-to-131392.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #131392. Tech Report: These are the 4 best streaming devices we've tested to upgrade your TV
+        </a>
+        
+        <a href="tech-report-thanksgiving-parade-2026-macys-thanksgiving-parade-st-128257.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #128257. Tech Report: Thanksgiving parade 2026: Macy’s Thanksgiving Parade start time, streaming options, weather concerns
+        </a>
+        
         <a href="tech-report-setfit-efficient-few-shot-learning-without-prompts-127264.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #127264. Tech Report: SetFit: Efficient Few-Shot Learning Without Prompts
-        </a>
-        
-        <a href="tech-report-introducing-doi-the-digital-object-identifier-to-data-127259.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127259. Tech Report: Introducing DOI: the Digital Object Identifier to Datasets and Models
-        </a>
-        
-        <a href="tech-report-efficient-controllable-generation-for-sdxl-with-t2i-a-127115.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127115. Tech Report: Efficient Controllable Generation for SDXL with T2I-Adapters
-        </a>
-        
-        <a href="tech-report-1995-thanksgiving-movie-starring-robert-downey-jr-is--125570.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #125570. Tech Report: 1995 Thanksgiving Movie Starring Robert Downey Jr. Is a Streaming Hit — and It's Free to Watch
         </a>
         
     </div>

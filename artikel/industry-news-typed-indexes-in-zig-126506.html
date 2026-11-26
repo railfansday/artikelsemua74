@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126506">The named integer or Newtype Index pattern prevents mixing up indexes on different arrays.</p>
-<p>It has been revealed that the above examples were not particularly illuminating to me. Andrew’s example don’t show much of how to enforce the safety at call site: any caller could call backingInt (it used to be @intFromEnum) to recover a numerical index and pass it to the wrong array, or access array elements with a plain integer. And matklad’s one focus on building a tree data structure in a neat way, but that’s a totally different challenge that the introductory problem of mixing array indexes, so it was not a super convincing illustration for me. <span style="font-size:13px;">(Related: <a href="building-the-next-generation-of-multimodal-ai-experiences-with-fa-127391.html" style="color:#2563eb; font-weight:600;">Building the next generation of multimodal AI experienc...</a>)</span></p>
-<p>In practice, to make good use of the pattern, a getter helper is required as the conventional way of accessing elements of the array. It can be a method on the array type—or the index type. <span style="font-size:13px;">(Related: <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-127367.html" style="color:#2563eb; font-weight:600;">Few-shot learning in practice: GPT-Neo and the 🤗 Accele...</a>)</span></p>
+<p>It has been revealed that the above examples were not particularly illuminating to me. Andrew’s example don’t show much of how to enforce the safety at call site: any caller could call backingInt (it used to be @intFromEnum) to recover a numerical index and pass it to the wrong array, or access array elements with a plain integer. And matklad’s one focus on building a tree data structure in a neat way, but that’s a totally different challenge that the introductory problem of mixing array indexes, so it was not a super convincing illustration for me. <span style="font-size:13px;">(Related: <a href="this-latest-chip-survives-1300f-700c-and-could-change-ai-forever-138850.html" style="color:#2563eb; font-weight:600;">This latest chip survives 1300°F (700°C) and could chan...</a>)</span></p>
+<p>In practice, to make good use of the pattern, a getter helper is required as the conventional way of accessing elements of the array. It can be a method on the array type—or the index type.</p>
 <p>In a struct of array data structure, it is particularly valuable to have one typed index per slice rather than relying on careful naming.</p>
 <p>Consider this spreadsheet example where it’s easy to mix up indexes:.</p>
-<p>We can prevent such bug by enforcing compile time checking of field access with typed indexes.</p>
+<p>We can prevent such bug by enforcing compile time checking of field access with typed indexes. <span style="font-size:13px;">(Related: <a href="scientists-find-field-of-washing-machines-in-ocean-during-shipwre-138811.html" style="color:#2563eb; font-weight:600;">Scientists find “field” of washing machines in ocean du...</a>)</span></p>
 <p>Its clumsy to keep one index type and one accessor per field. We can use a bit of comptime to streamline the pattern, and make the recipe more generic to fit arbitrary structs. Here is a complete example.</p>
 <p>Our spreadsheet has now several fields: a title, and row and column properties. When iterating over them, we have two kinds of indexes: row indexes and column indexes. Adding typed indexes is attractive to prevent callers from mixing them up.</p>
 <p>Recent findings suggest that this enum gives us a way of referencing all the struct fields for which we will construct a typed indexed. If all fields were to be indexed, we would have used std.meta.FieldEnum(Sheet), but our spreadsheet has a title.</p>
@@ -194,20 +194,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-my-journey-to-a-serverless-transformers-pipeline-on-127374.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127374. Industry News: My Journey to a serverless transformers pipeline on Google Cloud
+        <a href="industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138843. Industry News: Think AI "knows" what it’s doing? Scientists say think again
         </a>
         
-        <a href="industry-news-understanding-bigbirds-block-sparse-attention-127372.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127372. Industry News: Understanding BigBird's Block Sparse Attention
+        <a href="industry-news-the-best-prebuilt-gaming-pcs-weve-seen-on-sale-so-f-138807.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138807. Industry News: The best prebuilt gaming PCs we've seen on sale so far
         </a>
         
-        <a href="industry-news-introducing-the-data-measurements-tool-an-interacti-127349.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127349. Industry News: Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        <a href="industry-news-alleged-pixel-11-pro-prototype-had-hilight-and-a-te-138798.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138798. Industry News: Alleged Pixel 11 Pro prototype had HiLight and a temperature sensor
         </a>
         
-        <a href="industry-news-active-learning-with-autonlp-and-prodigy-127343.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127343. Industry News: Active Learning with AutoNLP and Prodigy
+        <a href="industry-news-expect-samsungs-good-value-galaxy-devices-to-get-mo-138789.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138789. Industry News: Expect Samsung’s good-value Galaxy devices to get more expensive, report claims
         </a>
         
     </div>

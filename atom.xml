@@ -3,217 +3,217 @@
   <title>Portal Berita Interaktif - Atom Feed</title>
   <link href="https://railfansday.github.io/artikelsemua74/atom.xml" rel="self"/>
   <link href="https://railfansday.github.io/artikelsemua74/"/>
-  <updated>2026-11-26T08:35:35Z</updated>
+  <updated>2026-11-26T22:09:22Z</updated>
   <id>https://railfansday.github.io/artikelsemua74/</id>
   
   <entry>
-    <title>Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/predicting-and-detecting-failures-how-azure-strengthens-reliabili-127394.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/predicting-and-detecting-failures-how-azure-strengthens-reliabili-127394.html</id>
-    <updated>2026-11-04T16:00:00Z</updated>
-    <summary>In a recent development, azure Failure Prediction and Detection (AFPD) helps reduce interruptions by predicting hardware failures, moving eligible workloads, and notifying customers when action is needed. See what that means for SAP on Azure and othe...</summary>
+    <title>This latest chip survives 1300°F (700°C) and could change AI forever</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/this-latest-chip-survives-1300f-700c-and-could-change-ai-forever-138850.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/this-latest-chip-survives-1300f-700c-and-could-change-ai-forever-138850.html</id>
+    <updated>2026-04-07T05:32:38Z</updated>
+    <summary>Modern electronics power everything from smartphones to satellites, but they all share a major limitation. Heat. Once temperatures climb above roughly 200 degrees Celsius, most devices begin to break down. For decades, this thermal barrier has been o...</summary>
   </entry>
   <entry>
-    <title>Designing Azure silicon on Azure silicon: EDA workloads on Cobalt 200</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/designing-azure-silicon-on-azure-silicon-eda-workloads-on-cobalt--127393.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/designing-azure-silicon-on-azure-silicon-eda-workloads-on-cobalt--127393.html</id>
-    <updated>2026-11-05T16:00:00Z</updated>
-    <summary>It has been revealed that discover how Microsoft is accelerating electronic design automation (EDA) workloads with Azure Cobalt 200 VMs. Explore early performance results demonstrating faster simulation, verification, and static timing analysis, alon...</summary>
+    <title>This new chip could slash data center energy waste</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/this-new-chip-could-slash-data-center-energy-waste-138849.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/this-new-chip-could-slash-data-center-energy-waste-138849.html</id>
+    <updated>2026-04-10T12:45:22Z</updated>
+    <summary>As data centers consume more energy to support growing digital demands, engineers at the University of California San Diego have introduced a new chip design that could make powering graphics processing units (GPUs) more efficient. The innovation foc...</summary>
   </entry>
   <entry>
-    <title>Stop treating agents as one-off projects and start running them as a continuous discipline</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/stop-treating-agents-as-one-off-projects-and-start-running-them-a-127392.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/stop-treating-agents-as-one-off-projects-and-start-running-them-a-127392.html</id>
-    <updated>2026-11-05T17:00:00Z</updated>
-    <summary>AI must be selected, architected, and managed as a continuous business discipline, not a series of isolated projects. The post Stop treating agents as one-off projects and start running them as a continuous discipline appeared first on Microsoft Azur...</summary>
+    <title>Latest Update: “Giant superatoms” could finally solve quantum computing’s biggest problem</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/latest-update-giant-superatoms-could-finally-solve-quantum-comput-138848.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/latest-update-giant-superatoms-could-finally-solve-quantum-comput-138848.html</id>
+    <updated>2026-04-13T12:38:46Z</updated>
+    <summary>Researchers at Chalmers University of Technology in Sweden have introduced a new theoretical design for quantum systems based on what they call "giant superatoms." This concept offers a fresh way to protect, control, and share quantum information, po...</summary>
   </entry>
   <entry>
-    <title>Building the next generation of multimodal AI experiences with fal in Microsoft Foundry</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/building-the-next-generation-of-multimodal-ai-experiences-with-fa-127391.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/building-the-next-generation-of-multimodal-ai-experiences-with-fa-127391.html</id>
-    <updated>2026-11-06T11:31:59Z</updated>
-    <summary>Video workloads do not all start with the same input or aim for the same result. A creative team might explore several interpretations of a written brief. A retailer might turn an approved product image into a short motion concept. An application dev...</summary>
+    <title>This simple change stops robot swarms from getting stuck</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/this-simple-change-stops-robot-swarms-from-getting-stuck-138847.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/this-simple-change-stops-robot-swarms-from-getting-stuck-138847.html</id>
+    <updated>2026-04-15T07:45:51Z</updated>
+    <summary>Imagine a swarm of robots rushing to complete an urgent job, such as cleaning up an oil spill or assembling complex machinery. At first, adding more robots speeds things up. But after a certain point, the space becomes crowded, robots start interferi...</summary>
   </entry>
   <entry>
-    <title>How to train a newly introduced language model from scratch using Transformers and Tokenizers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/how-to-train-a-newly-introduced-language-model-from-scratch-using-127390.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/how-to-train-a-newly-introduced-language-model-from-scratch-using-127390.html</id>
-    <updated>2020-02-14T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Japanese VTuber actually escapes GTA 6’s “impossible” 6-star Wanted level</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/japanese-vtuber-actually-escapes-gta-6s-impossible-6-star-wanted--138846.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/japanese-vtuber-actually-escapes-gta-6s-impossible-6-star-wanted--138846.html</id>
+    <updated>2026-11-24T18:27:40Z</updated>
+    <summary>Japanese streamer Haigure Tamao has managed to escape GTA 6’s supposedly impossible six-star Wanted level by using an elaborate Easter egg that transports players into the original Grand Theft Auto: Vice City. After ditching the sixth Wanted star in ...</summary>
   </entry>
   <entry>
-    <title>How to generate text: using different decoding methods for language generation with Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-127389.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-127389.html</id>
-    <updated>2020-03-01T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Quantum AI just got shockingly good at predicting chaos</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/quantum-ai-just-got-shockingly-good-at-predicting-chaos-138845.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/quantum-ai-just-got-shockingly-good-at-predicting-chaos-138845.html</id>
+    <updated>2026-04-18T03:51:09Z</updated>
+    <summary>According to recent reports, A upcoming study led by researchers at UCL (University College London) highlights that combining quantum computing with artificial intelligence can significantly improve predictions of complex physical systems over long p...</summary>
   </entry>
   <entry>
-    <title>The Reformer - Pushing the limits of language modeling</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/the-reformer-pushing-the-limits-of-language-modeling-127388.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/the-reformer-pushing-the-limits-of-language-modeling-127388.html</id>
-    <updated>2020-07-03T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Influencer Christie Miller announces her own death in emotional farewell video after cancer battle</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/influencer-christie-miller-announces-her-own-death-in-emotional-f-138844.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/influencer-christie-miller-announces-her-own-death-in-emotional-f-138844.html</id>
+    <updated>2026-11-24T18:49:59Z</updated>
+    <summary>Influencer Christie Miller has unveiled her own death at the age of 60 in a pre-recorded video following a four-year battle with breast cancer. Miller was diagnosed with stage 4 HER2-positive breast cancer in June 2022 and amassed over 50,000 followe...</summary>
   </entry>
   <entry>
-    <title>Block Sparse Matrices for Smaller and Faster Language Models</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-127387.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-127387.html</id>
-    <updated>2020-09-10T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Industry News: Think AI "knows" what it’s doing? Scientists say think again</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html</id>
+    <updated>2026-04-19T08:02:23Z</updated>
+    <summary>Think, know, understand, remember. According to recent reports, these are everyday words people use to describe what goes on in the human mind. But when those same terms are applied to artificial intelligence, they can unintentionally make machines s...</summary>
   </entry>
   <entry>
-    <title>Tech Report: Transformer-based Encoder-Decoder Models</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/tech-report-transformer-based-encoder-decoder-models-127386.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/tech-report-transformer-based-encoder-decoder-models-127386.html</id>
-    <updated>2020-10-10T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Google files patent for AI-generated TV channel that uses your face and voice for shows</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/google-files-patent-for-ai-generated-tv-channel-that-uses-your-fa-138842.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/google-files-patent-for-ai-generated-tv-channel-that-uses-your-fa-138842.html</id>
+    <updated>2026-11-24T19:01:06Z</updated>
+    <summary>Google has filed a patent application for a personalized television channel that uses artificial intelligence to generate highlights starring the person watching. Streaming platforms such as YouTube and Netflix already use viewing habits to recommend...</summary>
   </entry>
   <entry>
-    <title>Hyperparameter Search with Transformers and Ray Tune</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/hyperparameter-search-with-transformers-and-ray-tune-127385.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/hyperparameter-search-with-transformers-and-ray-tune-127385.html</id>
-    <updated>2020-11-02T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Razer x Durex collab gives gamers “Long-Lasting Battle Armor” condoms and a mouse pad</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/razer-x-durex-collab-gives-gamers-long-lasting-battle-armor-condo-138841.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/razer-x-durex-collab-gives-gamers-long-lasting-battle-armor-condo-138841.html</id>
+    <updated>2026-11-24T19:09:38Z</updated>
+    <summary>Razer and Durex have teamed up for a China-exclusive gaming gift set containing two limited-edition condoms and a matching Razer mouse pad, prompting a wave of jokes and questions from players online. Recent findings suggest that razer is best known ...</summary>
   </entry>
   <entry>
-    <title>Porting fairseq wmt19 translation system to transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/porting-fairseq-wmt19-translation-system-to-transformers-127384.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/porting-fairseq-wmt19-translation-system-to-transformers-127384.html</id>
-    <updated>2020-11-03T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Artificial neurons successfully communicate with living brain cells</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/artificial-neurons-successfully-communicate-with-living-brain-cel-138840.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/artificial-neurons-successfully-communicate-with-living-brain-cel-138840.html</id>
+    <updated>2026-04-18T07:32:36Z</updated>
+    <summary>Recent findings suggest that engineers at Northwestern University have created printed artificial neurons that go beyond imitation and can directly interact with real brain cells. These flexible, low-cost devices produce electrical signals that close...</summary>
   </entry>
   <entry>
-    <title>Tech Report: Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/tech-report-leveraging-pre-trained-language-model-checkpoints-for-127383.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/tech-report-leveraging-pre-trained-language-model-checkpoints-for-127383.html</id>
-    <updated>2020-11-09T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Rockstar is turning GTA 6’s in-game trading cards into real collectibles</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/rockstar-is-turning-gta-6s-in-game-trading-cards-into-real-collec-138839.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/rockstar-is-turning-gta-6s-in-game-trading-cards-into-real-collec-138839.html</id>
+    <updated>2026-11-24T20:05:49Z</updated>
+    <summary>Rockstar Games has partnered with Panini to release real-life GTA 6 trading cards based on the collectibles players can find scattered throughout Leonida. There’s no shortage of things to collect in Grand Theft Auto 6, with Rockstar taking a page out...</summary>
   </entry>
   <entry>
-    <title>How we sped up transformer inference 100x for 🤗 API customers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-127382.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-127382.html</id>
-    <updated>2021-01-18T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Dunkin’ reveals free donut giveaway &amp; 15-foot-tall nutcracker statue</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/dunkin-reveals-free-donut-giveaway-15-foot-tall-nutcracker-statue-138838.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/dunkin-reveals-free-donut-giveaway-15-foot-tall-nutcracker-statue-138838.html</id>
+    <updated>2026-11-24T20:14:09Z</updated>
+    <summary>Dunkin’ is celebrating the holiday season with the return of its free donut giveaway, a giant nutcracker statue, and a limited-edition merchandise collection. The coffee chain introduced its Donutcracker character as part of its 2026 holiday packagin...</summary>
   </entry>
   <entry>
-    <title>Fit More and Train Faster With ZeRO via DeepSpeed and FairScale</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-127381.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-127381.html</id>
-    <updated>2021-01-19T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>AI swarms could hijack democracy without anyone noticing</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/ai-swarms-could-hijack-democracy-without-anyone-noticing-138837.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/ai-swarms-could-hijack-democracy-without-anyone-noticing-138837.html</id>
+    <updated>2026-04-20T09:47:25Z</updated>
+    <summary>Sources indicate that A new kind of political threat may be emerging, and it is far less visible than protests or traditional voter manipulation. Researchers warn that highly realistic AI-controlled personas could soon play a major role in shaping pu...</summary>
   </entry>
   <entry>
-    <title>Faster TensorFlow models in Hugging Face Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/faster-tensorflow-models-in-hugging-face-transformers-127380.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/faster-tensorflow-models-in-hugging-face-transformers-127380.html</id>
-    <updated>2021-01-26T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>This AI knew the answers but didn’t understand the questions</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/this-ai-knew-the-answers-but-didnt-understand-the-questions-138836.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/this-ai-knew-the-answers-but-didnt-understand-the-questions-138836.html</id>
+    <updated>2026-04-30T06:44:03Z</updated>
+    <summary>Psychologists have long debated whether the human mind can be explained by a single, unified theory or if different functions such as attention and memory must be studied separately. Now, artificial intelligence (AI) is entering that debate, offering...</summary>
   </entry>
   <entry>
-    <title>Breaking: Hugging Face on PyTorch / XLA TPUs</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-hugging-face-on-pytorch-xla-tpus-127379.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-hugging-face-on-pytorch-xla-tpus-127379.html</id>
-    <updated>2021-02-09T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Harry Potter YouTuber loses entire channel after Warner Bros copyright strikes Malfoid videos</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/harry-potter-youtuber-loses-entire-channel-after-warner-bros-copy-138835.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/harry-potter-youtuber-loses-entire-channel-after-warner-bros-copy-138835.html</id>
+    <updated>2026-11-24T21:24:23Z</updated>
+    <summary>According to recent reports, the Harry Potter franchise has experienced a resurgence in fan-created content thanks to the popularity of Malfoid, an internet trend that reimagines Draco Malfoy as a female character. The trend has spawned fan art, AI-g...</summary>
   </entry>
   <entry>
-    <title>Breaking: Retrieval Augmented Generation with Huggingface Transformers and Ray</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-retrieval-augmented-generation-with-huggingface-transfor-127378.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-retrieval-augmented-generation-with-huggingface-transfor-127378.html</id>
-    <updated>2021-02-10T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>AI lets chemists design molecules by simply describing them</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/ai-lets-chemists-design-molecules-by-simply-describing-them-138834.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/ai-lets-chemists-design-molecules-by-simply-describing-them-138834.html</id>
+    <updated>2026-05-06T00:20:57Z</updated>
+    <summary>Recent findings suggest that creating newly introduced molecules is one of the toughest tasks in chemistry. Whether the goal is a life-saving drug or a cutting-edge material, each compound must be built through a carefully planned series of reactions...</summary>
   </entry>
   <entry>
-    <title>Simple considerations for simple people building fancy neural networks</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/simple-considerations-for-simple-people-building-fancy-neural-net-127377.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/simple-considerations-for-simple-people-building-fancy-neural-net-127377.html</id>
-    <updated>2021-02-25T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Costco’s $40 last-minute Thanksgiving Dinner Kit comes with enough food to serve 8 people</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/costcos-40-last-minute-thanksgiving-dinner-kit-comes-with-enough--138833.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/costcos-40-last-minute-thanksgiving-dinner-kit-comes-with-enough--138833.html</id>
+    <updated>2026-11-24T21:25:45Z</updated>
+    <summary>Costco is coming to the rescue of anyone scrambling to put together a last-minute Thanksgiving dinner, bringing back its affordable meal kit with enough food to feed up to eight people. Earlier in November, Costco made headlines for selling a massive...</summary>
   </entry>
   <entry>
-    <title>Latest Update: Hugging Face Reads, Feb. 2021 - Long-range Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/latest-update-hugging-face-reads-feb-2021-long-range-transformers-127376.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/latest-update-hugging-face-reads-feb-2021-long-range-transformers-127376.html</id>
-    <updated>2021-03-09T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Defeat Ragdolls for Powers codes (November 2026)</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/defeat-ragdolls-for-powers-codes-november-2026-138832.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/defeat-ragdolls-for-powers-codes-november-2026-138832.html</id>
+    <updated>2026-11-25T08:02:32Z</updated>
+    <summary>Recent findings suggest that A chainsaw, a shark pool, and a military tank are all fair game in this city. Roblox Defeat Ragdolls for Powers lets you use an arsenal of abilities to send ragdolls flying, and its codes can give you extra Coins and powe...</summary>
   </entry>
   <entry>
-    <title>Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-127375.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-127375.html</id>
-    <updated>2021-03-12T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Your “um” and pauses could reveal early dementia risk</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/your-um-and-pauses-could-reveal-early-dementia-risk-138831.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/your-um-and-pauses-could-reveal-early-dementia-risk-138831.html</id>
+    <updated>2026-05-13T04:18:33Z</updated>
+    <summary>In a recent development, the way people speak during ordinary conversations could offer valuable insight into brain health, according to new research from Baycrest, the University of Toronto, and York University. Scientists found that subtle speech c...</summary>
   </entry>
   <entry>
-    <title>Industry News: My Journey to a serverless transformers pipeline on Google Cloud</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/industry-news-my-journey-to-a-serverless-transformers-pipeline-on-127374.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/industry-news-my-journey-to-a-serverless-transformers-pipeline-on-127374.html</id>
-    <updated>2021-03-18T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Stack A Butter Squishy codes (November 2026)</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/stack-a-butter-squishy-codes-november-2026-138830.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/stack-a-butter-squishy-codes-november-2026-138830.html</id>
+    <updated>2026-11-25T09:18:16Z</updated>
+    <summary>Pull a lever, get a random butter squishy, then send it through a wax pour until it hops onto your plate. In Roblox Stack A Butter Squishy, codes can add Cash, pets, Luck Rolls, and a Finish Wax to that strangely satisfying routine. Industry observer...</summary>
   </entry>
   <entry>
-    <title>The Partnership: Amazon SageMaker and Hugging Face</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/the-partnership-amazon-sagemaker-and-hugging-face-127373.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/the-partnership-amazon-sagemaker-and-hugging-face-127373.html</id>
-    <updated>2021-03-23T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>New quantum algorithm solves “impossible” materials problem in seconds</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/new-quantum-algorithm-solves-impossible-materials-problem-in-seco-138829.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/new-quantum-algorithm-solves-impossible-materials-problem-in-seco-138829.html</id>
+    <updated>2026-05-13T07:33:27Z</updated>
+    <summary>Sources indicate that quantum computers and other advanced quantum technologies rely on specialized quantum materials that behave in unusual ways under the right conditions. In some cases, scientists can even create entirely new quantum properties by...</summary>
   </entry>
   <entry>
-    <title>Industry News: Understanding BigBird's Block Sparse Attention</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/industry-news-understanding-bigbirds-block-sparse-attention-127372.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/industry-news-understanding-bigbirds-block-sparse-attention-127372.html</id>
-    <updated>2021-03-31T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Ethan Klein addresses affair, the end of H3 Podcast, and return to YouTube</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/ethan-klein-addresses-affair-the-end-of-h3-podcast-and-return-to--138828.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/ethan-klein-addresses-affair-the-end-of-h3-podcast-and-return-to--138828.html</id>
+    <updated>2026-11-25T10:16:00Z</updated>
+    <summary>Ethan Klein has broken his silence on his affair and Hila Klein filing for divorce, as well as bringing the H3 Podcast to an end. Back on October 22, after Ethan Klein revealed that the H3 Podcast would be going on an “indefinite hiatus,” Hila Klein ...</summary>
   </entry>
   <entry>
-    <title>Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/distributed-training-train-bartt5-for-summarization-using-transfo-127371.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/distributed-training-train-bartt5-for-summarization-using-transfo-127371.html</id>
-    <updated>2021-04-08T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>NASA’s new AI space chip could let spacecraft think for themselves</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/nasas-new-ai-space-chip-could-let-spacecraft-think-for-themselves-138827.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/nasas-new-ai-space-chip-could-let-spacecraft-think-for-themselves-138827.html</id>
+    <updated>2026-05-15T08:13:15Z</updated>
+    <summary>NASA is developing a powerful upcoming computer chip designed to dramatically increase the intelligence and performance of future spacecraft. Through a commercial partnership, the project is creating advanced processing technology capable of helping ...</summary>
   </entry>
   <entry>
-    <title>Introducing 🤗 Accelerate</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/introducing-accelerate-127370.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/introducing-accelerate-127370.html</id>
-    <updated>2021-04-16T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Breaking: Christmas market forced to cancel after backlash over AI winter wonderland</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-christmas-market-forced-to-cancel-after-backlash-over-ai-138826.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-christmas-market-forced-to-cancel-after-backlash-over-ai-138826.html</id>
+    <updated>2026-11-25T10:33:39Z</updated>
+    <summary>A Christmas market in England has been blasted by visitors after they discovered its AI-generated winter wonderland looked nothing like the real attraction. Kernow Christmas Market in Cornwall, England, promoted itself with AI images of bustling stal...</summary>
   </entry>
   <entry>
-    <title>Scaling-up BERT Inference on CPU (Part 1)</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/scaling-up-bert-inference-on-cpu-part-1-127369.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/scaling-up-bert-inference-on-cpu-part-1-127369.html</id>
-    <updated>2021-04-20T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Forget electrons, this breakthrough uses light-matter particles to power AI</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/forget-electrons-this-breakthrough-uses-light-matter-particles-to-138825.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/forget-electrons-this-breakthrough-uses-light-matter-particles-to-138825.html</id>
+    <updated>2026-05-19T00:23:26Z</updated>
+    <summary>Eighty years after the creation of ENIAC, the world's first general-purpose electronic computer, researchers at the University of Pennsylvania are exploring a new way to power the future of computing. Instead of relying entirely on electrons, which h...</summary>
   </entry>
   <entry>
-    <title>Breaking: Using &amp; Mixing Hugging Face Models with Gradio 2.0</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/breaking-using-mixing-hugging-face-models-with-gradio-20-127368.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/breaking-using-mixing-hugging-face-models-with-gradio-20-127368.html</id>
-    <updated>2021-05-25T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Throw a Friend for Monsters codes (November 2026)</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/throw-a-friend-for-monsters-codes-november-2026-138824.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/throw-a-friend-for-monsters-codes-november-2026-138824.html</id>
+    <updated>2026-11-25T10:47:56Z</updated>
+    <summary>Your friend might not appreciate being used as bait, but that’s how you attract monsters in Roblox Throw a Friend for Monsters. Build your Throw Power, launch them across different zones, and use codes to improve your Luck when hunting for harder-to-...</summary>
   </entry>
   <entry>
-    <title>Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-127367.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-127367.html</id>
-    <updated>2021-06-03T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Latest Update: One Piece Chapter 1200: Release date &amp; major spoilers</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/latest-update-one-piece-chapter-1200-release-date-major-spoilers-138823.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/latest-update-one-piece-chapter-1200-release-date-major-spoilers-138823.html</id>
+    <updated>2026-11-25T11:37:37Z</updated>
+    <summary>An important addition to the series’ lore, One Piece Chapter 1200 reveals the contents of Lili’s letter and sheds light on Luffy’s newly introduced monkey form. According to recent reports, luffy first appeared in a monkey-like form resembling Gear 5...</summary>
   </entry>
   <entry>
-    <title>Sentence Transformers in the Hugging Face Hub</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/sentence-transformers-in-the-hugging-face-hub-127366.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/sentence-transformers-in-the-hugging-face-hub-127366.html</id>
-    <updated>2021-06-28T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Man calls police on his ex for taking back her Xbox account to play GTA 6</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/man-calls-police-on-his-ex-for-taking-back-her-xbox-account-to-pl-138822.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/man-calls-police-on-his-ex-for-taking-back-her-xbox-account-to-pl-138822.html</id>
+    <updated>2026-11-25T11:42:44Z</updated>
+    <summary>A woman stated her ex-boyfriend called the police on her after he bought Grand Theft Auto 6 and she removed his access to her Xbox account, all so she could play. Grand Theft Auto 6 was finally released on November 19, with an estimated 1.5 million p...</summary>
   </entry>
   <entry>
-    <title>Deploy Hugging Face models easily with Amazon SageMaker</title>
-    <link href="https://railfansday.github.io/artikelsemua74/artikel/deploy-hugging-face-models-easily-with-amazon-sagemaker-127365.html"/>
-    <id>https://railfansday.github.io/artikelsemua74/artikel/deploy-hugging-face-models-easily-with-amazon-sagemaker-127365.html</id>
-    <updated>2021-07-08T00:00:00Z</updated>
-    <summary>Content not available. → Read original article...</summary>
+    <title>Best Black Friday hard drive deals 2026</title>
+    <link href="https://railfansday.github.io/artikelsemua74/artikel/best-black-friday-hard-drive-deals-2026-138821.html"/>
+    <id>https://railfansday.github.io/artikelsemua74/artikel/best-black-friday-hard-drive-deals-2026-138821.html</id>
+    <updated>2026-11-25T16:32:43Z</updated>
+    <summary>Industry observers note that 1. Quick List2. Best HDD Deals3. Best External HDD Deals4. HDD Shopping Tips. If you're in the market for the best Black Friday deals in high-capacity, reliable storage, then take a look at our curated list for a great wa...</summary>
   </entry>
 </feed>

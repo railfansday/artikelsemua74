@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Coding Agent Shouldn't Be Able to Close Its Own Ticket, Part 2: What the Comments Changed</title>
+    <meta name="description" content="What's a claim worth if the code has moved on since it was made? That's not my question. It came from the comments on part one, and it was a better questio">
+    <meta name="keywords" content="agent, claim, commit, check, recent, person, github, arbituro">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/your-coding-agent-shouldnt-be-able-to-close-its-own-ticket-part-2-138058.html">
+    
+    <meta property="og:title" content="Your Coding Agent Shouldn't Be Able to Close Its Own Ticket, Part 2: What the Comments Changed">
+    <meta property="og:description" content="What's a claim worth if the code has moved on since it was made? That's not my question. It came from the comments on part one, and it was a better questio">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flh90fbv7lsq8lik6v854.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/your-coding-agent-shouldnt-be-able-to-close-its-own-ticket-part-2-138058.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Coding Agent Shouldn't Be Able to Close Its Own Ticket, Part 2: What the Comments Changed">
+    <meta name="twitter:description" content="What's a claim worth if the code has moved on since it was made? That's not my question. It came from the comments on part one, and it was a better questio">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flh90fbv7lsq8lik6v854.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Your Coding Agent Shouldn't Be Able to Close Its Own Ticket, Part 2: What the Comments Changed", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flh90fbv7lsq8lik6v854.png"], "datePublished": "2026-11-26T21:21:05", "dateModified": "2026-11-26T21:28:57.180277", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/your-coding-agent-shouldnt-be-able-to-close-its-own-ticket-part-2-138058.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Your Coding Agent Shouldn't Be Able to Close Its Own Ticket, Part 2: What the Co?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Your Coding Agent Shouldn't Be Able to Close Its Own Ticket,' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Your Coding Agent Shouldn't Be Able to Close Its Own Ticket, Part 2: What the Comments Changed</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 26 Nov 2026 &bull; ⏱️ 8 min read (1558 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>What's a claim worth if the code has moved on since it was made?</li><li style='margin-bottom:6px;'>It came from the comments on part one, and it was a better question than anything I'd asked in the post itself.</li><li style='margin-bottom:6px;'>Part one argued that a coding agent should be able to claim a ticket is done, with evidence, but never decide it.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-138058"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-138058"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-138058"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Your Coding Agent Shouldn't Be Able to Close Its Own Ticket, Part 2: What the Comments Changed" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flh90fbv7lsq8lik6v854.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-138058">What's a claim worth if the code has moved on since it was made?</p>
+<p>That's not my question. It came from the comments on part one, and it was a better question than anything I'd asked in the post itself. 🙌.</p>
+<p>Quick recap if you missed it. Part one argued that a coding agent should be able to claim a ticket is done, with evidence, but never decide it. A CI check or a named person decides. The agent keeps all its speed; it just doesn't mark its own work.</p>
+<p>Industry observers note that the comments agreed with the split, and then politely took it apart at the edges. This post is about those edges, and what got built because of them. <span style="font-size:13px;">(Related: <a href="industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html" style="color:#2563eb; font-weight:600;">Industry News: Think AI "knows" what it’s doing? Scient...</a>)</span></p>
+<p>Two commenters shaped this post, so they go first.</p>
+<p>In a recent development, glenn left three comments, and each one turned into a change. The first: tie every completion claim to the exact commit it was made against, or the approval ends up attached to stale evidence. The last: the same permission boundary should cover the checks, because an agent that can edit the CI config can weaken the very thing that judges it. <span style="font-size:13px;">(Related: <a href="this-latest-chip-survives-1300f-700c-and-could-change-ai-forever-138850.html" style="color:#2563eb; font-weight:600;">This latest chip survives 1300°F (700°C) and could chan...</a>)</span></p>
+<p>Recent findings suggest that gautam K put the principle more sharply than I did: the ticket can only close when something the agent can't edit confirms it. The agent can propose Done. Only that check, or a person, can move it.</p>
+<p>It has been revealed that thank you both. Most of what's below exists because you wrote it down. 🙇.</p>
+<p>Here's the scenario Glenn described. The agent claims a criterion is met:.</p>
+<p>Industry observers note that (OK, a better agent writes what it actually checked. Stay with me.).</p>
+<p>In a recent development, then it keeps going. It pushes a refactor. Then a "small fix". By the time a person reads the claim, it's about code that no longer exists. The evidence was real. It's just evidence about a different commit. 😬.</p>
+<p>So now every claim is pinned to a commit. When a coding agent claims a criterion, Arbituro records the commit the job's branch or pull request stood at right then.</p>
+<p>Sources indicate that the vital part: the agent doesn't send that commit. Arbituro reads it from the job's link, which only GitHub's own events move. An agent can't leave it out, and it can't name a convenient one. A commit the agent reports would just be more testimony. A commit GitHub reports is a fact. 🔒.</p>
+<p>In a recent development, when more code lands after the claim, the person deciding sees it right next to the claim, in plain words: "2 commits pushed since". After a force push it says "The branch was rewritten since the claim" instead.</p>
+<p>And opening the claim shows what GitHub recorded after it, oldest first: each check that reported and the commit it ran on, each commit pushed with its subject and the first files it touched, and the merge. You don't have to go and dig through GitHub to find out what "2 commits" means.</p>
+<p>This was the real design question, and I went back and forth on it.</p>
+<p>Withdrawing the claim automatically sounds safer. But agents push constantly, and plenty of pushes don't touch what was claimed. A fix to a typo in the README shouldn't throw away a claim about checkout. Auto-withdrawing would mean the person deciding never sees most claims at all.</p>
+<p>Recent findings suggest that so a moved head warns and never withdraws. The claim stays there to decide. The person can still press Met, or press "Ask it to check again", which leaves a note on the job for the agent, under their own name. The agent reads it the next time it opens the job:.</p>
+<p>In a recent development, short, specific, and it names the commit. No "please re-verify everything". 🎯.</p>
+<p>In a recent development, one more honesty detail I care about: the wording always indicates "since the claim", never "since the agent checked". Arbituro knows where the branch stood when the claim arrived. It doesn't know exactly what the agent looked at. The screen shouldn't pretend it does. 🧐.</p>
+<p>The same logic applies to CI, and this one is stricter.</p>
+<p>Recent findings suggest that A check's pass is only true of the commit it ran on. So when a upcoming commit lands on the pull request, any criterion a named check had already passed goes back to undecided until that check reports again on the new commit.</p>
+<p>No warning this time, a reset. Why the difference? A person's judgement might survive a small push; they can look and decide. A check's pass is a statement about one exact commit, and nothing else. What happened (the job's history) records which criterion was reopened, by which check, and both commits.</p>
+<p>Claims can also carry screenshots now, for anything a screen proves. "Works on mobile" with an actual phone-sized screenshot beats "works on mobile" with a ✅. 📱.</p>
+<p id="sec-mid-138058">Glenn's last comment is the one I keep thinking about.</p>
+<p>Recent findings suggest that taking "close the ticket" away from the agent doesn't help much if the same pull request can quietly change what "passing" means. Edit the workflow so the test job skips the slow suite. Loosen CODEOWNERS. The check goes green, the criterion ticks, and everything looks verified. ✅ 🙃.</p>
+<p>Two things are true in Arbituro now.</p>
+<p>Agents running inside Arbituro can't write under .github at all. That covers workflows, the actions they call, and CODEOWNERS. It's enforced in code, on the files about to be pushed, not in a prompt. And a person still approves the change after that.</p>
+<p>A coding agent in your own repo is different. Claude Code, Cursor and friends work in your checkout with your permissions. Arbituro can't stop them editing a workflow, and it shouldn't pretend to. That's what branch protection, required reviews and CODEOWNERS are for.</p>
+<p>What Arbituro can do is make sure a weakened check never passes quietly. So before a named check ticks a criterion, Arbituro reads the pull request's changed files from GitHub. If any of them are under .github/, or a CODEOWNERS file, the criterion still ticks, but its line says so, in warning colour. Roughly:.</p>
+<p>According to recent reports, the path links straight to the pull request's changed files on GitHub. The person signing the job off sees it at exactly the moment it matters.</p>
+<p>A couple of choices I made deliberately:.</p>
+<p>It has been revealed that all of that made the evidence better. But look at what the person deciding still had in front of them: the agent's own account of its own work, plus a pile of GitHub facts to cross-check by hand.</p>
+<p>I got bitten by exactly this on my own backlog. A coding agent claimed the suite passed. Two minutes later, the Frontend check failed on the very commit it had claimed. The only place that mentioned so was a log I wasn't looking at. 🤦.</p>
+<p>The facts were all there. Nobody had put them next to the claim.</p>
+<p>Industry observers note that so now every claim gets read by a second agent before its person decides. Think of it as a verification agent:.</p>
+<p>Industry observers note that here's how that looks on a job's Done when. (A sample job, but the real screen.) The coding agent claimed three criteria at the same commit, and the reader went through all three:.</p>
+<p>In a recent development, the verdict leads each claim, so you can see which one needs you before reading anything. When a claim holds up, the reader's reason is one quiet line. When it doesn't, you get the whole reason.</p>
+<p>And the bottom row is Problem Three doing its job: the check passed, on a pull request that also touched the CI workflow.</p>
+<p>Open the claim that doesn't hold up, and everything is in one place: the agent's word, what GitHub recorded after it, and the reading.</p>
+<p>It has been revealed that the agent noted the suite passed. GitHub says the check failed on that exact commit. The reader put the two side by side, so I didn't have to. And it caught the second problem too: "tests pass" isn't evidence that a postcode gets refused. 🎯.</p>
+<p>In a recent development, is an agent checking an agent just turtles all the way down? 🐢 A bit. But this reader can't edit the claim, can't edit GitHub's record, and can't tick anything. Its only power is to put the contradiction in front of the person who decides. That's a power I'm happy to hand out.</p>
+<p>Part one said: whoever wrote the change doesn't approve it.</p>
+<p>This round added three things, and they're all versions of the same idea:.</p>
+<p>Recent findings suggest that the first two weren't on my list before the comments. That's the best argument I know for writing in public. 😄.</p>
+<p>You can get most of this in any setup:.</p>
+<p>Arbituro is free for up to three people at arbituro.com.</p>
+<p>How do you keep the checks independent of the agent being checked? Code owners on CI, checks that run from outside the repo, or mostly trust and a careful eye on the diff?</p>
+<p id="sec-end-138058">And if you think warn-not-withdraw is the wrong call for a stale claim, I want to hear that one too. Part three might be yours. 👇.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/steve-o/your-coding-agent-shouldnt-be-able-to-close-its-own-ticket-part-2-what-the-comments-changed-466d" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-why-the-agent-isnt-the-hard-part-where-developers-go--138494.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138494. Tech Report: Why the Agent Isn’t the Hard Part: Where Developers Go Wrong With Agentic Workflows
+        </a>
+        
+        <a href="an-ai-coding-agent-a-browser-and-a-mac-tool-found-a-financial-fir-138407.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138407. An AI coding agent, a browser, and a Mac tool found a financial firm's access key in under 6 minutes
+        </a>
+        
+        <a href="give-your-coding-agents-a-memory-you-own-138379.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138379. Give Your Coding Agents a Memory You Own
+        </a>
+        
+        <a href="line-taiwan-unveils-three-part-ai-agent-strategy-for-businesses-138233.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138233. LINE Taiwan Unveils Three-Part AI Agent Strategy for Businesses
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

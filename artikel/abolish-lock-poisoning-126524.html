@@ -163,14 +163,14 @@ object behind in a broken state.</p>
 I cannot once remember it helping me. The libs team is
 discussing making the
 non-poisoning locks the default in the next edition but entirely expectedly it
-has caused quite a few people to jump to the defence of the feature. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-127377.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+has caused quite a few people to jump to the defence of the feature. <span style="font-size:13px;">(Related: <a href="industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html" style="color:#2563eb; font-weight:600;">Industry News: Think AI "knows" what it’s doing? Scient...</a>)</span></p>
 <p>In this post I want to make my personal case why poisoned locks should either
 be entirely removed or be made the exception.</p>
 <p>Primarily this is because I have yet to come across code in the wild that
 handles a poisoned lock correctly. On the other hand I have come across enough
 code that mishandles it and as a result behaves worse than a
 parking_lot lock would which does not support
-poisoning.</p>
+poisoning. <span style="font-size:13px;">(Related: <a href="costcos-40-last-minute-thanksgiving-dinner-kit-comes-with-enough--138833.html" style="color:#2563eb; font-weight:600;">Costco’s $40 last-minute Thanksgiving Dinner Kit comes ...</a>)</span></p>
 <p>Josh Triplett put it quite
 strongly in a hackernews comment: “In the entire history of the standard
 library, we have never once seen a single report of anyone attempting to recover
@@ -182,7 +182,7 @@ with unwinding, the idiomatic lock().unwrap() picks the worst option of all.</p>
 <p>That’s because it neither stops the process nor lets it continue as it will turn
 every further lock into a panic with sometimes disastrous effects. But that
 is not the only problem with the system today. So here I want to share some of
-the issues and with some references to real world code of how people got bitten. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-127384.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+the issues and with some references to real world code of how people got bitten.</p>
 <p>In a recent development, one subtle aspect to the poisoning is that the PoisonError needs to hold the guard. That’s because in order to ignore the poison flag, you need to fetch the guard
 from the error object. Holding on to the error means holding on to the lock!</p>
 <p>It has been revealed that that can cause common code that does error wrapping / error conversions into a
@@ -306,20 +306,20 @@ copy as / view markdown.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-personal-finance-not-investing-re-psa-quotlock-credentia-125331.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #125331. Breaking: Personal Finance (Not Investing) • Re: PSA: &quot;Lock Credentials&quot; seems a new setting at Vanguard?
+        <a href="tech-report-in-defense-of-lock-poisoning-in-rust-2025-138266.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138266. Tech Report: In defense of lock poisoning in Rust (2025)
         </a>
         
-        <a href="industry-news-spydercos-first-true-button-lock-is-a-beginner-frie-125046.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #125046. Industry News: Spyderco’s First True Button Lock is a Beginner-Friendly Blade with Expert Chops
+        <a href="electronics-manufacturers-set-up-memory-war-rooms-to-find-lock-in-138541.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138541. Electronics manufacturers set up memory 'war rooms' to find, lock in DRAM supplies amid worst shortage in history
         </a>
         
-        <a href="like-designing-a-fresh-key-to-open-a-defective-lock-ai-designed-p-122954.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #122954. 'Like designing a fresh key to open a defective lock': AI-designed protein tricks defective insulin receptors into working
+        <a href="spydercos-first-true-button-lock-is-a-beginner-friendly-blade-wit-136550.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #136550. Spyderco’s First True Button Lock is a Beginner-Friendly Blade with Expert Chops
         </a>
         
-        <a href="bilt-palladium-is-my-best-card-for-everyday-spendingget-it-by-dec-122740.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #122740. Bilt Palladium Is My Best Card For Everyday Spending—Get It By December 31 To Lock In Its Most Valuable Rewards
+        <a href="like-designing-a-new-key-to-open-a-defective-lock-ai-designed-pro-134489.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #134489. 'Like designing a new key to open a defective lock': AI-designed protein tricks defective insulin receptors into working
         </a>
         
     </div>

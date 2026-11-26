@@ -168,15 +168,15 @@ therefore deliberately narrow:.</p>
 <p>The first visible symptoms appeared in:.</p>
 <p>Those metrics came from a GSPO training run, the objective used for this
 experiment. The same class of mismatch can surface in PPO, GRPO, or any online
-RL system that treats rollout-side logprobs as part of the optimization target. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-127384.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+RL system that treats rollout-side logprobs as part of the optimization target.</p>
 <p>The initial V1 run highlighted the problem clearly. The trainer-side logprobs and
-reward moved away from the V0 reference early in training. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-127371.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
+reward moved away from the V0 reference early in training. <span style="font-size:13px;">(Related: <a href="latest-update-giant-superatoms-could-finally-solve-quantum-comput-138848.html" style="color:#2563eb; font-weight:600;">Latest Update: “Giant superatoms” could finally solve q...</a>)</span></p>
 <p>Recent findings suggest that the same pattern appears in the trainer metrics. Clip rate is the easiest signal
 to read in the initial comparison.</p>
 <p>We separated the possible causes into three layers:.</p>
 <p>In a recent development, we initially suspected the third category too early. The useful diagnosis came
 from treating the first two as backend behavior problems and ruling them out
-first.</p>
+first. <span style="font-size:13px;">(Related: <a href="your-um-and-pauses-could-reveal-early-dementia-risk-138831.html" style="color:#2563eb; font-weight:600;">Your “um” and pauses could reveal early dementia risk...</a>)</span></p>
 <p>It has been revealed that the first problem was semantic. vLLM V1 returns logprobs from the raw model
 outputs by default, before logits post-processing such as temperature scaling,
 penalties, and top-k/top-p filtering. PipelineRL expected logprobs from the
@@ -263,20 +263,20 @@ then add corrections for the mismatch that remains.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="how-product-teams-can-use-ai-user-research-to-test-assumptions-be-127065.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127065. How Product Teams Can Use AI User Research to Test Assumptions Before Sprint Planning
+        <a href="f1-star-max-verstappen-played-40-hours-of-gta-6-before-winning-la-138806.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138806. F1 star Max Verstappen played 40 hours of GTA 6 before winning Las Vegas grand prix
         </a>
         
-        <a href="breaking-introducing-multi-backends-trt-llm-vllm-support-for-text-126859.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126859. Breaking: Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference
+        <a href="runaway-horse-visits-mcdonalds-before-leading-police-on-neighborh-138749.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138749. Runaway horse visits McDonald’s before leading police on neighborhood chase
         </a>
         
-        <a href="no-gpu-left-behind-unlocking-efficiency-with-co-located-vllm-in-t-126766.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126766. No GPU left behind: Unlocking Efficiency with Co-located vLLM in TRL
+        <a href="ai-models-on-one-vllm-server-secretly-talk-through-gpu-rounding-e-138685.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138685. AI models on one vLLM server secretly talk through GPU rounding errors
         </a>
         
-        <a href="the-brain-creates-body-ownership-before-touch-occurs-126314.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126314. The Brain Creates Body Ownership Before Touch Occurs
+        <a href="serving-a-local-llm-to-several-customers-ollama-lm-studio-llamacp-138605.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138605. Serving a Local LLM to Several Customers: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
         </a>
         
     </div>

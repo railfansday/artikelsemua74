@@ -150,17 +150,17 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126632">llama.cpp server now ships with router mode, which lets you dynamically load, unload, and switch between multiple models without restarting.</p>
-<p>Reminder: llama.cpp server is a lightweight, OpenAI-compatible HTTP server for running LLMs locally. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-127392.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
-<p>This feature was a popular request to bring Ollama-style model management to llama.cpp. It uses a multi-process architecture where each model runs in its own process, so if one model crashes, others remain unaffected. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-127390.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>Reminder: llama.cpp server is a lightweight, OpenAI-compatible HTTP server for running LLMs locally.</p>
+<p>This feature was a popular request to bring Ollama-style model management to llama.cpp. It uses a multi-process architecture where each model runs in its own process, so if one model crashes, others remain unaffected.</p>
 <p>Start the server in router mode by not specifying a model:.</p>
 <p>According to recent reports, this auto-discovers models from your llama.cpp cache (LLAMA_CACHE or ~/.cache/llama.cpp). If you've previously downloaded models via llama-server -hf user/model, they'll be available automatically.</p>
-<p>You can also point to a local directory of GGUF files:.</p>
+<p>You can also point to a local directory of GGUF files:. <span style="font-size:13px;">(Related: <a href="google-files-patent-for-ai-generated-tv-channel-that-uses-your-fa-138842.html" style="color:#2563eb; font-weight:600;">Google files patent for AI-generated TV channel that us...</a>)</span></p>
 <p>On the first request, the server automatically loads the model into memory (loading time depends on model size). Subsequent requests to the same model are instant since it's already loaded.</p>
 <p>Returns all discovered models with their status (loaded, loading, or unloaded).</p>
 <p>All model instances inherit settings from the router:.</p>
 <p>All loaded models will use 8192 context and full GPU offload. You can also define per-model settings using presets:.</p>
 <p>The built-in web UI also supports model switching. Just select a model from the dropdown and it loads automatically.</p>
-<p>We hope this feature makes it easier to A/B test different model versions, run multi-tenant deployments, or simply switch models during development without restarting the server.</p>
+<p>We hope this feature makes it easier to A/B test different model versions, run multi-tenant deployments, or simply switch models during development without restarting the server. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-138837.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
 <p>Industry observers note that have questions or feedback? Drop a comment below or open an issue on GitHub.</p>
 <p>Supported via presets.ini, where you can specify the mmproj (and other long and short arguments) per model.</p>
 <p id="sec-mid-126632">Industry observers note that awesome new feature! Can model selection be done on something other than requested model name? Like maybe specify the ranking in presets.ini, and then the highest ranked model that can satisfy the request will be the default. So maybe one model is best for short context, another (or the same with other settings) for when the context gets too long, and another when image input is required.</p>
@@ -200,20 +200,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-welcome-llama-3-metas-fresh-open-llm-127007.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127007. Industry News: Welcome Llama 3 - Meta's fresh open LLM
+        <a href="serving-a-local-llm-to-several-customers-ollama-lm-studio-llamacp-138605.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138605. Serving a Local LLM to Several Customers: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
         </a>
         
-        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-126557.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126557. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
+        <a href="transformers-now-runs-llamacpp-quants-138346.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138346. Transformers now runs llama.cpp quants
         </a>
         
-        <a href="industry-news-serving-a-local-llm-to-several-users-ollama-lm-stud-115725.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115725. Industry News: Serving a Local LLM to Several Users: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
+        <a href="latest-update-introducing-the-llamacpp-benchmark-dashboard-for-am-138075.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138075. Latest Update: Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon
         </a>
         
-        <a href="transformers-now-runs-llamacpp-quants-115366.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115366. Transformers now runs llama.cpp quants
+        <a href="amd-specific-patches-for-llamacpp-131249.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #131249. AMD Specific Patches for Llama.cpp
         </a>
         
     </div>

@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-26T08:35:43.094256",
-  "totalArticles": 12453,
+  "generatedAt": "2026-11-26T22:09:31.781395",
+  "totalArticles": 12456,
   "categoryBreakdown": {
-    "General": 10202,
-    "AI & Tech": 976,
-    "Hardware & Chips": 210,
-    "Business & Policy": 524,
-    "Gadgets": 330,
-    "EV & Auto": 211
+    "AI & Tech": 953,
+    "Hardware & Chips": 194,
+    "General": 10234,
+    "Gadgets": 351,
+    "Business & Policy": 518,
+    "EV & Auto": 206
   },
   "topSources": {
-    "Hugging Face": 918,
-    "Co": 808,
+    "Hugging Face": 917,
+    "Co": 863,
     "Sciencedaily": 212,
     "Eschoolnews": 200,
     "Cbssports": 169,
     "Electrek": 149,
-    "Yahoo": 145,
+    "Yahoo": 146,
     "Dw": 144,
-    "Dailymail": 139,
-    "Realworkfromanywhere": 123
+    "Dailymail": 138,
+    "Realworkfromanywhere": 122
   },
   "latestHeadlines": [
     {
-      "id": 127394,
-      "title": "Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/predicting-and-detecting-failures-how-azure-strengthens-reliabili-127394.html",
-      "category": "General"
-    },
-    {
-      "id": 127393,
-      "title": "Designing Azure silicon on Azure silicon: EDA workloads on Cobalt 200",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/designing-azure-silicon-on-azure-silicon-eda-workloads-on-cobalt--127393.html",
-      "category": "General"
-    },
-    {
-      "id": 127392,
-      "title": "Stop treating agents as one-off projects and start running them as a continuous discipline",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/stop-treating-agents-as-one-off-projects-and-start-running-them-a-127392.html",
-      "category": "General"
-    },
-    {
-      "id": 127391,
-      "title": "Building the next generation of multimodal AI experiences with fal in Microsoft Foundry",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/building-the-next-generation-of-multimodal-ai-experiences-with-fa-127391.html",
+      "id": 138850,
+      "title": "This latest chip survives 1300°F (700°C) and could change AI forever",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-latest-chip-survives-1300f-700c-and-could-change-ai-forever-138850.html",
       "category": "AI & Tech"
     },
     {
-      "id": 127390,
-      "title": "How to train a newly introduced language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-train-a-newly-introduced-language-model-from-scratch-using-127390.html",
+      "id": 138849,
+      "title": "This new chip could slash data center energy waste",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-new-chip-could-slash-data-center-energy-waste-138849.html",
+      "category": "Hardware & Chips"
+    },
+    {
+      "id": 138848,
+      "title": "Latest Update: “Giant superatoms” could finally solve quantum computing’s biggest problem",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/latest-update-giant-superatoms-could-finally-solve-quantum-comput-138848.html",
       "category": "General"
     },
     {
-      "id": 127389,
-      "title": "How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-127389.html",
+      "id": 138847,
+      "title": "This simple change stops robot swarms from getting stuck",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-simple-change-stops-robot-swarms-from-getting-stuck-138847.html",
+      "category": "AI & Tech"
+    },
+    {
+      "id": 138846,
+      "title": "Japanese VTuber actually escapes GTA 6’s “impossible” 6-star Wanted level",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/japanese-vtuber-actually-escapes-gta-6s-impossible-6-star-wanted--138846.html",
       "category": "General"
     },
     {
-      "id": 127388,
-      "title": "The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/the-reformer-pushing-the-limits-of-language-modeling-127388.html",
+      "id": 138845,
+      "title": "Quantum AI just got shockingly good at predicting chaos",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/quantum-ai-just-got-shockingly-good-at-predicting-chaos-138845.html",
+      "category": "AI & Tech"
+    },
+    {
+      "id": 138844,
+      "title": "Influencer Christie Miller announces her own death in emotional farewell video after cancer battle",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/influencer-christie-miller-announces-her-own-death-in-emotional-f-138844.html",
       "category": "General"
     },
     {
-      "id": 127387,
-      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-127387.html",
-      "category": "General"
+      "id": 138843,
+      "title": "Industry News: Think AI \"knows\" what it’s doing? Scientists say think again",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html",
+      "category": "AI & Tech"
     },
     {
-      "id": 127386,
-      "title": "Tech Report: Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-transformer-based-encoder-decoder-models-127386.html",
-      "category": "General"
+      "id": 138842,
+      "title": "Google files patent for AI-generated TV channel that uses your face and voice for shows",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/google-files-patent-for-ai-generated-tv-channel-that-uses-your-fa-138842.html",
+      "category": "AI & Tech"
     },
     {
-      "id": 127385,
-      "title": "Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/hyperparameter-search-with-transformers-and-ray-tune-127385.html",
+      "id": 138841,
+      "title": "Razer x Durex collab gives gamers “Long-Lasting Battle Armor” condoms and a mouse pad",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/razer-x-durex-collab-gives-gamers-long-lasting-battle-armor-condo-138841.html",
       "category": "General"
     }
   ]

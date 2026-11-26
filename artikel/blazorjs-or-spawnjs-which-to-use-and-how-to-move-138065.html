@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlazorJS or SpawnJS? Which to use, and how to move</title>
+    <meta name="description" content="SpawnDev has two libraries that let C# use browser APIs: SpawnDev.BlazorJS and SpawnDev.SpawnJS. If you are starting a project, or you already use one, you">
+    <meta name="keywords" content="spawnjs, spawndev, blazorjs, same, blazor, node, move, browser">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/blazorjs-or-spawnjs-which-to-use-and-how-to-move-138065.html">
+    
+    <meta property="og:title" content="BlazorJS or SpawnJS? Which to use, and how to move">
+    <meta property="og:description" content="SpawnDev has two libraries that let C# use browser APIs: SpawnDev.BlazorJS and SpawnDev.SpawnJS. If you are starting a project, or you already use one, you">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa2dg9u1ylvo9dn507op2.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/blazorjs-or-spawnjs-which-to-use-and-how-to-move-138065.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BlazorJS or SpawnJS? Which to use, and how to move">
+    <meta name="twitter:description" content="SpawnDev has two libraries that let C# use browser APIs: SpawnDev.BlazorJS and SpawnDev.SpawnJS. If you are starting a project, or you already use one, you">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa2dg9u1ylvo9dn507op2.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "BlazorJS or SpawnJS? Which to use, and how to move", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa2dg9u1ylvo9dn507op2.jpg"], "datePublished": "2026-11-26T21:19:43", "dateModified": "2026-11-26T21:28:57.458348", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/blazorjs-or-spawnjs-which-to-use-and-how-to-move-138065.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding BlazorJS or SpawnJS? Which to use, and how to move?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'BlazorJS or SpawnJS? Which to use, and how to move' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>BlazorJS or SpawnJS? Which to use, and how to move</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 26 Nov 2026 &bull; ⏱️ 3 min read (628 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>SpawnDev has two libraries that let C# use browser APIs: SpawnDev.BlazorJS and SpawnDev.SpawnJS.</li><li style='margin-bottom:6px;'>Sources indicate that the short answer: start latest projects on SpawnJS.</li><li style='margin-bottom:6px;'>In a recent development, spawnDev.BlazorJS was first published in December 2022 and has over 222,000 NuGet downloads.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-138065"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-138065"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-138065"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="BlazorJS or SpawnJS? Which to use, and how to move" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa2dg9u1ylvo9dn507op2.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-138065">SpawnDev has two libraries that let C# use browser APIs: SpawnDev.BlazorJS and SpawnDev.SpawnJS. If you are starting a project, or you already use one, you will want to know which to pick and what moving costs.</p>
+<p>Sources indicate that the short answer: start latest projects on SpawnJS. If your app runs well on BlazorJS, there is no rush; it is still supported. When you do move, most of your code stays the same.</p>
+<p>In a recent development, spawnDev.BlazorJS was first published in December 2022 and has over 222,000 NuGet downloads. It works through Blazor's own JavaScript interop.</p>
+<p>SpawnDev.SpawnJS is the newer library. It talks to JavaScript through .NET's JSImport and JSExport and does not need Blazor at all.</p>
+<p>The SpawnJS README reports a test app that went from about 30 MB to about 9 MB when trimmed. In the small example below, the published apps were 19.5 MB on SpawnJS and 22.5 MB on BlazorJS, counting the compressed copies of each file.</p>
+<p>Because SpawnJS does not depend on Blazor, the same C# can run where Blazor never does: a plain .NET WebAssembly app, a Web Worker, a browser extension, or a .NET WebAssembly console app running under Node.js with no browser at all.</p>
+<p>Recent findings suggest that that last one is not a curiosity. SpawnDev.ILGPU, our GPU library, runs its shared GPU test suite that way: a .NET WebAssembly console app under Node.js, using SpawnJS for every JavaScript call, with real WebGPU from the webgpu npm package, the Dawn project's own binding. On an RTX 4070, all 876 tests that apply there pass. The other 22 are skipped: 17 belong to other backends, and 5 check for a feature Node does not have, such as a canvas or a video frame, and say so. <span style="font-size:13px;">(Related: <a href="influencer-christie-miller-announces-her-own-death-in-emotional-f-138844.html" style="color:#2563eb; font-weight:600;">Influencer Christie Miller announces her own death in e...</a>)</span></p>
+<p>The first run found something a browser-only test run never could: under Node, the library never loaded one of its WebGPU helper scripts, so dispatch batching quietly switched off. That is fixed in SpawnDev.ILGPU 5.4.52. <span style="font-size:13px;">(Related: <a href="this-latest-chip-survives-1300f-700c-and-could-change-ai-forever-138850.html" style="color:#2563eb; font-weight:600;">This latest chip survives 1300°F (700°C) and could chan...</a>)</span></p>
+<p>In a recent development, to try it yourself, Example 08 runs a GPU kernel from C# under Node and prints the GPU it found. It needs Node 22 or later and the .NET wasm-tools workload.</p>
+<p>BlazorJS is built on Blazor's own interop, so it needs a Blazor app.</p>
+<p>Article 1 built a recipe page that keeps the screen awake and copies to the clipboard with SpawnJS. We wrote the same page with BlazorJS, and the same browser tests pass for both.</p>
+<p id="sec-mid-138065">The page itself did not change except for one line, the runtime you inject:.</p>
+<p>Everything else, Navigator, WakeLock, Clipboard, the += and -= events, using, is the same in both libraries.</p>
+<p>2. Change the start-up lines in Program.cs.</p>
+<p>Industry observers note that 3. Change the namespaces in _Imports.razor and your C# files: SpawnDev.BlazorJS becomes SpawnDev.SpawnJS, and SpawnDev.BlazorJS.JSObjects becomes SpawnDev.SpawnJS.JSObjects.</p>
+<p>According to recent reports, 4. Change the injected runtime: BlazorJSRuntime becomes SpawnJSRuntime.</p>
+<p>That was the whole move for our example.</p>
+<p>Your own wrappers. If you wrote classes for a JavaScript library, the base class and the reference type change: JSObject becomes SpawnJSObject, and the constructor takes a SpawnJSObjectReference instead of an IJSInProcessObjectReference. Both libraries' own Audio wrapper highlights it:.</p>
+<p>Industry observers note that calls by name. BlazorJS takes the arguments as objects and names only the return type. SpawnJS names every argument type, then the return type:.</p>
+<p>The compiler points at each of these, so the move is a list of build errors to work through, not a hunt.</p>
+<p>Matching packages. Several libraries come in both families, such as SpawnDev.BlazorJS.WebWorkers and SpawnDev.SpawnJS.WebWorkers, and SpawnDev.BlazorJS.Cryptography and SpawnDev.SpawnJS.Cryptography. Move each to its SpawnJS twin at the same time.</p>
+<p>Both versions of the page are in the example repo:.</p>
+<p id="sec-end-138065">The SpawnJS version is in BrowserApis, next to it.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/lostbeard/blazorjs-or-spawnjs-which-to-use-and-how-to-move-4k86" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-ahrefs-vs-semrush-which-seo-tool-should-you-use-138152.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138152. Industry News: Ahrefs vs SEMrush: Which SEO Tool Should You Use?
+        </a>
+        
+        <a href="five-grounds-which-could-rival-st-james-park-as-newcastle-united--128796.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #128796. Five grounds which could rival St James' Park as Newcastle United weigh up next move
+        </a>
+        
+        <a href="cop31-climate-talks-end-without-consensus-on-how-to-fund-vulnerab-128015.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #128015. COP31 climate talks end without consensus on how to fund vulnerable countries or move the world away from coal, oil and gas use
+        </a>
+        
+        <a href="which-samsung-folding-phone-is-right-for-you-galaxy-z-fold-8-ultr-138747.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138747. Which Samsung folding phone is right for you? Galaxy Z Fold 8, Ultra, or Flip 8
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

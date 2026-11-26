@@ -150,21 +150,21 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126617">Open Responses is a fresh and open inference standard. Initiated by OpenAI, built by the open source AI community, and backed by the Hugging Face ecosystem, Open Responses is based on the Responses API and is designed for the future of Agents. In this blog post, we’ll look at how Open Responses works and why the open source community should use Open Responses.</p>
-<p>The era of the chatbot is long gone, and agents dominate inference workloads. Developers are shifting toward autonomous systems that reason, plan, and act over long-time horizons. Despite this shift, much of the ecosystem still uses the Chat Completion format, which was designed for turn-based conversations and falls short for agentic use cases. The Responses format was designed to address these limitations, but it is closed and not as widely adopted. The Chat Completion format is still the de facto standard despite the alternatives. <span style="font-size:13px;">(Related: <a href="predicting-and-detecting-failures-how-azure-strengthens-reliabili-127394.html" style="color:#2563eb; font-weight:600;">Predicting and detecting failures: How Azure strengthen...</a>)</span></p>
-<p>According to recent reports, this mismatch between the agentic workflow requirements and entrenched interfaces motivates the need for an open inference standard. Over the coming months, we will collaborate with the community and inference providers to implement and adapt Open Responses to a shared format, practically capable of replacing chat completions. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-127382.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
+<p>The era of the chatbot is long gone, and agents dominate inference workloads. Developers are shifting toward autonomous systems that reason, plan, and act over long-time horizons. Despite this shift, much of the ecosystem still uses the Chat Completion format, which was designed for turn-based conversations and falls short for agentic use cases. The Responses format was designed to address these limitations, but it is closed and not as widely adopted. The Chat Completion format is still the de facto standard despite the alternatives.</p>
+<p>According to recent reports, this mismatch between the agentic workflow requirements and entrenched interfaces motivates the need for an open inference standard. Over the coming months, we will collaborate with the community and inference providers to implement and adapt Open Responses to a shared format, practically capable of replacing chat completions.</p>
 <p>Open Responses builds on the direction OpenAI has set with their  Responses API  introduced in March 2025, which superseded the existing Completion and Assistants APIs with a consistent way to:.</p>
 <p>Open Responses extends and open-sources the Responses API,  making it more accessible for builders and routing providers to interoperate and collaborate on shared interests.</p>
 <p>We’ll briefly explore the core changes that impact most community members. If you want to deep dive into the specification, check out the Open Responses documentation.</p>
 <p>Client requests to Open Responses are similar to the existing Responses API. Below we demonstrate a request to the Open Responses API using curl. We're calling a proxy endpoint that routes to Inference Providers using the Open Responses API schema.</p>
 <p>Industry observers note that clients that already support the Responses API can migrate to Open Responses with relatively little effort. The main
-changes involve how reasoning content is exposed:.</p>
+changes involve how reasoning content is exposed:. <span style="font-size:13px;">(Related: <a href="industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html" style="color:#2563eb; font-weight:600;">Industry News: Think AI "knows" what it’s doing? Scient...</a>)</span></p>
 <p>OpenAI models used to only expose summary and encrypted_content. With Open Responses, providers may expose their raw reasoning via the API. Clients migrating from providers that previously returned only summaries and encrypted content will now have the
 opportunity to receive and handle raw reasoning streams when supported by their chosen provider.</p>
 <p>For Model Providers, implementing the changes for Open Responses should be straightforward if they already adhere to the Responses API specification. For Routers, there is now the opportunity to standardize on a consistent endpoint and support configuration options for customization where needed.</p>
 <p>Over time, as Providers continue to innovate, certain features will become standardized in the base specification.</p>
 <p>In summary, migrating to Open Responses will make the inference experience more consistent and improve quality as undocumented extensions, interpretations, and workarounds of the legacy Completions API are normalized in Open Responses.</p>
 <p>You can see how to stream reasoning chunks below.</p>
-<p>Here’s the difference between getting an Open Response and using OpenAI Responses for reasoning deltas:.</p>
+<p>Here’s the difference between getting an Open Response and using OpenAI Responses for reasoning deltas:. <span style="font-size:13px;">(Related: <a href="this-simple-change-stops-robot-swarms-from-getting-stuck-138847.html" style="color:#2563eb; font-weight:600;">This simple change stops robot swarms from getting stuc...</a>)</span></p>
 <p>Open Responses distinguishes between “Model Providers” — those who provide inference — and “Routers” — intermediaries who orchestrate between multiple providers.</p>
 <p>Clients can now specify a Provider along with provider-specific API options when making requests, allowing intermediary Routers to orchestrate requests between upstream providers.</p>
 <p>Open Responses natively supports two categories of tools: internal and external. Externally hosted tools are implemented outside the model provider’s system. For example, client side functions to be executed, or MCP servers. Internally hosted tools are within the model provider’s system. For example, OpenAI’s file search or Google Drive integration. The model calls, executes, and retrieves results entirely within the provider's infrastructure, requiring no developer intervention.</p>
@@ -212,20 +212,20 @@ opportunity to receive and handle raw reasoning streams when supported by their 
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-if-youre-trying-to-dismantle-the-smithsonian-as-we-kn-123590.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #123590. Tech Report: If You’re Trying to Dismantle the Smithsonian As We Know It, Maybe Don’t Open the Initiative on Your Laptop in Public
+        <a href="tech-report-the-more-ai-can-do-the-more-marketers-need-to-know-135816.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #135816. Tech Report: The more AI can do, the more marketers need to know
         </a>
         
-        <a href="tech-report-spanish-elections-what-you-need-to-know-and-whats-at--116184.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #116184. Tech Report: Spanish elections: What you need to know and what's at stake
+        <a href="tech-report-7-free-websites-every-content-creator-needs-to-know-138251.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138251. Tech Report: 7 Free Websites Every Content Creator Needs to Know
         </a>
         
-        <a href="tech-report-we-raised-100-million-for-open-collaborative-machine--127315.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127315. Tech Report: We Raised $100 Million for Open & Collaborative Machine Learning 🚀
+        <a href="what-is-blockchain-everything-you-need-to-know-2022-138126.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138126. What is Blockchain: Everything You Need to Know (2022)
         </a>
         
-        <a href="tech-report-from-openai-to-open-llms-with-messages-api-on-hugging-127050.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127050. Tech Report: From OpenAI to Open LLMs with Messages API on Hugging Face
+        <a href="should-i-exercise-with-a-phlegmy-cough-what-you-need-to-know-137469.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #137469. Should I Exercise with a Phlegmy Cough? What You Need to Know
         </a>
         
     </div>

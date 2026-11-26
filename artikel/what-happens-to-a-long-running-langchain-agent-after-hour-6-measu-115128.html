@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115128">If you run a LangChain or LangGraph agent for hours, the first thing that changes around hour 6 is probably the size of its prompt. I wanted to see what that does to the bill and to the answers, so I ran one simulated 12-hour shift through five stacks and logged every model call.</p>
-<p>I build Argentic, an engine that keeps AI agents right for hours while prompt size is bounded. It is one of the five stacks, and it did not win on score. The numbers are below, with versions and dates. <span style="font-size:13px;">(Related: <a href="breaking-spacex-wants-to-build-ai-data-centers-in-space-will-it-w-115905.html" style="color:#2563eb; font-weight:600;">Breaking: SpaceX wants to build AI data centers in spac...</a>)</span></p>
-<p>Industry observers note that the shift is a bakery's operations desk. Over 12 simulated hours it has about 1,400 events: orders, price changes, stock counts, owner messages, standing instructions that get amended or revoked, and updates that contradict earlier ones. A fixed program with no model in the loop grades 663 questions about it. Every stack got the same seed, the same questions, the same grader and Claude Haiku 5.5, and each run had a spend cap. <span style="font-size:13px;">(Related: <a href="industry-news-texass-outgoing-gop-attorney-general-drops-multiple-115941.html" style="color:#2563eb; font-weight:600;">Industry News: Texas’s outgoing GOP attorney general dr...</a>)</span></p>
+<p>I build Argentic, an engine that keeps AI agents right for hours while prompt size is bounded. It is one of the five stacks, and it did not win on score. The numbers are below, with versions and dates. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-127392.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
+<p>Industry observers note that the shift is a bakery's operations desk. Over 12 simulated hours it has about 1,400 events: orders, price changes, stock counts, owner messages, standing instructions that get amended or revoked, and updates that contradict earlier ones. A fixed program with no model in the loop grades 663 questions about it. Every stack got the same seed, the same questions, the same grader and Claude Haiku 5.5, and each run had a spend cap. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-127390.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
 <p>I ran the JavaScript packages, on 25 November 2026. Nothing was tuned. I haven't measured the Python versions.</p>
 <p>It has been revealed that haiku 5.5 bills a request at roughly five times the normal rate once its prompt passes 100K tokens. A loop that re-sends its history gets there eventually, and every call after that costs more.</p>
 <p>Deep Agents reveals it cleanly. It finished all 12 hours, and over hours 1 to 5 it spent $0.29 in total, because prompt caching is on by default and the prompt stayed under 100K. From hour 6 on it spent between $1.10 and $1.60 an hour. Its prompt grew from 5.7K tokens to 279K, and 925 of its 1,450 calls went over 100K. The whole run cost $9.46.</p>
@@ -192,20 +192,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-103680.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103680. Running an AI Agent on a Local LLM: What I Measured on One GPU
+        <a href="running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-126614.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126614. Running an AI Agent on a Local LLM: What I Measured on One GPU
         </a>
         
-        <a href="five-guardrails-that-limit-the-damage-an-ai-agent-can-do-115282.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115282. Five Guardrails That Limit the Damage an AI Agent Can Do
+        <a href="brad-pitt-angelina-jolie-quietly-settle-long-running-winery-lawsu-124335.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #124335. Brad Pitt, Angelina Jolie quietly settle long-running winery lawsuits
         </a>
         
-        <a href="breaking-us-soccer-extends-its-long-running-partnership-with-atam-112551.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #112551. Breaking: U.S. Soccer Extends Its Long-Running Partnership with AT&amp;T
+        <a href="nvidia-to-pay-290-million-to-settle-long-running-crypto-mining-re-121573.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #121573. Nvidia to Pay $290 Million to Settle Long-Running Crypto Mining Revenue Lawsuit
         </a>
         
-        <a href="nvidia-to-pay-290-million-to-settle-long-running-crypto-mining-re-110064.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #110064. Nvidia to Pay $290 Million to Settle Long-Running Crypto Mining Revenue Lawsuit
+        <a href="hour-long-total-war-warhammer-40000-campaign-stream-highlights-of-120632.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #120632. Hour-long Total War: Warhammer 40,000 campaign stream highlights off ship battle-less fleet management, makes clear how not ideal getting Space Marine armies killed is
         </a>
         
     </div>

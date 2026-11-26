@@ -1,86 +1,86 @@
 {
-  "generatedAt": "2026-11-25T22:13:24.577855",
-  "totalArticles": 12454,
+  "generatedAt": "2026-11-26T08:35:43.094256",
+  "totalArticles": 12453,
   "categoryBreakdown": {
-    "General": 10180,
-    "Business & Policy": 537,
-    "AI & Tech": 971,
-    "Hardware & Chips": 212,
-    "Gadgets": 336,
-    "EV & Auto": 218
+    "General": 10202,
+    "AI & Tech": 976,
+    "Hardware & Chips": 210,
+    "Business & Policy": 524,
+    "Gadgets": 330,
+    "EV & Auto": 211
   },
   "topSources": {
-    "Hugging Face": 917,
-    "Co": 811,
-    "Sciencedaily": 209,
+    "Hugging Face": 918,
+    "Co": 808,
+    "Sciencedaily": 212,
     "Eschoolnews": 200,
-    "Cbssports": 170,
+    "Cbssports": 169,
     "Electrek": 149,
+    "Yahoo": 145,
     "Dw": 144,
-    "Yahoo": 140,
-    "Dailymail": 138,
-    "Realworkfromanywhere": 120
+    "Dailymail": 139,
+    "Realworkfromanywhere": 123
   },
   "latestHeadlines": [
     {
-      "id": 115941,
-      "title": "Industry News: Texas’s outgoing GOP attorney general drops multiple culture war lawsuits",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/industry-news-texass-outgoing-gop-attorney-general-drops-multiple-115941.html",
+      "id": 127394,
+      "title": "Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/predicting-and-detecting-failures-how-azure-strengthens-reliabili-127394.html",
       "category": "General"
     },
     {
-      "id": 115940,
-      "title": "Latest Update: Trump pushes Huang’s reinstatement despite voters’ demand for accountability",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/latest-update-trump-pushes-huangs-reinstatement-despite-voters-de-115940.html",
-      "category": "Business & Policy"
-    },
-    {
-      "id": 115939,
-      "title": "Sen. Deb Fischer’s husband dies",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/sen-deb-fischers-husband-dies-115939.html",
+      "id": 127393,
+      "title": "Designing Azure silicon on Azure silicon: EDA workloads on Cobalt 200",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/designing-azure-silicon-on-azure-silicon-eda-workloads-on-cobalt--127393.html",
       "category": "General"
     },
     {
-      "id": 115938,
-      "title": "This newly introduced chip survives 1300°F (700°C) and could change AI forever",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-newly-introduced-chip-survives-1300f-700c-and-could-change-a-115938.html",
-      "category": "AI & Tech"
-    },
-    {
-      "id": 115937,
-      "title": "This fresh chip could slash data center energy waste",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-fresh-chip-could-slash-data-center-energy-waste-115937.html",
-      "category": "Hardware & Chips"
-    },
-    {
-      "id": 115936,
-      "title": "“Giant superatoms” could finally solve quantum computing’s biggest problem",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/giant-superatoms-could-finally-solve-quantum-computings-biggest-p-115936.html",
+      "id": 127392,
+      "title": "Stop treating agents as one-off projects and start running them as a continuous discipline",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/stop-treating-agents-as-one-off-projects-and-start-running-them-a-127392.html",
       "category": "General"
     },
     {
-      "id": 115935,
-      "title": "This simple change stops robot swarms from getting stuck",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-simple-change-stops-robot-swarms-from-getting-stuck-115935.html",
+      "id": 127391,
+      "title": "Building the next generation of multimodal AI experiences with fal in Microsoft Foundry",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/building-the-next-generation-of-multimodal-ai-experiences-with-fa-127391.html",
       "category": "AI & Tech"
     },
     {
-      "id": 115934,
-      "title": "Quantum AI just got shockingly good at predicting chaos",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/quantum-ai-just-got-shockingly-good-at-predicting-chaos-115934.html",
-      "category": "AI & Tech"
+      "id": 127390,
+      "title": "How to train a newly introduced language model from scratch using Transformers and Tokenizers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-train-a-newly-introduced-language-model-from-scratch-using-127390.html",
+      "category": "General"
     },
     {
-      "id": 115933,
-      "title": "Tech Report: Think AI \"knows\" what it’s doing? Scientists say think again",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-think-ai-knows-what-its-doing-scientists-say-think-ag-115933.html",
-      "category": "AI & Tech"
+      "id": 127389,
+      "title": "How to generate text: using different decoding methods for language generation with Transformers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-127389.html",
+      "category": "General"
     },
     {
-      "id": 115932,
-      "title": "New York hosts spy lookalike contest inspired by Nvidia CEO controversy",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/new-york-hosts-spy-lookalike-contest-inspired-by-nvidia-ceo-contr-115932.html",
-      "category": "Hardware & Chips"
+      "id": 127388,
+      "title": "The Reformer - Pushing the limits of language modeling",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/the-reformer-pushing-the-limits-of-language-modeling-127388.html",
+      "category": "General"
+    },
+    {
+      "id": 127387,
+      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-127387.html",
+      "category": "General"
+    },
+    {
+      "id": 127386,
+      "title": "Tech Report: Transformer-based Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-transformer-based-encoder-decoder-models-127386.html",
+      "category": "General"
+    },
+    {
+      "id": 127385,
+      "title": "Hyperparameter Search with Transformers and Ray Tune",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/hyperparameter-search-with-transformers-and-ray-tune-127385.html",
+      "category": "General"
     }
   ]
 }

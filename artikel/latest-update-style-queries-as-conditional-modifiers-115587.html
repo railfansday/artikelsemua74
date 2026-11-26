@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115587">This article is adapted from a lesson in Writing Resilient CSS, the newest module in Kevin’s course, CSS Demystified. The module covers configuration options with custom properties, math functions, relative colors, :has(), style queries, and more, all put to work in practical, reusable patterns. The course is 32% off until December 2, 2026.</p>
-<p>Modifiers have been with us for a long time, often with modifier classes, but also with attribute selectors. Some common examples are things like different versions of alerts and buttons.</p>
+<p>Modifiers have been with us for a long time, often with modifier classes, but also with attribute selectors. Some common examples are things like different versions of alerts and buttons. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-127389.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>For a lot of use cases, either of those approaches work great, but when it comes to layout, a lot of the time we want the context of where the element is being used to control things.</p>
 <p>A card is a nice example of this, where we might have several versions.</p>
-<p>Sources indicate that the problem here is, if I’m using .card--compact, I probably want to do that for all the cards within a section. That can be annoying to apply to each card, but that’s rendered moot since most people are doing some sort of looping in a template like this these days. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-115936.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
+<p>Sources indicate that the problem here is, if I’m using .card--compact, I probably want to do that for all the cards within a section. That can be annoying to apply to each card, but that’s rendered moot since most people are doing some sort of looping in a template like this these days. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-127390.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
 <p>And this works great, as long as we always want the cards to be compact.</p>
-<p>Industry observers note that however, you might put this together and send it off to the design team for approval, only for them not to like that when the compact cards are lower down the page, the smaller padding isn’t needed to create visual separation between the two sections. Instead of helping with the hierarchy, it’s simply creating a strange visual inconsistency. <span style="font-size:13px;">(Related: <a href="industry-news-texass-outgoing-gop-attorney-general-drops-multiple-115941.html" style="color:#2563eb; font-weight:600;">Industry News: Texas’s outgoing GOP attorney general dr...</a>)</span></p>
+<p>Industry observers note that however, you might put this together and send it off to the design team for approval, only for them not to like that when the compact cards are lower down the page, the smaller padding isn’t needed to create visual separation between the two sections. Instead of helping with the hierarchy, it’s simply creating a strange visual inconsistency.</p>
 <p>We could use something like a resize observer to try and deal with this, but we have a better tool at our disposal: Container Style Queries, which are now Baseline Newly Available.</p>
 <p>While they all start with container, for the rest of this article I interchangeable use container query or size query for a container size query, and style query for what we’re talking about here.</p>
 <p>Before we get into the good stuff, a quick look at the basics of style queries.</p>
@@ -209,20 +209,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="critical-php-flaws-allow-code-execution-but-dont-panic-php2shell--115247.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115247. Critical PHP Flaws Allow Code Execution, but Don't Panic 'PHP2Shell'-Style
+        <a href="stop-treating-css-container-queries-like-traditional-media-querie-126087.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126087. Stop Treating CSS Container Queries Like Traditional Media Queries
         </a>
         
-        <a href="add-this-packet-of-seasoning-to-pot-roast-for-a-delicious-souther-115114.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115114. Add This Packet Of Seasoning To Pot Roast For A Delicious Southern-Style Sandwich
+        <a href="what-nike-shoe-matches-your-running-style-125734.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125734. What Nike Shoe Matches Your Running Style?
         </a>
         
-        <a href="make-your-next-breakfast-sandwich-korean-style-for-a-major-fiber--115089.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115089. Make Your Next Breakfast Sandwich Korean-Style For A Major Fiber & Flavor Boost
+        <a href="industry-news-piolets-dor-insider-how-the-jury-works-style-debate-125350.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125350. Industry News: Piolets d'Or Insider: How the Jury Works, Style Debates, and Future Aims
         </a>
         
-        <a href="make-a-reuben-upside-down-style-for-more-caramelized-flavor-115081.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115081. Make A Reuben Upside Down-Style For More Caramelized Flavor
+        <a href="investing-theory-news-amp-general-re-latest-vg-international-styl-125333.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125333. Investing - Theory, News &amp; General • Re: Latest VG International Style/Factor Funds (VDV &amp; VDG)
         </a>
         
     </div>

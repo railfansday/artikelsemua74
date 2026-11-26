@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115388">I’d like to share a wee pattern I’ve found useful for writing simple WebSocket apps in Haskell - specifically for my side project wordify - an open source ~ multiplayer crossword board game ~ .</p>
-<p>I have in mind websocket applications where there’s some sort of ‘resource’ that is shared between multiple websocket clients that need to be kept updated as the state changes such as:. <span style="font-size:13px;">(Related: <a href="industry-news-texass-outgoing-gop-attorney-general-drops-multiple-115941.html" style="color:#2563eb; font-weight:600;">Industry News: Texas’s outgoing GOP attorney general dr...</a>)</span></p>
-<p>For simplicity, we’ll implement a multiplayer server for Noughts and Crosses (as we’ll call it in a parochially defiant act of patriotism against the US-centric internet :P) to illustrate the pattern. <span style="font-size:13px;">(Related: <a href="breaking-rockstar-shuts-down-discord-server-trying-to-make-gta-6--115919.html" style="color:#2563eb; font-weight:600;">Breaking: Rockstar shuts down Discord server trying to ...</a>)</span></p>
+<p>I have in mind websocket applications where there’s some sort of ‘resource’ that is shared between multiple websocket clients that need to be kept updated as the state changes such as:.</p>
+<p>For simplicity, we’ll implement a multiplayer server for Noughts and Crosses (as we’ll call it in a parochially defiant act of patriotism against the US-centric internet :P) to illustrate the pattern. <span style="font-size:13px;">(Related: <a href="deep-learning-over-the-internet-training-language-models-collabor-127363.html" style="color:#2563eb; font-weight:600;">Deep Learning over the Internet: Training Language Mode...</a>)</span></p>
 <p>I’ll be exploring a pattern where we maintain a Map of all the Noughts and Crosses games we have in progress safely such that all the connected websockets see the same game updates.</p>
-<p>There’s a few different options for writing web apps in haskell. Yesod is the one I’m most familiar with. The canonical examples on Yesod WebSockets illustate how to use a shared broadcast TChan as the basis for a chat server (blog here, code example here.)).</p>
+<p>There’s a few different options for writing web apps in haskell. Yesod is the one I’m most familiar with. The canonical examples on Yesod WebSockets illustate how to use a shared broadcast TChan as the basis for a chat server (blog here, code example here.)). <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-127389.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>This shared TChan broadcast channel is a useful abstraction which will form part of our implementation but unlike the materials above we’ll need to maintain multiple gmaes at once with their own channel.</p>
 <p>A naive approach might be to plonk our games in a Map GameId GameState stored in a TVar. A TVar is a mutable variable that can be updated by multiple threads (or websocket handlers) and can be updated transactionally along with other TVars (which we’ll get into later.).</p>
 <p>We’ll also set up our GameState types including our board state, our two players, channel to broadcast move updates, etc:.</p>
@@ -213,20 +213,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="turn-your-pool-workout-into-playtime-with-these-game-inspired-exe-114318.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #114318. Turn Your Pool Workout Into Playtime With These Game-Inspired Exercises
+        <a href="turn-your-pool-workout-into-playtime-with-these-game-inspired-exe-125746.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125746. Turn Your Pool Workout Into Playtime With These Game-Inspired Exercises
         </a>
         
-        <a href="breaking-final-fantasy-resonance-devs-are-somehow-surprised-that--109081.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #109081. Breaking: Final Fantasy Resonance Devs Are Somehow Surprised That Fans Still Like Turn-Based Combat
+        <a href="industry-news-final-fantasy-resonance-devs-are-somehow-surprised--120607.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #120607. Industry News: Final Fantasy Resonance Devs Are Somehow Surprised That Fans Still Like Turn-Based Combat
         </a>
         
-        <a href="might-and-magic-meets-er-paper-in-sunny-fresh-rpg-rise-of-furax-a-109030.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #109030. Might and Magic meets, er, paper in sunny fresh RPG Rise of Furax, a turn-based island tale that is entirely drawn by hand
+        <a href="might-and-magic-meets-er-paper-in-sunny-new-rpg-rise-of-furax-a-t-120489.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #120489. Might and Magic meets, er, paper in sunny new RPG Rise of Furax, a turn-based island tale that is entirely drawn by hand
         </a>
         
-        <a href="tech-report-final-fantasy-resonance-devs-surprised-by-how-many-fa-109004.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #109004. Tech Report: Final Fantasy Resonance Devs Surprised by How Many Fans Wanted a Traditional, Turn-Based RPG
+        <a href="industry-news-final-fantasy-resonance-devs-surprised-by-how-many--120467.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #120467. Industry News: Final Fantasy Resonance Devs Surprised by How Many Fans Wanted a Traditional, Turn-Based RPG
         </a>
         
     </div>

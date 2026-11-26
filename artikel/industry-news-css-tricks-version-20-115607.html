@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115607">According to recent reports, I’ve been bashing on updating this site’s design for the last couple of weeks. It’s high time things get a fresh coat of paint, right? The last version of CSS-Tricks was pushed five years ago. That’s ancient in web (and dog) years.</p>
-<p>Sources indicate that it’s not like the site has simply sat all that time. We pushed lots of changes and shipped fresh features, particularly since 2024, but we never really got the paint brushes out of storage. <span style="font-size:13px;">(Related: <a href="this-fresh-chip-could-slash-data-center-energy-waste-115937.html" style="color:#2563eb; font-weight:600;">This fresh chip could slash data center energy waste...</a>)</span></p>
-<p>According to recent reports, now, before there’s a chorus of “things don’t look thaaaat different” I want to say I’m rarely a fan of complete re-builds and tend to lean into iterative releases. And the upcoming v20 theme is what I’d call an iterative rollup that’s worthy of a version bump.</p>
+<p>Sources indicate that it’s not like the site has simply sat all that time. We pushed lots of changes and shipped fresh features, particularly since 2024, but we never really got the paint brushes out of storage.</p>
+<p>According to recent reports, now, before there’s a chorus of “things don’t look thaaaat different” I want to say I’m rarely a fan of complete re-builds and tend to lean into iterative releases. And the upcoming v20 theme is what I’d call an iterative rollup that’s worthy of a version bump. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-127389.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Let’s go over the most notable updates to see why.</p>
-<p>First and foremost, some of the biggest changes are what you don’t see. As you might imagine, this site has carried over plenty of pieces across 19 years. I decided to excavate the theme and definitely found some ghosts to bust. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-115936.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
-<p>Industry observers note that for example, the global compiled JavaScript file retained some scripts that just weren’t being used anymore. Things like handling embedded versions of the newsletter from before we began self-hosting the posts. There were relics that catered specifically to the Flexbox Guide for handling toggles back before we had proper HTML . There was a jQuery lazy-loader thing that is well-covered by WordPress core now. We had some scripts for serving third-party ads that are no longer needed now that we’re self-hosting ads. Things like that. The overall JavaScript was nicely trimmed from 151.6 KB (55.3 KB gzipped) to 133.8 KB (48.1 KB).</p>
+<p>First and foremost, some of the biggest changes are what you don’t see. As you might imagine, this site has carried over plenty of pieces across 19 years. I decided to excavate the theme and definitely found some ghosts to bust.</p>
+<p>Industry observers note that for example, the global compiled JavaScript file retained some scripts that just weren’t being used anymore. Things like handling embedded versions of the newsletter from before we began self-hosting the posts. There were relics that catered specifically to the Flexbox Guide for handling toggles back before we had proper HTML . There was a jQuery lazy-loader thing that is well-covered by WordPress core now. We had some scripts for serving third-party ads that are no longer needed now that we’re self-hosting ads. Things like that. The overall JavaScript was nicely trimmed from 151.6 KB (55.3 KB gzipped) to 133.8 KB (48.1 KB). <span style="font-size:13px;">(Related: <a href="industry-news-my-journey-to-a-serverless-transformers-pipeline-on-127374.html" style="color:#2563eb; font-weight:600;">Industry News: My Journey to a serverless transformers ...</a>)</span></p>
 <p>In a recent development, I also decided to formally retire the CSS-Tricks Forum. We put it in “archive mode” back in, like, 2018. None of those discussions are particularly valuable for today as they were over 10 years ago, so I deactivated the bbPress plugin that powered it and cleared out the database… and wow, that carved a whopping 400 MB from the ol’ database, not to mention it allowed me to drop several custom templates from the theme.</p>
 <p>It has been revealed that there were more ghosts busted along the way and, to be sure, there are still some lurking around. But it’s way less scary poking around the theme directory now, and further cleanup should be a lot easier from here on out.</p>
 <p>Yeah, yeah, raise your hand if you’re still running Gulp. We are 🙋‍♂️. That’s not a bad thing in and of itself, but keeping it in a fixed state for all this time is not the greatest. I think we’re sporting a more modern workflow than before, even if there’s still room to grow. A smattering of the related commits:.</p>
@@ -226,20 +226,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-how-to-use-css-attribute-selectors-to-build-more-fl-126982.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126982. Industry News: How to Use CSS Attribute Selectors to Build More Flexible User Interfaces
+        </a>
+        
+        <a href="industry-news-top-five-football-betting-tips-and-tricks-118900.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #118900. Industry News: Top five football betting tips and tricks
+        </a>
+        
+        <a href="industry-news-chivu-inter-must-be-best-version-of-ourselves-again-117386.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #117386. Industry News: Chivu: ‘Inter must be best version of ourselves’ against VfB Stuttgart
+        </a>
+        
         <a href="rss-club-css-tricks-redesign-preview-115610.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #115610. RSS Club: CSS-Tricks Redesign Preview
-        </a>
-        
-        <a href="industry-news-mario-kart-world-version-190-enhancement-now-availa-109038.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #109038. Industry News: Mario Kart World version 1.9.0 enhancement now available, adds upcoming rallies and courses
-        </a>
-        
-        <a href="industry-news-texass-outgoing-gop-attorney-general-drops-multiple-115941.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115941. Industry News: Texas’s outgoing GOP attorney general drops multiple culture war lawsuits
-        </a>
-        
-        <a href="industry-news-costcos-40-last-minute-thanksgiving-dinner-kit-come-115878.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115878. Industry News: Costco’s $40 last-minute Thanksgiving Dinner Kit comes with enough food to serve 8 people
         </a>
         
     </div>

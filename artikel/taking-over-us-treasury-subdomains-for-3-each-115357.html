@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115357">Industry observers note that elastic IP addresses (EIPs) in AWS are internet routable addresses available for use on cloud systems, by anyone. A common DNS mistake can leave them open for attackers to grab, which can lead to credential theft and worse. We demonstrated the attack is still possible in 2026, including finding real takeovers on US treasury domains, which were reported and fixed via a bug bounty program.</p>
-<p>The cost to us for doing this was just $3 per valid takeover - what a bargain! We only covered less than 1% of the total IP space, so there are many more out there for attackers to grab. So, now is the time to review your DNS records and get those dangling records squashed ASAP. <span style="font-size:13px;">(Related: <a href="tech-report-think-ai-knows-what-its-doing-scientists-say-think-ag-115933.html" style="color:#2563eb; font-weight:600;">Tech Report: Think AI "knows" what it’s doing? Scientis...</a>)</span></p>
-<p>As of the time of writing, the attack still works in practice, and though there are some controls to ban attackers abusing the system, there are sufficient gaps to make the attack practical, and at a reasonable cost.</p>
-<p>Recent findings suggest that to test how exploitable it is to claim the AWS host that a dangling DNS record points to, we needed to find a way to cycle through available EIPs with automation. The full EIP space is a maximum of ~80 million IP addresses (in practice, probably half that), and these are allocated at random, so you can’t simply claim the IP address that you want. <span style="font-size:13px;">(Related: <a href="ai-lets-chemists-design-molecules-by-simply-describing-them-115925.html" style="color:#2563eb; font-weight:600;">AI lets chemists design molecules by simply describing ...</a>)</span></p>
+<p>The cost to us for doing this was just $3 per valid takeover - what a bargain! We only covered less than 1% of the total IP space, so there are many more out there for attackers to grab. So, now is the time to review your DNS records and get those dangling records squashed ASAP.</p>
+<p>As of the time of writing, the attack still works in practice, and though there are some controls to ban attackers abusing the system, there are sufficient gaps to make the attack practical, and at a reasonable cost. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-127384.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+<p>Recent findings suggest that to test how exploitable it is to claim the AWS host that a dangling DNS record points to, we needed to find a way to cycle through available EIPs with automation. The full EIP space is a maximum of ~80 million IP addresses (in practice, probably half that), and these are allocated at random, so you can’t simply claim the IP address that you want. <span style="font-size:13px;">(Related: <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-127367.html" style="color:#2563eb; font-weight:600;">Few-shot learning in practice: GPT-Neo and the 🤗 Accele...</a>)</span></p>
 <p>To do this, we’d need to repeatedly allocate and release Elastic IPs from AWS’s EC2 pool, and check each address against the DNS records in our scope.</p>
 <p>We wanted to report any dangling records we found, so we built our target list from public bug bounty scopes.</p>
 <p>Using the bbscope API, we pulled wildcard scope entries and passed them into subfinder to enumerate subdomains. We resolved the A records for each host and stored anything not in private or reserved ranges in a DynamoDB table for use later in our pipeline.</p>
@@ -199,20 +199,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="man-calls-police-on-his-ex-for-taking-back-her-xbox-account-to-pl-115845.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115845. Man calls police on his ex for taking back her Xbox account to play GTA 6
+        <a href="10-best-ai-app-builders-ive-used-in-2026-and-what-each-one-gets-w-126635.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126635. 10 Best AI App Builders I've Used in 2026 (and What Each One Gets Wrong)
         </a>
         
-        <a href="best-ecommerce-platforms-for-developers-six-options-and-the-layer-115843.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115843. Best Ecommerce Platforms for Developers: Six Options and the Layers Each Leaves to You
+        <a href="best-ecommerce-platforms-for-developers-six-options-and-the-layer-126609.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126609. Best Ecommerce Platforms for Developers: Six Options and the Layers Each Leaves You
         </a>
         
-        <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-115833.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115833. Steam is pitting 10 years of Game of the Year winners against each other
+        <a href="why-are-people-taking-coq10-supplements-for-longevity-and-do-they-125840.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125840. Why Are People Taking CoQ10 Supplements for Longevity, and Do They Work?
         </a>
         
-        <a href="people-are-taking-an-unapproved-weight-loss-drug-ai-found-somethi-115790.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115790. People are taking an unapproved weight-loss drug. AI found something surprising
+        <a href="industry-news-how-taking-a-glp-1-could-affect-your-bone-health-125792.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125792. Industry News: How Taking a GLP-1 Could Affect Your Bone Health
         </a>
         
     </div>

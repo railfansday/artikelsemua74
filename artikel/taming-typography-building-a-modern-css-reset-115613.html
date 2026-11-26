@@ -151,11 +151,11 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115613">CSS can now make choices about type that used to sit outside a reset. text-wrap: pretty can prevent a stranded word, container query units can scale a heading to the column it occupies, and text-box can trim the half-leading built into a line box. Some of these features are experimental and browser support is uneven, so they need guardrails rather than blind inclusion.</p>
 <p>I’ve put together tidy-typography.css, which gathers the useful parts into a default stylesheet: rendering and fallback rules, fluid sizing, vertical rhythm, wrapping, hyphenation, and OpenType detail.</p>
-<p>In a recent development, use it whole, or take the declaration that solves the particular irritation in front of you. I’ll walk you through all the details in this article and give you the full code at the end. <span style="font-size:13px;">(Related: <a href="new-quantum-algorithm-solves-impossible-materials-problem-in-seco-115920.html" style="color:#2563eb; font-weight:600;">New quantum algorithm solves “impossible” materials pro...</a>)</span></p>
-<p>font-synthesis: none stops a browser from inventing bold or italic when the family lacks that face. The smoothing and text-rendering declarations are rendering hints, mainly for WebKit; results still vary by platform. <span style="font-size:13px;">(Related: <a href="this-simple-change-stops-robot-swarms-from-getting-stuck-115935.html" style="color:#2563eb; font-weight:600;">This simple change stops robot swarms from getting stuc...</a>)</span></p>
+<p>In a recent development, use it whole, or take the declaration that solves the particular irritation in front of you. I’ll walk you through all the details in this article and give you the full code at the end.</p>
+<p>font-synthesis: none stops a browser from inventing bold or italic when the family lacks that face. The smoothing and text-rendering declarations are rendering hints, mainly for WebKit; results still vary by platform.</p>
 <p>text-size-adjust disables mobile font inflation that can make a deliberately sized layout jump on rotation. font-size-adjust: from-font uses font metrics to reduce the apparent size change while a fallback swaps for a webfont.</p>
-<p>(As with other snippets in this article, this ⁠:root block is a partial excerpt the final stylesheet combines it with additional custom properties defined later on.).</p>
-<p>Viewport-based fluid type does not know how wide its element is. A heading in a narrow sidebar can therefore scale as though it fills the viewport.</p>
+<p>(As with other snippets in this article, this ⁠:root block is a partial excerpt the final stylesheet combines it with additional custom properties defined later on.). <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-127387.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Viewport-based fluid type does not know how wide its element is. A heading in a narrow sidebar can therefore scale as though it fills the viewport. <span style="font-size:13px;">(Related: <a href="tech-report-transformer-based-encoder-decoder-models-127386.html" style="color:#2563eb; font-weight:600;">Tech Report: Transformer-based Encoder-Decoder Models...</a>)</span></p>
 <p>container-type: inline-size makes the wrapper a container query, so its children can use cqi: a unit based on the container rather than the viewport. Replacing vw in clamp() lets the same heading scale appropriately in an article column or a 300px sidebar without component-specific media queries.</p>
 <p>According to recent reports, line-height includes space above the cap-height and below the baseline: half-leading. It becomes obvious when text must align tightly with another element. text-box-trim removes it, while text-box-edge measures from capital-letter caps to the alphabetic baseline. This is a metrics-aware alternative to font-specific negative-margin nudges.</p>
 <p>Selectors Level 5 proposes :heading, matching h1 to h6 and [role="heading"]. It has not landed in browsers, so keep it behind an @supports selector() check.</p>
@@ -209,20 +209,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="modern-css-might-make-your-front-end-more-complex-114635.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #114635. Modern CSS Might Make Your Front-End More Complex
+        <a href="modern-css-might-make-your-front-end-more-complex-126074.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126074. Modern CSS Might Make Your Front-End More Complex
         </a>
         
-        <a href="building-email-integrations-apis-webhooks-automation-and-delivera-115788.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115788. Building Email Integrations: APIs, Webhooks, Automation, and Deliverability
+        <a href="building-the-next-generation-of-multimodal-ai-experiences-with-fa-127391.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127391. Building the next generation of multimodal AI experiences with fal in Microsoft Foundry
         </a>
         
-        <a href="rss-club-css-tricks-redesign-preview-115610.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115610. RSS Club: CSS-Tricks Redesign Preview
+        <a href="simple-considerations-for-simple-people-building-fancy-neural-net-127377.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127377. Simple considerations for simple people building fancy neural networks
         </a>
         
-        <a href="industry-news-css-tricks-version-20-115607.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115607. Industry News: CSS-Tricks, Version 20
+        <a href="scaling-up-bert-like-model-inference-on-modern-cpu-part-2-127351.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127351. Scaling up BERT-like model Inference on modern CPU  - Part 2
         </a>
         
     </div>

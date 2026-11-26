@@ -153,9 +153,9 @@
 <p>This post uses a year of TCMB publication dates from the AllRatesToday TCMB endpoint (25 November 2025 to 25 November 2026) to show where those traps are.</p>
 <p>TCMB introduces its indicative rates once per business day in the afternoon, around 15:30 Istanbul time. The API reports when the table usually lands and when it's safe to fetch:.</p>
 <p>So schedule after 13:25 UTC (16:25 Istanbul), not at 00:00. A job that runs at midnight still works, but it's loading yesterday afternoon's table and calling it today's. Use the rate_date from the response, never the job's run date.</p>
-<p>Over the year, TCMB published 249 tables. Every weekday without one:. <span style="font-size:13px;">(Related: <a href="tech-report-ai-swarms-could-hijack-democracy-without-anyone-notic-115929.html" style="color:#2563eb; font-weight:600;">Tech Report: AI swarms could hijack democracy without a...</a>)</span></p>
-<p>It has been revealed that the half-day eves (arife) are the trap. They're working days for most offices, so a job that only skips official full-day holidays will expect a table, not find one, and either fail or store yesterday's table under today's date. In this archive there was no table dated on any of the three eves. <span style="font-size:13px;">(Related: <a href="hila-klein-announces-end-of-h3-podcast-as-ethan-klein-working-on--115930.html" style="color:#2563eb; font-weight:600;">Hila Klein announces end of H3 Podcast as Ethan Klein w...</a>)</span></p>
-<p>Industry observers note that the religious holidays move about 11 days earlier each year, so don't hard-code them. Two safer patterns:.</p>
+<p>Over the year, TCMB published 249 tables. Every weekday without one:. <span style="font-size:13px;">(Related: <a href="introducing-the-latest-microsoft-iq-putting-your-organizations-in-127361.html" style="color:#2563eb; font-weight:600;">Introducing the latest Microsoft IQ: Putting your organ...</a>)</span></p>
+<p>It has been revealed that the half-day eves (arife) are the trap. They're working days for most offices, so a job that only skips official full-day holidays will expect a table, not find one, and either fail or store yesterday's table under today's date. In this archive there was no table dated on any of the three eves.</p>
+<p>Industry observers note that the religious holidays move about 11 days earlier each year, so don't hard-code them. Two safer patterns:. <span style="font-size:13px;">(Related: <a href="industry-news-my-journey-to-a-serverless-transformers-pipeline-on-127374.html" style="color:#2563eb; font-weight:600;">Industry News: My Journey to a serverless transformers ...</a>)</span></p>
 <p>Ask TCMB's calendar, not yours. The availability endpoint lists the dates TCMB actually published:.</p>
 <p id="sec-mid-115135">In a recent development, or ask for the date you need and read back the date you got. The dated endpoint returns the table in force on that date. On a holiday, that's the last one published before it, flagged as such:.</p>
 <p>For accounting, that carry-forward is usually what you want: the rate in force on a bayram day is the last one published. Just store rate_date next to the amount, so the audit trail reveals which table you used.</p>
@@ -192,16 +192,16 @@
             📰 #115151. Turkish Bank Exchange Rates vs TCMB: Spreads from 0.2% to 6% Across 11 Banks
         </a>
         
-        <a href="tech-report-black-friday-week-deals-moto-tag-2-19-nxtpaper-tab-19-115848.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115848. Tech Report: Black Friday Week deals: Moto Tag 2 $19, NXTPAPER Tab $190, Pixel Watch, Galaxy Watch, Amazon Echo Time, more
+        <a href="tech-report-hugging-face-and-cloudflare-partner-to-make-real-time-126799.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126799. Tech Report: Hugging Face and Cloudflare Partner to Make Real-Time Speech and Video Seamless with FastRTC
         </a>
         
-        <a href="tech-report-youtube-tv-sale-drops-the-price-to-4999month-for-a-li-115647.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115647. Tech Report: YouTube TV sale drops the price to $49.99/month for a limited time
+        <a href="tech-report-kimina-prover-applying-test-time-rl-search-on-large-f-126735.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126735. Tech Report: Kimina-Prover: Applying Test-time RL Search on Large Formal Reasoning Models
         </a>
         
-        <a href="tech-report-hugging-face-and-cerebras-bring-gemma-4-to-real-time--115487.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115487. Tech Report: Hugging Face and Cerebras bring Gemma 4 to real-time voice AI
+        <a href="tech-report-how-to-improve-email-deliverability-rates-126734.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126734. Tech Report: How to Improve Email Deliverability Rates
         </a>
         
     </div>

@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115330">In a recent development, LFM2.5-24B-A2B is a 24B-parameter reasoning model with just 2B active parameters, built for fast, private agents on-device. It thinks before it answers, calls tools, and works through multi-step tasks inside popular agent harnesses. Because only 2B parameters are active per token, each reasoning token is cheap, so you can run agents continuously on your own hardware.</p>
-<p>LFM2.5-24B-A2B builds on LFM2-24B-A2B and keeps its architecture: 40 layers, 64 experts per MoE block with top-4 routing, and the same hybrid of gated short convolutions and GQA. The context window grows from 32K to 131K tokens, and an in-place tokenizer expansion doubles the vocabulary from 65K to 128K tokens for better non-Latin tokenization. Unlike its predecessor, it is a reasoning-only model that produces an explicit chain of thought before its final answer. <span style="font-size:13px;">(Related: <a href="birdwatching-expert-gives-final-verdict-on-gta-6s-birds-after-fin-115916.html" style="color:#2563eb; font-weight:600;">Birdwatching expert gives final verdict on GTA 6’s bird...</a>)</span></p>
-<p>Pre-training was scaled up from ~17T to ~33T tokens. Mid-training then adds 2T tokens at 32K context, weighted toward reasoning, math, code, instruction following, and multilingual text, and 300B tokens at 131K context, weighted toward long-context data. Tool calls and multi-turn trajectories appear throughout both phases. Post-training turns the base model into an agent in five stages:.</p>
+<p>LFM2.5-24B-A2B builds on LFM2-24B-A2B and keeps its architecture: 40 layers, 64 experts per MoE block with top-4 routing, and the same hybrid of gated short convolutions and GQA. The context window grows from 32K to 131K tokens, and an in-place tokenizer expansion doubles the vocabulary from 65K to 128K tokens for better non-Latin tokenization. Unlike its predecessor, it is a reasoning-only model that produces an explicit chain of thought before its final answer. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-127390.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>Pre-training was scaled up from ~17T to ~33T tokens. Mid-training then adds 2T tokens at 32K context, weighted toward reasoning, math, code, instruction following, and multilingual text, and 300B tokens at 131K context, weighted toward long-context data. Tool calls and multi-turn trajectories appear throughout both phases. Post-training turns the base model into an agent in five stages:. <span style="font-size:13px;">(Related: <a href="tech-report-leveraging-pre-trained-language-model-checkpoints-for-127383.html" style="color:#2563eb; font-weight:600;">Tech Report: Leveraging Pre-trained Language Model Chec...</a>)</span></p>
 <p>We evaluated LFM2.5-24B-A2B against Qwen3.6-35B-A3B, Gemma-4-26B-A4B-it, and Nemotron-3.5-Lightning on 16 benchmarks covering tool use and agentic workflows, knowledge, instruction following, math, and coding. It is the smallest model in the group, yet it is competitive with MoEs with ~50% more total and active parameters.</p>
 <p>*All the models were evaluated with vLLM, using each benchmark's recommended generation parameters.</p>
 <p>For your app, the strengths are tool use and instruction following. LFM2.5-24B-A2B leads or matches the competition on five of the eight tool-use and agentic benchmarks (AutomationBench, BFCLv4, ToolSandbox, LiveClaw, and τ³-Bench Banking), and on AutomationBench it scores more than three times the next-best model. It also leads on all three instruction-following benchmarks. Larger models keep an edge on knowledge-heavy benchmarks like GPQA Diamond, HLE, and AA-Omniscience, and on coding benchmarks like SWE-Bench Verified (OpenCode) and SciCode, so pair LFM2.5-24B-A2B with retrieval or web search for knowledge-heavy workloads.</p>
@@ -162,7 +162,7 @@
 <p>Reach for LFM2.5-24B-A2B when you need agents that reason, call tools, and run reliably on your device.</p>
 <p>Install the latest version of transformers (compatible with transformers&gt;=5.0.0):.</p>
 <p>Serve LFM2.5-24B-A2B locally behind any OpenAI-compatible backend, then point your agent harness at it. For example, with Hermes Agent:.</p>
-<p>The port depends on your serving backend: llama.cpp and MLX use 8080, vLLM uses 8000, SGLang uses 30000, and LM Studio uses 1234. See the model card for OpenClaw and Pi configs, and our guide for the full setup. Check out our release blog for video examples. <span style="font-size:13px;">(Related: <a href="police-mock-criminal-with-ocarina-of-crime-zelda-arrest-video-115918.html" style="color:#2563eb; font-weight:600;">Police mock criminal with “Ocarina of Crime” Zelda arre...</a>)</span></p>
+<p>The port depends on your serving backend: llama.cpp and MLX use 8080, vLLM uses 8000, SGLang uses 30000, and LM Studio uses 1234. See the model card for OpenClaw and Pi configs, and our guide for the full setup. Check out our release blog for video examples.</p>
 <p>Both LFM2.5-24B-A2B and LFM2.5-24B-A2B-Base are open-weight and available on Hugging Face today:.</p>
 <p>We can't wait to see what you build.</p>
 <p id="sec-end-115330">If you use this work, please cite the release blog:.</p>
@@ -189,20 +189,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-docker-sandboxes-vs-containers-choosing-the-right-i-115572.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115572. Industry News: Docker Sandboxes vs. Containers: Choosing the Right Isolation for AI Agents
+        <a href="releasing-swift-transformers-run-on-device-llms-in-apple-devices-127129.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127129. Releasing Swift Transformers: Run On-Device LLMs in Apple Devices
         </a>
         
-        <a href="holo31-fast-local-computer-use-agents-115536.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115536. Holo3.1: Fast & Local Computer Use Agents
+        <a href="llama-can-now-see-and-run-on-your-device-welcome-llama-32-126921.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126921. Llama can now see and run on your device - welcome Llama 3.2
         </a>
         
-        <a href="industry-news-getting-the-source-right-not-just-the-fact-source-a-115352.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115352. Industry News: Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents
+        <a href="industry-news-designing-safe-order-cancellation-workflows-for-ai--126441.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126441. Industry News: Designing Safe Order Cancellation Workflows for AI Agents
         </a>
         
-        <a href="how-to-run-claude-code-and-other-coding-agents-in-the-cloud-247-115291.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115291. How to Run Claude Code and Other Coding Agents in the Cloud 24/7
+        <a href="claude-and-chatgpt-project-tips-training-ai-agents-to-work-withou-124255.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #124255. Claude and ChatGPT Project Tips, Training AI Agents to Work Without You, and Industry News
         </a>
         
     </div>

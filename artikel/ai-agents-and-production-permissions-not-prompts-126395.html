@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI agents and production: permissions, not prompts</title>
+    <meta name="description" content="In July 2025, a founder building an app with an AI coding assistant told it, explicitly, not to change anything. According to press coverage at the time, i">
+    <meta name="keywords" content="agent, production, recent, data, database, findings, suggest, read">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/ai-agents-and-production-permissions-not-prompts-126395.html">
+    
+    <meta property="og:title" content="AI agents and production: permissions, not prompts">
+    <meta property="og:description" content="In July 2025, a founder building an app with an AI coding assistant told it, explicitly, not to change anything. According to press coverage at the time, i">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1djx46m9s1zhymbc8s2t.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/ai-agents-and-production-permissions-not-prompts-126395.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI agents and production: permissions, not prompts">
+    <meta name="twitter:description" content="In July 2025, a founder building an app with an AI coding assistant told it, explicitly, not to change anything. According to press coverage at the time, i">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1djx46m9s1zhymbc8s2t.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "AI agents and production: permissions, not prompts", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1djx46m9s1zhymbc8s2t.png"], "datePublished": "2026-11-26T08:00:00", "dateModified": "2026-11-26T08:00:29.888080", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/ai-agents-and-production-permissions-not-prompts-126395.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding AI agents and production: permissions, not prompts?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'AI agents and production: permissions, not prompts' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>AI agents and production: permissions, not prompts</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 26 Nov 2026 &bull; ⏱️ 7 min read (1310 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In July 2025, a founder building an app with an AI coding assistant told it, explicitly, not to change anything.</li><li style='margin-bottom:6px;'>I am relying only on those reported facts.</li><li style='margin-bottom:6px;'>Recent findings suggest that an instruction is something the model reads.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-126395"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-126395"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-126395"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="AI agents and production: permissions, not prompts" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1djx46m9s1zhymbc8s2t.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-126395">In July 2025, a founder building an app with an AI coding assistant told it, explicitly, not to change anything. According to press coverage at the time, it changed things anyway and deleted production data covering more than a thousand companies. Asked what happened, it reportedly hid the damage at first and then said it had "panicked". Afterwards the vendor apologised and, in the same coverage, revealed it would separate its development and production databases.</p>
+<p>I am relying only on those reported facts. I don't know how that assistant was connected to the database, and I won't speculate about it. What I can say is the part you can act on: an agent that is able to write to production can delete production, whatever it was told. <span style="font-size:13px;">(Related: <a href="introducing-the-latest-microsoft-iq-putting-your-organizations-in-127361.html" style="color:#2563eb; font-weight:600;">Introducing the latest Microsoft IQ: Putting your organ...</a>)</span></p>
+<p>Recent findings suggest that an instruction is something the model reads. A permission is something the database enforces. This article is about moving every important rule from the first kind to the second, using PostgreSQL for the examples. The same reasoning applies to cloud consoles, object storage and deploy tools. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-127390.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>It has been revealed that "Use staging" in a README is a convention. A convention holds until the first time someone, or something, ignores it. A separation by credentials means the agent's connection string points at dev or staging and the network cannot reach production from there at all.</p>
+<p>The failure mode I would check first is leaked production access. Agents read files, so a production connection string sitting in an .env file on the machine, in the shell environment or in a CI variable the agent can print is production access. Search for it before you start. Then give the agent its own environment with its own variables, and prove the separation by trying to cross it:.</p>
+<p>If that works, the separation is a convention.</p>
+<p>The agent's database role should be able to read what it needs to explore, and nothing else. Run this as the database owner in the staging database:.</p>
+<p>Two details matter. The grants are the control. default_transaction_read_only is only a default, and a session can switch it off, so treat it as a seatbelt that catches honest mistakes. And SELECT on everything means the agent can read personal data. Where that matters, grant column by column, for example GRANT SELECT (id, created_at, status) ON orders TO agent_ro, or point the agent at data that contains nothing sensitive in the first place (more on that below).</p>
+<p>According to recent reports, migrations and destructive statements need a different role, migrator in the example, that the agent never holds. The agent can write a migration file. A human, or a pipeline the agent cannot invoke, runs it with the other credential.</p>
+<p>Industry observers note that "Don't change anything" is a request. It enters the model as text, competes with every other instruction in the context, and may or may not be followed. Nothing about the database changes when someone types it.</p>
+<p>It has been revealed that A useful test for any rule you rely on: if the agent ignored it, what is the worst thing that could happen? If the answer is "production data is deleted", you have a request and not a control.</p>
+<p>Recent findings suggest that that applies to a code freeze in particular. A freeze is a state of your permission system: the agent's write grants are revoked, or the environment it can reach is read-only. Writing "freeze" in the chat is a wish. Prompts are still worth writing, because they steer an agent toward what you want. They are not what stops the damage when it does not comply.</p>
+<p>Recent findings suggest that statements such as DROP, DELETE without a WHERE, bulk UPDATEs and data migrations should need a person. The design question is where the boundary sits.</p>
+<p>Recent findings suggest that do not place it in a filter that inspects SQL text. PostgreSQL allows data-modifying statements inside WITH, so this looks like a read and is not:.</p>
+<p id="sec-mid-126395">According to recent reports, A check that looks for a statement starting with DELETE misses it. The boundary belongs in the role: the agent's credential cannot execute the statement, so the only path is through the approval flow, which uses a credential the agent doesn't have. An extension such as pg_safeupdate can reject UPDATE and DELETE without a WHERE. It is a good seatbelt, not the boundary.</p>
+<p>According to recent reports, make approvals worth reading. If a person gets forty prompts a day they will approve all forty, which is the same habit that makes confirmation dialogs useless. Keep safe work outside the flow, and show the approver the effect rather than the statement: run the proposed change on a copy inside a transaction, report the row counts, and roll back:.</p>
+<p>"14 rows" and "all rows" read very differently.</p>
+<p>Whether you can recover from a deletion like that is not something you know until you have done it. Schedule a restore drill:.</p>
+<p>Write down how long it took and how far behind the data was. Those two numbers are your real recovery time and recovery point, and they are often worse than the ones on the slide.</p>
+<p>For production, also enable point-in-time recovery. Continuous WAL archiving on top of base backups lets you restore to a moment just before the bad statement, using recovery_target_time. Most managed Postgres services expose this as a setting, and it needs testing as well. Restoring to a point in time rolls back everything written after it for every user. So restore to a fresh instance and copy the missing rows back, rather than overwriting the live database.</p>
+<p>Recent findings suggest that press coverage said the assistant reportedly hid what it had done at first. Whatever was going on inside the model, the lesson is the same: an agent's description of its own actions is a claim, and claims need evidence.</p>
+<p>According to recent reports, log at the database. As a superuser you can set ALTER ROLE agent_session SET log_statement = 'all', and the pgaudit extension gives finer control. Log at the tool layer too: every command, timestamp and result.</p>
+<p>When an agent reports that it changed nothing, check. PostgreSQL keeps cumulative counters per table, so snapshot them before the session and compare afterwards:.</p>
+<p>Sources indicate that row counts and a diff of the schema give you two more independent checks. None of them depends on what the agent indicates happened.</p>
+<p>Recent findings suggest that if the agent only ever sees fake or scrubbed data, its mistakes cost nothing and real customer data stays where the strictest controls are. Generate fixtures from a script that lives in the repository, or build the dev database from production with identifying fields replaced.</p>
+<p>In a recent development, there are costs. Anonymization is easy to get subtly wrong: free-text columns, rare combinations of fields and foreign keys can still identify people, so review what leaves production. Seeded data rarely reproduces the odd rows and sheer volume of the real thing, so a fix that passes in dev can still fail in production, and the schema must be built from the same migrations or dev drifts away from reality. I accept those costs because the alternative is giving the agent real data to make its development environment feel realistic.</p>
+<p>Recent findings suggest that least privilege makes the agent less capable out of the box. It will ask for things it cannot do, and someone has to run the migration or approve the change. The setup takes time, and the restore drill takes more.</p>
+<p>That is the price of making the failure mode survivable. As reported, the incident needed nothing exotic: an actor with write access to production, and an instruction standing in for a control. Ruling things out is what permissions are for.</p>
+<p id="sec-end-126395">There's a 31-second Arabic version of this in my «خلف الكواليس» series: https://youtube.com/shorts/yB916zSffj8.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/mohamedelgohary/ai-agents-and-production-permissions-not-prompts-1e89" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-qcon-san-francisco-2026-securing-ai-agents-in-produ-115440.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115440. Latest Update: QCon San Francisco 2026: Securing AI Agents in Production
+        </a>
+        
+        <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-127392.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127392. Stop treating agents as one-off projects and start running them as a continuous discipline
+        </a>
+        
+        <a href="introducing-snowball-fight-our-first-ml-agents-environment-127347.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127347. Introducing Snowball Fight ☃️, our first ML-Agents environment
+        </a>
+        
+        <a href="tech-report-setfit-efficient-few-shot-learning-without-prompts-127264.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127264. Tech Report: SetFit: Efficient Few-Shot Learning Without Prompts
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

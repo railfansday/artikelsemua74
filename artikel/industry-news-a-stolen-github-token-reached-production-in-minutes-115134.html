@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115134">A stolen developer token can move from one GitHub account to production in minutes. In the November 2026 1Password incident, an attacker used an employee's corporate GitHub account to read private repos and push malicious code to backend services. The vaults stayed safe, but CI/CD secrets were exposed and had to be rotated.</p>
-<p>Sources indicate that the takeaway is not "use a better password manager." It is that your pipeline's credential design determines how much damage one compromised account can cause. By the end you will know how to replace long-lived CI secrets with short-lived ones, scope what a single token can reach, and rehearse rotation before you need it. <span style="font-size:13px;">(Related: <a href="ai-lets-chemists-design-molecules-by-simply-describing-them-115925.html" style="color:#2563eb; font-weight:600;">AI lets chemists design molecules by simply describing ...</a>)</span></p>
-<p>Most teams protect developer passwords well and tokens poorly. A GitHub personal access token or an AWS_SECRET_ACCESS_KEY in a CI variable is a password with no expiry and no lockout. Phishing one employee gives the attacker that password, which is exactly the path described in the incident. <span style="font-size:13px;">(Related: <a href="birdwatching-expert-gives-final-verdict-on-gta-6s-birds-after-fin-115916.html" style="color:#2563eb; font-weight:600;">Birdwatching expert gives final verdict on GTA 6’s bird...</a>)</span></p>
-<p>Recent findings suggest that treat every long-lived credential as already leaked and design so that a leaked credential expires on its own. Two controls do most of the work:.</p>
+<p>Sources indicate that the takeaway is not "use a better password manager." It is that your pipeline's credential design determines how much damage one compromised account can cause. By the end you will know how to replace long-lived CI secrets with short-lived ones, scope what a single token can reach, and rehearse rotation before you need it. <span style="font-size:13px;">(Related: <a href="industry-news-my-journey-to-a-serverless-transformers-pipeline-on-127374.html" style="color:#2563eb; font-weight:600;">Industry News: My Journey to a serverless transformers ...</a>)</span></p>
+<p>Most teams protect developer passwords well and tokens poorly. A GitHub personal access token or an AWS_SECRET_ACCESS_KEY in a CI variable is a password with no expiry and no lockout. Phishing one employee gives the attacker that password, which is exactly the path described in the incident.</p>
+<p>Recent findings suggest that treat every long-lived credential as already leaked and design so that a leaked credential expires on its own. Two controls do most of the work:. <span style="font-size:13px;">(Related: <a href="introducing-the-latest-microsoft-iq-putting-your-organizations-in-127361.html" style="color:#2563eb; font-weight:600;">Introducing the latest Microsoft IQ: Putting your organ...</a>)</span></p>
 <p>GitHub Actions can request short-lived cloud credentials through OIDC (OpenID Connect). Your workflow exchanges a signed token for cloud access. Nothing durable sits in repository variables, so there is nothing to steal from CI configuration.</p>
 <p>The cloud side is a trust policy that names your exact repository and ref:.</p>
 <p>It has been revealed that the sub condition is the whole point. It limits the role to one repo and one branch. Without it, any workflow in your org can assume the role, including a fork or a compromised feature branch. The workflow itself is then short:.</p>
@@ -190,20 +190,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="1password-customer-data-stolen-after-employee-github-account-brea-115161.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115161. 1Password customer data stolen after employee GitHub account breach
+        <a href="industry-news-optimizing-your-llm-in-production-127109.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127109. Industry News: Optimizing your LLM in production
         </a>
         
-        <a href="latest-update-meta-ads-cost-optimization-short-form-video-product-112808.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #112808. Latest Update: Meta Ads Cost Optimization, Short-Form Video Production, and Industry News
+        <a href="industry-news-just-10-minutes-of-daily-exercise-could-unlock-deep-126321.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126321. Industry News: Just 10 minutes of daily exercise could unlock deeper sleep
         </a>
         
-        <a href="industry-news-shiba-inu-team-makes-key-github-clarification-for-s-110640.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #110640. Industry News: Shiba Inu Team Makes Key GitHub Clarification for ShibaSwap, Shibarium
+        <a href="industry-news-whats-the-chicken-tax-ineos-likely-moving-grenadier-125039.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125039. Industry News: What’s the Chicken Tax? INEOS Likely Moving Grenadier Production to the US to Avoid It
         </a>
         
-        <a href="industry-news-certik-trains-interpol-investigators-to-trace-and-f-110274.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #110274. Industry News: CertiK Trains Interpol Investigators to Trace and Freeze Stolen Crypto
+        <a href="tech-report-meta-ads-cost-optimization-short-form-video-productio-124231.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #124231. Tech Report: Meta Ads Cost Optimization, Short-Form Video Production, and Industry News
         </a>
         
     </div>

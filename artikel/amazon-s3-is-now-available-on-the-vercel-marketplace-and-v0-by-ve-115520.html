@@ -153,11 +153,11 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115520">It has been revealed that developers building web and AI applications on Vercel can now add Amazon S3 storage resources directly from the Vercel Marketplace and v0, combining the durability, scalability, and performance of S3 with the convenience of Vercel’s provisioning workflow. Starting today, Amazon Simple Storage Service (Amazon S3), including Amazon S3 Tables and Amazon S3 Vectors, is natively available on the Vercel Marketplace and v0 by Vercel, covering three distinct workloads: everyday storage, analytics, and AI.</p>
 <p>Why this matters
-         Millions of developers build, deploy, and scale web and AI applications on Vercel. Storage is essential to performant applications, but provisioning it previously required navigating to the AWS Management Console to configure policies and credentials. Now, S3 storage integrates directly into the Vercel developer experience, with resource provisioning and connection configuration handled automatically. Together with existing integrations for Amazon Aurora, Amazon DynamoDB, and Amazon OpenSearch Serverless, you get a complete application stack inside Vercel (from your database layer through to object, vector, and open table storage), all on one AWS account with one bill. <span style="font-size:13px;">(Related: <a href="breaking-discord-can-now-automatically-save-gaming-clips-when-you-115928.html" style="color:#2563eb; font-weight:600;">Breaking: Discord can now automatically save gaming cli...</a>)</span></p>
+         Millions of developers build, deploy, and scale web and AI applications on Vercel. Storage is essential to performant applications, but provisioning it previously required navigating to the AWS Management Console to configure policies and credentials. Now, S3 storage integrates directly into the Vercel developer experience, with resource provisioning and connection configuration handled automatically. Together with existing integrations for Amazon Aurora, Amazon DynamoDB, and Amazon OpenSearch Serverless, you get a complete application stack inside Vercel (from your database layer through to object, vector, and open table storage), all on one AWS account with one bill. <span style="font-size:13px;">(Related: <a href="industry-news-my-journey-to-a-serverless-transformers-pipeline-on-127374.html" style="color:#2563eb; font-weight:600;">Industry News: My Journey to a serverless transformers ...</a>)</span></p>
 <p>Figure 1 – The AWS page on the Vercel Marketplace.</p>
 <p>Getting started
-         From the Vercel dashboard, go to the Storage tab and choose Create. Select AWS, pick your S3 bucket type, choose a Region, and create the bucket. Provisioning takes a few seconds. <span style="font-size:13px;">(Related: <a href="this-simple-change-stops-robot-swarms-from-getting-stuck-115935.html" style="color:#2563eb; font-weight:600;">This simple change stops robot swarms from getting stuc...</a>)</span></p>
-<p>Figure 2 – Creating an Amazon S3 general purpose bucket in Vercel by choosing a Region and a name.</p>
+         From the Vercel dashboard, go to the Storage tab and choose Create. Select AWS, pick your S3 bucket type, choose a Region, and create the bucket. Provisioning takes a few seconds.</p>
+<p>Figure 2 – Creating an Amazon S3 general purpose bucket in Vercel by choosing a Region and a name. <span style="font-size:13px;">(Related: <a href="the-partnership-amazon-sagemaker-and-hugging-face-127373.html" style="color:#2563eb; font-weight:600;">The Partnership: Amazon SageMaker and Hugging Face...</a>)</span></p>
 <p>Connect the bucket to a project, then pull the environment variables with the Vercel CLI:.</p>
 <p>The integration injects AWS_REGION, AWS_ROLE_ARN, AWS_RESOURCE_ARN, and a bucket name such as S3_BUCKET_NAME, S3_TABLE_BUCKET_NAME, or S3_VECTOR_BUCKET_NAME. At runtime, the awsCredentialsProvider from @vercel/functions/oidc exchanges a short-lived OIDC token with AWS Security Token Service (AWS STS) for temporary credentials scoped to your resource. No static keys are stored anywhere.</p>
 <p>Object storage with S3
@@ -206,16 +206,16 @@
             📰 #115515. AWS Weekly Roundup: AWS Lambda Web Functions, Amazon S3 on the Vercel Marketplace, and more (October 19, 2026)
         </a>
         
-        <a href="the-galaxy-watch-8-is-a-steal-at-just-200-right-now-on-amazon-115863.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115863. The Galaxy Watch 8 is a steal at just $200 right now on Amazon
+        <a href="tech-report-azure-cobalt-200-vms-now-available-proven-on-real-wor-126969.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126969. Tech Report: Azure Cobalt 200 VMs now available, proven on real workloads and built for the agentic era
         </a>
         
-        <a href="gemini-4-carbon-is-now-available-in-google-antigravity-for-ai-pro-115721.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115721. Gemini 4 Carbon is now available in Google Antigravity for AI Pro
+        <a href="latest-update-transformersjs-v4-now-available-on-npm-126576.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126576. Latest Update: Transformers.js v4: Now Available on NPM!
         </a>
         
-        <a href="amazon-s3-vectors-now-supports-metadata-pre-filtering-for-higher--115551.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115551. Amazon S3 Vectors now supports metadata pre-filtering for higher recall on filtered searches
+        <a href="the-best-early-black-friday-photo-and-camera-deals-available-now-125984.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125984. The Best Early Black Friday Photo and Camera Deals Available Now
         </a>
         
     </div>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimize and deploy with Optimum-Intel and OpenVINO GenAI</title>
+    <meta name="description" content="Deploying Transformers models at the edge or client-side requires careful consideration of performance and compatibility. Python, though powerful, is not a">
+    <meta name="keywords" content="openvino, genai, model, intel, quantization, models, python, optimum">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/optimize-and-deploy-with-optimum-intel-and-openvino-genai-149865.html">
+    
+    <meta property="og:title" content="Optimize and deploy with Optimum-Intel and OpenVINO GenAI">
+    <meta property="og:description" content="Deploying Transformers models at the edge or client-side requires careful consideration of performance and compatibility. Python, though powerful, is not a">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/deploy-with-openvino/openvino_genai_workflow.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/optimize-and-deploy-with-optimum-intel-and-openvino-genai-149865.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Optimize and deploy with Optimum-Intel and OpenVINO GenAI">
+    <meta name="twitter:description" content="Deploying Transformers models at the edge or client-side requires careful consideration of performance and compatibility. Python, though powerful, is not a">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/deploy-with-openvino/openvino_genai_workflow.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Optimize and deploy with Optimum-Intel and OpenVINO GenAI", "image": ["https://huggingface.co/blog/assets/deploy-with-openvino/openvino_genai_workflow.png"], "datePublished": "2024-09-20T00:00:00", "dateModified": "2026-11-27T08:04:56.228140", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/optimize-and-deploy-with-optimum-intel-and-openvino-genai-149865.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Optimize and deploy with Optimum-Intel and OpenVINO GenAI?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Hardware & Chips originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Optimize and deploy with Optimum-Intel and OpenVINO GenAI' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Hardware & Chips section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Hardware & Chips</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Optimize and deploy with Optimum-Intel and OpenVINO GenAI</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 20 Sep 2024 &bull; ⏱️ 4 min read (896 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Deploying Transformers models at the edge or client-side requires careful consideration of performance and compatibility.</li><li style='margin-bottom:6px;'>OpenVINO™ was originally developed as a C++ AI inference solution, making it ideal for edge and client deployment where minimizing dependencies is crucial.</li><li style='margin-bottom:6px;'>According to recent reports, to start, ensure your environment is properly configured with both Python and C++.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149865"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149865"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149865"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Optimize and deploy with Optimum-Intel and OpenVINO GenAI" loading="lazy" src="https://huggingface.co/blog/assets/deploy-with-openvino/openvino_genai_workflow.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149865">Deploying Transformers models at the edge or client-side requires careful consideration of performance and compatibility. Python, though powerful, is not always ideal for such deployments, especially in environments dominated by C++. This blog will guide you through optimizing and deploying Hugging Face Transformers models using Optimum-Intel and OpenVINO™ GenAI, ensuring efficient AI inference with minimal dependencies.</p>
+<p>OpenVINO™ was originally developed as a C++ AI inference solution, making it ideal for edge and client deployment where minimizing dependencies is crucial. With the introduction of the GenAI API, integrating large language models (LLMs) into C++ or Python applications has become even more straightforward, with features designed to simplify deployment and enhance performance. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>According to recent reports, to start, ensure your environment is properly configured with both Python and C++. Install the necessary Python packages:.</p>
+<p>Here are the specific packages used in this blog post:.</p>
+<p>For GenAI C++ libraries installation follow the instruction here.</p>
+<p>Industry observers note that hugging Face and Intel's collaboration has led to the Optimum-Intel project. It is designed to optimize Transformers models for inference on Intel HW. Optimum-Intel supports OpenVINO as an inference backend and its API has wrappers for various model architectures built on top of OpenVINO inference API. All of these wrappers start from OV prefix, for example, OVModelForCausalLM. Otherwise, it is similar to the API of 🤗 Transformers library. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>According to recent reports, to export Transformers models to OpenVINO Intermediate Representation (IR) one can use two options: This can be done using Python’s .from_pretrained() method or the Optimum command-line interface (CLI). Below are examples using both methods:.</p>
+<p>The ./llama-3.1-8b-ov folder will contain .xml and bin IR model files and required configuration files that come from the source model. 🤗 tokenizer will be also converted to the format of openvino-tokenizers library and corresponding configuration files will be created in the same folder.</p>
+<p>When running LLMs on the resource constrained edge and client devices, model optimization is highly recommended step. Weight-only quantization is a mainstream approach that significantly reduces latency and model footprint. Optimum-Intel offers weight-only quantization through the Neural Network Compression Framework (NNCF), which has a variety of optimization techniques designed specifically for LLMs: from data-free INT8 and INT4 weight quantization to data-aware methods such as AWQ, GPTQ, quantization scale estimation, mixed-precision quantization. By default, weights of the models that are larger than one billion parameters are quantized to INT8 precision which is safe in terms of accuracy. It means that the export steps described above lead to the model with 8-bit weights. However, 4-bit integer weight-only quantization allows achieving a better accuracy-performance trade-off.</p>
+<p>Industry observers note that for meta-llama/Meta-Llama-3.1-8B model we recommend stacking AWQ, quantization scale estimation along with mixed-precision INT4/INT8 quantization of weights using a calibration dataset that reflects a deployment use case. As in the case of export, there are two options on how to apply 4-bit weight-only quantization to LLM model:.</p>
+<p id="sec-mid-149865">Note: The model optimization process can take time as it and applies several methods subsequently and uses model inference over the specified dataset.</p>
+<p>Model optimization with API is more flexible as it allows using custom datasets that can be passed as an iterable object, for example, and instance of Dataset object of 🤗 library or just a list of strings.</p>
+<p>Weight quantization usually introduces some degradation of the accuracy metric. To compare optimized and source models we report Word Perplexity metric measured on the Wikitext dataset with lm-evaluation-harness project which support both 🤗 Transformers and Optimum-Intel models out-of-the-box.</p>
+<p>It has been revealed that after conversion and optimization, deploying the model using OpenVINO GenAI is straightforward. The LLMPipeline class in OpenVINO GenAI provides both Python and C++ APIs, supporting various text generation methods with minimal dependencies.</p>
+<p>It has been revealed that to run this example you need minimum dependencies to be installed into the Python environment as OpenVINO GenAI is designed to provide a lightweight deployment. You can install OpenVINO GenAI package to the same Python environment or create a separate one to compare the application footprint:.</p>
+<p>Industry observers note that let's see how to run the same pipeline with OpenVINO GenAI C++ API. The GenAI API is designed to be intuitive and provides a seamless migration from 🤗 Transformers API.</p>
+<p>Note: In the below example, any other available device in your environment can be specified for "device" variable. For example, if you are using an Intel CPU with integrated graphics, "GPU" is a good option to try with. To check the available devices, you can use ov::Core::get_available_devices method (refer to query-device-properties).</p>
+<p>LLMPipeline also allows specifying custom generation options by means of ov::genai::GenerationConfig:.</p>
+<p>It has been revealed that with the LLMPipieline, owners can not only effortlessly leverage various decoding algorithms such as Beam Search but also construct an interactive chat scenario with a Streamer as in the below example. Moreover, one can take advantage of enhanced internal optimizations with LLMPipeline, such as reduced prompt processing time with utilization of KV cache of previous chat history with the chat methods : start_chat() and finish_chat() (refer to using-genai-in-chat-scenario).</p>
+<p>And finally let's see how to use LLMPipeline in the chat scenario:.</p>
+<p id="sec-end-149865">The combination of Optimum-Intel and OpenVINO™ GenAI offers a powerful, flexible solution for deploying Hugging Face models at the edge. By following these steps, you can achieve optimized, high-performance AI inference in environments where Python may not be ideal, ensuring your applications run smoothly across Intel hardware.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/deploy-with-openvino" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="accelerate-your-models-with-optimum-intel-and-openvino-150172.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150172. Accelerate your models with 🤗 Optimum Intel and OpenVINO
+        </a>
+        
+        <a href="tech-report-optimizing-stable-diffusion-for-intel-cpus-with-nncf--150088.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150088. Tech Report: Optimizing Stable Diffusion for Intel CPUs with NNCF and 🤗 Optimum
+        </a>
+        
+        <a href="accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-149984.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149984. Accelerate StarCoder with 🤗 Optimum Intel on Xeon: Q8/Q4 and Speculative Decoding
+        </a>
+        
+        <a href="cpu-optimized-embeddings-with-optimum-intel-and-fastrag-149962.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149962. CPU Optimized Embeddings with 🤗 Optimum Intel and fastRAG
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

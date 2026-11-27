@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three sides is a gift: how I coded Dots & Boxes in 93 lines for a multiplayer browser game</title>
+    <meta name="description" content="It has been revealed that dots & Boxes is the game most of us first played on the back of a school notebook. Two players take turns drawing a line between ">
+    <meta name="keywords" content="boxes, line, dots, lines, game, board, chain, players">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/three-sides-is-a-gift-how-i-coded-dots-boxes-in-93-lines-for-a-mu-149356.html">
+    
+    <meta property="og:title" content="Three sides is a gift: how I coded Dots & Boxes in 93 lines for a multiplayer browser game">
+    <meta property="og:description" content="It has been revealed that dots & Boxes is the game most of us first played on the back of a school notebook. Two players take turns drawing a line between ">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1nupzgawpsqdl6870547.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/three-sides-is-a-gift-how-i-coded-dots-boxes-in-93-lines-for-a-mu-149356.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Three sides is a gift: how I coded Dots & Boxes in 93 lines for a multiplayer browser game">
+    <meta name="twitter:description" content="It has been revealed that dots & Boxes is the game most of us first played on the back of a school notebook. Two players take turns drawing a line between ">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1nupzgawpsqdl6870547.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Three sides is a gift: how I coded Dots & Boxes in 93 lines for a multiplayer browser game", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1nupzgawpsqdl6870547.png"], "datePublished": "2026-11-27T08:01:32", "dateModified": "2026-11-27T08:03:49.052480", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/three-sides-is-a-gift-how-i-coded-dots-boxes-in-93-lines-for-a-mu-149356.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Three sides is a gift: how I coded Dots & Boxes in 93 lines for a multiplayer br?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Three sides is a gift: how I coded Dots & Boxes in 93 lines ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Three sides is a gift: how I coded Dots & Boxes in 93 lines for a multiplayer browser game</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 27 Nov 2026 &bull; ⏱️ 6 min read (1122 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>It has been revealed that dots & Boxes is the game most of us first played on the back of a school notebook.</li><li style='margin-bottom:6px;'>On mympgames, my free arcade of 60+ multiplayer browser games, the whole Dots & Boxes rule engine is one 93-line server module.</li><li style='margin-bottom:6px;'>It has been revealed that every game on the site exports the same four things: meta, createState, onAction and publicState.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149356"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149356"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149356"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Three sides is a gift: how I coded Dots &amp; Boxes in 93 lines for a multiplayer browser game" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1nupzgawpsqdl6870547.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149356">It has been revealed that dots &amp; Boxes is the game most of us first played on the back of a school notebook. Two players take turns drawing a line between two neighbouring dots. If your line closes the fourth side of a box, you write your initial in it and you must move again. When every box is claimed, whoever owns more boxes wins.</p>
+<p>On mympgames, my free arcade of 60+ multiplayer browser games, the whole Dots &amp; Boxes rule engine is one 93-line server module. This post walks through how it is put together: how the grid is stored, how one line can close two boxes at once, the "move again" rule, and the simple bot that plays when you don't have a friend online. I'll also be honest about where the bot is weak, because that weakness is exactly what makes the game interesting. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-150296.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>It has been revealed that every game on the site exports the same four things: meta, createState, onAction and publicState. The room server handles sockets, seats and turn timers. The game module only knows the rules. Here is the meta for this one:.</p>
+<p>Recent findings suggest that players are plain indexes, 0 and 1, so "the other player" is always 1 - turn. That little choice demonstrates up again and again and keeps the code short.</p>
+<p>In a recent development, the first design question in any Dots &amp; Boxes implementation is what to store. The dots never change, so they don't need to be in the state at all. What changes is the lines and who owns each box.</p>
+<p>The board is a 4x4 grid of boxes, which means 5x5 dots. That gives two kinds of lines:.</p>
+<p>Keeping horizontal and vertical lines in two separate arrays sounds fussy, but it makes indexing almost free. Box (r, c) is surrounded by exactly four lines:.</p>
+<p>So checking whether a box is closed is a single expression:.</p>
+<p>A line stores the index of the player who drew it, not just true. The rules don't need that, but the client uses it to colour lines by player, which makes the board much easier to read after a long chain of moves.</p>
+<p>Recent findings suggest that every line borders at most two boxes. A horizontal line sits between the box above it and the box below it. A vertical line sits between the box to its left and the box to its right. Lines on the outer edge only touch one box.</p>
+<p>That is the whole trick of onAction: after drawing a line, check the one or two neighbouring boxes and claim any that just closed.</p>
+<p>Recent findings suggest that the vertical branch is the mirror image, with c - 1 and c instead of r - 1 and r. The r &gt; 0 and r &lt; n guards handle the edges, so the top row of lines never looks for a box above the board.</p>
+<p>Sources indicate that closing two boxes with one line is a real move in this game, and players love it. Because the code counts claimed instead of using a boolean, a double close simply scores 2. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p id="sec-mid-149356">Before any of that runs, onAction rejects anything that isn't a legal move:.</p>
+<p>Industry observers note that plus the bounds check and the "line already taken" check you saw above. The browser never decides whether a move is legal. It sends { type: 'line', orient, r, c } and draws whatever state comes back. In a game where two people can tap the same line at nearly the same moment, this matters: whoever's message reaches the server first while it is their turn gets the line, and the other click is simply refused.</p>
+<p>This is the rule that turns a children's game into a strategy game, and it is two lines of code:.</p>
+<p>It has been revealed that the turn only passes when you claimed nothing. If you closed a box, turn stays the same and you go again. That is what lets one player sweep a whole chain of boxes in a single turn.</p>
+<p>According to recent reports, the end check uses the scores rather than scanning the board: every box is owned by somebody, so when the two scores add up to 16 the grid is full. A 4x4 board has an even number of boxes, so a draw is possible, and it is stored as winner = -1. The room layer already knows how to show a draw for other games, so nothing special was needed here.</p>
+<p>publicState returns copies of the arrays, never the live state:.</p>
+<p>There is no hidden information in Dots &amp; Boxes, so both players and any spectators get the same view. Copying is a cheap habit that stops a later bug where something mutates a broadcast object and quietly changes the real game.</p>
+<p>In a recent development, when you play alone, a bot takes the other seat. Its policy is deliberately short:.</p>
+<p>It has been revealed that it lists every free line, tries each one on a copy of the state, and takes the first one that closes a box. If nothing closes a box, it plays a random free line.</p>
+<p>That makes it greedy, and greedy is beatable. The bot never checks whether its random line draws the third side of a box. A third side is a gift to your opponent: they close the box and move again. On a 4x4 board that often starts a chain, and a human who has noticed this can feed the bot a single box and then take a long chain back.</p>
+<p>Industry observers note that real Dots &amp; Boxes strategy goes much deeper. Strong players count long chains and use the "double-cross": deliberately leave the last two boxes of a chain for the opponent so they have to open the next chain. None of that is in the bot today, and that is a tradeoff I'm comfortable with for now. A casual bot that grabs free boxes and otherwise plays loosely gives new players a fair game and lets them discover the chain idea for themselves. A future version could do one cheap thing first: avoid any line that makes a third side while safe lines still exist. That single rule would make it noticeably tougher without any search.</p>
+<p>The JSON.parse(JSON.stringify(state)) copy is not elegant, but with at most 40 lines on the board it costs nothing, and it keeps the bot from ever touching the real state.</p>
+<p id="sec-end-149356">If you want to see how long you last against the greedy bot, or test the double-cross on a friend, play Dots &amp; Boxes here: https://mympgames.com/play/dots-boxes . The rest of the 60+ free multiplayer games are at https://mympgames.com .</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/mympgames/three-sides-is-a-gift-how-i-coded-dots-boxes-in-93-lines-for-a-multiplayer-browser-game-5he3" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="week-12-nfl-odds-lines-totals-spreads-for-every-game-including-be-142099.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #142099. Week 12 NFL odds, lines, totals, spreads for every game, including Bears-Lions, Cowboys-Eagles, Bills-Chiefs
+        </a>
+        
+        <a href="football-video-game-ea-sports-fc-27-to-add-ai-generated-voice-of--140371.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #140371. Football video game EA Sports FC 27 to add AI-generated voice of iconic BBC commentator John Motson to new game - three years after legend's death
+        </a>
+        
+        <a href="viral-browser-game-lets-you-give-horses-nose-rubs-and-ear-scratch-138733.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138733. Viral browser game lets you give horses nose rubs and ear scratches
+        </a>
+        
+        <a href="ai-for-game-development-creating-a-farming-game-in-5-days-part-2-150148.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150148. AI for Game Development: Creating a Farming Game in 5 Days. Part 2
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

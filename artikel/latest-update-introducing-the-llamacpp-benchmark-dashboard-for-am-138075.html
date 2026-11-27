@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138075">In a recent development, the llama.cpp × AMD Benchmark dashboard is available on Hugging Face. It lets you track prompt processing and text generation performance across llama.cpp builds, models, and quantizations, so you can explore how local inference performs on AMD Ryzen and Radeon hardware.</p>
-<p>Local inference performance changes as models, kernels, and builds evolve. We want those changes to be easy to inspect for any AMD developer: pick a hardware, a model and a build, compare quantizations, and follow performance over time. The benchmark workflow and underlying results are public, so you can also inspect how we benchmark inference performance. <span style="font-size:13px;">(Related: <a href="spacex-wants-to-build-ai-data-centers-in-space-will-it-work-138812.html" style="color:#2563eb; font-weight:600;">SpaceX wants to build AI data centers in space. Will it...</a>)</span></p>
-<p>It has been revealed that you can choose Hardware, Model, and llama.cpp build in the Configuration sidebar. The current hardware choices are Radeon 8060S (gfx1151) and Radeon AI Pro R9700S (gfx1201).</p>
+<p>Local inference performance changes as models, kernels, and builds evolve. We want those changes to be easy to inspect for any AMD developer: pick a hardware, a model and a build, compare quantizations, and follow performance over time. The benchmark workflow and underlying results are public, so you can also inspect how we benchmark inference performance. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>It has been revealed that you can choose Hardware, Model, and llama.cpp build in the Configuration sidebar. The current hardware choices are Radeon 8060S (gfx1151) and Radeon AI Pro R9700S (gfx1201). <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-150302.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
 <p>The dashboard demonstrates two separate tests, both measured in tokens per second:.</p>
-<p>Both tests start at context depth zero (n_depth=0). PP512 measures processing 512 input tokens without generation; TG128 measures generating 128 tokens without a pre-existing context. The plotted value is the mean throughput (avg_ts). These are useful reference workloads, while the Context scaling tab lets you explore token generation throughput as the context grows. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-138837.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
+<p>Both tests start at context depth zero (n_depth=0). PP512 measures processing 512 input tokens without generation; TG128 measures generating 128 tokens without a pre-existing context. The plotted value is the mean throughput (avg_ts). These are useful reference workloads, while the Context scaling tab lets you explore token generation throughput as the context grows.</p>
 <p id="sec-mid-138075">Recent findings suggest that we benchmark the prebuilt binaries distributed through llama-install.sh, the build and installation project behind llama.app. The public gfx1151 and gfx1201 workflows are scheduled weekly and run the standard benchmarks using the llama-bench tool  with Flash Attention on and off, with 10 repetitions per configuration.</p>
 <p>Recent findings suggest that the model set evolves and currently includes Inkling 2 Mini, Qwen, Gemma, gpt-oss, and LFM models, covering both dense and mixture-of-experts architectures. Available GGUF formats include Q4_K_M, Q8_0, other quantizations, and higher-precision formats such as BF16 and F16.</p>
 <p>The explorer reads directly from the public ggml-org/install.sh-benches-data Storage Bucket on Hugging Face. The data source link beside the chart title opens the folder for the selected build, hardware, and model.</p>
@@ -183,20 +183,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="amd-specific-patches-for-llamacpp-131249.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #131249. AMD Specific Patches for Llama.cpp
+        <a href="amd-specific-fork-of-llamacpp-142720.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #142720. AMD-specific fork of llama.cpp
         </a>
         
-        <a href="amd-ryzen-7-9800x3d-plummets-to-an-all-time-low-of-369-at-amazon-138691.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138691. AMD Ryzen 7 9800X3D plummets to an all-time low of $369 at Amazon
+        <a href="llama-2-on-amazon-sagemaker-a-benchmark-150026.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150026. Llama 2 on Amazon SageMaker a Benchmark
         </a>
         
-        <a href="serving-a-local-llm-to-several-customers-ollama-lm-studio-llamacp-138605.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138605. Serving a Local LLM to Several Customers: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
+        <a href="industry-news-introducing-the-amd-5th-gen-epyc-cpu-149852.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149852. Industry News: Introducing the AMD 5th Gen EPYC™ CPU
         </a>
         
-        <a href="transformers-now-runs-llamacpp-quants-138346.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138346. Transformers now runs llama.cpp quants
+        <a href="industry-news-new-in-llamacpp-model-management-149560.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149560. Industry News: New in llama.cpp: Model Management
         </a>
         
     </div>

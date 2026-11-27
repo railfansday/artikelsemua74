@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138093">Greenhouse is still the single largest job board source across mid-market and late-stage tech companies. Out of 81 AI and devtools companies we benchmarked, 31 boards (5,214 open roles) ran on Greenhouse, including anthropic.com (500 tracked roles, median $335,000), stripe.com (500 roles), cloudflare.com (500 roles, median $207,500), databricks.com (500 roles, median $213,750), datadoghq.com (386 roles), and coinbase.com (250 roles, 89.2% remote).</p>
-<p>The public JSON endpoint requires no API key and returns an entire company's job board in one GET:. <span style="font-size:13px;">(Related: <a href="harry-potter-youtuber-loses-entire-channel-after-warner-bros-copy-138835.html" style="color:#2563eb; font-weight:600;">Harry Potter YouTuber loses entire channel after Warner...</a>)</span></p>
-<p>Industry observers note that that looks trivial on paper. In practice, four small quirks in Greenhouse's JSON payload quietly corrupt downstream data if you do not guard against them. <span style="font-size:13px;">(Related: <a href="industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html" style="color:#2563eb; font-weight:600;">Industry News: Think AI "knows" what it’s doing? Scient...</a>)</span></p>
+<p>The public JSON endpoint requires no API key and returns an entire company's job board in one GET:.</p>
+<p>Industry observers note that that looks trivial on paper. In practice, four small quirks in Greenhouse's JSON payload quietly corrupt downstream data if you do not guard against them. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-150292.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
 <p>Sources indicate that if you hit /v1/boards//jobs without ?content=true, Greenhouse still returns 200 OK with every job title, location, and URL, so your scraper looks healthy. The content field is simply omitted. You get zero job descriptions, zero tech-stack keywords, and zero pay transparency ranges. Always append ?content=true when you need anything beyond titles and office counts (and skip it if you only need a fast headcount diff, because responses shrink by 10-20x).</p>
-<p id="sec-mid-138093">Recent findings suggest that even with ?content=true, the content string is not raw HTML. Greenhouse escapes tags into HTML entities like <p>We are hiring...</p>, and on boards where recruiters pasted text from Google Docs or Workday, you occasionally see double-encoded sequences (&lt;p&gt;) plus UTF-8 non-breaking spaces (\xc2\xa0).</p>
+<p id="sec-mid-138093">Recent findings suggest that even with ?content=true, the content string is not raw HTML. Greenhouse escapes tags into HTML entities like <p>We are hiring...</p>, and on boards where recruiters pasted text from Google Docs or Workday, you occasionally see double-encoded sequences (&lt;p&gt;) plus UTF-8 non-breaking spaces (\xc2\xa0). <span style="font-size:13px;">(Related: <a href="tech-report-my-journey-to-a-serverless-transformers-pipeline-on-g-150293.html" style="color:#2563eb; font-weight:600;">Tech Report: My Journey to a serverless transformers pi...</a>)</span></p>
 <p>If you run a single HTML tag stripper without unescaping first, nothing gets stripped because there are no &lt; characters yet. If you unescape once, double-encoded blocks still leak &lt; into your text.</p>
 <p id="sec-end-138093">In Go, we unescape up to twice and then strip tags (dropping.</p>
 <p style="margin-top: 25px;">
@@ -179,20 +179,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-138670.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138670. Show, Don't Certify: How to Prepare for Your First Data Analyst Job
+        <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-150301.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150301. How we sped up transformer inference 100x for 🤗 API customers
         </a>
         
-        <a href="what-is-the-best-ui-design-tool-8-tools-compared-by-the-job-they--138661.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138661. What Is the Best UI design Tool? 8 Tools Compared by the Job They Do (2026)
+        <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-150286.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150286. Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
         </a>
         
-        <a href="how-job-hunting-became-an-expensive-cash-suck-138593.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138593. How job hunting became an expensive cash suck
+        <a href="how-to-install-and-use-the-hugging-face-unity-api-150104.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150104. How to Install and Use the Hugging Face Unity API
         </a>
         
-        <a href="breaking-experimenting-with-the-proposed-cross-origin-storage-api-138576.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138576. Breaking: Experimenting with the proposed Cross-Origin Storage API in Transformers.js
+        <a href="deploying-the-ai-comic-factory-using-the-inference-api-150022.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150022. Deploying the AI Comic Factory using the Inference API
         </a>
         
     </div>

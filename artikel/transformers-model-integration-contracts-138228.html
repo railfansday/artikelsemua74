@@ -157,12 +157,12 @@ model types, and its test suite is big: 88,000+ CPU tests on main, plus
 (SDPA) for T5. As a side effect, UMT5's decoder could attend to future tokens. During training, it could peek at the answer it was supposed to predict. Nothing crashed, and the bug stayed in main for almost two months.</p>
 <p>In a recent development, when we later replayed those commits, a small UMT5 model running on CPU flagged
 it on every one of them. This post is about that model and the tests built
-around it.</p>
+around it. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
 <p>Recent findings suggest that transformers supports over 750
 model types, and its test suite is big: 88,000+ CPU tests on main, plus
 200,000+ GPU tests in a daily run. Model tests are only part of it: we also
 test pipelines, training, distributed execution, quantization and attention
-kernels.</p>
+kernels. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>The integration tests load real checkpoints and exercise the model's API on
 real hardware. Running all of that on every PR would mean keeping a lot of GPUs
 busy all day long, which isn't practical. By the time a scheduled run finds a
@@ -174,13 +174,13 @@ unchanged. It is published once, then reused. We run "fast integration tests"
 against it on a cheap CPU runner. In our
 CPU study,
 the experimental UMT5 fixture used 66 MB of weights; the source checkpoint
-is 1,227 MB. <span style="font-size:13px;">(Related: <a href="google-files-patent-for-ai-generated-tv-channel-that-uses-your-fa-138842.html" style="color:#2563eb; font-weight:600;">Google files patent for AI-generated TV channel that us...</a>)</span></p>
+is 1,227 MB.</p>
 <p>This also covers very large models: some don't fit on our standard GPU
 runners, but their fixtures run on CPU.</p>
 <p>According to recent reports, model integrators already build tiny test models (Transformers' tiny-random-*
 checkpoints). We wanted a common recipe, and
 checks that go beyond loading the model and running a forward pass. The UMT5
-bug would have passed a forward pass just fine. <span style="font-size:13px;">(Related: <a href="japanese-vtuber-actually-escapes-gta-6s-impossible-6-star-wanted--138846.html" style="color:#2563eb; font-weight:600;">Japanese VTuber actually escapes GTA 6’s “impossible” 6...</a>)</span></p>
+bug would have passed a forward pass just fine.</p>
 <p>Fixtures won't replace full integration tests, but on PRs they give us a
 chance to catch bugs before they reach main.</p>
 <p>It has been revealed that transformers-mic is a proposed
@@ -292,20 +292,20 @@ and contribute a usage path or review a generated contract.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-127390.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127390. How to train a newly introduced language model from scratch using Transformers and Tokenizers
+        <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150309. How to train a latest language model from scratch using Transformers and Tokenizers
         </a>
         
-        <a href="training-a-language-model-with-transformers-using-tensorflow-and--127185.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127185. Training a language model with 🤗 Transformers using TensorFlow and TPUs
+        <a href="training-a-language-model-with-transformers-using-tensorflow-and--150105.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150105. Training a language model with 🤗 Transformers using TensorFlow and TPUs
         </a>
         
-        <a href="timm-transformers-use-any-timm-model-with-transformers-126857.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126857. Timm ❤️ Transformers: Use any timm model with transformers
+        <a href="timm-transformers-use-any-timm-model-with-transformers-149802.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149802. Timm ❤️ Transformers: Use any timm model with transformers
         </a>
         
-        <a href="latest-update-the-transformers-library-standardizing-model-defini-126779.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126779. Latest Update: The Transformers Library: standardizing model definitions
+        <a href="the-transformers-library-standardizing-model-definitions-149712.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149712. The Transformers Library: standardizing model definitions
         </a>
         
     </div>

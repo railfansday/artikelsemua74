@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-26T22:09:31.781395",
-  "totalArticles": 12456,
+  "generatedAt": "2026-11-27T08:42:13.922596",
+  "totalArticles": 12459,
   "categoryBreakdown": {
-    "AI & Tech": 953,
-    "Hardware & Chips": 194,
-    "General": 10234,
-    "Gadgets": 351,
-    "Business & Policy": 518,
-    "EV & Auto": 206
+    "General": 10243,
+    "AI & Tech": 959,
+    "Hardware & Chips": 192,
+    "Business & Policy": 510,
+    "Gadgets": 352,
+    "EV & Auto": 203
   },
   "topSources": {
     "Hugging Face": 917,
-    "Co": 863,
-    "Sciencedaily": 212,
+    "Co": 859,
+    "Sciencedaily": 213,
     "Eschoolnews": 200,
     "Cbssports": 169,
+    "Yahoo": 150,
     "Electrek": 149,
-    "Yahoo": 146,
     "Dw": 144,
-    "Dailymail": 138,
-    "Realworkfromanywhere": 122
+    "Dailymail": 135,
+    "Realworkfromanywhere": 124
   },
   "latestHeadlines": [
     {
-      "id": 138850,
-      "title": "This latest chip survives 1300°F (700°C) and could change AI forever",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-latest-chip-survives-1300f-700c-and-could-change-ai-forever-138850.html",
-      "category": "AI & Tech"
-    },
-    {
-      "id": 138849,
-      "title": "This new chip could slash data center energy waste",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-new-chip-could-slash-data-center-energy-waste-138849.html",
-      "category": "Hardware & Chips"
-    },
-    {
-      "id": 138848,
-      "title": "Latest Update: “Giant superatoms” could finally solve quantum computing’s biggest problem",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/latest-update-giant-superatoms-could-finally-solve-quantum-comput-138848.html",
+      "id": 150309,
+      "title": "How to train a latest language model from scratch using Transformers and Tokenizers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html",
       "category": "General"
     },
     {
-      "id": 138847,
-      "title": "This simple change stops robot swarms from getting stuck",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/this-simple-change-stops-robot-swarms-from-getting-stuck-138847.html",
-      "category": "AI & Tech"
-    },
-    {
-      "id": 138846,
-      "title": "Japanese VTuber actually escapes GTA 6’s “impossible” 6-star Wanted level",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/japanese-vtuber-actually-escapes-gta-6s-impossible-6-star-wanted--138846.html",
+      "id": 150308,
+      "title": "How to generate text: using different decoding methods for language generation with Transformers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-150308.html",
       "category": "General"
     },
     {
-      "id": 138845,
-      "title": "Quantum AI just got shockingly good at predicting chaos",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/quantum-ai-just-got-shockingly-good-at-predicting-chaos-138845.html",
-      "category": "AI & Tech"
-    },
-    {
-      "id": 138844,
-      "title": "Influencer Christie Miller announces her own death in emotional farewell video after cancer battle",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/influencer-christie-miller-announces-her-own-death-in-emotional-f-138844.html",
+      "id": 150307,
+      "title": "Tech Report: The Reformer - Pushing the limits of language modeling",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-the-reformer-pushing-the-limits-of-language-modeling-150307.html",
       "category": "General"
     },
     {
-      "id": 138843,
-      "title": "Industry News: Think AI \"knows\" what it’s doing? Scientists say think again",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html",
-      "category": "AI & Tech"
+      "id": 150306,
+      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-150306.html",
+      "category": "General"
     },
     {
-      "id": 138842,
-      "title": "Google files patent for AI-generated TV channel that uses your face and voice for shows",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/google-files-patent-for-ai-generated-tv-channel-that-uses-your-fa-138842.html",
-      "category": "AI & Tech"
+      "id": 150305,
+      "title": "Transformer-based Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/transformer-based-encoder-decoder-models-150305.html",
+      "category": "General"
     },
     {
-      "id": 138841,
-      "title": "Razer x Durex collab gives gamers “Long-Lasting Battle Armor” condoms and a mouse pad",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/razer-x-durex-collab-gives-gamers-long-lasting-battle-armor-condo-138841.html",
+      "id": 150304,
+      "title": "Hyperparameter Search with Transformers and Ray Tune",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/hyperparameter-search-with-transformers-and-ray-tune-150304.html",
+      "category": "General"
+    },
+    {
+      "id": 150303,
+      "title": "Porting fairseq wmt19 translation system to transformers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/porting-fairseq-wmt19-translation-system-to-transformers-150303.html",
+      "category": "General"
+    },
+    {
+      "id": 150302,
+      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-150302.html",
+      "category": "General"
+    },
+    {
+      "id": 150301,
+      "title": "How we sped up transformer inference 100x for 🤗 API customers",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-150301.html",
+      "category": "General"
+    },
+    {
+      "id": 150300,
+      "title": "Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-150300.html",
       "category": "General"
     }
   ]

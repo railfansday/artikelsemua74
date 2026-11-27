@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138404">Most interesting AI apps are pipelines. You generate an image, then cut out its background if you want to, or edit it into something fresh. You write a script, then generate a voice for it, or swap the voice while keeping the script the same. We usually wire these steps together in Python, and the moment something looks off we go back to print-debugging to find which step produced the odd value.</p>
-<p>gr.Workflow, built right into Gradio, makes the pipeline the interface. You describe your steps as a graph of typed nodes, and Gradio serves a drag-and-drop canvas where every node is runnable and every intermediate result is visible. The same graph is also a REST API and a one-command deploy to Hugging Face Spaces.</p>
-<p>The best way to get the idea is to see a few workflows in action. Every app below is a live Huggingface Space you can open, run, and duplicate. <span style="font-size:13px;">(Related: <a href="nasas-new-ai-space-chip-could-let-spacecraft-think-for-themselves-138827.html" style="color:#2563eb; font-weight:600;">NASA’s new AI space chip could let spacecraft think for...</a>)</span></p>
-<p>Recent findings suggest that upload an image, type an edit ("turn it into a snowy winter scene", "add sunglasses", "make the car red"), and get the edited photo back. The whole app is a single node calling Qwen-Image-Edit on Hugging Face Inference Providers. <span style="font-size:13px;">(Related: <a href="breaking-christmas-market-forced-to-cancel-after-backlash-over-ai-138826.html" style="color:#2563eb; font-weight:600;">Breaking: Christmas market forced to cancel after backl...</a>)</span></p>
+<p>gr.Workflow, built right into Gradio, makes the pipeline the interface. You describe your steps as a graph of typed nodes, and Gradio serves a drag-and-drop canvas where every node is runnable and every intermediate result is visible. The same graph is also a REST API and a one-command deploy to Hugging Face Spaces. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-150299.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
+<p>The best way to get the idea is to see a few workflows in action. Every app below is a live Huggingface Space you can open, run, and duplicate. <span style="font-size:13px;">(Related: <a href="retrieval-augmented-generation-with-huggingface-transformers-and--150297.html" style="color:#2563eb; font-weight:600;">Retrieval Augmented Generation with Huggingface Transfo...</a>)</span></p>
+<p>Recent findings suggest that upload an image, type an edit ("turn it into a snowy winter scene", "add sunglasses", "make the car red"), and get the edited photo back. The whole app is a single node calling Qwen-Image-Edit on Hugging Face Inference Providers.</p>
 <p>👉 Try the Image Editor Pipeline.</p>
 <p>Sources indicate that one graph, three pipelines. Start with a prompt and generate an image with FLUX, then pass it to a background-removal Gradio Space to turn it into a sticker. A topic becomes a voiceover through a text-to-speech Gradio Space, while the same topic becomes a catchy episode title through an LLM call.</p>
 <p>That’s one canvas, two model calls through Hugging Face Inference Providers, and two calls to Gradio Spaces.</p>
@@ -195,20 +195,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="run-comfyui-workflows-for-free-with-gradio-on-hugging-face-spaces-127068.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127068. Run ComfyUI workflows for free with Gradio on Hugging Face Spaces
+        <a href="run-comfyui-workflows-for-free-with-gradio-on-hugging-face-spaces-149994.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149994. Run ComfyUI workflows for free with Gradio on Hugging Face Spaces
         </a>
         
-        <a href="run-a-vllm-server-on-hf-jobs-in-one-command-138563.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138563. Run a vLLM Server on HF Jobs in One Command
+        <a href="using-mixing-hugging-face-models-with-gradio-20-150287.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150287. Using & Mixing Hugging Face Models with Gradio 2.0
         </a>
         
-        <a href="run-ai-workloads-on-any-cloud-store-on-hugging-face-zero-egress-s-138537.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138537. Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot
+        <a href="deploy-hugging-face-models-easily-with-amazon-sagemaker-150284.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150284. Deploy Hugging Face models easily with Amazon SageMaker
         </a>
         
-        <a href="tech-report-why-the-agent-isnt-the-hard-part-where-developers-go--138494.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138494. Tech Report: Why the Agent Isn’t the Hard Part: Where Developers Go Wrong With Agentic Workflows
+        <a href="breaking-showcase-your-projects-in-spaces-using-gradio-150278.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150278. Breaking: Showcase Your Projects in Spaces using Gradio
         </a>
         
     </div>

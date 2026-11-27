@@ -151,16 +151,16 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138293">The next rust trait solver, a large subsystem of the rust compiler that we've been trying to replace, will finally land in rust 1.102.0. In the last stages, before stabilizing it, its performance was a major blocker. But what is "a trait solver"? And why is its performance a problem? My goal for this blog post is to answer those questions in a way where you don't need any prior knowledge. I think discussions of the trait solver can promptly become quite involved, and daunting. So today, we'll start from the very basics!</p>
 <p>This is a writeup of my eurorust 2026 talk of the same name, that I gave on October 15, 2026.</p>
-<p>And if you'd rather watch than read this talk, you can do so here on youtube:. <span style="font-size:13px;">(Related: <a href="ethan-klein-addresses-affair-the-end-of-h3-podcast-and-return-to--138828.html" style="color:#2563eb; font-weight:600;">Ethan Klein addresses affair, the end of H3 Podcast, an...</a>)</span></p>
+<p>And if you'd rather watch than read this talk, you can do so here on youtube:.</p>
 <p>In a recent development, the upcoming solver is the codebase I work on daily, and I've done so for about a year full-time. I'm not the main person driving its stabilization though, that would be 
 
 
 lcnr
 
 , who's worked on it for far longer than I've been around in the Rust project. My main focus has been optimizing the new solver's performance.</p>
-<p>Many people have worked avery hard, for years, to make the new solver a reality. You can find some of them here, and here. <span style="font-size:13px;">(Related: <a href="costcos-40-last-minute-thanksgiving-dinner-kit-comes-with-enough--138833.html" style="color:#2563eb; font-weight:600;">Costco’s $40 last-minute Thanksgiving Dinner Kit comes ...</a>)</span></p>
+<p>Many people have worked avery hard, for years, to make the new solver a reality. You can find some of them here, and here. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-150296.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
 <p>According to recent reports, my work here is only possible because of Hexcat and RustNL paying me and others to work on rust compiler development. Consider whether you or your firm could sponsor Hexcat or the RustNL maintainer team.</p>
-<p>Recent findings suggest that on the 15th of May, 2015, Rust reached a major milestone. The very first stable version of rust was released. Version 1.0.0. Just 72 days later, on the 24th of July, work started on a new trait solver. Or well, that's when the Chalk project got its first commit. It seems the initial goal was to formalize the trait system so we could prove its correctness. One reason that didn't work well is because the trait system wasn't very correct at all.</p>
+<p>Recent findings suggest that on the 15th of May, 2015, Rust reached a major milestone. The very first stable version of rust was released. Version 1.0.0. Just 72 days later, on the 24th of July, work started on a new trait solver. Or well, that's when the Chalk project got its first commit. It seems the initial goal was to formalize the trait system so we could prove its correctness. One reason that didn't work well is because the trait system wasn't very correct at all. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-150303.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>Chalk is, according to its github description, "An implementation and definition of the Rust trait system using a PROLOG-like logic solver". The fact that it's "PROLOG-like" we'll come back to in a few paragraphs, it's quite interesting! However, Chalk isn't around anymore. Its README.md says it has been "sunset in favor of the newer next-generation trait solver". In October 2022, this project was officially started to turn the lessons learned from Chalk,
 into an actual upcoming subsystem of the rust compiler, that, once finished, could replace the code of the old trait solver.</p>
 <p>The goal of the new trait solver is to make sure we wouldn't have as many correctness bugs in the trait system. We now call this project "project zero", referring to the number of soundness bugs we'd ideally like to have in our type system. There have been several very long standing bugs in Rust's (old) trait solver. Like this one, that has been open since May 28, 2015 (just 13 days after Rust 1.0!). It abuses something called "implied bounds" to convince the Rust compiler to turn a short lifetime 'a into a 'static lifetime, allowing you to use a reference after its already freed. Some of these bugs were fundamentally impossible to fix with the way the old trait solver worked.</p>
@@ -286,20 +286,20 @@ and goes into all the different things we did over the past year to bring the ne
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="major-league-baseball-sues-players-union-ahead-of-lockout-next-we-138619.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138619. Major League Baseball sues players’ union ahead of lockout next week
+        <a href="hugging-face-and-ibm-partner-on-watsonxai-the-next-generation-ent-150091.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150091. Hugging Face and IBM partner on watsonx.ai, the next-generation enterprise studio for AI builders
         </a>
         
-        <a href="breaking-samsungs-absurd-1100hz-gaming-monitor-hits-shelves-next--138554.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138554. Breaking: Samsung’s absurd 1,100Hz gaming monitor hits shelves next month for $899.99
+        <a href="tech-report-optimizing-stable-diffusion-for-intel-cpus-with-nncf--150088.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150088. Tech Report: Optimizing Stable Diffusion for Intel CPUs with NNCF and 🤗 Optimum
         </a>
         
-        <a href="industry-news-catch-go-bugs-that-fuzzing-misses-with-gemini-and-a-138544.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138544. Industry News: Catch Go bugs that fuzzing misses with Gemini and a constraint solver
+        <a href="optimizing-bark-using-transformers-150046.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150046. Optimizing Bark using 🤗 Transformers
         </a>
         
-        <a href="when-everything-has-changed-what-do-we-do-next-138427.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138427. When Everything Has Changed, What Do We Do Next?
+        <a href="optimizing-your-llm-in-production-150031.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150031. Optimizing your LLM in production
         </a>
         
     </div>

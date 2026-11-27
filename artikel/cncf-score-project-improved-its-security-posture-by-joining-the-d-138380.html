@@ -150,15 +150,15 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138380">Score, a CNCF Sandbox project, recently joined the Docker-Sponsored Open Source (DSOS) Program to strengthen the security of its container images and release pipeline. In this post, the Score maintainers share what we adopted (Docker Hub, Docker Scout, Docker Hardened Images, the Docker GitHub Builder, and OIDC connections), the results we measured, and how other open source projects, within the CNCF and beyond, can apply the same practices by default.</p>
-<p>It has been revealed that in September 2025, the CNCF unveiled a partnership with Docker to expand infrastructure support for project maintainers through the Docker-Sponsored Open Source (DSOS) Program. The partnership gives CNCF projects access to Docker’s security scanning tools, container registry, and best-practice resources at no cost. <span style="font-size:13px;">(Related: <a href="razer-x-durex-collab-gives-gamers-long-lasting-battle-armor-condo-138841.html" style="color:#2563eb; font-weight:600;">Razer x Durex collab gives gamers “Long-Lasting Battle ...</a>)</span></p>
-<p>This aligned closely with the discussions held at the Maintainer Summit NA 2025 in Atlanta, which centered on increasing collaboration across CNCF projects and demonstrating security best practices.</p>
+<p>It has been revealed that in September 2025, the CNCF unveiled a partnership with Docker to expand infrastructure support for project maintainers through the Docker-Sponsored Open Source (DSOS) Program. The partnership gives CNCF projects access to Docker’s security scanning tools, container registry, and best-practice resources at no cost. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-150292.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
+<p>This aligned closely with the discussions held at the Maintainer Summit NA 2025 in Atlanta, which centered on increasing collaboration across CNCF projects and demonstrating security best practices. <span style="font-size:13px;">(Related: <a href="breaking-showcase-your-projects-in-spaces-using-gradio-150278.html" style="color:#2563eb; font-weight:600;">Breaking: Showcase Your Projects in Spaces using Gradio...</a>)</span></p>
 <p>The Docker-Sponsored Open Source (DSOS) Program supports non-commercial open source projects with Docker tooling and infrastructure.</p>
 <p>It has been revealed that before: Score publishes different container images: the CLIs of score-compose, score-k8s, score-helm and score-radius; and the sample-score-app used for demos and testing. We previously published them in the GitHub Container Registry here.</p>
 <p>After: Through the DSOS Program, we now publish these images on Docker Hub, which increases their visibility and gives the community a verified, trusted source.</p>
 <p>All the container images are now available on Docker Hub.</p>
 <p>Sources indicate that the program also provides usage analytics that show how the community uses these images. Here is an example:.</p>
 <p>Before: As a CNCF project, Score follows the OpenSSF best practices. In addition, the OpenSSF Scorecard GitHub Action runs continuously. This was a solid foundation, but we had no dedicated security scanning tool in place.</p>
-<p>After: The DSOS Program gave us access to Docker Scout, which we now use in our pull requests and on our container registry (Docker Hub). This gives us clear visibility into the CVEs introduced or fixed by each pull request and release. <span style="font-size:13px;">(Related: <a href="latest-update-one-piece-chapter-1200-release-date-major-spoilers-138823.html" style="color:#2563eb; font-weight:600;">Latest Update: One Piece Chapter 1200: Release date &amp; m...</a>)</span></p>
+<p>After: The DSOS Program gave us access to Docker Scout, which we now use in our pull requests and on our container registry (Docker Hub). This gives us clear visibility into the CVEs introduced or fixed by each pull request and release.</p>
 <p>The following GitHub Actions step uses docker/scout-action on every pull request to compare the image built from the PR branch with the one built from the main branch:.</p>
 <p>Here is an example of a comment posted by this docker/scout-action step in a recent Pull Request:.</p>
 <p>The comment details the comparison between the two images (before versus after): size, packages updated, added or removed, CVEs introduced and resolved, and compliance with our policies in place (run as non-root, no critical CVEs, no packages with AGPL v3 licences).</p>
@@ -214,20 +214,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="the-open-source-community-is-backing-openenv-for-agentic-rl-138608.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138608. The Open Source Community is backing OpenEnv for Agentic RL
+        <a href="student-ambassador-programs-call-for-applications-is-open-150233.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150233. Student Ambassador Program’s call for applications is open!
         </a>
         
-        <a href="meta-is-back-with-muse-glimmer-local-agentic-multimodal-and-open--138470.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138470. Meta is back with Muse Glimmer: local, agentic, multimodal, and open source
+        <a href="latest-update-announcing-the-open-source-ai-game-jam-150085.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150085. Latest Update: Announcing the Open Source AI Game Jam 🎮
         </a>
         
-        <a href="jetbrains-finds-agents-may-cheat-with-open-source-138367.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138367. JetBrains finds agents may cheat with open source
+        <a href="breaking-open-source-text-generation-llm-ecosystem-at-hugging-fac-150062.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150062. Breaking: Open-Source Text Generation & LLM Ecosystem at Hugging Face
         </a>
         
-        <a href="the-best-things-in-open-source-are-built-together-138322.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138322. The best things in open source are built together
+        <a href="results-of-the-open-source-ai-game-jam-150058.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150058. Results of the Open Source AI Game Jam
         </a>
         
     </div>

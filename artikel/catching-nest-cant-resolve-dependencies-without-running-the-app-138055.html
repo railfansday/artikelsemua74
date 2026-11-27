@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138055">I'm a Salesforce developer, and I build IDE plugins on the side. When I went looking for a framework to build my first public one for, NestJS stood out for one reason: its most common error is completely predictable from the source code, but you only find out about it when the app starts.</p>
-<p>Here's what I learned about why it happens, and how you can check for it without running anything. <span style="font-size:13px;">(Related: <a href="ai-swarms-could-hijack-democracy-without-anyone-noticing-138837.html" style="color:#2563eb; font-weight:600;">AI swarms could hijack democracy without anyone noticin...</a>)</span></p>
-<p>Sources indicate that ordersModule imports UsersModule, so it looks like it should work. It doesn't, because importing a module only gives you what that module exports. UsersModule provides UsersService but never exports it. <span style="font-size:13px;">(Related: <a href="razer-x-durex-collab-gives-gamers-long-lasting-battle-armor-condo-138841.html" style="color:#2563eb; font-weight:600;">Razer x Durex collab gives gamers “Long-Lasting Battle ...</a>)</span></p>
+<p>Here's what I learned about why it happens, and how you can check for it without running anything.</p>
+<p>Sources indicate that ordersModule imports UsersModule, so it looks like it should work. It doesn't, because importing a module only gives you what that module exports. UsersModule provides UsersService but never exports it.</p>
 <p>Inside a module, a class can inject something if:.</p>
-<p>Industry observers note that that's the whole rule. Everything else is detail.</p>
-<p>Because the rule is that simple, you can check it by reading files:.</p>
+<p>Industry observers note that that's the whole rule. Everything else is detail. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-150292.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
+<p>Because the rule is that simple, you can check it by reading files:. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-150296.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
 <p id="sec-mid-138055">The useful part is that you also know how to fix it, because you can see where the class is provided. If UsersService is provided in UsersModule but not exported, the fix is "export it from UsersModule". If it's already exported, the fix is "import UsersModule into OrdersModule". If nobody provides it, the fix is "add it to providers".</p>
 <p>A checker that is wrong even occasionally gets switched off, so most of the work went into deciding what not to report:.</p>
 <p>The rule is to only report a missing provider when every module that could supply it is visible in the source.</p>
@@ -184,20 +184,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="google-retiring-nest-app-and-google-assistant-on-speakers-display-138777.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138777. Google retiring Nest app and Google Assistant on speakers, displays in 2027
+        <a href="major-google-home-update-adds-these-new-nest-cam-app-and-gemini-f-149474.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149474. Major Google Home update adds these new Nest Cam, app, and Gemini features
         </a>
         
-        <a href="the-google-home-app-is-better-than-nest-alone-ever-was-mostly-138753.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138753. The Google Home app is better than Nest alone ever was, mostly
+        <a href="industry-news-save-massive-without-sacrificing-comfort-with-these-148648.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148648. Industry News: Save Massive Without Sacrificing Comfort With These Editor-Tested Running Shoes Under $130
         </a>
         
-        <a href="microsoft-refreshes-copilot-app-search-for-customers-without-an-a-138412.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138412. Microsoft refreshes Copilot app search for customers without an AI subscription
+        <a href="breaking-how-kate-mihevc-edwards-built-the-running-app-that-every-148550.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148550. Breaking: How Kate Mihevc Edwards Built the Running App That Every Injured Runner Needed
         </a>
         
-        <a href="breaking-save-substantial-without-sacrificing-comfort-with-these--137225.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #137225. Breaking: Save Substantial Without Sacrificing Comfort With These Editor-Tested Running Shoes Under $130
+        <a href="how-to-save-your-google-nest-app-videos-before-the-january-shutdo-142597.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #142597. How to save your Google Nest app videos before the January shutdown
         </a>
         
     </div>

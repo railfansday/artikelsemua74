@@ -151,11 +151,11 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138449">CSS can now make choices about type that used to sit outside a reset. text-wrap: pretty can prevent a stranded word, container query units can scale a heading to the column it occupies, and text-box can trim the half-leading built into a line box. Some of these features are experimental and browser support is uneven, so they need guardrails rather than blind inclusion.</p>
 <p>I’ve put together tidy-typography.css, which gathers the useful parts into a default stylesheet: rendering and fallback rules, fluid sizing, vertical rhythm, wrapping, hyphenation, and OpenType detail.</p>
-<p>Use it whole, or take the declaration that solves the particular irritation in front of you. I’ll walk you through all the details in this article and give you the full code at the end. <span style="font-size:13px;">(Related: <a href="new-quantum-algorithm-solves-impossible-materials-problem-in-seco-138829.html" style="color:#2563eb; font-weight:600;">New quantum algorithm solves “impossible” materials pro...</a>)</span></p>
-<p>In a recent development, font-synthesis: none stops a browser from inventing bold or italic when the family lacks that face. The smoothing and text-rendering declarations are rendering hints, mainly for WebKit; results still vary by platform. <span style="font-size:13px;">(Related: <a href="this-simple-change-stops-robot-swarms-from-getting-stuck-138847.html" style="color:#2563eb; font-weight:600;">This simple change stops robot swarms from getting stuc...</a>)</span></p>
+<p>Use it whole, or take the declaration that solves the particular irritation in front of you. I’ll walk you through all the details in this article and give you the full code at the end.</p>
+<p>In a recent development, font-synthesis: none stops a browser from inventing bold or italic when the family lacks that face. The smoothing and text-rendering declarations are rendering hints, mainly for WebKit; results still vary by platform.</p>
 <p>According to recent reports, text-size-adjust disables mobile font inflation that can make a deliberately sized layout jump on rotation. font-size-adjust: from-font uses font metrics to reduce the apparent size change while a fallback swaps for a webfont.</p>
-<p>(As with other snippets in this article, this ⁠:root block is a partial excerpt the final stylesheet combines it with additional custom properties defined later on.).</p>
-<p>In a recent development, viewport-based fluid type does not know how wide its element is. A heading in a narrow sidebar can therefore scale as though it fills the viewport.</p>
+<p>(As with other snippets in this article, this ⁠:root block is a partial excerpt the final stylesheet combines it with additional custom properties defined later on.). <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-150306.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>In a recent development, viewport-based fluid type does not know how wide its element is. A heading in a narrow sidebar can therefore scale as though it fills the viewport. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-150305.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
 <p>container-type: inline-size makes the wrapper a container query, so its children can use cqi: a unit based on the container rather than the viewport. Replacing vw in clamp() lets the same heading scale appropriately in an article column or a 300px sidebar without component-specific media queries.</p>
 <p>line-height includes space above the cap-height and below the baseline: half-leading. It becomes obvious when text must align tightly with another element. text-box-trim removes it, while text-box-edge measures from capital-letter caps to the alphabetic baseline. This is a metrics-aware alternative to font-specific negative-margin nudges.</p>
 <p>Selectors Level 5 proposes :heading, matching h1 to h6 and [role="heading"]. It has not landed in browsers, so keep it behind an @supports selector() check.</p>
@@ -209,20 +209,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-building-a-production-ready-culture-and-skills-thro-138223.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138223. Industry News: Building a Production-Ready Culture and Skills Through SRE-based Training
+        <a href="industry-news-building-a-healthcare-robot-from-simulation-to-depl-149588.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149588. Industry News: Building a Healthcare Robot from Simulation to Deployment with NVIDIA Isaac
         </a>
         
-        <a href="modern-css-might-make-your-front-end-more-complex-137573.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #137573. Modern CSS Might Make Your Front-End More Complex
+        <a href="breaking-modern-css-might-make-your-front-end-more-complex-149033.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149033. Breaking: Modern CSS Might Make Your Front-End More Complex
         </a>
         
-        <a href="industry-news-elon-musk-is-building-the-future-we-saw-in-the-movi-133502.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #133502. Industry News: Elon Musk Is Building the Future We Saw in the Movies. So Who’s Imagining the Technology of Tomorrow?
+        <a href="industry-news-5-pain-free-arm-building-alternatives-to-barbell-cu-148568.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148568. Industry News: 5 Pain-Free Arm-Building Alternatives to Barbell Curls
         </a>
         
-        <a href="industry-news-tomorrows-battlefield-6-patch-is-the-first-step-tow-132676.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #132676. Industry News: Tomorrow’s Battlefield 6 patch is the first step towards improving footstep audio, and it might actually fix the settings reset bug
+        <a href="industry-news-ryan-koup-kuperus-shares-how-the-reason-outdoors-is-148564.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148564. Industry News: Ryan ‘Koup’ Kuperus Shares How the Reason Outdoors is Saving Lives and Building a Community
         </a>
         
     </div>

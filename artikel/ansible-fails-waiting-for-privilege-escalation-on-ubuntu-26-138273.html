@@ -150,15 +150,15 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138273">I've slowly been moving my servers from Ubuntu 22 and 24 to 26 this year, and noticed my Ansible automation starts failing if I have password protection for sudo use:.</p>
-<p>Apparently Ubuntu's been rewriting system utilities in Rust, and the sudo-rs version that ships on Ubuntu 26.04 has some incompatiblities with the sudo I've used on servers for 20+ years. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-138813.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
+<p>Apparently Ubuntu's been rewriting system utilities in Rust, and the sudo-rs version that ships on Ubuntu 26.04 has some incompatiblities with the sudo I've used on servers for 20+ years. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-150303.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>It prints an extra string before the password prompt, which sudo doesn't do, and that can confuse automation tools like Ansible that wait for a specific prompt.</p>
 <p>According to recent reports, there's a thread in the Ansible project covering the concern: validate sudo become plugin against sudo-rs
-. The fix landed in Ansible Core 2.22.0, and is being backported into updates in 2.16, 2.18, 2.19, 2.20, and maybe also 2.21 (it's quite disruptive!). It looks like it also broke pyinfra, and their fix is in the latest release of 3.11. <span style="font-size:13px;">(Related: <a href="latest-update-one-piece-chapter-1200-release-date-major-spoilers-138823.html" style="color:#2563eb; font-weight:600;">Latest Update: One Piece Chapter 1200: Release date &amp; m...</a>)</span></p>
+. The fix landed in Ansible Core 2.22.0, and is being backported into updates in 2.16, 2.18, 2.19, 2.20, and maybe also 2.21 (it's quite disruptive!). It looks like it also broke pyinfra, and their fix is in the latest release of 3.11.</p>
 <p>I updated Ansible (pip install -U ansible) and now -K (--ask-become-pass) works again.</p>
 <p id="sec-mid-138273">Another alternative is to use the traditional version of sudo that still ships with Ubuntu 26. For that, the easiest way is to set the become_exe inside your hosts file:.</p>
 <p>Or you could even revert sudo systemwide on your Ubuntu host:.</p>
 <p>I'm not sure why Ubuntu sees the need to rewrite common Linux utils in Rust. I don't mind Rust, but these are foundational tools every Linux system relies on. This isn't a window manager, where experimentation is more acceptable1.</p>
-<p>If other distros blueprint on moving to sudo-rs that's one thing, but if it's just Ubuntu, maybe I should hop back to Debian for everything, and not just my cloud servers.</p>
+<p>If other distros blueprint on moving to sudo-rs that's one thing, but if it's just Ubuntu, maybe I should hop back to Debian for everything, and not just my cloud servers. <span style="font-size:13px;">(Related: <a href="tech-report-my-journey-to-a-serverless-transformers-pipeline-on-g-150293.html" style="color:#2563eb; font-weight:600;">Tech Report: My Journey to a serverless transformers pi...</a>)</span></p>
 <p id="sec-end-138273">Recent findings suggest that yes, I know this makes me sound like "old man yells at [rust]," but major changes to structural components of Linux should take longer, IMO. At least on the Red Hat side, we have Fedora, which is more bleeding edge, then at least a few years' gap before it hits 'production' systems. With Ubuntu, there is no cutting edge upstream where things like this can be fixed or worked around before hitting prod! (And no, I don't consider non-LTS Ubuntu releases the same thing.) ↩︎.</p>
 <p style="margin-top: 25px;">
 <a href="https://www.jeffgeerling.com/blog/2026/ansible-fails-become-ubuntu2604/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
@@ -183,20 +183,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="slow-ubuntu-security-response-times-138252.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138252. Slow Ubuntu security response times
+        <a href="what-actually-happens-when-a-kafka-region-fails-149618.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149618. What Actually Happens When a Kafka Region Fails?
         </a>
         
-        <a href="book-design-accidental-collage-by-drme-waiting-room-press-137781.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #137781. Book Design: Accidental Collage by Dr.Me & Waiting Room Press
+        <a href="book-design-accidental-collage-by-drme-waiting-room-press-149123.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149123. Book Design: Accidental Collage by Dr.Me & Waiting Room Press
         </a>
         
-        <a href="retired-man-tries-to-spend-more-money-mostly-fails-136988.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #136988. Retired Man Tries to Spend More Money, Mostly Fails
+        <a href="latest-update-retired-man-tries-to-spend-more-money-mostly-fails-148334.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148334. Latest Update: Retired Man Tries to Spend More Money, Mostly Fails
         </a>
         
-        <a href="invoice-factoring-worth-the-fee-only-when-waiting-to-get-paid-cos-136908.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #136908. Invoice Factoring – Worth the Fee Only When Waiting to Get Paid Costs More
+        <a href="invoice-factoring-worth-the-fee-only-when-waiting-to-get-paid-cos-148316.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148316. Invoice Factoring – Worth the Fee Only When Waiting to Get Paid Costs More
         </a>
         
     </div>

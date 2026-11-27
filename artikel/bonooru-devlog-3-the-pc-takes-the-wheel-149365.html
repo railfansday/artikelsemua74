@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonooru Devlog #3: The PC takes the wheel</title>
+    <meta name="description" content="Sources indicate that ode to Joy now plays on the Switch 2 from the PC: a command on my Mac, my own bridge firmware, my own controller firmware, every note">
+    <meta name="keywords" content="controller, every, bridge, session, epic, firmware, link, test">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/bonooru-devlog-3-the-pc-takes-the-wheel-149365.html">
+    
+    <meta property="og:title" content="Bonooru Devlog #3: The PC takes the wheel">
+    <meta property="og:description" content="Sources indicate that ode to Joy now plays on the Switch 2 from the PC: a command on my Mac, my own bridge firmware, my own controller firmware, every note">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvp6wj2or9ag8e88pdl29.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/bonooru-devlog-3-the-pc-takes-the-wheel-149365.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bonooru Devlog #3: The PC takes the wheel">
+    <meta name="twitter:description" content="Sources indicate that ode to Joy now plays on the Switch 2 from the PC: a command on my Mac, my own bridge firmware, my own controller firmware, every note">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvp6wj2or9ag8e88pdl29.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Bonooru Devlog #3: The PC takes the wheel", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvp6wj2or9ag8e88pdl29.jpg"], "datePublished": "2026-11-27T08:00:32", "dateModified": "2026-11-27T08:03:50.196955", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/bonooru-devlog-3-the-pc-takes-the-wheel-149365.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Bonooru Devlog #3: The PC takes the wheel?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Bonooru Devlog #3: The PC takes the wheel' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Bonooru Devlog #3: The PC takes the wheel</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 27 Nov 2026 &bull; ⏱️ 14 min read (2752 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Sources indicate that ode to Joy now plays on the Switch 2 from the PC: a command on my Mac, my own bridge firmware, my own controller firmware, every note right.</li><li style='margin-bottom:6px;'>Recent findings suggest that bonooru is my side project to play arbitrary melodies on the ocarina in The Legend of Zelda: Ocarina of Time on Switch 2.</li><li style='margin-bottom:6px;'>Every box is mine now, except the console.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149365"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149365"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149365"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Bonooru Devlog #3: The PC takes the wheel" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvp6wj2or9ag8e88pdl29.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149365">Sources indicate that ode to Joy now plays on the Switch 2 from the PC: a command on my Mac, my own bridge firmware, my own controller firmware, every note right. And if I yank the bridge out mid-song, the controller lets go of every button in about 20 ms at worst, and it measured that itself.</p>
+<p>Recent findings suggest that bonooru is my side project to play arbitrary melodies on the ocarina in The Legend of Zelda: Ocarina of Time on Switch 2. It does that by pretending to be a wired controller. The chain is a desktop app on the PC, a "bridge" RP2040 board on USB, a UART link, and a "controller" RP2040 board that the Switch 2 sees as a Pro Controller. Devlog #0 explains the idea, Devlog #1 measures the ocarina, Devlog #2 is the controller firmware.</p>
+<p>The Bonooru chain after Epic 3. Every box is mine now, except the console.</p>
+<p>Industry observers note that at the end of Epic 2 the controller board was mine: it enumerated as a wired Pro Controller and played a melody baked into its own firmware. But the PC only sent HELLO and START, and the bridge board still ran knflrpn's 2wiCC_Comms, which copies bytes between USB and UART with no idea of what a frame is. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-150292.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
+<p>The goal of Epic 3 was milestone M4: the PC drives the controller through the bridge. That meant three fresh pieces of software and one question:.</p>
+<p>Five stories, five PRs (#31 to #35), plus the retrospective (#36), from 24 to 26 November.</p>
+<p>Like in Epic 2, the order wasn't the obvious one. The two stories that need no hardware went first: the Rust codec (3.2) and the link session (3.3). Then the bridge firmware (3.1), then the end-to-end tool (3.4), then the fail-safe measurements (3.5). By the time anything Rust touched a serial port, it had been tested for a day against a fake controller.</p>
+<p>It has been revealed that story 3.2 (PR #31) started the app/ Cargo workspace, pinned to Rust 1.100.0, with one library crate: ocb-core. Its protocol module is the Rust twin of the C library from Devlog #2: COBS, CRC-16/CCITT-FALSE, frame encode and decode in the same receive order, every message type, the 8-byte controller state.</p>
+<p>Two rules make this crate what it is:.</p>
+<p>The point of the C library's 239 text vectors in 7 files was exactly this moment: a second implementation in another language. The Rust test reads all seven files and must pass every case, and checks that its PROTO_VERSION matches the vector headers. proptest round-trips COBS, frames, the receive splitter and messages on random input, and checks that no decoder panics on arbitrary bytes. CI runs it all on Ubuntu, Windows and macOS, with clippy -D warnings and a cargo-deny licence check. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>Recent findings suggest that the code review had an interesting result. One reviewer compared the Rust codec with the C one on about 100,000 generated inputs: COBS, frame decoding, the splitter's events and counters, the message length rules. No difference. Every vital finding was in the test gates, not in the codec. The purity gate, for example, was a text search that use std as s, std :: fs or a path split over two lines walked straight past. It now scans a token stream, and each of its 34 bad fixtures names the exact hit it must produce.</p>
+<p>That's a theme for the whole epic, so I'll say it once here: a test that can't fail is worse than no test, because it tells you something is checked when it isn't.</p>
+<p>Story 3.3 (PR #32) is the part I'm proudest of, and you can't see it on any screen.</p>
+<p>In a recent development, the link protocol has rules: a session opens with HELLO until the controller answers INFO; events are sent go-back-N with cumulative ACKs and a 50 ms resend; the app may only send as many QUEUE_EVENTs as the controller has room for (credits from STATUS.free); a semantic NAK abandons the piece; a mid-session NAK VERSION means the controller rebooted. All of that lives in ocb_core::link::Session, and the session never touches a port or a clock. It takes bytes and a time, and gives back bytes, events and the next time it wants to be called. It's the sans-IO style of quinn-proto, the QUIC library that keeps its protocol logic separate from any socket.</p>
+<p>Sans-IO: the session is pure logic; the adapter owns the port and the clock.</p>
+<p>In a recent development, because the session is pure, it can be tested with a fake clock against a fake controller, deterministically, thousands of times. That fake controller is its own dev-only crate, ocb-sim, with an impaired channel that drops, corrupts, duplicates, reorders and injects junk. One sample run, 2000 events through a controller queue of only 5 slots, with every impairment at 10 %:.</p>
+<p>Every event arrived exactly once, in order, in every run.</p>
+<p>All tests green, then the code review found nine key bugs, and reproduced most of them with scratch tests. Two of my favourites:.</p>
+<p>And the finding that explains the others: the simulator was kinder than the firmware. The test driver read the session's own counters to check the session, called its timers every millisecond whatever it asked for, and the fake controller answered more politely than the real one does. So the driver now checks invariants from the wire only, decodes every byte the session sends, keeps strict timers, reorders across steps, and the fake controller copies the firmware's TX priority, its reply rings and its fallbacks. Each fix has a regression test that fails on the old code.</p>
+<p>Story 3.1 (PR #33) replaced 2wiCC_Comms with my bridge firmware. It's split like the controller: a pure C core (bridge/core, testable on the PC, loadable from Python) and a thin platform layer with TinyUSB and the UART. One core, one non-blocking super-loop. No code path is allowed to block.</p>
+<p>"Ahead of queued app frames" doesn't mean "instantly". A due heartbeat still waits for the frame in flight, whatever is already in the UART's software ring, the 32-byte hardware FIFO and the shift register. The controller declares the link dead after 80 ms of silence, but the protocol promises a gap of at most 27 ms between heartbeats. At 460800 baud a byte takes about 21.7 µs, so every byte allowed to wait in front adds up.</p>
+<p>Recent findings suggest that my first limit, 16 bytes ahead in the software ring, left a margin of 0.25 ms and nothing to stop someone from raising it. The review made it 8 bytes, and the build now refuses any value that could break 27 ms:.</p>
+<p>firmware/bridge/core/bridge.c: a negative array size is a compile error.</p>
+<p>The host test (F.7) runs 23 bursts of 512 maximum-size frames with a fake clock and measures every heartbeat gap: 17.36 to 23.07 ms, limit 27. Its first version passed for the wrong reason. The model rounded every character to the clock's 5 µs step (25 µs instead of 21.7), and a heartbeat plus three maximum frames then took exactly 800 characters, 20.000 ms. Every gap read 20.000 ms and the worst case was never exercised. Exact character times fixed it, and the test now also requires a gap above 20.5 ms, so it can't pass vacuously again.</p>
+<p>In a recent development, two boards, two USB cables, and a UART between them. Either can be powered first, and a board must never push current into an unpowered neighbour through its TX pin. The controller's side of that rule (TX high-impedance until RX idles high) is in Devlog #2. Story 3.1 added the bridge's side, the probe:.</p>
+<p>Industry observers note that the bridge's probe (AD-20). No heartbeat while probing: TX is not driven.</p>
+<p>The review found that my first version, on a link loss, started the next pulse in the same step: TX never actually went high-impedance, and the leftovers of the cut frame were still sent. Now a loss releases TX at once, empties the ring and waits 10 ms so the controller sees a break and releases too. And every link-up starts with a lone 0x00, which ends any half frame the controller's receiver might still hold.</p>
+<p>Sources indicate that one surprise, and not from the firmware: macOS completes the Pro Controller handshake by itself. With the controller plugged into my Mac, STATUS noted console_ready 1 with no probe script running. My bench command expected "not ready" and printed one FAIL, with exactly the right replies for a ready console. The Epic 2 retrospective had already written that fact down; the H-row hadn't caught up. Now every bench row states which host the controller is plugged into.</p>
+<p>Story 3.4 (PR #34) is a small command-line tool, ocb-dev, the first real user of the session. It takes exactly two arguments, a serial port and a timeline file, and it's the first form of the serial worker the real app will have in Epic 4.</p>
+<p id="sec-mid-149365">The timeline is the same Ode to Joy the controller played from its own memory in Devlog #2: 62 notes, 158 events, generated from the ocarina profile measured in Epic 1. Same melody, so the comparison is fair; the only difference is that now every event crosses the wire from the PC.</p>
+<p>Sources indicate that the tool is the adapter from the sans-IO diagram. Its loop sleeps until the session's next timeout, a deadline or incoming bytes, then feeds the session and drains it:.</p>
+<p>app/tools/ocb-dev/src/runner/mod.rs, trimmed.</p>
+<p>According to recent reports, the runner is generic over the port, the clock and "the owner" (me, pressing Enter). The bench uses a real serial port and a real clock; the dry run plugs the same runner into ocb-sim with a fake clock and a scripted owner. Same code, two worlds.</p>
+<p>One ocb-dev melody run (simplified).</p>
+<p>B forwards every frame and adds its own HEARTBEAT every 20 ms; it's left out of the arrows to keep the picture readable.</p>
+<p>The "first input" step is a lesson from Devlog #2: the Switch 2 doesn't show a wired controller until it gets an input. The tool presses D-pad down three times (never A, which could launch something), then asks me to dismiss the game's controller screen and reopen the ocarina, keeps the link alive with PING, and starts only when I press Enter.</p>
+<p>The Epic 2 retrospective left one action, #27, that I took seriously: before any bench session, review the bench tools and the commands of every bench row, and dry-run every new or changed tool against the simulated model. Half of Epic 2's failures had been my own test scripts, at the Switch, with the console in my hands.</p>
+<p>Sources indicate that for ocb-dev the code review found twelve important concerns, and the dry run made each one a failing test before the fix. Two would have wasted a bench session:.</p>
+<p>The M4 exit criterion was a soak: 10 minutes at 460800 baud without losing a byte, or else evaluate 921600. ocb-dev  soak streams one event per millisecond, about 100 times the rate of a melody, with states harmless on any host. It runs with the controller on the Mac, on the debug build that exposes the controller's counters.</p>
+<p>Sources indicate that 600,000 events, zero bytes lost, zero transport NAKs. 921600 baud isn't needed. The only bench bug was cosmetic: the summary line printed frames sent 0, because the session restarts its counters at every STOP. Fixed after the bench, with a test that failed on the old code.</p>
+<p>Story 3.5 (PR #35) had no latest feature. It was the one I cared about most: can I trust these boards with my console? The requirement: when the link dies mid-song, the console must see nothing pressed within 100 ms, every time.</p>
+<p>ocb-dev got two more keyword modes: failsafe plays the melody in rounds and waits for me to break the link in each one; watch follows the console's state while I put it through sleep and settings changes.</p>
+<p>The review found something uncomfortable: two numbers in the acceptance criteria could not be measured with what the controller exposed.</p>
+<p>My original plan had been "no firmware change, the design already bounds it". At the review I changed my mind and added a measurement to the controller instead: a 5-byte debug STATUS v5 block, debug builds only, no wire or protocol version change.</p>
+<p>The lesson went straight into the retrospective: for every number in an acceptance criterion, the story names the tool and the field that will measure it when the story is written, not at the code review.</p>
+<p>Recent findings suggest that the routine, 40 times: the tool prints ROUND n/20: playing, I unplug the bridge's USB (first run) or pull the bridge-TX → controller-RX jumper (second run) in the middle of the melody, listen, plug it back. The next round starts 3 s after the controller is ready again.</p>
+<p>According to recent reports, limit 100 ms; worst case 20.02 ms. Every loss was a break (an unplugged RX line, pulled down, reads as one), so the watchdog didn't wait for the 80 ms heartbeat timeout: it acted at once. The number it reports is the time since the last heartbeat, which is why the range sits between 0 and one heartbeat period. And I heard the melody stop at once, in every one of the 40 rounds.</p>
+<p>With the multimeter, the controller's TX pin (GP0) read 0.09 V with the bridge unplugged and 0 V with the wire out: the controller releases TX after a loss. My first reading stated 1.41 V, which gave me a moment, until I noticed I had the probe on GP1, the controller's RX, not GP0. And H.1's last part: bridge unpowered, controller in the console, bridge GP1 at 0.26 V (a floating line) and bridge 3V3 at 0 V. No back-powering, in either direction.</p>
+<p>The first unplug run had one failed round, and it was the right kind of failure: the melody ended while I was still reading the instructions, so there was no loss to measure. The tool failed that round alone and moved on, as designed. One extra round made it 20.</p>
+<p>A.3: worst measured vs limit, and the other margins of this epic (ms).</p>
+<p>console_ready is the controller's opinion of whether the console is listening: 1 after the handshake, back to 0 when the console stops polling for more than 100 ms. The app will use it to enable or disable Play. The watch run, one action at a time:.</p>
+<p>H.3 on the Switch 2, as the session saw it.</p>
+<p>The UX spec had two open questions waiting for exactly these numbers:.</p>
+<p>According to recent reports, nothing in the firmware surprised me in this session. The console and my tools did:.</p>
+<p>I plan and build Bonooru with the BMad Method and AI agents (Claude). Each story gets a file with its acceptance criteria and every open decision recorded; an agent implements it, three fresh-context reviewers attack it in parallel (one blind, one hunting edge cases, one checking every acceptance criterion), and the findings are fixed or recorded. In this epic that was 9, 11, 12 and 14 notable findings fixed in Stories 3.3, 3.1, 3.4 and 3.5, all before the bench. What needs hardware is mine: I unplugged, pulled wires, held the multimeter and listened to 40 rounds of Ode to Joy being cut short; the agent wrote the tools and recorded the numbers as measured, failed runs included.</p>
+<p>In a recent development, epic 3 is 5 story PRs plus the retrospective. At the end, the repo has 44 firmware host tests (ctest, under AddressSanitizer and UndefinedBehaviorSanitizer) and 105 Rust tests across ocb-core, ocb-sim and ocb-dev, green on Ubuntu, Windows and macOS. The rules, decisions and bench numbers live in docs/link-protocol.md and docs/test-proposal.md.</p>
+<p>Everything so far happens in a terminal. Next epic, Bonooru gets a window: the app finds the bridge by itself, reveals the state of the link as it changes, and lets me move Link with a gamepad on the screen.</p>
+<p>In Epic 2 the controller played a melody it carried in its own memory. Now the PC sends every note, and I've pulled the plug 40 times to make sure it lets go.</p>
+<p id="sec-end-149365">This is an unofficial fan project for personal, offline fun. It is not affiliated with, endorsed or sponsored by Nintendo. The Legend of Zelda and Nintendo Switch are trademarks of Nintendo. No game code, assets or console modifications are involved.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/basteez/bonooru-devlog-3-the-pc-takes-the-wheel-fkj" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="h-companys-new-holo2-model-takes-the-lead-in-ui-localization-149531.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149531. H Company's new Holo2 model takes the lead in UI Localization
+        </a>
+        
+        <a href="magic-mushroom-ingredient-takes-the-fight-out-of-aggressive-fish-149275.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149275. Magic mushroom ingredient takes the fight out of aggressive fish
+        </a>
+        
+        <a href="david-rockwell-takes-us-inside-the-design-of-skywalker-grill-149128.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149128. David Rockwell Takes Us Inside the Design of Skywalker Grill
+        </a>
+        
+        <a href="latest-update-grand-theft-auto-vi-takes-over-miami-including-its--148996.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148996. Latest Update: Grand Theft Auto VI takes over Miami, including its art destinations
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

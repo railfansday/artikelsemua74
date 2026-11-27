@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138065">SpawnDev has two libraries that let C# use browser APIs: SpawnDev.BlazorJS and SpawnDev.SpawnJS. If you are starting a project, or you already use one, you will want to know which to pick and what moving costs.</p>
-<p>Sources indicate that the short answer: start latest projects on SpawnJS. If your app runs well on BlazorJS, there is no rush; it is still supported. When you do move, most of your code stays the same.</p>
+<p>Sources indicate that the short answer: start latest projects on SpawnJS. If your app runs well on BlazorJS, there is no rush; it is still supported. When you do move, most of your code stays the same. <span style="font-size:13px;">(Related: <a href="breaking-showcase-your-projects-in-spaces-using-gradio-150278.html" style="color:#2563eb; font-weight:600;">Breaking: Showcase Your Projects in Spaces using Gradio...</a>)</span></p>
 <p>In a recent development, spawnDev.BlazorJS was first published in December 2022 and has over 222,000 NuGet downloads. It works through Blazor's own JavaScript interop.</p>
 <p>SpawnDev.SpawnJS is the newer library. It talks to JavaScript through .NET's JSImport and JSExport and does not need Blazor at all.</p>
 <p>The SpawnJS README reports a test app that went from about 30 MB to about 9 MB when trimmed. In the small example below, the published apps were 19.5 MB on SpawnJS and 22.5 MB on BlazorJS, counting the compressed copies of each file.</p>
 <p>Because SpawnJS does not depend on Blazor, the same C# can run where Blazor never does: a plain .NET WebAssembly app, a Web Worker, a browser extension, or a .NET WebAssembly console app running under Node.js with no browser at all.</p>
-<p>Recent findings suggest that that last one is not a curiosity. SpawnDev.ILGPU, our GPU library, runs its shared GPU test suite that way: a .NET WebAssembly console app under Node.js, using SpawnJS for every JavaScript call, with real WebGPU from the webgpu npm package, the Dawn project's own binding. On an RTX 4070, all 876 tests that apply there pass. The other 22 are skipped: 17 belong to other backends, and 5 check for a feature Node does not have, such as a canvas or a video frame, and say so. <span style="font-size:13px;">(Related: <a href="influencer-christie-miller-announces-her-own-death-in-emotional-f-138844.html" style="color:#2563eb; font-weight:600;">Influencer Christie Miller announces her own death in e...</a>)</span></p>
-<p>The first run found something a browser-only test run never could: under Node, the library never loaded one of its WebGPU helper scripts, so dispatch batching quietly switched off. That is fixed in SpawnDev.ILGPU 5.4.52. <span style="font-size:13px;">(Related: <a href="this-latest-chip-survives-1300f-700c-and-could-change-ai-forever-138850.html" style="color:#2563eb; font-weight:600;">This latest chip survives 1300°F (700°C) and could chan...</a>)</span></p>
+<p>Recent findings suggest that that last one is not a curiosity. SpawnDev.ILGPU, our GPU library, runs its shared GPU test suite that way: a .NET WebAssembly console app under Node.js, using SpawnJS for every JavaScript call, with real WebGPU from the webgpu npm package, the Dawn project's own binding. On an RTX 4070, all 876 tests that apply there pass. The other 22 are skipped: 17 belong to other backends, and 5 check for a feature Node does not have, such as a canvas or a video frame, and say so. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>The first run found something a browser-only test run never could: under Node, the library never loaded one of its WebGPU helper scripts, so dispatch batching quietly switched off. That is fixed in SpawnDev.ILGPU 5.4.52.</p>
 <p>In a recent development, to try it yourself, Example 08 runs a GPU kernel from C# under Node and prints the GPU it found. It needs Node 22 or later and the .NET wasm-tools workload.</p>
 <p>BlazorJS is built on Blazor's own interop, so it needs a Blazor app.</p>
 <p>Article 1 built a recipe page that keeps the screen awake and copies to the clipboard with SpawnJS. We wrote the same page with BlazorJS, and the same browser tests pass for both.</p>
@@ -195,20 +195,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="cop31-climate-talks-end-without-consensus-on-how-to-fund-vulnerab-139527.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #139527. COP31 climate talks end without consensus on how to fund vulnerable countries or move the world away from coal, oil and gas use
+        </a>
+        
         <a href="industry-news-ahrefs-vs-semrush-which-seo-tool-should-you-use-138152.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #138152. Industry News: Ahrefs vs SEMrush: Which SEO Tool Should You Use?
         </a>
         
-        <a href="five-grounds-which-could-rival-st-james-park-as-newcastle-united--128796.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #128796. Five grounds which could rival St James' Park as Newcastle United weigh up next move
+        <a href="how-to-install-and-use-the-hugging-face-unity-api-150104.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150104. How to Install and Use the Hugging Face Unity API
         </a>
         
-        <a href="cop31-climate-talks-end-without-consensus-on-how-to-fund-vulnerab-128015.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #128015. COP31 climate talks end without consensus on how to fund vulnerable countries or move the world away from coal, oil and gas use
-        </a>
-        
-        <a href="which-samsung-folding-phone-is-right-for-you-galaxy-z-fold-8-ultr-138747.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138747. Which Samsung folding phone is right for you? Galaxy Z Fold 8, Ultra, or Flip 8
+        <a href="leveraging-hugging-face-for-complex-generative-ai-use-cases-150067.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150067. Leveraging Hugging Face for complex generative AI use cases
         </a>
         
     </div>

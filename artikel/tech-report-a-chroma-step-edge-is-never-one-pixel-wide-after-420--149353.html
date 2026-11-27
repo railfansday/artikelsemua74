@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: A chroma step edge is never one pixel wide after 4:2:0 — and the decoder does the widening</title>
+    <meta name="description" content="I spent a day trying to answer a question that sounded trivial: when a marketplace re-encodes my product photo with 4:2:0 chroma subsampling, how much of t">
+    <meta name="keywords" content="chroma, edge, which, file, pixel, recent, because, subsampling">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/tech-report-a-chroma-step-edge-is-never-one-pixel-wide-after-420--149353.html">
+    
+    <meta property="og:title" content="Tech Report: A chroma step edge is never one pixel wide after 4:2:0 — and the decoder does the widening">
+    <meta property="og:description" content="I spent a day trying to answer a question that sounded trivial: when a marketplace re-encodes my product photo with 4:2:0 chroma subsampling, how much of t">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdz7lyitmhmxsz4yv5coh.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/tech-report-a-chroma-step-edge-is-never-one-pixel-wide-after-420--149353.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: A chroma step edge is never one pixel wide after 4:2:0 — and the decoder does the widening">
+    <meta name="twitter:description" content="I spent a day trying to answer a question that sounded trivial: when a marketplace re-encodes my product photo with 4:2:0 chroma subsampling, how much of t">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdz7lyitmhmxsz4yv5coh.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: A chroma step edge is never one pixel wide after 4:2:0 — and the decoder does the widening", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdz7lyitmhmxsz4yv5coh.png"], "datePublished": "2026-11-27T08:02:05", "dateModified": "2026-11-27T08:03:48.816565", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-a-chroma-step-edge-is-never-one-pixel-wide-after-420--149353.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: A chroma step edge is never one pixel wide after 4:2:0 — and the de?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Gadgets originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Tech Report: A chroma step edge is never one pixel wide afte' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Gadgets section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Gadgets</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: A chroma step edge is never one pixel wide after 4:2:0 — and the decoder does the widening</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 27 Nov 2026 &bull; ⏱️ 12 min read (2414 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>I spent a day trying to answer a question that sounded trivial: when a marketplace re-encodes my product photo with 4:2:0 chroma subsampling, how much of the cutout edge does it eat?</li><li style='margin-bottom:6px;'>Recent findings suggest that the trivial answer is "some".</li><li style='margin-bottom:6px;'>It has been revealed that that is not a rounding-error distinction.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149353"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149353"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149353"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: A chroma step edge is never one pixel wide after 4:2:0 — and the decoder does the widening" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdz7lyitmhmxsz4yv5coh.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149353">I spent a day trying to answer a question that sounded trivial: when a marketplace re-encodes my product photo with 4:2:0 chroma subsampling, how much of the cutout edge does it eat?</p>
+<p>Recent findings suggest that the trivial answer is "some". The measured answer turned out to be more specific, and it moved the blame somewhere I did not expect. On a boundary that falls exactly on a chroma sample boundary, the subsampling itself costs nothing. The stored colours come back exact. The two-pixel ramp that shows up in the decoded file is produced entirely by the decoder's upsampling filter. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-150305.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>It has been revealed that that is not a rounding-error distinction. It changes what you can do about it, because the two costs have different remedies and different sizes depending on where your edge happens to land. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Here is the whole measurement, with the fixtures that make each number checkable.</p>
+<p>A JPEG encoder for a colour image does this:.</p>
+<p>Recent findings suggest that 4:2:0 means the two chroma planes are stored at half resolution in both directions. 4:2:2 halves only horizontally. 4:4:4 stores all three planes at full resolution.</p>
+<p>Four of those five stages are not what I want to measure, so I held them fixed by holding the encoder fixed: Pillow over libjpeg, one quality, one image, only the subsampling argument changing. Pillow's argument is an integer — 0, 1, 2 — and I did not take the docstring's word for what it does. Reading the SOF0 marker out of the produced files:.</p>
+<p>Sources indicate that those are hex-ish byte pairs: luma sampling factor 0x11 at 4:4:4, 0x21 at 4:2:2, 0x22 at 4:2:0, with both chroma components at 0x11. So the parameter is doing what it claims.</p>
+<p>The other thing I checked before trusting a single-variable comparison: whether changing subsampling also changes the quantisation tables. It does not, at least not here.</p>
+<p>Sources indicate that byte-identical tables. That matters, because if the encoder had quietly softened the chroma quantiser for 4:4:4 then "4:4:4 is better at the same quality" would be measuring two things at once and the comparison would be worthless. It is one thing.</p>
+<p>Recent findings suggest that the first test is not about the encoder. It is about the meter, and it exists so that every later number has a floor.</p>
+<p>Take a real product photo, throw away its colour, re-encode at q85 in all three configurations.</p>
+<p>dC is the mean absolute change in chroma; dE is CIEDE2000. On a greyscale image the chroma planes are flat, so the subsampling has literally nothing to average, and the chroma error is exactly 0.000 at all three settings — while the file still gets 6% smaller. The dE of 0.388 is identical in all three, which is the tell: that number is luma quantisation, untouched by the chroma stage.</p>
+<p>Recent findings suggest that if a chroma metric reports a cost on a greyscale image, it is measuring luma. Mine does not, which is the only reason I kept using it.</p>
+<p>Two flat fields, same lightness, different hue, meeting at a hard vertical boundary:.</p>
+<p>It has been revealed that identical L*, different a* and b*. Luma is constant everywhere, so luma quantisation cannot move the boundary, and any change across it has to be the chroma stage.</p>
+<p>Now the measurement. I want a number that is the width of the transition, not a threshold count, because an integer count of a continuous thing flaps. The one I used:.</p>
+<p>A hard edge scores 1.00. The same total change spread over two equal steps scores 2.00; over four, 4.00. No tolerance, so no pixel can land on the wrong side of one.</p>
+<p>Run that on the decoded file, at the boundary position that falls on the chroma grid (x=96, even) and one pixel off it (x=97, odd, halfway through a 2x2 chroma sample):.</p>
+<p>So: 4:4:4 keeps a step. 4:2:0 turns it into a ramp of 2.6 pixels or 4.4 pixels depending on phase, and 4:2:2 is already at the 4:2:0 value on a vertical edge, because a vertical edge varies horizontally, which is the direction 4:2:2 halves.</p>
+<p>And the direction check, which is what stops a single isotropic number from faking any of this — same fixture rotated, so the chroma now varies down the image instead of across it:.</p>
+<p>4:2:2 is a complete no-op on a horizontal edge and full strength on a vertical one. 4:2:0 hits both. That asymmetry is a property of the format, not of my measurement, and it is the cheapest way to check that a subsampling test is testing subsampling.</p>
+<p>The 2.6 and 4.4 above are totals. Two stages contribute to them and only one of them is in the file.</p>
+<p>So I built the encoder by hand — box-average the chroma planes to half resolution, put them back — with no DCT and no quantisation, and tried two reconstruction rules:.</p>
+<p>According to recent reports, the triangle row lands on libjpeg's real output to within a few hundredths, which is the check that the hand-built encoder is actually the thing I claim it is. And now the split is explicit:.</p>
+<p>You can see it in the pixel values directly. Source a* across the edge, then what comes back:.</p>
+<p>Replication is exact. The triangle decoder emits 0.24 and 0.76 of the way across the transition at two adjacent pixels — the signature of convolving a step with a 1-3-1 kernel. libjpeg's real output is 0.25 and 0.77. The 4:2:0 file did not contain a ramp; it contains two chroma values and nothing else, and the ramp is manufactured at display time.</p>
+<p>This is why "4:2:0 halves your chroma resolution" is simultaneously true and misleading. It halves the sampled resolution. What reaches your eyes is that, run back through a low-pass filter that is wider than the grid, so you get roughly a quarter of the chroma resolution in width terms and you cannot get the subsampling back without also getting the filter back.</p>
+<p>In a recent development, 4:2:0 is usually described in terms of 16x16 pixel blocks, which makes it sound as though a boundary aligned to that grid would be safe. That number is the DCT block — 8x8 chroma coefficients covering 16x16 pixels — and it is the wrong grid for this question.</p>
+<p>According to recent reports, an edge has to survive the sample grid, which at 4:2:0 is one chroma sample per 2x2 pixels. I walked the boundary one pixel at a time across 17 positions and measured the decoded width:.</p>
+<p id="sec-mid-149353">Recent findings suggest that the period is 2, not 16. Nothing special happens at phase 0 or phase 8; every even pixel behaves one way and every odd pixel behaves a worse way. Across the 17 positions the even rows land in 2.56 to 2.83 and the odd rows in 4.33 to 4.70, while the 4:4:4 control jitters between 1.00 and 1.11 — that jitter is luma quantisation bleeding into the a* line I sample, and it is the noise floor for the whole table.</p>
+<p>Aligning a product edge to a 16-pixel grid therefore buys nothing at all. You would need to align it to a 2-pixel grid, which means choosing the parity of the boundary, which is not a design decision anyone can make on purpose.</p>
+<p>Synthetic steps are countable but they are not photographs. So: 16 covers from a working article pipeline, resized to 640 px wide, each encoded at three qualities and three sampling settings, error measured against the untouched PNG inside a subject mask.</p>
+<p>The mask is deliberately crude — median border colour, CIEDE2000 distance above 12, plus a 3-pixel dilation/erosion band as "the edge" — and identical for every configuration, so its crudeness is shared and cannot be part of the difference between rows.</p>
+<p>Means over the 16 photos at q85 (dE whole subject, dE_edge the boundary band, dC chroma, dH chroma-weighted hue rotation, in degrees):.</p>
+<p>According to recent reports, at q95 and q75 the pattern holds with slightly different magnitudes: edge error goes 0.963 -&gt; 1.228 at q95 and 1.736 -&gt; 2.021 at q75 for 4:4:4 -&gt; 4:2:0. So the cost of 4:2:0 is +21% on the edge at q85 for 15.6% fewer bytes, and the edge is hit harder than the image as a whole: dE rises 15.3%, dE_edge 21.2%.</p>
+<p>The per-photo spread is wide, and worth knowing before anyone quotes a single multiplier:.</p>
+<p>One photo is unaffected; another's edge error grows 68%. "Chroma subsampling costs you about a fifth of your edge accuracy" is a median with a range wide enough to be useless for a single image — which is why the mechanism matters more than the average.</p>
+<p>The comparison above holds the encoder's quality setting equal. That is not the comparison a person shipping a file actually has. They have a byte budget. So the interesting question is: given 38 KB, is it better spent on 4:4:4 at a lower quality, or on 4:2:0 at a higher one?</p>
+<p>Bisect the 4:4:4 quality until its file is no bigger than the 4:2:0 file (match to within 2%):.</p>
+<p>It has been revealed that 4:4:4 wins at every size. The price is a quality drop of 2.2 points at q95, 6.1 at q85 and 10.6 at q75 — the more you have already compressed, the more quality you have to surrender to buy the 15–17% of bytes back. Expressing it as a rate:.</p>
+<p>The trend is the interesting part. At high quality the chroma grid is the binding constraint and losing it is expensive; at q75 luma quantisation has already destroyed so much that the two options converge. If you are shipping at q85 or above, 4:2:0 is not a good deal. If you are already at q70 because the marketplace caps you at 100 KB, the argument mostly disappears — which is also why the folklore "4:2:0 is fine, nobody can see it" is sometimes true and never for the reason given.</p>
+<p>It has been revealed that everything above depends on a mask, and a mask is a place to hide a mistake. So here is the same damage measured with no mask, no boundary detection, and no threshold: bucket every pixel with meaningful chroma by how fast the chroma was changing in the original, and average the error per bucket.</p>
+<p>Industry observers note that if subsampling damages edges because a half-resolution grid cannot hold a fast change, the error has to rise with the gradient. If it is flat, my story is wrong.</p>
+<p>Sources indicate that both curves rise, because JPEG is lossy everywhere and steeper chroma is harder to code at any sampling ratio. The ratio is what isolates subsampling, and it rises monotonically: 1.31x on flat chroma, 1.60x on the steepest twelfth. The extra cost is concentrated exactly where the grid is thinnest.</p>
+<p>That is the mechanism, confirmed on 15 of the 16 photos (one was excluded by the binning guard: only 4.1% of its frame is subject, too few high-gradient pixels to fill the last bucket).</p>
+<p>Sources indicate that nothing in the previous sections decides what a buyer sees, because nobody ships one encode. A seller exports, the marketplace ingests and re-encodes, and that second file is the one on the page.</p>
+<p>So: seven uploads, each pushed once through the same marketplace-style pass (q82, 4:2:0), error measured against the original PNG both before and after.</p>
+<p>Two things fall out of that table.</p>
+<p>First, the losses are not additive, they overlap. The platform pass charges a pristine 4:4:4 q95 export 87%, and an already-4:2:0 q85 export only 12%, because most of what it would remove has already been removed. Uploading the best possible file does not get you the best possible output; it gets you 1.806, which is within 1.1% of what an untouched PNG would have produced (1.786) and 4.4% better than uploading a 4:2:0 q85 file, which is the file that would otherwise sit on the page.</p>
+<p>Recent findings suggest that second, the choice you control is worth a few percent, and the choice you do not control is worth tens. Across all seven uploads the final edge error spans 1.786 to 2.274 — 27% — and six of those seven sit inside 6% of each other. Meanwhile the single re-encode in the middle of every chain, which you have no say in, is worth more than any of it.</p>
+<p>The practical reading: stop optimising your export for a platform that is going to overwrite it, and check what the platform actually does instead, because that is the stage with the leverage.</p>
+<p>The last thing I wanted to know is what happens on the second and third pass, because "every save loses quality" is repeated constantly and I wanted a number.</p>
+<p>Same file, four passes, chroma error against the untouched PNG:.</p>
+<p>Passes two to four at a fixed setting add 1.6% / 0.6% / 0.4% of the first pass's cost, converging. The quantised coefficients map onto themselves, so re-encoding at the setting that produced the file lands back on nearly the same coefficients. Four saves are not four times the loss; they are about 1.02 times it.</p>
+<p>Change the setting between passes and it starts over. Pass three of 82, 90, 75, 82 — the one after the quality drops to 75 — adds 15.6% of the first pass's cost on its own.</p>
+<p>According to recent reports, so the folklore is wrong in its mechanism and right in its conclusion, which is the worst combination. Re-saving is not what accumulates. Re-saving differently is. A workflow that touches a file five times at one setting is fine. A workflow that touches it twice at two settings is not.</p>
+<p>Given all of the above, and being honest that it is calibrated on one encoder:.</p>
+<p>Five files, all of them plain numpy and Pillow:.</p>
+<p>The pinning is not fussiness. My first run of the matrix and my first run of the cascade picked different photos, because the cover corpus grew between them, and for a while two tables in this piece were describing two different sets of images.</p>
+<p id="sec-end-149353">According to recent reports, I work on the image pipeline at PicViva, which is where I ran into this: the export-and-upload step is ours, the ingest-and-re-encode step belongs to the marketplace, and it took a while to work out which of the two was costing the edge. The short version is that it is usually not the one I can fix in our code.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/wisly/a-chroma-step-edge-is-never-one-pixel-wide-after-420-and-the-decoder-does-the-widening-234p" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-never-one-to-lag-behind-hsr-and-zzz-genshin-impact-wi-143661.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #143661. Tech Report: Never one to lag behind HSR and ZZZ, Genshin Impact will introduce its own latest pink-haired animal-themed girl in Version Luna 6
+        </a>
+        
+        <a href="tech-report-blade-runner-2099-proves-the-saga-does-one-thing-bett-143050.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #143050. Tech Report: Blade Runner 2099 Proves The Saga Does One Thing Better Than Any Other Sci-Fi Franchise
+        </a>
+        
+        <a href="tech-report-star-trek-iv-the-voyage-home-at-40-trek-has-never-bee-139236.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #139236. Tech Report: 'Star Trek IV: The Voyage Home' at 40: 'Trek' has never been as joyous or fun as in 'the one with the whales'
+        </a>
+        
+        <a href="tech-report-scientists-just-discovered-what-coffee-really-does-to-149325.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149325. Tech Report: Scientists just discovered what coffee really does to your gut and brain
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

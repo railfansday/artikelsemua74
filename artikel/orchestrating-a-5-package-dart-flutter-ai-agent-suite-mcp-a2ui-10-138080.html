@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138080">I want to share my open-source Flutter MCP Suite — a set of 5 Dart and Flutter packages for building AI agents with Model Context Protocol (MCP), generative UI (A2UI), and local on-device models.</p>
-<p>In a recent development, to be honest, I did not write all this code by hand. I designed the structure, guided the work, and maintain the packages using AI coding agents — mainly Antigravity, and now also my own open-source tool TealKit Coder, which is built on top of dart_mcp_core.</p>
-<p>Using the packages every day inside a real coding agent helped find many real bugs quickly — like context compression loops, local model template errors, and Android file-saving complications — so we could fix them and add tests right away. <span style="font-size:13px;">(Related: <a href="this-latest-chip-survives-1300f-700c-and-could-change-ai-forever-138850.html" style="color:#2563eb; font-weight:600;">This latest chip survives 1300°F (700°C) and could chan...</a>)</span></p>
+<p>In a recent development, to be honest, I did not write all this code by hand. I designed the structure, guided the work, and maintain the packages using AI coding agents — mainly Antigravity, and now also my own open-source tool TealKit Coder, which is built on top of dart_mcp_core. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>Using the packages every day inside a real coding agent helped find many real bugs quickly — like context compression loops, local model template errors, and Android file-saving complications — so we could fix them and add tests right away. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>In a recent development, the base package is dart_mcp_core. It is pure Dart with no Flutter dependencies (160/160 pub.dev points, 99+ unit tests).</p>
 <p>Because it does not depend on Flutter, the same agent engine works everywhere:.</p>
 <p id="sec-mid-138080">With flutter_a2ui_mcp (using a2ui_flutter ^0.5.0 and a2ui_core ^0.9.0), the AI can show interactive Flutter widgets directly inside the chat instead of only plain text.</p>
 <p>In v1.2.1, it uses A2UI 1.0 Express by default:.</p>
-<p>Express uses about half as many tokens as raw JSON, checks the output against your widget catalog, and still falls back to normal JSON if a smaller model outputs JSON instead. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-138813.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
+<p>Express uses about half as many tokens as raw JSON, checks the output against your widget catalog, and still falls back to normal JSON if a smaller model outputs JSON instead.</p>
 <p>In a recent development, if you want to run models offline on Android, iOS, or Desktop, flutter_ui_mcp_embedded connects llamadart (^0.21.0) to dart_mcp_core. It supports both GGUF (llama.cpp) and LiteRT-LM (.litertlm) models, and includes a HuggingFace model search dialog.</p>
 <p id="sec-end-138080">If you try it out or have any feedback, feel free to leave a comment or open an matter on GitHub!</p>
 <p style="margin-top: 25px;">
@@ -182,20 +182,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tiny-agents-in-python-a-mcp-powered-agent-in-70-lines-of-code-149703.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149703. Tiny Agents in Python: a MCP-powered agent in ~70 lines of code
+        </a>
+        
         <a href="latest-update-tiny-agents-an-mcp-powered-agent-in-50-lines-of-cod-138651.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #138651. Latest Update: Tiny Agents: an MCP-powered agent in 50 lines of code
         </a>
         
-        <a href="breaking-tiny-agents-in-python-a-mcp-powered-agent-in-70-lines-of-126771.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126771. Breaking: Tiny Agents in Python: a MCP-powered agent in ~70 lines of code
+        <a href="introducing-agentsjs-give-tools-to-your-llms-using-javascript-150057.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150057. Introducing Agents.js: Give tools to your LLMs using JavaScript
         </a>
         
-        <a href="beyond-llms-why-scalable-enterprise-ai-adoption-depends-on-agent--138630.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138630. Beyond LLMs: Why Scalable Enterprise AI Adoption Depends on Agent Logic
-        </a>
-        
-        <a href="agents-are-sessions-not-requests-size-gke-node-pools-for-ai-agent-138504.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138504. Agents are sessions, not requests: size GKE node pools for AI agent sessions
+        <a href="releasing-swift-transformers-run-on-device-llms-in-apple-devices-150049.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150049. Releasing Swift Transformers: Run On-Device LLMs in Apple Devices
         </a>
         
     </div>

@@ -158,10 +158,10 @@ a virtual machine under VMS in supervisor/user modes (where VMS usually ran
 shells) - the code is AFAIK lost to history, though a DECUS paper survives. Later I ported V7 too.</p>
 <p>According to recent reports, during the process I often came to that infamous line "You are not expected to understand this."
 in the context switch code and, I indeed didn't understand it .... then one day I came to that code through
-a different path and it was obvious .... let me explain what's going on, here's a deep dive. <span style="font-size:13px;">(Related: <a href="this-ai-knew-the-answers-but-didnt-understand-the-questions-138836.html" style="color:#2563eb; font-weight:600;">This AI knew the answers but didn’t understand the ques...</a>)</span></p>
+a different path and it was obvious .... let me explain what's going on, here's a deep dive. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Industry observers note that V6 Unix keeps per-process state in 2 places, a small entry in the process table, and the 'udot' a structure
 mapped by the MMU at a well known kernel virtual address referenced as "u." which also contains the kernel stack. This is always
-mapped to the same address in all running processes, setting up this mapping is a core part of each process switch. <span style="font-size:13px;">(Related: <a href="industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html" style="color:#2563eb; font-weight:600;">Industry News: Think AI "knows" what it’s doing? Scient...</a>)</span></p>
+mapped to the same address in all running processes, setting up this mapping is a core part of each process switch. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-150292.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
 <p>According to recent reports, V6 uses a somewhat baroque way to save the state of a running process and restoring it, in V7 they switched to use save()/restore() which works like the more familiar setjmp()/longjmp(). It's deeply beholding to
 details in the V6 PDP-11 calling conventions - savu() saves enough state to return to it saves the
 stack pointer (r6) and frame pointer (r5), it doesn't touch r2-r4.</p>
@@ -298,20 +298,20 @@ the whole time as retu(rp-&gt;p_addr); (essentially retu(u.u_rsav); matching the
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="this-ai-knew-the-answers-but-didnt-understand-the-questions-138836.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138836. This AI knew the answers but didn’t understand the questions
+        <a href="understanding-bigbirds-block-sparse-attention-150291.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150291. Understanding BigBird's Block Sparse Attention
         </a>
         
-        <a href="latest-update-what-are-flour-enzymes-understanding-a-common-flour-138032.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138032. Latest Update: What are flour enzymes?: Understanding a common flour ingredient.
+        <a href="benczechmark-can-your-llm-understand-czech-149860.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149860. 🇨🇿 BenCzechMark - Can your LLM Understand Czech?
         </a>
         
-        <a href="heavy-cream-vs-whipping-cream-whats-the-difference-understanding--138027.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138027. Heavy cream vs. whipping cream: What's the difference?: Understanding the right cream for your baking.
+        <a href="visualize-and-understand-gpu-memory-in-pytorch-149810.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149810. Visualize and understand GPU memory in PyTorch
         </a>
         
-        <a href="tech-report-spike-in-adhd-autism-diagnoses-driven-by-broader-reco-137918.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #137918. Tech Report: Spike in ADHD, Autism Diagnoses Driven by Broader Recognition, Understanding
+        <a href="smolvlm2-bringing-video-understanding-to-every-device-149765.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149765. SmolVLM2: Bringing Video Understanding to Every Device
         </a>
         
     </div>

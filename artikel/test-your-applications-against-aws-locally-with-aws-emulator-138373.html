@@ -153,8 +153,8 @@
 <p id="sec-start-138373">It has been revealed that today we’re announcing AWS Emulator, a local emulator for Amazon Web Services (AWS) that you run on your machine. The AWS Command Line Interface (AWS CLI), the AWS SDKs, and your coding agents speak to it over a local HTTPS endpoint using the same AWS APIs they would use in the cloud, from your laptop. AWS Emulator has no additional service fee. You pay only for AWS resources when you deploy on AWS. Its source is on GitHub. You install it from an RPM or Debian package on Linux, and on macOS and Windows you run it in Docker.</p>
 <p>Recent findings suggest that how it works
          You install the emulator, start it, and point your tools at the local endpoint. When AWS Emulator starts, it generates its own credentials, a config file, and a certificate, and writes them to ~/.aws/emulator/9297/. You set environment variables so the AWS SDK talks to your laptop instead of AWS, and your application code stays unchanged.</p>
-<p>It has been revealed that from there, your existing tests, CLI scripts, and coding agents keep working the way they already do. A unit test that creates an Amazon DynamoDB table, writes an item, and reads it back is the same test, and it runs on your machine without a deployment. A coding agent can create resources, check the result, and iterate again without waiting on a deployment in a Region. <span style="font-size:13px;">(Related: <a href="industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html" style="color:#2563eb; font-weight:600;">Industry News: Think AI "knows" what it’s doing? Scient...</a>)</span></p>
-<p>Industry observers note that the emulator is implemented in Rust so that it stays light on CPU and memory on a laptop. It supports the APIs of AWS services that have an API model in the AWS API models repository on GitHub, and because it’s built from those models, the same ones the AWS SDKs use, your requests and the errors you get back have the same shape as on AWS. <span style="font-size:13px;">(Related: <a href="forget-electrons-this-breakthrough-uses-light-matter-particles-to-138825.html" style="color:#2563eb; font-weight:600;">Forget electrons, this breakthrough uses light-matter p...</a>)</span></p>
+<p>It has been revealed that from there, your existing tests, CLI scripts, and coding agents keep working the way they already do. A unit test that creates an Amazon DynamoDB table, writes an item, and reads it back is the same test, and it runs on your machine without a deployment. A coding agent can create resources, check the result, and iterate again without waiting on a deployment in a Region. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-150295.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
+<p>Industry observers note that the emulator is implemented in Rust so that it stays light on CPU and memory on a laptop. It supports the APIs of AWS services that have an API model in the AWS API models repository on GitHub, and because it’s built from those models, the same ones the AWS SDKs use, your requests and the errors you get back have the same shape as on AWS. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
 <p>If you are a developer, especially one working with coding agents such as Kiro or Claude Code, you can use that loop to test AWS interactions of real complexity locally.</p>
 <p>Recent findings suggest that let’s try it out
          To get started, I installed the package on Amazon Linux 2023. The package adds the aws-emulator command to /usr/bin/, so it’s on the path.</p>
@@ -207,20 +207,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="breaking-lyon-set-to-be-dropped-by-australia-for-first-test-again-139721.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #139721. Breaking: Lyon set to be dropped by Australia for first Test against Upcoming Zealand
+        </a>
+        
         <a href="industry-news-aws-weekly-roundup-aws-nitro-sandboxes-aws-emulator-138368.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #138368. Industry News: AWS Weekly Roundup: AWS Nitro Sandboxes, AWS Emulator, and more (November 16, 2026)
         </a>
         
-        <a href="a-classic-brain-test-exposed-ais-biggest-weakness-138817.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138817. A classic brain test exposed AI's biggest weakness
+        <a href="accelerate-bert-inference-with-hugging-face-transformers-and-aws--150251.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150251. Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
         </a>
         
-        <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-138813.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138813. Steam is pitting 10 years of Game of the Year winners against each other
-        </a>
-        
-        <a href="how-to-test-wcag-22-in-ci-what-axe-core-misses-138644.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138644. How to Test WCAG 2.2 in CI: What axe-core Misses
+        <a href="student-ambassador-programs-call-for-applications-is-open-150233.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150233. Student Ambassador Program’s call for applications is open!
         </a>
         
     </div>

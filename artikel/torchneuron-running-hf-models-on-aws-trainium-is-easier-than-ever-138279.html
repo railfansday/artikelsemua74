@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138279">TorchNeuron provides a upcoming native backend for PyTorch on AWS Trainium. Transformers, Diffusers and Kernels natively support it, making it easier than ever to run models on Trainium and to share them on the HF hub.</p>
-<p>According to recent reports, torchNeuron is a PyTorch plugin that brings a fresh backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP. Read the Pytorch blog to learn more about TorchNeuron.</p>
+<p>According to recent reports, torchNeuron is a PyTorch plugin that brings a fresh backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP. Read the Pytorch blog to learn more about TorchNeuron. <span style="font-size:13px;">(Related: <a href="hugging-face-on-pytorch-xla-tpus-150298.html" style="color:#2563eb; font-weight:600;">Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
 <p>Starting Oct. 20, 2026, TorchNeuron will be available as a public beta. Researchers and developers will be able to install it with pip install torch-neuronx.</p>
-<p>Industry observers note that to date, the Hugging Face experience on AWS Trainium and Inferentia — AI chips designed respectively for cost-effective training and inference at scale — has been delivered through optimum-neuron. This library relies on the torch-neuronx package, which is based on PyTorch XLA. It was the natural choice at the time, but it meant thinking like a compiler: lazy tensors instead of eager execution, static shapes only, a recompilation for every graph break. Optimum Neuron existed to hide that complexity, and maintained custom code (modeling classes, trainers, etc) to do so. <span style="font-size:13px;">(Related: <a href="industry-news-think-ai-knows-what-its-doing-scientists-say-think--138843.html" style="color:#2563eb; font-weight:600;">Industry News: Think AI "knows" what it’s doing? Scient...</a>)</span></p>
+<p>Industry observers note that to date, the Hugging Face experience on AWS Trainium and Inferentia — AI chips designed respectively for cost-effective training and inference at scale — has been delivered through optimum-neuron. This library relies on the torch-neuronx package, which is based on PyTorch XLA. It was the natural choice at the time, but it meant thinking like a compiler: lazy tensors instead of eager execution, static shapes only, a recompilation for every graph break. Optimum Neuron existed to hide that complexity, and maintained custom code (modeling classes, trainers, etc) to do so. <span style="font-size:13px;">(Related: <a href="tech-report-the-reformer-pushing-the-limits-of-language-modeling-150307.html" style="color:#2563eb; font-weight:600;">Tech Report: The Reformer - Pushing the limits of langu...</a>)</span></p>
 <p>Recent findings suggest that torchNeuron changes this. It integrates directly into PyTorch and exposes neuron as a native device, with eager execution, PyTorch's own distributed primitives (DTensor, FSDP2) and torch.compile.</p>
-<p>For the Hugging Face libraries, Trainium becomes a device like any other: Transformers, Diffusers, Accelerate, PEFT and TRL run on it directly, with the same classes and scripts you would use on any other accelerator. From now on, we recommend that Neuron customers use these libraries directly instead of going through Optimum Neuron. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-138813.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
+<p>For the Hugging Face libraries, Trainium becomes a device like any other: Transformers, Diffusers, Accelerate, PEFT and TRL run on it directly, with the same classes and scripts you would use on any other accelerator. From now on, we recommend that Neuron customers use these libraries directly instead of going through Optimum Neuron.</p>
 <p>Text generation is now natively supported in Transformers for a wide range of models. With TorchNeuron, 89% of the top 100 most-used text-generation model architectures are supported out of the box, compared to 46% with Optimum Neuron v0.4.5. You just need to pass the device_map=neuron argument in your code and your model will be moved to the Neuron devices.</p>
 <p>The following is an example of text-generation with tensor parallelism, which will enable to fully benefit from your Neuron instance. Note that it uses a static cache for generation as this is strongly recommended with Neuron to prevent frequent recompilations.</p>
 <p>Now that Neuron is a native PyTorch device, training on Trainium uses the same Hugging Face libraries as any other accelerator: Transformers, Accelerate, PEFT and TRL. You no longer need a dedicated trainer or a Neuron-specific fork of the model code. A standard TRL fine-tuning script runs on a Trainium instance with only a few Neuron-specific settings.</p>
@@ -195,6 +195,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="mercari-global-app-to-offer-mercari-japan-authentication-and-auct-144967.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #144967. Mercari Global App to Offer Mercari Japan Authentication and Auction Feature, Making it Easier Than Ever Before to Purchase Japanese Items From the US
+        </a>
+        
         <a href="breaking-aws-weekly-roundup-amazon-polly-generative-engine-torchn-138395.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #138395. Breaking: AWS Weekly Roundup: Amazon Polly Generative engine, TorchNeuron for Trainium, and more (October 26, 2026)
         </a>
@@ -203,12 +207,8 @@
             📰 #138265. Breaking: Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.
         </a>
         
-        <a href="the-google-home-app-is-better-than-nest-alone-ever-was-mostly-138753.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138753. The Google Home app is better than Nest alone ever was, mostly
-        </a>
-        
-        <a href="breaking-does-your-model-run-on-aws-trainium-look-it-up-138256.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138256. Breaking: Does Your Model Run on AWS Trainium? Look It Up
+        <a href="optimumonnx-runtime-easier-faster-training-for-your-hugging-face--150144.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150144. Optimum+ONNX Runtime - Easier, Faster training for your Hugging Face models
         </a>
         
     </div>

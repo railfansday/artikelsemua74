@@ -172,10 +172,10 @@ MAST HF Dataset
 ITBench Github
 MAST Github.</p>
 <p>IBM Research and UC Berkeley collaborated to study how agentic LLM systems break in real-world IT automation, for tasks involving incident triage, logs/metrics queries, and Kubernetes actions in long-horizon tool loops.</p>
-<p>Recent findings suggest that benchmarks typically reduce performance to a single number, telling you whether an agent failed but never why. To solve this black-box problem, we applied MAST (Multi-Agent System Failure Taxonomy), an emerging practice for diagnosing agentic reliability ). By leveraging MAST to analyze ITBench—the industry benchmark for SRE, Security, and FinOps automation—we turned raw execution traces into structured failure signatures, revealing exactly what broke and how to fix it. We annotated 310 ITBench SRE traces across three distinct model classes: Gemini-3-Flash, Kimi-K2, and GPT-OSS-120B. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>Takeaways from our analysis when building agents:. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-150296.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>Recent findings suggest that benchmarks typically reduce performance to a single number, telling you whether an agent failed but never why. To solve this black-box problem, we applied MAST (Multi-Agent System Failure Taxonomy), an emerging practice for diagnosing agentic reliability ). By leveraging MAST to analyze ITBench—the industry benchmark for SRE, Security, and FinOps automation—we turned raw execution traces into structured failure signatures, revealing exactly what broke and how to fix it. We annotated 310 ITBench SRE traces across three distinct model classes: Gemini-3-Flash, Kimi-K2, and GPT-OSS-120B. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-161768.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
+<p>Takeaways from our analysis when building agents:.</p>
 <p>If you’re building agents for enterprise IT workflows, this is the kind of evaluation you want: not just “did it pass?”, but “what broke, where, and what intervention is most leverageable?”.</p>
-<p>Benchmarks like ITBench are becoming the standard for measuring agentic performance in high-stakes IT automation tasks. In ITBench, agents act as Site Reliability Engineers (SREs) or Security Analysts tasked with diagnosing Kubernetes outages, patching vulnerabilities, or managing cloud costs in production environments.</p>
+<p>Benchmarks like ITBench are becoming the standard for measuring agentic performance in high-stakes IT automation tasks. In ITBench, agents act as Site Reliability Engineers (SREs) or Security Analysts tasked with diagnosing Kubernetes outages, patching vulnerabilities, or managing cloud costs in production environments. <span style="font-size:13px;">(Related: <a href="nvidia-stops-ai-gpu-shipments-to-southeast-asia-amid-purported-ch-161757.html" style="color:#2563eb; font-weight:600;">Nvidia stops AI GPU shipments to Southeast Asia amid pu...</a>)</span></p>
 <p>In a recent development, this benchmarks use success rate as a main metric to evaluate agents. However, this metric is insufficient for engineering robust systems. Knowing that an agentic system achieves a 14% success rate on ITBench tells us that it failed, but not why: Did it fail because it forgot the context? Because it hallucinated a command? Or because it simply did not terminate?</p>
 <p>Without a comprehensive approach to diagnose these failures, developers are left guessing, often resorting to blind prompting tweaks that solve one problem only to create another.</p>
 <p>Sources indicate that as a new standard to analyze the failure modes of complex agentic systems, we developed MAST (Multi-Agent System Failure Taxonomy). MAST brings more insights and open up the opaque evaluation of these benchmarks. Derived from a rigorous analysis of over 1,600 traces across seven different frameworks, MAST provides a standardized taxonomy for agent failures.</p>
@@ -224,20 +224,20 @@ MAST Github.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="scarfbench-benchmarking-ai-agents-for-enterprise-java-framework-m-161447.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161447. ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration
+        </a>
+        
+        <a href="autosynthdata-generating-training-data-for-enterprise-agents-161243.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161243. AutoSynthData: Generating Training Data for Enterprise Agents
+        </a>
+        
+        <a href="industry-news-felicis-leads-75m-bet-on-unsiloed-ai-to-make-enterp-156377.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #156377. Industry News: Felicis leads $7.5M bet on Unsiloed AI to make enterprise documents usable by AI agents
+        </a>
+        
         <a href="hugging-face-and-ibm-partner-on-watsonxai-the-next-generation-ent-150091.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150091. Hugging Face and IBM partner on watsonx.ai, the next-generation enterprise studio for AI builders
-        </a>
-        
-        <a href="introducing-agentsjs-give-tools-to-your-llms-using-javascript-150057.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150057. Introducing Agents.js: Give tools to your LLMs using JavaScript
-        </a>
-        
-        <a href="openenv-in-practice-evaluating-tool-using-agents-in-real-world-en-149526.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149526. OpenEnv in Practice: Evaluating Tool-Using Agents in Real-World Environments
-        </a>
-        
-        <a href="breaking-felicis-leads-75m-bet-on-unsiloed-ai-to-make-enterprise--144880.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #144880. Breaking: Felicis leads $7.5M bet on Unsiloed AI to make enterprise documents usable by AI agents
         </a>
         
     </div>

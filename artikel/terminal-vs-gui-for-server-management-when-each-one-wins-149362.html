@@ -153,15 +153,15 @@
 <p>Below: how each works, a task table, and 7 example tools.</p>
 <p>I made a short video on the same question:.</p>
 <p>According to recent reports, your ssh client opens one encrypted connection, asks the server for a shell, sends your keystrokes and gets text back. For your session, the server starts only your shell and the commands you run, next to the SSH service.</p>
-<p>In a recent development, inside that connection, SSH uses channels. RFC 4254, the SSH connection standard from 2006, claims: "All terminal sessions, forwarded connections, etc., are channels." It adds: "Multiple channels are multiplexed into a single connection." A channel can ask for an interactive shell or for one command:.</p>
-<p>In this post, web1, db1 and the other host names are example aliases from ~/.ssh/config on your computer:.</p>
+<p>In a recent development, inside that connection, SSH uses channels. RFC 4254, the SSH connection standard from 2006, claims: "All terminal sessions, forwarded connections, etc., are channels." It adds: "Multiple channels are multiplexed into a single connection." A channel can ask for an interactive shell or for one command:. <span style="font-size:13px;">(Related: <a href="nvidia-stops-ai-gpu-shipments-to-southeast-asia-amid-purported-ch-161757.html" style="color:#2563eb; font-weight:600;">Nvidia stops AI GPU shipments to Southeast Asia amid pu...</a>)</span></p>
+<p>In this post, web1, db1 and the other host names are example aliases from ~/.ssh/config on your computer:. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-161783.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
 <p>It has been revealed that A GUI SSH client uses the same SSH protocol and server account as the ssh command. It opens more channels for you: a shell per terminal tab, short commands that read things like disk use, and, in most file browsers, SFTP.</p>
 <p>SFTP itself is part of SSH: on OpenSSH servers, sshd starts sftp-server through its Subsystem option.</p>
 <p>Sources indicate that the Termius docs, for example, say that for autocomplete it "opens additional exec channels next to the main shell channel". In CtrlOps, gauges for CPU, RAM and disk show "the numbers top, free -h and df -h / give you, without running them".</p>
-<p>CtrlOps reads them "over the SSH you already use" (Infra Monitoring). <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-150295.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
+<p>CtrlOps reads them "over the SSH you already use" (Infra Monitoring).</p>
 <p>According to recent reports, so the SSH GUI vs command line choice is not about access: a GUI client does not unlock anything the terminal cannot do. It types the commands for you and shows the answer as a list or a gauge. It needs no fresh port on the server, because it uses the SSH service already running.</p>
 <p>A web panel runs on the server itself: a service, a port and a login page that you open in a browser.</p>
-<p>Recent findings suggest that by default, Cockpit listens on port 9090 (Running Cockpit) and "uses your system's normal user logins and privileges" (Cockpit). Thanks to systemd socket activation, it runs only on demand. Webmin listens on port 10000 by default, and its docs say it "runs with full root privileges" (Webmin docs). <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-150303.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+<p>Recent findings suggest that by default, Cockpit listens on port 9090 (Running Cockpit) and "uses your system's normal user logins and privileges" (Cockpit). Thanks to systemd socket activation, it runs only on demand. Webmin listens on port 10000 by default, and its docs say it "runs with full root privileges" (Webmin docs).</p>
 <p>So each panel is one more service per server, to keep updated and open only to you, for example through a VPN.</p>
 <p>Sources indicate that planning to manage a second server from Cockpit? That feature "is deprecated as of Cockpit 322" (Cockpit docs). It is off by default on newer releases such as Fedora 41, RHEL 10 and CentOS Stream 10 (Cockpit 322 notes).</p>
 <p>Usually no. Keep the server text-only and run the GUI on your own computer.</p>
@@ -229,20 +229,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="run-a-vllm-server-on-hf-jobs-in-one-command-161460.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161460. Run a vLLM Server on HF Jobs in One Command
+        </a>
+        
+        <a href="florida-law-allowing-bar-liability-for-knowingly-serving-habitual-159009.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #159009. Florida Law Allowing Bar Liability for Knowingly Serving "Habitually Addicted" Doesn't Apply When Server Only Saw One Drinking Session
+        </a>
+        
+        <a href="kim-hellbergs-five-best-middlesbrough-wins-as-he-celebrates-one-y-153010.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #153010. Kim Hellberg's five best Middlesbrough wins as he celebrates one year in charge
+        </a>
+        
         <a href="10-best-ai-app-builders-ive-used-in-2026-and-what-each-one-gets-w-149542.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149542. 10 Best AI App Builders I've Used in 2026 (and What Each One Gets Wrong)
-        </a>
-        
-        <a href="latest-update-florida-law-allowing-bar-liability-for-knowingly-se-147418.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #147418. Latest Update: Florida Law Allowing Bar Liability for Knowingly Serving "Habitually Addicted" Doesn't Apply When Server Only Saw One Drinking Session
-        </a>
-        
-        <a href="industry-news-viabtc-to-showcase-a-decade-of-mining-expertise-and-145020.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #145020. Industry News: ViaBTC to Showcase a Decade of Mining Expertise and One-Stop Asset Management at Blockchain Life 2026
-        </a>
-        
-        <a href="latest-update-byd-wins-round-one-in-defender-copycat-battle-as-jl-144800.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #144800. Latest Update: BYD wins round one in Defender-copycat battle as JLR is told to destroy documents
         </a>
         
     </div>

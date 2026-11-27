@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149783">In a recent development, language models are becoming increasingly capable and can solve tasks autonomously as agents. There are many exciting use cases, especially at the intersection of reasoning, code, and data. However, proper evaluation benchmarks on real-world problems are lacking and hinder progress in the field.</p>
-<p>To tackle this challenge, Adyen and Hugging Face built the Data Agent Benchmark for Multi-step Reasoning (DABstep) together. DABstep consists of over 450 data analysis tasks designed to evaluate the capabilities of state-of-the-art LLMs and AI agents. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-150299.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
-<p>Our findings reveal that DABstep presents a significant challenge for current AI models, with the most capable reasoning-based agents achieving only 16% accuracy, highlighting significant progress to be made in the field. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-150306.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
-<p>In this blog post, we'll cover the design and construction of the benchmark, explore evaluation results, and discuss the significant gap between current models and the ability to solve complex data analysis tasks effectively.</p>
+<p>To tackle this challenge, Adyen and Hugging Face built the Data Agent Benchmark for Multi-step Reasoning (DABstep) together. DABstep consists of over 450 data analysis tasks designed to evaluate the capabilities of state-of-the-art LLMs and AI agents.</p>
+<p>Our findings reveal that DABstep presents a significant challenge for current AI models, with the most capable reasoning-based agents achieving only 16% accuracy, highlighting significant progress to be made in the field. <span style="font-size:13px;">(Related: <a href="scientists-find-field-of-washing-machines-in-ocean-during-shipwre-161782.html" style="color:#2563eb; font-weight:600;">Scientists find “field” of washing machines in ocean du...</a>)</span></p>
+<p>In this blog post, we'll cover the design and construction of the benchmark, explore evaluation results, and discuss the significant gap between current models and the ability to solve complex data analysis tasks effectively. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-161768.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>Data analysis is both an art and a science that requires technical skill, domain knowledge and creativity, and thus, it’s rarely straightforward. Even seasoned data analysts face challenges like:.</p>
 <p>At companies like Adyen, analysts tackle a spectrum of problems, from routine queries to complex workflows requiring creativity, precision, and iterative reasoning. Access to a capable data analysis agent that can automate simple and repetitive tasks and assist with complex tasks would allow analysts to work faster, reduce mental strain, and focus on solving more impactful problems. That would be a pivotal moment for many industries that need data analysis and insights, such as finance.</p>
 <p>Recent advancements in agentic workflows — where LLMs equipped with tools independently execute multi-step tasks — have shown tremendous promise across domains like coding, open QA, software engineering, and even Kaggle competitions. These systems aren’t just theoretical; they've been driving real-world productivity gains.</p>
@@ -237,20 +237,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="jack-of-all-trades-master-of-some-a-multi-purpose-transformer-age-149937.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149937. Jack of All Trades, Master of Some, a Multi-Purpose Transformer Agent
+        <a href="breaking-how-to-build-an-accessible-multi-step-form-a-practical-g-161382.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161382. Breaking: How to Build an Accessible Multi Step Form: A Practical Guide With a Vanilla JavaScript Example
         </a>
         
-        <a href="our-transformers-code-agent-beats-the-gaia-benchmark-149901.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149901. Our Transformers Code Agent beats the GAIA benchmark 🏅
+        <a href="aws-weekly-roundup-gpt-61-terra-on-bedrock-step-functions-as-agen-161325.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161325. AWS Weekly Roundup: GPT-6.1 Terra on Bedrock, Step Functions as agent tools, and more (November 2, 2026)
         </a>
         
-        <a href="nvidia-releases-6-million-multi-lingual-reasoning-dataset-149634.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149634. NVIDIA Releases 6 Million Multi-Lingual Reasoning Dataset
+        <a href="latest-update-how-to-plan-retries-for-multi-agent-workflows-befor-161154.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161154. Latest Update: How to Plan Retries for Multi-Agent Workflows Before You Write Code
         </a>
         
-        <a href="deepmath-a-lightweight-math-reasoning-agent-with-smolagents-149565.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149565. DeepMath: A lightweight math reasoning Agent with smolagents
+        <a href="tech-report-swarms-flocks-gangs-how-to-build-train-and-evaluate-m-160998.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #160998. Tech Report: Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems
         </a>
         
     </div>

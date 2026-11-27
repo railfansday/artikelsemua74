@@ -150,14 +150,14 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149805">This blog post introduces a method to train static embedding models that run 100x to 400x faster on CPU than state-of-the-art embedding models, while retaining most of the quality. This unlocks a lot of exciting use cases, including on-device and in-browser execution, edge computing, low power and embedded applications.</p>
-<p>We apply this recipe to train two extremely efficient embedding models: sentence-transformers/static-retrieval-mrl-en-v1 for English Retrieval, and sentence-transformers/static-similarity-mrl-multilingual-v1 for Multilingual Similarity tasks. These models are 100x to 400x faster on CPU than common counterparts like all-mpnet-base-v2 and multilingual-e5-small, while reaching at least 85% of their performance on various benchmarks. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>We also discuss potential enhancements, and encourage the community to explore them and build on this work! <span style="font-size:13px;">(Related: <a href="breaking-course-launch-community-event-150272.html" style="color:#2563eb; font-weight:600;">Breaking: Course Launch Community Event...</a>)</span></p>
+<p>We apply this recipe to train two extremely efficient embedding models: sentence-transformers/static-retrieval-mrl-en-v1 for English Retrieval, and sentence-transformers/static-similarity-mrl-multilingual-v1 for Multilingual Similarity tasks. These models are 100x to 400x faster on CPU than common counterparts like all-mpnet-base-v2 and multilingual-e5-small, while reaching at least 85% of their performance on various benchmarks.</p>
+<p>We also discuss potential enhancements, and encourage the community to explore them and build on this work!</p>
 <p>The usage of these models is very straightforward, identical to the normal Sentence Transformers flow:.</p>
-<p>Embeddings are one of the most versatile tools in natural language processing, enabling practitioners to solve a large variety of tasks. In essence, an embedding is a numerical representation of a more complex object, like text, images, audio, etc.</p>
+<p>Embeddings are one of the most versatile tools in natural language processing, enabling practitioners to solve a large variety of tasks. In essence, an embedding is a numerical representation of a more complex object, like text, images, audio, etc. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-161768.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>The embedding model will always produce embeddings of the same fixed size. You can then compute the similarity of complex objects by computing the similarity of the respective embeddings.</p>
 <p>This has a large amount of use cases, and serves as the backbone for recommendation systems, retrieval, outlier detection, one-shot or few-shot learning, similarity search, clustering, paraphrase detection, classification, and much more.</p>
 <p>According to recent reports, many of today's embedding models consist of a handful of conversion steps. Following these steps is called "inference".</p>
-<p>In a recent development, the Tokenizer and Pooler are responsible for pre- and post-processing for the Encoder, respectively. The former chops texts up into tokens (a.k.a. words or subwords) which can be understood by the Encoder, whereas the latter combines the embeddings for all tokens into one embedding for the entire text.</p>
+<p>In a recent development, the Tokenizer and Pooler are responsible for pre- and post-processing for the Encoder, respectively. The former chops texts up into tokens (a.k.a. words or subwords) which can be understood by the Encoder, whereas the latter combines the embeddings for all tokens into one embedding for the entire text. <span style="font-size:13px;">(Related: <a href="industry-news-which-samsung-folding-phone-is-right-for-you-galaxy-161749.html" style="color:#2563eb; font-weight:600;">Industry News: Which Samsung folding phone is right for...</a>)</span></p>
 <p>Within this pipeline, the Encoder is often a language model with attention layers, which allows each token to be computed within the context of the other tokens. For example, bank might be a token, but the token embedding for that token will likely be different if the text refers to a "river bank" or the financial institution.</p>
 <p>Recent findings suggest that large encoder models with a lot of attention layers will be effective at using the context to produce useful embeddings, but they do so at a high price of slow inference. Notably, in the pipeline, the Encoder step is generally responsible for almost all of the computational time.</p>
 <p>Static Embeddings refers to a group of Encoder models that don't use large and slow attention-based models, but instead rely on pre-computed token embeddings. Static embeddings were used years before the transformer architecture was developed. Common examples include GLoVe and word2vec. Recently, Model2Vec has been used to convert pre-trained embedding models into Static Embedding models.</p>
@@ -311,20 +311,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-multimodal-embedding-reranker-models-with-sentence--161539.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161539. Latest Update: Multimodal Embedding & Reranker Models with Sentence Transformers
+        </a>
+        
+        <a href="multi-vector-late-interaction-embedding-models-with-sentence-tran-161356.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161356. Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers
+        </a>
+        
+        <a href="training-and-finetuning-multi-vector-embedding-models-with-senten-161327.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161327. Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers
+        </a>
+        
         <a href="train-and-fine-tune-sentence-transformers-models-150200.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150200. Train and Fine-Tune Sentence Transformers Models
-        </a>
-        
-        <a href="latest-update-training-and-finetuning-sparse-embedding-models-wit-149680.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149680. Latest Update: Training and Finetuning Sparse Embedding Models with Sentence Transformers
-        </a>
-        
-        <a href="breaking-training-and-finetuning-multimodal-embedding-reranker-mo-149436.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149436. Breaking: Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
-        </a>
-        
-        <a href="multimodal-embedding-reranker-models-with-sentence-transformers-138639.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138639. Multimodal Embedding & Reranker Models with Sentence Transformers
         </a>
         
     </div>

@@ -152,11 +152,11 @@
 <p id="sec-start-149482">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
 <p>It has been revealed that weekly. Free. One click to leave.</p>
 <p>In a recent development, 7 Day Free Trial. Cancel Anytime.</p>
-<p>It has been revealed that A mobile app sends POST /orders. The server creates the order, but the response is lost when the phone switches from Wi-Fi to 4G. The app sees a timeout and retries. Now the customer has two orders, and your support team has a refund to process.</p>
-<p>Retrying is the right thing for a client to do. The problem is that POST is not idempotent: RFC 9110 defines GET, PUT and DELETE as idempotent methods, but not POST or PATCH. Repeating a POST can repeat its side effects. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>It has been revealed that A mobile app sends POST /orders. The server creates the order, but the response is lost when the phone switches from Wi-Fi to 4G. The app sees a timeout and retries. Now the customer has two orders, and your support team has a refund to process. <span style="font-size:13px;">(Related: <a href="industry-news-which-samsung-folding-phone-is-right-for-you-galaxy-161749.html" style="color:#2563eb; font-weight:600;">Industry News: Which Samsung folding phone is right for...</a>)</span></p>
+<p>Retrying is the right thing for a client to do. The problem is that POST is not idempotent: RFC 9110 defines GET, PUT and DELETE as idempotent methods, but not POST or PATCH. Repeating a POST can repeat its side effects. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-161768.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>An idempotency key fixes this. The client generates a unique key for each logical operation and sends it with every attempt. The server does the work once, stores the response against the key, and returns the stored response for any retry. The IETF HTTPAPI working group is standardizing this pattern as the Idempotency-Key HTTP header field, and this tutorial follows its recommendations.</p>
 <p>Sources indicate that we'll build it with Node.js, Express 5 and PostgreSQL. By the end you'll have a table that stores keys, a function that safely claims a key under concurrent requests, an Express route that replays stored responses, and a client that retries without creating duplicates.</p>
-<p>Industry observers note that the client's job is simple: generate a key, usually a UUID, and send the same key on every retry of the same operation. The draft defines the header value as a quoted string:. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-150296.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>Industry observers note that the client's job is simple: generate a key, usually a UUID, and send the same key on every retry of the same operation. The draft defines the header value as a quoted string:.</p>
 <p>The server's job is harder, because every request falls into one of five cases:.</p>
 <p>To tell case 3 from case 4, the server stores a fingerprint of the request alongside the key. A matching fingerprint means a genuine retry; a different one means key reuse. Case 5 is the one most implementations get wrong, because it only indicates up under concurrency. A database constraint handles it for us.</p>
 <p>Create a project and install the two dependencies:.</p>
@@ -210,20 +210,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-implementing-transactional-api-idempotency-with-nod-161128.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161128. Latest Update: Implementing Transactional API Idempotency With Node.js and PostgreSQL
+        </a>
+        
+        <a href="how-to-shut-down-a-nodejs-api-without-dropping-requests-161369.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161369. How to Shut Down a Node.js API Without Dropping Requests
+        </a>
+        
         <a href="shopify-product-variants-api-2026-add-options-create-patch-delete-149331.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149331. Shopify Product Variants API 2026: Add Options, Create, Patch & Delete Variants in Your App
         </a>
         
-        <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-150301.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150301. How we sped up transformer inference 100x for 🤗 API customers
-        </a>
-        
-        <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-150286.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150286. Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
-        </a>
-        
-        <a href="how-to-install-and-use-the-hugging-face-unity-api-150104.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150104. How to Install and Use the Hugging Face Unity API
+        <a href="tech-report-experimenting-with-the-proposed-cross-origin-storage--161473.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161473. Tech Report: Experimenting with the proposed Cross-Origin Storage API in Transformers.js
         </a>
         
     </div>

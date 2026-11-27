@@ -151,12 +151,12 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149860">It has been revealed that the 🇨🇿 BenCzechMark is the first and most comprehensive evaluation suite for assessing the abilities of Large Language Models (LLMs) in the Czech language. It aims to test how well LLMs can:.</p>
 <p>To achieve this, we've sourced 50 tasks spanning 9 categories, with 90% of tasks having native, non-translated content.</p>
-<p>In this blog, we introduce both the evaluation suite itself and the BenCzechMark leaderboard, featuring over 25 open-source models of various sizes! <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-150306.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>In this blog, we introduce both the evaluation suite itself and the BenCzechMark leaderboard, featuring over 25 open-source models of various sizes!</p>
 <p>The 🇨🇿 BenCzechMark (in it’s current version) is divided into 9 categories to comprehensively assess LLM abilities. For each task,.</p>
-<p>The translated portion of the dataset (10% of the total) was mostly translated via CUBBITT LINDAT Translation, except for CsFever, where the authors used DeepL for translation. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-150303.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+<p>The translated portion of the dataset (10% of the total) was mostly translated via CUBBITT LINDAT Translation, except for CsFever, where the authors used DeepL for translation.</p>
 <p>This is the complete list of categories, alongside the datasets and metrics used:.</p>
-<p>It has been revealed that since we use different metrics for the tasks, simply averaging wouldn't work due to varying scales. Instead, we've introduced a novel way to determine a final score: we let the models fight!</p>
-<p>Industry observers note that for every task and metric, we compute a test for statistical significance at α=0.05. This means the probability that the performance of model A equals that of model B is estimated to be less than 0.05. We use the following tests, each with varying statistical power:.</p>
+<p>It has been revealed that since we use different metrics for the tasks, simply averaging wouldn't work due to varying scales. Instead, we've introduced a novel way to determine a final score: we let the models fight! <span style="font-size:13px;">(Related: <a href="breaking-gta-6-devs-reveal-major-gameplay-features-that-didnt-mak-161775.html" style="color:#2563eb; font-weight:600;">Breaking: GTA 6 devs reveal major gameplay features tha...</a>)</span></p>
+<p>Industry observers note that for every task and metric, we compute a test for statistical significance at α=0.05. This means the probability that the performance of model A equals that of model B is estimated to be less than 0.05. We use the following tests, each with varying statistical power:. <span style="font-size:13px;">(Related: <a href="industry-news-which-samsung-folding-phone-is-right-for-you-galaxy-161749.html" style="color:#2563eb; font-weight:600;">Industry News: Which Samsung folding phone is right for...</a>)</span></p>
 <p id="sec-mid-149860">Industry observers note that we then compute a model's duel win score (DWS) - the proportion of duels won against all other models on that task. Finally, we calculate aggregate scores as follows:.</p>
 <p>This yields an easy-to-understand model score: Macro-averaged model win-rate!</p>
 <p>To identify the top-performing open-source model in our suite, we evaluated 26 open-weight models using the following parameters:.</p>
@@ -189,20 +189,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="starcoder-a-state-of-the-art-llm-for-code-150103.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150103. StarCoder: A State-of-the-Art LLM for Code
+        <a href="this-ai-knew-the-answers-but-didnt-understand-the-questions-161755.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161755. This AI knew the answers but didn’t understand the questions
         </a>
         
-        <a href="tech-report-introducing-the-hugging-face-llm-inference-container--150086.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150086. Tech Report: Introducing the Hugging Face LLM Inference Container for Amazon SageMaker
+        <a href="tech-report-serving-a-local-llm-to-several-consumers-ollama-lm-st-161604.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161604. Tech Report: Serving a Local LLM to Several Consumers: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
         </a>
         
-        <a href="whats-going-on-with-the-open-llm-leaderboard-150070.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150070. What's going on with the Open LLM Leaderboard?
+        <a href="industry-news-welcome-gemma-googles-newly-introduced-open-llm-161569.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161569. Industry News: Welcome Gemma - Google’s newly introduced open LLM
         </a>
         
-        <a href="breaking-open-source-text-generation-llm-ecosystem-at-hugging-fac-150062.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150062. Breaking: Open-Source Text Generation & LLM Ecosystem at Hugging Face
+        <a href="latest-update-introducing-the-open-arabic-llm-leaderboard-161566.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161566. Latest Update: Introducing the Open Arabic LLM Leaderboard
         </a>
         
     </div>

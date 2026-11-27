@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149832">In a recent development, hugging Face stores over 30 PB of models, datasets, and spaces in Git LFS repositories. Because Git stores and versions at the file level, any change to a file requires re-uploading the full asset – expensive operations when average Parquet and CSV files on the Hub range between 200-300 MB, average Safetensor files around 1 GB, and GGUF files can exceed 8 GB. Imagine modifying just a single line of metadata in a GGUF file and waiting for the multi-gigabyte file to upload; in addition to user time and transfer costs, Git LFS also then needs to save full versions of both files, bloating storage costs.</p>
-<p>The plot below illustrates the growth of LFS storage in model, dataset, and space repositories on the Hub between March 2022 and September 2024:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>Hugging Face's Xet team is taking a different approach to storage by storing files as chunks. By only transferring modified chunks, we can dramatically improve both storage efficiency and iteration speed while ensuring reliable access to evolving datasets and models. Here’s how it works. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>Recent findings suggest that the method that we use to chunk files is called content-defined chunking (CDC). Instead of treating a file as an indivisible unit, CDC breaks files down into variable-sized chunks, using the data to define boundaries. To compute the chunks, we apply a rolling hash algorithm that scans the file’s byte sequence.</p>
+<p>The plot below illustrates the growth of LFS storage in model, dataset, and space repositories on the Hub between March 2022 and September 2024:.</p>
+<p>Hugging Face's Xet team is taking a different approach to storage by storing files as chunks. By only transferring modified chunks, we can dramatically improve both storage efficiency and iteration speed while ensuring reliable access to evolving datasets and models. Here’s how it works. <span style="font-size:13px;">(Related: <a href="nvidia-stops-ai-gpu-shipments-to-southeast-asia-amid-purported-ch-161757.html" style="color:#2563eb; font-weight:600;">Nvidia stops AI GPU shipments to Southeast Asia amid pu...</a>)</span></p>
+<p>Recent findings suggest that the method that we use to chunk files is called content-defined chunking (CDC). Instead of treating a file as an indivisible unit, CDC breaks files down into variable-sized chunks, using the data to define boundaries. To compute the chunks, we apply a rolling hash algorithm that scans the file’s byte sequence. <span style="font-size:13px;">(Related: <a href="gta-6-made-real-gyms-empty-out-as-players-chose-in-game-workouts--161761.html" style="color:#2563eb; font-weight:600;">GTA 6 made real gyms empty out as players chose in-game...</a>)</span></p>
 <p>Consider a file with the contents:.</p>
 <p>We’re using text for illustration, but this could be any sequence of bytes.</p>
 <p>Recent findings suggest that A rolling hash algorithm computes a hash over a sliding window of data. In this case, with a window of length 4 the hash would be computed first over tran, then rans, then ansf and so on until the end of the file.</p>
@@ -199,16 +199,16 @@
             📰 #149873. Breaking: Improving Hugging Face Training Efficiency Through Packing with Flash Attention 2
         </a>
         
-        <a href="making-automatic-speech-recognition-work-on-large-files-with-wav2-150257.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150257. Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers
+        <a href="enough-phone-is-stuffing-a-bigger-battery-more-ram-storage-into-i-161504.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161504. ‘Enough Phone’ is stuffing a bigger battery, more RAM & storage into its small Android phone at no extra cost
         </a>
         
-        <a href="breaking-introducing-storage-regions-on-the-hf-hub-150012.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150012. Breaking: Introducing Storage Regions on the HF Hub
+        <a href="tech-report-experimenting-with-the-proposed-cross-origin-storage--161473.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161473. Tech Report: Experimenting with the proposed Cross-Origin Storage API in Transformers.js
         </a>
         
-        <a href="improving-prompt-consistency-with-structured-generations-149934.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149934. Improving Prompt Consistency with Structured Generations
+        <a href="latest-update-storage-is-expensive-right-now-but-these-deals-are--161448.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161448. Latest Update: Storage is expensive right now, but these deals are worth it if you’re desperate for space
         </a>
         
     </div>

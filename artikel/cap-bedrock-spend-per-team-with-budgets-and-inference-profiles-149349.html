@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149349">Originally published on kuryzhev.cloud.</p>
-<p>Controlling Bedrock spend per team usually starts the same way: the monthly bill shows one large "Amazon Bedrock" line, three teams share one IAM role, and nobody can say whether the jump came from the support chatbot or a data-science batch job. Someone proposes an AWS Budget, and then discovers that a budget cannot filter on something the bill never recorded. <span style="font-size:13px;">(Related: <a href="industry-news-the-partnership-amazon-sagemaker-and-hugging-face-150292.html" style="color:#2563eb; font-weight:600;">Industry News: The Partnership: Amazon SageMaker and Hu...</a>)</span></p>
-<p>Short answer: give each team its own tagged application inference profile, activate the tag as a cost allocation tag, and point a tag-filtered AWS Budget at it. For a real cap, attach a budget action that applies an IAM deny policy to the team's role. Use this when several teams share one AWS account; if each team already has its own account, per-account budgets are simpler. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-150301.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
+<p>Controlling Bedrock spend per team usually starts the same way: the monthly bill shows one large "Amazon Bedrock" line, three teams share one IAM role, and nobody can say whether the jump came from the support chatbot or a data-science batch job. Someone proposes an AWS Budget, and then discovers that a budget cannot filter on something the bill never recorded. <span style="font-size:13px;">(Related: <a href="amazon-responds-after-delivery-drone-smashes-into-garage-like-a-s-161778.html" style="color:#2563eb; font-weight:600;">Amazon responds after delivery drone smashes into garag...</a>)</span></p>
+<p>Short answer: give each team its own tagged application inference profile, activate the tag as a cost allocation tag, and point a tag-filtered AWS Budget at it. For a real cap, attach a budget action that applies an IAM deny policy to the team's role. Use this when several teams share one AWS account; if each team already has its own account, per-account budgets are simpler. <span style="font-size:13px;">(Related: <a href="rockstar-explains-why-gta-6-added-its-criminal-profile-system-161754.html" style="color:#2563eb; font-weight:600;">Rockstar explains why GTA 6 added its Criminal Profile ...</a>)</span></p>
 <p>According to recent reports, on-demand Bedrock calls made against a foundation model ID carry no team identity. An application inference profile is a resource you create in your account that wraps a model (or a system-defined cross-Region profile) and accepts tags. Callers pass the profile ARN where they would normally pass the model ID, and usage is attributed to that profile.</p>
 <p>Three separate mechanisms then do three jobs:.</p>
 <p>Nothing in this stack is a per-request meter. Billing data arrives with a delay, so the whole design is "stop soon after the limit", not "stop at the limit". Read the current behavior in the Amazon Bedrock documentation and the AWS Budgets guide.</p>
@@ -194,20 +194,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-150301.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150301. How we sped up transformer inference 100x for 🤗 API customers
+        <a href="samsung-galaxy-watch-ultra-2-vs-watch-9-when-is-it-right-to-spend-161753.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161753. Samsung Galaxy Watch Ultra 2 vs Watch 9: When is it right to spend more?
         </a>
         
-        <a href="scaling-up-bert-inference-on-cpu-part-1-150288.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150288. Scaling-up BERT Inference on CPU (Part 1)
+        <a href="tech-report-these-are-the-best-gaming-laptop-deals-weve-found-thi-161555.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161555. Tech Report: These are the best gaming laptop deals we've found this Black Friday to suit all budgets
         </a>
         
-        <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-150286.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150286. Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
+        <a href="latest-update-unlocking-stable-on-policy-rl-on-tpu-with-bitwise-z-161513.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161513. Latest Update: Unlocking Stable On-Policy RL on TPU with Bitwise-Zero Train–Inference Mismatch
         </a>
         
-        <a href="scaling-up-bert-like-model-inference-on-modern-cpu-part-2-150271.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150271. Scaling up BERT-like model Inference on modern CPU  - Part 2
+        <a href="this-silicon-power-ssd-is-selling-for-a-stunning-10-cents-per-gb--161474.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161474. This Silicon Power SSD is selling for a stunning 10 cents per GB — at only $209, this is the best 2TB SSD deal on Newegg
         </a>
         
     </div>

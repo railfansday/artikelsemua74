@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149777">We are now two weeks into the Open R1 project which aims to reconstruct the missing pieces of DeepSeek R1—specifically, the training pipeline and synthetic data.</p>
-<p>In this post, we are happy to share the construction of OpenR1-Math-220k: our first large-scale dataset for mathematical reasoning! <span style="font-size:13px;">(Related: <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--150281.html" style="color:#2563eb; font-weight:600;">Introducing Optimum: The Optimization Toolkit for Trans...</a>)</span></p>
-<p>We also take a look at some exciting developments from the community towards curating small, high-quality datasets for fine-tuning, along with insights into how to control the length of the chain-of-thought from reasoning models at both train-time and inference-time. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>One of the key advantages of DeepSeek R1 is its ability to transfer advanced reasoning capabilities to smaller models through distillation. The DeepSeek team demonstrated this by generating 600k reasoning traces and fine-tuning a series of Qwen and Llama models, showing that direct distillation from R1 can achieve competitive reasoning performance without reinforcement learning. Notably, DeepSeek-R1-Distill-Qwen-7B achieved 55.5% on AIME 2024, surpassing larger models like QwQ-32B-Preview.</p>
+<p>In this post, we are happy to share the construction of OpenR1-Math-220k: our first large-scale dataset for mathematical reasoning!</p>
+<p>We also take a look at some exciting developments from the community towards curating small, high-quality datasets for fine-tuning, along with insights into how to control the length of the chain-of-thought from reasoning models at both train-time and inference-time.</p>
+<p>One of the key advantages of DeepSeek R1 is its ability to transfer advanced reasoning capabilities to smaller models through distillation. The DeepSeek team demonstrated this by generating 600k reasoning traces and fine-tuning a series of Qwen and Llama models, showing that direct distillation from R1 can achieve competitive reasoning performance without reinforcement learning. Notably, DeepSeek-R1-Distill-Qwen-7B achieved 55.5% on AIME 2024, surpassing larger models like QwQ-32B-Preview. <span style="font-size:13px;">(Related: <a href="tech-report-ai-swarms-could-hijack-democracy-without-anyone-notic-161756.html" style="color:#2563eb; font-weight:600;">Tech Report: AI swarms could hijack democracy without a...</a>)</span></p>
 <p>Sources indicate that however, the reasoning traces used for distillation have not been released publicly, prompting the community to independently recreate similar datasets. So far, multiple open datasets have been released by the community, including OpenThoughts-114k, Bespoke-Stratos-17k, Dolphin-R1, and LIMO.</p>
-<p>🐳  Introducing OpenR1-Math-220k, a large-scale math reasoning dataset generated locally on 512 H100s, with multiple answers per problem. To create OpenR1-Math-220k, we collaborated with Numina who have developed a brand fresh version of their popular NuminaMath-CoT dataset.</p>
+<p>🐳  Introducing OpenR1-Math-220k, a large-scale math reasoning dataset generated locally on 512 H100s, with multiple answers per problem. To create OpenR1-Math-220k, we collaborated with Numina who have developed a brand fresh version of their popular NuminaMath-CoT dataset. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-161768.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>What’s new in OpenR1 dataset compared to existing datasets:.</p>
 <p>By demonstrating scalable, high-quality reasoning data generation, we hope this pipeline can be extended beyond math to domains like code generation.</p>
 <p>Industry observers note that to build OpenR1-220k, we prompt DeepSeek R1 to generate solutions for 400k problems from NuminaMath 1.5. We follow the model card’s recommended parameters and prepend the following instruction to the user prompt:.</p>
@@ -233,20 +233,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="we-raised-100-million-for-open-collaborative-machine-learning-150235.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150235. We Raised $100 Million for Open & Collaborative Machine Learning 🚀
+        <a href="13-tech-bargains-for-only-13-or-less-to-upgrade-your-desktop-pc-s-161746.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161746. 13 tech bargains for only $13 or less to upgrade your desktop PC setup
         </a>
         
-        <a href="student-ambassador-programs-call-for-applications-is-open-150233.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150233. Student Ambassador Program’s call for applications is open!
+        <a href="chromecast-with-google-tv-gets-first-upgrade-of-2026-u-wide-rollo-161710.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161710. Chromecast with Google TV gets first upgrade of 2026 [U: Wide rollout]
         </a>
         
-        <a href="introducing-the-worlds-largest-open-multilingual-language-model-b-150212.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150212. Introducing The World's Largest Open Multilingual Language Model: BLOOM
+        <a href="are-stores-open-on-thanksgiving-day-2026-holiday-hours-for-walmar-161599.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161599. Are stores open on Thanksgiving Day 2026? Holiday hours for Walmart, Whole Foods, Costco, and more
         </a>
         
-        <a href="openrail-towards-open-and-responsible-ai-licensing-frameworks-150190.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150190. OpenRAIL: Towards open and responsible AI licensing frameworks
+        <a href="upgrade-to-wi-fi-7-with-these-stellar-savings-161586.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161586. Upgrade to Wi-Fi 7 with these stellar savings
         </a>
         
     </div>

@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149356">It has been revealed that dots &amp; Boxes is the game most of us first played on the back of a school notebook. Two players take turns drawing a line between two neighbouring dots. If your line closes the fourth side of a box, you write your initial in it and you must move again. When every box is claimed, whoever owns more boxes wins.</p>
-<p>On mympgames, my free arcade of 60+ multiplayer browser games, the whole Dots &amp; Boxes rule engine is one 93-line server module. This post walks through how it is put together: how the grid is stored, how one line can close two boxes at once, the "move again" rule, and the simple bot that plays when you don't have a friend online. I'll also be honest about where the bot is weak, because that weakness is exactly what makes the game interesting. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-150296.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
-<p>It has been revealed that every game on the site exports the same four things: meta, createState, onAction and publicState. The room server handles sockets, seats and turn timers. The game module only knows the rules. Here is the meta for this one:.</p>
+<p>On mympgames, my free arcade of 60+ multiplayer browser games, the whole Dots &amp; Boxes rule engine is one 93-line server module. This post walks through how it is put together: how the grid is stored, how one line can close two boxes at once, the "move again" rule, and the simple bot that plays when you don't have a friend online. I'll also be honest about where the bot is weak, because that weakness is exactly what makes the game interesting. <span style="font-size:13px;">(Related: <a href="breaking-this-simple-change-stops-robot-swarms-from-getting-stuck-161766.html" style="color:#2563eb; font-weight:600;">Breaking: This simple change stops robot swarms from ge...</a>)</span></p>
+<p>It has been revealed that every game on the site exports the same four things: meta, createState, onAction and publicState. The room server handles sockets, seats and turn timers. The game module only knows the rules. Here is the meta for this one:. <span style="font-size:13px;">(Related: <a href="latest-update-think-ai-knows-what-its-doing-scientists-say-think--161762.html" style="color:#2563eb; font-weight:600;">Latest Update: Think AI "knows" what it’s doing? Scient...</a>)</span></p>
 <p>Recent findings suggest that players are plain indexes, 0 and 1, so "the other player" is always 1 - turn. That little choice demonstrates up again and again and keeps the code short.</p>
 <p>In a recent development, the first design question in any Dots &amp; Boxes implementation is what to store. The dots never change, so they don't need to be in the state at all. What changes is the lines and who owns each box.</p>
 <p>The board is a 4x4 grid of boxes, which means 5x5 dots. That gives two kinds of lines:.</p>
@@ -161,7 +161,7 @@
 <p>Recent findings suggest that every line borders at most two boxes. A horizontal line sits between the box above it and the box below it. A vertical line sits between the box to its left and the box to its right. Lines on the outer edge only touch one box.</p>
 <p>That is the whole trick of onAction: after drawing a line, check the one or two neighbouring boxes and claim any that just closed.</p>
 <p>Recent findings suggest that the vertical branch is the mirror image, with c - 1 and c instead of r - 1 and r. The r &gt; 0 and r &lt; n guards handle the edges, so the top row of lines never looks for a box above the board.</p>
-<p>Sources indicate that closing two boxes with one line is a real move in this game, and players love it. Because the code counts claimed instead of using a boolean, a double close simply scores 2. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>Sources indicate that closing two boxes with one line is a real move in this game, and players love it. Because the code counts claimed instead of using a boolean, a double close simply scores 2.</p>
 <p id="sec-mid-149356">Before any of that runs, onAction rejects anything that isn't a legal move:.</p>
 <p>Industry observers note that plus the bounds check and the "line already taken" check you saw above. The browser never decides whether a move is legal. It sends { type: 'line', orient, r, c } and draws whatever state comes back. In a game where two people can tap the same line at nearly the same moment, this matters: whoever's message reaches the server first while it is their turn gets the line, and the other click is simply refused.</p>
 <p>This is the rule that turns a children's game into a strategy game, and it is two lines of code:.</p>
@@ -198,20 +198,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="week-12-nfl-odds-lines-totals-spreads-for-every-game-including-be-142099.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #142099. Week 12 NFL odds, lines, totals, spreads for every game, including Bears-Lions, Cowboys-Eagles, Bills-Chiefs
+        <a href="viral-browser-game-lets-you-give-horses-nose-rubs-and-ear-scratch-161748.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161748. Viral browser game lets you give horses nose rubs and ear scratches
         </a>
         
-        <a href="football-video-game-ea-sports-fc-27-to-add-ai-generated-voice-of--140371.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #140371. Football video game EA Sports FC 27 to add AI-generated voice of iconic BBC commentator John Motson to new game - three years after legend's death
+        <a href="week-12-nfl-odds-lines-totals-spreads-for-every-game-including-br-153610.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #153610. Week 12 NFL odds, lines, totals, spreads for every game, including Broncos-Steelers, 49ers-Seahawks
         </a>
         
-        <a href="viral-browser-game-lets-you-give-horses-nose-rubs-and-ear-scratch-138733.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138733. Viral browser game lets you give horses nose rubs and ear scratches
+        <a href="football-video-game-ea-sports-fc-27-to-add-ai-generated-voice-of--152290.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #152290. Football video game EA Sports FC 27 to add AI-generated voice of iconic BBC commentator John Motson to latest game - three years after legend's death
         </a>
         
-        <a href="ai-for-game-development-creating-a-farming-game-in-5-days-part-2-150148.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150148. AI for Game Development: Creating a Farming Game in 5 Days. Part 2
+        <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-161783.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161783. Steam is pitting 10 years of Game of the Year winners against each other
         </a>
         
     </div>

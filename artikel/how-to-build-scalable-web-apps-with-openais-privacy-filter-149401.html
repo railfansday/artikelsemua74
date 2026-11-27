@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149401">OpenAI released Privacy Filter on the Hub this week: an open-source personally-identifiable information (PII) detector that labels text across eight categories in a single forward pass over a 128k context. Model card. We spent a few hours building with it and landed on three apps that each reveals a different slice of what it can do.</p>
-<p>All three are built on gradio.Server, which lets you pair custom HTML/JS frontends with Gradio's queueing, ZeroGPU allocation, and gradio_client SDK. In all these apps, gradio.Server plays the same backend role, and that consistency is exactly what makes it really powerful. <span style="font-size:13px;">(Related: <a href="using-mixing-hugging-face-models-with-gradio-20-150287.html" style="color:#2563eb; font-weight:600;">Using &amp; Mixing Hugging Face Models with Gradio 2.0...</a>)</span></p>
-<p>It has been revealed that privacy Filter is a 1.5B-parameter model with 50M active parameters, permissively licensed under Apache 2.0. PII categories are private_person, private_address, private_email, private_phone, private_url, private_date, account_number, secret. Context is 128,000 tokens. Achieves state-of-the-art performance on the PII-Masking-300k benchmark. Full numbers and methodology are in the official release blog. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>All three are built on gradio.Server, which lets you pair custom HTML/JS frontends with Gradio's queueing, ZeroGPU allocation, and gradio_client SDK. In all these apps, gradio.Server plays the same backend role, and that consistency is exactly what makes it really powerful. <span style="font-size:13px;">(Related: <a href="industry-news-which-samsung-folding-phone-is-right-for-you-galaxy-161749.html" style="color:#2563eb; font-weight:600;">Industry News: Which Samsung folding phone is right for...</a>)</span></p>
+<p>It has been revealed that privacy Filter is a 1.5B-parameter model with 50M active parameters, permissively licensed under Apache 2.0. PII categories are private_person, private_address, private_email, private_phone, private_url, private_date, account_number, secret. Context is 128,000 tokens. Achieves state-of-the-art performance on the PII-Masking-300k benchmark. Full numbers and methodology are in the official release blog.</p>
 <p>Try it at ysharma/OPF-Document-PII-Explorer.</p>
-<p>It has been revealed that user problem. You want to read a PII-heavy document (a contract, a resume, an exported chat log) with every detected span highlighted by category, a filter in the sidebar, and a summary dashboard up top. The reading experience should feel like a normal document, not a form.</p>
+<p>It has been revealed that user problem. You want to read a PII-heavy document (a contract, a resume, an exported chat log) with every detected span highlighted by category, a filter in the sidebar, and a summary dashboard up top. The reading experience should feel like a normal document, not a form. <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-161768.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>Recent findings suggest that what Privacy Filter does here. The whole file goes through in a single 128k-context forward pass, so there's no chunking, no stitching, and span offsets line up directly with the rendered text. BIOES decoding keeps span boundaries clean through long ambiguous runs.</p>
 <p>Recent findings suggest that what gr.Server does here. You could wire this up in Blocks with gr.HighlightedText and a sidebar, and it would work. The reading experience we wanted (serif body, category filters that toggle CSS classes client-side instead of re-running the model, a summary dashboard that doesn't force a page re-render) was easier to hand-author than to compose. gr.Server lets us serve the reader view as a single HTML file and expose the model behind one queued endpoint:.</p>
 <p>Industry observers note that note the decorator: @server.api(name="analyze_document"), not a plain @server.post. That's the piece that plugs the handler into Gradio's queue, so concurrent uploads are serialized, @spaces.GPU composes correctly on ZeroGPU, and the same endpoint is reachable from both the browser and gradio_client with no duplicated code. The browser calls it with the Gradio JS client:.</p>
@@ -196,6 +196,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-build-full-stack-android-apps-with-gemini-in-google-161402.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161402. Industry News: Build full-stack Android apps with Gemini in Google AI Studio
+        </a>
+        
         <a href="why-your-ai-agent-cant-read-the-web-and-how-to-build-a-fetch-laye-149778.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149778. Why Your AI Agent Can't Read the Web (and How to Build a Fetch Layer That Can)
         </a>
@@ -204,12 +208,8 @@
             📰 #149516. Industry News: How to Build a Unified Lead Tracking Pipeline for Web Forms and Phone Calls
         </a>
         
-        <a href="latest-update-build-full-stack-android-apps-with-gemini-in-google-138450.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138450. Latest Update: Build full-stack Android apps with Gemini in Google AI Studio
-        </a>
-        
-        <a href="tech-report-perceiver-io-a-scalable-fully-attentional-model-that--150265.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150265. Tech Report: Perceiver IO: a scalable, fully-attentional model that works on any modality
+        <a href="spacex-wants-to-build-ai-data-centers-in-space-will-it-work-161719.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161719. SpaceX wants to build AI data centers in space. Will it work?
         </a>
         
     </div>

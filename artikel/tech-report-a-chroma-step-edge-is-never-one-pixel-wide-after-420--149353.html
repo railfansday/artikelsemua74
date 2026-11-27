@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149353">I spent a day trying to answer a question that sounded trivial: when a marketplace re-encodes my product photo with 4:2:0 chroma subsampling, how much of the cutout edge does it eat?</p>
-<p>Recent findings suggest that the trivial answer is "some". The measured answer turned out to be more specific, and it moved the blame somewhere I did not expect. On a boundary that falls exactly on a chroma sample boundary, the subsampling itself costs nothing. The stored colours come back exact. The two-pixel ramp that shows up in the decoded file is produced entirely by the decoder's upsampling filter. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-150305.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
-<p>It has been revealed that that is not a rounding-error distinction. It changes what you can do about it, because the two costs have different remedies and different sizes depending on where your edge happens to land. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Recent findings suggest that the trivial answer is "some". The measured answer turned out to be more specific, and it moved the blame somewhere I did not expect. On a boundary that falls exactly on a chroma sample boundary, the subsampling itself costs nothing. The stored colours come back exact. The two-pixel ramp that shows up in the decoded file is produced entirely by the decoder's upsampling filter. <span style="font-size:13px;">(Related: <a href="tech-report-over-60k-raised-for-famous-station-cat-after-he-sudde-161776.html" style="color:#2563eb; font-weight:600;">Tech Report: Over $60k raised for famous station cat af...</a>)</span></p>
+<p>It has been revealed that that is not a rounding-error distinction. It changes what you can do about it, because the two costs have different remedies and different sizes depending on where your edge happens to land.</p>
 <p>Here is the whole measurement, with the fixtures that make each number checkable.</p>
 <p>A JPEG encoder for a colour image does this:.</p>
 <p>Recent findings suggest that 4:2:0 means the two chroma planes are stored at half resolution in both directions. 4:2:2 halves only horizontally. 4:4:4 stores all three planes at full resolution.</p>
 <p>Four of those five stages are not what I want to measure, so I held them fixed by holding the encoder fixed: Pillow over libjpeg, one quality, one image, only the subsampling argument changing. Pillow's argument is an integer — 0, 1, 2 — and I did not take the docstring's word for what it does. Reading the SOF0 marker out of the produced files:.</p>
-<p>Sources indicate that those are hex-ish byte pairs: luma sampling factor 0x11 at 4:4:4, 0x21 at 4:2:2, 0x22 at 4:2:0, with both chroma components at 0x11. So the parameter is doing what it claims.</p>
+<p>Sources indicate that those are hex-ish byte pairs: luma sampling factor 0x11 at 4:4:4, 0x21 at 4:2:2, 0x22 at 4:2:0, with both chroma components at 0x11. So the parameter is doing what it claims. <span style="font-size:13px;">(Related: <a href="latest-update-think-ai-knows-what-its-doing-scientists-say-think--161762.html" style="color:#2563eb; font-weight:600;">Latest Update: Think AI "knows" what it’s doing? Scient...</a>)</span></p>
 <p>The other thing I checked before trusting a single-variable comparison: whether changing subsampling also changes the quantisation tables. It does not, at least not here.</p>
 <p>Sources indicate that byte-identical tables. That matters, because if the encoder had quietly softened the chroma quantiser for 4:4:4 then "4:4:4 is better at the same quality" would be measuring two things at once and the comparison would be worthless. It is one thing.</p>
 <p>Recent findings suggest that the first test is not about the encoder. It is about the meter, and it exists so that every later number has a floor.</p>
@@ -233,20 +233,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-never-one-to-lag-behind-hsr-and-zzz-genshin-impact-wi-143661.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #143661. Tech Report: Never one to lag behind HSR and ZZZ, Genshin Impact will introduce its own latest pink-haired animal-themed girl in Version Luna 6
+        <a href="tech-report-what-an-ai-marketing-agent-actually-does-and-how-to-b-161396.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161396. Tech Report: What an AI Marketing Agent Actually Does, and How to Build a Guarded One
         </a>
         
-        <a href="tech-report-blade-runner-2099-proves-the-saga-does-one-thing-bett-143050.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #143050. Tech Report: Blade Runner 2099 Proves The Saga Does One Thing Better Than Any Other Sci-Fi Franchise
+        <a href="tech-report-i-have-a-front-row-seat-to-norways-cutting-edge-ai-ne-156475.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #156475. Tech Report: I have a front-row seat to Norway’s cutting-edge AI newsroom experiment. Even with AI on more than 200 stories a day, a human still checks every one
         </a>
         
-        <a href="tech-report-star-trek-iv-the-voyage-home-at-40-trek-has-never-bee-139236.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #139236. Tech Report: 'Star Trek IV: The Voyage Home' at 40: 'Trek' has never been as joyous or fun as in 'the one with the whales'
+        <a href="tech-report-google-pixel-prepares-newly-introduced-priority-notif-161428.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161428. Tech Report: Google Pixel prepares newly introduced ‘Priority Notifications’ feature – here’s what it will do
         </a>
         
-        <a href="tech-report-scientists-just-discovered-what-coffee-really-does-to-149325.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149325. Tech Report: Scientists just discovered what coffee really does to your gut and brain
+        <a href="tech-report-black-friday-deals-galaxy-z-fold-8-at-least-450-off-e-161421.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161421. Tech Report: Black Friday deals: Galaxy Z Fold 8 at least $450 off, Echo smart displays $100 off, Pixel Watch 5 $115 off, more
         </a>
         
     </div>

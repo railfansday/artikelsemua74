@@ -159,18 +159,18 @@ the vLLM V0 to V1 migration.</p>
 <p>Recent findings suggest that TL;DR. vLLM V1 matched our vLLM V0 reference after we fixed four things:
 processed rollout logprobs, V1-specific runtime defaults, the inflight
 weight-upgrade path, and the fp32 lm_head used for the final projection. We
-fixed the backend behavior before changing the RL objective.</p>
+fixed the backend behavior before changing the RL objective. <span style="font-size:13px;">(Related: <a href="f1-star-max-verstappen-played-40-hours-of-gta-6-before-winning-la-161780.html" style="color:#2563eb; font-weight:600;">F1 star Max Verstappen played 40 hours of GTA 6 before ...</a>)</span></p>
 <p>The reference run used vLLM 0.8.5; the V1 runs used vLLM 0.18.1. Figure 1
 shows the final result. The red run is the initial V1 attempt, and the green
-run is the final V1 run after the fixes described below.</p>
+run is the final V1 run after the fixes described below. <span style="font-size:13px;">(Related: <a href="breaking-gta-6-devs-reveal-major-gameplay-features-that-didnt-mak-161775.html" style="color:#2563eb; font-weight:600;">Breaking: GTA 6 devs reveal major gameplay features tha...</a>)</span></p>
 <p>In a recent development, vLLM V1 is a substantial rewrite of the V0 engine. Our migration target was
 therefore deliberately narrow:.</p>
 <p>The first visible symptoms appeared in:.</p>
 <p>It has been revealed that those metrics came from a GSPO training run, the objective used for this
 experiment. The same class of mismatch can surface in PPO, GRPO, or any online
-RL system that treats rollout-side logprobs as part of the optimization target. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-150303.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+RL system that treats rollout-side logprobs as part of the optimization target.</p>
 <p>The initial V1 run demonstrated the problem clearly. The trainer-side logprobs and
-reward moved away from the V0 reference early in training. <span style="font-size:13px;">(Related: <a href="latest-update-distributed-training-train-bartt5-for-summarization-150290.html" style="color:#2563eb; font-weight:600;">Latest Update: Distributed Training: Train BART/T5 for ...</a>)</span></p>
+reward moved away from the V0 reference early in training.</p>
 <p>According to recent reports, the same pattern appears in the trainer metrics. Clip rate is the easiest signal
 to read in the initial comparison.</p>
 <p>We separated the possible causes into three layers:.</p>
@@ -263,20 +263,20 @@ then add corrections for the mismatch that remains.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-kim-and-khlo-kardashians-beauty-trip-didnt-quite-go-146279.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #146279. Industry News: Kim and Khloé Kardashian’s Beauty Trip Didn’t Quite Go to Plan—Here’s What to Know Before Booking Yours
+        <a href="industry-news-thieves-crash-stolen-suv-into-video-game-store-befo-161660.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161660. Industry News: Thieves crash stolen SUV into video game store before fleeing in getaway vehicle
         </a>
         
-        <a href="industry-news-time-is-running-out-for-apples-iphone-settlement-ho-142581.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #142581. Industry News: Time Is Running Out for Apple’s iPhone Settlement. How to File a Claim Before Dec. 21
+        <a href="industry-news-native-speed-vllm-transformers-modeling-backend-161429.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161429. Industry News: Native-speed vLLM transformers modeling backend
         </a>
         
-        <a href="industry-news-zhegrova-plays-82-minutes-in-kosovos-0-0-with-israe-140547.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #140547. Industry News: Zhegrova plays 82 minutes in Kosovo’s 0-0 with Israel before Dublin decider for second
+        <a href="industry-news-dc-online-casino-and-sweepstakes-ban-bill-gets-nov--161427.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161427. Industry News: DC online casino and sweepstakes ban bill gets Nov. 18 committee vote before Dec. 15 cutoff
         </a>
         
-        <a href="industry-news-le-pen-slams-push-for-eu-budget-deal-before-french--138934.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138934. Industry News: Le Pen slams push for EU budget deal before French election
+        <a href="industry-news-before-or-after-the-snow-heres-the-right-time-to-sa-158965.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #158965. Industry News: Before or After the Snow? Here’s the Right Time to Salt Your Driveway This Winter
         </a>
         
     </div>

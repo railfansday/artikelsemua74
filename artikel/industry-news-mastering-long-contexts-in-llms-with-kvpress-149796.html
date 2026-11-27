@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149796">TL;DR: KVPress packs the latest KV cache compression techniques, enabling memory-efficient long-context LLMs. 🚀.</p>
-<p>In a recent development, one of the key features of Large Language Models (LLMs) is their context window—the maximum number of tokens they can process in a single request. As LLMs evolve, their context windows are becoming increasingly larger. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>In a recent development, one of the key features of Large Language Models (LLMs) is their context window—the maximum number of tokens they can process in a single request. As LLMs evolve, their context windows are becoming increasingly larger. <span style="font-size:13px;">(Related: <a href="breaking-gta-6-devs-reveal-major-gameplay-features-that-didnt-mak-161775.html" style="color:#2563eb; font-weight:600;">Breaking: GTA 6 devs reveal major gameplay features tha...</a>)</span></p>
 <p>Larger context windows unlock incredible possibilities:.</p>
-<p>However, these extended windows come at a cost—memory taken by the long context in the KV Cache becomes hard to manage. For instance, handling 1M tokens with Llama 3-70B in float16 demands 330GB for KV Cache, rendering it infeasible for many applications.</p>
-<p>In this blog post, we'll address one solution for this problem: compressing the KV Cache for more efficient generation. To achieve this, we'll explore:. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>However, these extended windows come at a cost—memory taken by the long context in the KV Cache becomes hard to manage. For instance, handling 1M tokens with Llama 3-70B in float16 demands 330GB for KV Cache, rendering it infeasible for many applications. <span style="font-size:13px;">(Related: <a href="peta-demands-nvidia-boss-jensen-huang-replace-iconic-leather-jack-161769.html" style="color:#2563eb; font-weight:600;">PETA demands Nvidia boss Jensen Huang replace iconic le...</a>)</span></p>
+<p>In this blog post, we'll address one solution for this problem: compressing the KV Cache for more efficient generation. To achieve this, we'll explore:.</p>
 <p>Before getting started, explore KVPress in this Space (you'll find examples at the end if needed):.</p>
 <p>Figure 1: Key Value cache inside the attention module (Source: NVIDIA).</p>
 <p>In autoregressive models, text generation happens token by token, with each prediction relying on all preceding tokens for context. For example:.</p>
@@ -217,20 +217,20 @@ Size(KV)=2×2×80×8×128×1M=327.6GB.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-codegemma-an-official-google-release-for-code-llms-149947.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149947. Industry News: CodeGemma - an official Google release for code LLMs
+        <a href="industry-news-coinbase-warns-of-xrp-long-liquidation-risks-as-6-p-156380.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #156380. Industry News: Coinbase Warns of XRP Long Liquidation Risks as 6% Price Move Looms
         </a>
         
-        <a href="industry-news-fine-tuning-llms-to-158bit-extreme-quantization-mad-149866.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149866. Industry News: Fine-tuning LLMs to 1.58bit: extreme quantization made easy
+        <a href="industry-news-after-monads-tge-can-the-chain-turn-hype-into-long--156134.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #156134. Industry News: After Monad’s TGE, can the chain turn hype into long-term conversion?
         </a>
         
-        <a href="industry-news-textquests-how-good-are-llms-at-text-based-video-ga-149642.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149642. Industry News: TextQuests: How Good are LLMs at Text-Based Video Games?
+        <a href="industry-news-the-long-wait-for-cryptos-coffee-pot-moment-155993.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #155993. Industry News: The long wait for crypto’s “coffee pot” moment
         </a>
         
-        <a href="industry-news-brad-pitt-angelina-jolie-quietly-settle-long-runnin-147194.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #147194. Industry News: Brad Pitt, Angelina Jolie quietly settle long-running winery lawsuits
+        <a href="industry-news-im8-is-david-beckhams-answer-to-late-nights-long-fl-154315.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #154315. Industry News: IM8 Is David Beckham’s Answer to Late Nights, Long Flights, and Early Call Times
         </a>
         
     </div>

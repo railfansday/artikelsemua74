@@ -151,11 +151,11 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149784">It’s been two weeks since the release of DeepSeek R1 and just a week since we started the open-r1 project to replicate the missing pieces, namely the training pipeline and the synthetic data. This post summarizes:.</p>
 <p>It should serve both as an update on the project and as a collection of interesting resources around DeepSeek-R1.</p>
-<p>It has been revealed that let’s start by looking at the progress we made on Open-R1. We started Open-R1 just one week ago and people across the teams as well as the community came together to work on it and we have some progress to report. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-150296.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>It has been revealed that let’s start by looking at the progress we made on Open-R1. We started Open-R1 just one week ago and people across the teams as well as the community came together to work on it and we have some progress to report.</p>
 <p>Sources indicate that the first step in reproduction is to verify that we can match the evaluation scores. We are able to reproduce Deepseek's reported results on the MATH-500 Benchmark:.</p>
 <p>You can find the instructions to run these evaluations in the open-r1 repository.</p>
-<p>According to recent reports, one observation we have made is the enormous size of the generations from the DeepSeek models, which makes even evaluating the model challenging. Here we show DeepSeek-R1 response lengths in the OpenThoughts dataset:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>Distribution of R1’s responses shows that they are on average very long with the average response being 6,000 tokens long and some responses containing more than 20,000 tokens. Worth noting that the average page contains ~500 words and one token is on average slightly less than a word, which means the many reponses are over 10 pages long. (src: https://x.com/gui_penedo/status/1884953463051649052).</p>
+<p>According to recent reports, one observation we have made is the enormous size of the generations from the DeepSeek models, which makes even evaluating the model challenging. Here we show DeepSeek-R1 response lengths in the OpenThoughts dataset:. <span style="font-size:13px;">(Related: <a href="industry-news-which-samsung-folding-phone-is-right-for-you-galaxy-161749.html" style="color:#2563eb; font-weight:600;">Industry News: Which Samsung folding phone is right for...</a>)</span></p>
+<p>Distribution of R1’s responses shows that they are on average very long with the average response being 6,000 tokens long and some responses containing more than 20,000 tokens. Worth noting that the average page contains ~500 words and one token is on average slightly less than a word, which means the many reponses are over 10 pages long. (src: https://x.com/gui_penedo/status/1884953463051649052). <span style="font-size:13px;">(Related: <a href="woman-forced-to-jump-in-strangers-car-after-being-chased-by-agres-161758.html" style="color:#2563eb; font-weight:600;">Woman forced to jump in stranger’s car after being chas...</a>)</span></p>
 <p>The length of responses will make GPRO training challenging, as we will have to generate long completions which will require a significant proportion of GPU memory to store the activations / gradients for the optimization step.</p>
 <p>In order to share our progress publicly, we have created an open-r1 evaluation leaderboard, so the community can follow our reproduction efforts (space is here):.</p>
 <p>Following the release of Open R1, GRPO (Grouped Relative Policy Optimization) was integrated into the latest TRL release (version 0.14). This integration enables training any model with one or multiple reward functions or models. The GRPO implementation integrates with DeepSpeed ZeRO 1/2/3 for parallelized training that scales to many GPUs, and uses vLLM for fast generation, which is the primary bottleneck in online training methods.</p>
@@ -213,20 +213,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-building-the-open-agent-ecosystem-together-introducin-149596.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149596. Tech Report: Building the Open Agent Ecosystem Together: Introducing OpenEnv
+        <a href="tech-report-fnatic-open-valorant-rebuild-with-marteen-who-set-a-k-155248.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #155248. Tech Report: Fnatic open Valorant rebuild with marteen, who set a kill record against them
         </a>
         
-        <a href="tech-report-building-on-nemotron-35-parse-open-data-fine-tuning-a-149338.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149338. Tech Report: Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference
+        <a href="tech-report-how-acidic-compounds-in-human-sweat-open-a-mosquito-i-153123.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #153123. Tech Report: How acidic compounds in human sweat open a mosquito ion channel
         </a>
         
-        <a href="tech-report-pixelloupe-an-open-source-raw-photo-editor-for-mac-148990.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #148990. Tech Report: PixelLoupe: An Open-Source Raw Photo Editor for Mac
+        <a href="tech-report-hungary-threw-open-its-secret-police-files-let-the-fi-150650.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150650. Tech Report: Hungary Threw Open Its Secret Police Files. Let the Finger Pointing Begin.
         </a>
         
-        <a href="tech-report-valencia-open-talks-with-dovbyks-entourage-140436.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #140436. Tech Report: Valencia open talks with Dovbyk’s entourage
+        <a href="tech-report-the-download-innovators-under-35-nominations-are-open-150499.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150499. Tech Report: The Download: Innovators Under 35 nominations are open, and a bionic window into the mind
         </a>
         
     </div>

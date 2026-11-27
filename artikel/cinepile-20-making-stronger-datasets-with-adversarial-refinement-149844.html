@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149844">It has been revealed that in this blog post we share the journey of releasing CinePile 2.0, a significantly improved version of our long video QA dataset. The improvements in the latest dataset rely on a new approach that we coined adversarial dataset refinement.</p>
-<p>We're excited to share both CinePile 2.0 and our adversarial refinement method implementation, which we believe can strengthen many existing datasets and directly be part of future dataset creation pipelines. <span style="font-size:13px;">(Related: <a href="hosting-your-models-and-datasets-on-hugging-face-spaces-using-str-150277.html" style="color:#2563eb; font-weight:600;">Hosting your Models and Datasets on Hugging Face Spaces...</a>)</span></p>
+<p>We're excited to share both CinePile 2.0 and our adversarial refinement method implementation, which we believe can strengthen many existing datasets and directly be part of future dataset creation pipelines. <span style="font-size:13px;">(Related: <a href="industry-news-which-samsung-folding-phone-is-right-for-you-galaxy-161749.html" style="color:#2563eb; font-weight:600;">Industry News: Which Samsung folding phone is right for...</a>)</span></p>
 <p>If you are mainly interested in the adversarial refinement method, you can jump directly to the Adversarial Refinement section.</p>
-<p>In May 2024, we launched CinePile, a long video QA dataset with about 300,000 training samples and 5,000 test samples. <span style="font-size:13px;">(Related: <a href="latest-update-distributed-training-train-bartt5-for-summarization-150290.html" style="color:#2563eb; font-weight:600;">Latest Update: Distributed Training: Train BART/T5 for ...</a>)</span></p>
-<p>The first release stood out from other datasets in two aspects:.</p>
+<p>In May 2024, we launched CinePile, a long video QA dataset with about 300,000 training samples and 5,000 test samples.</p>
+<p>The first release stood out from other datasets in two aspects:. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-161783.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
 <p>In a recent development, part of the secret sauce behind it is that it relies on movie clips from YouTube and Q&amp;A distilled from precise audio descriptions designed for visually impaired audiences. These descriptions offer rich context beyond basic visuals (e.g., "What color is the car?"), helping us create more complex questions.</p>
 <p>To automate question creation, we first built question templates by inspecting existing datasets like MovieQA and TVQA. We clustered the questions in these datasets using a textual similarity model WhereIsAI/UAE-Large-V1 and then prompted GPT-4 with 10 random examples from each cluster to generate a question template and a prototypical question for each:.</p>
 <p>Recent findings suggest that since templates aren't always relevant to every movie clip, we used Gemini 1.0 Pro to select the most appropriate ones for each scene. Next, we feed a language model the scene's text, selected template names (e.g., "Physical Possession"), sample questions, and a system prompt to create scene-specific questions. A well-designed prompt helps the model focus on the entire scene, generating deeper questions while avoiding superficial ones. We found that:.</p>
@@ -200,20 +200,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="hosting-your-models-and-datasets-on-hugging-face-spaces-using-str-150277.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150277. Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        <a href="ai-girlfriends-based-on-lucia-from-gta-6-are-making-creators-thou-161695.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161695. AI girlfriends based on Lucia from GTA 6 are making creators thousands
         </a>
         
-        <a href="introducing-the-data-measurements-tool-an-interactive-tool-for-lo-150269.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150269. Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        <a href="latest-update-the-honor-magic-9-pro-max-is-making-its-global-debu-161638.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161638. Latest Update: The Honor Magic 9 Pro Max is making its global debut today with huge preorder bonuses
         </a>
         
-        <a href="making-automatic-speech-recognition-work-on-large-files-with-wav2-150257.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150257. Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers
+        <a href="making-knowledge-distillation-cheap-enough-to-run-at-scale-161379.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161379. Making Knowledge Distillation Cheap Enough to Run at Scale
         </a>
         
-        <a href="image-search-with-datasets-150252.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150252. Image search with 🤗 datasets
+        <a href="how-uk-aisi-and-evaleval-are-making-benchmark-results-reproducibl-161262.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161262. How UK AISI and EvalEval Are Making Benchmark Results Reproducible
         </a>
         
     </div>

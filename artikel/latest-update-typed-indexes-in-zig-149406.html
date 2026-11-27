@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149406">The named integer or Newtype Index pattern prevents mixing up indexes on different arrays.</p>
-<p>The above examples were not particularly illuminating to me. Andrew’s example don’t show much of how to enforce the safety at call site: any caller could call @backingInt (it used to be @intFromEnum) to recover a numerical index and pass it to the wrong array, or access array elements with a plain integer. And matklad’s one focus on building a tree data structure in a neat way, but that’s a totally different challenge that the introductory problem of mixing array indexes, so it was not a super convincing illustration for me. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>According to recent reports, in practice, to make good use of the pattern, a getter helper is required as the conventional way of accessing elements of the array. It can be a method on the array type—or the index type. <span style="font-size:13px;">(Related: <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-150286.html" style="color:#2563eb; font-weight:600;">Few-shot learning in practice: GPT-Neo and the 🤗 Accele...</a>)</span></p>
+<p>The above examples were not particularly illuminating to me. Andrew’s example don’t show much of how to enforce the safety at call site: any caller could call @backingInt (it used to be @intFromEnum) to recover a numerical index and pass it to the wrong array, or access array elements with a plain integer. And matklad’s one focus on building a tree data structure in a neat way, but that’s a totally different challenge that the introductory problem of mixing array indexes, so it was not a super convincing illustration for me. <span style="font-size:13px;">(Related: <a href="this-newly-introduced-chip-survives-1300f-700c-and-could-change-a-161773.html" style="color:#2563eb; font-weight:600;">This newly introduced chip survives 1300°F (700°C) and ...</a>)</span></p>
+<p>According to recent reports, in practice, to make good use of the pattern, a getter helper is required as the conventional way of accessing elements of the array. It can be a method on the array type—or the index type.</p>
 <p>In a struct of array data structure, it is particularly valuable to have one typed index per slice rather than relying on careful naming.</p>
 <p>Consider this spreadsheet example where it’s easy to mix up indexes:.</p>
-<p>We can prevent such bug by enforcing compile time checking of field access with typed indexes.</p>
+<p>We can prevent such bug by enforcing compile time checking of field access with typed indexes. <span style="font-size:13px;">(Related: <a href="scientists-find-field-of-washing-machines-in-ocean-during-shipwre-161782.html" style="color:#2563eb; font-weight:600;">Scientists find “field” of washing machines in ocean du...</a>)</span></p>
 <p>In a recent development, its clumsy to keep one index type and one accessor per field. We can use a bit of comptime to streamline the pattern, and make the recipe more generic to fit arbitrary structs. Here is a complete example.</p>
 <p>It has been revealed that our spreadsheet has now several fields: a title, and row and column properties. When iterating over them, we have two kinds of indexes: row indexes and column indexes. Adding typed indexes is attractive to prevent callers from mixing them up.</p>
 <p>Recent findings suggest that this enum gives us a way of referencing all the struct fields for which we will construct a typed indexed. If all fields were to be indexed, we would have used std.meta.FieldEnum(Sheet), but our spreadsheet has a title.</p>
@@ -194,20 +194,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150309. How to train a latest language model from scratch using Transformers and Tokenizers
+        <a href="umamusume-fans-call-out-shameless-knockoff-packed-with-ads-161784.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161784. Umamusume fans call out “shameless” knockoff packed with ads
         </a>
         
-        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150308. How to generate text: using different decoding methods for language generation with Transformers
+        <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-161783.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161783. Steam is pitting 10 years of Game of the Year winners against each other
         </a>
         
-        <a href="tech-report-the-reformer-pushing-the-limits-of-language-modeling-150307.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150307. Tech Report: The Reformer - Pushing the limits of language modeling
+        <a href="scientists-find-field-of-washing-machines-in-ocean-during-shipwre-161782.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161782. Scientists find “field” of washing machines in ocean during shipwreck hunt
         </a>
         
-        <a href="block-sparse-matrices-for-smaller-and-faster-language-models-150306.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150306. Block Sparse Matrices for Smaller and Faster Language Models
+        <a href="cd-projekt-red-says-the-witcher-4-will-be-as-big-a-leap-as-gta-6--161781.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161781. CD Projekt Red says The Witcher 4 will be as big a leap as GTA 6 was from GTA 5
         </a>
         
     </div>

@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149463">We’re releasing TRL v1.0, and it marks a real shift in what TRL is. What started as a research codebase has become a dependable library people build on, with clearer expectations around stability. This isn't just a version bump. It reflects the reality that TRL now powers production systems, and embraces that responsibility.</p>
-<p>Sources indicate that TRL now implements more than 75 post-training methods. But coverage isn’t the goal by itself. What matters is making these methods easy to try, compare, and actually use in practice. The design of the library wasn’t decided upfront. It is the result of years of iteration — the first commit goes back more than six years — and it has been shaped by everything the field threw at it: new algorithms, new models, shifting paradigms. Over time, this pressure forced the codebase toward a very specific design. Parts of it might look unusual at first, but like in many evolutionary codebases, they exist for a reason. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>In a recent development, TRL is built for a field that doesn’t sit still. So the question is not how to design the perfect abstraction. It is how to make stable software in a domain that keeps invalidating its own assumptions. This is what we tried to solve in TRL v1.0, and this post explains how.</p>
-<p>Post-training has not evolved as a smooth refinement of one recipe. It has moved through successive centers of gravity, each changing not just the objective, but the shape of the stack. <span style="font-size:13px;">(Related: <a href="latest-update-distributed-training-train-bartt5-for-summarization-150290.html" style="color:#2563eb; font-weight:600;">Latest Update: Distributed Training: Train BART/T5 for ...</a>)</span></p>
+<p>Sources indicate that TRL now implements more than 75 post-training methods. But coverage isn’t the goal by itself. What matters is making these methods easy to try, compare, and actually use in practice. The design of the library wasn’t decided upfront. It is the result of years of iteration — the first commit goes back more than six years — and it has been shaped by everything the field threw at it: new algorithms, new models, shifting paradigms. Over time, this pressure forced the codebase toward a very specific design. Parts of it might look unusual at first, but like in many evolutionary codebases, they exist for a reason. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-161783.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
+<p>In a recent development, TRL is built for a field that doesn’t sit still. So the question is not how to design the perfect abstraction. It is how to make stable software in a domain that keeps invalidating its own assumptions. This is what we tried to solve in TRL v1.0, and this post explains how. <span style="font-size:13px;">(Related: <a href="scientists-find-field-of-washing-machines-in-ocean-during-shipwre-161782.html" style="color:#2563eb; font-weight:600;">Scientists find “field” of washing machines in ocean du...</a>)</span></p>
+<p>Post-training has not evolved as a smooth refinement of one recipe. It has moved through successive centers of gravity, each changing not just the objective, but the shape of the stack.</p>
 <p>PPO [Schulman et al., (2017); Ziegler et al., (2019)] made one architecture look canonical: a policy, a reference model, a learned reward model, sampled rollouts, and an RL loop.</p>
 <p>Then DPO-style methods such as the original DPO [Rafailov et al., (2023)], ORPO [Hong et al., (2024)], and KTO [Ethayarajh et al., (2024)] cut through that stack: preference optimization could work without a separate reward model, value model, or any online RL. Components that had looked fundamental suddenly looked optional.</p>
 <p>RLVR-style methods such as GRPO [Shao et al., (2024)] shifted the center again. On tasks like math, code, and tool use, rewards often come from verifiers or deterministic checks rather than learned reward models. Sampling and rollouts matter again, but the objects in the loop are no longer quite the ones PPO libraries were designed around.</p>
@@ -211,6 +211,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-daisyrose-27b-pushing-the-frontier-of-post-training-e-161026.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161026. Tech Report: DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency
+        </a>
+        
         <a href="tech-report-post-training-isaac-gr00t-n15-for-lerobot-so-101-arm-149691.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149691. Tech Report: Post-Training Isaac GR00T N1.5 for LeRobot SO-101 Arm
         </a>
@@ -219,12 +223,8 @@
             📰 #149616. Tech Report: Smol2Operator: Post-Training GUI Agents for Computer Use
         </a>
         
-        <a href="tech-report-finetune-stable-diffusion-models-with-ddpo-via-trl-150024.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150024. Tech Report: Finetune Stable Diffusion Models with DDPO via TRL
-        </a>
-        
-        <a href="tech-report-17-reasons-why-gradio-isnt-just-another-ui-library-149725.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149725. Tech Report: 17 Reasons Why Gradio Isn't Just Another UI Library
+        <a href="tech-report-glm-52-built-for-long-horizon-tasks-161495.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161495. Tech Report: GLM-5.2: Built for Long-Horizon Tasks
         </a>
         
     </div>

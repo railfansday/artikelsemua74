@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149517">In a recent development, over the past few years, scaling dense language models has driven most progress in LLMs. From early models like the original ULMFiT (~30M parameters) or GPT-2 (1.5B parameters, which at the time was considered "too dangerous to release" 🧌), and eventually to today’s hundred-billion–parameter systems, the recipe was simple:.</p>
-<p>More data + more parameters gives better performance.</p>
-<p>Scaling laws reinforced this trend, but dense scaling has practical limits:. <span style="font-size:13px;">(Related: <a href="tech-report-the-reformer-pushing-the-limits-of-language-modeling-150307.html" style="color:#2563eb; font-weight:600;">Tech Report: The Reformer - Pushing the limits of langu...</a>)</span></p>
+<p>More data + more parameters gives better performance. <span style="font-size:13px;">(Related: <a href="zoo-gives-up-on-helping-overweight-viral-leopard-lose-weight-161750.html" style="color:#2563eb; font-weight:600;">Zoo gives up on helping overweight viral leopard lose w...</a>)</span></p>
+<p>Scaling laws reinforced this trend, but dense scaling has practical limits:.</p>
 <p>This is where Mixture of Experts (MoEs) enter the picture.</p>
-<p>If you're already familiar with MoEs and want to jump straight into the engineering work done in transformers, you can head directly to Transformers and MoEs. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>According to recent reports, A Mixture of Experts model keeps the Transformer backbone, but replaces certain dense feed-forward layers with a set of experts. An “expert” is not a topic-specialized module (e.g., "math expert", "code expert"). It is simply a learnable sub-network. For each token, a router selects a small subset of experts to process it.</p>
+<p>If you're already familiar with MoEs and want to jump straight into the engineering work done in transformers, you can head directly to Transformers and MoEs.</p>
+<p>According to recent reports, A Mixture of Experts model keeps the Transformer backbone, but replaces certain dense feed-forward layers with a set of experts. An “expert” is not a topic-specialized module (e.g., "math expert", "code expert"). It is simply a learnable sub-network. For each token, a router selects a small subset of experts to process it. <span style="font-size:13px;">(Related: <a href="latest-update-ai-lets-chemists-design-molecules-by-simply-describ-161751.html" style="color:#2563eb; font-weight:600;">Latest Update: AI lets chemists design molecules by sim...</a>)</span></p>
 <p>Different tokens activate different experts, based on their hidden representations.</p>
 <p>Model capacity depends on total parameters, but inference speed depends on active parameters.</p>
 <p>According to recent reports, for example, take gpt-oss-20b. It has 21B total parameters, but uses 4 active experts per token, out of a total of 32 experts. Considering the shared components plus the active experts, this model uses ~3.6B active parameters per token. Running this model on an M3 Ultra Mac, which has a memory bandwidth of about 800 GB, we could estimate generation speed as ~ 800 / (3.6 * 2) in bfloat16, where each parameter takes 2 bytes. This yields about 111 tokens per second. The actual performance number we get is ~115 tok/s, which is very close to the back-of-the-envelope calculation.</p>
@@ -241,20 +241,20 @@ GPU: 1× A100 (80GB).</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-guiding-text-generation-with-constrained-beam-searc-150253.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150253. Industry News: Guiding Text Generation with Constrained Beam Search in 🤗 Transformers
+        <a href="introducing-mellum2-a-12b-mixture-of-experts-model-by-jetbrains-161526.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161526. Introducing Mellum2: A 12B Mixture-of-Experts Model by JetBrains
         </a>
         
-        <a href="industry-news-machine-learning-experts-margaret-mitchell-150248.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150248. Industry News: Machine Learning Experts - Margaret Mitchell
+        <a href="industry-news-native-speed-vllm-transformers-modeling-backend-161429.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161429. Industry News: Native-speed vLLM transformers modeling backend
         </a>
         
-        <a href="mixture-of-experts-explained-150002.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150002. Mixture of Experts Explained
+        <a href="latest-update-welcome-muse-spark-open-open-weight-frontier-multim-161216.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161216. Latest Update: Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta
         </a>
         
-        <a href="welcome-mixtral-a-sota-mixture-of-experts-on-hugging-face-150001.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150001. Welcome Mixtral - a SOTA Mixture of Experts on Hugging Face
+        <a href="industry-news-are-single-older-ladies-really-happy-without-marria-160296.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #160296. Industry News: Are Single Older Ladies Really Happy Without Marriage? Experts Weigh In
         </a>
         
     </div>

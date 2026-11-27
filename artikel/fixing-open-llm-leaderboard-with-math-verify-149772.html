@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149772">3 weeks ago, we showed how hard it is to correctly evaluate LLM performance on math problems, and introduced Math-Verify, a better solution to validate models on math (read more in the announcement)!</p>
-<p>Today, we’re thrilled to share that we’ve used Math-Verify to thoroughly re-evaluate all 3,751 models ever submitted to the Open LLM Leaderboard, for even fairer and more robust model comparisons! <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>The Open LLM Leaderboard is the most used leaderboard on the Hugging Face Hub: it compares open Large Language Models (LLM) performance across various tasks. One of these tasks, called MATH-Hard, is specifically about math problems: it evaluates how well LLMs solve high-school and university-level math problems. It uses 1,324 highest difficulty problems (Level 5) from the Hendrycks MATH dataset spread across 7 topics (precalculus, prealgebra, algebra, intermediate algebra, counting/probability and number theory), using a 5-shot approach (the model is provided with 5 examples in the prompt to showcase how it should answer). <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Today, we’re thrilled to share that we’ve used Math-Verify to thoroughly re-evaluate all 3,751 models ever submitted to the Open LLM Leaderboard, for even fairer and more robust model comparisons!</p>
+<p>The Open LLM Leaderboard is the most used leaderboard on the Hugging Face Hub: it compares open Large Language Models (LLM) performance across various tasks. One of these tasks, called MATH-Hard, is specifically about math problems: it evaluates how well LLMs solve high-school and university-level math problems. It uses 1,324 highest difficulty problems (Level 5) from the Hendrycks MATH dataset spread across 7 topics (precalculus, prealgebra, algebra, intermediate algebra, counting/probability and number theory), using a 5-shot approach (the model is provided with 5 examples in the prompt to showcase how it should answer). <span style="font-size:13px;">(Related: <a href="giant-superatoms-could-finally-solve-quantum-computings-biggest-p-161768.html" style="color:#2563eb; font-weight:600;">“Giant superatoms” could finally solve quantum computin...</a>)</span></p>
 <p>A typical question looks like this:.</p>
-<p>In the leaderboard, models would have to end their answers with a very specific string (following the Minerva-Math paper):.</p>
+<p>In the leaderboard, models would have to end their answers with a very specific string (following the Minerva-Math paper):. <span style="font-size:13px;">(Related: <a href="this-ai-knew-the-answers-but-didnt-understand-the-questions-161755.html" style="color:#2563eb; font-weight:600;">This AI knew the answers but didn’t understand the ques...</a>)</span></p>
 <p>The leaderboard would then try to parse [ANSWER] with SymPy to convert it to a symbolic representation (and simplify the values if needed), before finally comparing it to the gold target.</p>
 <p>However, people reported a number of problems with the above.</p>
 <p>To start, a recurring issue was the inability of some models to follow the expected answer format from the examples: they outputted other sentences instead to introduce their answers. Since the format was not followed, answers were marked as wrong even if they were actually correct! (Which is an issue if what you’re interested in is “how good the model is at math” specifically).</p>
@@ -201,6 +201,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-introducing-the-open-arabic-llm-leaderboard-161566.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161566. Latest Update: Introducing the Open Arabic LLM Leaderboard
+        </a>
+        
         <a href="whats-going-on-with-the-open-llm-leaderboard-150070.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150070. What's going on with the Open LLM Leaderboard?
         </a>
@@ -211,10 +215,6 @@
         
         <a href="introducing-the-open-ko-llm-leaderboard-leading-the-korean-llm-ev-149973.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149973. Introducing the Open Ko-LLM Leaderboard: Leading the Korean LLM Evaluation Ecosystem
-        </a>
-        
-        <a href="the-open-medical-llm-leaderboard-benchmarking-large-language-mode-149938.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149938. The Open Medical-LLM Leaderboard: Benchmarking Large Language Models in Healthcare
         </a>
         
     </div>

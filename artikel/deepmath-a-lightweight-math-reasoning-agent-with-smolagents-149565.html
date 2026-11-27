@@ -150,14 +150,14 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149565">Industry observers note that deepMath is an aligned math reasoning agent built on Qwen3-4B Thinking and fine-tuned with GRPO (Group Relative Policy Optimization). Instead of verbose text, the model emits tiny Python snippets for intermediate steps, runs them in a secure sandbox, and folds the results back into its reasoning, reducing errors and output length. The agent is implemented using the smolagents library.</p>
-<p>We evaluate DeepMath on four math datasets: MATH500, AIME, HMMT, and HLE, and show that:. <span style="font-size:13px;">(Related: <a href="hosting-your-models-and-datasets-on-hugging-face-spaces-using-str-150277.html" style="color:#2563eb; font-weight:600;">Hosting your Models and Datasets on Hugging Face Spaces...</a>)</span></p>
+<p>We evaluate DeepMath on four math datasets: MATH500, AIME, HMMT, and HLE, and show that:.</p>
 <p>🤖 The math agent alone reduces output lengths by up to 66%, while often improving accuracy.</p>
-<p>⚡ GRPO training improves the agent performance even further, in almost all benchmarks. <span style="font-size:13px;">(Related: <a href="latest-update-distributed-training-train-bartt5-for-summarization-150290.html" style="color:#2563eb; font-weight:600;">Latest Update: Distributed Training: Train BART/T5 for ...</a>)</span></p>
+<p>⚡ GRPO training improves the agent performance even further, in almost all benchmarks.</p>
 <p>👉 Code and evaluation scripts: https://github.com/IntelLabs/DeepMath 👉 Model: https://huggingface.co/Intel/deepmath-v1.</p>
-<p>Recent findings suggest that large language models (LLMs) have advanced reasoning capabilities, but mathematical problem-solving remains challenging; chain-of-thought traces can be lengthy and prone to arithmetic mistakes. Recent works[^1][^2] demonstrate that small models can reach strong performance, and other studies[^3] investigate tool use to improve reliability. What those papers generally do not emphasize is reducing trace verbosity or explicitly training models to prefer short, computation-oriented traces executed in a constrained, auditable environment.</p>
+<p>Recent findings suggest that large language models (LLMs) have advanced reasoning capabilities, but mathematical problem-solving remains challenging; chain-of-thought traces can be lengthy and prone to arithmetic mistakes. Recent works[^1][^2] demonstrate that small models can reach strong performance, and other studies[^3] investigate tool use to improve reliability. What those papers generally do not emphasize is reducing trace verbosity or explicitly training models to prefer short, computation-oriented traces executed in a constrained, auditable environment. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-161783.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
 <p>Offload deterministic computation to a safe executor.</p>
 <p>Train models to prefer concise, computation-oriented traces over verbose text.</p>
-<p>Recent findings suggest that deepMath tackles this by combining a small Python executor with a fine-tuned LLM, enabling concise, computation-driven reasoning. The model learns to generate short Python snippets, which are executed in a sandbox and reintegrated into the context. GRPO fine-tuning encourages this behavior by rewarding correctness and encouraging shorter outputs.</p>
+<p>Recent findings suggest that deepMath tackles this by combining a small Python executor with a fine-tuned LLM, enabling concise, computation-driven reasoning. The model learns to generate short Python snippets, which are executed in a sandbox and reintegrated into the context. GRPO fine-tuning encourages this behavior by rewarding correctness and encouraging shorter outputs. <span style="font-size:13px;">(Related: <a href="industry-news-which-samsung-folding-phone-is-right-for-you-galaxy-161749.html" style="color:#2563eb; font-weight:600;">Industry News: Which Samsung folding phone is right for...</a>)</span></p>
 <p>Figure 1: The vLLM client and server were modified to use the DeepMath agent in generating the candidates, while using the vLLM backend.</p>
 <p>Agent Interface: During inference, the model can output normal tokens or special agent calls containing Python snippets.</p>
 <p>Execution: Snippets run in a sandboxed environment with strict safety constraints (no file I/O, no network, timeouts).</p>
@@ -213,20 +213,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="webai-releases-twil-8b-a-5-gib-open-weight-reasoning-model-with-a-156398.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #156398. webAI Releases TwIL-8B: A 5 GiB Open-Weight Reasoning Model With a 98.2 MATH-500 Score
+        </a>
+        
         <a href="dabstep-data-agent-benchmark-for-multi-step-reasoning-149783.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149783. DABStep: Data Agent Benchmark for Multi-step Reasoning
         </a>
         
-        <a href="breaking-webai-releases-twil-8b-a-5-gib-open-weight-reasoning-mod-144924.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #144924. Breaking: webAI Releases TwIL-8B: A 5 GiB Open-Weight Reasoning Model With a 98.2 MATH-500 Score
+        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-161554.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161554. Tiny Agents: an MCP-powered agent in 50 lines of code
         </a>
         
-        <a href="what-makes-a-dialog-agent-useful-150143.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150143. What Makes a Dialog Agent Useful?
-        </a>
-        
-        <a href="nphardeval-leaderboard-unveiling-the-reasoning-abilities-of-large-149979.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149979. NPHardEval Leaderboard: Unveiling the Reasoning Abilities of Large Language Models through Complexity Classes and Dynamic Updates
+        <a href="tech-report-how-agent-anomaly-detection-scores-on-benchmarks-we-d-161545.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161545. Tech Report: How Agent Anomaly Detection scores on benchmarks we didn't write
         </a>
         
     </div>

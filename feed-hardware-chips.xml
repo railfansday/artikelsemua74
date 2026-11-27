@@ -4,97 +4,97 @@
     <title>Portal Berita - Hardware & Chips</title>
     <link>https://railfansday.github.io/artikelsemua74/</link>
     <description>Curated news feed for Hardware & Chips.</description>
-    <lastBuildDate>Fri, 27 Nov 2026 08:41:57 -0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 21:55:51 -0000</lastBuildDate>
     
             <item>
-                <title>Scaling-up BERT Inference on CPU (Part 1)</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/scaling-up-bert-inference-on-cpu-part-1-150288.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/scaling-up-bert-inference-on-cpu-part-1-150288.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Latest Update: This latest chip could slash data center energy waste</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/latest-update-this-latest-chip-could-slash-data-center-energy-was-161771.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/latest-update-this-latest-chip-could-slash-data-center-energy-was-161771.html</guid>
+                <description>As data centers consume more energy to support growing digital demands, engineers at the University of California San Diego have introduced a new chip design that could make powering graphics processing units (GPUs) more efficient. The innovation focuses on a key function in elec...</description>
             </item>
             <item>
-                <title>Scaling up BERT-like model Inference on modern CPU  - Part 2</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/scaling-up-bert-like-model-inference-on-modern-cpu-part-2-150271.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/scaling-up-bert-like-model-inference-on-modern-cpu-part-2-150271.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>PETA demands Nvidia boss Jensen Huang replace iconic leather jacket with vegan one made from olives</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/peta-demands-nvidia-boss-jensen-huang-replace-iconic-leather-jack-161769.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/peta-demands-nvidia-boss-jensen-huang-replace-iconic-leather-jack-161769.html</guid>
+                <description>Animal rights organization PETA is urging Nvidia CEO Jensen Huang to ditch his iconic black leather jacket, even sending the billionaire an $875 vegan alternative made from olive waste. Much like Steve Jobs with his black turtlenecks and Mark Zuckerberg with his gray T-shirts, Hu...</description>
             </item>
             <item>
-                <title>Accelerating PyTorch distributed fine-tuning with Intel technologies</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-150270.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-150270.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Credit rating agency puts Nvidia on notice for possible downgrade</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/credit-rating-agency-puts-nvidia-on-notice-for-possible-downgrade-161744.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/credit-rating-agency-puts-nvidia-on-notice-for-possible-downgrade-161744.html</guid>
+                <description>Industry observers note that S&amp;P Global Ratings, one of the world’s largest rating agencies, declared that it’s putting Nvidia’s credit rating on watch as the company faces a possible downgrade. The agency says that the challenges surrounding Jensen Huang regarding export control...</description>
             </item>
             <item>
-                <title>Latest Update: Intel and Hugging Face Partner to Democratize Machine Learning Hardware Acceleration</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/latest-update-intel-and-hugging-face-partner-to-democratize-machi-150220.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/latest-update-intel-and-hugging-face-partner-to-democratize-machi-150220.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Brain-inspired chip runs near absolute zero and could transform quantum computing</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/brain-inspired-chip-runs-near-absolute-zero-and-could-transform-q-161724.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/brain-inspired-chip-runs-near-absolute-zero-and-could-transform-q-161724.html</guid>
+                <description>Researchers at the University of Hong Kong (HKU) have unveiled a significant advance in cryogenic electronics that could help overcome key challenges in quantum computing and support future deep space missions. The team, from HKU's Department of Electrical and Computer Engineerin...</description>
             </item>
             <item>
-                <title>Accelerate your models with 🤗 Optimum Intel and OpenVINO</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/accelerate-your-models-with-optimum-intel-and-openvino-150172.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/accelerate-your-models-with-optimum-intel-and-openvino-150172.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Denny’s touts renewed support for Nvidia CEO Jensen Huang following reinstatement</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/dennys-touts-renewed-support-for-nvidia-ceo-jensen-huang-followin-161716.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/dennys-touts-renewed-support-for-nvidia-ceo-jensen-huang-followin-161716.html</guid>
+                <description>Following his recent resignation from the organization and his return as CEO earlier this week, Jensen Huang has received a glowing statement of support from Denny's, the chain where he famously began his working life before founding Nvidia. The diner chain Denny's posted a 200-w...</description>
             </item>
             <item>
-                <title>Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-150154.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-150154.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Save a huge $1,020 on a 240Hz OLED gaming laptop from Lenovo with an RTX 5070 Ti, now just $1,999</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/save-a-huge-1020-on-a-240hz-oled-gaming-laptop-from-lenovo-with-a-161709.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/save-a-huge-1020-on-a-240hz-oled-gaming-laptop-from-lenovo-with-a-161709.html</guid>
+                <description>According to recent reports, an OLED gaming laptop, fitted with an RTX 5070 Ti, and all for less than $2,000? That's a deal you don't want to ignore. Lenovo has slashed $1,020 off this Lenovo Legion 5i OLED gaming laptop, dropping the price down to just $1,999.99 for Black Friday...</description>
             </item>
             <item>
-                <title>Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 2</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-150138.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-150138.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Upcoming programmable photonic chip can control how fast light moves</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/upcoming-programmable-photonic-chip-can-control-how-fast-light-mo-161696.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/upcoming-programmable-photonic-chip-can-control-how-fast-light-mo-161696.html</guid>
+                <description>Researchers at Seoul National University and the University of Seoul have developed a programmable photonic integrated circuit that can slow light whenever needed. The team was led by Professors Namkyoo Park and Sunkyu Yu of the Department of Electrical and Computer Engineering a...</description>
             </item>
             <item>
-                <title>Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-150122.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-150122.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Tech Report: MIT’s upcoming lidar chip could give self-driving cars a wider view</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/tech-report-mits-upcoming-lidar-chip-could-give-self-driving-cars-161694.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/tech-report-mits-upcoming-lidar-chip-could-give-self-driving-cars-161694.html</guid>
+                <description>Lidar technology uses pulses of infrared light to calculate distances and create detailed 3D maps of the surrounding environment. This allows autonomous vehicles to detect objects in their path and respond promptly. However, conventional lidar sensors are often large and costly, ...</description>
             </item>
             <item>
-                <title>Accelerating Stable Diffusion Inference on Intel CPUs</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/accelerating-stable-diffusion-inference-on-intel-cpus-150117.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/accelerating-stable-diffusion-inference-on-intel-cpus-150117.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>The VR Forever Gaming Awards return in December with tons of demos and discounts</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/the-vr-forever-gaming-awards-return-in-december-with-tons-of-demo-161691.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/the-vr-forever-gaming-awards-return-in-december-with-tons-of-demo-161691.html</guid>
+                <description>The industry’s biggest players are joining together to celebrate all the amazing VR games you probably don’t know about (but should). This year has been difficult for the gaming industry at large, and that’s particularly true for the wonderful niche of VR gaming. Despite some hug...</description>
             </item>
             <item>
-                <title>Tech Report: Optimizing Stable Diffusion for Intel CPUs with NNCF and 🤗 Optimum</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/tech-report-optimizing-stable-diffusion-for-intel-cpus-with-nncf--150088.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/tech-report-optimizing-stable-diffusion-for-intel-cpus-with-nncf--150088.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Nvidia agrees to $290 million settlement over 2018 crypto mining GPU sales</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/nvidia-agrees-to-290-million-settlement-over-2018-crypto-mining-g-161685.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/nvidia-agrees-to-290-million-settlement-over-2018-crypto-mining-g-161685.html</guid>
+                <description>According to recent reports, nvidia has agreed to pay a $290 million settlement in an eight-year-long securities class action lawsuit. Investors accused the company of misleading shareholders about how much of its gaming revenue was actually driven by the cryptocurrency mining bo...</description>
             </item>
             <item>
-                <title>Hugging Face and AMD partner on accelerating state-of-the-art models for CPU and GPU platforms</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-150078.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-150078.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Black Friday 2026 gaming monitor deals live</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/black-friday-2026-gaming-monitor-deals-live-161680.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/black-friday-2026-gaming-monitor-deals-live-161680.html</guid>
+                <description>Black Friday is upon us and it's a great time to grab yourself a new monitor. Whether you're looking for a new OLED monitor for gaming, editing, or anything else, this deals weekend is the perfect opportunity to upgrade your setup and your display. We're looking at all the major ...</description>
             </item>
             <item>
-                <title>Tech Report: Fine-tuning Stable Diffusion models on Intel CPUs</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/tech-report-fine-tuning-stable-diffusion-models-on-intel-cpus-150063.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/tech-report-fine-tuning-stable-diffusion-models-on-intel-cpus-150063.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>AMD and Winbond vulnerabilities let attackers brute-force BitLocker PINs on millions of PCs</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/amd-and-winbond-vulnerabilities-let-attackers-brute-force-bitlock-161655.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/amd-and-winbond-vulnerabilities-let-attackers-brute-force-bitlock-161655.html</guid>
+                <description>In a recent development, former owners of laptops gained yet another concern today. Firmware-backed drive encryption setups like Windows' BitLocker are meant to protect against someone stealing your laptop or desktop computer. Prospective thieves would have a hard time guessing y...</description>
             </item>
             <item>
-                <title>AMD + 🤗: Large Language Models Out-of-the-Box Acceleration with AMD GPU</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/amd-large-language-models-out-of-the-box-acceleration-with-amd-gp-150004.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/amd-large-language-models-out-of-the-box-acceleration-with-amd-gp-150004.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Nvidia proves it’s too big to fail</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/nvidia-proves-its-too-big-to-fail-161649.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/nvidia-proves-its-too-big-to-fail-161649.html</guid>
+                <description>It has been revealed that good morning. Today I’m deciding whether the final Avengers: Doomsday trailer passes the “people just standing around” test, trying the fresh Material 3 Expressive Claude app on my Android devices, and stocking up on discounted XTEINK e-readers for Chris...</description>
             </item>
             <item>
-                <title>Accelerate StarCoder with 🤗 Optimum Intel on Xeon: Q8/Q4 and Speculative Decoding</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-149984.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-149984.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Industry News: Cambridge scientists create a $10 chip that could put a medical lab on your wrist</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/industry-news-cambridge-scientists-create-a-10-chip-that-could-pu-161600.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/industry-news-cambridge-scientists-create-a-10-chip-that-could-pu-161600.html</guid>
+                <description>Industry observers note that A upcoming optical sensor costing just $10 could bring laboratory-level precision to wearable health monitors, potentially allowing people to track blood glucose without needles. The technology could also transform food testing, industrial quality con...</description>
             </item>
             <item>
-                <title>CPU Optimized Embeddings with 🤗 Optimum Intel and fastRAG</title>
-                <link>https://railfansday.github.io/artikelsemua74/artikel/cpu-optimized-embeddings-with-optimum-intel-and-fastrag-149962.html</link>
-                <guid>https://railfansday.github.io/artikelsemua74/artikel/cpu-optimized-embeddings-with-optimum-intel-and-fastrag-149962.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Best Black Friday Gaming laptop deals live</title>
+                <link>https://railfansday.github.io/artikelsemua74/artikel/best-black-friday-gaming-laptop-deals-live-161595.html</link>
+                <guid>https://railfansday.github.io/artikelsemua74/artikel/best-black-friday-gaming-laptop-deals-live-161595.html</guid>
+                <description>Gaming laptop deals are in full swing now that Black Friday has started, and we're tracking all the latest and greatest deals from your favorite vendors. Laptop prices have increased dramatically in recent months owing to the AI component shortage, so finding a deal is more cruci...</description>
             </item>
 </channel>
 </rss>

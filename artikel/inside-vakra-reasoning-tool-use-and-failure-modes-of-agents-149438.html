@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149438">VAKRA Dataset  | LeaderBoard | Release Blog | GitHub | Submit to Leaderboard.</p>
-<p>We recently introduced VAKRA, a tool-grounded, executable benchmark for evaluating how well AI agents reason and act in enterprise-like environments.</p>
-<p>Unlike traditional benchmarks that test isolated skills, VAKRA measures compositional reasoning across APIs and documents, using full execution traces to assess whether agents can reliably complete multi-step workflows. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>VAKRA provides an executable environment where agents interact with over 8,000+ locally hosted APIs backed by real databases spanning 62 domains, along with domain-aligned document collections. Tasks can require 3-7 step reasoning chains that combine structured API interaction with unstructured retrieval under natural-language tool-use constraints. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>We recently introduced VAKRA, a tool-grounded, executable benchmark for evaluating how well AI agents reason and act in enterprise-like environments. <span style="font-size:13px;">(Related: <a href="this-newly-introduced-chip-survives-1300f-700c-and-could-change-a-161773.html" style="color:#2563eb; font-weight:600;">This newly introduced chip survives 1300°F (700°C) and ...</a>)</span></p>
+<p>Unlike traditional benchmarks that test isolated skills, VAKRA measures compositional reasoning across APIs and documents, using full execution traces to assess whether agents can reliably complete multi-step workflows.</p>
+<p>VAKRA provides an executable environment where agents interact with over 8,000+ locally hosted APIs backed by real databases spanning 62 domains, along with domain-aligned document collections. Tasks can require 3-7 step reasoning chains that combine structured API interaction with unstructured retrieval under natural-language tool-use constraints.</p>
 <p>As can be seen below, models perform poorly on VAKRA - in this blog, we include additional  dataset details  about the tasks in VAKRA and present an analysis of failure modes we observed on different tasks.</p>
 <p>As shown below, the VAKRA benchmark comprises of four tasks, each testing a different set of capabilities.</p>
 <p>Fig 1: Representative examples of each capability in the VAKRA benchmark.</p>
-<p>Sources indicate that this capability includes 2,077 test instances across 54 domains, requiring the use of tools from the SLOT-BIRD and SEL-BIRD collections (Elder et al., 2026). Compared to the setup in Elder et al., the tool universe in SLOT-BIRD and SEL-BIRD is expanded through the inclusion of a larger number of domains. Each domain is restricted to one tool collection, and tasks involve chaining 1–12 tool calls to arrive at the final answer.</p>
+<p>Sources indicate that this capability includes 2,077 test instances across 54 domains, requiring the use of tools from the SLOT-BIRD and SEL-BIRD collections (Elder et al., 2026). Compared to the setup in Elder et al., the tool universe in SLOT-BIRD and SEL-BIRD is expanded through the inclusion of a larger number of domains. Each domain is restricted to one tool collection, and tasks involve chaining 1–12 tool calls to arrive at the final answer. <span style="font-size:13px;">(Related: <a href="breaking-gta-6-devs-reveal-major-gameplay-features-that-didnt-mak-161775.html" style="color:#2563eb; font-weight:600;">Breaking: GTA 6 devs reveal major gameplay features tha...</a>)</span></p>
 <p>Fig 2: Data sample from SEL-BIRD collection.</p>
 <p>Recent findings suggest that as shown above, each instance has an associated JSON data source from which the answer must be derived. The MCP servers supporting this task include a special tool, called get_data(tool_universe_id=id), which must be called at the beginning of each instance. This tool initializes the data source, returns a lightweight preview of the data (see below Figure 3), and stores the full dataset server-side to avoid large data transfers. This prevents the inefficient transfer of large data over the MCP protocol. The call also configures the MCP server to expose the appropriate tool set based on the tool_universe_id and aligns the data source with the domain-specific database for the instance.</p>
 <p>The SLOT-BIRD collection provides a global set of 7 tools for generic data manipulation (e.g., filtering, sorting), inspired by systems like Tableau and 
@@ -224,20 +224,20 @@ For trajectories that pass the previous check, the final response is evaluated u
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="latest-update-tool-use-unified-149878.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149878. Latest Update: Tool Use, Unified
+        <a href="holo31-fast-local-computer-use-agents-161524.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161524. Holo3.1: Fast & Local Computer Use Agents
         </a>
         
-        <a href="tech-report-smol2operator-post-training-gui-agents-for-computer-u-149616.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149616. Tech Report: Smol2Operator: Post-Training GUI Agents for Computer Use
+        <a href="holo4-powering-generalist-computer-use-agents-161253.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161253. Holo4: powering generalist computer-use agents
         </a>
         
-        <a href="openenv-in-practice-evaluating-tool-using-agents-in-real-world-en-149526.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149526. OpenEnv in Practice: Evaluating Tool-Using Agents in Real-World Environments
+        <a href="speculative-decoding-makes-tool-calls-faster-agents-need-a-cache-161132.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161132. Speculative Decoding Makes Tool Calls Faster. Agents Need a Cache.
         </a>
         
-        <a href="deepseek-v4-a-million-token-context-that-agents-can-actually-use-149405.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149405. DeepSeek-V4: a million-token context that agents can actually use
+        <a href="ahrefs-vs-semrush-which-seo-tool-should-you-use-161014.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161014. Ahrefs vs SEMrush: Which SEO Tool Should You Use?
         </a>
         
     </div>

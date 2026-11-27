@@ -151,16 +151,16 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149560">llama.cpp server now ships with router mode, which lets you dynamically load, unload, and switch between multiple models without restarting.</p>
 <p>Reminder: llama.cpp server is a lightweight, OpenAI-compatible HTTP server for running LLMs locally.</p>
-<p>This feature was a popular request to bring Ollama-style model management to llama.cpp. It uses a multi-process architecture where each model runs in its own process, so if one model crashes, others remain unaffected. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>Start the server in router mode by not specifying a model:. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-150302.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>This feature was a popular request to bring Ollama-style model management to llama.cpp. It uses a multi-process architecture where each model runs in its own process, so if one model crashes, others remain unaffected.</p>
+<p>Start the server in router mode by not specifying a model:.</p>
 <p>Sources indicate that this auto-discovers models from your llama.cpp cache (LLAMA_CACHE or ~/.cache/llama.cpp). If you've previously downloaded models via llama-server -hf user/model, they'll be available automatically.</p>
 <p>You can also point to a local directory of GGUF files:.</p>
-<p>Industry observers note that on the first request, the server automatically loads the model into memory (loading time depends on model size). Subsequent requests to the same model are instant since it's already loaded.</p>
+<p>Industry observers note that on the first request, the server automatically loads the model into memory (loading time depends on model size). Subsequent requests to the same model are instant since it's already loaded. <span style="font-size:13px;">(Related: <a href="electronics-manufacturers-set-up-memory-war-rooms-to-find-lock-in-161752.html" style="color:#2563eb; font-weight:600;">Electronics manufacturers set up memory 'war rooms' to ...</a>)</span></p>
 <p>Returns all discovered models with their status (loaded, loading, or unloaded).</p>
 <p>All model instances inherit settings from the router:.</p>
 <p>All loaded models will use 8192 context and full GPU offload. You can also define per-model settings using presets:.</p>
 <p>The built-in web UI also supports model switching. Just select a model from the dropdown and it loads automatically.</p>
-<p>We hope this feature makes it easier to A/B test different model versions, run multi-tenant deployments, or simply switch models during development without restarting the server.</p>
+<p>We hope this feature makes it easier to A/B test different model versions, run multi-tenant deployments, or simply switch models during development without restarting the server. <span style="font-size:13px;">(Related: <a href="scientists-find-field-of-washing-machines-in-ocean-during-shipwre-161782.html" style="color:#2563eb; font-weight:600;">Scientists find “field” of washing machines in ocean du...</a>)</span></p>
 <p>It has been revealed that have questions or feedback? Drop a comment below or open an problem on GitHub.</p>
 <p>Supported via presets.ini, where you can specify the mmproj (and other long and short arguments) per model.</p>
 <p id="sec-mid-149560">Awesome fresh feature! Can model selection be done on something other than requested model name? Like maybe specify the ranking in presets.ini, and then the highest ranked model that can satisfy the request will be the default. So maybe one model is best for short context, another (or the same with other settings) for when the context gets too long, and another when image input is required.</p>
@@ -200,20 +200,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-fine-tuning-llama-2-70b-using-pytorch-fsdp-150033.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150033. Industry News: Fine-tuning Llama 2 70B using PyTorch FSDP
+        <a href="tech-report-serving-a-local-llm-to-several-consumers-ollama-lm-st-161604.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161604. Tech Report: Serving a Local LLM to Several Consumers: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
         </a>
         
-        <a href="industry-news-non-engineers-guide-train-a-llama-2-chatbot-150025.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150025. Industry News: Non-engineers guide: Train a LLaMA 2 chatbot
+        <a href="industry-news-training-a-coding-model-to-paint-watercolours-with--161308.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161308. Industry News: Training a coding model to paint watercolours with TRL and OpenEnv
         </a>
         
-        <a href="industry-news-universal-assisted-generation-faster-decoding-with--149839.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149839. Industry News: Universal Assisted Generation: Faster Decoding with Any Assistant Model
+        <a href="transformers-now-runs-llamacpp-quants-161266.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161266. Transformers now runs llama.cpp quants
         </a>
         
-        <a href="industry-news-bamba-inference-efficient-hybrid-mamba2-model-149814.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149814. Industry News: Bamba: Inference-Efficient Hybrid Mamba2 Model
+        <a href="introducing-the-llamacpp-benchmark-dashboard-for-amd-ryzen-and-ra-160994.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #160994. Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon
         </a>
         
     </div>

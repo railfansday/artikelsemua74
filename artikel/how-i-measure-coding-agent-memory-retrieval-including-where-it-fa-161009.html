@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I measure coding-agent memory retrieval, including where it fails</title>
+    <meta name="description" content="Here is a situation most teams using coding agents will recognise. It has been revealed that on Tuesday, your agent spends forty minutes working out why a ">
+    <meta name="keywords" content="memory, palace, session, questions, question, agent, recent, only">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/how-i-measure-coding-agent-memory-retrieval-including-where-it-fa-161009.html">
+    
+    <meta property="og:title" content="How I measure coding-agent memory retrieval, including where it fails">
+    <meta property="og:description" content="Here is a situation most teams using coding agents will recognise. It has been revealed that on Tuesday, your agent spends forty minutes working out why a ">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh5i8np3aaqdeo8mngpgq.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/how-i-measure-coding-agent-memory-retrieval-including-where-it-fa-161009.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How I measure coding-agent memory retrieval, including where it fails">
+    <meta name="twitter:description" content="Here is a situation most teams using coding agents will recognise. It has been revealed that on Tuesday, your agent spends forty minutes working out why a ">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh5i8np3aaqdeo8mngpgq.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "How I measure coding-agent memory retrieval, including where it fails", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh5i8np3aaqdeo8mngpgq.png"], "datePublished": "2026-11-27T20:53:35", "dateModified": "2026-11-27T21:10:00.084122", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/how-i-measure-coding-agent-memory-retrieval-including-where-it-fa-161009.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding How I measure coding-agent memory retrieval, including where it fails?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'How I measure coding-agent memory retrieval, including where' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>How I measure coding-agent memory retrieval, including where it fails</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 27 Nov 2026 &bull; ⏱️ 6 min read (1188 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Here is a situation most teams using coding agents will recognise.</li><li style='margin-bottom:6px;'>It has been revealed that on Tuesday, your agent spends forty minutes working out why a retry around the payments webhook keeps failing.</li><li style='margin-bottom:6px;'>Recent findings suggest that on Thursday, a teammate picks up a related ticket.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-161009"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-161009"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-161009"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="How I measure coding-agent memory retrieval, including where it fails" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh5i8np3aaqdeo8mngpgq.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-161009">Here is a situation most teams using coding agents will recognise.</p>
+<p>It has been revealed that on Tuesday, your agent spends forty minutes working out why a retry around the payments webhook keeps failing. It isn't the backoff. The upstream returns a 409 on the second attempt because the idempotency key is regenerated on every retry. The fix is two lines. The understanding behind it took most of the afternoon. <span style="font-size:13px;">(Related: <a href="latest-update-uber-eats-driver-saves-elderly-woman-after-hearing--161770.html" style="color:#2563eb; font-weight:600;">Latest Update: Uber Eats driver saves elderly woman aft...</a>)</span></p>
+<p>Recent findings suggest that on Thursday, a teammate picks up a related ticket. Their agent starts from zero. It proposes raising the backoff. It suggests the same dead ends. Nobody wrote the finding down, because writing things down is the step that always gets skipped. <span style="font-size:13px;">(Related: <a href="japan-expands-ai-piracy-hunt-after-finding-pirated-manga-on-94-of-161763.html" style="color:#2563eb; font-weight:600;">Japan expands AI piracy hunt after finding pirated mang...</a>)</span></p>
+<p>That gap, where one agent learned something and the next one never hears about it, is the problem I'm working on with Palace. Palace is an MIT-licensed memory engine for coding agents: one Rust binary, one SQLite file, a local embedder, and hybrid BM25 + vector search, exposed over MCP to Claude Code, Cursor, Codex, OpenCode and other clients. (It is a separate project from the Python "mempalace". The two get confused.).</p>
+<p>A memory layer is only useful if it brings back the right thing when asked. So this post is about how I measure that, which numbers I report, and where the numbers fall down.</p>
+<p>Industry observers note that the benchmark is LongMemEval. Each question comes with its own haystack of past chat sessions, and one or more of those sessions holds the answer.</p>
+<p>It has been revealed that many memory systems report QA accuracy: an LLM reads what was retrieved, writes an answer, and another LLM grades it. That measures the whole pipeline, including the reader model.</p>
+<p>According to recent reports, I report something narrower: session-level retrieval recall. For each question, Palace returns its top K results. If a gold session is among them, it counts as a hit. No LLM reads anything and no LLM grades anything.</p>
+<p>That choice has consequences you should keep in mind:.</p>
+<p>On s_cleaned, 470 questions (the 30 abstention questions excluded, which is the usual convention):.</p>
+<p>On all 500 questions, R@5 is 0.986.</p>
+<p>The 0.987 is the number people quote. It's real, but it's the lenient one, and you should know why.</p>
+<p>According to recent reports, some questions need information from more than one session. "How many times did I change the deploy target this year?" might need three. recall_any counts the question as a hit if any one gold session is in the top 5. recall_all only counts it if every gold session is there.</p>
+<p>Sources indicate that for an agent, recall_all is often the one that matters. If the answer depends on combining two earlier decisions and only one comes back, the agent answers with half the story and sounds confident doing it.</p>
+<p>Broken down by question type, recall_all@5 looks like this:.</p>
+<p>Sources indicate that multi-session questions go from 0.992 under recall_any to 0.818 under recall_all. Roughly one in five multi-session questions is missing at least one of the sessions it needs in the top 5. That's the biggest gap in the results, and it's the one I'd want to know about if I were evaluating a memory tool.</p>
+<p id="sec-mid-161009">According to recent reports, on cost: the five drawers behind the @5 figures hold about 1,700 tokens between them, about 1.3% of the haystack (counting four bytes of text per token). Average query time, including embedding the question, was 6 ms.</p>
+<p>According to recent reports, s_cleaned gives each question about 50 sessions. A real team's memory after a few months is larger than that. So I also run m_cleaned, with about 500 sessions per question and around 4,000 drawers to search.</p>
+<p>R@5 drops from 0.987 to 0.919, and R@1 falls much further, from 0.915 to 0.732. With ten times the distractors, the right session is still usually in the top 5, but noticeably less often at the top. Query time goes from 6 ms to 78 ms.</p>
+<p>If you're building on any memory layer, this is the curve worth asking about: how does recall change as the store grows?</p>
+<p>Two question types stand out on m_cleaned:.</p>
+<p>It has been revealed that preferences are the weakest category on both splits (0.933 R@5 on s_cleaned, 0.700 on m_cleaned). The cause is simple. "I prefer squash merges" doesn't share many words with "how should I merge this PR?". BM25 gets nothing, and a small embedding model only partly closes the gap. Palace has a dedicated pass for preference-shaped questions against tagged preference spans, and it still misses 3 in 10 at 10x scale. Only 30 questions are behind this number, so treat it as a direction rather than a precise figure.</p>
+<p>Sources indicate that temporal questions ("what did I decide about caching last Tuesday?") improved once ranking started favouring drawers from the period the question points at. But on s_cleaned the three remaining temporal misses lose on topic, not on date: the gold chunk scores below unrelated chunks from the same days.</p>
+<p>Sources indicate that the runner, palace-bench, lives on the benchmarks/longmemeval-beam-runner branch. Its BENCHMARKS.md has the full runbook.</p>
+<p>According to recent reports, each run writes a per-case JSONL and a summary JSON, so you can check every miss yourself. Run the BM25-only smoke test first (--bm25-only --limit 3). A full hybrid run on s_cleaned takes tens of minutes on one CPU, and m_cleaned is a 2.7 GB download.</p>
+<p>According to recent reports, benchmarks measure whether retrieval works. They don't fix the scenario at the top of this post, because there the problem is that the memory sits on one laptop.</p>
+<p>On one machine, Palace already shares memory between agents: a Codex session can read what a Claude Code session wrote. For a team, the open-source client has a remote mode that points every developer's palace mcp at a shared Palace Server:.</p>
+<p>Palace Server is the paid, closed-source part, and I want to be upfront about that. It's self-hosted: it runs on your infrastructure (Postgres with pgvector, via Docker or a binary), and an offline or air-gapped install is supported, with the embedding model baked into the Docker image. Each developer gets their own API key. OIDC/SSO login, roles and an audit log of memory writes are built in. Your agents' memory never goes to my servers.</p>
+<p>In the 90-second handoff demo, Dev A's agent records three approaches that were ruled out on a ticket, with sources. Dev B, on another machine in a fresh session, asks "what did we already rule out?" and gets all three back, each with its source link.</p>
+<p>Sources indicate that if your team runs into this, try it with one teammate and one ticket. The trial is self-serve: 10 seats for 60 days, no card, no sales call:
+palacememory.com/trial.</p>
+<p>Industry observers note that the engine, the benchmark runner and every number above are in the open-source repo: github.com/AncientiCe/palace-rs. If you rerun the benchmark, please post your results in the comments, including results that disagree with mine.</p>
+<p id="sec-end-161009">I'm iCe, and I build Palace on my own in Munich. Questions about the method are welcome here or in GitHub Discussions.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/icegaming/how-i-measure-coding-agent-memory-retrieval-including-where-it-fails-5dl3" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-why-the-agent-isnt-the-hard-part-where-developers-g-161430.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161430. Industry News: Why the Agent Isn’t the Hard Part: Where Developers Go Wrong With Agentic Workflows
+        </a>
+        
+        <a href="breaking-how-much-memory-does-your-agent-actually-need-161352.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161352. Breaking: How Much Memory Does Your Agent Actually Need?
+        </a>
+        
+        <a href="breaking-from-files-to-cited-answers-in-one-api-call-managed-inge-161305.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161305. Breaking: From Files to Cited Answers in One API Call: Managed Ingestion and SearchDocuments in Agent Retrieval
+        </a>
+        
+        <a href="give-your-coding-agents-a-memory-you-own-161304.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161304. Give Your Coding Agents a Memory You Own
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

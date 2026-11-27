@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149477">If you are building a RAG (Retrieval-Augmented Generation) system, you have likely hit this wall: Everything works… until it doesn’t. General-purpose embedding models are trained to understand the internet; not your contracts, manufacturing logs, proprietary chemical formulations or internal taxonomy. They capture broad semantic similarity, but they do not understand the fine-grained distinctions that matter in your domain. Fine-tuning an embedding model can improve the performance of your retrieval pipeline when off-the-shelf models fail to effectively capture domain-specific nuances. Despite how critical embeddings are to RAG performance, the process remains surprisingly fragmented, the skills required are specialized, and the time investment is daunting.</p>
-<p>With a single GPU and less than a day of training time, you can transform a general-purpose embedding model into one that truly understands your domain, no manual labeling required. To help you hit the ground running, we are also releasing a ready-to-use synthetic training dataset generated from NVIDIA's public documentation using this exact pipeline. Using this data and the recipe, we saw over 10% improvement in both Recall@10 and NDCG@10. Atlassian applied this recipe to fine-tune on their JIRA dataset, increasing Recall@60 from 0.751 to 0.951, a 26% improvement - on a single GPU. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>By the end of this post, you’ll know how to:📄 Generate training data from domain documents without labeled data🎯 Use hard negative mining for effective contrastive training🔗 Improve embedding quality with multi-hop queries⚙️ Fine-tune a bi-encoder embedding model📊 Evaluate whether fine-tuning improves retrieval🚀 Deploy the fine-tuned model in your pipeline. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>With a single GPU and less than a day of training time, you can transform a general-purpose embedding model into one that truly understands your domain, no manual labeling required. To help you hit the ground running, we are also releasing a ready-to-use synthetic training dataset generated from NVIDIA's public documentation using this exact pipeline. Using this data and the recipe, we saw over 10% improvement in both Recall@10 and NDCG@10. Atlassian applied this recipe to fine-tune on their JIRA dataset, increasing Recall@60 from 0.751 to 0.951, a 26% improvement - on a single GPU. <span style="font-size:13px;">(Related: <a href="peta-demands-nvidia-boss-jensen-huang-replace-iconic-leather-jack-161769.html" style="color:#2563eb; font-weight:600;">PETA demands Nvidia boss Jensen Huang replace iconic le...</a>)</span></p>
+<p>By the end of this post, you’ll know how to:📄 Generate training data from domain documents without labeled data🎯 Use hard negative mining for effective contrastive training🔗 Improve embedding quality with multi-hop queries⚙️ Fine-tune a bi-encoder embedding model📊 Evaluate whether fine-tuning improves retrieval🚀 Deploy the fine-tuned model in your pipeline. <span style="font-size:13px;">(Related: <a href="tech-report-ai-swarms-could-hijack-democracy-without-anyone-notic-161756.html" style="color:#2563eb; font-weight:600;">Tech Report: AI swarms could hijack democracy without a...</a>)</span></p>
 <p>In this tutorial, we will finetune the base model Llama-Nemotron-Embed-1B-v2 - a 1-billion-parameter embedding model that balances quality and inference cost. To get started, follow this setup guide.</p>
 <p>Industry observers note that fine-tuning an embedding model requires thousands of (query, relevant document) pairs. Most use cases don’t have this data readily available. Creating it manually is expensive, slow, and often biased by the annotator’s personal interpretation of what’s “relevant.”Instead of labeling data by hand, you can use an LLM (nvidia/nemotron-3-nano-30b-a3b) to read your documents and automatically generate high-quality synthetic question–answer pairs.</p>
 <p>Behind the scenes, this runs a four-stage synthetic data generation (SDG) pipeline powered by NeMo Data Designer:.</p>
@@ -218,20 +218,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="presentation-finetuning-your-embedding-model-for-better-search-le-161258.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161258. Presentation: Finetuning Your Embedding Model for Better Search: Learning from Agentic Search at Dell
+        </a>
+        
+        <a href="breaking-palette-teaching-a-small-model-to-build-decks-in-your-de-161103.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161103. Breaking: Palette: teaching a small model to build decks in your design language
+        </a>
+        
+        <a href="28-zero-day-findings-in-under-two-days-is-robotics-security-keepi-154312.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #154312. 28 Zero-Day Findings in Under Two Days. Is Robotics Security Keeping Pace?
+        </a>
+        
         <a href="train-a-sentence-embedding-model-with-1b-training-pairs-150274.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150274. Train a Sentence Embedding Model with 1B Training Pairs
-        </a>
-        
-        <a href="xlscout-unveils-paraembed-20-a-powerful-embedding-model-tailored--149903.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149903. XLSCOUT Unveils ParaEmbed 2.0: a Powerful Embedding Model Tailored for Patents and IP with Expert Support from Hugging Face
-        </a>
-        
-        <a href="welcome-embeddinggemma-googles-upcoming-efficient-embedding-model-149631.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149631. Welcome EmbeddingGemma, Google's upcoming efficient embedding model
-        </a>
-        
-        <a href="my-4-gb-laptop-cant-run-a-27b-model-nosana-ran-it-for-under-a-cen-149337.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149337. My 4 GB Laptop Can't Run a 27B Model. Nosana Ran It for Under a Cent per Task
         </a>
         
     </div>

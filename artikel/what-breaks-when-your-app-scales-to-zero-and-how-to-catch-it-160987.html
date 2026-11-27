@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What breaks when your app scales to zero, and how to catch it</title>
+    <meta name="description" content="Originally published on gregale.dev. I build Gregale, so read this as a vendor's page. Competitor details come from each vendor's own docs, linked in the p">
+    <meta name="keywords" content="gregale, instance, data, snapshot, memory, recent, requests, keeps">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/what-breaks-when-your-app-scales-to-zero-and-how-to-catch-it-160987.html">
+    
+    <meta property="og:title" content="What breaks when your app scales to zero, and how to catch it">
+    <meta property="og:description" content="Originally published on gregale.dev. I build Gregale, so read this as a vendor's page. Competitor details come from each vendor's own docs, linked in the p">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb9fbuz60p07z7f7oq15y.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/what-breaks-when-your-app-scales-to-zero-and-how-to-catch-it-160987.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What breaks when your app scales to zero, and how to catch it">
+    <meta name="twitter:description" content="Originally published on gregale.dev. I build Gregale, so read this as a vendor's page. Competitor details come from each vendor's own docs, linked in the p">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb9fbuz60p07z7f7oq15y.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "What breaks when your app scales to zero, and how to catch it", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb9fbuz60p07z7f7oq15y.png"], "datePublished": "2026-11-27T21:00:00", "dateModified": "2026-11-27T21:09:58.722727", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/what-breaks-when-your-app-scales-to-zero-and-how-to-catch-it-160987.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding What breaks when your app scales to zero, and how to catch it?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'What breaks when your app scales to zero, and how to catch i' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>What breaks when your app scales to zero, and how to catch it</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 27 Nov 2026 &bull; ⏱️ 6 min read (1176 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Originally published on gregale.dev.</li><li style='margin-bottom:6px;'>In a recent development, when an app scales to zero, whatever it kept only on its own machine is lost, such as files written to local disk or /tmp and sessions held in memory, and timers or background loops meant to run between requests stop.</li><li style='margin-bottom:6px;'>By default the snapshot is taken from the deployment, right after the app becomes ready, not from the instance that parked.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-160987"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-160987"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-160987"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="What breaks when your app scales to zero, and how to catch it" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb9fbuz60p07z7f7oq15y.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-160987">Originally published on gregale.dev. I build Gregale, so read this as a vendor's page. Competitor details come from each vendor's own docs, linked in the post. This post was written with AI assistance.</p>
+<p>In a recent development, when an app scales to zero, whatever it kept only on its own machine is lost, such as files written to local disk or /tmp and sessions held in memory, and timers or background loops meant to run between requests stop. Anything in a database, in object storage or in the platform's crons and queues keeps working, because it lives outside the instance. On Gregale, every wake starts from the same snapshot and parking discards the instance's local state, so Gregale looks for the usual mistakes: it refuses stateful base images and VOLUME directives when it accepts a deploy, and records an audit row the first time an app writes to a database-shaped directory such as /data or /var/lib/postgresql. These stateless contract checks are generally available on every blueprint. <span style="font-size:13px;">(Related: <a href="electronics-manufacturers-set-up-memory-war-rooms-to-find-lock-in-161752.html" style="color:#2563eb; font-weight:600;">Electronics manufacturers set up memory 'war rooms' to ...</a>)</span></p>
+<p>By default the snapshot is taken from the deployment, right after the app becomes ready, not from the instance that parked. So every wake starts from the same state, whatever the last instance did, and two instances restored at once start from the same memory. Two settings change what is in that memory; see What goes into the snapshot. <span style="font-size:13px;">(Related: <a href="this-newly-introduced-chip-survives-1300f-700c-and-could-change-a-161773.html" style="color:#2563eb; font-weight:600;">This newly introduced chip survives 1300°F (700°C) and ...</a>)</span></p>
+<p>Only the first and last rows are things Gregale checks for you. The others are design choices; the table is the list to review before you deploy.</p>
+<p>According to recent reports, at deploy. Gregale rejects a stateful base image when it accepts the deployment, with stateless_only_violation and HTTP 422: postgres:16, mysql:8, redis:7, mongo:7, mariadb, cockroach, cassandra, clickhouse and the rest. A source tarball with a VOLUME directive, or with top-level data/ or db/ directories, is rejected for the same reason.</p>
+<p>It has been revealed that at runtime. Gregale watches the state-shaped directories in every instance: data/ and db/ under the app's working directory, plus /data, /db and /var/lib/postgresql, /var/lib/mysql, /var/lib/redis and the data directories of other databases. The first write to each file there records one stateless.advisory audit row. The check is advisory: the app keeps running, and the row is your signal that the data will not survive the next park.</p>
+<p>It has been revealed that the first command lists recent rows; the second streams them live while you exercise the app. Each file is reported once per instance, and an instance reports at most 256 files.</p>
+<p>Priming. Just before the snapshot is taken, Gregale sends up to 20 GET requests to the app's health check path, or to / when it declares none, so the snapshot holds a runtime that has already loaded and connected. Those requests run your code. If that path writes data, sends mail or calls a paid API, it does so up to 20 times per deploy. Declare a harmless warm-up path instead:.</p>
+<p>Warm snapshots. Pro and Scale apps can opt in to a second snapshot, taken when an instance parks after it has served a few requests. It is reused by every later wake and every instance until the next deploy, and it carries whatever those first requests left in memory: sessions, caches, rate-limit counters, per-user data and files under /tmp. An app that keeps per-user state in memory must not use it. Apps created before 2026-11-10 on Pro or Scale were opted in by default; turn it off with:.</p>
+<p>A connection opened at startup is captured in the snapshot, so a restored instance must reopen it. Declare an after_restore hook in gregale.yaml:.</p>
+<p>After a restore, and after it has repaired the guest's clock and entropy, Gregale sends one POST to that path on the app's loopback listener. A 2xx answer lets the instance serve; a timeout or any other status discards it and Gregale cold-boots a fresh one instead. The timeout is 500 ms by default and at most 2 seconds. Check for a loopback peer and the X-Faas-After-Restore: 1 header in the handler: Gregale strips inbound x-faas-* headers at its public proxy, so a public caller cannot fake that marker. To close the connection before the snapshot is taken instead, add a before_checkpoint hook the same way. Redeploy after changing either: existing snapshots keep the configuration of the deployment that made them.</p>
+<p>A Node or Python function declares the same thing as hooks in its handler file: init, beforeSnapshot and afterRestore (before_snapshot and after_restore in Python).</p>
+<p>The writable layer on each instance is real disk, bounded by your plan's ephemeral disk ceiling, and writes to it are rate limited per plan:.</p>
+<p id="sec-mid-160987">It has been revealed that each applies after a one-time burst of 256 MiB and 20,000 operations. Use the disk for work that ends with the request, such as unpacking an archive or rendering a file before you upload it.</p>
+<p>Recent findings suggest that none of them keeps local files once the instance, execution environment or dyno is gone, and neither does Gregale. What Gregale adds is catching the mistake: at deploy for the clear cases, and with an audit row the first time a running app writes where it looks like it expects data to last.</p>
+<p>Sources, checked 2026-11-27: Cloud Run container runtime contract, Lambda ephemeral storage, Heroku dynos.</p>
+<p>According to recent reports, stateless contract checks are generally available on every proposal, Free included, and paused seconds are not billed on any plan. See Gregale pricing, Storage and How scaling to zero works.</p>
+<p>What is lost when an app scales to zero?</p>
+<p>Anything kept only on the instance: files written to local disk or /tmp, sessions and caches held in memory, and timers meant to run between requests. Data in a database, object storage or the platform’s crons and queues is kept.</p>
+<p>How does Gregale warn me that my app writes data it will lose?</p>
+<p>It rejects stateful base images such as postgres:16 and VOLUME directives at deploy with stateless_only_violation, and records a stateless.advisory audit row the first time an app writes to a database-shaped directory such as /data or /var/lib/postgresql.</p>
+<p>How do I reconnect to my database after a snapshot restore?</p>
+<p>Declare an after_restore hook in gregale.yaml. Gregale sends one POST to that path on the app’s loopback listener after repairing the clock and entropy; a 2xx answer lets the instance serve, anything else falls back to a cold boot.</p>
+<p>Can a snapshot carry one user’s data into other instances?</p>
+<p>In a recent development, only if you opt in to warm snapshots on Pro or Scale, or your app was created there before 2026-11-10. A warm snapshot is taken after an instance has served a few requests and keeps what they left in memory, so apps with per-user state in memory should turn it off with --no-warm-snapshot.</p>
+<p id="sec-end-160987">Recent findings suggest that not while it is paused. About a second after the last request, with nothing in flight, Gregale pauses the VM in memory, and paused seconds are not billed. An app that keeps itself busy with timers keeps running and is billed while it works.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/hpoyrazk/what-breaks-when-your-app-scales-to-zero-and-how-to-catch-it-2jdj" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="this-fitbit-air-app-buzzes-your-wrist-with-phone-notifications-fi-161735.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161735. This Fitbit Air app buzzes your wrist with phone notifications, finds a lost tracker, more
+        </a>
+        
+        <a href="brain-inspired-chip-runs-near-absolute-zero-and-could-transform-q-161724.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161724. Brain-inspired chip runs near absolute zero and could transform quantum computing
+        </a>
+        
+        <a href="ai-mode-adding-google-drive-wallet-gemini-app-integration-161705.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161705. AI Mode adding Google Drive, Wallet, & Gemini app integration
+        </a>
+        
+        <a href="claude-rolling-out-updated-android-app-with-material-3-expressive-161672.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161672. Claude rolling out updated Android app with Material 3 Expressive redesign
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

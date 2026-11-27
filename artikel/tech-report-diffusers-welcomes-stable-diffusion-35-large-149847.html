@@ -150,15 +150,15 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149847">In a recent development, stable Diffusion 3.5 is the improved variant of its predecessor, Stable Diffusion 3. As of today, the models are available on the Hugging Face Hub and can be used with 🧨 Diffusers.</p>
-<p>The release comes with two checkpoints:. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-150302.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
-<p>In this post, we will focus on how to use Stable Diffusion 3.5 (SD3.5) with Diffusers, covering both inference and training. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-150301.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
+<p>The release comes with two checkpoints:.</p>
+<p>In this post, we will focus on how to use Stable Diffusion 3.5 (SD3.5) with Diffusers, covering both inference and training.</p>
 <p>The transformer architecture of SD3.5 (large) is very similar to SD3 (medium), with the following changes:.</p>
 <p>It has been revealed that the rest of the details in terms of the text encoders, VAE, and noise scheduler stay exactly the same as in SD3 Medium. For more on SD3, we recommend checking out the original paper.</p>
 <p>Make sure you install the latest version of diffusers:.</p>
 <p>The following snippet will download the 8B parameter version of SD3.5 in torch.bfloat16 precision. This is the format used in the original checkpoint published by Stability AI, and is the recommended way to run inference.</p>
 <p>The release also comes with a “timestep-distilled” model that eliminates classifier-free guidance and lets us generate images in fewer steps (typically in 4-8 steps).</p>
-<p>It has been revealed that all the examples shown in our SD3 blog post and the official Diffusers documentation should already work with SD3.5. In particular, both of those resources dive deep into optimizing the memory requirements to run inference. Since SD3.5 Large is significantly larger than SD3 Medium, memory optimization becomes crucial to allow inference on consumer interfaces.</p>
-<p>Diffusers natively supports working with bitsandbytes quantization, which optimizes memory even more.</p>
+<p>It has been revealed that all the examples shown in our SD3 blog post and the official Diffusers documentation should already work with SD3.5. In particular, both of those resources dive deep into optimizing the memory requirements to run inference. Since SD3.5 Large is significantly larger than SD3 Medium, memory optimization becomes crucial to allow inference on consumer interfaces. <span style="font-size:13px;">(Related: <a href="electronics-manufacturers-set-up-memory-war-rooms-to-find-lock-in-161752.html" style="color:#2563eb; font-weight:600;">Electronics manufacturers set up memory 'war rooms' to ...</a>)</span></p>
+<p>Diffusers natively supports working with bitsandbytes quantization, which optimizes memory even more. <span style="font-size:13px;">(Related: <a href="industry-news-which-samsung-folding-phone-is-right-for-you-galaxy-161749.html" style="color:#2563eb; font-weight:600;">Industry News: Which Samsung folding phone is right for...</a>)</span></p>
 <p id="sec-mid-149847">First, make sure to install all the libraries necessary:.</p>
 <p>Then load the transformer in “NF4” precision:.</p>
 <p>And now, we’re ready to run inference:.</p>
@@ -192,8 +192,8 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="diffusers-welcomes-stable-diffusion-3-138664.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138664. Diffusers welcomes Stable Diffusion 3
+        <a href="latest-update-diffusers-welcomes-stable-diffusion-3-161562.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161562. Latest Update: Diffusers welcomes Stable Diffusion 3
         </a>
         
         <a href="industry-news-stable-diffusion-with-diffusers-150192.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">

@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-27T08:42:13.922596",
-  "totalArticles": 12459,
+  "generatedAt": "2026-11-27T21:56:05.394285",
+  "totalArticles": 12475,
   "categoryBreakdown": {
     "General": 10243,
-    "AI & Tech": 959,
-    "Hardware & Chips": 192,
-    "Business & Policy": 510,
-    "Gadgets": 352,
-    "EV & Auto": 203
+    "AI & Tech": 960,
+    "Hardware & Chips": 196,
+    "EV & Auto": 198,
+    "Gadgets": 364,
+    "Business & Policy": 514
   },
   "topSources": {
-    "Hugging Face": 917,
-    "Co": 859,
-    "Sciencedaily": 213,
+    "Hugging Face": 918,
+    "Co": 894,
+    "Sciencedaily": 214,
     "Eschoolnews": 200,
-    "Cbssports": 169,
-    "Yahoo": 150,
-    "Electrek": 149,
+    "Cbssports": 173,
+    "Electrek": 148,
+    "Yahoo": 144,
     "Dw": 144,
     "Dailymail": 135,
-    "Realworkfromanywhere": 124
+    "Realworkfromanywhere": 123
   },
   "latestHeadlines": [
     {
-      "id": 150309,
-      "title": "How to train a latest language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html",
+      "id": 161784,
+      "title": "Umamusume fans call out “shameless” knockoff packed with ads",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/umamusume-fans-call-out-shameless-knockoff-packed-with-ads-161784.html",
       "category": "General"
     },
     {
-      "id": 150308,
-      "title": "How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-150308.html",
+      "id": 161783,
+      "title": "Steam is pitting 10 years of Game of the Year winners against each other",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-161783.html",
       "category": "General"
     },
     {
-      "id": 150307,
-      "title": "Tech Report: The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-the-reformer-pushing-the-limits-of-language-modeling-150307.html",
+      "id": 161782,
+      "title": "Scientists find “field” of washing machines in ocean during shipwreck hunt",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/scientists-find-field-of-washing-machines-in-ocean-during-shipwre-161782.html",
       "category": "General"
     },
     {
-      "id": 150306,
-      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-150306.html",
+      "id": 161781,
+      "title": "CD Projekt Red says The Witcher 4 will be as big a leap as GTA 6 was from GTA 5",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/cd-projekt-red-says-the-witcher-4-will-be-as-big-a-leap-as-gta-6--161781.html",
       "category": "General"
     },
     {
-      "id": 150305,
-      "title": "Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/transformer-based-encoder-decoder-models-150305.html",
+      "id": 161780,
+      "title": "F1 star Max Verstappen played 40 hours of GTA 6 before winning Las Vegas grand prix",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/f1-star-max-verstappen-played-40-hours-of-gta-6-before-winning-la-161780.html",
       "category": "General"
     },
     {
-      "id": 150304,
-      "title": "Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/hyperparameter-search-with-transformers-and-ray-tune-150304.html",
+      "id": 161779,
+      "title": "GTA 6 players who used PS5 New Zealand trick are missing out on a stat buff",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/gta-6-players-who-used-ps5-new-zealand-trick-are-missing-out-on-a-161779.html",
       "category": "General"
     },
     {
-      "id": 150303,
-      "title": "Porting fairseq wmt19 translation system to transformers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/porting-fairseq-wmt19-translation-system-to-transformers-150303.html",
+      "id": 161778,
+      "title": "Amazon responds after delivery drone smashes into garage “like a sick bird”",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/amazon-responds-after-delivery-drone-smashes-into-garage-like-a-s-161778.html",
       "category": "General"
     },
     {
-      "id": 150302,
-      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-150302.html",
+      "id": 161777,
+      "title": "Among Us player & his mom reveal how they helped save kidnapped girl he met in-game",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/among-us-player-his-mom-reveal-how-they-helped-save-kidnapped-gir-161777.html",
       "category": "General"
     },
     {
-      "id": 150301,
-      "title": "How we sped up transformer inference 100x for 🤗 API customers",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-150301.html",
+      "id": 161776,
+      "title": "Tech Report: Over $60k raised for famous station cat after he suddenly falls ill",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/tech-report-over-60k-raised-for-famous-station-cat-after-he-sudde-161776.html",
       "category": "General"
     },
     {
-      "id": 150300,
-      "title": "Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
-      "url": "https://railfansday.github.io/artikelsemua74/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-150300.html",
+      "id": 161775,
+      "title": "Breaking: GTA 6 devs reveal major gameplay features that didn’t make the final cut",
+      "url": "https://railfansday.github.io/artikelsemua74/artikel/breaking-gta-6-devs-reveal-major-gameplay-features-that-didnt-mak-161775.html",
       "category": "General"
     }
   ]

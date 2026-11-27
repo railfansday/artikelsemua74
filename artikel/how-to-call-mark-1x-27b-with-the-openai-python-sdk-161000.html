@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to call Mark 1x-27B with the OpenAI Python SDK</title>
+    <meta name="description" content="Recent findings suggest that I'm Saathwik, founder of Saanora, and I'm building Mark. This post is a short setup guide for Mark 1x-27B, our latest model, u">
+    <meta name="keywords" content="model, mark, openai, recent, saanora, request, medium, tokens">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua74/artikel/how-to-call-mark-1x-27b-with-the-openai-python-sdk-161000.html">
+    
+    <meta property="og:title" content="How to call Mark 1x-27B with the OpenAI Python SDK">
+    <meta property="og:description" content="Recent findings suggest that I'm Saathwik, founder of Saanora, and I'm building Mark. This post is a short setup guide for Mark 1x-27B, our latest model, u">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fz2pkdh76pzhhpek33ndt.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua74/artikel/how-to-call-mark-1x-27b-with-the-openai-python-sdk-161000.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to call Mark 1x-27B with the OpenAI Python SDK">
+    <meta name="twitter:description" content="Recent findings suggest that I'm Saathwik, founder of Saanora, and I'm building Mark. This post is a short setup guide for Mark 1x-27B, our latest model, u">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fz2pkdh76pzhhpek33ndt.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "How to call Mark 1x-27B with the OpenAI Python SDK", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fz2pkdh76pzhhpek33ndt.png"], "datePublished": "2026-11-27T20:57:27", "dateModified": "2026-11-27T21:09:59.388638", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua74/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua74/artikel/how-to-call-mark-1x-27b-with-the-openai-python-sdk-161000.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding How to call Mark 1x-27B with the OpenAI Python SDK?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'How to call Mark 1x-27B with the OpenAI Python SDK' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>How to call Mark 1x-27B with the OpenAI Python SDK</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 27 Nov 2026 &bull; ⏱️ 2 min read (340 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that I'm Saathwik, founder of Saanora, and I'm building Mark.</li><li style='margin-bottom:6px;'>Industry observers note that you can try the model in the browser with no signup at saanora.com.</li><li style='margin-bottom:6px;'>In a recent development, the API is OpenAI-compatible.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-161000"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-161000"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-161000"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="How to call Mark 1x-27B with the OpenAI Python SDK" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fz2pkdh76pzhhpek33ndt.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-161000">Recent findings suggest that I'm Saathwik, founder of Saanora, and I'm building Mark. This post is a short setup guide for Mark 1x-27B, our latest model, using the OpenAI Python SDK you probably already have.</p>
+<p>Industry observers note that you can try the model in the browser with no signup at saanora.com. The rest of this article is about calling it from code. <span style="font-size:13px;">(Related: <a href="industry-news-which-samsung-folding-phone-is-right-for-you-galaxy-161749.html" style="color:#2563eb; font-weight:600;">Industry News: Which Samsung folding phone is right for...</a>)</span></p>
+<p>In a recent development, the API is OpenAI-compatible. Point the client at https://api.saanora.com/v1 and set the model to mark-1x-27b. Chat completions, streaming, tool calling, and image input all use the usual request shape. Context is 262K. You can set reasoning_effort to low, medium, or high. Medium is the default, and it is also how we ran the scores below.</p>
+<p>Price is $0.10 per 1M input tokens and $0.60 per 1M output tokens, with free credit to start. Create a key in the API console and put it in SAANORA_API_KEY.</p>
+<p>Scores at medium effort: GPQA 84.7, level with the best open models its size; AIME25 86.7; HMMT Feb26 73.5. The longer write-up is on our blog.</p>
+<p id="sec-mid-161000">The answer is in choices[0].message.content.</p>
+<p>It has been revealed that the model's thinking comes back in a separate reasoning field, not mixed into the answer. Higher effort costs more time and more output tokens, so I use high for proofs, tricky bugs, and long intends, and leave the default alone for everyday questions. <span style="font-size:13px;">(Related: <a href="scientists-find-field-of-washing-machines-in-ocean-during-shipwre-161782.html" style="color:#2563eb; font-weight:600;">Scientists find “field” of washing machines in ocean du...</a>)</span></p>
+<p>max_tokens includes the reasoning and defaults to 32,768. If a hard problem may think for a long time, raise that budget and stream the response.</p>
+<p>The model scales down when no one is using it. After a quiet period, the first request can return 503 while it starts, which can take a few minutes. That request is not charged. The OpenAI SDK's built-in retry is usually not enough, so I retry until it answers:.</p>
+<p id="sec-end-161000">According to recent reports, if you try this in an editor extension, a coding agent, or a plain script, tell me what worked and what broke. I'm around in the comments.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/saathwik/how-to-call-mark-1x-27b-with-the-openai-python-sdk-2elo" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="umamusume-fans-call-out-shameless-knockoff-packed-with-ads-161784.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161784. Umamusume fans call out “shameless” knockoff packed with ads
+        </a>
+        
+        <a href="build-live-video-chat-with-webrtc-from-first-call-to-production-d-161673.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161673. Build Live Video Chat With WebRTC: From First Call to Production Debugging
+        </a>
+        
+        <a href="latest-update-new-openai-and-anthropic-models-sound-alarms-on-saf-161633.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161633. Latest Update: New OpenAI and Anthropic models sound alarms on safety and control, report
+        </a>
+        
+        <a href="aws-weekly-roundup-amazon-bedrock-managed-agents-powered-by-opena-161361.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161361. AWS Weekly Roundup: Amazon Bedrock Managed Agents powered by OpenAI, Q3 service availability updates, Kiro workflows, and more (October 5, 2026)
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

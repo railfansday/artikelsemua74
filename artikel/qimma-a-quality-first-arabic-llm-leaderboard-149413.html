@@ -151,9 +151,9 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149413">QIMMA validates benchmarks before evaluating models, ensuring reported scores reflect genuine Arabic language capability in LLMs.</p>
 <p>🏆 Leaderboard  · 🔧 GitHub · 📄 Paper.</p>
-<p>If you've been tracking Arabic LLM evaluation, you've probably noticed a growing tension: the number of benchmarks and leaderboards is expanding rapidly, but are we actually measuring what we think we're measuring?</p>
-<p>We built QIMMA قمّة (Arabic for "summit"), to answer that question systematically. Instead of aggregating existing Arabic benchmarks as-is and running models on them, we applied a rigorous quality validation pipeline before any evaluation took place. What we found was sobering: even widely-used, well-regarded Arabic benchmarks contain systematic quality challenges that can quietly corrupt evaluation results. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-150306.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
-<p>This post walks through what QIMMA is, how we built it, what problems we found, and what the model rankings look like once you clean things up. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>If you've been tracking Arabic LLM evaluation, you've probably noticed a growing tension: the number of benchmarks and leaderboards is expanding rapidly, but are we actually measuring what we think we're measuring? <span style="font-size:13px;">(Related: <a href="103-year-old-grandmother-competing-in-tekken-8-tournament-but-doe-161765.html" style="color:#2563eb; font-weight:600;">103-year-old grandmother competing in Tekken 8 tourname...</a>)</span></p>
+<p>We built QIMMA قمّة (Arabic for "summit"), to answer that question systematically. Instead of aggregating existing Arabic benchmarks as-is and running models on them, we applied a rigorous quality validation pipeline before any evaluation took place. What we found was sobering: even widely-used, well-regarded Arabic benchmarks contain systematic quality challenges that can quietly corrupt evaluation results. <span style="font-size:13px;">(Related: <a href="f1-star-max-verstappen-played-40-hours-of-gta-6-before-winning-la-161780.html" style="color:#2563eb; font-weight:600;">F1 star Max Verstappen played 40 hours of GTA 6 before ...</a>)</span></p>
+<p>This post walks through what QIMMA is, how we built it, what problems we found, and what the model rankings look like once you clean things up.</p>
 <p>Sources indicate that arabic is spoken by over 400 million people across diverse dialects and cultural contexts, yet the Arabic NLP evaluation landscape remains fragmented. A few key pain points have motivated this work:.</p>
 <p>Translation challenges. Many Arabic benchmarks are translations from English. This introduces distributional shifts. Questions that feel natural in English become awkward or culturally misaligned in Arabic, making benchmark data less representative of how Arabic is naturally used.</p>
 <p>It has been revealed that absent quality validation. Even native Arabic benchmarks are often released without rigorous quality checks. Annotation inconsistencies, incorrect gold answers, encoding errors, and cultural bias in ground-truth labels have all been documented in established resources.</p>
@@ -208,20 +208,20 @@ correlation emerges. However, there are interesting exceptions:.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-introducing-the-open-arabic-llm-leaderboard-161566.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161566. Latest Update: Introducing the Open Arabic LLM Leaderboard
+        </a>
+        
         <a href="the-open-arabic-llm-leaderboard-2-149779.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149779. The Open Arabic LLM Leaderboard 2
         </a>
         
-        <a href="introducing-the-open-arabic-llm-leaderboard-138666.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138666. Introducing the Open Arabic LLM Leaderboard
+        <a href="the-open-asr-leaderboard-adds-its-first-global-south-language-161322.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161322. The Open ASR Leaderboard Adds Its First Global South Language
         </a>
         
         <a href="whats-going-on-with-the-open-llm-leaderboard-150070.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150070. What's going on with the Open LLM Leaderboard?
-        </a>
-        
-        <a href="open-llm-leaderboard-drop-deep-dive-150007.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150007. Open LLM Leaderboard: DROP deep dive
         </a>
         
     </div>

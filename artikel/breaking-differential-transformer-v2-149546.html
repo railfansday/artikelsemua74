@@ -154,10 +154,10 @@ In the script, h represents number of query heads, h_kv  represents number of ke
 <p>Notion Link (for better readability).</p>
 <p>We compare DIFF V2 with DIFF V1 below:.</p>
 <p>(For simplicity, we omit the batch dimension and assume that both the input and output of the following flash_attn_func are three-dimensional tensors (tokens, heads, head dimension). Heads belonging to the same GQA group are arranged contiguously in the output).</p>
-<p>According to recent reports, note DIFF V2 subtracts two heads that are in the same GQA group, which means they share the same key and value. This is crucial to performance. See design ablations section and Github code.</p>
+<p>According to recent reports, note DIFF V2 subtracts two heads that are in the same GQA group, which means they share the same key and value. This is crucial to performance. See design ablations section and Github code. <span style="font-size:13px;">(Related: <a href="latest-update-ai-lets-chemists-design-molecules-by-simply-describ-161751.html" style="color:#2563eb; font-weight:600;">Latest Update: AI lets chemists design molecules by sim...</a>)</span></p>
 <p>Industry observers note that full code at: unilm/Diff-Transformer/Diff-Transformer-V2 at master · microsoft/unilm
-In the script, h represents number of query heads, h_kv  represents number of key-value heads, and d means head dimension. The λ\lambdaλ in DIFF V2 is projected from XXX for each token each head. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-150305.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
-<p>DIFF V2 doubles number of query heads while maintaining number of key value heads, and the extra dimension is reduced back to h*d after the differential operation so the WOW_OWO​ projection remains the same as baseline Transformer. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-150301.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
+In the script, h represents number of query heads, h_kv  represents number of key-value heads, and d means head dimension. The λ\lambdaλ in DIFF V2 is projected from XXX for each token each head. <span style="font-size:13px;">(Related: <a href="industry-news-which-samsung-folding-phone-is-right-for-you-galaxy-161749.html" style="color:#2563eb; font-weight:600;">Industry News: Which Samsung folding phone is right for...</a>)</span></p>
+<p>DIFF V2 doubles number of query heads while maintaining number of key value heads, and the extra dimension is reduced back to h*d after the differential operation so the WOW_OWO​ projection remains the same as baseline Transformer.</p>
 <p>DIFF V2 introduces additional query heads compared to the baseline Transformer, but does not increase the number of key-value (KV) heads. Since LLM decoding is typically memory-bound, this design allows DIFF V2 to achieve decoding speeds on par with standard Transformer. Besides, since head dimension is aligned between query, key and value, there is no need for custom attention kernels for DIFF V2. In contrast, DIFF V1 can be slower during decoding because the value cache must be loaded twice, and a custom attention kernel is needed. DIFF V2 can also increase the arithmetic intensity of the attention module during decoding.</p>
 <p>During pretraining, when using cutting-edge FlashAttention kernels on H-series and B-series GPUs, the throughput reduction introduced by DIFF V2 is negligible. For long-sequence prefilling, we recommend combining DIFF V2 with techniques such as YOCO (also used in Gemma 3n), which already reduces prefilling complexity to linear time with respect to sequence length.</p>
 <p>Recent findings suggest that an alternative perspective is to compare DIFF V2 with a Transformer that has the same query dimension 2h*d. Under this comparison, both models exhibit same attention kernel speed, while DIFF V2 has less parameters and flops in output projection.</p>
@@ -256,6 +256,10 @@ ci​=sigmoid(gi​)⊙j=1∑n​Softmax(zij​)vj​RMS(ci​)∈(0,1).</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="discoformer-one-transformer-for-density-and-score-across-distribu-161456.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161456. DiScoFormer: One transformer for density and score, across distributions
+        </a>
+        
         <a href="transformer-based-encoder-decoder-models-150305.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150305. Transformer-based Encoder-Decoder Models
         </a>
@@ -266,10 +270,6 @@ ci​=sigmoid(gi​)⊙j=1∑n​Softmax(zij​)vj​RMS(ci​)∈(0,1).</p>
         
         <a href="habana-labs-and-hugging-face-partner-to-accelerate-transformer-mo-150245.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150245. Habana Labs and Hugging Face Partner to Accelerate Transformer Model Training
-        </a>
-        
-        <a href="tech-report-train-your-first-decision-transformer-150188.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150188. Tech Report: Train your first Decision Transformer
         </a>
         
     </div>

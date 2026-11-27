@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149499">Sources indicate that training large language models on long sequences has become essential for building capable AI systems. As models are increasingly used for tasks like document analysis, code understanding, complex reasoning, and RAG workloads, the need to process sequences of hundreds of thousands—or even millions—of tokens has grown dramatically. To put this in perspective, an average book is roughly 250k tokens, so training on multi-document contexts or book-length inputs requires handling sequences well beyond what fits on a single GPU. However, training with such long contexts presents significant memory challenges: the attention computation scales quadratically with sequence length, quickly exceeding GPU memory for contexts beyond tens of thousands of tokens.</p>
-<p>According to recent reports, ulysses Sequence Parallelism (part of the Arctic Long Sequence Training (ALST) protocol from Snowflake AI Research) provides an elegant solution by distributing the attention computation across multiple GPUs through attention head parallelism. In this post, we'll explore how Ulysses works and how it's been integrated across the Hugging Face ecosystem—from Accelerate to the Transformers Trainer and TRL's SFTTrainer. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-150309.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>The attention mechanism in transformers scales quadratically with sequence length. For a sequence of length  n n n, standard attention requires  O(n2) O(n^2) O(n2) FLOPs and  O(n2) O(n^2) O(n2) memory to compute and store the attention score matrix. Optimized implementations like FlashAttention reduce the memory to  O(n) O(n) O(n) by tiling the computation and never materializing the full attention matrix—but the  O(n2) O(n^2) O(n2) compute remains. For very long sequences (32k+ tokens), even with FlashAttention, training still pushes the limits of single-GPU memory. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150308.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>According to recent reports, ulysses Sequence Parallelism (part of the Arctic Long Sequence Training (ALST) protocol from Snowflake AI Research) provides an elegant solution by distributing the attention computation across multiple GPUs through attention head parallelism. In this post, we'll explore how Ulysses works and how it's been integrated across the Hugging Face ecosystem—from Accelerate to the Transformers Trainer and TRL's SFTTrainer.</p>
+<p>The attention mechanism in transformers scales quadratically with sequence length. For a sequence of length  n n n, standard attention requires  O(n2) O(n^2) O(n2) FLOPs and  O(n2) O(n^2) O(n2) memory to compute and store the attention score matrix. Optimized implementations like FlashAttention reduce the memory to  O(n) O(n) O(n) by tiling the computation and never materializing the full attention matrix—but the  O(n2) O(n^2) O(n2) compute remains. For very long sequences (32k+ tokens), even with FlashAttention, training still pushes the limits of single-GPU memory. <span style="font-size:13px;">(Related: <a href="electronics-manufacturers-set-up-memory-war-rooms-to-find-lock-in-161752.html" style="color:#2563eb; font-weight:600;">Electronics manufacturers set up memory 'war rooms' to ...</a>)</span></p>
 <p>Consider these scenarios where long-context training is essential:.</p>
-<p>Industry observers note that traditional data parallelism doesn't help here—each GPU still needs to process the full sequence inside the attention block. We need a way to split the sequence itself across multiple devices.</p>
+<p>Industry observers note that traditional data parallelism doesn't help here—each GPU still needs to process the full sequence inside the attention block. We need a way to split the sequence itself across multiple devices. <span style="font-size:13px;">(Related: <a href="103-year-old-grandmother-competing-in-tekken-8-tournament-but-doe-161765.html" style="color:#2563eb; font-weight:600;">103-year-old grandmother competing in Tekken 8 tourname...</a>)</span></p>
 <p>Ulysses Sequence Parallelism (SP), introduced in the DeepSpeed Ulysses paper, takes a clever approach: in addition to splitting on the sequence dimension, it also partitions the attention heads across GPUs.</p>
 <p>Sequence Sharding: The input sequence is split along the sequence dimension across  P P P GPUs. Each GPU  i i i holds tokens  [i⋅n/P,(i+1)⋅n/P) [i \cdot n/P, (i+1) \cdot n/P) [i⋅n/P,(i+1)⋅n/P).</p>
 <p>QKV Projection: Each GPU computes the query, key, and value projections for its local sequence chunk.</p>
@@ -225,20 +225,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="announcing-long-context-training-on-tpus-with-maxtext-context-par-161623.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161623. Announcing Long-Context Training on TPUs with MaxText Context Parallelism
+        </a>
+        
+        <a href="token-pooling-aware-training-for-multi-vector-embedding-models-161063.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161063. Token Pooling-Aware Training for Multi-Vector Embedding Models
+        </a>
+        
         <a href="deepseek-v4-a-million-token-context-that-agents-can-actually-use-149405.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149405. DeepSeek-V4: a million-token context that agents can actually use
         </a>
         
-        <a href="announcing-long-context-training-on-tpus-with-maxtext-context-par-138654.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138654. Announcing Long-Context Training on TPUs with MaxText Context Parallelism
-        </a>
-        
-        <a href="token-pooling-aware-training-for-multi-vector-embedding-models-138166.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138166. Token Pooling-Aware Training for Multi-Vector Embedding Models
-        </a>
-        
-        <a href="latest-update-distributed-training-train-bartt5-for-summarization-150290.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150290. Latest Update: Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker
+        <a href="nvidia-agrees-to-290-million-settlement-over-2018-crypto-mining-g-161685.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161685. Nvidia agrees to $290 million settlement over 2018 crypto mining GPU sales
         </a>
         
     </div>
